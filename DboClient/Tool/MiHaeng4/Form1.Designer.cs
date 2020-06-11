@@ -1,4 +1,4 @@
-﻿namespace MiHaeng4
+namespace MiHaeng4
 {
     partial class Form1
     {

@@ -11,7 +11,7 @@ namespace MiHaeng4
 {
     class ConvertXLS
     {
-        // ÀÏº»¾î Å×ÀÌºí¿¡¼­ ÅÂ±×¸¦ ÀĞ¾î¿Í¼­ º¯°æÇÏ°í, ´Ù½Ã XLS·Î ÀúÀåÇÑ´Ù.
+        // ì¼ë³¸?Eí…Œì´ë¹šç™¼ì„œ íƒœê·¸ë¥¼ ì½ì—‰ç›ƒì„œ ë³€ê²½í•˜?E ë‹¤ì‹œ XLSë¡œ ì €ì¥í•œë‹¤.
         public bool ConvertTagXLS(string fileName, LocalizeSource localize)
         {
             string nakedFileName = System.IO.Path.GetFileName(fileName);
@@ -30,7 +30,7 @@ namespace MiHaeng4
             MH4Global.lbXLS.Update();
 
             
-            if(MH4Global.IsSpecialQuestXLS(fileName))   // ½ºÆó¼È Äù½ºÆ® ¹®¼­
+            if(MH4Global.IsSpecialQuestXLS(fileName))   // ìŠ¤íì…œ í€˜ìŠ¤íŠ¸ ë¬¸ì„œ
             {
                 for (int i = 2; i < sheet.UsedRange.Rows.Count + 1; ++i)
                 {                    
@@ -46,11 +46,11 @@ namespace MiHaeng4
                         ReplaceTag(rng, localize);
                     }
                     
-                    MH4Global.pgbXLS.Value = i;   // ÇÁ·Î±×·¹½º¹Ù´Â Çà´ÜÀ§·Î Ç¥½ÃÇÑ´Ù.
+                    MH4Global.pgbXLS.Value = i;   // í”„ë¡œê·¸ë ˆìŠ¤ë°”ëŠ” í–‰ë‹¨ìœ„ë¡œ í‘œì‹œí•œë‹¤.
                 }
 
             }
-            else // ÀÏ¹İ Äù½ºÆ® ¹®¼­
+            else // ì¼ë°˜ í€˜ìŠ¤íŠ¸ ë¬¸ì„œ
             {
                 for (int i = 2; i < sheet.UsedRange.Rows.Count + 1; ++i)
                 {
@@ -64,7 +64,7 @@ namespace MiHaeng4
                         }
                     }
 
-                    MH4Global.pgbXLS.Value = i;   // ÇÁ·Î±×·¹½º¹Ù´Â Çà´ÜÀ§·Î Ç¥½ÃÇÑ´Ù.
+                    MH4Global.pgbXLS.Value = i;   // í”„ë¡œê·¸ë ˆìŠ¤ë°”ëŠ” í–‰ë‹¨ìœ„ë¡œ í‘œì‹œí•œë‹¤.
                 }
             }
 
@@ -82,7 +82,7 @@ namespace MiHaeng4
             StringBuilder sbNew = new StringBuilder();
             string text = null;
 
-            // ½ºÆäÀÌ½º¸¸ ÀÖ´Â °æ¿ìµµ ÀÖ´Ù. ÀÌ °æ¿ìµµ @Ã³¸®
+            // ìŠ¤í˜ì´ìŠ¤ë§Œ ìˆëŠ” ê²½?E?ìˆë‹¤. ì´ ê²½?E?@ì²˜ë¦¬
             text = rng.Value2.ToString();
             text = text.TrimStart(' ');
             if (text != "")
@@ -97,7 +97,7 @@ namespace MiHaeng4
                     if (words[k] == "user" || words[k] == "class" || words[k] == "race" || words[k] == "br")
                         continue;
 
-                    // Text All Data¿¡¼­ ID¸¦ °Ë»öÇÑ´Ù.                          
+                    // Text All Dataì—ì„œ IDë¥¼ ê²€ìƒ‰í•œë‹¤.                          
                     if (localize == LocalizeSource.LOCAL_KOREAN)
                     {
                         strConvertText = TextAllDataTable.ConvertTag(words[k]);

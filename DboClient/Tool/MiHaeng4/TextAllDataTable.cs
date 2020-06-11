@@ -12,8 +12,8 @@ namespace MiHaeng4
     class TextAllData
     {
         public string id;              // ID 
-        public string type;            // Å¸ÀÔ
-        public string colRow;          // Çà·Ä
+        public string type;            // íƒ€ì…
+        public string colRow;          // í–‰ë ¬
     };
 
     class TextAllDataTable
@@ -59,7 +59,7 @@ namespace MiHaeng4
             }           
         }
 
-        // ÀÌ¹Ì ·ÎµùµÇ¾úÀ¸¸é True, ½º·¹µå·Î ³Ñ±â¸é false¸¦ ¹İÈ¯
+        // ì´ë¯¸ ë¡œë”©ë˜ì—ˆìœ¼?ETrue, ìŠ¤ë ˆë“œë¡œ ë„˜ê¸°?Efalseë¥¼ ë°˜í™˜
         public static bool OpenTextAllData(string strFileName, LocalizeSource localSource)
         {
             if(localSource == LocalizeSource.LOCAL_KOREAN ||
@@ -74,7 +74,7 @@ namespace MiHaeng4
 
                 currMap = textDataMap;
             }
-            // ÀÏº»¾î ÅÂ±× º¯°æÀº ÇÊ¿ä¾ø´Ù.
+            // ì¼ë³¸?Eíƒœê·¸ ë³€ê²½ì€ í•„ìš”ì—†ë‹¤.
             //else if(localSource == LocalizeSource.LOCAL_JAPANESE)
             //{
             //    if (textDataMapJap != null && textDataMapJap.Count > 0)
@@ -126,7 +126,7 @@ namespace MiHaeng4
 
         public static string ConvertTag(string text)
         {
-            // Ä³½Ã¿¡ ÀÖ´ÂÁö Ã£¾Æº»´Ù.
+            // ìºì‹œì— ìˆëŠ”?Eì°¾ì•„ë³¸ë‹¤.
             string strConvertText;            
             if(dicConvertTag.TryGetValue(text, out strConvertText))
             {
@@ -152,7 +152,7 @@ namespace MiHaeng4
                 sbConvertText.Append(data.id);
                 sbConvertText.Append("\"");
 
-                dicConvertTag.Add(text, sbConvertText.ToString());   // Ä³½Ã¿¡ ³Ö¾îµĞ´Ù
+                dicConvertTag.Add(text, sbConvertText.ToString());   // ìºì‹œì— ë„£ì—‰æ¡”ë‹¤
 
                 return sbConvertText.ToString();
             }
@@ -160,7 +160,7 @@ namespace MiHaeng4
             return strConvertText;
         }
 
-        // ÀÏº»¾î ¹öÀü ÅØ½ºÆ®·Î º¯È¯ÇØ¼­ ¹İÈ¯ÇÑ´Ù.
+        // ì¼ë³¸?Eë²„?Eí…ìŠ¤íŠ¸ë¡œ ë³€í™˜í•´ì„œ ë°˜í™˜í•œë‹¤.
         public static string ConvertJapanText(string text)
         {
             string strConvertText;

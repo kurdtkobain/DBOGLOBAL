@@ -33,7 +33,7 @@ namespace MiHaeng4
             MH4Global.pgbXML.Maximum = xmlFiles.Length;
             MH4Global.pgbXML.Value = 0;
 
-            // ¼­¹öÀÇ ¿äÃ»À¸·Î ÀÎÇØ¼­ ´õ¹Ì 1 ¹ÙÀÌÆ®¸¦ ³Ö¾îÁØ´Ù
+            // ì„œë²„ì˜ ìš”ì²­ìœ¼ë¡œ ì¸í•´ì„œ ë”ë¯¸ 1 ë°”ì´íŠ¸ë¥¼ ë„£ì–´ì¤€ë‹¤
             bwRDF.Write(new byte[1]);
 
             foreach(string xmlFile in xmlFiles)
