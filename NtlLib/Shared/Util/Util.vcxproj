@@ -124,6 +124,7 @@
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
       <XMLDocumentationFileName>$(OutDir)</XMLDocumentationFileName>
       <BrowseInformationFile>$(OutDir)</BrowseInformationFile>
+      <AdditionalOptions>/source-charset:EUC-KR /execution-charset:EUC-KR %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Lib>
       <IgnoreAllDefaultLibraries>
@@ -197,6 +198,7 @@
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
       <XMLDocumentationFileName>$(OutDir)</XMLDocumentationFileName>
       <BrowseInformationFile>$(OutDir)</BrowseInformationFile>
+      <AdditionalOptions>/source-charset:EUC-KR /execution-charset:EUC-KR %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Lib>
       <IgnoreAllDefaultLibraries>
