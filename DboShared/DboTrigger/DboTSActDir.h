@@ -7,9 +7,9 @@
 
 /**
 	Direction action
-	¿ëµµ : Client quest, client trigger, Server quest, server trigger pc
-	¼³¸í : ¼­¹ö´Â Å¬¶óÀÌ¾ğÆ®¿¡°Ô ¿¬Ãâ »óÅÂ·Î ¹Ù²Ù¶ó´Â ¸Ş½ÃÁö¸¦ ³»·ÁÁØ´Ù.
-		   Å¬¶óÀÌ¾ğÆ®, ¼­¹öÀÇ TS¿¡¼­ m_tcJumpÀÇ µ¿ÀÛ Ã³¸®¸¦ ÇØÁØ´Ù
+	ìš©ë„ : Client quest, client trigger, Server quest, server trigger pc
+	ì„¤ëª… : ì„œë²„ëŠ” í´ë¼ì´ì–¸íŠ¸ì—ê²Œ ì—°ì¶œ ìƒíƒœë¡œ ë°”ê¾¸ë¼ëŠ” ë©”ì‹œì§€ë¥¼ ë‚´ë ¤ì¤€ë‹¤.
+		   í´ë¼ì´ì–¸íŠ¸, ì„œë²„ì˜ TSì—ì„œ m_tcJumpì˜ ë™ì‘ ì²˜ë¦¬ë¥¼ í•´ì¤€ë‹¤
 */
 
 
@@ -42,7 +42,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

@@ -15,8 +15,8 @@ protected:
 	int									m_nConcurrencyCnt;
 	unsigned int						m_uiResetTime;
 
-	unsigned int						m_uiExcuteObjTblIdx;	// ½ÇÇà½ÃÅ³ ¿ÀºêÁ§Æ® Å×ÀÌºí ÀÎµ¦½º
-	NTL_TS_T_ID							m_tExcuteTID;			// ½ÇÇà½ÃÅ³ ¿ÀºêÁ§Æ® Æ®¸®°Å ¾ÆÀÌµğ
+	unsigned int						m_uiExcuteObjTblIdx;	// ì‹¤í–‰ì‹œí‚¬ ì˜¤ë¸Œì íŠ¸ í…Œì´ë¸” ì¸ë±ìŠ¤
+	NTL_TS_T_ID							m_tExcuteTID;			// ì‹¤í–‰ì‹œí‚¬ ì˜¤ë¸Œì íŠ¸ íŠ¸ë¦¬ê±° ì•„ì´ë””
 
 // Constructions
 public:
@@ -40,7 +40,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

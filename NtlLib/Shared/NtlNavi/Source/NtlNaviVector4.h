@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 /**
-*	Vector4 Å¬·¡½º
+*	Vector4 í´ë˜ìŠ¤
 *
 *	\file		NtlNaviVector4.h
 *	\author		Jeong Ho, Rho
@@ -73,15 +73,15 @@ public:
 	inline			void					SetElem( float* pfVal );
 
 
-// ¸â¹ö ÇÔ¼ö.
+// ë©¤ë²„ í•¨ìˆ˜.
 public:
 
-	// º¤ÅÍÀÇ ¸ğµç ¿ä¼ÒµéÀ» ¹«È¿È­ÇÑ´Ù.
+	// ë²¡í„°ì˜ ëª¨ë“  ìš”ì†Œë“¤ì„ ë¬´íš¨í™”í•œë‹¤.
 
 	inline			void					MakeInvalid( void );
 
 	
-	// º¤ÅÍ¸¦ ´ÜÀ§ º¤ÅÍ·Î ¸¸µç´Ù.
+	// ë²¡í„°ë¥¼ ë‹¨ìœ„ ë²¡í„°ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeUnitX( void );
 
@@ -92,37 +92,37 @@ public:
 	inline			void					MakeUnitW( void );
 
 
-	// ¿µ º¤ÅÍ·Î ¸¸µç´Ù.
+	// ì˜ ë²¡í„°ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeZero( void );
 
 
-	// Á¤±ÔÈ­.
+	// ì •ê·œí™”.
 
 	inline			CNtlNaviVector4			GetNormalize( void ) const;
 
 	inline			void					MakeNormalize( void );
 
 
-	// ±æÀÌ.
+	// ê¸¸ì´.
 
 	inline			float					GetLength( void ) const;
 
 
-	// ±æÀÌÀÇ Á¦°ö.
+	// ê¸¸ì´ì˜ ì œê³±.
 
 	inline			float					GetLengthSquared( void ) const;
 
 
-// ¿¬»êÀÚ.
+// ì—°ì‚°ì.
 public:
 
-	// ÇÒ´ç ¿¬»êÀÚ.
+	// í• ë‹¹ ì—°ì‚°ì.
 
 	inline			CNtlNaviVector4&		operator = ( const CNtlNaviVector4& v4Val );
 
 
-	// ¸â¹ö Á¢±Ù ¿¬»êÀÚ.
+	// ë©¤ë²„ ì ‘ê·¼ ì—°ì‚°ì.
 
 	inline			float&					operator [] ( int nIdx );
 
@@ -134,14 +134,14 @@ public:
 	inline			const float&			operator () ( int nIdx ) const;
 
 
-	// ºñ±³ ¿¬»êÀÚ.
+	// ë¹„êµ ì—°ì‚°ì.
 
 	inline			bool					operator == ( const CNtlNaviVector4& v4Val ) const;
 
 	inline			bool					operator != ( const CNtlNaviVector4& v4Val ) const;
 
 
-	// »ê¼ú ¿¬»êÀÚ.
+	// ì‚°ìˆ  ì—°ì‚°ì.
 
 	inline			CNtlNaviVector4			operator - ( void ) const;
 
@@ -161,7 +161,7 @@ public:
 	inline			CNtlNaviVector4			operator - ( const CNtlNaviVector4& v4Val ) const;
 
 
-	// »ê¼ú °»½Å ¿¬»êÀÚ.
+	// ì‚°ìˆ  ê°±ì‹  ì—°ì‚°ì.
 
 	inline			CNtlNaviVector4&		operator *= ( float fVal );
 
@@ -178,14 +178,14 @@ public:
 	inline			CNtlNaviVector4&		operator -= ( const CNtlNaviVector4& v4Val );
 
 
-	// Çüº¯È¯ ¿¬»êÀÚ.
+	// í˜•ë³€í™˜ ì—°ì‚°ì.
 
 	inline									operator float* ( void );
 
 	inline									operator const float* ( void ) const;
 
 
-// ³»ºÎ ±¸Çö.
+// ë‚´ë¶€ êµ¬í˜„.
 protected:
 
 	inline			int						CompareArrays( const CNtlNaviVector4& v4Val ) const;

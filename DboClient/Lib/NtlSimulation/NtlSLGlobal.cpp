@@ -50,8 +50,8 @@ CNtlSLGlobal* CNtlSLGlobal::GetInstance(void)
 
 /**
 * \brief Create
-* \param bVirtualNet		(RwBool) °¡»ó Network¿¡ Á¢¼ÓÇßÀ» ¶§ ÁÖ´Â º¯¼ö
-* \return ¼º°ø ½ÇÆĞ ¿©ºÎ
+* \param bVirtualNet		(RwBool) ê°€ìƒ Networkì— ì ‘ì†í–ˆì„ ë•Œ ì£¼ëŠ” ë³€ìˆ˜
+* \return ì„±ê³µ ì‹¤íŒ¨ ì—¬ë¶€
 */
 RwBool CNtlSLGlobal::Create(RwBool bVirtualNet)
 {
@@ -106,7 +106,7 @@ SERIAL_HANDLE CNtlSLGlobal::GetSkillSelectModeHandle()
 
 void CNtlSLGlobal::ResetTenkaichiBudokaiInfo( void )
 {
-	// ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ ¸®¼Ò½º
+	// ì²œí•˜ì œì¼ ë¬´ë„íšŒ ë¦¬ì†ŒìŠ¤
 	memset(&m_sTenkaichiBudokaiInfo, 0, sizeof(STenkaichiBudokaiInfo));
 	m_sTenkaichiBudokaiInfo.sMatchStateInfo[BUDOKAI_MATCH_TYPE_INDIVIDIAUL].byState = INVALID_BUDOKAI_MATCH_TYPE;
 	m_sTenkaichiBudokaiInfo.sMatchStateInfo[BUDOKAI_MATCH_TYPE_TEAM].byState = INVALID_BUDOKAI_MATCH_TYPE;

@@ -192,7 +192,7 @@ RwBool CDboEventHandler::Create(void)
     RegisterMsg(g_EventOpenBagGui, "g_EventOpenBagGui", NULL);
     RegisterMsg(g_EventOpenScouterBackgroundGui, "g_EventOpenScouterBackgroundGui", NULL);
 
-    // ÇÑ±¹ PC¹æ °ü·Ã
+    // í•œêµ­ PCë°© ê´€ë ¨
     RegisterMsg(g_EventUpdateNetPy, "g_EventUpdateNetPy", "SDboEventUpdateNetPy");
     RegisterMsg(g_EventNetMarbleMemberShipNfy, "g_EventNetMarbleMemberShipNfy", NULL);
 	RegisterMsg(g_EventNetPyShopEvent, "g_EventNetPyShopEvent", "SDboNetPyShopEvent" );
@@ -375,7 +375,7 @@ void CDboEventHandler::Destroy(void)
     UnRegisterMsg( g_EventOpenBagGui );
     UnRegisterMsg( g_EventOpenScouterBackgroundGui );
     //////////////////////////////////////////////////////////////////////////
-    // ÇÑ±¹ PC¹æ °ü·Ã
+    // í•œêµ­ PCë°© ê´€ë ¨
     UnRegisterMsg(g_EventUpdateNetPy);
     UnRegisterMsg(g_EventNetMarbleMemberShipNfy);
 
@@ -494,7 +494,7 @@ void CDboEventHandler::HandleEvents(RWS::CMsg &pMsg)
 
 				if( pActor->GetSerialID() == pCtrlStuff->sRide.hTargetSerialId )
 				{
-					// ³»°¡ Å¸°í ÀÖ´Â ¹ö½ºÀÌ´Ù
+					// ë‚´ê°€ íƒ€ê³  ìžˆëŠ” ë²„ìŠ¤ì´ë‹¤
 					//const WCHAR* pwcText = GetDisplayStringManager()->GetString("DST_BUS_ASK_GET_OFF");
 					//CDboEventGenerator::MsgBoxShow(pwcText, MBW_GET_OFF_BUS_ASK, MBTF_OK | MBTF_CANCEL);
 					GetAlarmManager()->AlarmMessage( "DST_BUS_ASK_GET_OFF" );

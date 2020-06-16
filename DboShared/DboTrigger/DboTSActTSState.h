@@ -7,7 +7,7 @@
 
 /**
 	TS state update action
-	TS ÀÇ »óÅÂ¸¦ º¯°æÇÑ´Ù
+	TS ì˜ ìƒíƒœë¥¼ ë³€ê²½í•œë‹¤
 */
 
 
@@ -17,10 +17,10 @@ class CDboTSActTSState : public CNtlTSAction
 
 // Member variables
 protected:
-	// TS Àû¿ë Å¸ÀÔ
+	// TS ì ìš© íƒ€ì…
 	eTSSTATE_TYPE						m_eStateType;
 
-	// TS »óÅÂ¸¦ ¾÷µ¥ÀÌÆ® ½ÃÅ²´Ù
+	// TS ìƒíƒœë¥¼ ì—…ë°ì´íŠ¸ ì‹œí‚¨ë‹¤
 	unsigned short						m_wTSState;
 
 // Constructions
@@ -39,7 +39,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

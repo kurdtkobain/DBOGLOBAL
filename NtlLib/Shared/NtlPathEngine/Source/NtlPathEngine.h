@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlPathEngine.h
 * Author		: Haesung, Cho
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2009. 03. 10
 * Abstract		: Pathengine wrapping project ( for client )
 *****************************************************************************
@@ -15,10 +15,10 @@
 * Note3: As a result of client's Pathengine R & D, SKIP (2009.04)
 * 
 * Worklist
-* (¡é) 1Â÷ : Library interface »ı¼º
-* (¡é) 2Â÷ : PathEngine data create module »ı¼º  ( Federation tile »ı¼º )
-* (¡é) 3Â÷ : PathEngine data seamless loading module »ı¼º
-* (¡Ú) Fourth: Interlocking with Client and Library
+* (â†“) 1ì°¨ : Library interface ìƒì„±
+* (â†“) 2ì°¨ : PathEngine data create module ìƒì„±  ( Federation tile ìƒì„± )
+* (â†“) 3ì°¨ : PathEngine data seamless loading module ìƒì„±
+* (â˜…) Fourth: Interlocking with Client and Library
 * () 5th: stabilization work
 *****************************************************************************/
 

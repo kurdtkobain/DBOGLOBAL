@@ -62,8 +62,8 @@ bool CDboTSEMSkill::AddBuildData( const std::string& strKey, const CNtlTSMain::m
 	sSKILL_PARAM sParam;
 	CDboTSEMSkill_Recv clRecv;
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç skill id·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ skill idë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	CNtlTSTrigger* pTrig;
 	CNtlTSMain::mapdef_TLIST::const_iterator citTSBegin = TList.begin();

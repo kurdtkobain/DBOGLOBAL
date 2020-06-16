@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-03-03
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Lee Ju-hyung
 //

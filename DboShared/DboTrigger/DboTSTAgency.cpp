@@ -74,7 +74,7 @@ void CDboTSTAgency::DetachProgressTrigger( NTL_TS_T_ID tId )
 
 CDboTSTCtrl* CDboTSTAgency::MakeTriggerController( CNtlTSTrigger* pTrig )
 {
-	// Trigger controller ¸¦ »ý¼ºÇÑ´Ù
+	// Trigger controller ë¥¼ ìƒì„±í•œë‹¤
 	CNtlTSControlObject* pCtrlObj = GetParent()->GetControlFactory()->CreateObj( "CDboTSTCtrl" );
 	if ( !pCtrlObj->IsDerivedClass( "CDboTSTCtrl" ) )
 	{
@@ -83,7 +83,7 @@ CDboTSTCtrl* CDboTSTAgency::MakeTriggerController( CNtlTSTrigger* pTrig )
 		return 0;
 	}
 
-	// TSÀÇ trigger ¿Í Trigger °´Ã¼¸¦ ¿¬°á ¹× ÀúÀåÇÑ´Ù
+	// TSì˜ trigger ì™€ Trigger ê°ì²´ë¥¼ ì—°ê²° ë° ì €ìž¥í•œë‹¤
 	((CDboTSTCtrl*)pCtrlObj)->SetTrigger( pTrig );
 	((CDboTSTCtrl*)pCtrlObj)->SetParent( this );
 

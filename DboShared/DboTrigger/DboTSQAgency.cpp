@@ -84,14 +84,14 @@ void CDboTSQAgency::LoadQuestProgressInfo_V0( CNtlTSTrigger* pTrigger, const sPR
 		return;
 	}
 
-	// Quest controller ¸¦ »ý¼º, µî·Ï, Á¤º¸ ¼³Á¤
+	// Quest controller ë¥¼ ìƒì„±, ë“±ë¡, ì •ë³´ ì„¤ì •
 	CDboTSTCtrl* pTCtrl = MakeTriggerController( pTrigger );
 	if ( pTCtrl && pTCtrl->IsDerivedClass( "CDboTSQCtrl" ) )
 	{
-		// µî·Ï
+		// ë“±ë¡
 		AttachProgressTrigger( pTrigger->GetID(), pTCtrl );
 
-		// Äù½ºÆ® ÁøÇà Á¤º¸ ¼³Á¤
+		// í€˜ìŠ¤íŠ¸ ì§„í–‰ ì •ë³´ ì„¤ì •
 		((CDboTSQCtrl*)pTCtrl)->LoadQuestProgressInfo_V0( stQInfo.uData );
 	}
 	else
@@ -102,7 +102,7 @@ void CDboTSQAgency::LoadQuestProgressInfo_V0( CNtlTSTrigger* pTrigger, const sPR
 
 CDboTSTCtrl* CDboTSQAgency::MakeTriggerController( CNtlTSTrigger* pTrig )
 {
-	// Quest controller ¸¦ »ý¼ºÇÑ´Ù
+	// Quest controller ë¥¼ ìƒì„±í•œë‹¤
 	CNtlTSControlObject* pCtrlObj = GetParent()->GetControlFactory()->CreateObj( "CDboTSQCtrl" );
 	if ( !pCtrlObj->IsDerivedClass( "CDboTSQCtrl" ) )
 	{
@@ -111,7 +111,7 @@ CDboTSTCtrl* CDboTSQAgency::MakeTriggerController( CNtlTSTrigger* pTrig )
 		return 0;
 	}
 
-	// TSÀÇ trigger ¿Í Quest trigger °´Ã¼¸¦ ¿¬°á ¹× ÀúÀåÇÑ´Ù
+	// TSì˜ trigger ì™€ Quest trigger ê°ì²´ë¥¼ ì—°ê²° ë° ì €ìž¥í•œë‹¤
 	((CDboTSQCtrl*)pCtrlObj)->SetTrigger( pTrig );
 	((CDboTSQCtrl*)pCtrlObj)->SetParent( this );
 

@@ -23,9 +23,9 @@ enum ePROBABILITY_USE_TYPE
 struct sQUEST_PROBABILITY_DATA
 {
 	BYTE	byType;			// eREWARD_TYPE
-	TBLIDX	tblidx;			// Å×ÀÌºí ÀÎµ¦½º INVALID_
-	DWORD	dwMinValue;		// ÃÖ¼Ò °ª
-	DWORD	dwMaxValue;		// ÃÖ´ë °ª
+	TBLIDX	tblidx;			// í…Œì´ë¸” ì¸ë±ìŠ¤ INVALID_
+	DWORD	dwMinValue;		// ìµœì†Œ ê°’
+	DWORD	dwMaxValue;		// ìµœëŒ€ ê°’
 	DWORD	dwRate;
 };
 #pragma pack(pop)

@@ -190,16 +190,16 @@ void CNtlPLWorldState::UpdateSpace(RwV3d& vPos)
 		{
 			if (pActiveMiniIndoor)
 			{
-				// ³»ºÎ -> ³»ºÎ
+				// ë‚´ë¶€ -> ë‚´ë¶€
 			}
 			else
 			{
-				// ¿ÜºÎ -> ³»ºÎ
+				// ì™¸ë¶€ -> ë‚´ë¶€
 			}
 		}
 		else
 		{
-			// ³»ºÎ -> ¿ÜºÎ
+			// ë‚´ë¶€ -> ì™¸ë¶€
 			pNtlWorldFieldManager->SetAnotherField();
 		}
 

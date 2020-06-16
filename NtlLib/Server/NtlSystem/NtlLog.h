@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-01-05
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -130,7 +130,7 @@ private:
 
 
 //-----------------------------------------------------------------------------------
-// D ¡æ Date, L ¡æ Location
+// D â†’ Date, L â†’ Location
 //-----------------------------------------------------------------------------------
 #define g_pLog CNtlLog::GetInstance()
 #define NTL_LOG( LOGCHANNEL, LOGMSG, ... ) if( g_pLog ) g_pLog->Log( LOGCHANNEL, true, NULL, 0, NULL, LOGMSG, __VA_ARGS__ );

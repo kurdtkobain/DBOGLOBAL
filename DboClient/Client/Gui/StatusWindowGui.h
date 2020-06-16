@@ -147,7 +147,7 @@ protected:
 	CSurfaceGui m_surFocusSlot[NTL_MAX_EQUIP_ITEM_SLOT];
 	RwInt32		m_arrFocusEffect[NTL_MAX_EQUIP_ITEM_SLOT];
 	CSurfaceGui m_surDisableSlot[NTL_MAX_EQUIP_ITEM_SLOT];
-	CSurfaceGui m_surFritzSlot[NTL_MAX_EQUIP_ITEM_SLOT];	// ³»±¸µµ°¡ ´ÙÇÑ³à¼®µé Ç¥½Ã.
+	CSurfaceGui m_surFritzSlot[NTL_MAX_EQUIP_ITEM_SLOT];	// ë‚´êµ¬ë„ê°€ ë‹¤í•œë…€ì„ë“¤ í‘œì‹œ.
 
 	CSurfaceGui m_surPickedUp;
 	RwInt32	    m_nShowPickedUp;
@@ -211,7 +211,7 @@ public:
 
 /**
 * \ingroup client
-* \brief ½ºÅ×ÀÌÅÍ½ºÃ¢ÀÇ ¸í¿¹ ÅÇ
+* \brief ìŠ¤í…Œì´í„°ìŠ¤ì°½ì˜ ëª…ì˜ˆ íƒ­
 */
 class CStatusHonorTab
 {
@@ -267,7 +267,7 @@ private:
 
 /**
 * \ingroup client
-* \brief ½ºÅ×ÀÌÅÍ½ºÃ¢ÀÇ Technic ÅÇ
+* \brief ìŠ¤í…Œì´í„°ìŠ¤ì°½ì˜ Technic íƒ­
 */
 class CStatusTechnicTab
 {

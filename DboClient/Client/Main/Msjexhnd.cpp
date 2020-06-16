@@ -104,7 +104,7 @@ LONG WINAPI MSJExceptionHandler::MSJUnhandledExceptionFilter(PEXCEPTION_POINTERS
 	if ( m_pApplicationFilter )
 		m_pApplicationFilter( pExceptionInfo );
 
-	// file ±â·ÏÀº ÀÓ½ÃÀûÀ¸·Î »«´Ù(Çü¼®)
+	// file ê¸°ë¡ì€ ì„ì‹œì ìœ¼ë¡œ ëº€ë‹¤(í˜•ì„)
 	/*
     if ( bResult )
     {

@@ -482,9 +482,9 @@ bool CNtlXMLDoc::GetDataWithXPath(char* pszXPath, char* pszResultData, int nBuff
 }
 
 /**
-* XML ÆÄÀÏÀÇ ÇüÅÂ¸¦ TabÀ» ÀÌ¿ëÇØ¼­ º¸±â ÁÁ°Ô Á¤·ÄÇÑ´Ù.
-* \param szIndentFileName Á¤·Ä¿¡ »ç¿ëÇÒ ½ºÅ¸ÀÏ ½ÃÆ® ÆÄÀÏ¸í
-* return ¼º°ø À¯¹«
+* XML íŒŒì¼ì˜ í˜•íƒœë¥¼ Tabì„ ì´ìš©í•´ì„œ ë³´ê¸° ì¢‹ê²Œ ì •ë ¬í•œë‹¤.
+* \param szIndentFileName ì •ë ¬ì— ì‚¬ìš©í•  ìŠ¤íƒ€ì¼ ì‹œíŠ¸ íŒŒì¼ëª…
+* return ì„±ê³µ ìœ ë¬´
 */
 bool CNtlXMLDoc::SetIndent(WCHAR* szIndentFileName)
 {

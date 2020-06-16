@@ -59,10 +59,10 @@ public:
 	// For example, if you want to get data whose tblidx is 6, you must use 'm_afRate[6]' instead of 'm_afRate[5]'.
 	// The value of 'n' in the variable 'afRate[m][n]' means an index.
 	// For example, if you want to get value of 'fRate2', you must use 'm_afRate[m][2]' instead of 'm_afRate[m][1]'.
-	// m_afRate[m][n]¿¡¼­ÀÇ mÀº tblidx¸¦ ¶æÇÕ´Ï´Ù.
-	// ¿¹¸¦ µé¾î, tblidx°¡ 6ÀÎ °ø½Ä µ¥ÀÌÅ¸¸¦ ¾òÀ» ¶§¿¡´Â m_afRate[5]°¡ ¾Æ´Ñ m_afRate[6]À» »ç¿ëÇØ¾ß ÇÕ´Ï´Ù.
-	// m_afRate[m][n]¿¡¼­ÀÇ nÀº ÀÎµ¦½º¸¦ ¶æÇÕ´Ï´Ù.
-	// ¿¹¸¦ µé¾î, fRate2ÀÇ °ªÀ» ¾òÀ» ¶§¿¡´Â m_afRate[m][1]ÀÌ ¾Æ´Ñ m_afRate[m][2]¸¦ »ç¿ëÇØ¾ß ÇÕ´Ï´Ù.
+	// m_afRate[m][n]ì—ì„œì˜ mì€ tblidxë¥¼ ëœ»í•©ë‹ˆë‹¤.
+	// ì˜ˆë¥¼ ë“¤ì–´, tblidxê°€ 6ì¸ ê³µì‹ ë°ì´íƒ€ë¥¼ ì–»ì„ ë•Œì—ëŠ” m_afRate[5]ê°€ ì•„ë‹Œ m_afRate[6]ì„ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤.
+	// m_afRate[m][n]ì—ì„œì˜ nì€ ì¸ë±ìŠ¤ë¥¼ ëœ»í•©ë‹ˆë‹¤.
+	// ì˜ˆë¥¼ ë“¤ì–´, fRate2ì˜ ê°’ì„ ì–»ì„ ë•Œì—ëŠ” m_afRate[m][1]ì´ ì•„ë‹Œ m_afRate[m][2]ë¥¼ ì‚¬ìš©í•´ì•¼ í•©ë‹ˆë‹¤.
 	// by YOSHIKI(2009-07-13)
 	static float				m_afRate[DBO_MAX_FORMULA_IDX + 1][DBO_MAX_FORMULA_RATE_COUNT + 1];
 

@@ -3,7 +3,7 @@
 #include <vector>
 #include "Table.h"
 
-// Quest Text ¸ğÀ½
+// Quest Text ëª¨ìŒ
 #pragma pack(push, 4)
 struct sQUEST_TEXT_DATA_TBLDAT : public sTBLDAT
 {

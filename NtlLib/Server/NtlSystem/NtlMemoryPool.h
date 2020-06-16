@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-12-13
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	NTL °´Ã¼ ¸Ş¸ğ¸® Ç® ( static ¹× dynamic )
+//	Desc		:	NTL ê°ì²´ ë©”ëª¨ë¦¬ í’€ ( static ë° dynamic )
 //
 //***********************************************************************************
 
@@ -43,16 +43,16 @@ public:
 	void				Free(TYPE * t);
 
 
-	// ÀüÃ¼ ¸Ş¸ğ¸® »ı¼º °³¼ö
+	// ì „ì²´ ë©”ëª¨ë¦¬ ìƒì„± ê°œìˆ˜
 	int					GetTotalCount() { return m_nTotalCount; }
 
-	// ÇÒ´ç °¡´ÉÇÑ °ø°£ ¹İÈ¯(¸®½ºÆ®¿¡ ÀÖ´Â ¿©ºĞÀÇ °ø°£ÀÇ °³¼ö)
+	// í• ë‹¹ ê°€ëŠ¥í•œ ê³µê°„ ë°˜í™˜(ë¦¬ìŠ¤íŠ¸ì— ìˆëŠ” ì—¬ë¶„ì˜ ê³µê°„ì˜ ê°œìˆ˜)
 	int					GetAvailableCount()	{ return store.size(); }
 
-	// Ã³À½ »ı¼º½Ã ¿¹¾àÇÑ °³¼ö 
+	// ì²˜ìŒ ìƒì„±ì‹œ ì˜ˆì•½í•œ ê°œìˆ˜ 
 	int					GetReservedCount() { return m_nReserved; }
 
-	// Å¬¶óÀÌ¾ğÆ®¿¡ ¸Ş¸ğ¸®¸¦ ÇÒ´çÇØÁØ °³¼ö
+	// í´ë¼ì´ì–¸íŠ¸ì— ë©”ëª¨ë¦¬ë¥¼ í• ë‹¹í•´ì¤€ ê°œìˆ˜
 	int					GetAllocatedCount() { return GetTotalCount() - GetAvailableCount(); }
 
 
@@ -70,8 +70,8 @@ private:
 
 	LIST				m_store;
 
-	int					m_nTotalCount;	// ¸Ş¸ğ¸® »ı¼º °³¼ö
-	int					m_nReserved;	// ¿¹¾àÇÑ °³¼ö	
+	int					m_nTotalCount;	// ë©”ëª¨ë¦¬ ìƒì„± ê°œìˆ˜
+	int					m_nReserved;	// ì˜ˆì•½í•œ ê°œìˆ˜	
 
 };
 

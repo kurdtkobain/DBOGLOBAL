@@ -672,7 +672,7 @@ void CAESCipher::EncryptByBlock(unsigned int *originalData, unsigned int* output
 }
 
 /* AES 128-bit block encryption routine */
-//block ´ÜÀ§·Î Â©¶ó¾ß ÇÑ´Ù.
+//block ë‹¨ìœ„ë¡œ ì§¤ë¼ì•¼ í•œë‹¤.
 int CAESCipher::Encrypt( char *originalData, int originalDataLength, char *encData, int encDataSize)
 {	
 	if (!originalData)
@@ -746,7 +746,7 @@ void CAESCipher::DecryptByBlock(unsigned int *originalData, unsigned int* output
 }
 
 /* AES 128-bit block decryption routine */
-//block ´ÜÀ§·Î Â©¶ó¾ß ÇÑ´Ù.
+//block ë‹¨ìœ„ë¡œ ì§¤ë¼ì•¼ í•œë‹¤.
 int CAESCipher::Decrypt( char * originalData, int originalDataLength, char *decData, int decDataSize)
 {	
 	if (!originalData ) 

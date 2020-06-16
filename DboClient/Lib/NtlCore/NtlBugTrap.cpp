@@ -26,7 +26,7 @@ int NewHandler( size_t )
 CNtlBugTrap::CNtlBugTrap(void)
 {
     // Setup bug trapper
-    // ¹ö±×Æ®·¦À» »ç¿ëÇÒ °¢ ÇÁ·Î±×·¥¿¡¼­ ´Ù½Ã ¼³Á¤ÇÏ¸é º¯°æµÈ´Ù.
+    // ë²„ê·¸íŠ¸ë©ì„ ì‚¬ìš©í•  ê° í”„ë¡œê·¸ë¨ì—ì„œ ë‹¤ì‹œ ì„¤ì •í•˜ë©´ ë³€ê²½ëœë‹¤.
     BT_SetAppName(_T("BugTrap Report"));    
     //BT_SetSupportEMail(_T("agebreak@ntl-inc.com"));
     BT_SetFlags(BTF_DETAILEDMODE | BTF_EDITMAIL | BTF_ATTACHREPORT | BTF_SCREENCAPTURE | BTF_INTERCEPTSUEF);
@@ -36,12 +36,12 @@ CNtlBugTrap::CNtlBugTrap(void)
     // BugTrapServer ===========================================
     //BT_SetSupportServer(_T("localhost"), 9999);    
 
-    // C Ç¥ÁØÇÔ¼ö¿¡ ´ëÇÑ Àß¸øµÈ ÀÎÀÚ »ç¿ë
+    // C í‘œì¤€í•¨ìˆ˜ì— ëŒ€í•œ ì˜ëª»ëœ ì¸ì ì‚¬ìš©
     _set_invalid_parameter_handler(InvalidParameterHandler);
 
-    // Àß¸øµÈ ¼ø¼ö °¡»óÇÔ¼ö È£Ãâ
+    // ì˜ëª»ëœ ìˆœìˆ˜ ê°€ìƒí•¨ìˆ˜ í˜¸ì¶œ
     _set_purecall_handler(PurecallHandler);
 
-    // ³Ê¹« Å« ¸Ş¸ğ¸® ÇÒ´ç ½Ã New ¿¬»êÀÚÀÇ ½ÇÆĞ
+    // ë„ˆë¬´ í° ë©”ëª¨ë¦¬ í• ë‹¹ ì‹œ New ì—°ì‚°ìì˜ ì‹¤íŒ¨
     _set_new_handler( NewHandler );
 }

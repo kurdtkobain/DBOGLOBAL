@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-05-12
 //
-//	Copyright	:	®œ NTL-Inc Co., Ltd
+//	Copyright	:	‚ìí NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -26,69 +26,69 @@ enum eOPCODE_GN
 {
 	GN_OPCODE_BEGIN = 36000,
 
-	GN_GAME_DATA_RES = GN_OPCODE_BEGIN, // «ˆ¿Á±Ó¡ˆ¿« ∞‘¿” µ•¿Ã≈∏ ¿¸º€
-	GN_CHAR_SPAWN_REQ, // ø¿∫Í¡ß∆Æ ª˝º∫ ø‰√ª : ex) µø¿˚ ƒ≥∏Ø≈ÕµÓ ∞‘¿”º≠πˆ¿« « ø‰«— ƒ≥∏Ø≈Õ ª˝º∫ ø‰√ª
+	GN_GAME_DATA_RES = GN_OPCODE_BEGIN, // ÌòÑÏû¨ÍπåÏßÄÏùò Í≤åÏûÑ Îç∞Ïù¥ÌÉÄ Ï†ÑÏÜ°
+	GN_CHAR_SPAWN_REQ, // Ïò§Î∏åÏ†ùÌä∏ ÏÉùÏÑ± ÏöîÏ≤≠ : ex) ÎèôÏ†Å Ï∫êÎ¶≠ÌÑ∞Îì± Í≤åÏûÑÏÑúÎ≤ÑÏùò ÌïÑÏöîÌïú Ï∫êÎ¶≠ÌÑ∞ ÏÉùÏÑ± ÏöîÏ≤≠
 
-	GN_WORLD_CREATED_NFY, // ø˘µÂ ª˝º∫ æÀ∏≤
-	GN_WORLD_DESTROYED_NFY, // ø˘µÂ ªË¡¶ æÀ∏≤
-	GN_OBJECT_CREATED_NFY, // ø¿∫Í¡ß∆Æ ª˝º∫ æÀ∏≤
-	GN_OBJECT_DESTROYED_NFY, // ø¿∫Í¡ß∆Æ ªË¡¶ æÀ∏≤
-	GN_OBJECT_WORLD_ENTERED, // ø¿∫Í¡ß∆Æ ø˘µÂ ¡¯¿‘ æÀ∏≤
-	GN_OBJECT_WORLD_LEAVED, // ø¿∫Í¡ß∆Æ ø˘µÂ ªË¡¶ æÀ∏≤
+	GN_WORLD_CREATED_NFY, // ÏõîÎìú ÏÉùÏÑ± ÏïåÎ¶º
+	GN_WORLD_DESTROYED_NFY, // ÏõîÎìú ÏÇ≠Ï†ú ÏïåÎ¶º
+	GN_OBJECT_CREATED_NFY, // Ïò§Î∏åÏ†ùÌä∏ ÏÉùÏÑ± ÏïåÎ¶º
+	GN_OBJECT_DESTROYED_NFY, // Ïò§Î∏åÏ†ùÌä∏ ÏÇ≠Ï†ú ÏïåÎ¶º
+	GN_OBJECT_WORLD_ENTERED, // Ïò§Î∏åÏ†ùÌä∏ ÏõîÎìú ÏßÑÏûÖ ÏïåÎ¶º
+	GN_OBJECT_WORLD_LEAVED, // Ïò§Î∏åÏ†ùÌä∏ ÏõîÎìú ÏÇ≠Ï†ú ÏïåÎ¶º
 
-	GN_PREPARE_ENTER_GAME,	// ø¿∫Í¡ß∆Æ ª˝º∫¿ª ø‰√ª«œ∂Û∞Ì ¡ˆΩ√
-	GN_ENTER_GAME_RES, // ø¿∫Í¡ß∆Æ ¡¯¿‘ ¿¿¥‰
-	GN_LEAVE_GAME_RES, // ∞‘¿” ¡¯¿‘ ø‰√ª
-	GN_ENTER_WORLD_RES, // ø¿∫Í¡ß∆Æ ø˘µÂ ¡¯¿‘ ¿¿¥‰
-	GN_LEAVE_WORLD_RES, // ø¿∫Í¡ß∆Æ ø˘µÂ ¡¯¿‘ ø‰√ª
+	GN_PREPARE_ENTER_GAME,	// Ïò§Î∏åÏ†ùÌä∏ ÏÉùÏÑ±ÏùÑ ÏöîÏ≤≠ÌïòÎùºÍ≥† ÏßÄÏãú
+	GN_ENTER_GAME_RES, // Ïò§Î∏åÏ†ùÌä∏ ÏßÑÏûÖ ÏùëÎãµ
+	GN_LEAVE_GAME_RES, // Í≤åÏûÑ ÏßÑÏûÖ ÏöîÏ≤≠
+	GN_ENTER_WORLD_RES, // Ïò§Î∏åÏ†ùÌä∏ ÏõîÎìú ÏßÑÏûÖ ÏùëÎãµ
+	GN_LEAVE_WORLD_RES, // Ïò§Î∏åÏ†ùÌä∏ ÏõîÎìú ÏßÑÏûÖ ÏöîÏ≤≠
 
-	GN_CHAR_MOVE, // ¿Ãµø
-	GN_CHAR_DEST_MOVE, // ∏Ò¿˚¡ˆ¿Ãµø
-	GN_CHAR_CHANGE_HEADING, // πÊ«‚ »∏¿¸
-	GN_CHAR_FOLLOW_MOVE, // µ˚∂Û∞°±‚
-	GN_CHAR_JUMP, // ¡°«¡
-	GN_CHAR_JUMP_END, // ¡°«¡ ≥°
-	GN_CHAR_FIGHTMODE, // ∞¯∞›∏µÂ
-	GN_CHAR_MOVE_SYNC, // ¿Ãµø µø±‚»≠ ( PUSHµÓø° ¿««— ¿Ãµø ¿ßƒ° ∫Ø∞Êø° ªÁøÎ )
-	GN_CHAR_CHANGE_DIRECTION_ON_FLOATING, // ƒ≥∏Ø≈Õ ¡°«¡/falling ∂ß¿« πŸ∂Û∫∏¥¬ πÊ«‚
+	GN_CHAR_MOVE, // Ïù¥Îèô
+	GN_CHAR_DEST_MOVE, // Î™©Ï†ÅÏßÄÏù¥Îèô
+	GN_CHAR_CHANGE_HEADING, // Î∞©Ìñ• ÌöåÏ†Ñ
+	GN_CHAR_FOLLOW_MOVE, // Îî∞ÎùºÍ∞ÄÍ∏∞
+	GN_CHAR_JUMP, // Ï†êÌîÑ
+	GN_CHAR_JUMP_END, // Ï†êÌîÑ ÎÅù
+	GN_CHAR_FIGHTMODE, // Í≥µÍ≤©Î™®Îìú
+	GN_CHAR_MOVE_SYNC, // Ïù¥Îèô ÎèôÍ∏∞Ìôî ( PUSHÎì±Ïóê ÏùòÌïú Ïù¥Îèô ÏúÑÏπò Î≥ÄÍ≤ΩÏóê ÏÇ¨Ïö© )
+	GN_CHAR_CHANGE_DIRECTION_ON_FLOATING, // Ï∫êÎ¶≠ÌÑ∞ Ï†êÌîÑ/falling ÎïåÏùò Î∞îÎùºÎ≥¥Îäî Î∞©Ìñ•
 
-	GN_CHAR_ACTION_ATTACK, // æ◊º« ∞·∞˙
-	GN_CHAR_ACTION_SKILL, // Ω∫≈≥ ∞·∞˙
-	GN_CHAR_ACTION_ITEM, // æ∆¿Ã≈€ ªÁøÎ ∞·∞˙
+	GN_CHAR_ACTION_ATTACK, // Ïï°ÏÖò Í≤∞Í≥º
+	GN_CHAR_ACTION_SKILL, // Ïä§ÌÇ¨ Í≤∞Í≥º
+	GN_CHAR_ACTION_ITEM, // ÏïÑÏù¥ÌÖú ÏÇ¨Ïö© Í≤∞Í≥º
 	GN_CHAR_ACTION_HTB, // HTB
-	GN_CHAR_TARGET_SELECT, // ≈∏∞Ÿ º≥¡§ ( Game -> NPC )
-	GN_CHAR_TARGET_FACING, // ≈∏∞Ÿ º≥¡§ ( Game -> NPC )
+	GN_CHAR_TARGET_SELECT, // ÌÉÄÍ≤ü ÏÑ§Ï†ï ( Game -> NPC )
+	GN_CHAR_TARGET_FACING, // ÌÉÄÍ≤ü ÏÑ§Ï†ï ( Game -> NPC )
 	GN_CHAR_TARGET_LOST_NFY,
-	GN_CHAR_KEEP_AGGRO, // µµπﬂ
-	GN_CHAR_CHANGE_AGGRO, // Aggro ∞≠¡¶ ¡∂¿€
-	GN_CHAR_ERASE_AGGRO_AROUND_ME, // ¿⁄±‚ ¡÷¿ß¿« NPC/Mobø°º≠ ¿⁄Ω≈¿« aggro ¡§∫∏∏¶ ªË¡¶
-	GN_CHAR_START_ESCORT_REQ, // ø°Ω∫ƒ⁄∆Æ Ω√¿€
-	GN_CHAR_STOP_ESCORT_NFY, // ø°Ω∫ƒ⁄∆Æ ¡æ∑· ( ∆˜±‚µÓø° ¿««ÿ )
+	GN_CHAR_KEEP_AGGRO, // ÎèÑÎ∞ú
+	GN_CHAR_CHANGE_AGGRO, // Aggro Í∞ïÏ†ú Ï°∞Ïûë
+	GN_CHAR_ERASE_AGGRO_AROUND_ME, // ÏûêÍ∏∞ Ï£ºÏúÑÏùò NPC/MobÏóêÏÑú ÏûêÏã†Ïùò aggro Ï†ïÎ≥¥Î•º ÏÇ≠Ï†ú
+	GN_CHAR_START_ESCORT_REQ, // ÏóêÏä§ÏΩîÌä∏ ÏãúÏûë
+	GN_CHAR_STOP_ESCORT_NFY, // ÏóêÏä§ÏΩîÌä∏ Ï¢ÖÎ£å ( Ìè¨Í∏∞Îì±Ïóê ÏùòÌï¥ )
 
-	GN_BUFF_REGISTERED, // πˆ«¡ ª˝º∫
-	GN_BUFF_DROPPED, // πˆ«¡ º“∏Í
-	GN_EFFECT_AFFECTED, // DoT, HoT µÓ
+	GN_BUFF_REGISTERED, // Î≤ÑÌîÑ ÏÉùÏÑ±
+	GN_BUFF_DROPPED, // Î≤ÑÌîÑ ÏÜåÎ©∏
+	GN_EFFECT_AFFECTED, // DoT, HoT Îì±
 
-	GN_UPDATE_CHAR_STATE, // ø¿∫Í¡ß∆Æ ªÛ≈¬ æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_ASPECT_STATE, // ø¿∫Í¡ß∆Æ ∆Øºˆ ªÛ≈¬ æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_CONDITION, // ø¿∫Í¡ß∆Æ 
-	GN_UPDATE_CHAR_LEVEL, // ø¿∫Í¡ß∆Æ ∑π∫ß æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_LP, // LP æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_EP, // EP æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_LP_EP, // LP/EP æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_SPEED, // Ω∫««µÂ æ˜µ•¿Ã∆Æ
-	GN_UPDATE_CHAR_SCALE, // ø¿∫Í¡ß∆Æ scale æ˜µ•¿Ã∆Æ
+	GN_UPDATE_CHAR_STATE, // Ïò§Î∏åÏ†ùÌä∏ ÏÉÅÌÉú ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_ASPECT_STATE, // Ïò§Î∏åÏ†ùÌä∏ ÌäπÏàò ÏÉÅÌÉú ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_CONDITION, // Ïò§Î∏åÏ†ùÌä∏ 
+	GN_UPDATE_CHAR_LEVEL, // Ïò§Î∏åÏ†ùÌä∏ Î†àÎ≤® ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_LP, // LP ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_EP, // EP ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_LP_EP, // LP/EP ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_SPEED, // Ïä§ÌîºÎìú ÏóÖÎç∞Ïù¥Ìä∏
+	GN_UPDATE_CHAR_SCALE, // Ïò§Î∏åÏ†ùÌä∏ scale ÏóÖÎç∞Ïù¥Ìä∏
 
-	GN_SERVER_COMMAND, // º≠πˆ ƒø∏«µÂ
-	GN_TS_SERVER_EVENT, // TS º≠πˆ ¿Ã∫•∆Æ
+	GN_SERVER_COMMAND, // ÏÑúÎ≤Ñ Ïª§Îß®Îìú
+	GN_TS_SERVER_EVENT, // TS ÏÑúÎ≤Ñ Ïù¥Î≤§Ìä∏
 	GN_TQS_SERVER_EVENT,
 
-	GN_BOT_SKILL_RES, // Ω∫≈≥ ªÁøÎ [2/12/2008 SGpro]
+	GN_BOT_SKILL_RES, // Ïä§ÌÇ¨ ÏÇ¨Ïö© [2/12/2008 SGpro]
 
 	GN_SKILL_TARGET_LIST_REQ,
-	GN_SKILL_COOL_TIME_STARTED_NFY,			// Ω∫≈≥¿« cool time¿Ã Ω√¿€µ«æ˙¿Ω¿ª æÀ∏≤
-	GN_SKILL_CONFUSE_TARGET_NFY,		// Confuse ªÛ≈¬¿œ ∂ß¿« ∞¯∞› ¥ÎªÛ æÀ∏≤
-	GN_SKILL_TERROR_COURSE_CHANGE_NFY,		// Terror ªÛ≈¬¿œ ∂ß πÊ«‚ ¿¸»Ø æÀ∏≤
+	GN_SKILL_COOL_TIME_STARTED_NFY,			// Ïä§ÌÇ¨Ïùò cool timeÏù¥ ÏãúÏûëÎêòÏóàÏùåÏùÑ ÏïåÎ¶º
+	GN_SKILL_CONFUSE_TARGET_NFY,		// Confuse ÏÉÅÌÉúÏùº ÎïåÏùò Í≥µÍ≤© ÎåÄÏÉÅ ÏïåÎ¶º
+	GN_SKILL_TERROR_COURSE_CHANGE_NFY,		// Terror ÏÉÅÌÉúÏùº Îïå Î∞©Ìñ• Ï†ÑÌôò ÏïåÎ¶º
 
 	GN_CHAR_TELEPORT_RES, // [8/4/2008 SGpro]
 
@@ -98,15 +98,15 @@ enum eOPCODE_GN
 
 	GN_MONSTER_TRANSFORMED_NFY,
 
-	GN_SCRIPT_ITEM_USE,				// Ω∫≈©∏≥ ∞¸∑√ æ∆¿Ã≈€¿ª ªÁøÎ«‘
+	GN_SCRIPT_ITEM_USE,				// Ïä§ÌÅ¨Î¶Ω Í¥ÄÎ†® ÏïÑÏù¥ÌÖúÏùÑ ÏÇ¨Ïö©Ìï®
 
 	GN_CHANGE_SPS_SCENE_REQ,
 
 	GN_WORLD_ADD_BOT_NFY,
 
-	GN_PET_ATTACK_TARGET_NFY,		// ∆Í¿« ¿¸≈ı ¬¸ø©
+	GN_PET_ATTACK_TARGET_NFY,		// Ìé´Ïùò Ï†ÑÌà¨ Ï∞∏Ïó¨
 
-	GN_CHAR_TARGET_CHANGED_NFY,		// ≈∏∞Ÿ ∫Ø∞Ê æÀ∏≤
+	GN_CHAR_TARGET_CHANGED_NFY,		// ÌÉÄÍ≤ü Î≥ÄÍ≤Ω ÏïåÎ¶º
 
 	GN_UPDATE_CHAR_MAX_LP,
 	GN_UPDATE_CHAR_MAX_EP,
@@ -309,7 +309,7 @@ BEGIN_PROTOCOL( GN_CHAR_KEEP_AGGRO )
 	HOBJECT				hSubject;
 	HOBJECT				hProvoker;
 	WORD				wAggroValue;
-	eSYSTEM_EFFECT_CODE effectCode; // √ﬂ∞° [4/1/2008 SGpro]
+	eSYSTEM_EFFECT_CODE effectCode; // Ï∂îÍ∞Ä [4/1/2008 SGpro]
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( GN_CHAR_CHANGE_AGGRO )
@@ -331,7 +331,7 @@ BEGIN_PROTOCOL( GN_CHAR_START_ESCORT_REQ )
 	PARTYID				partyID;
 	BYTE				byTriggerType;
 	NTL_TS_T_ID			tid;
-	sTSM_SERIAL			sTSMSerial;		// TSM¿ª ¡¢±Ÿ«œ±‚ ¿ß«— ≈∞∞™
+	sTSM_SERIAL			sTSMSerial;		// TSMÏùÑ Ï†ëÍ∑ºÌïòÍ∏∞ ÏúÑÌïú ÌÇ§Í∞í
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( GN_CHAR_STOP_ESCORT_NFY )
@@ -451,21 +451,21 @@ BEGIN_PROTOCOL( GN_CHAR_TELEPORT_RES ) // [8/4/2008 SGpro]
 	WORD			wResultCode;
 	sVECTOR3		vNewLoc;
 	sVECTOR3		vNewDir;
-	// NPC¿« Bot¿∫ ¥Ÿ∏• World∑Œ ¿Ãµø«œ¡ˆ æ ¥¬¥Ÿ.
-	// ±◊∑°º≠ sWORLD_INFO∏¶ Game->Npc∑Œ ∫∏≥ª¡ˆ æ ¥¬¥Ÿ[8/5/2008 SGpro]
+	// NPCÏùò BotÏùÄ Îã§Î•∏ WorldÎ°ú Ïù¥ÎèôÌïòÏßÄ ÏïäÎäîÎã§.
+	// Í∑∏ÎûòÏÑú sWORLD_INFOÎ•º Game->NpcÎ°ú Î≥¥ÎÇ¥ÏßÄ ÏïäÎäîÎã§[8/5/2008 SGpro]
 	// sWORLD_INFO				sWorldInfo;
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(GN_WPS_SERVER_EVENT)
 	BYTE			byEvtType;			// eWPS_EVENT_TYPE
-	HOBJECT			hTarget;			// √ﬂ»ƒ ªË¡¶
+	HOBJECT			hTarget;			// Ï∂îÌõÑ ÏÇ≠Ï†ú
 	BYTE			byObjType;			// eOBJTYPE
 	TBLIDX			targetTblidx;
 	DWORD			eventID;
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(GN_SEND_TQS_EVENT)
-	BYTE			byEventType;		// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_SPS | SSD_SCRIPT_TYPE_AIS ∏∏ ªÁøÎ
+	BYTE			byEventType;		// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_SPS | SSD_SCRIPT_TYPE_AIS Îßå ÏÇ¨Ïö©
 	WORLDID			worldId;
 	HOBJECT			hTarget;
 	BYTE			byTargetType;
@@ -474,11 +474,11 @@ BEGIN_PROTOCOL(GN_SEND_TQS_EVENT)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(GN_SEND_WPS_EVENT)
-	BYTE			byEventType;	// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_SPS | SSD_SCRIPT_TYPE_AIS ∏∏ ªÁøÎ
+	BYTE			byEventType;	// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_SPS | SSD_SCRIPT_TYPE_AIS Îßå ÏÇ¨Ïö©
 	HOBJECT			hTarget;
 	DWORD			eventId;
 
-	// √ﬂ∞° ¡§∫∏ : « ø‰ø° µ˚∂Û ªÁøÎ
+	// Ï∂îÍ∞Ä Ï†ïÎ≥¥ : ÌïÑÏöîÏóê Îî∞Îùº ÏÇ¨Ïö©
 	WORLDID			worldId;
 	TBLIDX			wpsTblidx;
 	BYTE			byTargetType;

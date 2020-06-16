@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-11-30
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -65,40 +65,40 @@ public:
 
 public:
 
-	// ºñ¾ú´Â°¡
+	// ë¹„ì—ˆëŠ”ê°€
 	bool					IsEmpty() const { return m_iCount == 0; }
 
 	// The number in the current list
 	int						GetCount() const { return m_iCount; }
 
-	// ¸®½ºÆ®ÀÇ ÃÖ´ë »ç¿ë °³¼ö
+	// ë¦¬ìŠ¤íŠ¸ì˜ ìµœëŒ€ ì‚¬ìš© ê°œìˆ˜
 	int						GetMaxCount() const { return m_iMaxCount; }
 
-	// ¸Ç Ã³À½
+	// ë§¨ ì²˜ìŒ
 	CNtlLinkObject *		GetFirst() const { return m_pHead; }
 
-	// ¸Ç ³¡
+	// ë§¨ ë
 	CNtlLinkObject *		GetLast() const { return m_pTail; }
 
 
 public:
 
-	// ¸ÇµÚ¿¡ Ãß°¡
+	// ë§¨ë’¤ì— ì¶”ê°€
 	void					Append(CNtlLinkObject * pLinkObject);
 
-	// ¸Ç¾Õ¿¡ Ãß°¡
+	// ë§¨ì•ì— ì¶”ê°€
 	void					Prepend(CNtlLinkObject * pLinkObject);
 
-	// ¿øÇÏ´Â À§Ä¡ ¾Õ¿¡ Ãß°¡
+	// ì›í•˜ëŠ” ìœ„ì¹˜ ì•ì— ì¶”ê°€
 	void					InsertBefore(CNtlLinkObject * pBaseObject, CNtlLinkObject * pLinkObject);
 
-	// ¿øÇÏ´Â À§Ä¡ µÚ¿¡ Ãß°¡
+	// ì›í•˜ëŠ” ìœ„ì¹˜ ë’¤ì— ì¶”ê°€
 	void					InsertAfter(CNtlLinkObject * pBaseObject, CNtlLinkObject * pLinkObject);
 
-	// ÇÏ³ª Á¦°Å
+	// í•˜ë‚˜ ì œê±°
 	void					Remove(CNtlLinkObject * pLinkObject);
 
-	// ¸ğµÎ Á¦°Å
+	// ëª¨ë‘ ì œê±°
 	void					RemoveAll();
 
 	//
@@ -129,7 +129,7 @@ public:
 
 
 
-	// Å×½ºÆ®¿ë ·ÎÁ÷ Á¡°Ë
+	// í…ŒìŠ¤íŠ¸ìš© ë¡œì§ ì ê²€
 	static void				UnitTest();
 
 private:
@@ -337,7 +337,7 @@ inline void CNtlLinkList::RemoveAll()
 
 
 //-----------------------------------------------------------------------------------
-//		Purpose	:	¼Óµµ¸¦ °í·ÁÇÑ ºÎºĞ¿¡¼­´Â »ç¿ëÀ» ÇÇÇÒ °Í
+//		Purpose	:	ì†ë„ë¥¼ ê³ ë ¤í•œ ë¶€ë¶„ì—ì„œëŠ” ì‚¬ìš©ì„ í”¼í•  ê²ƒ
 //		Return	:
 //-----------------------------------------------------------------------------------
 inline bool CNtlLinkList::Find(CNtlLinkObject * pBaseObject)

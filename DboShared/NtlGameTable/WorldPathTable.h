@@ -3,7 +3,7 @@
 //
 //	Begin		:	2007-06-01
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Shin Woo Teck   ( woody1019@ntl-inc.com )
 //

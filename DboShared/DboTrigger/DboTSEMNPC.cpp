@@ -66,18 +66,18 @@ bool CDboTSEMNPC::AddBuildData( const std::string& strKey, const CNtlTSMain::map
 	sNPC_PARAM sParam;
 	CDboTSEMNPC_Recv clRecv;
 
-	// NPC tableÀ» ¼øÈ¸ÇÑ´Ù
+	// NPC tableì„ ìˆœíšŒí•œë‹¤
 	for ( ; itBegin != itEnd; ++itBegin )
 	{
 		sNPC_TBLDAT* pNPCData = (sNPC_TBLDAT*)itBegin->second;
 
-		// Trigger flag°¡ ÄÑÁ® ÀÖ´Â °Í¸¸À» ´ë»óÀ¸·Î µ¿ÀÛÇÑ´Ù
+		// Trigger flagê°€ ì¼œì ¸ ìˆëŠ” ê²ƒë§Œì„ ëŒ€ìƒìœ¼ë¡œ ë™ì‘í•œë‹¤
 		if ( pNPCData->dwFunc_Bit_Flag & NPC_FUNC_FLAG_QUEST_GRANTER )
 		{
 			defTIDList.clear();
 
-			// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç NPC id·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-			// trigger¸¦ Ã£´Â´Ù
+			// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ NPC idë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+			// triggerë¥¼ ì°¾ëŠ”ë‹¤
 			CNtlTSTrigger* pTrig;
 			CNtlTSMain::mapdef_TLIST::const_iterator citTSBegin = TList.begin();
 			CNtlTSMain::mapdef_TLIST::const_iterator citTSEnd = TList.end();

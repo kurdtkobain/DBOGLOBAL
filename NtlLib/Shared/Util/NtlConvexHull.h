@@ -2,7 +2,7 @@
 *
 * File			: NtlConvexHull.h
 * Author		: JeongHo, Rho
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2008. 11. 25
 * Abstract		: convex hull
 *****************************************************************************

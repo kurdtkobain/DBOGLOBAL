@@ -2,13 +2,13 @@
 *
 * File			: NtlObjectGroup.h
 * Author		: Hong SungBock
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2006. 7. 13
 * Abstract		: Object music channel group
 *****************************************************************************
-* Desc			: ¿ÀºêÁ§Æ® Ã¤³Î ±×·ìÀÌ ´Ù¸¥ Ã¤³Î ±×·ìÀÇ ¿ì¼± ¼øÀ§¿¡ ¹Ð·ÈÀ» ¶§
-*				  ÀÓÀÇÀÇ ¿ÀºêÁ§Æ® Ã¤³Î ÇÏ³ª¸¦ °­Á¦Á¾·á ½ÃÅ°°í ±× ÀÌ¸§À» ÀúÀåÇÑ´Ù
-*				  Â÷ÈÄ ºó Ã¤³ÎÀÌ »ý±â¸é °­Á¦Á¾·áµÈ ¼ø¼­´ë·Î »ç¿îµå¸¦ ÇÃ·¹ÀÌÇÑ´Ù
+* Desc			: ì˜¤ë¸Œì íŠ¸ ì±„ë„ ê·¸ë£¹ì´ ë‹¤ë¥¸ ì±„ë„ ê·¸ë£¹ì˜ ìš°ì„  ìˆœìœ„ì— ë°€ë ¸ì„ ë•Œ
+*				  ìž„ì˜ì˜ ì˜¤ë¸Œì íŠ¸ ì±„ë„ í•˜ë‚˜ë¥¼ ê°•ì œì¢…ë£Œ ì‹œí‚¤ê³  ê·¸ ì´ë¦„ì„ ì €ìž¥í•œë‹¤
+*				  ì°¨í›„ ë¹ˆ ì±„ë„ì´ ìƒê¸°ë©´ ê°•ì œì¢…ë£Œëœ ìˆœì„œëŒ€ë¡œ ì‚¬ìš´ë“œë¥¼ í”Œë ˆì´í•œë‹¤
 *
 *****************************************************************************/
 
@@ -46,16 +46,16 @@ public:
 	virtual void			DelSleepingSound(SOUND_HANDLE hHandle);
 	virtual void			DelReleasedSound(SOUND_HANDLE hHandle);	
 
-	virtual CNtlSound*		GetReleasedSoundbyPriority();	///< °¡Àå ¿À·¡Àü¿¡ °­Á¦ Á¾·áµÈ »ç¿îµåÀÇ ÀÌ¸§À» ¹ÝÈ¯ÇÑ´Ù.
-	virtual void			SuccessRelay();					///< Á¾·á‰ç´ø »ç¿îµå¸¦ ´Ù½Ã ÇÃ·¹ÀÌÇÏ´Âµ¥ ¼º°øÇßÀ» ¶§ È£ÃâÇØ¾ß ÇÑ´Ù.
+	virtual CNtlSound*		GetReleasedSoundbyPriority();	///< ê°€ìž¥ ì˜¤ëž˜ì „ì— ê°•ì œ ì¢…ë£Œëœ ì‚¬ìš´ë“œì˜ ì´ë¦„ì„ ë°˜í™˜í•œë‹¤.
+	virtual void			SuccessRelay();					///< ì¢…ë£ŒÂ‰æ¦®?ì‚¬ìš´ë“œë¥¼ ë‹¤ì‹œ í”Œë ˆì´í•˜ëŠ”ë° ì„±ê³µí–ˆì„ ë•Œ í˜¸ì¶œí•´ì•¼ í•œë‹¤.
 
 protected:
 	virtual VOID			HandleEvents( RWS::CMsg &msg );
 
 
 public:
-	SOUND_MAP			m_mapReleasedSound;			///< »óÀ§ ±×·ì¿¡ ÀÇÇÑ °­Á¦Á¾·á‰ç´ø »ç¿îµå ÀÌ¸§
-	///< ´Ù¸¥ Ã¤³ÎÀÌ releaseµÇ¸é Â÷·Ê´ë·Î ÇÃ·¹ÀÌÇÑ´Ù.
+	SOUND_MAP			m_mapReleasedSound;			///< ìƒìœ„ ê·¸ë£¹ì— ì˜í•œ ê°•ì œì¢…ë£ŒÂ‰æ¦®?ì‚¬ìš´ë“œ ì´ë¦„
+	///< ë‹¤ë¥¸ ì±„ë„ì´ releaseë˜ë©´ ì°¨ë¡€ëŒ€ë¡œ í”Œë ˆì´í•œë‹¤.
 
-	SOUND_MAP			m_mapSleepingSound;			///< ÀÏÁ¤ ¹Ý°æ¹ÛÀÇ »ç¿îµå´Â ÇÃ·¹ÀÌµÇÁö ¾Ê°í ¸®½ºÆ®·Î °ü¸®ÇÑ´Ù
+	SOUND_MAP			m_mapSleepingSound;			///< ì¼ì • ë°˜ê²½ë°–ì˜ ì‚¬ìš´ë“œëŠ” í”Œë ˆì´ë˜ì§€ ì•Šê³  ë¦¬ìŠ¤íŠ¸ë¡œ ê´€ë¦¬í•œë‹¤
 };

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-05-12
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -30,45 +30,45 @@ enum eOPCODE_NG
 	NG_OPCODE_BEGIN = 37000,
 	NG_HEARTBEAT = NG_OPCODE_BEGIN,
 
-	NG_GAME_DATA_REQ, // ÇöÀç °ÔÀÓ µ¥ÀÌÅ¸ Àü¼Û ¿äÃ»
-	NG_ENTER_GAME_REQ, // °ÔÀÓ ÁøÀÔ ¿äÃ»
-	NG_LEAVE_GAME_REQ, // °ÔÀÓ ÁøÀÔ ¿äÃ»
-	NG_ENTER_WORLD_REQ, // ¿ÀºêÁ§Æ® ¿ùµå ÁøÀÔ ¿äÃ»
-	NG_LEAVE_WORLD_REQ, // ¿ÀºêÁ§Æ® ¿ùµå ÁøÀÔ ¿äÃ»
+	NG_GAME_DATA_REQ, // í˜„ìž¬ ê²Œìž„ ë°ì´íƒ€ ì „ì†¡ ìš”ì²­
+	NG_ENTER_GAME_REQ, // ê²Œìž„ ì§„ìž… ìš”ì²­
+	NG_LEAVE_GAME_REQ, // ê²Œìž„ ì§„ìž… ìš”ì²­
+	NG_ENTER_WORLD_REQ, // ì˜¤ë¸Œì íŠ¸ ì›”ë“œ ì§„ìž… ìš”ì²­
+	NG_LEAVE_WORLD_REQ, // ì˜¤ë¸Œì íŠ¸ ì›”ë“œ ì§„ìž… ìš”ì²­
 	NG_SPS_SERVER_EVENT,
 
-	//NG_CHAR_SPAWN_RES, // Ä³¸¯ÅÍ ½ºÆù ÀÀ´ä
-	NG_CHAR_READY, // Ä³¸¯ÅÍ ÁØºñ ¿Ï·á
-	NG_CHAR_MOVE, // Ä³¸¯ÅÍ ÀÌµ¿
-	NG_CHAR_DESTMOVE, // Ä³¸¯ÅÍ ¸ñÀûÁö ÀÌµ¿
-	NG_CHAR_FOLLOWMOVE, // Ä³¸¯ÅÍ ¸ñÇ¥ ÀÌµ¿
-	NG_CHAR_CHANGE_HEADING, // Ä³¸¯ÅÍ ¹æÇâ È¸Àü
+	//NG_CHAR_SPAWN_RES, // ìºë¦­í„° ìŠ¤í° ì‘ë‹µ
+	NG_CHAR_READY, // ìºë¦­í„° ì¤€ë¹„ ì™„ë£Œ
+	NG_CHAR_MOVE, // ìºë¦­í„° ì´ë™
+	NG_CHAR_DESTMOVE, // ìºë¦­í„° ëª©ì ì§€ ì´ë™
+	NG_CHAR_FOLLOWMOVE, // ìºë¦­í„° ëª©í‘œ ì´ë™
+	NG_CHAR_CHANGE_HEADING, // ìºë¦­í„° ë°©í–¥ íšŒì „
 
-	NG_CHAR_TARGET_SELECT, // Å¸°Ù ¼±ÅÃ
-	NG_CHAR_TOGG_FIGHT, // ÀüÅõ ¸ðµå
-	NG_CHAR_TOGG_RUN, // ÀüÅõ ¸ðµå
-	NG_CHAR_TOGG_ATTACK, // °ø°Ý ½ÃÀÛ
-	NG_CHAR_TOGG_SITDOWN,	// ¾Ê±â
+	NG_CHAR_TARGET_SELECT, // íƒ€ê²Ÿ ì„ íƒ
+	NG_CHAR_TOGG_FIGHT, // ì „íˆ¬ ëª¨ë“œ
+	NG_CHAR_TOGG_RUN, // ì „íˆ¬ ëª¨ë“œ
+	NG_CHAR_TOGG_ATTACK, // ê³µê²© ì‹œìž‘
+	NG_CHAR_TOGG_SITDOWN,	// ì•Šê¸°
 
-	NG_CHAR_DIALOG, // Ä³¸¯ÅÍ ´ëÈ­
-	NG_CHAR_DIRECT_PLAY, // Ä³¸¯ÅÍ ¿¬Ãâ
-	NG_CHAR_DIRECT_TURNING,	// Å»°Í turing
-	NG_CHAR_SET_CONDITION, // Ä³¸¯ÅÍ ÄÁµð¼Ç º¯°æ
-	NG_CHAR_BATTLE_MODE_NFY,	// characterÀÇ battleÀÇ ½ÃÀÛ°ú Á¾·á¸¦ ¾Ë¸°´Ù.
+	NG_CHAR_DIALOG, // ìºë¦­í„° ëŒ€í™”
+	NG_CHAR_DIRECT_PLAY, // ìºë¦­í„° ì—°ì¶œ
+	NG_CHAR_DIRECT_TURNING,	// íƒˆê²ƒ turing
+	NG_CHAR_SET_CONDITION, // ìºë¦­í„° ì»¨ë””ì…˜ ë³€ê²½
+	NG_CHAR_BATTLE_MODE_NFY,	// characterì˜ battleì˜ ì‹œìž‘ê³¼ ì¢…ë£Œë¥¼ ì•Œë¦°ë‹¤.
 
 	NG_CHAR_START_ESCORT_RES,	
-	NG_CHAR_INITIALIZE, // Ä³¸¯ÅÍ¸¦ ÃÊ±âÈ­ÇÑ´Ù [12/13/2007 SGpro]
-	NG_CHAR_SETSPEEDPERCENT, //Ä³¸¯ÅÍ¿¡ ¼Óµµ¸¦ ÆÛ¼¾Æ® ¸¸Å­ Á¶Á¤ÇÑ´Ù [12/13/2007 SGpro]
+	NG_CHAR_INITIALIZE, // ìºë¦­í„°ë¥¼ ì´ˆê¸°í™”í•œë‹¤ [12/13/2007 SGpro]
+	NG_CHAR_SETSPEEDPERCENT, //ìºë¦­í„°ì— ì†ë„ë¥¼ í¼ì„¼íŠ¸ ë§Œí¼ ì¡°ì •í•œë‹¤ [12/13/2007 SGpro]
 
-	NG_BOT_SKILL_REQ, // ½ºÅ³ »ç¿ë [2/4/2008 SGpro]
-	NG_SKILL_TARGET_LIST,		// ½ºÅ³ Å¸°Ù ¸ñ·Ï ¾Ë¸²
+	NG_BOT_SKILL_REQ, // ìŠ¤í‚¬ ì‚¬ìš© [2/4/2008 SGpro]
+	NG_SKILL_TARGET_LIST,		// ìŠ¤í‚¬ íƒ€ê²Ÿ ëª©ë¡ ì•Œë¦¼
 
-	NG_BOT_BOTCAUTION_NFY,// Bot °æ°í [2/20/2008 SGpro]
+	NG_BOT_BOTCAUTION_NFY,// Bot ê²½ê³  [2/20/2008 SGpro]
 
-	NG_BOT_BOTCAUTION_HELPME_NFY, // Bot Help Me °æ°í [5/27/2008 SGpro]
+	NG_BOT_BOTCAUTION_HELPME_NFY, // Bot Help Me ê²½ê³  [5/27/2008 SGpro]
 
-	NG_CHAR_DESPAWN,// Bot µð½ºÆù ¿äÃ» [7/28/2008 SGpro]
-	NG_CHAR_TELEPORT_REQ,// Bot ÅÚ·¹Æ÷Æ® ¿äÃ» [7/28/2008 SGpro]
+	NG_CHAR_DESPAWN,// Bot ë””ìŠ¤í° ìš”ì²­ [7/28/2008 SGpro]
+	NG_CHAR_TELEPORT_REQ,// Bot í…”ë ˆí¬íŠ¸ ìš”ì²­ [7/28/2008 SGpro]
 	NG_CHAR_READY_TO_SPAWN,// [8/4/2008 SGpro]
 
 	NG_CHAR_CHANGE_NICKNAME,// [11/6/2008 SGpro]
@@ -130,7 +130,7 @@ BEGIN_PROTOCOL( NG_LEAVE_WORLD_REQ )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_SPS_SERVER_EVENT )
-	HOBJECT			hSubject;				// ¹ÞÀ» Ä³¸¯ÅÍ ÇÚµé
+	HOBJECT			hSubject;				// ë°›ì„ ìºë¦­í„° í•¸ë“¤
 	BYTE			byEventType;			// eSPS_EVENT_TYPE
 	BYTE			byTriggerType;			// Trigger Type
 	DWORD			eventID;				// event id	
@@ -196,53 +196,53 @@ BEGIN_PROTOCOL( NG_CHAR_TOGG_SITDOWN )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_DIALOG )
-	HOBJECT			hSubject;				// ´ëÈ­ ÇÏ´Â Ä³¸¯ÅÍ ÇÚµé
-	BYTE			byDialogType;			// ´ëÈ­ Á¾·ù ( eCHAR_DIALOG_TYPE )
-	TBLIDX			textTblidx;				// ´ëÈ­ ³»¿ë Å×ÀÌºí ¹øÈ£ ( INVALID °¡ ¾Æ´Ï¸é ÇØ´ç ÅØ½ºÆ®¸¦ Ã£¾Æ Ãâ·ÂÇÏ°í, INVALID¸é ¾Æ·¡ÀÇ ÅØ½ºÆ®¸¦ Ãâ·ÂÇØ ÁÙ °Í)
-	bool			bIsRefSpeechTable;		// ½ºÇÇÄ¡ Å×ÀÌºíÀ» ÂüÁ¶ÇÒ °ÍÀÎÁö
-	WORD			wTextLen;				// ´ëÈ­³»¿ëÀÇ ±æÀÌ
-	WCHAR			awchText[NTL_MAX_LENGTH_OF_CHAT_MESSAGE + 1]; // ´ëÈ­³»¿ë
+	HOBJECT			hSubject;				// ëŒ€í™” í•˜ëŠ” ìºë¦­í„° í•¸ë“¤
+	BYTE			byDialogType;			// ëŒ€í™” ì¢…ë¥˜ ( eCHAR_DIALOG_TYPE )
+	TBLIDX			textTblidx;				// ëŒ€í™” ë‚´ìš© í…Œì´ë¸” ë²ˆí˜¸ ( INVALID ê°€ ì•„ë‹ˆë©´ í•´ë‹¹ í…ìŠ¤íŠ¸ë¥¼ ì°¾ì•„ ì¶œë ¥í•˜ê³ , INVALIDë©´ ì•„ëž˜ì˜ í…ìŠ¤íŠ¸ë¥¼ ì¶œë ¥í•´ ì¤„ ê²ƒ)
+	bool			bIsRefSpeechTable;		// ìŠ¤í”¼ì¹˜ í…Œì´ë¸”ì„ ì°¸ì¡°í•  ê²ƒì¸ì§€
+	WORD			wTextLen;				// ëŒ€í™”ë‚´ìš©ì˜ ê¸¸ì´
+	WCHAR			awchText[NTL_MAX_LENGTH_OF_CHAT_MESSAGE + 1]; // ëŒ€í™”ë‚´ìš©
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_DIRECT_PLAY )
-	HOBJECT			hSubject;				// ´ëÈ­ ÇÏ´Â Ä³¸¯ÅÍ ÇÚµé
-	TBLIDX			directionTblidx;		// ¿¬Ãâ Å×ÀÌºí ÀÎµ¦½º
-	BYTE			byDirectPlayType;		// ¿¬Ãâ Å¸ÀÔ
+	HOBJECT			hSubject;				// ëŒ€í™” í•˜ëŠ” ìºë¦­í„° í•¸ë“¤
+	TBLIDX			directionTblidx;		// ì—°ì¶œ í…Œì´ë¸” ì¸ë±ìŠ¤
+	BYTE			byDirectPlayType;		// ì—°ì¶œ íƒ€ìž…
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_DIRECT_TURNING )
-	HOBJECT			hSubject;				// Å»°Í handle
-	TBLIDX			directionTblidx;		// ¿¬Ãâ Å×ÀÌºí ÀÎµ¦½º
+	HOBJECT			hSubject;				// íƒˆê²ƒ handle
+	TBLIDX			directionTblidx;		// ì—°ì¶œ í…Œì´ë¸” ì¸ë±ìŠ¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_SET_CONDITION )
-	HOBJECT			hSubject;					// ´ëÈ­ ÇÏ´Â Ä³¸¯ÅÍ ÇÚµé
-	DWORD			dwAddCharConditionFlag;		// Ãß°¡ÇÒ Ä³¸¯ÅÍ ÄÁµð¼Ç
-	DWORD			dwRemoveCharConditionFlag;	// Á¦°ÅÇÒ Ä³¸¯ÅÍ ÄÁµð¼Ç	
+	HOBJECT			hSubject;					// ëŒ€í™” í•˜ëŠ” ìºë¦­í„° í•¸ë“¤
+	DWORD			dwAddCharConditionFlag;		// ì¶”ê°€í•  ìºë¦­í„° ì»¨ë””ì…˜
+	DWORD			dwRemoveCharConditionFlag;	// ì œê±°í•  ìºë¦­í„° ì»¨ë””ì…˜	
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_BATTLE_MODE_NFY )
 	HOBJECT			hSubject;
-	bool			bIsBattle;					// ÀüÅõÁßÀÎ°¡?
+	bool			bIsBattle;					// ì „íˆ¬ì¤‘ì¸ê°€?
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_START_ESCORT_RES )
-	HOBJECT			hSubject;				// ¿¡½ºÄÚÆ® ÁÖÃ¼ Ä³¸¯ÅÍ ( PC )
-	HOBJECT			hSource;				// ¿¡½ºÄÚÆ® ´ë»ó Ä³¸¯ÅÍ ( NPC )
-	WORD			wResultCode;			// ÀÀ´ä ÄÚµå
-	BYTE			byTriggerType;			// Æ®¸®°Å Å¸ÀÔ
-	NTL_TS_T_ID		tid;					// ½ÇÇà½ÃÅ³ trigger id
+	HOBJECT			hSubject;				// ì—ìŠ¤ì½”íŠ¸ ì£¼ì²´ ìºë¦­í„° ( PC )
+	HOBJECT			hSource;				// ì—ìŠ¤ì½”íŠ¸ ëŒ€ìƒ ìºë¦­í„° ( NPC )
+	WORD			wResultCode;			// ì‘ë‹µ ì½”ë“œ
+	BYTE			byTriggerType;			// íŠ¸ë¦¬ê±° íƒ€ìž…
+	NTL_TS_T_ID		tid;					// ì‹¤í–‰ì‹œí‚¬ trigger id
 	sTSM_SERIAL		sTSMSerial;
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_INITIALIZE )		// [12/13/2007 SGpro]
-	HOBJECT			hSubject;				// ÃÊ±âÈ­ÇÏ´Â Ä³¸¯ÅÍ ÇÚµé
+	HOBJECT			hSubject;				// ì´ˆê¸°í™”í•˜ëŠ” ìºë¦­í„° í•¸ë“¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_CHAR_SETSPEEDPERCENT )	// [12/13/2007 SGpro]
-	HOBJECT			hSubject;				// ÃÊ±âÈ­ÇÏ´Â Ä³¸¯ÅÍ ÇÚµé
-	float			fPercentRunSpeed;		// ´Þ¸®´Â ¼Óµµ (¹éºÐ·ü)
-	float			fPercentWalkSpeed;		// °È´Â ¼Óµµ (¹éºÐ·ü)
+	HOBJECT			hSubject;				// ì´ˆê¸°í™”í•˜ëŠ” ìºë¦­í„° í•¸ë“¤
+	float			fPercentRunSpeed;		// ë‹¬ë¦¬ëŠ” ì†ë„ (ë°±ë¶„ë¥ )
+	float			fPercentWalkSpeed;		// ê±·ëŠ” ì†ë„ (ë°±ë¶„ë¥ )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_BOT_SKILL_REQ )			// [2/4/2008 SGpro]
@@ -251,7 +251,7 @@ BEGIN_PROTOCOL( NG_BOT_SKILL_REQ )			// [2/4/2008 SGpro]
 	TBLIDX				tblidxSkill;
 	HOBJECT				hTarget;
 	// If skill effect should be applied on a target character, too, the target character must be included in both byApplyTargetCount and ahApplyTarget.
-	// ½ºÅ³ÀÇ Å¸°Ù Ä³¸¯ÅÍ°¡ ½ºÅ³ Àû¿ë ´ë»óÀÎ °æ¿ì¿¡´Â Å¸°Ù Ä³¸¯ÅÍµµ byApplyTargetCount¿Í ahApplyTarget¿¡ Æ÷ÇÔµÇ¾î¾ß ÇÑ´Ù.
+	// ìŠ¤í‚¬ì˜ íƒ€ê²Ÿ ìºë¦­í„°ê°€ ìŠ¤í‚¬ ì ìš© ëŒ€ìƒì¸ ê²½ìš°ì—ëŠ” íƒ€ê²Ÿ ìºë¦­í„°ë„ byApplyTargetCountì™€ ahApplyTargetì— í¬í•¨ë˜ì–´ì•¼ í•œë‹¤.
 	// by YOSHIKI(2007-01-12)
 	BYTE				byApplyTargetCount;
 	HOBJECT				ahApplyTarget[NTL_MAX_NUMBER_OF_SKILL_TARGET];
@@ -260,7 +260,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL( NG_SKILL_TARGET_LIST )
 	HOBJECT				hSubject;
 	// If skill effect should be applied on a target character, too, the target character must be included in both byApplyTargetCount and ahApplyTarget.
-	// ½ºÅ³ÀÇ Å¸°Ù Ä³¸¯ÅÍ°¡ ½ºÅ³ Àû¿ë ´ë»óÀÎ °æ¿ì¿¡´Â Å¸°Ù Ä³¸¯ÅÍµµ byApplyTargetCount¿Í ahApplyTarget¿¡ Æ÷ÇÔµÇ¾î¾ß ÇÑ´Ù.
+	// ìŠ¤í‚¬ì˜ íƒ€ê²Ÿ ìºë¦­í„°ê°€ ìŠ¤í‚¬ ì ìš© ëŒ€ìƒì¸ ê²½ìš°ì—ëŠ” íƒ€ê²Ÿ ìºë¦­í„°ë„ byApplyTargetCountì™€ ahApplyTargetì— í¬í•¨ë˜ì–´ì•¼ í•œë‹¤.
 	// by YOSHIKI(2007-02-22)
 	BYTE				byApplyTargetCount;
 	HOBJECT				ahApplyTarget[NTL_MAX_NUMBER_OF_SKILL_TARGET];
@@ -274,19 +274,19 @@ END_PROTOCOL()
 BEGIN_PROTOCOL( NG_BOT_BOTCAUTION_HELPME_NFY ) // [5/27/2008 SGpro]
 	HOBJECT				handle;
 	HOBJECT				hTarget;
-	bool				bIsRequester; // true : SOS¸¦ ¿äÃ»ÇÑ ÀÚ
+	bool				bIsRequester; // true : SOSë¥¼ ìš”ì²­í•œ ìž
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL( NG_CHAR_DESPAWN )// Bot µð½ºÆù ¿äÃ» [7/28/2008 SGpro]
+BEGIN_PROTOCOL( NG_CHAR_DESPAWN )// Bot ë””ìŠ¤í° ìš”ì²­ [7/28/2008 SGpro]
 	HOBJECT			handle;
-	BYTE			byTeleportType; // ÅÚ·¹Æ÷Æ®Å¸ÀÔ
+	BYTE			byTeleportType; // í…”ë ˆí¬íŠ¸íƒ€ìž…
 	WORLDID			worldId;
 	TBLIDX			worldTblidx;
 	CNtlVector		vTeleportLoc;
 	CNtlVector		vTeleportDir;
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL( NG_CHAR_TELEPORT_REQ )// Bot ÅÚ·¹Æ÷Æ® ¿äÃ» [7/28/2008 SGpro]
+BEGIN_PROTOCOL( NG_CHAR_TELEPORT_REQ )// Bot í…”ë ˆí¬íŠ¸ ìš”ì²­ [7/28/2008 SGpro]
 	HOBJECT			handle;
 END_PROTOCOL()
 //------------------------------------------------------------------
@@ -310,7 +310,7 @@ BEGIN_PROTOCOL( NG_CHAR_NONBATTLEACTIONPATTERNSET_UNITIDX_NFY )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_SEND_SPS_EVENT )
-	BYTE				byEventType;	// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_TS | SSD_SCRIPT_TYPE_TQS | SSD_SCRIPT_TYPE_WPS ¸¸ »ç¿ë
+	BYTE				byEventType;	// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_TS | SSD_SCRIPT_TYPE_TQS | SSD_SCRIPT_TYPE_WPS ë§Œ ì‚¬ìš©
 	HOBJECT				hSender;
 	BYTE				bySenderType;	// eOBJTYPE : OBJTYPE_NPC | OBJTYPE_MOB
 	TBLIDX				senderTblidx;
@@ -324,7 +324,7 @@ BEGIN_PROTOCOL( NG_SEND_SPS_EVENT )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( NG_SEND_AIS_EVENT )
-	BYTE				byEventType;	// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_TQS | SSD_SCRIPT_TYPE_WPS ¸¸ »ç¿ë
+	BYTE				byEventType;	// eSSD_SCRIPT_TYPE : SSD_SCRIPT_TYPE_TQS | SSD_SCRIPT_TYPE_WPS ë§Œ ì‚¬ìš©
 	HOBJECT				hSender;
 	BYTE				bySenderType;	// eOBJTYPE : OBJTYPE_NPC | OBJTYPE_MOB
 	TBLIDX				senderTblidx;

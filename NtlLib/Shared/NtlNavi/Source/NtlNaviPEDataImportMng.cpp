@@ -112,7 +112,7 @@ bool CNtlNaviPEDataImportMng::ImportWorlds( const char* pRootPath, vecdef_WorldI
 	WIN32_FIND_DATA FindFileData;
 	HANDLE hFind = INVALID_HANDLE_VALUE;
 
-	// ÆÄÀÏÀ» Ã£Áö ¸øÇßÀ» ¶§,
+	// íŒŒì¼ì„ ì°¾ì§€ ëª»í–ˆì„ ë•Œ,
 	hFind = FindFirstFile( (strRootPath + "*.*").c_str(), &FindFileData );
 	if ( hFind == INVALID_HANDLE_VALUE )
 	{

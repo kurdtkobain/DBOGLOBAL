@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-13
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -57,11 +57,11 @@ int CNtlSocket::StartUp()
 
 	if ( 0 != WSAStartup( MAKEWORD( 2, 2 ), &wsaData ) )
 	{
-		// Winsock DLL ¸ø Ã£À½
+		// Winsock DLL ëª» ì°¾ìŒ
 		return WSAGetLastError();
 	}
 
-	// WinsockÀÌ 2.2¸¦ Áö¿øÇÏ´ÂÁö È®ÀÎ
+	// Winsockì´ 2.2ë¥¼ ì§€ì›í•˜ëŠ”ì§€ í™•ì¸
 	if ( LOBYTE( wsaData.wVersion ) != 2 ||	HIBYTE( wsaData.wVersion ) != 2 )
 	{
 		WSACleanup();
@@ -434,11 +434,10 @@ int CNtlSocket::SetKeepAlive(DWORD dwKeepAliveTime, DWORD dwKeepAliveInterval)
 //		Purpose	:
 //		Return	:
 //-----------------------------------------------------------------------------------
-//  [1/5/2007 zeroera] : ¼³¸í : Accept°¡ ½ÇÁ¦·Î ÀÏ¾î³ªÁö ¾ÊÀ¸¸é Å¬¶óÀÌ¾ğÆ®¿¡ ACK + SYN°¡ °¡Áö ¾Ê°ÔµÇ¾î
-// BackLog·Î ÀÎÇÑ ¼±Çà Connect°¡ ÀÏ¾î³ªÁö ¾Ê´Â´Ù.
-// ÀÏÁ¤ ½Ã°£ÀÌ³»¿¡ Accept°¡ È£ÃâµÇÁö ¾ÊÀ¸¸é Å¬¶óÀÌ¾ğÆ®´Â TIMEOUT µÈ´Ù
-// performance decrease °¡ ÀÖ¾úÀ½ : ÇöÀç´Â À©µµ¿ì ÆĞÄ¡·Î ¼öÁ¤ ‰Î
-//-----------------------------------------------------------------------------------
+//  [1/5/2007 zeroera] : ì„¤ëª… : Acceptê°€ ì‹¤ì œë¡œ ì¼ì–´ë‚˜ì§€ ì•Šìœ¼ë©´ í´ë¼ì´ì–¸íŠ¸ì— ACK + SYNê°€ ê°€ì§€ ì•Šê²Œë˜ì–´
+// BackLogë¡œ ì¸í•œ ì„ í–‰ Connectê°€ ì¼ì–´ë‚˜ì§€ ì•ŠëŠ”ë‹¤.
+// ì¼ì • ì‹œê°„ì´ë‚´ì— Acceptê°€ í˜¸ì¶œë˜ì§€ ì•Šìœ¼ë©´ í´ë¼ì´ì–¸íŠ¸ëŠ” TIMEOUT ëœë‹¤
+// performance decrease ê°€ ìˆì—ˆìŒ : í˜„ì¬ëŠ” ìœˆë„ìš° íŒ¨ì¹˜ë¡œ ìˆ˜ì • Â‰?//-----------------------------------------------------------------------------------
 int CNtlSocket::SetConditionalAccept(BOOL bActive)
 {
 	int result = setsockopt( m_socket, SOL_SOCKET, SO_CONDITIONAL_ACCEPT, (char*)&bActive, sizeof(bActive) );

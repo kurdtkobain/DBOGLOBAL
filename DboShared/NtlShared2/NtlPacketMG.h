@@ -28,7 +28,7 @@ enum eOPCODE_MG
 	MG_GAME_SERVER_FARM_INFO_CHANGED_NFY,
 	MG_GAME_SERVER_CHANNEL_INFO_CHANGED_NFY,
 
-	MG_SERVER_USER_ALL_KICK_REQ,					// ¡¢º” ¡ﬂ¿Œ ªÁøÎ¿⁄¿« ∞≠¡¶ logout
+	MG_SERVER_USER_ALL_KICK_REQ,					// Ï†ëÏÜç Ï§ëÏù∏ ÏÇ¨Ïö©ÏûêÏùò Í∞ïÏ†ú logout
 	MG_SERVER_VERSION_CHANGED_NFY, // by sooshia 07/23/2008
 
 	MG_SERVER_TURNOFF_FOR_DEVEL_NFY,
@@ -169,7 +169,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL( MG_LOGIN_RES )
 	WORD					wResultCode;
 	ACCOUNTID				accountId;
-	BYTE					abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// ¿Œ¡ı≈∞
+	BYTE					abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// Ïù∏Ï¶ùÌÇ§
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( MG_MOVE_RES )

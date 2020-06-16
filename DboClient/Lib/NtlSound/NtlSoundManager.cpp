@@ -72,7 +72,7 @@ void CNtlSoundManager::Init(const char* pcPath, float fMasterVolume /* = 1.0 */,
 	m_iDebugFlag =_CrtSetDbgFlag( _CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-	// ªÁøÓµÂ ∆ƒ¿œ¿« ∞Ê∑Œ ¡ˆ¡§
+	// ÏÇ¨Ïö¥Îìú ÌååÏùºÏùò Í≤ΩÎ°ú ÏßÄÏ†ï
 	CNtlSoundGlobal::m_strFilePath = pcPath;
 
 
@@ -126,7 +126,7 @@ void CNtlSoundManager::Init(const char* pcPath, float fMasterVolume /* = 1.0 */,
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// FMOD::System¿∏∑Œ ∫Œ≈Õ MasterChannelGroup æÚæÓø¿±‚
+	// FMOD::SystemÏúºÎ°ú Î∂ÄÌÑ∞ MasterChannelGroup ÏñªÏñ¥Ïò§Í∏∞
 	////////////////////////////////////////////////////////////////////////////////////////////////////////
 	result = CNtlSoundGlobal::m_pFMODSystem->getMasterChannelGroup(&m_pMasterChannelGroup);
 	if( result != FMOD_OK )
@@ -170,9 +170,9 @@ void CNtlSoundManager::CreateChannelGroups()
 		if( i == CHANNEL_GROUP_UI_SOUND )
 		{
 			m_apChannelGroup[i] = NTL_NEW CNtlChannelGroup(CHANNEL_GROUP_UI_SOUND);
-			CNtlSoundGlobal::m_pFMODSystem->createChannelGroup("CHANNEL_GROUP_UI_SOUND", &m_pFMODChannelGroup);	// ªı∑ŒøÓ FMOD::ChannelGroup ¿ª ª˝º∫«—¥Ÿ
-			m_pMasterChannelGroup->addGroup(m_pFMODChannelGroup);				// MasterChannel¿« subGroup¿∏∑Œ µÓ∑œ
-			m_apChannelGroup[i]->Create(m_pFMODChannelGroup, 0);				// CNtlChannelGroup √ ±‚»≠
+			CNtlSoundGlobal::m_pFMODSystem->createChannelGroup("CHANNEL_GROUP_UI_SOUND", &m_pFMODChannelGroup);	// ÏÉàÎ°úÏö¥ FMOD::ChannelGroup ÏùÑ ÏÉùÏÑ±ÌïúÎã§
+			m_pMasterChannelGroup->addGroup(m_pFMODChannelGroup);				// MasterChannelÏùò subGroupÏúºÎ°ú Îì±Î°ù
+			m_apChannelGroup[i]->Create(m_pFMODChannelGroup, 0);				// CNtlChannelGroup Ï¥àÍ∏∞Ìôî
 		}
 		else if( i == CHANNEL_GROUP_JINGLE_MUSIC )
 		{
@@ -380,7 +380,7 @@ int CNtlSoundManager::Play(sNtlSoundPlayParameta* pParameta)
 
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Sound µ•¿Ã≈Õ √ ±‚»≠
+	// Sound Îç∞Ïù¥ÌÑ∞ Ï¥àÍ∏∞Ìôî
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
 	CNtlSound* pSound = NTL_NEW CNtlSound(Logic_GetNewSoundHandle(), pParameta->pcFileName );
 	pSound->m_iChannelGroup				= pParameta->iChannelGroup;
@@ -556,7 +556,7 @@ int CNtlSoundManager::ReplayEnvironmentSound(CNtlSound* pSound)
 	if( !CNtlSoundGlobal::m_pFMODSystem )
 		return SOUNDRESULT_OK;
 	/*
-	// «√∑π¿Ã ¿ßƒ° ∑Œ±◊∏¶ ¬Ô¿ª ∂ß
+	// ÌîåÎ†àÏù¥ ÏúÑÏπò Î°úÍ∑∏Î•º Ï∞çÏùÑ Îïå
 	char pcResult[256] = "";
 	sprintf_s(pcResult, "Group : %s, File : %s, X : %f, Y : %f, Z : %f, Volmue : %f, mix : %f, max : %f\n",
 	GetChannelGroupName(iChannelGroup), pcName, fXPos, fYPos, fZPos, fVolume, fMinDistance, fMaxDistance);
@@ -565,7 +565,7 @@ int CNtlSoundManager::ReplayEnvironmentSound(CNtlSound* pSound)
 
 	FMOD_RESULT		result;
 
-	// ªı∑ŒøÓ ªÁøÓµÂ∏¶ «√∑π¿Ã «“ ºˆ ¿÷¥¬ ªÛ»≤¿Œ¡ˆ √º≈©
+	// ÏÉàÎ°úÏö¥ ÏÇ¨Ïö¥ÎìúÎ•º ÌîåÎ†àÏù¥ Ìï† Ïàò ÏûàÎäî ÏÉÅÌô©Ïù∏ÏßÄ Ï≤¥ÌÅ¨
 	int iResult = CanPlay(CHANNEL_GROUP_OBJECT_MUSIC, pSound->m_strName.c_str(), pSound->m_fXPos, pSound->m_fYPos, pSound->m_fZPos);
 	if( iResult != SOUNDRESULT_OK )
 	{
@@ -576,7 +576,7 @@ int CNtlSoundManager::ReplayEnvironmentSound(CNtlSound* pSound)
 
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Sound∏¶ ∫“∑ØµÈ¿Œ¥Ÿ
+	// SoundÎ•º Î∂àÎü¨Îì§Ïù∏Îã§
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
 	CNtlObjectGroup* pEnvironmentGroup = reinterpret_cast<CNtlObjectGroup*>(m_apChannelGroup[CHANNEL_GROUP_OBJECT_MUSIC]);
 	if( LengthFromListenerToSound(pSound->m_fXPos, pSound->m_fYPos, pSound->m_fZPos) > pSound->m_fMaxDistance )
@@ -585,7 +585,7 @@ int CNtlSoundManager::ReplayEnvironmentSound(CNtlSound* pSound)
 
 	FMOD_MODE mode = d3D_SOUND_MODE;
 
-	///< Sound π›∫π ø¨¡÷
+	///< Sound Î∞òÎ≥µ Ïó∞Ï£º
 	if( pSound->m_bLoop )				
 		mode |= FMOD_LOOP_NORMAL;
 
@@ -623,9 +623,9 @@ int CNtlSoundManager::ReplayEnvironmentSound(CNtlSound* pSound)
 	}
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Sound∏¶ ø¨¡÷«—¥Ÿ
+	// SoundÎ•º Ïó∞Ï£ºÌïúÎã§
 	///////////////////////////////////////////////////////////////////////////////////////////////////////
-	// 3π¯¬∞ ¿Œ¿⁄∏¶ true∏¶ ¡÷æÓ ∏µÁ ªÁøÓµÂ¿« ºº∆√¿Ã ≥°≥Ø ∂ß ±Ó¡ˆ ªÁøÓµÂ «√∑π¿Ã∏¶ «œ¡ˆ æ ¥¬¥Ÿ.
+	// 3Î≤àÏß∏ Ïù∏ÏûêÎ•º trueÎ•º Ï£ºÏñ¥ Î™®Îì† ÏÇ¨Ïö¥ÎìúÏùò ÏÑ∏ÌåÖÏù¥ ÎÅùÎÇ† Îïå ÍπåÏßÄ ÏÇ¨Ïö¥Îìú ÌîåÎ†àÏù¥Î•º ÌïòÏßÄ ÏïäÎäîÎã§.
 	result = CNtlSoundGlobal::m_pFMODSystem->playSound(pSound->m_pFMODSound, 0, true, &(pSound->m_pFMODChannel) );
 	if( result != FMOD_OK )
 	{
@@ -642,22 +642,22 @@ int CNtlSoundManager::ReplayEnvironmentSound(CNtlSound* pSound)
 	pSound->SetMinMax(pSound->m_fMinDistance, pSound->m_fMaxDistance);
 
 
-	// Ω«¡¶∑Œ ªÁøÓµÂ∏¶ «√∑π¿Ã «—¥Ÿ.
+	// Ïã§Ï†úÎ°ú ÏÇ¨Ïö¥ÎìúÎ•º ÌîåÎ†àÏù¥ ÌïúÎã§.
 	pSound->m_pFMODChannel->setPaused(false);
 
 
-	// soundInfoø° ∫Œ∞°¡§∫∏ ¿‘∑¬
+	// soundInfoÏóê Î∂ÄÍ∞ÄÏ†ïÎ≥¥ ÏûÖÎ†•
 	pSound->m_iChannelGroup = CHANNEL_GROUP_OBJECT_MUSIC;
 	pSound->m_strName = pSound->m_strName;
 
 
-	// Channel Groupø° ø¨¡÷¡§∫∏∏¶ ¿˙¿Â«—¥Ÿ
+	// Channel GroupÏóê Ïó∞Ï£ºÏ†ïÎ≥¥Î•º Ï†ÄÏû•ÌïúÎã§
 	eStoreResult EStoreResult = m_apChannelGroup[CHANNEL_GROUP_OBJECT_MUSIC]->StoreSound(pSound, NULL);
 	switch( EStoreResult )
 	{
 		case STORE_READY_TO_PLAY:
 		{
-			// Ω«¡¶∑Œ ªÁøÓµÂ∏¶ «√∑π¿Ã «—¥Ÿ.
+			// Ïã§Ï†úÎ°ú ÏÇ¨Ïö¥ÎìúÎ•º ÌîåÎ†àÏù¥ ÌïúÎã§.
 			pSound->m_pFMODChannel->setPaused(false);
 			break;
 		}
@@ -724,9 +724,9 @@ void CNtlSoundManager::Stop(SOUND_HANDLE& rHandle)
 			break;
 	}
 
-	// ªÁøÓµÂ «⁄µÈ¿Ã ∞°¡ˆ∞Ì ¿÷¥¬ sNtlSound¿« µ•¿Ã≈Õ¿« π´∞·º∫¿∫ ∫∏¿Â«œ¡ˆ æ ¥¬¥Ÿ.
-	// ∞°¡ˆ∞Ì ¿÷¥¬ ªÁøÓµÂ «⁄µÈø° «ÿ¥Á«œ¥¬ sNtlSound¿« «√∑π¿Ã∞° ≥°≥™º≠ µ•¿Ã≈Õ∞° ¡∏¿Á«œ¡ˆ æ ¿ª ºˆµµ ¿÷¥Ÿ.
-	// æÓ¬∂µÁ Stop¿ª »£√‚«œ∏È INVALID_SOUND_HANDLE¿ª ≥÷æÓ¡÷¿⁄
+	// ÏÇ¨Ïö¥Îìú Ìï∏Îì§Ïù¥ Í∞ÄÏßÄÍ≥† ÏûàÎäî sNtlSoundÏùò Îç∞Ïù¥ÌÑ∞Ïùò Î¨¥Í≤∞ÏÑ±ÏùÄ Î≥¥Ïû•ÌïòÏßÄ ÏïäÎäîÎã§.
+	// Í∞ÄÏßÄÍ≥† ÏûàÎäî ÏÇ¨Ïö¥Îìú Ìï∏Îì§Ïóê Ìï¥ÎãπÌïòÎäî sNtlSoundÏùò ÌîåÎ†àÏù¥Í∞Ä ÎÅùÎÇòÏÑú Îç∞Ïù¥ÌÑ∞Í∞Ä Ï°¥Ïû¨ÌïòÏßÄ ÏïäÏùÑ ÏàòÎèÑ ÏûàÎã§.
+	// Ïñ¥Ï®ãÎì† StopÏùÑ Ìò∏Ï∂úÌïòÎ©¥ INVALID_SOUND_HANDLEÏùÑ ÎÑ£Ïñ¥Ï£ºÏûê
 	rHandle = INVALID_SOUND_HANDLE;
 }
 
@@ -814,7 +814,7 @@ void CNtlSoundManager::Update(float fElapsed)
 	int iBeforeChannelCount = 0, iAfterChannelCount = 0;
 	CNtlSoundGlobal::m_pFMODSystem->getChannelsPlaying(&iBeforeChannelCount);
 
-	// ∞¢ √§≥Œ Update
+	// Í∞Å Ï±ÑÎÑê Update
 	for( int i = CHANNEL_GROUP_FIRST ; i < NUM_CHANNEL_GROUP ; ++i )
 	{
 		m_apChannelGroup[i]->Update(fElapsed);
@@ -885,7 +885,7 @@ const char* CNtlSoundManager::GetSoundName(SOUND_HANDLE hHandle)
 
 	for( int i = CHANNEL_GROUP_FIRST ; i < NUM_CHANNEL_GROUP ; ++i )
 	{
-		// æÓ¬˜«« æÓ∂≤ √§≥Œ ±◊∑Ï¿Œ¡ˆ∏¶ æÀæ∆æﬂ «œ±‚ø° ∞¢∞¢¿« √§≥Œ ±◊∑Ï¿ª ∞Àªˆ«ÿæﬂ «—¥Ÿ
+		// Ïñ¥Ï∞®Ìîº Ïñ¥Îñ§ Ï±ÑÎÑê Í∑∏Î£πÏù∏ÏßÄÎ•º ÏïåÏïÑÏïº ÌïòÍ∏∞Ïóê Í∞ÅÍ∞ÅÏùò Ï±ÑÎÑê Í∑∏Î£πÏùÑ Í≤ÄÏÉâÌï¥Ïïº ÌïúÎã§
 		CNtlSound* pSound = m_apChannelGroup[i]->GetSound(hHandle);
 		if(pSound)
 		{
@@ -1053,7 +1053,7 @@ int CNtlSoundManager::CanPlay(sNtlSoundPlayParameta* pParameta)
 
 	int iResult;
 
-	// ∞¢ channelGroup ¥‹ø°º≠¿« Play ∞°¥… ø©∫Œ ∆«¥‹
+	// Í∞Å channelGroup Îã®ÏóêÏÑúÏùò Play Í∞ÄÎä• Ïó¨Î∂Ä ÌåêÎã®
 	iResult = m_apChannelGroup[pParameta->iChannelGroup]->CanPlay(pParameta->pcFileName);
 	if( iResult != SOUNDRESULT_OK )
 		return iResult;
@@ -1066,9 +1066,9 @@ int CNtlSoundManager::CanPlay(sNtlSoundPlayParameta* pParameta)
 	CNtlSoundGlobal::m_pFMODSystem->getChannelsPlaying(&iChannelCount);
 
 	if( iChannelCount  >= MAX_DBO_CHANNELS )
-	{	// ¡¶«—µ» √÷¥Î √§≥Œ ∞πºˆ∏¶ ≥—æ˙¥Ÿ. øÏº± º¯¿ß∞° ≥∑¿∫ √§≥Œ¿ª ¡¶ø‹Ω√≈≤¥Ÿ.
+	{	// Ï†úÌïúÎêú ÏµúÎåÄ Ï±ÑÎÑê Í∞ØÏàòÎ•º ÎÑòÏóàÎã§. Ïö∞ÏÑ† ÏàúÏúÑÍ∞Ä ÎÇÆÏùÄ Ï±ÑÎÑêÏùÑ Ï†úÏô∏ÏãúÌÇ®Îã§.
 		int iLowRankChannelGroup = NUM_CHANNEL_GROUP - 1;
-		unsigned int uiCurChannelCount; // √§≥Œ ±◊∑Ïø° º”«— «√∑π¿Ã¡ﬂ¿Œ √§≥Œ
+		unsigned int uiCurChannelCount; // Ï±ÑÎÑê Í∑∏Î£πÏóê ÏÜçÌïú ÌîåÎ†àÏù¥Ï§ëÏù∏ Ï±ÑÎÑê
 
 		for( ; iLowRankChannelGroup > pParameta->iChannelGroup &&
 			iLowRankChannelGroup > CHANNEL_GROUP_AMBIENT_MUSIC ; --iLowRankChannelGroup )
@@ -1076,7 +1076,7 @@ int CNtlSoundManager::CanPlay(sNtlSoundPlayParameta* pParameta)
 			uiCurChannelCount = m_apChannelGroup[iLowRankChannelGroup]->GetPlayingChannels();
 
 			if( uiCurChannelCount > 0 )
-			{	// «œ¿ß ±◊∑Ïø° «√∑π¿Ã¡ﬂ¿Œ √§≥Œ¿Ã ¿÷¥Ÿ∏È ∞≠¡¶ Release Ω√≈≤¥Ÿ.
+			{	// ÌïòÏúÑ Í∑∏Î£πÏóê ÌîåÎ†àÏù¥Ï§ëÏù∏ Ï±ÑÎÑêÏù¥ ÏûàÎã§Î©¥ Í∞ïÏ†ú Release ÏãúÌÇ®Îã§.
 				if( m_apChannelGroup[iLowRankChannelGroup]->ReleaseLowRankChannel() )
 					return SOUNDRESULT_OK;
 			}
@@ -1103,7 +1103,7 @@ int CNtlSoundManager::CanPlay(int iChannelGroups, const char* pcName, float fPos
 		return SOUNDRESULT_EMPTY_FILENAME;
 	}
 
-	// ∞¢ √§≥Œ±◊∑Ï∫∞ ø¨¡÷ ∞°¥…«— ¡ˆø™ π¸¿ß¿« ªÁøÓµÂ¿Œ¡ˆ ∞ÀªÁ
+	// Í∞Å Ï±ÑÎÑêÍ∑∏Î£πÎ≥Ñ Ïó∞Ï£º Í∞ÄÎä•Ìïú ÏßÄÏó≠ Î≤îÏúÑÏùò ÏÇ¨Ïö¥ÎìúÏù∏ÏßÄ Í≤ÄÏÇ¨
 	if( !IsValidGroupRange(iChannelGroups, fPosX, fPosY, fPosZ) )
 	{
 #ifdef SOUND_DEBUG_LOG
@@ -1114,22 +1114,22 @@ int CNtlSoundManager::CanPlay(int iChannelGroups, const char* pcName, float fPos
 
 	int iResult;
 
-	// ∞¢ channelGroup ¥‹ø°º≠¿« Play ∞°¥… ø©∫Œ ∆«¥‹
+	// Í∞Å channelGroup Îã®ÏóêÏÑúÏùò Play Í∞ÄÎä• Ïó¨Î∂Ä ÌåêÎã®
 	iResult = m_apChannelGroup[iChannelGroups]->CanPlay(pcName);
 	if( iResult != SOUNDRESULT_OK )
 		return iResult;
 
-	// ¥ı ¿ÃªÛ ø©∫–¿« √§≥Œ¿Ã æ¯¿ª Ω√
-	// ∞°¿Â «œ¿ß √§≥Œ ±◊∑Ï¿« ¿”¿«¿« √§≥Œ¿ª ¡ﬂ¥‹Ω√≈∞∞Ì ªı∑ŒøÓ ªÁøÓµÂ∏¶ «√∑π¿Ã
-	// «—¥Ÿ. ªı∑Œ «√∑π¿Ã«œ∑¡¥¬ ªÁøÓµÂ∞° √÷«œ¿ß ±◊∑Ï¿Ã∂Û∏È «√∑π¿Ãµ«¡ˆ æ ¥¬¥Ÿ.
-	// ∂««— Jingle Music, BGM ±◊∑Ï¿∫ øÏº±º¯¿ßø° øµ«‚¿ª πﬁæ∆ ¡ﬂ¥‹µ«¡ˆ æ ¥¬¥Ÿ.
+	// Îçî Ïù¥ÏÉÅ Ïó¨Î∂ÑÏùò Ï±ÑÎÑêÏù¥ ÏóÜÏùÑ Ïãú
+	// Í∞ÄÏû• ÌïòÏúÑ Ï±ÑÎÑê Í∑∏Î£πÏùò ÏûÑÏùòÏùò Ï±ÑÎÑêÏùÑ Ï§ëÎã®ÏãúÌÇ§Í≥† ÏÉàÎ°úÏö¥ ÏÇ¨Ïö¥ÎìúÎ•º ÌîåÎ†àÏù¥
+	// ÌïúÎã§. ÏÉàÎ°ú ÌîåÎ†àÏù¥ÌïòÎ†§Îäî ÏÇ¨Ïö¥ÎìúÍ∞Ä ÏµúÌïòÏúÑ Í∑∏Î£πÏù¥ÎùºÎ©¥ ÌîåÎ†àÏù¥ÎêòÏßÄ ÏïäÎäîÎã§.
+	// ÎòêÌïú Jingle Music, BGM Í∑∏Î£πÏùÄ Ïö∞ÏÑ†ÏàúÏúÑÏóê ÏòÅÌñ•ÏùÑ Î∞õÏïÑ Ï§ëÎã®ÎêòÏßÄ ÏïäÎäîÎã§.
 	int iChannelCount = 0;
 	CNtlSoundGlobal::m_pFMODSystem->getChannelsPlaying(&iChannelCount);
 
 	if( iChannelCount  >= MAX_DBO_CHANNELS )
-	{	// ¡¶«—µ» √÷¥Î √§≥Œ ∞πºˆ∏¶ ≥—æ˙¥Ÿ. øÏº± º¯¿ß∞° ≥∑¿∫ √§≥Œ¿ª ¡¶ø‹Ω√≈≤¥Ÿ.
+	{	// Ï†úÌïúÎêú ÏµúÎåÄ Ï±ÑÎÑê Í∞ØÏàòÎ•º ÎÑòÏóàÎã§. Ïö∞ÏÑ† ÏàúÏúÑÍ∞Ä ÎÇÆÏùÄ Ï±ÑÎÑêÏùÑ Ï†úÏô∏ÏãúÌÇ®Îã§.
 		int iLowRankChannelGroup = NUM_CHANNEL_GROUP - 1;
-		unsigned int uiCurChannelCount; // √§≥Œ ±◊∑Ïø° º”«— «√∑π¿Ã¡ﬂ¿Œ √§≥Œ
+		unsigned int uiCurChannelCount; // Ï±ÑÎÑê Í∑∏Î£πÏóê ÏÜçÌïú ÌîåÎ†àÏù¥Ï§ëÏù∏ Ï±ÑÎÑê
 
 		for( ; iLowRankChannelGroup > iChannelGroups &&
 			iLowRankChannelGroup > CHANNEL_GROUP_AMBIENT_MUSIC ; --iLowRankChannelGroup )
@@ -1137,7 +1137,7 @@ int CNtlSoundManager::CanPlay(int iChannelGroups, const char* pcName, float fPos
 			uiCurChannelCount = m_apChannelGroup[iLowRankChannelGroup]->GetPlayingChannels();
 
 			if( uiCurChannelCount > 0 )
-			{	// «œ¿ß ±◊∑Ïø° «√∑π¿Ã¡ﬂ¿Œ √§≥Œ¿Ã ¿÷¥Ÿ∏È ∞≠¡¶ Release Ω√≈≤¥Ÿ.
+			{	// ÌïòÏúÑ Í∑∏Î£πÏóê ÌîåÎ†àÏù¥Ï§ëÏù∏ Ï±ÑÎÑêÏù¥ ÏûàÎã§Î©¥ Í∞ïÏ†ú Release ÏãúÌÇ®Îã§.
 				if( m_apChannelGroup[iLowRankChannelGroup]->ReleaseLowRankChannel() )
 					return SOUNDRESULT_OK;
 			}

@@ -2,7 +2,7 @@
 //	File		:	NtlBlurCamera.cpp
 //	Desc		:	
 //	Begin		:	2006. 2.13
-//	Copyright	:	®œ 2006 by Mahwang CO., Ltd
+//	Copyright	:	‚ìí 2006 by Mahwang CO., Ltd
 //	Author		:	Mahwang
 //	Update		:	
 //***********************************************************************************
@@ -574,7 +574,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering(RwRGBA& color)
 	RwRenderStateSet(rwRENDERSTATECULLMODE,	(void *)rwCULLMODECULLNONE);
 
 	// ==========================================
-	// »≠∏È √‡º“«œ±‚
+	// ÌôîÎ©¥ Ï∂ïÏÜåÌïòÍ∏∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_NONE);
 	RwCameraClear(m_pReductionCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
@@ -593,7 +593,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering(RwRGBA& color)
 
 
 	// ==========================================
-	// √‡º“»≠∏È ∫Ì∑Ø ∏‘¿Ã±‚
+	// Ï∂ïÏÜåÌôîÎ©¥ Î∏îÎü¨ Î®πÏù¥Í∏∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_16BOX);
 	m_lpEffect->SetFloat(m_hMapWidth, (RwReal)m_nTextureReductionSize);
@@ -632,7 +632,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering(RwRGBA& color)
 
 
 	// ==========================================
-	// »≠∏È »Æ¥Î«œ±‚
+	// ÌôîÎ©¥ ÌôïÎåÄÌïòÍ∏∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_NONE);
 	RwCameraClear(m_pTempCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
@@ -661,7 +661,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering(RwRGBA& color)
 RwBool CNtlPostEffectCamera::BeginCameraUpdate(RwRGBA& color)
 {
 	// ==========================================
-	// √÷¡æ¿˚¿∏∑Œ ±◊∏Æ±‚
+	// ÏµúÏ¢ÖÏ†ÅÏúºÎ°ú Í∑∏Î¶¨Í∏∞
 	// ==========================================
 	RwCameraClear(m_pBlurCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
 	if(RwCameraBeginUpdate(m_pBlurCamera))
@@ -761,7 +761,7 @@ void CNtlPostEffectCamera::EndCameraUpdate(RwRGBA& color)
 
 //-------------------------------------------------------------
 // Name: CreateReductionTexture()
-// Desc: ∞°¡ﬂƒ° ∞ËªÍ
+// Desc: Í∞ÄÏ§ëÏπò Í≥ÑÏÇ∞
 //-------------------------------------------------------------
 void CNtlPostEffectCamera::CreateReductionTexture(RwInt32 nTextureSize)
 {

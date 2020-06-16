@@ -5,7 +5,7 @@
 const DWORD		DBO_MAX_LENGTH_BOT_NAME_TEXT = 40;
 const DWORD		DBO_MAX_LENGTH_BOT_CAMERA_BONE_NAME = 32;
 const DWORD		DBO_MAX_LENGTH_BOT_ILLUST_NAME = 32;
-// NPC/MOB/PET¿« ∞¯≈Î º”º∫ µ•¿Ã≈∏
+// NPC/MOB/PETÏùò Í≥µÌÜµ ÏÜçÏÑ± Îç∞Ïù¥ÌÉÄ
 #pragma pack(push, 4)
 struct sBOT_TBLDAT : public sCHAR_TBLDAT
 {

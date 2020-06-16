@@ -6,7 +6,7 @@
 
 /**
 * \brief NTL Storage Define Mapping Table
-* 1¹øÀº Ä«Å×°í¸®·Î ÇöÀçÀÇ °ªÀÌ Ä«Å×°í¸®ÀÓÀ» ¾Ë¸°´Ù.
+* 1ë²ˆì€ ì¹´í…Œê³ ë¦¬ë¡œ í˜„ì¬ì˜ ê°’ì´ ì¹´í…Œê³ ë¦¬ì„ì„ ì•Œë¦°ë‹¤.
 */
 SNtlStorageMappingTableData CNtlStorageMTContainer::m_StorageMappingTable[] = {
 // Table rule
@@ -113,7 +113,7 @@ SNtlStorageMappingTableData CNtlStorageMTContainer::m_StorageMappingTable[] = {
 
 
 // You have to insert the table data after the current line. 
-// ¹İµå½Ã ÇöÀç ¶óÀÎ ´ÙÀ½¿¡ Ãß°¡ÇÏ¿©¾ß ÇÕ´Ï´Ù.
+// ë°˜ë“œì‹œ í˜„ì¬ ë¼ì¸ ë‹¤ìŒì— ì¶”ê°€í•˜ì—¬ì•¼ í•©ë‹ˆë‹¤.
 
 // Table End ----------------------------------------------------------------------------
 };
@@ -130,26 +130,26 @@ CNtlStorageMTContainer::~CNtlStorageMTContainer(void)
 }
 
 /**
-* \brief ¹Ì¸® Å×ÀÌºíÀ» ÇÑ¹ø ¼øÈ¸ÇÏ¿© Ä«Å×°í¸®º°, IDº° Æ÷ÀÎÅÍ¸¦ ÀúÀåÇÏ°í ÀÖ´Â´Ù.
+* \brief ë¯¸ë¦¬ í…Œì´ë¸”ì„ í•œë²ˆ ìˆœíšŒí•˜ì—¬ ì¹´í…Œê³ ë¦¬ë³„, IDë³„ í¬ì¸í„°ë¥¼ ì €ì¥í•˜ê³  ìˆëŠ”ë‹¤.
 */
 bool CNtlStorageMTContainer::SortTable()
 {
-	// Å×ÀÌºí °¹¼ö¸¦ ÀĞ¾îµé¿©¼­ ÀúÀåÇØ³õ´Â´Ù.
+	// í…Œì´ë¸” ê°¯ìˆ˜ë¥¼ ì½ì–´ë“¤ì—¬ì„œ ì €ì¥í•´ë†“ëŠ”ë‹¤.
 	m_uiCount = _countof(m_StorageMappingTable);
 
 	for( unsigned int i=0; i < m_uiCount; ++i )
 	{
-		// Ä«Å×°í¸®º°·Î µî·Ï
+		// ì¹´í…Œê³ ë¦¬ë³„ë¡œ ë“±ë¡
 		m_mmapCategory.insert(
 			std::make_pair( m_StorageMappingTable[i].byCategoryType,
 			&m_StorageMappingTable[i] ));
 
-		// KEY ID¸¦ Key·Î ÇÏ¿© µî·Ï
+		// KEY IDë¥¼ Keyë¡œ í•˜ì—¬ ë“±ë¡
 		m_mapTable.insert(
 			std::make_pair( m_StorageMappingTable[i].uiKey,
 			&m_StorageMappingTable[i] ));
 
-		// STRINGÀ» Key·Î µî·Ï
+		// STRINGì„ Keyë¡œ ë“±ë¡
 		std::string strKey;
 		strKey.append(m_StorageMappingTable[i].acKeyName);
 		
@@ -168,12 +168,12 @@ bool CNtlStorageMTContainer::SetUnitCheckFunc( unsigned int uiKey, NtlStorageUni
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return false;
 	}
 
-	// »õ·Î¿î ÇÔ¼ö Æ÷ÀÎÅÍ ¼³Á¤
+	// ìƒˆë¡œìš´ í•¨ìˆ˜ í¬ì¸í„° ì„¤ì •
 	SNtlStorageMappingTableData* pData = it->second;
 	pData->ntlStorageFunc = funcApply;
 
@@ -185,7 +185,7 @@ NtlStorageUnitCheckFunc CNtlStorageMTContainer::GetUnitCheckFunc( unsigned int u
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return NULL;
 	}
@@ -203,7 +203,7 @@ eNTL_STORAGE_VARIABLE_TYPE CNtlStorageMTContainer::GetVariableType( unsigned int
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return eNTL_STORAGE_VARIABLE_INVALID;
 	}
@@ -216,7 +216,7 @@ eNTL_STORAGE_TYPE CNtlStorageMTContainer::GetStorageType( unsigned int uiKey )
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return eNTL_STORAGE_INVALID;
 	}
@@ -229,7 +229,7 @@ const char* CNtlStorageMTContainer::GetString( unsigned int uiKey )
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return NULL;
 	}
@@ -242,7 +242,7 @@ const char* CNtlStorageMTContainer::GetDefaultString( unsigned int uiKey )
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return NULL;
 	}
@@ -255,7 +255,7 @@ bool CNtlStorageMTContainer::GetDefaultBool( unsigned int uiKey )
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return false;
 	}
@@ -273,7 +273,7 @@ int CNtlStorageMTContainer::GetDefaultInt( unsigned int uiKey )
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return 0xFFFFFFFF;
 	}
@@ -286,7 +286,7 @@ float CNtlStorageMTContainer::GetDefaultFloat( unsigned int uiKey )
 	TABLEMAP::iterator it = m_mapTable.find( uiKey );
 	if( it == m_mapTable.end() )
 	{
-		// Å×ÀÌºí¿¡ µî·ÏµÇ¾î ÀÖ´Â KEY°¡ ¾ø´Ù.
+		// í…Œì´ë¸”ì— ë“±ë¡ë˜ì–´ ìˆëŠ” KEYê°€ ì—†ë‹¤.
 
 		return 0.0f;
 	}

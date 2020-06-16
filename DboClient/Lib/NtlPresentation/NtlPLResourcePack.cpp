@@ -326,10 +326,10 @@ void CNtlPLResoucePackManager::GetAllFiles(std::string& strOffsetFolder, std::li
 
 		if(FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 		{
-			//  µğ·ºÅä¸®ÀÌ¸é
+			//  ë””ë ‰í† ë¦¬ì´ë©´
 			if(FindFileData.cFileName[0] == '.')
 			{
-				//  Dot µğ·ºÅä¸®´Â ½ºÅµÇÑ´Ù.
+				//  Dot ë””ë ‰í† ë¦¬ëŠ” ìŠ¤í‚µí•œë‹¤.
 			} 
 			else
 			{
@@ -491,7 +491,7 @@ RwInt32 CNtlPLResoucePackManager::SavePack(RwUInt8 byPackType, std::list<std::st
 	pResPack->ClearHeader();
 
 	//----------------------------------------------------
-	// ÇöÀçÀÇ directory¸¦ ¼³Á¤ÇÑ´Ù.
+	// í˜„ì¬ì˜ directoryë¥¼ ì„¤ì •í•œë‹¤.
 	RwChar strCurPath[NTL_MAX_DIR_PATH];
 	::GetCurrentDirectory(NTL_MAX_DIR_PATH, strCurPath);
 
@@ -644,7 +644,7 @@ RwChar*	CNtlPLResoucePackManager::UnPackLeadBuffer(RwChar* pBuffer, const RwChar
 
 void CNtlPLResoucePackManager::UnPackSaveBuffer(const RwChar *pFileName, const RwChar *pBuffer, SFilePackHeaderElement *pElement)
 {
-    // ÀĞ±â Àü¿ëµµ µ¤¾î¾µ¼ö ÀÖµµ·Ï ¼Ó¼ºÀ» º¯È¯ÇÑ´Ù.
+    // ì½ê¸° ì „ìš©ë„ ë®ì–´ì“¸ìˆ˜ ìˆë„ë¡ ì†ì„±ì„ ë³€í™˜í•œë‹¤.
     ::SetFileAttributes(pFileName, FILE_ATTRIBUTE_NORMAL);
 
 	FILE *fp = NULL;
@@ -878,7 +878,7 @@ void CNtlPLResoucePackManager::FilterPathBuffer(const RwChar *pPath, const RwCha
 	RwInt32 iOffset = 0;
 	RwInt32 iLen = 0;
 
-	// È®ÀåÀÚ filter ¸¸µé±â.
+	// í™•ì¥ì filter ë§Œë“¤ê¸°.
 	iLen = (RwInt32)strlen(pFileName);
 	for(RwInt32 i = 0; i < iLen; i++)
 	{
@@ -901,7 +901,7 @@ void CNtlPLResoucePackManager::FilterPathBuffer(const RwChar *pPath, const RwCha
 	if(pPath == NULL)
 		return;
 
-	// path¸¦ ¼Ò¹®ÀÚ·Î ¸¸µé±â.
+	// pathë¥¼ ì†Œë¬¸ìë¡œ ë§Œë“¤ê¸°.
 	m_iCurrPathNum = 0;
 	iOffset = 0;
 	iLen = (RwInt32)strlen(pPath);
@@ -1263,7 +1263,7 @@ void CNtlPLResoucePackManager::LoadFlash(const RwChar *pFileName, void **pData, 
 	if(pElement == NULL)
 		return;
 
-	// Flash Size´Â int·Î ÇÑÁ¤.
+	// Flash SizeëŠ” intë¡œ í•œì •.
 	if(pElement->uiSize >= 0x80000000 )
 		return;
 

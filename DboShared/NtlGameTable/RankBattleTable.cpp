@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-06-07
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Ju-hyoung   ( niam@ntl-inc.com )
 //

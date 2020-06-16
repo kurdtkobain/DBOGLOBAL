@@ -4,7 +4,7 @@
 //
 //	Begin		:	2009-8-14
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung Doo sup   ( john@ntl-inc.com )
 //
@@ -101,7 +101,7 @@ bool CHLSItemTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		if( pExistTbldat )
 		{
 			CopyMemory( pTbldat, pExistTbldat, pTbldat->GetDataSize() );
-			// µ¥ÀÌÅ¸ÀÇ ¸®·Îµå ¼º°øÀ» À§ÇÑ true ¹İÈ¯
+			// ë°ì´íƒ€ì˜ ë¦¬ë¡œë“œ ì„±ê³µì„ ìœ„í•œ true ë°˜í™˜
 			return true;  
 		}
 	}

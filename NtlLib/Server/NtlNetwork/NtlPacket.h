@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-13
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -45,7 +45,7 @@ typedef struct PACKETDATA
 const int		PACKET_LIMIT_SIZE = 0x7FFF; // except encrypt 1 bit
 const int		PACKET_HEADSIZE	= sizeof(STHeaderBase);
 const WORD		PACKET_MAX_SEQUENCE = 0xFFFF; // max value of packet sequence
-const int		PACKET_MAX_SIZE = 4095; // ÀÏ¹İÀûÀ¸·Î »ç¿ëµÇ´Â packet ÃÖ´ë °ª
+const int		PACKET_MAX_SIZE = 4095; // ì¼ë°˜ì ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” packet ìµœëŒ€ ê°’
 //------------------------------------------------------------------
 
 
@@ -125,7 +125,7 @@ public:
 	//
 	void							SetUsedSize(WORD wSize) { m_wBufferUsedSize = wSize; }
 
-	// ÇöÀç »ç¿ëµÇ´Â ¹öÆÛ±æÀÌ¸¦ ¼¼ÆÃµÇ¾îÀÖ´Â ¸Ş½ÃÁöÅ©±â·Î º¯°æÇÑ´Ù
+	// í˜„ì¬ ì‚¬ìš©ë˜ëŠ” ë²„í¼ê¸¸ì´ë¥¼ ì„¸íŒ…ë˜ì–´ìˆëŠ” ë©”ì‹œì§€í¬ê¸°ë¡œ ë³€ê²½í•œë‹¤
 	void							SetPacketLenToUsedSize() { m_wBufferUsedSize = GetPacketLen(); } 
 
 	//
@@ -198,21 +198,21 @@ protected:
 protected:
 
 
-	BYTE *							m_pAllocateBuffer;					// ¸Ş½ÃÁö ¹öÆÛ Æ÷ÀÎÅÍ
+	BYTE *							m_pAllocateBuffer;					// ë©”ì‹œì§€ ë²„í¼ í¬ì¸í„°
 
-	BYTE *							m_pPacketBufferPtr;					// ¸Ş½ÃÁö ¹öÆÛ Æ÷ÀÎÅÍ
+	BYTE *							m_pPacketBufferPtr;					// ë©”ì‹œì§€ ë²„í¼ í¬ì¸í„°
 
-	BYTE *							m_pEndPos;							// ¸Ş½ÃÁö ¹öÆÛÀÇ ¸Ç ³¡Á¡ (Á¢±Ù½Ã ÀÌ ÁöÁ¡À» ³Ñ¾î¼­¸é ¾ÈµÈ´Ù)
+	BYTE *							m_pEndPos;							// ë©”ì‹œì§€ ë²„í¼ì˜ ë§¨ ëì  (ì ‘ê·¼ì‹œ ì´ ì§€ì ì„ ë„˜ì–´ì„œë©´ ì•ˆëœë‹¤)
 
-	WORD							m_wBufferUsedSize;					// ¸Ş½ÃÁö ¹öÆÛÀÇ »ç¿ë Å©±â
+	WORD							m_wBufferUsedSize;					// ë©”ì‹œì§€ ë²„í¼ì˜ ì‚¬ìš© í¬ê¸°
 
 
-	LPSTHeaderBase					m_pPacketHeader;					// ÆĞÅ¶Çì´õ
+	LPSTHeaderBase					m_pPacketHeader;					// íŒ¨í‚·í—¤ë”
 		
-	BYTE *							m_pPacketData;						// ÆĞÅ¶µ¥ÀÌÅÍ
+	BYTE *							m_pPacketData;						// íŒ¨í‚·ë°ì´í„°
 
-	BYTE *							m_pReadDataPos;						// ÀĞ±â µ¥ÀÌÅ¸ À§Ä¡
+	BYTE *							m_pReadDataPos;						// ì½ê¸° ë°ì´íƒ€ ìœ„ì¹˜
 
-	BYTE *							m_pWriteDataPos;					// ¾²±â µ¥ÀÌÅ¸ À§Ä¡
+	BYTE *							m_pWriteDataPos;					// ì“°ê¸° ë°ì´íƒ€ ìœ„ì¹˜
 
 };

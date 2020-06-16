@@ -234,7 +234,7 @@ void CNtlSobCharDecorationProxy::SobFaintingEventHandler(RWS::CMsg &pMsg)
 	DeletePLTargetMark();
     DeletePLAttackMark();
     
-    // ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ ¿ì½Â ¸¶Å©¸¦ ¾ø¾Ø´Ù
+    // ì²œí•˜ì œì¼ ë¬´ë„íšŒ ìš°ìŠ¹ ë§ˆí¬ë¥¼ ì—†ì•¤ë‹¤
     if(m_pTenkaichiMark)
     {
         m_pTenkaichiMark->SetVisible(FALSE);
@@ -343,7 +343,7 @@ void CNtlSobCharDecorationProxy::CreatePLShadowDecal(void)
 
 	m_fDefShadowScale = fVariScale * fShadowWeightScale*(fModelWidth + fModelDepth)/2.0f;
 
-    // ³Ê¹« Å«°æ¿ì¿¡´Â Á¦ÇÑÀ» ½ÃÄÑÁØ´Ù.
+    // ë„ˆë¬´ í°ê²½ìš°ì—ëŠ” ì œí•œì„ ì‹œì¼œì¤€ë‹¤.
     if(m_fDefShadowScale > 10.0f)
         m_fDefShadowScale = 10.0f;
 
@@ -354,7 +354,7 @@ void CNtlSobCharDecorationProxy::CreatePLShadowDecal(void)
 	param.fVisibleSquaredDist = 1600.0f;	
 	param.pTexName = "shadow.dds";
 	param.pTexPath = ".\\texture\\effect\\";
-	param.fYOffset = 0.01f;						// ÁöÇü DecalÀÌ 0.1fÀÌ´Ù. ÁöÇü Decal À§·Î ±×¸²ÀÚ¸¦ Ç¥ÇöÇÏ±â À§ÇØ Á¶±İ ´õ ¶Ù¿î´Ù. (by agebreak 2007.5.11)
+	param.fYOffset = 0.01f;						// ì§€í˜• Decalì´ 0.1fì´ë‹¤. ì§€í˜• Decal ìœ„ë¡œ ê·¸ë¦¼ìë¥¼ í‘œí˜„í•˜ê¸° ìœ„í•´ ì¡°ê¸ˆ ë” ë›°ìš´ë‹¤. (by agebreak 2007.5.11)
 	param.eDecalType = DECAL_TERRAIN;    
 
 	if(m_bShadowCreate)
@@ -362,7 +362,7 @@ void CNtlSobCharDecorationProxy::CreatePLShadowDecal(void)
 		m_pShadowDecal = static_cast<CNtlPLDecal*>(GetSceneManager()->CreateEntity(PLENTITY_DECAL, "NULL", &param));
 		NTL_ASSERT(m_pShadowDecal, "CNtlSobCharProxy::CreatePLShadowDecal");
 		
-		// ÄÃ·¯ ¼³Á¤
+		// ì»¬ëŸ¬ ì„¤ì •
 		RwRGBA clrShadow;
 		GetSceneManager()->GetWorldShadowColor(m_pPLCharacter->GetPosition(), &clrShadow);
 		clrShadow.red = (RwUInt8)((RwReal)clrShadow.red * DECAL_RATIO);
@@ -472,7 +472,7 @@ void CNtlSobCharDecorationProxy::CreatePLAttackMark(void)
     
     if(m_pShareTargetMark && m_pShareTargetMark->IsShareTargeting())
     {
-        // °øÀ¯ Å¸°Ù ¼³Á¤ÀÌ µÇ¾î ÀÖÀ¸¸é ÀÏ¹İ ¸¶Å©´Â ¶ßÁö ¾Ê´Â´Ù.
+        // ê³µìœ  íƒ€ê²Ÿ ì„¤ì •ì´ ë˜ì–´ ìˆìœ¼ë©´ ì¼ë°˜ ë§ˆí¬ëŠ” ëœ¨ì§€ ì•ŠëŠ”ë‹¤.
         CreateShareTargetMark(m_pShareTargetMark->GetSlot(), CNtlShareTargetMark::SHARE_TARGET_ATTACK);
         return;
     }
@@ -517,7 +517,7 @@ void CNtlSobCharDecorationProxy::CreatePLTargetMark(void)
 
     if(m_pShareTargetMark && m_pShareTargetMark->IsShareTargeting())
     {
-        // °øÀ¯ Å¸°Ù ¼³Á¤ÀÌ µÇ¾î ÀÖÀ¸¸é ÀÏ¹İ ¸¶Å©´Â ¶ßÁö ¾Ê´Â´Ù.
+        // ê³µìœ  íƒ€ê²Ÿ ì„¤ì •ì´ ë˜ì–´ ìˆìœ¼ë©´ ì¼ë°˜ ë§ˆí¬ëŠ” ëœ¨ì§€ ì•ŠëŠ”ë‹¤.
         CreateShareTargetMark(m_pShareTargetMark->GetSlot(), CNtlShareTargetMark::SHARE_TARGET_TARGET);
         return;
     }
@@ -944,7 +944,7 @@ void CNtlSobCharDecorationProxy::ResourceLoadComplete(RwBool bVisible)
 		if( m_pPlayerName->IsEnablePlayerNameVisible() )
 			m_pPlayerName->SetVisible(bVisible);
 
-		// m_bNameVisible ÀÌ FALSE ÀÎµ¥ ÇöÀç m_pPlayerNameÀÌ SetVisible(TRUE)·Î ¼¼ÆÃµÆ´Ù¸é ¾È º¸ÀÌ°Ô ÇØÁØ´Ù.
+		// m_bNameVisible ì´ FALSE ì¸ë° í˜„ì¬ m_pPlayerNameì´ SetVisible(TRUE)ë¡œ ì„¸íŒ…ëë‹¤ë©´ ì•ˆ ë³´ì´ê²Œ í•´ì¤€ë‹¤.
 		if( !m_pPlayerName->IsEnablePlayerNameVisible() && m_pPlayerName->IsVisible() )
 			m_pPlayerName->SetVisible(FALSE);
 	}
@@ -971,7 +971,7 @@ RwBool CNtlSobCharDecorationProxy::AttachRPBonusEffect()
     if(!m_vecRPBonusEffect.empty())
         return FALSE;
 
-    // RP Bonus°¡ ºÙÀ» º» ¸®½ºÆ®
+    // RP Bonusê°€ ë¶™ì„ ë³¸ ë¦¬ìŠ¤íŠ¸
     std::string strBoneList1[7];
     std::string strBoneList2;
     strBoneList1[0] = "Bip01 Head";
@@ -984,7 +984,7 @@ RwBool CNtlSobCharDecorationProxy::AttachRPBonusEffect()
     strBoneList2 = "Bip01 Pelvis";    
 
     CNtlInstanceEffect* pEffect;
-    for(int i = 0; i < 7; ++i)      // ÀÛÀº ÀÌÆåÆ®
+    for(int i = 0; i < 7; ++i)      // ì‘ì€ ì´í™íŠ¸
     {
         if(m_pPLCharacter->GetBoneByName(strBoneList1[i].c_str()))
         {
@@ -997,7 +997,7 @@ RwBool CNtlSobCharDecorationProxy::AttachRPBonusEffect()
         }        
     }
 
-    if(m_pPLCharacter->GetBoneByName(strBoneList2.c_str())) // Å« ÀÌÆåÆ®
+    if(m_pPLCharacter->GetBoneByName(strBoneList2.c_str())) // í° ì´í™íŠ¸
     {
         pEffect = (CNtlInstanceEffect*)GetSceneManager()->CreateEntity(PLENTITY_EFFECT, NTL_VID_RPBONUS_BIG);
         if(pEffect)
@@ -1149,7 +1149,7 @@ void CNtlSobCharDecorationProxy::SobShareTargetSelectHandler( RWS::CMsg& pMsg )
     SNtlEventShareTargetSelect* pData = (SNtlEventShareTargetSelect*)pMsg.pData;
     if(pData->hSerialId == m_pSobObj->GetSerialID())
     {
-        // ±âÁ¸ Å¸°Ù ¸¶Å©¸¦ »èÁ¦ÇÏ±â Àü¿¡ ÇöÀç »óÅÂ¸¦ ÀúÀåÇØµĞ´Ù
+        // ê¸°ì¡´ íƒ€ê²Ÿ ë§ˆí¬ë¥¼ ì‚­ì œí•˜ê¸° ì „ì— í˜„ì¬ ìƒíƒœë¥¼ ì €ì¥í•´ë‘”ë‹¤
         RwBool bAttackMode = m_pAttackMark ? TRUE : FALSE;
         RwBool bTargetMode = m_pTargetMark ? TRUE : FALSE;
 
@@ -1208,7 +1208,7 @@ void CNtlSobCharDecorationProxy::SobTitleEffectHandler(RWS::CMsg & pMsg)
 
 RwBool CNtlSobCharDecorationProxy::IsNotCreateDecalMark() 
 {
-    // ¹ö½º´Â ¹Ù´Ú µ¥Ä®À» ±×¸®Áö ¾Ê´Â´Ù.
+    // ë²„ìŠ¤ëŠ” ë°”ë‹¥ ë°ì¹¼ì„ ê·¸ë¦¬ì§€ ì•ŠëŠ”ë‹¤.
     return Logic_IsBus((CNtlSobActor*)m_pSobObj);
 }
 

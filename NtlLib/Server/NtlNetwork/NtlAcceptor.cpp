@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-12-13
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	Network Á¢¼ÓÀ» ¹Ş¾ÆµéÀÌ´Â Acceptor Å¬·¡½º
+//	Desc		:	Network ì ‘ì†ì„ ë°›ì•„ë“¤ì´ëŠ” Acceptor í´ë˜ìŠ¤
 //
 //***********************************************************************************
 
@@ -35,7 +35,7 @@ const unsigned int ACCEPT_RESERVE_CHECK_TIME = 5000;
 
 
 //---------------------------------------------------------------------------------------
-// Acceptor Running class ( Network Å¬·¡½º ³»ºÎ¿ë )
+// Acceptor Running class ( Network í´ë˜ìŠ¤ ë‚´ë¶€ìš© )
 //---------------------------------------------------------------------------------------
 class CAcceptorThread : public CNtlRunObject
 {
@@ -460,7 +460,7 @@ int CNtlAcceptor::ReserveAccept(int nReserveCount)
 //		Purpose	:
 //		Return	:
 //-----------------------------------------------------------------------------------
-// Accept ÇÏ·Á´Â °³¼ö¿Í Accept °¡´É °³¼ö¸¦ Á¶»çÇØ °¡´ÉÇÑ Accept°³¼ö¸¦ ¹İÈ¯ÇÑ´Ù 
+// Accept í•˜ë ¤ëŠ” ê°œìˆ˜ì™€ Accept ê°€ëŠ¥ ê°œìˆ˜ë¥¼ ì¡°ì‚¬í•´ ê°€ëŠ¥í•œ Acceptê°œìˆ˜ë¥¼ ë°˜í™˜í•œë‹¤ 
 //-----------------------------------------------------------------------------------
 int CNtlAcceptor::GetReserveAcceptCount()
 {

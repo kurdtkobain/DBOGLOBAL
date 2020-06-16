@@ -4,7 +4,7 @@
 //
 //	Begin		:	2009-08-12
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Joon Seok - Hyun
 //
@@ -19,17 +19,17 @@
 
 enum eGM_REPORT_CATEGORY
 {
-	GM_REPORT_CATEGORY_USERSEARCH,			// À¯Àú °Ë»ö
-	GM_REPORT_CATEGORY_CHARACTERINFO,		// ±âº» Á¤º¸
-	GM_REPORT_CATEGORY_MAIL,					// ¸ÞÀÏ
-	GM_REPORT_CATEGORY_ITEM,					// ¾ÆÀÌÅÛ	
-	GM_REPORT_CATEGORY_QUEST,				// Äù½ºÆ®
-	GM_REPORT_CATEGORY_PUNISHMENT,			// Á¦Á¦
-	GM_REPORT_CATEGORY_GUILD,				// À¯ÆÄ
-	GM_REPORT_CATEGORY_PETITION,				// ÁøÁ¤
-	GM_REPORT_CATEGORY_SERVERSTAUTS,			// ¼­¹ö »óÅÂ
-	GM_REPORT_CATEGORY_MULTIMAIL,				// ¸ÖÆ¼ ¸ÞÀÏ
-	GM_REPORT_CATEGORY_DATASETTING,			// µ¥ÀÌÅÍ ¼³Á¤ ( °æÇèÄ¡, EXP )
+	GM_REPORT_CATEGORY_USERSEARCH,			// ìœ ì € ê²€ìƒ‰
+	GM_REPORT_CATEGORY_CHARACTERINFO,		// ê¸°ë³¸ ì •ë³´
+	GM_REPORT_CATEGORY_MAIL,					// ë©”ì¼
+	GM_REPORT_CATEGORY_ITEM,					// ì•„ì´í…œ	
+	GM_REPORT_CATEGORY_QUEST,				// í€˜ìŠ¤íŠ¸
+	GM_REPORT_CATEGORY_PUNISHMENT,			// ì œì œ
+	GM_REPORT_CATEGORY_GUILD,				// ìœ íŒŒ
+	GM_REPORT_CATEGORY_PETITION,				// ì§„ì •
+	GM_REPORT_CATEGORY_SERVERSTAUTS,			// ì„œë²„ ìƒíƒœ
+	GM_REPORT_CATEGORY_MULTIMAIL,				// ë©€í‹° ë©”ì¼
+	GM_REPORT_CATEGORY_DATASETTING,			// ë°ì´í„° ì„¤ì • ( ê²½í—˜ì¹˜, EXP )
 
 	GM_REPORT_CATEGORY_COUNT,
 	GM_REPORT_CATEGORY_INVALID = 0xFF
@@ -101,8 +101,8 @@ struct sGM_REPORT_CONTENT
 	SERVERFARMID		serverFarmID;
 	char				accountID[NTL_MAX_SIZE_USERID + 1];
 	char				targetID[NTL_MAX_SIZE_USERID + 1];
-	char				targetName[NTL_MAX_SIZE_GUILD_NAME + 1]; // °¡Àå ±ä Å¸°ÙÀº À¯ÆÄ¸í
-	char				beforeAction[255]; // µû·Î define ÇÒ ¿¹Á¤
+	char				targetName[NTL_MAX_SIZE_GUILD_NAME + 1]; // ê°€ìž¥ ê¸´ íƒ€ê²Ÿì€ ìœ íŒŒëª…
+	char				beforeAction[255]; // ë”°ë¡œ define í•  ì˜ˆì •
 	char				afterAction[255];
 	char				objectName[NTL_MAX_LENGTH_REPORT_NAME + 1];
 	TBLIDX				tblIdx;

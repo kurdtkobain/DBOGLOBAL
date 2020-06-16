@@ -151,7 +151,7 @@ RwBool CNtlWorldSectorInfo::NtlWorldSectorGeometryCreate(CNtlWorldSector *pNtlWo
 	RwInt32 NPosEXBy0 = (RwInt32)(SPos.x + (float)dGET_WORLD_PARAM()->WorldSizeHalf);
 	RwInt32 CurRealPt;
 
-	// °íÃÄ¾ß ÇÑ´Ù ¼ø¼­°¡ Æ²¸®´Ù
+	// ê³ ì³ì•¼ í•œë‹¤ ìˆœì„œê°€ í‹€ë¦¬ë‹¤
 	for(int i = (RwInt32)SPos.y; i <= (RwInt32)EPos.y; i += dGET_WORLD_PARAM()->WorldSectorTileSize)
 	{
 		for(int j = NPosSXBy0; j >= NPosEXBy0; j -= dGET_WORLD_PARAM()->WorldSectorTileSize)
@@ -242,7 +242,7 @@ RwBool CNtlWorldSectorInfo::NtlWorldSectorGeometryDelete(CNtlWorldSector *pNtlWo
 {
 	NTL_FUNCTION("_RpNtlWorldSectorGeometryDelete");
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	switch (GetSceneManager()->GetActiveWorldType())
 	{
 	case AW_HEGITHFIELD:
@@ -269,7 +269,7 @@ RwBool CNtlWorldSectorInfo::NtlWorldSectorGeometryDeleteWithoutSwapFileSaving(CN
 {
 	NTL_FUNCTION("_RpNtlWorldSectorGeometryDeleteWithoutSwapFileSaving");
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	switch (GetSceneManager()->GetActiveWorldType())
 	{
 	case AW_HEGITHFIELD:
@@ -741,11 +741,11 @@ RwBool CNtlWorldSectorInfo::IndoorSectorLoadFromFile(FILE* pFile, CNtlWorldSecto
 
 	SectorObjectLoadFromFile(pFile, pNtlWorldSector, AW_RWWORLD);
 	SectorWaterLoadFromFile(pFile, pNtlWorldSector);
-	SectorShadowLoadFromFile(pFile, pNtlWorldSector); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
+	SectorShadowLoadFromFile(pFile, pNtlWorldSector); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	SectorEffectLoadFromFile(pFile, pNtlWorldSector);
 	SectorSoundEffectLoadFromFile(pFile, pNtlWorldSector);
-	SectorCullLoadFromFile(pFile, pNtlWorldSector); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
-	SectorTileTransparencyLoadFromFile(pFile, pNtlWorldSector); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
+	SectorCullLoadFromFile(pFile, pNtlWorldSector); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
+	SectorTileTransparencyLoadFromFile(pFile, pNtlWorldSector); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	SectorShoreLineLoadFromFile(pFile, pNtlWorldSector);
 	SectorDecalLoadFromFile(pFile, pNtlWorldSector);
 	SectorPlantLoadFromFile(pFile, pNtlWorldSector);
@@ -767,11 +767,11 @@ RwBool CNtlWorldSectorInfo::IndoorSectorSaveIntoFile(FILE* pFile, CNtlWorldSecto
 
 	SectorObjectSaveIntoFile(pFile, pNtlWorldSector, AW_RWWORLD);
 	SectorWaterSaveIntoFile(pFile, pNtlWorldSector);
-	SectorShadowSaveIntoFile(pFile, pNtlWorldSector); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
+	SectorShadowSaveIntoFile(pFile, pNtlWorldSector); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	SectorEffectSaveIntoFile(pFile, pNtlWorldSector);
 	SectorSoundEffectSaveIntoFile(pFile, pNtlWorldSector);
-	SectorCullSaveIntoFile(pFile, pNtlWorldSector); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
-	SectorTileTransparencySaveIntoFile(pFile, pNtlWorldSector); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
+	SectorCullSaveIntoFile(pFile, pNtlWorldSector); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
+	SectorTileTransparencySaveIntoFile(pFile, pNtlWorldSector); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	SectorShoreLineSaveIntoFile(pFile, pNtlWorldSector);
 	SectorDecalSaveIntoFile(pFile, pNtlWorldSector);
 	SectorPlantSaveIntoFile(pFile, pNtlWorldSector);
@@ -793,11 +793,11 @@ BYTE* CNtlWorldSectorInfo::IndoorSectorSaveIntoFileFromFileMem(FILE* pFile, BYTE
 
 	pFileMem = SectorObjectSaveIntoFileFromFileMem(pFile, pFileMem, AW_RWWORLD);
 	pFileMem = SectorWaterSaveIntoFileFromFileMem(pFile, pFileMem);
-	pFileMem = SectorShadowSaveIntoFileFromFileMem(pFile, pFileMem); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
+	pFileMem = SectorShadowSaveIntoFileFromFileMem(pFile, pFileMem); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	pFileMem = SectorEffectSaveIntoFileFromFileMem(pFile, pFileMem);
 	pFileMem = SectorSoundEffectSaveIntoFileFromFileMem(pFile, pFileMem);
-	pFileMem = SectorCullSaveIntoFileFromFileMem(pFile, pFileMem); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
-	pFileMem = SectorTileTransparencySaveIntoFileFromFileMem(pFile, pFileMem); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
+	pFileMem = SectorCullSaveIntoFileFromFileMem(pFile, pFileMem); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
+	pFileMem = SectorTileTransparencySaveIntoFileFromFileMem(pFile, pFileMem); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	pFileMem = SectorShoreLineSaveIntoFileFromFileMem(pFile, pFileMem);
 	pFileMem = SectorDecalSaveIntoFileFromFileMem(pFile, pFileMem);
 	pFileMem = SectorPlantSaveIntoFileFromFileMem(pFile, pFileMem);
@@ -818,11 +818,11 @@ RwInt32 CNtlWorldSectorInfo::IndoorSectorSkipToFile(FILE* pFile)
 
 	SectorObjectSkipToFile(pFile, AW_RWWORLD);
 	SectorWaterSkipToFile(pFile);
-	SectorShadowSkipToFile(pFile); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
+	SectorShadowSkipToFile(pFile); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	SectorEffectSkipToFile(pFile);
 	SectorSoundEffectSkipToFile(pFile);
-	SectorCullSkipToFile(pFile); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
-	SectorTileTransparencySkipToFile(pFile); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
+	SectorCullSkipToFile(pFile); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
+	SectorTileTransparencySkipToFile(pFile); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	SectorShoreLineSkipToFile(pFile);
 	SectorDecalSkipToFile(pFile);
 	SectorPlantSkipToFile(pFile);
@@ -843,11 +843,11 @@ BYTE* CNtlWorldSectorInfo::IndoorSectorSkipToFileMem(BYTE* pFileMem)
 
 	pFileMem = SectorObjectSkipToFileMem(pFileMem, AW_RWWORLD);
 	pFileMem = SectorWaterSkipToFileMem(pFileMem);
-	pFileMem = SectorShadowSkipToFileMem(pFileMem); // ÃÖÀûÈ­½Ã »©¾ß ÇÕ´Ï´Ù.
+	pFileMem = SectorShadowSkipToFileMem(pFileMem); // ìµœì í™”ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	pFileMem = SectorEffectSkipToFileMem(pFileMem);
 	pFileMem = SectorSoundEffectSkipToFileMem(pFileMem);
-	pFileMem = SectorCullSkipToFileMem(pFileMem); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
-	pFileMem = SectorTileTransparencySkipToFileMem(pFileMem); // ÃÖÀûÈ­ ½Ã »©¾ß ÇÕ´Ï´Ù.
+	pFileMem = SectorCullSkipToFileMem(pFileMem); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
+	pFileMem = SectorTileTransparencySkipToFileMem(pFileMem); // ìµœì í™” ì‹œ ë¹¼ì•¼ í•©ë‹ˆë‹¤.
 	pFileMem = SectorShoreLineSkipToFileMem(pFileMem);
 	pFileMem = SectorDecalSkipToFileMem(pFileMem);
 	pFileMem = SectorPlantSkipToFileMem(pFileMem);
@@ -1024,7 +1024,7 @@ RwBool CNtlWorldSectorInfo::SectorMaterialLoadFromFile(FILE* pFile, CNtlWorldSec
 			{
 				fread(&uiLength, sizeof(RwUInt32), 1, pFile);
 				fread(ReadBuff, sizeof(RwChar) * uiLength, 1, pFile);
-				ReadBuff[uiLength] = '\0'; // String ³¡À» Ç¥½ÃÇØÁØ´Ù.
+				ReadBuff[uiLength] = '\0'; // String ëì„ í‘œì‹œí•´ì¤€ë‹¤.
 
 				pNtlWorldSector->m_pTextureSplat[i] = CNtlPLResourceManager::GetInstance()->LoadTexture(ReadBuff, dGET_WORLD_PARAM()->CurDefaultTexPath); 
 				DBO_ASSERT(pNtlWorldSector->m_pTextureSplat[i], "Texture load failed.");
@@ -2553,7 +2553,7 @@ void CNtlWorldSectorInfo::SectorObjectSaveIntoFileFromFileMemDiff(FILE* pFile, B
 		}
 	}
 
-	// Merge µÈ ÈÄ °¹¼ö¸¦ fwrite ÇÑ´Ù.
+	// Merge ëœ í›„ ê°¯ìˆ˜ë¥¼ fwrite í•œë‹¤.
 	iNum = iDstTriggerCnt + iSrcNonTriggerCnt;
 	fwrite(&iNum, sizeof(RwInt32), 1, pFile);
 
@@ -2569,7 +2569,7 @@ void CNtlWorldSectorInfo::SectorObjectSaveIntoFileFromFileMemDiff(FILE* pFile, B
 		pFileMem = ObjectSkipToFileMemGetEnabledTrigger(pFileMem, eActiveWorldType, &bEnabled);
 		if (bEnabled)
 		{
-			// Trigger ¶ó¸é ÀúÀåÇÑ´Ù. pFileMemÀº ÀÌ¹Ì file pos°¡ Skip µÈ »óÅÂÀÌ¹Ç·Î rewind pos·Î ÇØ°áÇÏÀÚ.			
+			// Trigger ë¼ë©´ ì €ì¥í•œë‹¤. pFileMemì€ ì´ë¯¸ file posê°€ Skip ëœ ìƒíƒœì´ë¯€ë¡œ rewind posë¡œ í•´ê²°í•˜ì.			
 			pFileMem = ObjectSaveIntoFileFromFileMem(pFile, pRewind, eActiveWorldType); 
 		}
 	}
@@ -2585,8 +2585,8 @@ void CNtlWorldSectorInfo::SectorObjectSaveIntoFileFromFileMemDiff(FILE* pFile, B
 		pFileMem = ObjectSkipToFileMemGetEnabledTrigger(pFileMem, eActiveWorldType, &bEnabled);
 		if (!bEnabled)
 		{
-			// Trigger ¾Æ´Ï¶ó¸é ÀúÀåÇÑ´Ù. pFileMemÀº ÀÌ¹Ì file pos°¡ Skip µÈ »óÅÂÀÌ¹Ç·Î rewind pos·Î ÇØ°áÇÏÀÚ.
-			// FieldIdx°¡ ´Ù¸¦ °æ¿ì vOffsetÀ¸·Î ObjectÀÇ À§Ä¡¸¦ ´Ù¸£°Ô ÀúÀåÇØ¾ß ÇÑ´Ù.
+			// Trigger ì•„ë‹ˆë¼ë©´ ì €ì¥í•œë‹¤. pFileMemì€ ì´ë¯¸ file posê°€ Skip ëœ ìƒíƒœì´ë¯€ë¡œ rewind posë¡œ í•´ê²°í•˜ì.
+			// FieldIdxê°€ ë‹¤ë¥¼ ê²½ìš° vOffsetìœ¼ë¡œ Objectì˜ ìœ„ì¹˜ë¥¼ ë‹¤ë¥´ê²Œ ì €ì¥í•´ì•¼ í•œë‹¤.
 			pFileMem = ObjectSaveIntoFileFromFileMem(pFile, pRewind, eActiveWorldType, &vOffset);
 		}
 	}
@@ -2797,12 +2797,12 @@ RwBool CNtlWorldSectorInfo::SectorShadowLoadFromFile(FILE* pFile, CNtlWorldSecto
 
 		if (dNTL_WORLD_VERSION_COMPARE(dGET_WORLD_PARAM()->WorldLoadVer, dNTL_WORLD_VERSION_OLD))
 		{
-			// ³»ºÎ¿¡¼­ 8888 Æ÷¸Ë°ú 888 Æ÷¸Ë¿¡ µû¶ó Load°¡ ´Ù¸£´Ù.
+			// ë‚´ë¶€ì—ì„œ 8888 í¬ë§·ê³¼ 888 í¬ë§·ì— ë”°ë¼ Loadê°€ ë‹¤ë¥´ë‹¤.
 			CNtlPLResourceManager::GetInstance()->LoadTexture(pNtlWorldShadow->m_pTexShadow, pFile);		
 		}
 		else if (dNTL_WORLD_VERSION_COMPARE(dGET_WORLD_PARAM()->WorldLoadVer, dNTL_WORLD_VERSION))
 		{
-			// ³»ºÎ¿¡¼­ 8888 Æ÷¸Ë°ú 888 Æ÷¸Ë¿¡ µû¶ó Load°¡ ´Ù¸£´Ù.
+			// ë‚´ë¶€ì—ì„œ 8888 í¬ë§·ê³¼ 888 í¬ë§·ì— ë”°ë¼ Loadê°€ ë‹¤ë¥´ë‹¤.
 			CNtlPLResourceManager::GetInstance()->LoadTextureShadowMap(pNtlWorldShadow->m_pTexShadow, pFile);
 		}		
 	}	
@@ -6158,7 +6158,7 @@ RwBool _RpNtlWorldSectorGeometrySaveIntoFile(RpWorldSector *pWorldSector, FILE* 
 {
 	/*
 	WorldFileFormat - SectorInfo
-	SectorInfo¸¦ File·Î SaveÇÏ´Â ºÎºĞÀÌ´Ù.
+	SectorInfoë¥¼ Fileë¡œ Saveí•˜ëŠ” ë¶€ë¶„ì´ë‹¤.
 	*/
 
 	NTL_FUNCTION("_RpNtlWorldSectorGeometrySaveIntoFile");
@@ -6261,7 +6261,7 @@ RwBool _RpNtlWorldSectorGeometrySaveIntoFile(RpWorldSector *pWorldSector, FILE* 
 			fwrite(&SID, sizeof(RwUInt32), 1, pFile);
 
 			ObjectID = pNtlPLObject->GetObjectSerialID();
-#ifdef dNTL_WORLD_FORMAT_CONVERT // ¿ùµå Æ÷¸Ë º¯È¯½ÃdGET_WORLD_PARAM()->WorldObjectSerialID ÀúÀåµÇ¾î¾ß ÇÑ´Ù.
+#ifdef dNTL_WORLD_FORMAT_CONVERT // ì›”ë“œ í¬ë§· ë³€í™˜ì‹œdGET_WORLD_PARAM()->WorldObjectSerialID ì €ì¥ë˜ì–´ì•¼ í•œë‹¤.
 			if (ObjectID == 0)
 			{
 				ObjectID = dGET_WORLD_PARAM()->WorldObjectSerialID;
@@ -6764,7 +6764,7 @@ RwBool _RpNtlWorldSectorGeometryLoadFromFile(sCUR_FIELD_TEX_INFO& CurFieldTexInf
 {
 	/*
 	WorldFileFormat - SectorInfo
-	SectorInfo¸¦ File·ÎºÎÅÍ Load ÇÏ´Â ºÎºĞ ÀÌ´Ù.
+	SectorInfoë¥¼ Fileë¡œë¶€í„° Load í•˜ëŠ” ë¶€ë¶„ ì´ë‹¤.
 	*/
 
 	NTL_FUNCTION("_RpNtlWorldSectorGeometryLoadFromFile");
@@ -7686,7 +7686,7 @@ RwBool _RpNtlWorldSectorGeometryDeleteWithoutSwapFileSaving(CNtlWorldSector *pNt
 	// 		dNTL_WORLD_LOCAL(pNtlWorldSector->m_pWorldSector, pNtlSector) = NULL;
 	// 	}
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	switch (GetSceneManager()->GetActiveWorldType())
 	{
 	case AW_HEGITHFIELD:
@@ -7725,7 +7725,7 @@ RwBool _RpNtlWorldSectorGeometryDelete(CNtlWorldSector *pNtlWorldSector)
 	// 		dNTL_WORLD_LOCAL(pNtlWorldSector->m_pWorldSector, pNtlSector) = NULL;
 	// 	}
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	switch (GetSceneManager()->GetActiveWorldType())
 	{
 	case AW_HEGITHFIELD:
@@ -7816,7 +7816,7 @@ RwBool _RpNtlWorldSectorGeometryCreate(CNtlWorldSector *pNtlWorldSector)
 	RwInt32 NPosEXBy0 = (RwInt32)(SPos.x + (float)dGET_WORLD_PARAM()->WorldSizeHalf);
 	RwInt32 CurRealPt;
 
-	// °íÃÄ¾ß ÇÑ´Ù ¼ø¼­°¡ Æ²¸®´Ù
+	// ê³ ì³ì•¼ í•œë‹¤ ìˆœì„œê°€ í‹€ë¦¬ë‹¤
 	for(int i = (RwInt32)SPos.y; i <= (RwInt32)EPos.y; i += dGET_WORLD_PARAM()->WorldSectorTileSize)
 	{
 		for(int j = NPosSXBy0; j >= NPosEXBy0; j -= dGET_WORLD_PARAM()->WorldSectorTileSize)
@@ -8893,7 +8893,7 @@ RwBool _RpNtlWorldSectorGeometrySaveIntoFileIndoor(CNtlWorldSector *pNtlWorldSec
 {
 	/*
 	WorldFileFormat - SectorInfo
-	SectorInfo¸¦ File·Î SaveÇÏ´Â ºÎºĞÀÌ´Ù.
+	SectorInfoë¥¼ Fileë¡œ Saveí•˜ëŠ” ë¶€ë¶„ì´ë‹¤.
 	*/
 
 	NTL_FUNCTION("_RpNtlWorldSectorGeometrySaveIntoFile");

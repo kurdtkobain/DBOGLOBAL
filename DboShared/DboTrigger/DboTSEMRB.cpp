@@ -261,8 +261,8 @@ bool CDboTSEMRB::AddBuildData( const std::string& strKey, const CNtlTSMain::mapd
 	sRB_PARAM sParam;
 	CDboTSEMRB_Recv clRecv;
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç rank-battle table index·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ rank-battle table indexë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	CNtlTSTrigger* pTrig;
 	CNtlTSMain::mapdef_TLIST::const_iterator citTSBegin = TList.begin();

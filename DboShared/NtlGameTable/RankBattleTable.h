@@ -42,20 +42,20 @@ public:
 	DWORD			dwBossEndingTime;		// Cleanup Time
 	DWORD			dwEndTime;				// End
 
-	char			chScoreKO;				// KO½Â½Ã Á¡¼ö
-	char			chScoreOutOfArea;		// Àå¿Ü½Â½Ã Á¡¼ö
-	char			chScorePointWin;		// ÆÇÁ¤½Â½Ã Á¡¼ö
-	char			chScoreDraw;			// ºñ°åÀ»½Ã Á¡¼ö
-	char			chScoreLose;			// ÆĞ¹è½Ã Á¡¼ö
+	char			chScoreKO;				// KOìŠ¹ì‹œ ì ìˆ˜
+	char			chScoreOutOfArea;		// ì¥ì™¸ìŠ¹ì‹œ ì ìˆ˜
+	char			chScorePointWin;		// íŒì •ìŠ¹ì‹œ ì ìˆ˜
+	char			chScoreDraw;			// ë¹„ê²¼ì„ì‹œ ì ìˆ˜
+	char			chScoreLose;			// íŒ¨ë°°ì‹œ ì ìˆ˜
 
-	char			chResultExcellent;		// °æ±â °á°ú Ãâ·Â,  >= chResultExcellent
-	char			chResultGreate;			// °æ±â °á°ú Ãâ·Â,  < chResultExcellent, >= chResultGreate
-	char			chResultGood;			// °æ±â °á°ú Ãâ·Â,  < chResultGreate, >= chResultDraw
-	char			chResultDraw;			// °æ±â °á°ú Ãâ·Â,  == chResultDraw
-	char			chResultLose;			// °æ±â °á°ú Ãâ·Â,  == chResultLost
+	char			chResultExcellent;		// ê²½ê¸° ê²°ê³¼ ì¶œë ¥,  >= chResultExcellent
+	char			chResultGreate;			// ê²½ê¸° ê²°ê³¼ ì¶œë ¥,  < chResultExcellent, >= chResultGreate
+	char			chResultGood;			// ê²½ê¸° ê²°ê³¼ ì¶œë ¥,  < chResultGreate, >= chResultDraw
+	char			chResultDraw;			// ê²½ê¸° ê²°ê³¼ ì¶œë ¥,  == chResultDraw
+	char			chResultLose;			// ê²½ê¸° ê²°ê³¼ ì¶œë ¥,  == chResultLost
 
-	char			chBonusPerfectWinner;	// ¿Ï½ÂÀ¸·Î ¿¬½ÂÇßÀ» °æ¿ì Ãß°¡ Á¡¼ö
-	char			chBonusNormalWinner;	// ÀÏ¹İÀûÀÎ ¿¬½ÂÀ» ÇßÀ»¶§ÀÇ Ãß°¡ Á¡¼ö
+	char			chBonusPerfectWinner;	// ì™„ìŠ¹ìœ¼ë¡œ ì—°ìŠ¹í–ˆì„ ê²½ìš° ì¶”ê°€ ì ìˆ˜
+	char			chBonusNormalWinner;	// ì¼ë°˜ì ì¸ ì—°ìŠ¹ì„ í–ˆì„ë•Œì˜ ì¶”ê°€ ì ìˆ˜
 
 	//new
 	WCHAR			wszBGMName[ DBO_RANKBATTLE_MAX_BGM_NAME + 1 ];

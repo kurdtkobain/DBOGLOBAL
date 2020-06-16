@@ -17,9 +17,9 @@ enum eQUEST_ITEM_FUNC_TYPE
 struct sQUESTITEM_TBLDAT : public sTBLDAT
 {
 public:
-	TBLIDX			ItemName;		// °ÔÀÓ»ó¿¡ Ç¥½ÃµÉ ItemÀÇ ÀÌ¸§
-	char			szIconName[ DBO_MAX_LENGTH_QUEST_ITEM_ICON_NAME + 1 ];		// IconÀÇ File ÀÌ¸§
-	TBLIDX			Note;		// Quest itemÀÇ ¼³¸í
+	TBLIDX			ItemName;		// ê²Œì„ìƒì— í‘œì‹œë  Itemì˜ ì´ë¦„
+	char			szIconName[ DBO_MAX_LENGTH_QUEST_ITEM_ICON_NAME + 1 ];		// Iconì˜ File ì´ë¦„
+	TBLIDX			Note;		// Quest itemì˜ ì„¤ëª…
 	BYTE			byFunctionBitFlag;
 protected:
 

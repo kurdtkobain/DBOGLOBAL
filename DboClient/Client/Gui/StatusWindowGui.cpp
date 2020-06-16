@@ -241,7 +241,7 @@ VOID CStatusAvatarTab::UpdateBeforeCamera( RwReal fElapsed )
 
 VOID CStatusAvatarTab::HandleEvents( RWS::CMsg& msg )
 {
-	// Equip Á¤º¸
+	// Equip ì •ë³´
 	if( msg.Id == g_EventSobInfoUpdate )
 	{
 		if( !IsShow() )
@@ -260,13 +260,13 @@ VOID CStatusAvatarTab::HandleEvents( RWS::CMsg& msg )
 		{
 			UpdateStatData();
 			
-			// ¾Æ¹ÙÅ¸ÀÇ Attribute ( Battle Attribute bonus ) °¡ ¾÷µ¥ÀÌÆ® µÇ¸é ´Ù½Ã °è»êÇØÁØ´Ù.
+			// ì•„ë°”íƒ€ì˜ Attribute ( Battle Attribute bonus ) ê°€ ì—…ë°ì´íŠ¸ ë˜ë©´ ë‹¤ì‹œ ê³„ì‚°í•´ì¤€ë‹¤.
 			CalcBattleAttribute();
 			OnBattleAttributeRefresh();
 		}
 	}
 	else if( msg.Id == g_EventSobConvertClass )
-	{// Å¬·¡½º º¯°æÀº ÀÌ°Í¹Û¿¡ ¾È³¯¶ó¿Â´Ù.
+	{// í´ë˜ìŠ¤ ë³€ê²½ì€ ì´ê²ƒë°–ì— ì•ˆë‚ ë¼ì˜¨ë‹¤.
 		SNtlEventSobConvertClass* pData = reinterpret_cast<SNtlEventSobConvertClass*>( msg.pData );
 
 		if( pData->hSerialId == GetNtlSLGlobal()->GetSobAvatar()->GetSerialID() )
@@ -316,7 +316,7 @@ VOID CStatusAvatarTab::UpdateEquipData(VOID)
 	CNtlSobAvatar* pAvatar = GetNtlSLGlobal()->GetSobAvatar();
 
 	if( !pAvatar )
-		return;				// ÃÊ±â ¾Æ¹ÙÅ¸ »ı¼ºÀü¿¡ µé¾î¿À´Â °æ¿ì.
+		return;				// ì´ˆê¸° ì•„ë°”íƒ€ ìƒì„±ì „ì— ë“¤ì–´ì˜¤ëŠ” ê²½ìš°.
 
 	CNtlInventory* pInventory = pAvatar->GetInventory();
 
@@ -385,7 +385,7 @@ VOID CStatusAvatarTab::UpdateStatData(VOID)
 	CNtlSobAvatar* pAvatar = GetNtlSLGlobal()->GetSobAvatar();
 
 	if( !pAvatar )
-		return;				// ÃÊ±â ¾Æ¹ÙÅ¸ »ı¼ºÀü¿¡ µé¾î¿À´Â °æ¿ì.
+		return;				// ì´ˆê¸° ì•„ë°”íƒ€ ìƒì„±ì „ì— ë“¤ì–´ì˜¤ëŠ” ê²½ìš°.
 
 	CNtlSobAvatarAttr* pAvatarAttr = reinterpret_cast<CNtlSobAvatarAttr*>( pAvatar->GetSobAttr() );
 	RwUInt32 uiColor;
@@ -536,7 +536,7 @@ RwBool CStatusAvatarTab::IsEnableEquipPutDown( RwInt32 nSlotIdx )
 	if( IsDisableSlot( nSlotIdx ) )
 		return FALSE;
 
-	// ³ª¸ÓÁö ºñ±³´Â Logic¿¡ ¸Ã±ä´Ù. 
+	// ë‚˜ë¨¸ì§€ ë¹„êµëŠ” Logicì— ë§¡ê¸´ë‹¤. 
 
 	return TRUE;
 }
@@ -805,7 +805,7 @@ VOID CStatusAvatarTab::OnMouseDown( const CKey& key )
 
 	if( key.m_nID == UD_LEFT_BUTTON )
 	{
-		// 1. Src¼±ÅÃÀÎ°¡ Dest¼±ÅÃÀÎ°¡.
+		// 1. Srcì„ íƒì¸ê°€ Destì„ íƒì¸ê°€.
 		if( GetIconMoveManager()->IsActive() )
 		{
 			if( IsEnableEquipPutDown( nClickIdx ) )
@@ -823,7 +823,7 @@ VOID CStatusAvatarTab::OnMouseDown( const CKey& key )
 			{
 				m_nLSelectedSlotIdx = nClickIdx;
 			}
-			// 2. DragDropÀÌ °¡´ÉÇÑ »óÈ²ÀÎ°¡.
+			// 2. DragDropì´ ê°€ëŠ¥í•œ ìƒí™©ì¸ê°€.
 			else if( IsEnableEquipPickUp( nClickIdx ) )
 			{
 				m_nLSelectedSlotIdx = nClickIdx;
@@ -843,7 +843,7 @@ VOID CStatusAvatarTab::OnMouseDown( const CKey& key )
 			}			
 		}
 		
-		// 1. ¾ÆÀÌÄÜ À¯È¿¼º °Ë»ç
+		// 1. ì•„ì´ì½˜ ìœ íš¨ì„± ê²€ì‚¬
 		//if( IsEnableEquipPopup( nClickIdx ) )
 		//{
 		//	m_nRSelectedSlotIdx = nClickIdx;
@@ -863,8 +863,8 @@ VOID CStatusAvatarTab::OnMouseDown( const CKey& key )
 
 VOID CStatusAvatarTab::OnMouseUp( const CKey& key )
 {
-	// 1. Left¹öÆ°ÀÎ°¡ Right¹öÆ°ÀÎ°¡
-	// 2. Src¼±ÅÃÀÎ°¡ Dest¼±ÅÃÀÎ°¡.
+	// 1. Leftë²„íŠ¼ì¸ê°€ Rightë²„íŠ¼ì¸ê°€
+	// 2. Srcì„ íƒì¸ê°€ Destì„ íƒì¸ê°€.
 
 	RwInt32 nSlotIdx = GetEquipSlotIdx( (RwInt32)key.m_fX, (RwInt32)key.m_fY );
 	ClickEffect( FALSE );
@@ -1016,13 +1016,13 @@ VOID CStatusAvatarTab::OnCharTitleBtnClicked(gui::CComponent * pComponent)
 
 VOID CStatusAvatarTab::OnPaint(VOID)
 {
-	// AvatarÃâ·Â
+	// Avatarì¶œë ¥
 	m_surCharacter.Render();
 }
 
 VOID CStatusAvatarTab::OnSlotPaint(VOID)
 {
-	// Icon Ãâ·Â
+	// Icon ì¶œë ¥
 	for( RwInt32 i = 0 ; i < NTL_MAX_EQUIP_ITEM_SLOT ; ++i )
 	{
 		if( m_surIcon[i].GetTexture() )
@@ -1305,21 +1305,21 @@ VOID CStatusAvatarTab::SetAttributeToolTip( VOID )
 //void CStatusHonorList::CreateTree()
 //{
 //
-//	// ¸í¿¹ Á¡¼ö Ä«Å×°í¸®
+//	// ëª…ì˜ˆ ì ìˆ˜ ì¹´í…Œê³ ë¦¬
 //	CGuiLineTreeNode* pNode = NTL_NEW CStatusHonorCategoryNode(this,
-//		L"¸í¿¹Á¡¼ö", -2 );
+//		L"ëª…ì˜ˆì ìˆ˜", -2 );
 //	CGuiLineTree::AddNode( pNode, GUILINETREE_ROOTNODE_ID );
 //	pNode->Expand( true );
 //
-//	pNode = NTL_NEW CStatusHonorContent( this, L"¸í¿¹Á¡¼ö : 9999999999", 10 );
+//	pNode = NTL_NEW CStatusHonorContent( this, L"ëª…ì˜ˆì ìˆ˜ : 9999999999", 10 );
 //	CGuiLineTree::AddNode( pNode, -2 );
 //
 //	pNode = NTL_NEW CStatusHonorCategoryNode( this,
-//		L"·©Å©¹èÆ²", -3 );
+//		L"ë­í¬ë°°í‹€", -3 );
 //	CGuiLineTree::AddNode( pNode, GUILINETREE_ROOTNODE_ID );
 //	pNode->Expand( true );
 //
-//	pNode = NTL_NEW CStatusHonorContent( this, L"·©Å©Æ÷ÀÎÆ® : 99999999", 11 );
+//	pNode = NTL_NEW CStatusHonorContent( this, L"ë­í¬í¬ì¸íŠ¸ : 99999999", 11 );
 //	CGuiLineTree::AddNode( pNode, -3 );
 //
 //}
@@ -1340,14 +1340,14 @@ VOID CStatusAvatarTab::SetAttributeToolTip( VOID )
 //	m_pBtnExpand->AddSurfaceDown(GetNtlGuiManager()->GetSurfaceManager()->GetSurface("QuestList.srf", "srfExpandBtnDown"));
 //	m_pBtnExpand->SetText( strTitle.c_str() );
 //
-//	// -¹öÆ°
+//	// -ë²„íŠ¼
 //	m_pBtnReduce = NTL_NEW gui::CButton(rect, std::string(),pMgr->GetParentGui(), GetNtlGuiManager()->GetSurfaceManager());
 //	m_pBtnReduce->AddSurfaceUp(GetNtlGuiManager()->GetSurfaceManager()->GetSurface("QuestList.srf", "srfReduceBtnUp"));
 //	m_pBtnReduce->AddSurfaceFocus(GetNtlGuiManager()->GetSurfaceManager()->GetSurface("QuestList.srf", "srfReduceBtnFoc"));
 //	m_pBtnReduce->AddSurfaceDown(GetNtlGuiManager()->GetSurfaceManager()->GetSurface("QuestList.srf", "srfReduceBtnDown"));
 //	m_pBtnReduce->SetText( strTitle.c_str() );
 //
-//	// ButtonÀÇ Signal ¿¬°á
+//	// Buttonì˜ Signal ì—°ê²°
 //	m_slotClickedBtnExpand = m_pBtnExpand->SigClicked().Connect(this, &CStatusHonorCategoryNode::OnClickBtnExpand);
 //	m_slotClickedBtnReduce = m_pBtnReduce->SigClicked().Connect(this, &CStatusHonorCategoryNode::OnClickBtnReduce);
 //}
@@ -1373,7 +1373,7 @@ VOID CStatusAvatarTab::SetAttributeToolTip( VOID )
 //		m_pBtnReduce->Show(false);		
 //	}
 //
-//	// Ä«Å×°í¸® ³ëµåµéÀÇ À§Ä¡¸¦ Àç °è»ê
+//	// ì¹´í…Œê³ ë¦¬ ë…¸ë“œë“¤ì˜ ìœ„ì¹˜ë¥¼ ì¬ ê³„ì‚°
 //	m_pBtnExpand->SetPosition(m_nPosX + dSTATUSWINDOW_CATEGORY_BUTTON_X, m_nPosY + dSTATUSWINDOW_CATEGORY_BUTTON_Y);
 //	m_pBtnReduce->SetPosition(m_nPosX + dSTATUSWINDOW_CATEGORY_BUTTON_X, m_nPosY + dSTATUSWINDOW_CATEGORY_BUTTON_Y);
 //}
@@ -2221,7 +2221,7 @@ RwBool CStatusWindowGui::Create(VOID)
 	// serialize setting
 	EnableSerialize(TRUE);
 
-	// Update ¿¬°á
+	// Update ì—°ê²°
 	GetNtlGuiManager()->AddUpdateBeforeFunc( this );
 	
 	// Event Link
@@ -2266,7 +2266,7 @@ VOID CStatusWindowGui::Destroy(VOID)
 	CNtlPLGui::DestroyComponents();
 	CNtlPLGui::Destroy();
 
-	// Update ÇØÁ¦
+	// Update í•´ì œ
 	GetNtlGuiManager()->RemoveUpdateBeforeFunc( this );
 
 	NTL_DELETE(m_pAvatarTab);

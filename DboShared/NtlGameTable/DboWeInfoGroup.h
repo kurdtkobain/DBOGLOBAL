@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-12-12 first written
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hong Ho Dong   ( battery@ntl-inc.com )
 //
@@ -13,12 +13,12 @@
 //***********************************************************************************
 
 /**
- * WorldÀÇ Center(0, 0)´Â WorldÀÇ Áß¾ÓÀÌ´Ù.
- * World ÁÂÇ¥°è¿¡¼­ x,zÀº right x--, bottom z--, left x++, top z++ ÀÌ´Ù.
- * World´Â Ç×»ó °¡·Î, ¼¼·Î Size°¡ °°´Ù.
- * Ã¹¹øÂ° Field´Â right, bottom¿¡¼­ ½ÃÀÛ left++, top++
- * Ã¹¹øÂ° TileÀº right, bottom¿¡¼­ ½ÃÀÛ left++, top++
- * Filed ÀÇ SectorÀÇ °¹¼ö´Â 4°³
+ * Worldì˜ Center(0, 0)ëŠ” Worldì˜ ì¤‘ì•™ì´ë‹¤.
+ * World ì¢Œí‘œê³„ì—ì„œ x,zì€ right x--, bottom z--, left x++, top z++ ì´ë‹¤.
+ * WorldëŠ” í•­ìƒ ê°€ë¡œ, ì„¸ë¡œ Sizeê°€ ê°™ë‹¤.
+ * ì²«ë²ˆì§¸ FieldëŠ” right, bottomì—ì„œ ì‹œì‘ left++, top++
+ * ì²«ë²ˆì§¸ Tileì€ right, bottomì—ì„œ ì‹œì‘ left++, top++
+ * Filed ì˜ Sectorì˜ ê°¯ìˆ˜ëŠ” 4ê°œ
  */
 #pragma once
 #include <map>
@@ -27,9 +27,9 @@
 #define NTL_SIZE_FIELD				256				// Field Size(m)
 #define NTL_SIZE_TILE				4				// Tile Size(m)
 
-//#define NTL_NUM_WIDTH_SECTOR_TILE			32				// SectorÀÇ Tile °¹¼ö
-#define NTL_NUM_FIELD_TILE			4096			// FieldÀÇ Tile °¹¼ö
-#define NTL_NUM_WIDTH_FIELD_TILE	64				// FieldÀÇ TileÀÇ °¡·Î °¹¼ö
+//#define NTL_NUM_WIDTH_SECTOR_TILE			32				// Sectorì˜ Tile ê°¯ìˆ˜
+#define NTL_NUM_FIELD_TILE			4096			// Fieldì˜ Tile ê°¯ìˆ˜
+#define NTL_NUM_WIDTH_FIELD_TILE	64				// Fieldì˜ Tileì˜ ê°€ë¡œ ê°¯ìˆ˜
 
 class CDboWeInfo
 {

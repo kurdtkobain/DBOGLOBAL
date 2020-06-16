@@ -42,7 +42,7 @@ void CNtlBehaviorCharAirMove::Enter(void)
 
 	SetAnim(pMoveStuff->byMoveFlags);
 
-	// ³ªÁß¿¡ base class enter¸¦ È£ÃâÇÑ´Ù.
+	// ë‚˜ì¤‘ì— base class enterë¥¼ í˜¸ì¶œí•œë‹¤.
 	CNtlBehaviorBase::Enter();
 }
 
@@ -55,7 +55,7 @@ void CNtlBehaviorCharAirMove::Exit(void)
 	CNtlPLCharacter *pPLCharacter = reinterpret_cast<CNtlPLCharacter*>(pSobProxy->GetPLMainEntity());
 	pPLCharacter->SetBlend(BLEND_TWEEN);
 
-	// ³ªÁß¿¡ base class enter¸¦ È£ÃâÇÑ´Ù.
+	// ë‚˜ì¤‘ì— base class enterë¥¼ í˜¸ì¶œí•œë‹¤.
 	CNtlBehaviorBase::Exit();
 }
 

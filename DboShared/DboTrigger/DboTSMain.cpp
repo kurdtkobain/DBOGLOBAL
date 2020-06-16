@@ -103,7 +103,7 @@ bool CDboTSMain::LoadLog( void )
 {
 	UnloadLog();
 
-	// ±âº» ·Î°í¸¦ »ı¼ºÇÑ´Ù
+	// ê¸°ë³¸ ë¡œê³ ë¥¼ ìƒì„±í•œë‹¤
 	m_pLog = new CNtlTSLog;
 	CNtlTSLog::Register( m_pLog );
 
@@ -112,7 +112,7 @@ bool CDboTSMain::LoadLog( void )
 
 void CDboTSMain::UnloadLog( void )
 {
-	// ±âº» ·Î°í¸¦ Á¦°ÅÇÑ´Ù
+	// ê¸°ë³¸ ë¡œê³ ë¥¼ ì œê±°í•œë‹¤
 	if ( m_pLog )
 	{
 		CNtlTSLog::Unregister();
@@ -125,15 +125,15 @@ bool CDboTSMain::LoadFactories( void )
 {
 	UnloadFactories();
 
-	// Entity factory »ı¼º
+	// Entity factory ìƒì„±
 	m_pEntityFactory = new CDboTSEntityFactory;
 	m_pEntityFactory->RegisterEntityType();
 
-	// Control factory »ı¼º
+	// Control factory ìƒì„±
 	m_pCtrlFactory = new CDboTSCtrlFactory;
 	m_pCtrlFactory->RegisterCtrlType();
 
-	// UI factory »ı¼º
+	// UI factory ìƒì„±
 	m_pUIFactory = new CDboTSUIFactory;
 	m_pUIFactory->RegisterUIType();
 
@@ -270,7 +270,7 @@ bool CDboTSMain::LoadTSCryptoData( std::string strFile, mapdef_TLIST& defTList )
 	std::string strPath = szFPath;
 	if ( '\\' != strPath[strPath.size()-1] ) strPath += "\\";
 
-	// ÆÄÀÏ ·Îµù
+	// íŒŒì¼ ë¡œë”©
 	FILE* pFile;
 	fopen_s( &pFile, strFile.c_str(), "rb" );
 	if(NULL == pFile)
@@ -287,7 +287,7 @@ bool CDboTSMain::LoadTSCryptoData( std::string strFile, mapdef_TLIST& defTList )
 	fread( pReadBuf, 1, nReadSize, pFile );
 	fclose( pFile );
 
-	// ¾ÏÈ£È­¸¦ Ç¬´Ù
+	// ì•”í˜¸í™”ë¥¼ í‘¼ë‹¤
 	std::string strKey = "dnfldbofmftkfkdgowntpdy"; // OLD tddkaghghkqlalfqjsghdlqslek
 	CNtlCipher Cipher;
 	Cipher.SetKey( DES_CIPHER, strKey.c_str(), (int)strKey.size() );
@@ -355,7 +355,7 @@ bool CDboTSMain::LoadTSCryptoData_UnZip( std::string strFile, CNtlUnzip* pclUnzi
 	std::string strPath = szFPath;
 	if ( '\\' != strPath[strPath.size()-1] ) strPath += "\\";
 
-	// ÆÄÀÏ ·Îµù
+	// íŒŒì¼ ë¡œë”©
 	FILE* pFile;
 	fopen_s( &pFile, strFile.c_str(), "rb" );
 	if(NULL == pFile)
@@ -372,7 +372,7 @@ bool CDboTSMain::LoadTSCryptoData_UnZip( std::string strFile, CNtlUnzip* pclUnzi
 	fread( pReadBuf, 1, nReadSize, pFile );
 	fclose( pFile );
 
-	// ¾ÏÈ£È­¸¦ Ç¬´Ù
+	// ì•”í˜¸í™”ë¥¼ í‘¼ë‹¤
 	std::string strKey = "dnfldbofmftkfkdgowntpdy"; // OLD tddkaghghkqlalfqjsghdlqslek
 	CNtlCipher Cipher;
 	Cipher.SetKey( DES_CIPHER, strKey.c_str(), (int)strKey.size() );

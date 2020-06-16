@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-05-31
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -24,25 +24,25 @@
 // Enumeration
 //-----------------------------------------------------------------------------------
 
-// Å¸ÀÓ¸Ó½Å Å¸ÀÔ
+// íƒ€ìž„ë¨¸ì‹  íƒ€ìž…
 enum eTIMEQUEST_TYPE
 {
-	TIMEQUEST_TYPE_TUTORIAL, // Æ©Åä¸®¾ó Å¸ÀÓ Äù½ºÆ® ( ´ë±â½ÇÀÌ »ý¼ºµÇÁö ¾Ê´Â´Ù )
-	TIMEQUEST_TYPE_PARTY, // ÆÄÆ¼Çü Å¸ÀÓ Äù½ºÆ®
-	TIMEQUEST_TYPE_GROUP, // ±×·ìÇü Å¸ÀÓ Äù½ºÆ®
+	TIMEQUEST_TYPE_TUTORIAL, // íŠœí† ë¦¬ì–¼ íƒ€ìž„ í€˜ìŠ¤íŠ¸ ( ëŒ€ê¸°ì‹¤ì´ ìƒì„±ë˜ì§€ ì•ŠëŠ”ë‹¤ )
+	TIMEQUEST_TYPE_PARTY, // íŒŒí‹°í˜• íƒ€ìž„ í€˜ìŠ¤íŠ¸
+	TIMEQUEST_TYPE_GROUP, // ê·¸ë£¹í˜• íƒ€ìž„ í€˜ìŠ¤íŠ¸
 
 	MAX_TIMEQUEST_TYPE,
 };
 
 
-// Å¸ÀÓ¸Ó½Å ¸ðµå
+// íƒ€ìž„ë¨¸ì‹  ëª¨ë“œ
 enum eTIMEQUEST_MODE
 {
-	TIMEQUEST_MODE_INDIVIDUAL, // °³ÀÎµî·ÏÀÇ °æ¿ì
-	TIMEQUEST_MODE_PARTY, // ÆÄÆ¼µî·ÏÀÇ °æ¿ì
+	TIMEQUEST_MODE_INDIVIDUAL, // ê°œì¸ë“±ë¡ì˜ ê²½ìš°
+	TIMEQUEST_MODE_PARTY, // íŒŒí‹°ë“±ë¡ì˜ ê²½ìš°
 
 	MAX_TIMEQUEST_MODE,
-	INVALID_TIMEQUEST_MODE = 0xFF, // ¾ÆÁ÷ µî·ÏÀÌ ¾ÈµÇ¾úÀ» °æ¿ì
+	INVALID_TIMEQUEST_MODE = 0xFF, // ì•„ì§ ë“±ë¡ì´ ì•ˆë˜ì—ˆì„ ê²½ìš°
 };
 
 // Game Time Machine condition
@@ -122,29 +122,29 @@ enum eTIMEQUEST_INFORMATION_TYPE
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-//	»ó¼ö Á¤ÀÇ
+//	ìƒìˆ˜ ì •ì˜
 //-----------------------------------------------------------------------------------
-const DWORD		DBO_TIMEQUEST_MAX_ROOM_COUNT = 10; // Å¸ÀÓ¸Ó½Å ¸Ê´ç ¹æÀÇ ÃÖ´ë °³¼ö
+const DWORD		DBO_TIMEQUEST_MAX_ROOM_COUNT = 10; // íƒ€ìž„ë¨¸ì‹  ë§µë‹¹ ë°©ì˜ ìµœëŒ€ ê°œìˆ˜
 
-const DWORD		DBO_TIMEQUEST_MAX_MEMBER_COUNT = NTL_MAX_MEMBER_IN_PARTY; // Å¸ÀÓ¸Ó½Å ÃÖ´ë Ãâ¹ß ÀÎ¿ø
+const DWORD		DBO_TIMEQUEST_MAX_MEMBER_COUNT = NTL_MAX_MEMBER_IN_PARTY; // íƒ€ìž„ë¨¸ì‹  ìµœëŒ€ ì¶œë°œ ì¸ì›
 
-const DWORD		DBO_TIMEQUEST_ROOM_START_REPORT_TIME = 30000; // Å¸ÀÓ¸Ó½Å Ãâ¹ß ¾Ë¸²À» º¸³»ÁÖ´Â ½Ã°£
+const DWORD		DBO_TIMEQUEST_ROOM_START_REPORT_TIME = 30000; // íƒ€ìž„ë¨¸ì‹  ì¶œë°œ ì•Œë¦¼ì„ ë³´ë‚´ì£¼ëŠ” ì‹œê°„
 
-const DWORD		DBO_TIMEQUEST_ROOM_LEAVE_LIMIT_TIME = 60000; // Å¸ÀÓ¸Ó½Å ´ë±â·ë¿¡¼­ ³ª°¡Áö ¸øÇÏ´Â ½Ã°£
+const DWORD		DBO_TIMEQUEST_ROOM_LEAVE_LIMIT_TIME = 60000; // íƒ€ìž„ë¨¸ì‹  ëŒ€ê¸°ë£¸ì—ì„œ ë‚˜ê°€ì§€ ëª»í•˜ëŠ” ì‹œê°„
 
-const DWORD		DBO_TIMEQUEST_MAX_STAGE_NUMBER = 64; // Å¸ÀÓ¸Ó½Å Äù½ºÆ®ÀÇ ÃÖ´ë ½ºÅ×ÀÌÁö
+const DWORD		DBO_TIMEQUEST_MAX_STAGE_NUMBER = 64; // íƒ€ìž„ë¨¸ì‹  í€˜ìŠ¤íŠ¸ì˜ ìµœëŒ€ ìŠ¤í…Œì´ì§€
 
-const DWORD		DBO_TIMEQUEST_MAX_KILL_COUNT = 3; // Å¸ÀÓ¸Ó½Å Äù½ºÆ®ÀÇ ÃÖ´ë Å³Ä«¿îÆ® (³Ñ¾î°¡¸é ÀÚµ¿ ÅðÀå)
+const DWORD		DBO_TIMEQUEST_MAX_KILL_COUNT = 3; // íƒ€ìž„ë¨¸ì‹  í€˜ìŠ¤íŠ¸ì˜ ìµœëŒ€ í‚¬ì¹´ìš´íŠ¸ (ë„˜ì–´ê°€ë©´ ìžë™ í‡´ìž¥)
 
-const DWORD		DBO_TIMEQUEST_ROOM_REFRESH_TIME = 10000; // Å¸ÀÓ¸Ó½Å Äù½ºÆ®ÀÇ ·ëÁ¤º¸ ¸®ÇÁ·¹½¬ ½Ã°£
+const DWORD		DBO_TIMEQUEST_ROOM_REFRESH_TIME = 10000; // íƒ€ìž„ë¨¸ì‹  í€˜ìŠ¤íŠ¸ì˜ ë£¸ì •ë³´ ë¦¬í”„ë ˆì‰¬ ì‹œê°„
 
-const WORD		DBO_TIMEQUEST_COUNPON_CHANGE_POINT = 1000; // ÄíÆù 1ÀåÀ¸·Î ÀüÈ¯µÇ´Â Å¸ÀÓÄù½ºÆ® Æ÷ÀÎÆ®Á¡¼ö
+const WORD		DBO_TIMEQUEST_COUNPON_CHANGE_POINT = 1000; // ì¿ í° 1ìž¥ìœ¼ë¡œ ì „í™˜ë˜ëŠ” íƒ€ìž„í€˜ìŠ¤íŠ¸ í¬ì¸íŠ¸ì ìˆ˜
 
-const WORD		DBO_TIMEQUEST_COUNPON_LIMIT_COUNT = 4; // °¡Áú¼ö ÀÖ´Â ÃÖ´ë ÄíÆù °³¼ö
+const WORD		DBO_TIMEQUEST_COUNPON_LIMIT_COUNT = 4; // ê°€ì§ˆìˆ˜ ìžˆëŠ” ìµœëŒ€ ì¿ í° ê°œìˆ˜
 
-const WORD		DBO_TIMEQUEST_DEFAULT_DAYRECORD_RANK_COUNT = 6;	// tblidxÀÇ ³­ÀÌµµ º°·Î ³²±â´Â rankÀÇ °¹¼ö //old 5
+const WORD		DBO_TIMEQUEST_DEFAULT_DAYRECORD_RANK_COUNT = 6;	// tblidxì˜ ë‚œì´ë„ ë³„ë¡œ ë‚¨ê¸°ëŠ” rankì˜ ê°¯ìˆ˜ //old 5
 
-const WORD		DBO_TIMEQUEST_DEFAULT_TOTAL_RANK_COUNT = DBO_TIMEQUEST_DEFAULT_DAYRECORD_RANK_COUNT + 1;	// tblidxÀÇ ³­ÀÌµµ º°·Î ³²±â´Â rankÀÇ °¹¼ö ¿Í BestRecord +
+const WORD		DBO_TIMEQUEST_DEFAULT_TOTAL_RANK_COUNT = DBO_TIMEQUEST_DEFAULT_DAYRECORD_RANK_COUNT + 1;	// tblidxì˜ ë‚œì´ë„ ë³„ë¡œ ë‚¨ê¸°ëŠ” rankì˜ ê°¯ìˆ˜ ì™€ BestRecord +
 
 const DWORD		DBO_TIMEQUEST_MAX_LIMIT_COUNT = 10;
 
@@ -159,14 +159,14 @@ const DWORD		DBO_TIMEQUEST_MAX_LIMIT_PLUS_COUNT = 10;
 //-----------------------------------------------------------------------------------
 #pragma pack( 1 )
 
-// Å¸ÀÓ¸Ó½Å Äù½ºÆ® °ÔÀÓ »óÅÂ
+// íƒ€ìž„ë¨¸ì‹  í€˜ìŠ¤íŠ¸ ê²Œìž„ ìƒíƒœ
 struct sTIMEQUEST_STAGE
 {
-	BYTE					byStageNumber; // ½ºÅ×ÀÌÁö ¹øÈ£
+	BYTE					byStageNumber; // ìŠ¤í…Œì´ì§€ ë²ˆí˜¸
 };
 
 
-// Å¸ÀÓ¸Ó½Å Äù½ºÆ® °ÔÀÓ »óÅÂ
+// íƒ€ìž„ë¨¸ì‹  í€˜ìŠ¤íŠ¸ ê²Œìž„ ìƒíƒœ
 struct sTIMEQUEST_STATE
 {
 	BYTE					byGameState; // eTIMEQUEST_GAME_STATE
@@ -174,26 +174,26 @@ struct sTIMEQUEST_STATE
 };
 
 
-// Å¸ÀÓÄù½ºÆ® °ÔÀÓ Á¤º¸
+// íƒ€ìž„í€˜ìŠ¤íŠ¸ ê²Œìž„ ì •ë³´
 struct sTIMEQUEST_RULE_INFO
 {
-	TBLIDX					timeQuestTblidx; // ÇØ´ç Å¸ÀÓ Äù½ºÆ® Å×ÀÌºí ÀÎµ¦½º
-	BYTE					byStartHour; // ½ÃÀÛ½Ã°£ (½Ã)
-	BYTE					byStartMin; // ½ÃÀÛ½Ã°£ (ºÐ)
+	TBLIDX					timeQuestTblidx; // í•´ë‹¹ íƒ€ìž„ í€˜ìŠ¤íŠ¸ í…Œì´ë¸” ì¸ë±ìŠ¤
+	BYTE					byStartHour; // ì‹œìž‘ì‹œê°„ (ì‹œ)
+	BYTE					byStartMin; // ì‹œìž‘ì‹œê°„ (ë¶„)
 	BYTE					byTimeQuestMode; // eTIMEQUEST_MODE
 	BYTE					byDifficulty; // eTIMEQUEST_DIFFICULTY
-	bool					bCountDown; // Ä«¿îÆ® ´Ù¿î ¿©ºÎ
-//	DWORD					dwLimitTime; // Á¦ÇÑ ½Ã°£
-//	DWORD					dwBonusTime; // º¸³Ê½º ½Ã°£
-//	DWORD					dwDayRecord; // ÇØ´ç Å¸ÀÓÄù½ºÆ®ÀÇ DayRecord
+	bool					bCountDown; // ì¹´ìš´íŠ¸ ë‹¤ìš´ ì—¬ë¶€
+//	DWORD					dwLimitTime; // ì œí•œ ì‹œê°„
+//	DWORD					dwBonusTime; // ë³´ë„ˆìŠ¤ ì‹œê°„
+//	DWORD					dwDayRecord; // í•´ë‹¹ íƒ€ìž„í€˜ìŠ¤íŠ¸ì˜ DayRecord
 	sTIMEQUEST_STATE		sTimeQuestState;
 };
 
 
-// TMQ ¿¡¼­ »ç¿ëÇÏ´Â ½Ã°£ °ü¸® ±¸Á¶
+// TMQ ì—ì„œ ì‚¬ìš©í•˜ëŠ” ì‹œê°„ ê´€ë¦¬ êµ¬ì¡°
 struct sTIMEQUEST_TIME
 {
-	// ´ÙÀ½ Ãâ¹ß ½Ã°£À» °è»ê
+	// ë‹¤ìŒ ì¶œë°œ ì‹œê°„ì„ ê³„ì‚°
 	void	NextTime(BYTE byTermMinute)
 	{
 		byHour = byHour + (BYTE)(byTermMinute / 60);
@@ -223,7 +223,7 @@ struct sTIMEQUEST_TIME
 
 
 //-----------------------------------------------------------------------------
-// Protocol ¿¡¼­¸¸ »ç¿ëÇÑ´Ù
+// Protocol ì—ì„œë§Œ ì‚¬ìš©í•œë‹¤
 
 
 struct sTIMEQUEST_DAYRECORD_DATA
@@ -295,7 +295,7 @@ struct sTIMEQUEST_TEAM_VAR
 
 
 //-----------------------------------------------------------------------------
-//	index - dataÀÇ À§Ä¡
+//	index - dataì˜ ìœ„ì¹˜
 //	[ 1byte | .... ] [ 2byte | .... ] [ 2byte | .... ] [ 1byte | .... ]
 //  [ size  | data ] [ size  | data ] [ size  | data ] [ size  | data ]
 //  size: 1 ~ 2byte first bit of the first byte is a bit for checking whether the size is beyond 127
@@ -490,7 +490,7 @@ public:
 
 
 	//-----------------------------------------------------------------------------------
-	//	Purpose	: wReadLoc¿¡ À§Ä¡ÇÑ DataÀÇ Å©±â¸¦ ¹ÝÈ¯
+	//	Purpose	: wReadLocì— ìœ„ì¹˜í•œ Dataì˜ í¬ê¸°ë¥¼ ë°˜í™˜
 	//	Return	: 
 	//-----------------------------------------------------------------------------------
 	WORD GetSize( WORD wReadLoc)
@@ -500,10 +500,10 @@ public:
 			return 0;
 		}
 
-		// Å©±â°¡ 127À» ³Ñ´Â °æ¿ì
+		// í¬ê¸°ê°€ 127ì„ ë„˜ëŠ” ê²½ìš°
 		if( 0x80 & abyData[wReadLoc])
 		{
-			// Å©±â°¡ ÀúÀåµÈ À§Ä¡°¡ À¯È¿ÇÑÁö Ã¼Å©(2byte ¸¦ »ç¿ëÇÏ¹Ç·Î)
+			// í¬ê¸°ê°€ ì €ìž¥ëœ ìœ„ì¹˜ê°€ ìœ íš¨í•œì§€ ì²´í¬(2byte ë¥¼ ì‚¬ìš©í•˜ë¯€ë¡œ)
 			if(wReadLoc + 1 >= wOffset)
 			{
 				return 0;
@@ -512,7 +512,7 @@ public:
 			// get size
 			WORD wSize = (abyData[wReadLoc] & 0x7f) + (abyData[wReadLoc + 1] << 7);
 
-			// ÀúÀåµÈ Å©±â¿Í ÀúÀåµÈ µ¥ÀÌÅÍÀÇ Å©±â°¡ À¯È¿ÇÑÁö Ã¼Å©
+			// ì €ìž¥ëœ í¬ê¸°ì™€ ì €ìž¥ëœ ë°ì´í„°ì˜ í¬ê¸°ê°€ ìœ íš¨í•œì§€ ì²´í¬
 			if(wReadLoc + wSize + 2 > wOffset)
 			{
 				return 0;
@@ -520,10 +520,10 @@ public:
 
 			return wSize;
 		}
-		// Å©±â°¡ 127À» ³ÑÁö ¾Ê´Â °æ¿ì
+		// í¬ê¸°ê°€ 127ì„ ë„˜ì§€ ì•ŠëŠ” ê²½ìš°
 		else								
 		{
-			// ÀúÀåµÈ Å©±â¿Í ÀúÀåµÈ µ¥ÀÌÅÍÀÇ Å©±â°¡ À¯È¿ÇÑÁö Ã¼Å©
+			// ì €ìž¥ëœ í¬ê¸°ì™€ ì €ìž¥ëœ ë°ì´í„°ì˜ í¬ê¸°ê°€ ìœ íš¨í•œì§€ ì²´í¬
 			if(wReadLoc + abyData[wReadLoc] + 1 > wOffset)
 			{
 				return 0;
@@ -535,21 +535,21 @@ public:
 
 
 	//-----------------------------------------------------------------------------------
-	//	Purpose	: wReadLoc¿¡ À§Ä¡ÇÑ Data¸¦ pData¿¡ º¹»çÇÑ´Ù.
+	//	Purpose	: wReadLocì— ìœ„ì¹˜í•œ Dataë¥¼ pDataì— ë³µì‚¬í•œë‹¤.
 	//	Return	: 
 	//-----------------------------------------------------------------------------------
 	bool Read( WORD wReadLoc, void * pData)
 	{
-		// Å©±â¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö Ã¼Å©
+		// í¬ê¸°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ ì²´í¬
 		if( wReadLoc >= wOffset)
 		{
 			return false;
 		}
 
-		// Å©±â°¡ 127À» ³Ñ´Â °æ¿ì
+		// í¬ê¸°ê°€ 127ì„ ë„˜ëŠ” ê²½ìš°
 		if( 0x80 & abyData[wReadLoc])
 		{
-			// Å©±â¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö Ã¼Å©(2byte ¸¦ »ç¿ëÇÏ¹Ç·Î)
+			// í¬ê¸°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ ì²´í¬(2byte ë¥¼ ì‚¬ìš©í•˜ë¯€ë¡œ)
 			if(wReadLoc + 1 >= wOffset)
 			{
 				return false;
@@ -558,7 +558,7 @@ public:
 			// get size
 			WORD wSize = (abyData[wReadLoc] & 0x7f) + (abyData[wReadLoc + 1] << 7);
 
-			// µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö Ã¼Å©
+			// ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ ì²´í¬
 			if(wReadLoc + wSize + 2 > wOffset )
 			{
 				return false;
@@ -567,10 +567,10 @@ public:
 			// copy
 			::memcpy( pData, &(abyData[wReadLoc + 2]), wSize);
 		}
-		// Å©±â°¡ 127À» ³ÑÁö ¾Ê´Â °æ¿ì
+		// í¬ê¸°ê°€ 127ì„ ë„˜ì§€ ì•ŠëŠ” ê²½ìš°
 		else
 		{
-			// µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö Ã¼Å©
+			// ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ ì²´í¬
 			if(wReadLoc + abyData[wReadLoc] + 1 > wOffset)
 			{
 				return false;
@@ -585,22 +585,22 @@ public:
 
 
 	//-----------------------------------------------------------------------------------
-	//	Purpose	: wReadLoc¿¡ À§Ä¡ÇÑ Data¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	//	Purpose	: wReadLocì— ìœ„ì¹˜í•œ Dataë¥¼ ë°˜í™˜í•œë‹¤.
 	//	Return	: 
 	//-----------------------------------------------------------------------------------
 	void * Read( WORD wReadLoc)
 	{
-		// Å©±â¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö Ã¼Å©
+		// í¬ê¸°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ ì²´í¬
 		if( wReadLoc >= wOffset)
 		{
 			return NULL;
 		}
 
 
-		// Å©±â°¡ 127À» ³Ñ´Â °æ¿ì
+		// í¬ê¸°ê°€ 127ì„ ë„˜ëŠ” ê²½ìš°
 		if( 0x80 & abyData[wReadLoc])
 		{
-			// Å©±â¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö Ã¼Å©(2byte ¸¦ »ç¿ëÇÏ¹Ç·Î)
+			// í¬ê¸°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ ì²´í¬(2byte ë¥¼ ì‚¬ìš©í•˜ë¯€ë¡œ)
 			if(wReadLoc + 1 >= wOffset)
 			{
 				return NULL;
@@ -609,7 +609,7 @@ public:
 			// get size
 			WORD wSize = (abyData[wReadLoc] & 0x7f) + (abyData[wReadLoc + 1] << 7);
 
-			// µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö¸¦ Ã¼Å©
+			// ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ë¥¼ ì²´í¬
 			if(wReadLoc + wSize + 2 > wOffset)
 			{
 				return NULL;
@@ -617,10 +617,10 @@ public:
 
 			return &(abyData[wReadLoc + 2]);
 		}
-		// Å©±â°¡ 127À» ³ÑÁö ¾Ê´Â °æ¿ì
+		// í¬ê¸°ê°€ 127ì„ ë„˜ì§€ ì•ŠëŠ” ê²½ìš°
 		else
 		{
-			// µ¥ÀÌÅÍ¸¦ ÀúÀåÇÏ´Â °ø°£ÀÌ À¯È¿ÇÑÁö¸¦ Ã¼Å©
+			// ë°ì´í„°ë¥¼ ì €ìž¥í•˜ëŠ” ê³µê°„ì´ ìœ íš¨í•œì§€ë¥¼ ì²´í¬
 			if(wReadLoc + abyData[wReadLoc] + 1 > wOffset)
 			{
 				return NULL;

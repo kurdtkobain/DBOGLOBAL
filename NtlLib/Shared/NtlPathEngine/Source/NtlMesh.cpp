@@ -169,7 +169,7 @@ iAgent* CNtlMesh::PlaceAgent( iShape* shape, const cPosition& position ) const
 	if( !m_pMesh )
 		return NULL;
 
-	// PathFind¸¦ Preprocess ÇØ³õ¾Ò´Â°¡?
+	// PathFindë¥¼ Preprocess í•´ë†“ì•˜ëŠ”ê°€?
 	if( !m_pMesh->shapeCanPathfind( shape ) )
 		return NULL;
 	
@@ -193,7 +193,7 @@ cPosition CNtlMesh::FindClosestUnobstructedPosition( iShape* shape, iCollisionCo
 
 bool CNtlMesh::LoadMesh( const char* fileName )
 {
-	// ÀÌ¹Ì Á¸ÀçÇÏ´Â mesh°¡ ÀÖ´Ù.
+	// ì´ë¯¸ ì¡´ìž¬í•˜ëŠ” meshê°€ ìžˆë‹¤.
 	if( m_pMesh )
 	{
 		m_pMesh->destroy();

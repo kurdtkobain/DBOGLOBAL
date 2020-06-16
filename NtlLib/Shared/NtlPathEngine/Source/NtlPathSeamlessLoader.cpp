@@ -31,12 +31,12 @@ unsigned int __stdcall CNtlPathSeamlessLoader::ThreadFunc( void* pParam )
 		// WaitSingleObject
 		WaitForSingleObjectEx( GetNtlPathEngineLoadingManager()->GetEvent(), INFINITE, FALSE );
 
-		// 1. ·Îµå µÇ¾î¾ß ÇÒ °ÍµéÀÌ ÀÖ´ÂÁö Ã¼Å©
+		// 1. ë¡œë“œ ë˜ì–´ì•¼ í•  ê²ƒë“¤ì´ ìžˆëŠ”ì§€ ì²´í¬
 		CNtlSeamlessMesh* pMesh = GetNtlPathEngineLoadingManager()->GetLoadReservation();
 		if( !pMesh )
 			continue;
 
-		// 2. ·Îµù ¿Ï·á ÇßÀ¸¸é ·Îµù ¿Ï·áÇß´Ù°í ³Ö¾îÁÜ
+		// 2. ë¡œë”© ì™„ë£Œ í–ˆìœ¼ë©´ ë¡œë”© ì™„ë£Œí–ˆë‹¤ê³  ë„£ì–´ì¤Œ
 
 		static CPerformanceChecker perf;
 		perf.Run();

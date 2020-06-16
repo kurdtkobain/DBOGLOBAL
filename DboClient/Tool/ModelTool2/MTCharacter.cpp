@@ -1,4 +1,4 @@
-﻿#include "StdAfx.h"
+#include "StdAfx.h"
 #include "ModelToolApplication.h"
 #include "NtlText.h"
 #include "NtlPLMaterialExtWrapper.h"

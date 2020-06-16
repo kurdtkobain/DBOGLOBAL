@@ -7,8 +7,8 @@
 
 /**
 	NPC conversation action
-	¿ëµµ : Client quest, client trigger
-	¼³¸í : Å¬¶óÀÌ¾ğÆ® Àü¿ëÀ¸·Î »ç¿ëµÇ´Â NPC ´ëÈ­
+	ìš©ë„ : Client quest, client trigger
+	ì„¤ëª… : í´ë¼ì´ì–¸íŠ¸ ì „ìš©ìœ¼ë¡œ ì‚¬ìš©ë˜ëŠ” NPC ëŒ€í™”
 */
 
 
@@ -41,7 +41,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

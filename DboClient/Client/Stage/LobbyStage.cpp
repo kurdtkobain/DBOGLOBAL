@@ -214,7 +214,7 @@ void CLobbyStage::CheckDeletedCharacter(void)
 			return;
 	}
 
-	// Áö¿öÁø Ä³¸¯ÅÍ°¡ ¼±ÅÃµÇ¾î ÀÖÀ» °æ¿ì »õ·Î¿î Ä³¸¯ÅÍ¸¦ ¼±ÅÃÇÑ´Ù
+	// ì§€ì›Œì§„ ìºë¦­í„°ê°€ ì„ íƒë˜ì–´ ìˆì„ ê²½ìš° ìƒˆë¡œìš´ ìºë¦­í„°ë¥¼ ì„ íƒí•œë‹¤
 	if( pLobby->GetCharacterCount() > 0 )
 	{
 		pLobby->SetSelectedCharacterIndex(0);
@@ -352,26 +352,26 @@ void CLobbyStage::RequestLobbyInfo()
 	// request character & channel info
 	if(pConData->byLastServerFarmID == INVALID_SERVERFARMID )
 	{
-		// ¸¶Áö¸·À¸·Î Á¢¼ÓÇÑ ¼­¹ö Á¤º¸°¡ ¾ø´Ù¸é ¸ğµç ¼­¹öÀÇ ¸ñ·ÏÀ» ¿äÃ»ÇÑ´Ù
+		// ë§ˆì§€ë§‰ìœ¼ë¡œ ì ‘ì†í•œ ì„œë²„ ì •ë³´ê°€ ì—†ë‹¤ë©´ ëª¨ë“  ì„œë²„ì˜ ëª©ë¡ì„ ìš”ì²­í•œë‹¤
 		GetDboGlobal()->GetLobbyPacketGenerator()->SendCharServerListReq();	
 
 		GetCharStageState()->ChangeState(CHAR_STATE_SELECT_INFOMATION);
 
-		// ±âº» ÁöÇü »ı¼º
+		// ê¸°ë³¸ ì§€í˜• ìƒì„±
 		SetupDefaultCamerabyRace(dRACE_NONE);
 		CreateBackGroundStage((RwUInt32)INVALID_INDEX);
 		TeleportStage();
 	}
 	else
 	{
-		// ¸¶Áö¸·À¸·Î Á¢¼ÓÇÑ ¼­¹ö°¡ ÀÖÀ» ¶§¿¡´Â ±× ¼­¹öÀÇ Á¤º¸¸¸À» ¿äÃ»ÇÑ´Ù
+		// ë§ˆì§€ë§‰ìœ¼ë¡œ ì ‘ì†í•œ ì„œë²„ê°€ ìˆì„ ë•Œì—ëŠ” ê·¸ ì„œë²„ì˜ ì •ë³´ë§Œì„ ìš”ì²­í•œë‹¤
 		GetDboGlobal()->GetLobbyPacketGenerator()->SendCharServerListOneReq();
 
-		// Ä³¸¯ÅÍ Á¤º¸¸¦ ¿äÃ»ÇÑ´Ù. ´ÙÀ½ÀÇ 3°¡Áö ÆĞÅ¶ÀÌ ÀÀ´äÀ¸·Î ¿Â´Ù
+		// ìºë¦­í„° ì •ë³´ë¥¼ ìš”ì²­í•œë‹¤. ë‹¤ìŒì˜ 3ê°€ì§€ íŒ¨í‚·ì´ ì‘ë‹µìœ¼ë¡œ ì˜¨ë‹¤
 		// CU_SERVER_CHANNEL_INFO, CU_CHARACTER_INFO_RES, CU_CHARACTER_LOAD_RES	
 		GetDboGlobal()->GetLobbyPacketGenerator()->SendCharLoadReq(pConData->uiAccountId, pConData->byLastServerFarmID);
 
-		// ÇöÀç ¼±ÅÃµÈ ¼­¹ö	
+		// í˜„ì¬ ì„ íƒëœ ì„œë²„	
 		GetLobbyManager()->SetSelectedServerHandle(pConData->byLastServerFarmID);	
 
 		GetCharStageState()->ChangeState(CHAR_STATE_SELECT_INFOMATION);
@@ -429,17 +429,17 @@ void CLobbyStage::HandleEvents(RWS::CMsg &pMsg)
 
 				sPC_SUMMARY& charInfo = pLOBBY_CHARACTER->tSummary;
 
-				// CreateDownLoadAvatarÇÔ¼ö¿¡¼­ »ç¿ëÇÏ±â À§ÇÑ ¾Æ¹ÙÅ¸ÀÇ À§Ä¡ ÁöÁ¤À» À§ÇØ È£Ãâ
+				// CreateDownLoadAvatarí•¨ìˆ˜ì—ì„œ ì‚¬ìš©í•˜ê¸° ìœ„í•œ ì•„ë°”íƒ€ì˜ ìœ„ì¹˜ ì§€ì •ì„ ìœ„í•´ í˜¸ì¶œ
 				SetupDefaultCamerabyRace(charInfo.byRace);
 
 				CreateBackGroundStage(charInfo.byRace);
 				CreateDownLoadAvatar(&charInfo);
 
-				// »ı¼ºµÈ ¾Æ¹ÙÅ¸ÀÇ Å°¿¡ µû¸¥ ¾î¸¥, ¾ÆÀÌº° Ä«¸Ş¶ó ÁÂÇ¥ ÁöÁ¤
+				// ìƒì„±ëœ ì•„ë°”íƒ€ì˜ í‚¤ì— ë”°ë¥¸ ì–´ë¥¸, ì•„ì´ë³„ ì¹´ë©”ë¼ ì¢Œí‘œ ì§€ì •
 				SetupDefaultCamerabyRace(charInfo.byRace);
 				TeleportStage();
 
-				// Ä«¸Ş¶ó¸¦ ±âº» À§Ä¡·Î
+				// ì¹´ë©”ë¼ë¥¼ ê¸°ë³¸ ìœ„ì¹˜ë¡œ
 				API_PL_CameraLookAt(CNtlPLGlobal::m_RwCamera, &m_vCameraPos, &m_vCameraPosAt);
 			}
 		}
@@ -483,7 +483,7 @@ void CLobbyStage::HandleEvents(RWS::CMsg &pMsg)
 			sCameraZoom cameraZoom;
 			RwV3d v3Pos, v3Dir;
 
-			// Ä«¸Ş¶ó À§Ä¡
+			// ì¹´ë©”ë¼ ìœ„ì¹˜
 			RwV3dSubMacro(&v3Pos, &m_CameraData[m_byRace][m_byCharHeightType][ZL_ZOOM_IN].v3Pos,
 				&m_CameraData[m_byRace][m_byCharHeightType][ZL_ZOOM_OUT].v3Pos);			
 
@@ -520,7 +520,7 @@ void CLobbyStage::HandleEvents(RWS::CMsg &pMsg)
 			sCameraZoom cameraZoom;
 			RwV3d v3Pos, v3Dir;
 
-			// Ä«¸Ş¶ó À§Ä¡
+			// ì¹´ë©”ë¼ ìœ„ì¹˜
 			RwV3dSubMacro(&v3Pos, &m_CameraData[m_byRace][m_byCharHeightType][ZL_ZOOM_IN].v3Pos,
 				&m_CameraData[m_byRace][m_byCharHeightType][ZL_ZOOM_OUT].v3Pos);			
 
@@ -558,7 +558,7 @@ void CLobbyStage::HandleEvents(RWS::CMsg &pMsg)
 
 			if( hServer == INVALID_SERVERFARMID )
 			{
-				// ¼­¹ö¿¡ Ã³À½ Á¢¼ÓÇÑ À¯ÀúÀÇ °æ¿ì
+				// ì„œë²„ì— ì²˜ìŒ ì ‘ì†í•œ ìœ ì €ì˜ ê²½ìš°
 				SetupDefaultCamerabyRace(dRACE_NONE);
 				TeleportStage();
 			}
@@ -611,7 +611,7 @@ void CLobbyStage::HandleEvents(RWS::CMsg &pMsg)
 
 			if( hServer == INVALID_SERVERFARMID )
 			{
-				// ¼­¹ö¿¡ Ã³À½ Á¢¼ÓÇÑ À¯ÀúÀÇ °æ¿ì
+				// ì„œë²„ì— ì²˜ìŒ ì ‘ì†í•œ ìœ ì €ì˜ ê²½ìš°
 				SetupDefaultCamerabyRace(dRACE_NONE);
 				TeleportStage();
 			}
@@ -628,15 +628,15 @@ void CLobbyStage::HandleEvents(RWS::CMsg &pMsg)
 
 void CLobbyStage::EventProcUpdateTick(RwReal fElapsed)
 {
-	//Player PositionÀ» Á¦´ë·Î Update¸¦ ÇØÁÖ¾î¾ß ÇÏ´ÃÀÌ Á¦´ë·Î ³ª¿Â´Ù.
+	//Player Positionì„ ì œëŒ€ë¡œ Updateë¥¼ í•´ì£¼ì–´ì•¼ í•˜ëŠ˜ì´ ì œëŒ€ë¡œ ë‚˜ì˜¨ë‹¤.
 	if(m_pWorldEntity != NULL)
 	{
 		m_pWorldEntity->SetPlayerPosition(m_vAvatarPos);
 
-		// World °¡ Ready »óÅÂÀÏ ¶§ ÇÑ¹ø¸¸ Àû¿ë.
+		// World ê°€ Ready ìƒíƒœì¼ ë•Œ í•œë²ˆë§Œ ì ìš©.
 		if(m_pWorldEntity->GetWorldReady())
 		{
-			// ·Îºñ¿¡ ¿É¼Ç Àû¿ë			
+			// ë¡œë¹„ì— ì˜µì…˜ ì ìš©			
 			if( !m_bOptionApply )
 			{
 				if(GetNtlStorageManager()->GetBoolData( dSTORAGE_GRAPHIC_SHADER_HDR ))
@@ -651,13 +651,13 @@ void CLobbyStage::EventProcUpdateTick(RwReal fElapsed)
 
 	GetCharStageState()->Update(fElapsed);
 
-	// Ä«¸Ş¶ó Zoom in/out
+	// ì¹´ë©”ë¼ Zoom in/out
 	if( m_listZoomMode.size() > 0 )
 	{
 		std::list<sCameraZoom>::iterator it = m_listZoomMode.begin();
 		sCameraZoom& cameraZoom = *it;
 
-		// ¾÷µ¥ÀÌÆ® Å¸ÀÓ
+		// ì—…ë°ì´íŠ¸ íƒ€ì„
 		cameraZoom.fElapsed += fElapsed;
 
 		if( cameraZoom.fElapsed > dCAMERA_MOVE_TIME )
@@ -668,7 +668,7 @@ void CLobbyStage::EventProcUpdateTick(RwReal fElapsed)
 
 		API_PL_CameraLookAt(CNtlPLGlobal::m_RwCamera, &v3CameraCurPos, &v3CameraCurDir);
 
-		// ÃÊ±âÈ­
+		// ì´ˆê¸°í™”
 		if( cameraZoom.fElapsed >= dCAMERA_MOVE_TIME )
 			m_listZoomMode.erase(it);
 	}
@@ -714,11 +714,11 @@ void CLobbyStage::DestroyBackGroundStage()
 
 void CLobbyStage::SetupDefaultCamerabyRace(RwUInt8 byRace)
 {
-	// ¼­¹ö ¼¿·ºÆ® È­¸éµî Ä³¸¯ÅÍ°¡ ¾øÀ» ¼öµµ ÀÖ´Ù
+	// ì„œë²„ ì…€ë ‰íŠ¸ í™”ë©´ë“± ìºë¦­í„°ê°€ ì—†ì„ ìˆ˜ë„ ìˆë‹¤
 	if(m_pAvatar)
 	{
-		// ¾î¸¥°ú ¾ÆÀÌ¿¡ µû¶ó Ä«¸Ş¶ó¸¦ Ä³¸¯ÅÍ ÂÊÀ¸·Î ÃÖ´ëÇÑ ´ç°åÀ» ¶§ Ä«¸Ş¶óÀÇ À§Ä¡¸¦
-		// ´Ş¸®ÇÑ´Ù
+		// ì–´ë¥¸ê³¼ ì•„ì´ì— ë”°ë¼ ì¹´ë©”ë¼ë¥¼ ìºë¦­í„° ìª½ìœ¼ë¡œ ìµœëŒ€í•œ ë‹¹ê²¼ì„ ë•Œ ì¹´ë©”ë¼ì˜ ìœ„ì¹˜ë¥¼
+		// ë‹¬ë¦¬í•œë‹¤
 		if( Logic_IsChild(m_pAvatar) )
 		{
 			m_byCharHeightType = CHT_CHILD;
@@ -788,14 +788,14 @@ void CLobbyStage::SetupDefaultCamerabyRace(RwUInt8 byRace)
 	{
 		RwV3d v3Temp;
 
-		// Ä«¸Ş¶ó°¡ ¿òÁ÷ÀÏ ÃÖ´ë °Å¸®
+		// ì¹´ë©”ë¼ê°€ ì›€ì§ì¼ ìµœëŒ€ ê±°ë¦¬
 		RwV3dSubMacro(&v3Temp, &m_CameraData[m_byRace][m_byCharHeightType][ZL_ZOOM_OUT].v3Pos,
 			&m_CameraData[m_byRace][m_byCharHeightType][ZL_ZOOM_IN].v3Pos);
 
 		m_fTotalDistance		= RwV3dLength(&v3Temp);
 		m_fTotalZoomStep		= (RwReal)(RwUInt8)(m_fTotalDistance / dCAMERA_STEP_DISTANCE);
 
-		// Ä«¸Ş¶ó ½ÃÁ¡ÀÌ ¿òÁ÷ÀÏ ÃÖ´ë °Å¸®
+		// ì¹´ë©”ë¼ ì‹œì ì´ ì›€ì§ì¼ ìµœëŒ€ ê±°ë¦¬
 		RwV3dSubMacro(&v3Temp, &m_v3Dir[m_byRace][m_byCharHeightType][ZL_ZOOM_OUT],
 			&m_v3Dir[m_byRace][m_byCharHeightType][ZL_ZOOM_IN]);
 
@@ -1051,7 +1051,7 @@ void CLobbyStage::CreateDownLoadAvatar(sPC_SUMMARY *pCharInfo)
 		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].byPos				= (BYTE)i;
 		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].byStackcount			= (BYTE)1;
 		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].byRank				= pCharInfo->sItem[i].byRank;
-		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].byCurDur				= 100;			// ¿©±â´Â Ã¤¿ö ³ÖÀ¸½Ã¸é µË´Ï´Ù.
+		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].byCurDur				= 100;			// ì—¬ê¸°ëŠ” ì±„ì›Œ ë„£ìœ¼ì‹œë©´ ë©ë‹ˆë‹¤.
 		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].sOptionSet.Init();
 		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].byRestrictState = ITEM_RESTRICT_STATE_TYPE_NONE;
 		pAvatarInfo->sItemPf[pAvatarInfo->wItemCount].bNeedToIdentify		= false;
@@ -1080,9 +1080,9 @@ void CLobbyStage::CreateDownLoadAvatar(sPC_SUMMARY *pCharInfo)
 
 void CLobbyStage::TeleportStage()
 {
-	// WorldÀÇ Positon º¯°æÀÌ ÇÑ¹ø¿¡ 2¹ø º¯°æÀÌ µÇ¸é
-	// WorldÀÇ Entity¿¡ ¹®Á¦°¡ »ı±â¹Ç·Î Avatar¸¦ ±âÁØÀ¸·Î
-	// »ï¾Æ AvatarÀÇ À§Ä¡°¡ º¯°æÀÌ »ı±æ °æ¿ì¸¸ À§Ä¡ º¯°æÀ» ÇÑ´Ü( by HoDong )
+	// Worldì˜ Positon ë³€ê²½ì´ í•œë²ˆì— 2ë²ˆ ë³€ê²½ì´ ë˜ë©´
+	// Worldì˜ Entityì— ë¬¸ì œê°€ ìƒê¸°ë¯€ë¡œ Avatarë¥¼ ê¸°ì¤€ìœ¼ë¡œ
+	// ì‚¼ì•„ Avatarì˜ ìœ„ì¹˜ê°€ ë³€ê²½ì´ ìƒê¸¸ ê²½ìš°ë§Œ ìœ„ì¹˜ ë³€ê²½ì„ í•œë‹¨( by HoDong )
 	if( m_vAvatarPos.x != m_vAvatarUpdatePos.x ||
 		m_vAvatarPos.y != m_vAvatarUpdatePos.y ||
 		m_vAvatarPos.z != m_vAvatarUpdatePos.z )

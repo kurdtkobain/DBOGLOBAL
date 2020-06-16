@@ -19,7 +19,7 @@ class CDboTSQAgency : public CDboTSTAgency
 
 // Member variables
 protected:
-	CDboTSCompleteQInfo*				m_pCompleteQInfo;	// Äù½ºÆ® ¿Ï·á Á¤º¸
+	CDboTSCompleteQInfo*				m_pCompleteQInfo;	// í€˜ìŠ¤íŠ¸ ì™„ë£Œ ì •ë³´
 
 // Constructions and Destructions
 public:

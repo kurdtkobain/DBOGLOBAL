@@ -2,7 +2,7 @@
  *
  * File			: NtlSobAvatarAtt.h
  * Author		: HyungSuk, Jang
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2005. 11. 30	
  * Abstract		: Simulation object avatar attribute base class
  *****************************************************************************
@@ -22,8 +22,8 @@ class CNtlSobAvatarAttr : public CNtlSobPlayerAttr
 	
 public:
 
-	RwUInt32	m_uiExp;		// ÇöÀç level¿¡¼­ÀÇ current exp	
-	RwUInt32	m_uiMaxExp;	// ÇöÀç level¿¡¼­ÀÇ max exp
+	RwUInt32	m_uiExp;		// í˜„ì¬ levelì—ì„œì˜ current exp	
+	RwUInt32	m_uiMaxExp;	// í˜„ì¬ levelì—ì„œì˜ max exp
 
 	//////////////////////////////////////////////////////////////////////////
 
@@ -31,8 +31,8 @@ public:
 	RwUInt16	m_wApSitdownRegen;
 	RwUInt16	m_wApDegen;
 
-	RwUInt16	m_wRpRegen;			// RP Áõ°¡ ¼Óµµ.(/second)
-	RwUInt16	m_wRpDimimutionRate;	// RP °¨¼Ò ¼Óµµ.(/second)
+	RwUInt16	m_wRpRegen;			// RP ì¦ê°€ ì†ë„.(/second)
+	RwUInt16	m_wRpDimimutionRate;	// RP ê°ì†Œ ì†ë„.(/second)
 
 	DWORD		m_dwWeightLimit;
 	float		m_fItemUpgradeBonusRate;
@@ -45,10 +45,10 @@ public:
 
 	RwUInt32 m_uiSp;
 
-	RwUInt32 m_uiHonorPoint;			///< ¸í¿¹ Æ÷ÀÎÆ®
-	RwUInt32 m_uiMudosaPoint;			///< ¹«µµ»ç Æ÷ÀÎÆ®
+	RwUInt32 m_uiHonorPoint;			///< ëª…ì˜ˆ í¬ì¸íŠ¸
+	RwUInt32 m_uiMudosaPoint;			///< ë¬´ë„ì‚¬ í¬ì¸íŠ¸
 
-	RwBool	 m_bCanChangeClass;			///< ÀüÁ÷ °¡´É ¿©ºÎ
+	RwBool	 m_bCanChangeClass;			///< ì „ì§ ê°€ëŠ¥ ì—¬ë¶€
 
 
     //////////////////////////////////////////////////////////////////////////

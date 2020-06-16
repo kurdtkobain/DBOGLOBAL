@@ -1,6 +1,6 @@
 #pragma once
 
-/// Lua ÄÄÆÄÀÏÀ» À§ÇØ ÀÚÃ¼ Ãß°¡ÇÑ Çì´õÆÄÀÏ (by agebreak)
+/// Lua ì»´íŒŒì¼ì„ ìœ„í•´ ìì²´ ì¶”ê°€í•œ í—¤ë”íŒŒì¼ (by agebreak)
 
 extern int ComplieLua(int argc, char* argv[]);
 

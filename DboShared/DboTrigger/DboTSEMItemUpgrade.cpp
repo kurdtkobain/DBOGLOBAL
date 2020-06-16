@@ -265,8 +265,8 @@ bool CDboTSEMItemUpgrade::AddBuildData( const std::string& strKey, const CNtlTSM
 
 	vecdef_TID_LIST& defTIDList = m_defItemUpgradeMapper[strKey];
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç Item upgrade ·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ Item upgrade ë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	sITEMUPGRADE_PARAM sParam;
 	CDboTSEMItemUpgrade_Recv clRecv;

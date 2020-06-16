@@ -213,7 +213,7 @@ void CPackEditorDlg::CreateThread(void)
 	if ( m_hThread ) 
 		return;
 
-	// Thread ¸¦ »ı¼ºÇÑ´Ù
+	// Thread ë¥¼ ìƒì„±í•œë‹¤
 	m_hThread = (HANDLE)_beginthreadex( NULL, 0, &PackExport, this, 0, &m_uiThreaID );
 
 	m_bThreadExport = TRUE;
@@ -225,7 +225,7 @@ void CPackEditorDlg::DeleteThread(void)
 	{
 		WaitForSingleObject( m_hThread, INFINITE );
 
-		// Thread ÇÚµéÀ» ´İ´Â´Ù
+		// Thread í•¸ë“¤ì„ ë‹«ëŠ”ë‹¤
 		CloseHandle( m_hThread );
 
 		m_hThread = 0;

@@ -41,15 +41,15 @@ struct stINFOWND_UPGRADE
 };
 
 /**
-* \brief Battle AttributeÀÇ °è»êµÈ ¼Ó¼ºÀ» Ãâ·ÂÇÏ±â À§ÇÏ¿©
+* \brief Battle Attributeì˜ ê³„ì‚°ëœ ì†ì„±ì„ ì¶œë ¥í•˜ê¸° ìœ„í•˜ì—¬
 */
 struct stINFOWND_BATTLEATTR
 {
 	enum eTYPE 
 	{ 
-		TYPE_ATTR_WEAPON_INFO = 0,			///< ¹«±â ¼Ó¼ºÀÌ °¡Áö´Â »ó¼º °ü°è
-		TYPE_ATTR_UPGRADE,					///< ¾÷±×·¹ÀÌµå½Ã »ó¼º °ü°è
-		TYPE_ATTR_NUM,						///< ÀüÅõ¼Ó¼º ÅøÆÁÀÇ Å¸ÀÔ °¹¼ö
+		TYPE_ATTR_WEAPON_INFO = 0,			///< ë¬´ê¸° ì†ì„±ì´ ê°€ì§€ëŠ” ìƒì„± ê´€ê³„
+		TYPE_ATTR_UPGRADE,					///< ì—…ê·¸ë ˆì´ë“œì‹œ ìƒì„± ê´€ê³„
+		TYPE_ATTR_NUM,						///< ì „íˆ¬ì†ì„± íˆ´íŒì˜ íƒ€ì… ê°¯ìˆ˜
 		TYPE_ATTR_INVALID = TYPE_ATTR_NUM
 	};
 
@@ -106,15 +106,15 @@ public:
 		INFOWND_QUESTITEM,
 		INFOWND_NOTSOBBUFF,
 		INFOWND_REWARD,
-		INFOWND_FAKEBUFF,						//! ÆÄÆ¼ ¹öÇÁ
+		INFOWND_FAKEBUFF,						//! íŒŒí‹° ë²„í”„
 		INFOWND_MINIMAP,
-        INFOWND_PORTAL,                         ///< NPC¸¦ ÀÌ¿ëÇÑ Æ÷Å»½Ã »ç¿ëµÇ´Â ¸ÊÀÇ ÅøÆÁ
-        INFOWND_FRIEND_LIST,                    ///< Ä£±¸¸®½ºÆ®¿¡¼­ ¼¼ºÎ Á¤º¸¸¦ Ç¥½ÃÇÏ´Â ÅøÆÁ
-		INFOWND_UPGRADE,						// ¾÷±×·¹ÀÌµå ¾ÆÀÌÅÛ ÀåÂø½Ã È£ÀÌÆ÷ÀÌ½ºÅæ.
-		INFOWND_BATTLEATTRIBUTE,				///< Battle AttributeÀÇ °è»êµÈ ¼Ó¼ºÀ» Ç¥½ÃÇÏ´Â ÅøÆÁ
+        INFOWND_PORTAL,                         ///< NPCë¥¼ ì´ìš©í•œ í¬íƒˆì‹œ ì‚¬ìš©ë˜ëŠ” ë§µì˜ íˆ´íŒ
+        INFOWND_FRIEND_LIST,                    ///< ì¹œêµ¬ë¦¬ìŠ¤íŠ¸ì—ì„œ ì„¸ë¶€ ì •ë³´ë¥¼ í‘œì‹œí•˜ëŠ” íˆ´íŒ
+		INFOWND_UPGRADE,						// ì—…ê·¸ë ˆì´ë“œ ì•„ì´í…œ ì¥ì°©ì‹œ í˜¸ì´í¬ì´ìŠ¤í†¤.
+		INFOWND_BATTLEATTRIBUTE,				///< Battle Attributeì˜ ê³„ì‚°ëœ ì†ì„±ì„ í‘œì‹œí•˜ëŠ” íˆ´íŒ
 		INFOWND_QUEST_SEARCH,
-		INFOWND_QUEST_INDICATOR,				/// Äù½ºÆ®¾Ë¸®¹Ì ¸¶¿ì½º¿À¹ö Á¤º¸.
-		INFOWND_SKILL_SPUPGRADE,				/// SP ¾÷±×·¹ÀÌµå ¹öÆ°.
+		INFOWND_QUEST_INDICATOR,				/// í€˜ìŠ¤íŠ¸ì•Œë¦¬ë¯¸ ë§ˆìš°ìŠ¤ì˜¤ë²„ ì •ë³´.
+		INFOWND_SKILL_SPUPGRADE,				/// SP ì—…ê·¸ë ˆì´ë“œ ë²„íŠ¼.
 		INFOWND_RECIPE,
 		INFOWND_HLS_ITEM,
 	};

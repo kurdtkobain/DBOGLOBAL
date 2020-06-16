@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-13
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -187,7 +187,7 @@ void CNtlPacket::AttachData(BYTE * pPacketBuffer, WORD wBufferUsedSize)
 
 
 //-----------------------------------------------------------------------------------
-//		Purpose	: ¿ÏÀüÇÑ ÆĞÅ¶ ¹öÆÛ¸¦ ÀÎÀÚ·Î È£ÃâÇÒ °Í
+//		Purpose	: ì™„ì „í•œ íŒ¨í‚· ë²„í¼ë¥¼ ì¸ìë¡œ í˜¸ì¶œí•  ê²ƒ
 //		Return	:
 //-----------------------------------------------------------------------------------
 void CNtlPacket::Attach(BYTE * pPacketBuffer)

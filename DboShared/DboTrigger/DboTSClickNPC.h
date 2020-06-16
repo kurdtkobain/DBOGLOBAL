@@ -7,9 +7,9 @@
 
 /**
 	Click NPC event
-	¿ëµµ : Client quest, client trigger, server quest, server trigger pc
-	¼³¸í : Å¬¶óÀÌ¾ğÆ®¿¡¼­´Â NPC°¡ ¼±ÅÃµÇ¾úÀ» ¶§ ¹ß»ıÇÏ´Â ÀÌº¥ÅÍ·Î½á »ç¿ëµÊ
-		   ¼­¹ö¿¡¼­´Â ÇØ´ç NPC°¡ ¼±ÅÃµÇ¾ú´ÂÁö °Ë»çÇÏ´Â ¿ëµµ·Î »ç¿ëµÊ
+	ìš©ë„ : Client quest, client trigger, server quest, server trigger pc
+	ì„¤ëª… : í´ë¼ì´ì–¸íŠ¸ì—ì„œëŠ” NPCê°€ ì„ íƒë˜ì—ˆì„ ë•Œ ë°œìƒí•˜ëŠ” ì´ë²¤í„°ë¡œì¨ ì‚¬ìš©ë¨
+		   ì„œë²„ì—ì„œëŠ” í•´ë‹¹ NPCê°€ ì„ íƒë˜ì—ˆëŠ”ì§€ ê²€ì‚¬í•˜ëŠ” ìš©ë„ë¡œ ì‚¬ìš©ë¨
 */
 
 
@@ -48,7 +48,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

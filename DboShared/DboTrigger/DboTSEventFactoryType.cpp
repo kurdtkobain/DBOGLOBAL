@@ -3,7 +3,7 @@
 
 
 /** 
-	Event °ü·Ã °´Ã¼¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ event entity type class µé
+	Event ê´€ë ¨ ê°ì²´ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ event entity type class ë“¤
 */
 
 

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-09
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Doo Sup, Chung ( john@ntl-inc.com )
 //
@@ -104,7 +104,7 @@ bool CUseItemTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		if( pExistTbldat )
 		{
 			CopyMemory( pTbldat, pExistTbldat, pTbldat->GetDataSize() );
-			// µ¥ÀÌÅ¸ÀÇ ÇØÁ¦¸¦ À§ÇÑ false ¹İÈ¯
+			// ë°ì´íƒ€ì˜ í•´ì œë¥¼ ìœ„í•œ false ë°˜í™˜
 			return true;  
 		}
 	}

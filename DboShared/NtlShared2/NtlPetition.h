@@ -3,9 +3,9 @@
 //
 //	File		:	NtlPetition.h
 //
-//	Begin		:	2008-04-10 ¿ÀÈÄ 4:27:43
+//	Begin		:	2008-04-10 ì˜¤í›„ 4:27:43
 //
-//	Copyright	:	¨Ï NTL-Inc Co. Ltd
+//	Copyright	:	â“’ NTL-Inc Co. Ltd
 //
 //	strAuthor	:	Seung Goon. Chi   ( sgpro@ntl-inc.com )
 //
@@ -31,14 +31,14 @@
 
 #define NTL_MAX_PETITION_GETLIST_COUNT							(20)
 
-#define NTL_MAX_SIZE_RESERVEGMID								(256)//º¸·ù GM ID
-#define NTL_MAX_SIZE_RESERVEGMID_UNICODE						(256)//º¸·ù GM ID
+#define NTL_MAX_SIZE_RESERVEGMID								(256)//ë³´ë¥˜ GM ID
+#define NTL_MAX_SIZE_RESERVEGMID_UNICODE						(256)//ë³´ë¥˜ GM ID
 
 
-#define NTL_MAX_SIZE_STARTGMID									(256)// ´ëÀÀ GM ID
+#define NTL_MAX_SIZE_STARTGMID									(256)// ëŒ€ì‘ GM ID
 
 
-#define NTL_MAX_SIZE_CHANGECATEGORYGMID							(256)// Àü´Þ GM ID
+#define NTL_MAX_SIZE_CHANGECATEGORYGMID							(256)// ì „ë‹¬ GM ID
 
 
 #define NTL_MAX_SIZE_LOG_TEXT									(1024)
@@ -115,10 +115,10 @@ enum ePETITIONSYSTEM_PETITIONINSERTTYPE
 
 enum ePETITIONSYSTEM_CATEGORY_1
 {
-	 PETITION_CATEGORY_1_ACCUSE = 0 // ºÒ·® ÀÌ¿ëÀÚ ½Å°í
-	,PETITION_CATEGORY_1_BUG // ¹ö±× °ü·Ã
-	,PETITION_CATEGORY_1_GAMEINFO // °ÔÀÓ Á¤º¸
-    ,PETITION_CATEGORY_1_STUCK // Ä³¸¯ÅÍ ÀÌµ¿ ºÒ°¡
+	 PETITION_CATEGORY_1_ACCUSE = 0 // ë¶ˆëŸ‰ ì´ìš©ìž ì‹ ê³ 
+	,PETITION_CATEGORY_1_BUG // ë²„ê·¸ ê´€ë ¨
+	,PETITION_CATEGORY_1_GAMEINFO // ê²Œìž„ ì •ë³´
+    ,PETITION_CATEGORY_1_STUCK // ìºë¦­í„° ì´ë™ ë¶ˆê°€
 
 	,PETITION_CATEGORY_1_COUNT
 	,PETITION_CATEGORY_1_INVALID = 0xFFFFFFFF
@@ -126,14 +126,14 @@ enum ePETITIONSYSTEM_CATEGORY_1
 
 enum ePETITIONSYSTEM_CATEGORY_2
 {
-	 PETITION_CATEGORY_2_ACCUSE_AUTOPROGRAM = 0 // ºÒ¹ýÇÁ·Î±×·¥
-	,PETITION_CATEGORY_2_ACCUSE_FRAUD // »ç±â
-	,PETITION_CATEGORY_2_ACCUSE_PAPERING // µµ¹è
-	,PETITION_CATEGORY_2_BUG_SYSTEM // ½Ã½ºÅÛ
-	,PETITION_CATEGORY_2_BUG_GRAPHIC // ±×·¡ÇÈ
-	,PETITION_CATEGORY_2_BUG_ETC // ±âÅ¸
-	,PETITION_CATEGORY_2_GAMEINFO // °ÔÀÓ Á¤º¸
-	,PETITION_CATEGORY_2_STUCK // Ä³¸¯ÅÍ ÀÌµ¿ ºÒ°¡
+	 PETITION_CATEGORY_2_ACCUSE_AUTOPROGRAM = 0 // ë¶ˆë²•í”„ë¡œê·¸ëž¨
+	,PETITION_CATEGORY_2_ACCUSE_FRAUD // ì‚¬ê¸°
+	,PETITION_CATEGORY_2_ACCUSE_PAPERING // ë„ë°°
+	,PETITION_CATEGORY_2_BUG_SYSTEM // ì‹œìŠ¤í…œ
+	,PETITION_CATEGORY_2_BUG_GRAPHIC // ê·¸ëž˜í”½
+	,PETITION_CATEGORY_2_BUG_ETC // ê¸°íƒ€
+	,PETITION_CATEGORY_2_GAMEINFO // ê²Œìž„ ì •ë³´
+	,PETITION_CATEGORY_2_STUCK // ìºë¦­í„° ì´ë™ ë¶ˆê°€
 	, PETITION_CATEGORY_2_CANCEL //
 
 	,PETITION_CATEGORY_2_COUNT
@@ -157,22 +157,22 @@ enum ePETITIONSYSTEM_DATASTATE
 enum ePETITIONSYSTEM_PROGRESSSTATE
 {
 	 PETITIONPROGRESSSTATE_NONE = 0				//
-	,PETITIONPROGRESSSTATE_REQUEST				// Petition »ý¼º
-	,PETITIONPROGRESSSTATE_CANCEL				// Ãë¼Ò
-	,PETITIONPROGRESSSTATE_START				// ½ÃÀÛ
-	,PETITIONPROGRESSSTATE_INIT					// ÃÊ±âÈ­
-	,PETITIONPROGRESSSTATE_WRONG				// »ó´ã ºÒ°¡
-	,PETITIONPROGRESSSTATE_RESERVE				// º¸·ù
-	,PETITIONPROGRESSSTATE_FINISH				// ¿Ï·á
-	,PETITIONPROGRESSSTATE_FINISHMAILSEND		// ¸ÞÀÏ ´äº¯
-	,PETITIONPROGRESSSTATE_CHANGECATEGORY		// Àü´Þ
-	,PETITIONPROGRESSSTATE_CHATTING_START		// ÃªÆÃ ½ÃÀÛ
-	,PETITIONPROGRESSSTATE_CHATTING_GMSAY		// GMÀÌ ¸»ÇÔ
-	,PETITIONPROGRESSSTATE_CHATTING_USERSAY		// User°¡ ¸»ÇÔ
-	,PETITIONPROGRESSSTATE_CHATTING_END			// ÃªÆÃ ³¡
-	,PETITIONPROGRESSSTATE_MAIL					// ¸ÞÀÏ
-	,PETITIONPROGRESSSTATE_CUSTOMERSATISFACTION	// °í°´¸¸Á·µµ
-	,PETITIONPROGRESSSTATE_NOTE					// ºñ°í
+	,PETITIONPROGRESSSTATE_REQUEST				// Petition ìƒì„±
+	,PETITIONPROGRESSSTATE_CANCEL				// ì·¨ì†Œ
+	,PETITIONPROGRESSSTATE_START				// ì‹œìž‘
+	,PETITIONPROGRESSSTATE_INIT					// ì´ˆê¸°í™”
+	,PETITIONPROGRESSSTATE_WRONG				// ìƒë‹´ ë¶ˆê°€
+	,PETITIONPROGRESSSTATE_RESERVE				// ë³´ë¥˜
+	,PETITIONPROGRESSSTATE_FINISH				// ì™„ë£Œ
+	,PETITIONPROGRESSSTATE_FINISHMAILSEND		// ë©”ì¼ ë‹µë³€
+	,PETITIONPROGRESSSTATE_CHANGECATEGORY		// ì „ë‹¬
+	,PETITIONPROGRESSSTATE_CHATTING_START		// ì±—íŒ… ì‹œìž‘
+	,PETITIONPROGRESSSTATE_CHATTING_GMSAY		// GMì´ ë§í•¨
+	,PETITIONPROGRESSSTATE_CHATTING_USERSAY		// Userê°€ ë§í•¨
+	,PETITIONPROGRESSSTATE_CHATTING_END			// ì±—íŒ… ë
+	,PETITIONPROGRESSSTATE_MAIL					// ë©”ì¼
+	,PETITIONPROGRESSSTATE_CUSTOMERSATISFACTION	// ê³ ê°ë§Œì¡±ë„
+	,PETITIONPROGRESSSTATE_NOTE					// ë¹„ê³ 
 
 	,PETITIONPROGRESSSTATE_COUNT
 	,PETITIONPROGRESSSTATE_INVALID = 0xFFFFFFFF
@@ -194,7 +194,7 @@ struct sPETITION_PROGRESSSTATE_DATA
 
 		struct sRESERVE
 		{
-			WCHAR		awchNote[NTL_MAX_SIZE_NOTE + 1];//ºñ°í
+			WCHAR		awchNote[NTL_MAX_SIZE_NOTE + 1];//ë¹„ê³ 
 		} sReserve;
 
 		struct sCHANGECATEGORY
@@ -215,14 +215,14 @@ struct sPETITION_PROGRESSSTATE_DATA
 		{
 			ACCOUNTID					targetAccountID;
 			CHARACTERID 				targetCharID;
-			WCHAR						wszTargetName[NTL_MAX_SIZE_CHAR_NAME + 1];	// ¹ÞÀ» Ä³¸¯ ÀÌ¸§
+			WCHAR						wszTargetName[NTL_MAX_SIZE_CHAR_NAME + 1];	// ë°›ì„ ìºë¦­ ì´ë¦„
 			eMAIL_TYPE 					eMailType;// eMAIL_TYPE
 			eMAIL_SENDER_TYPE			eSenderType;//eMAIL_SENDER_TYPE
-			sITEM_DATA					sItemData;//¾ÆÀÌÅÛÁ¤º¸
+			sITEM_DATA					sItemData;//ì•„ì´í…œì •ë³´
 			DWORD						dwZenny;// Req or Give Zenny
-			BYTE						byDay;// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
+			BYTE						byDay;// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
 			BYTE  						byTextSize;
-			WCHAR						wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];// ¸ÞÀÏ³»¿ë
+			WCHAR						wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];// ë©”ì¼ë‚´ìš©
 		} sMail;
 
 		struct sINIT
@@ -308,14 +308,14 @@ struct sPETITIONLISTDATA
 	ACCOUNTID								userAccountID_PetitionCreate;
 	CHARACTERID								userCharacterID_PetitionCreate;
 	WCHAR									awchUserCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1];
-	WCHAR									awchGMCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1]; // ¾ø¾ÖÀÚ
+	WCHAR									awchGMCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1]; // ì—†ì• ìž
 
 	ePETITIONSYSTEM_CATEGORY_1				eCategory1;
 	ePETITIONSYSTEM_CATEGORY_2				eCategory2;
 
 	PETITIONTIME							tmCreateTime;
 
-	ePETITIONSYSTEM_PETITIONINSERTTYPE		eIsCreateWho; // ¾ø¾ÖÀÚ
+	ePETITIONSYSTEM_PETITIONINSERTTYPE		eIsCreateWho; // ì—†ì• ìž
 
 	ePETITIONSYSTEM_DATASTATE				ePetitionDataState;
 	ePETITIONSYSTEM_PROGRESSSTATE			ePetitionProgressState;
@@ -340,23 +340,23 @@ public:
 //-----------------------------------------------------------------------------------
 struct sPETITIONDATA
 {
-	PETITIONID								petitionId; // Á¢¼ö¹øÈ£
-	SERVERFARMID							serverfarmID; // ¼­¹ö
+	PETITIONID								petitionId; // ì ‘ìˆ˜ë²ˆí˜¸
+	SERVERFARMID							serverfarmID; // ì„œë²„
 
-	ACCOUNTID								userAccountID_PetitionCreate; // Petition »ý¼º´ç½Ã À¯Á®ÀÇ Account ID ( ½Ã¸®¾ó : ¹«Á¶°Ç Ã¤¿öÁø´Ù )
-	CHARACTERID								userCharacterID_PetitionCreate;// Petition »ý¼º´ç½Ã À¯Á®ÀÇ Char ID ( ½Ã¸®¾ó : ¹«Á¶°Ç Ã¤¿öÁø´Ù )
-	GMACCOUNTID								gmAccountID_PetitionCreate; // PetitionÀ» »ý¼ºÇÑ GMÀÇ Account ID ( ½Ã¸®¾ó : À¯Á® »ý¼º½Ã - INVALID )
-	CHARACTERID								gmCharacterID_PetitionCreate;// PetitionÀ» »ý¼ºÇÑ GMÀÇ Account ID ( ½Ã¸®¾ó : À¯Á® »ý¼º½Ã - INVALID )
+	ACCOUNTID								userAccountID_PetitionCreate; // Petition ìƒì„±ë‹¹ì‹œ ìœ ì ¸ì˜ Account ID ( ì‹œë¦¬ì–¼ : ë¬´ì¡°ê±´ ì±„ì›Œì§„ë‹¤ )
+	CHARACTERID								userCharacterID_PetitionCreate;// Petition ìƒì„±ë‹¹ì‹œ ìœ ì ¸ì˜ Char ID ( ì‹œë¦¬ì–¼ : ë¬´ì¡°ê±´ ì±„ì›Œì§„ë‹¤ )
+	GMACCOUNTID								gmAccountID_PetitionCreate; // Petitionì„ ìƒì„±í•œ GMì˜ Account ID ( ì‹œë¦¬ì–¼ : ìœ ì ¸ ìƒì„±ì‹œ - INVALID )
+	CHARACTERID								gmCharacterID_PetitionCreate;// Petitionì„ ìƒì„±í•œ GMì˜ Account ID ( ì‹œë¦¬ì–¼ : ìœ ì ¸ ìƒì„±ì‹œ - INVALID )
 
-	WCHAR									awchUserAccount_PetitionCreate[NTL_MAX_SIZE_USERID + 1];// Petition »ý¼º´ç½Ã À¯Á®ÀÇ Account ID ( ¹«Á¶°Ç Ã¤¿öÁø´Ù )
-	WCHAR									awchUserCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1];// Petition »ý¼º´ç½Ã À¯Á®ÀÇ Char ID ( ¹«Á¶°Ç Ã¤¿öÁø´Ù )
-	WCHAR									awchGMAccount_PetitionCreate[NTL_MAX_SIZE_USERID + 1];// PetitionÀ» »ý¼ºÇÑ GMÀÇ Account ID ( À¯Á® »ý¼º½Ã "" )
-	WCHAR									awchGMCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1];// PetitionÀ» »ý¼ºÇÑ GMÀÇ Account ID ( À¯Á® »ý¼º½Ã "" )
+	WCHAR									awchUserAccount_PetitionCreate[NTL_MAX_SIZE_USERID + 1];// Petition ìƒì„±ë‹¹ì‹œ ìœ ì ¸ì˜ Account ID ( ë¬´ì¡°ê±´ ì±„ì›Œì§„ë‹¤ )
+	WCHAR									awchUserCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1];// Petition ìƒì„±ë‹¹ì‹œ ìœ ì ¸ì˜ Char ID ( ë¬´ì¡°ê±´ ì±„ì›Œì§„ë‹¤ )
+	WCHAR									awchGMAccount_PetitionCreate[NTL_MAX_SIZE_USERID + 1];// Petitionì„ ìƒì„±í•œ GMì˜ Account ID ( ìœ ì ¸ ìƒì„±ì‹œ "" )
+	WCHAR									awchGMCharacterName_PetitionCreate[NTL_MAX_SIZE_CHAR_NAME + 1];// Petitionì„ ìƒì„±í•œ GMì˜ Account ID ( ìœ ì ¸ ìƒì„±ì‹œ "" )
 
-	WCHAR									awchQuestionContent[NTL_MAX_SIZE_QUESTION_CONTENT + 1]; // ¹®ÀÇ ³»¿ë
-	eCUSTOMERSATISFACTION					eCustomerSatisfaction; // °í°´ ¸¸Á·µµ
-	WCHAR									awchPetitionResultText[NTL_MAX_SIZE_PETITION_RESULTTEXT + 1]; // »ó´ã °á°ú
-	WCHAR									awchNote[NTL_MAX_SIZE_NOTE + 1]; // ºñ°í ( º¸·ùÇÒ¶§ ¾²´Â ºñ°í )
+	WCHAR									awchQuestionContent[NTL_MAX_SIZE_QUESTION_CONTENT + 1]; // ë¬¸ì˜ ë‚´ìš©
+	eCUSTOMERSATISFACTION					eCustomerSatisfaction; // ê³ ê° ë§Œì¡±ë„
+	WCHAR									awchPetitionResultText[NTL_MAX_SIZE_PETITION_RESULTTEXT + 1]; // ìƒë‹´ ê²°ê³¼
+	WCHAR									awchNote[NTL_MAX_SIZE_NOTE + 1]; // ë¹„ê³  ( ë³´ë¥˜í• ë•Œ ì“°ëŠ” ë¹„ê³  )
 
 	ePETITIONSYSTEM_CATEGORY_1				eCategory_Create1;
 	ePETITIONSYSTEM_CATEGORY_2				eCategory_Create2;
@@ -370,7 +370,7 @@ struct sPETITIONDATA
 
 	bool									bIsMailSend;
 	bool									bIsFinish;
-	ePETITIONSYSTEM_PETITIONINSERTTYPE		eIsCreateWho; // PetitionÀ» GMÀÌ »ý¼ºÇß³Ä À¯Á®°¡ »ý¼ºÇß´ÂÁö¸¦ Ç¥½Ã
+	ePETITIONSYSTEM_PETITIONINSERTTYPE		eIsCreateWho; // Petitionì„ GMì´ ìƒì„±í–ˆëƒ ìœ ì ¸ê°€ ìƒì„±í–ˆëŠ”ì§€ë¥¼ í‘œì‹œ
 
 	ePETITIONSYSTEM_DATASTATE				ePetitionDataState;
 	ePETITIONSYSTEM_PROGRESSSTATE			ePetitionProgressState;
@@ -382,13 +382,13 @@ struct sPETITIONDATA
 	//WCHAR									awchUserCharacterName_ConnectUser[NTL_MAX_SIZE_CHAR_NAME + 1];
 	//CHARACTERID							characterID_ConnectUser;
 
-	GMACCOUNTID								gmAccountID_Consult; // ´ëÀÀ Á¤º¸ÀÇ GM Account ID( ½Ã¸®¾ó )
-	WCHAR									awchGMAccount_Consult[NTL_MAX_SIZE_USERID + 1]; // ´ëÀÀ »óÈ²ÀÇ GM Account ( Char )
-	WCHAR									awchGMCharName_Consult[NTL_MAX_SIZE_CHAR_NAME + 1];// ´ëÀÀ »óÈ²ÀÇ GM ÀÌ¸§
+	GMACCOUNTID								gmAccountID_Consult; // ëŒ€ì‘ ì •ë³´ì˜ GM Account ID( ì‹œë¦¬ì–¼ )
+	WCHAR									awchGMAccount_Consult[NTL_MAX_SIZE_USERID + 1]; // ëŒ€ì‘ ìƒí™©ì˜ GM Account ( Char )
+	WCHAR									awchGMCharName_Consult[NTL_MAX_SIZE_CHAR_NAME + 1];// ëŒ€ì‘ ìƒí™©ì˜ GM ì´ë¦„
 
-	WCHAR									awchReserveGMID[NTL_MAX_SIZE_RESERVEGMID_UNICODE + 1]; //´ëÀÀ »óÈ²ÀÇ º¸·ù GM ID
-	WCHAR									awchStartGMID[NTL_MAX_SIZE_STARTGMID + 1]; // ´ëÀÀ »óÈ²ÀÇ ´ëÀÀ GM ID
-	WCHAR									awchChangeCategoryGMID[NTL_MAX_SIZE_CHANGECATEGORYGMID + 1]; // ´ëÀÀ»óÈ²ÀÇ Ä«Å×°í¸® º¯°æ GM ID
+	WCHAR									awchReserveGMID[NTL_MAX_SIZE_RESERVEGMID_UNICODE + 1]; //ëŒ€ì‘ ìƒí™©ì˜ ë³´ë¥˜ GM ID
+	WCHAR									awchStartGMID[NTL_MAX_SIZE_STARTGMID + 1]; // ëŒ€ì‘ ìƒí™©ì˜ ëŒ€ì‘ GM ID
+	WCHAR									awchChangeCategoryGMID[NTL_MAX_SIZE_CHANGECATEGORYGMID + 1]; // ëŒ€ì‘ìƒí™©ì˜ ì¹´í…Œê³ ë¦¬ ë³€ê²½ GM ID
 
 public:
 	sPETITIONDATA()

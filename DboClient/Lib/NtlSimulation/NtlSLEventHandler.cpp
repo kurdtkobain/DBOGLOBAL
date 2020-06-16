@@ -168,7 +168,7 @@ RwBool CNtlSLEventHandler::Create(void)
 	RegisterMsg(g_EventItemSocketInsertBead, "g_EventItemSocketInsertBead", "SNtlEventItemSocketInsertBead");
 	RegisterMsg(g_EventItemSocketDestroyBead, "g_EventItemSocketDestroyBead", "SNtlEventItemSocketDestroyBead");
 
-    // ∫ØΩ≈ ∞¸∑√ ¿Ã∫•∆Æ
+    // Î≥ÄÏã† Í¥ÄÎ†® Ïù¥Î≤§Ìä∏
     RegisterMsg (g_EventTransform, "g_EventTransform", "SNtlEventTransform");
     RegisterMsg (g_EventMobTransform, "g_EventMobTransform", "SNtlEventMobTransform");
     RegisterMsg (g_EventTransformCandy, "g_EventTransformCandy", "SNtlEventTransformCandy");
@@ -176,7 +176,7 @@ RwBool CNtlSLEventHandler::Create(void)
 
 	RegisterMsg(g_EventCinematicScale, "g_EventCinematicScale", "SNtlEventSobCinematicScale");
 
-    // ƒ¡µº« ∞¸∑√ ¿Ã∫•∆Æ
+    // Ïª®ÎîîÏÖò Í¥ÄÎ†® Ïù¥Î≤§Ìä∏
     RegisterMsg (g_EventAfterEffectRemainTimeNfy, "g_EventAfterEffectRemainTimeNfy", "SNtlEventAfterEffectRemainTimeNfy");
     RegisterMsg (g_EventSobCondTerror, "g_EventSobCondTerror", "SNtlEventCondTerror");
     RegisterMsg (g_EventSobCondConfused, "g_EventSobCondConfused", "SNtlEventCondConfused");
@@ -370,7 +370,7 @@ RwBool CNtlSLEventHandler::Create(void)
 	RegisterMsg(g_EventActionMapUpdateRes, "g_EventActionMapUpdateRes", "SNtlEventActionMapUpdateRes");
 	RegisterMsg(g_EventActionMapClientNotify, "g_EventActionMapClientNotify", "SNtlEventActionMapClientNotify");
 	
-	// simulation object ¡§∫∏ update.
+	// simulation object Ï†ïÎ≥¥ update.
 	RegisterMsg (g_EventSobInfoUpdate, "g_EventSobInfoUpdateStr", "SNtlEventSobInfoUpdate");
 	RegisterMsg (g_EventSobNpcCommunity, "g_EventSobNpcCommunityStr", "SNtlEventSobNpcCommunity");
 	RegisterMsg (g_EventSobTriggerObjCommunity, "g_EventSobTriggerObjCommunityStr", "SNtlEventSobTriggerObjCommunity");
@@ -385,7 +385,7 @@ RwBool CNtlSLEventHandler::Create(void)
 
 	RegisterMsg(g_EventPrivateShopNameTag, "g_EventPrivateShopNameTag", "SNtlEventPrivateShopNameTag");
 
-	// simulation object ¡§∫∏ æÚæÓø¿±‚.
+	// simulation object Ï†ïÎ≥¥ ÏñªÏñ¥Ïò§Í∏∞.
 	RegisterMsg (g_EventSobGetState, "g_EventSobGetStateStr", "SNtlEventSobGetState");
 	RegisterMsg (g_EventSobGetFightingMode, "g_EventSobGetFightingModeStr", "SNtlEventSobGetFightingMode");	
 	RegisterMsg(g_EventSobGetAirMode, "g_EventSobGetAirModeStr", "SNtlEventSobGetAirMode");
@@ -505,7 +505,7 @@ RwBool CNtlSLEventHandler::Create(void)
 	// Popo Notify
 	RegisterMsg(g_EventPopoNotify, "g_EventPopoNotify", "SNtlEventPopoNotify" );
 
-    // πˆΩ∫ π◊ ≈ª∞Õ
+    // Î≤ÑÏä§ Î∞è ÌÉàÍ≤É
     RegisterMsg(g_EventSobOnBus, "g_EventSobOnBus", "SNtlEventSobOnBus");
 	RegisterMsg(g_EventSobOnVehicle, "g_EventSobOnVehicle", "SNtlEventSobOnVehicle");
 
@@ -537,7 +537,7 @@ RwBool CNtlSLEventHandler::Create(void)
 	RegisterMsg(g_EventTLDisableDialogMoveOption, "g_EventTLDisableDialogMoveOption", "SNtlEventTLDisableDialogMoveOption");
 	RegisterMsg(g_EventTLEnableSkip, "g_EventTLEnableSkip", "SNtlEventTLEnableSkip");
 
-	// √µ«œ¡¶¿œ π´µµ»∏
+	// Ï≤úÌïòÏ†úÏùº Î¨¥ÎèÑÌöå
 	RegisterMsg(g_EventMinorMatchStateUpdate, "g_EventMinorMatchStateUpdate", "SNtlMinorMatchStateUpdate");
 	RegisterMsg(g_EventMinorMatchTeamInfo, "g_EventMinorMatchTeamInfo", "SNtlMinorMatchTeamInfo");
 	RegisterMsg(g_EventMinorMatchPlayerState, "g_EventMinorMatchPlayerState", "SNtlMinorMatchPlayerState");
@@ -1089,7 +1089,7 @@ void CNtlSLEventHandler::Destroy(void)
 
 	UnRegisterMsg(g_EventPopoNotify);
 
-    // πˆΩ∫ π◊ ≈ª∞Õ
+    // Î≤ÑÏä§ Î∞è ÌÉàÍ≤É
     UnRegisterMsg(g_EventSobOnBus);
 	UnRegisterMsg(g_EventSobOnVehicle);
 	UnRegisterMsg(g_EventSobVehicleStart);
@@ -1119,7 +1119,7 @@ void CNtlSLEventHandler::Destroy(void)
 	UnRegisterMsg(g_EventTLDisableDialogMoveOption);
 	UnRegisterMsg(g_EventTLEnableSkip);
 
-	// √µ«œ¡¶¿œ π´µµ»∏
+	// Ï≤úÌïòÏ†úÏùº Î¨¥ÎèÑÌöå
 	UnRegisterMsg(g_EventMinorMatchStateUpdate);
 	UnRegisterMsg(g_EventMinorMatchTeamInfo);
 	UnRegisterMsg(g_EventMinorMatchPlayerState);

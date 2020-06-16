@@ -25,7 +25,7 @@ CNtlPLObjectProperty::CNtlPLObjectProperty()
     m_eObjectType = E_OBJECT_NORMAL;
     m_bApplyPVS = TRUE;
 
-    m_SoundProp.bLoop = TRUE;       // �⺻ ����� �׻� Loop�̴�.
+    m_SoundProp.bLoop = TRUE;       // 기본 사운드는 항상 Loop이다.
 }
 
 

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-04-12
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hong Ho Dong   ( battery@ntl-inc.com )
 //
@@ -22,8 +22,8 @@ const int NTL_MAX_SIZE_OBJ_ANIM	= (OBJECT_ANIMATION_END - OBJECT_ANIMATION_START
 
 struct sOBJ_DATA_INFO
 {
-	float	fDurationTime;			// Animation ÀüÃ¼ ½Ã°£
-	bool	bDataLoaded;			// Data°¡ Load°¡ µÇ´ÂÁö
+	float	fDurationTime;			// Animation ì „ì²´ ì‹œê°„
+	bool	bDataLoaded;			// Dataê°€ Loadê°€ ë˜ëŠ”ì§€
 
 	sOBJ_DATA_INFO() : fDurationTime(0), bDataLoaded(false) { }
 };
@@ -45,7 +45,7 @@ public:
 	sOBJ_DATA_INFO *GetAnim(int nAnimKeyID);
 	float	GetAnimDurationTime(int nAnimKeyID);
 public:
-	//wrapping functionÀº ¿©±â¿¡ Ãß°¡ ÇØ¼­ ¾²¼¼¿ä (by HoDong)
+	//wrapping functionì€ ì—¬ê¸°ì— ì¶”ê°€ í•´ì„œ ì“°ì„¸ìš” (by HoDong)
 };
 
 

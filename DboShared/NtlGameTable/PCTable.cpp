@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-09
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Doo Sup, Chung ( john@ntl-inc.com )
 //
@@ -103,7 +103,7 @@ bool CPCTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		return false;
 	}
 
-	//  [4/17/2006 zeroera] : Ãß°¡ : race, class, gender¿¡ µû¸¥ tbldat ÀúÀå
+	//  [4/17/2006 zeroera] : ì¶”ê°€ : race, class, genderì— ë”°ë¥¸ tbldat ì €ì¥
 	if( false == SetPcTbldat( pTbldat->byRace, pTbldat->byClass, pTbldat->byGender, pTbldat ) )
 	{
 		_ASSERTE( 0 );
@@ -396,7 +396,7 @@ sTBLDAT* CPCTable::FindData(TBLIDX tblidx)
 
 //-----------------------------------------------------------------------------------
 //		Purpose	:	
-//		Return	:	race, class, gender¿¡ ÀÇÇÑ table°ª ¹İÈ¯
+//		Return	:	race, class, genderì— ì˜í•œ tableê°’ ë°˜í™˜
 //-----------------------------------------------------------------------------------
 sTBLDAT * CPCTable::GetPcTbldat(BYTE byRace, BYTE byClass, BYTE byGender)					
 {

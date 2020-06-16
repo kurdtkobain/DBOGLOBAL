@@ -6,7 +6,7 @@ class CNtlTSControlObject;
 
 
 /** 
-	Control °´Ã¼¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ control type class µé
+	Control ê°ì²´ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ control type class ë“¤
 */
 
 

@@ -81,14 +81,14 @@ void CNtlMeshFederationContainer::AddFederation( int nFieldIdx )
 
 void CNtlMeshFederationContainer::AddFederation( const char* fname )
 {
-	// Áßº¹µÈ Federation Header Á¤º¸°¡ ¾Æ´ÑÁö È®ÀÎÇÑ´Ù.
+	// ì¤‘ë³µëœ Federation Header ì •ë³´ê°€ ì•„ë‹Œì§€ í™•ì¸í•œë‹¤.
 	mapdef_Federation::iterator it = m_mapFederation.find( fname );
 	if( it == m_mapFederation.end() )
 	{
 		CNtlMeshFederationBuilder ntlFederation;
 		CNtlMeshFederation *federation = new CNtlMeshFederation();
 
-		// World Index·Î Path¸¦ ÁöÁ¤ÇØÁØ´Ù.
+		// World Indexë¡œ Pathë¥¼ ì§€ì •í•´ì¤€ë‹¤.
 		char acWorldIndex[NTLPE_MAX_FILENAME_LENGTH+1];
 		_itoa_s( m_nWorldIdx, acWorldIndex, NTLPE_MAX_FILENAME_LENGTH+1, 10 );
 		
@@ -130,7 +130,7 @@ CNtlMeshFederation* CNtlMeshFederationContainer::GetFederation( const char* fnam
 	return (CNtlMeshFederation*)(*it).second;
 }
 
-// Æ÷ÇÔµÇ´Â ¿µ¿ªÀÇ ¸®½ºÆ®¸¦ Æ÷ÇÔÇØ¼­ ¸®ÅÏÇÑ´Ù.
+// í¬í•¨ë˜ëŠ” ì˜ì—­ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ í¬í•¨í•´ì„œ ë¦¬í„´í•œë‹¤.
 void CNtlMeshFederationContainer::GetOverlappedFederation( int nPositionX, int nPositionY, std::list< CNtlMeshFederation* >& outList )
 {
 	for each( std::pair< std::string, CNtlMeshFederation* > pair in m_mapFederation )

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-09
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Desc		:	Chung Doo sup  ( john@ntl-inc.com )
 //
@@ -196,9 +196,9 @@ protected:
 
 	DWORD 						READ_BITFLAG(BSTR bstr, DWORD dwInvalidValue = 0) { return CheckInvalidValue( bstr ) ? dwInvalidValue : HexToDec( bstr ); }
 
-	//void						CheckNegativeInvalid(char* pszFormatString, BSTR bstr); // @°¡ ÀÖÀ¸¸é ¾ÈµÇ´Â ÇÊµå·Î Assert¸¦ »Ñ·ÁÁØ´Ù.
+	//void						CheckNegativeInvalid(char* pszFormatString, BSTR bstr); // @ê°€ ìˆìœ¼ë©´ ì•ˆë˜ëŠ” í•„ë“œë¡œ Assertë¥¼ ë¿Œë ¤ì¤€ë‹¤.
 
-	void						CheckNegativeInvalid(const wchar_t* pwszFormatString, BSTR bstr); // @°¡ ÀÖÀ¸¸é ¾ÈµÇ´Â ÇÊµå·Î Assert¸¦ »Ñ·ÁÁØ´Ù.
+	void						CheckNegativeInvalid(const wchar_t* pwszFormatString, BSTR bstr); // @ê°€ ìˆìœ¼ë©´ ì•ˆë˜ëŠ” í•„ë“œë¡œ Assertë¥¼ ë¿Œë ¤ì¤€ë‹¤.
 
 public:
 
@@ -217,7 +217,7 @@ protected:
 	DWORD						m_dwCodePage;
 
 	// This is only for displaying a message, so it can't be used for the other purposes.
-	// ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÏ±â À§ÇØ ¼±¾ğµÈ ¸â¹ö º¯¼öÀÌ¹Ç·Î, Á¤ÇØÁø ¿ëµµ ÀÌ¿Ü¿¡´Â »ç¿ëÇÏ¸é ¾È µÈ´Ù.
+	// ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•˜ê¸° ìœ„í•´ ì„ ì–¸ëœ ë©¤ë²„ ë³€ìˆ˜ì´ë¯€ë¡œ, ì •í•´ì§„ ìš©ë„ ì´ì™¸ì—ëŠ” ì‚¬ìš©í•˜ë©´ ì•ˆ ëœë‹¤.
 	// by YOSHIKI(2007-08-07)
 	WCHAR								m_wszXmlFileName[CTable::TABLE_XML_FILE_NAME_MAX_LENGTH + 1];
 

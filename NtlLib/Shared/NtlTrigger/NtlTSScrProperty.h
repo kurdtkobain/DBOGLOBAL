@@ -36,28 +36,28 @@ public:
 	PROP_CIT							Begin( void ) const;
 	PROP_CIT							End( void ) const;
 
-	// ÇØ´ç Property °¡ Á¸ÀçÇÏ´Â Áö¸¦ °Ë»çÇÑ´Ù.
+	// í•´ë‹¹ Property ê°€ ì¡´ì¬í•˜ëŠ” ì§€ë¥¼ ê²€ì‚¬í•œë‹¤.
 	bool								IsExist( const std::string& strPropertyName ) const;
 
-	// ÀúÀåµÈ Property ÀÇ °³¼ö¸¦ ¸®ÅÏÇÑ´Ù
+	// ì €ì¥ëœ Property ì˜ ê°œìˆ˜ë¥¼ ë¦¬í„´í•œë‹¤
 	int									GetCount( const std::string& strPropertyName ) const;
 
-	// ÇØ´ç Property Name À» ÅëÇØ¼­ Property Value¸¦ ¾ò´Â´Ù
+	// í•´ë‹¹ Property Name ì„ í†µí•´ì„œ Property Valueë¥¼ ì–»ëŠ”ë‹¤
 	const std::string&					GetValue( const std::string& strPropertyName, int nOffset = 0 ) const;
 
-	// int ·Î ÇØ´ç Property ¸¦ ¾ò´Â´Ù
+	// int ë¡œ í•´ë‹¹ Property ë¥¼ ì–»ëŠ”ë‹¤
 	int									GetValueAsInt( const std::string& strPropertyName, int nOffset = 0 ) const;
 
-	// bool·Î ÇØ´ç Property ¸¦ ¾ò´Â´Ù
+	// boolë¡œ í•´ë‹¹ Property ë¥¼ ì–»ëŠ”ë‹¤
 	bool								GetValueAsBool( const std::string& strPropertyName, int nOffset = 0 ) const;
 
-	// Property¸¦ Ãß°¡ ÇÑ´Ù
+	// Propertyë¥¼ ì¶”ê°€ í•œë‹¤
 	void								AddProperty( const std::string& strPropertyName, const std::string& strPropertyValue );
 
-	// ÇØ´ç Property¸¦ Á¦°Å ÇÑ´Ù
+	// í•´ë‹¹ Propertyë¥¼ ì œê±° í•œë‹¤
 	void								RemoveProperty( const std::string& strPropertyName );
 
-	// ¸ğµç Property¸¦ »èÁ¦ÇÑ´Ù
+	// ëª¨ë“  Propertyë¥¼ ì‚­ì œí•œë‹¤
 	void								Clear( void );
 
 // Operator

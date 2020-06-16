@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-11-30
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	Event µ¿±âÈ­ ¿ÀºêÁ§Æ® Å¬·¡½º
+//	Desc		:	Event ë™ê¸°í™” ì˜¤ë¸Œì íŠ¸ í´ë˜ìŠ¤
 //
 //***********************************************************************************
 

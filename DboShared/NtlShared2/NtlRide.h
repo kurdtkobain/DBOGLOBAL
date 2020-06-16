@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-04-8
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -15,8 +15,8 @@
 #pragma once
 
 //-----------------------------------------------------------------------------------
-// Å»°Í Á¤ÀÇ
+// íƒˆê²ƒ ì •ì˜
 //-----------------------------------------------------------------------------------
 const unsigned int NTL_RIDE_ON_BUS_FARE = 15;
-//const DWORD			NTL_TURNING_END_TIME				= 1000; // ½½¶óÀÌµù ³¡³ª´Â Å¸ÀÓ
+//const DWORD			NTL_TURNING_END_TIME				= 1000; // ìŠ¬ë¼ì´ë”© ëë‚˜ëŠ” íƒ€ìž„
 const DWORD			NTL_RIDE_OFF_DISTANCE					= 5;

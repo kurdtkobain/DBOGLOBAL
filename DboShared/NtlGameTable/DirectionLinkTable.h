@@ -14,10 +14,10 @@ const unsigned int DBO_MAX_LENGTH_DIRECTION_NOTE = 32;
 
 enum eDIRECTION_FUNC_FLAG
 {
-	DIRECTION_FUNC_FLAG_LOOP		= 0x01, // �ִϸ��̼��� ���� ���� ( Client�󿡼��� ��� �ݺ��ȴ� )
-	DIRECTION_FUNC_FLAG_TIMEOUT		= 0x02, // �ִϸ��̼��� �ð���ŭ ����Ѵ� 
-	DIRECTION_FUNC_FLAG_KEEPUP		= 0x04, // �ִϸ��̼��� �ð��� ������� ������¸� ������ �����Ѵ�
-	DIRECTION_FUNC_FLAG_CANCELABLE	= 0x08, // Client Input/TS Event/�ǰ� � ���� ��ҵȴ�
+	DIRECTION_FUNC_FLAG_LOOP		= 0x01, // 애니메이션의 루프 여부 ( Client상에서는 계속 반복된다 )
+	DIRECTION_FUNC_FLAG_TIMEOUT		= 0x02, // 애니메이션의 시간만큼 대기한다 
+	DIRECTION_FUNC_FLAG_KEEPUP		= 0x04, // 애니메이션의 시간에 관계없이 연출상태를 무한히 지속한다
+	DIRECTION_FUNC_FLAG_CANCELABLE	= 0x08, // Client Input/TS Event/피격 등에 의해 취소된다
 };
 
 enum eDIRECTION_LINK_TYPE

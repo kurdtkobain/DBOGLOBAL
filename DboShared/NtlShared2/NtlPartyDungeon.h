@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-07-22
 //
-//	Copyright	:	จฯ NTL-Inc Co., Ltd
+//	Copyright	:	โ“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung, Doo-Sup (mailto:john@ntl-inc.com)
 //
@@ -42,11 +42,11 @@ const DWORD NTL_MIN_DUNGEON_PARTYOUT_TIME = 30 * 1000;
 // TLQ Rule State Type
 enum eTLQ_STATE_TYPE
 {
-	TLQ_STATE_WAIT,				// TLQ ปýผบ นื วรทนภฬพ๎ ม๘ภิ ด๋ฑโ
-	TLQ_STATE_PREPARE,			// วรทนภฬพ๎ ม๘ภิศฤ WPS ฝววเ
-	TLQ_STATE_RUN,				// วรทนภฬ ป๓ลย
-	TLQ_STATE_FAIL,				// ฝวฦะ
-	TLQ_STATE_END,				// มคป๓ มพทแ
+	TLQ_STATE_WAIT,				// TLQ ์์ฑ ๋ฐ ํ”๋ ์ด์–ด ์ง์… ๋€๊ธฐ
+	TLQ_STATE_PREPARE,			// ํ”๋ ์ด์–ด ์ง์…ํ WPS ์คํ–
+	TLQ_STATE_RUN,				// ํ”๋ ์ด ์ํ
+	TLQ_STATE_FAIL,				// ์คํจ
+	TLQ_STATE_END,				// ์ •์ ์ข…๋ฃ
 
 	TLQ_STATE_COUNT,
 };

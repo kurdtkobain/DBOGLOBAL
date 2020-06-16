@@ -23,7 +23,7 @@ namespace MiHaeng4
 
         public Form1()
         {
-            // ë©€í‹° ìŠ¤ë ˆë“œì—ì„œë„ ë‹¤ë¥¸ ìŠ¤ë ˆë“œì˜ ì»¨íŠ¸ë¡¤ì— ì ‘ê·¼ ê°€ëŠ¥
+            // ¸ÖÆ¼ ½º·¹µå¿¡¼­µµ ´Ù¸¥ ½º·¹µåÀÇ ÄÁÆ®·Ñ¿¡ Á¢±Ù °¡´É
             Control.CheckForIllegalCrossThreadCalls = false;
 
             bReadyWork = false;
@@ -43,7 +43,7 @@ namespace MiHaeng4
             RegistryKey kr = Registry.CurrentUser.OpenSubKey("MiHaeng4");
             if(kr != null)
             {
-                // XLS ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
+                // XLS ¸®½ºÆ®¸¦ °¡Á®¿Â´Ù.
                 if(kr.GetValue("XLS_COUNT") != null)
                 {
                     int xlsCnt = (int)kr.GetValue("XLS_COUNT");
@@ -54,7 +54,7 @@ namespace MiHaeng4
                     }                
                 }
 
-                // XML ë¦¬ìŠ¤íŠ¸ë¥¼ ê°€ì ¸ì˜¨ë‹¤
+                // XML ¸®½ºÆ®¸¦ °¡Á®¿Â´Ù
                 if(kr.GetValue("XML_COUNT") != null)
                 {
                     int xmlCnt = (int)kr.GetValue("XML_COUNT");
@@ -65,7 +65,7 @@ namespace MiHaeng4
                     }
                 }
 
-                // Text All Data File ê²½ë¡œë¥¼ ë ˆì§€ìŠ¤íŠ¸ë¦¬ì—ì„œ ê°€ì ¸ì˜¨ë‹¤
+                // Text All Data File °æ·Î¸¦ ·¹Áö½ºÆ®¸®¿¡¼­ °¡Á®¿Â´Ù
                 if(kr.GetValue("TextAllData") != null)
                 {
                     textDataFile.Text = (string)kr.GetValue("TextAllData");
@@ -77,17 +77,17 @@ namespace MiHaeng4
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // í˜„ì¬ ë¦¬ìŠ¤íŠ¸ì˜ ë‚´ìš©ì„ ë ˆì§€ìŠ¤íŠ¸ë¦¬ì— ì €ì¥í•œë‹¤.            
+            // ÇöÀç ¸®½ºÆ®ÀÇ ³»¿ëÀ» ·¹Áö½ºÆ®¸®¿¡ ÀúÀåÇÑ´Ù.            
             RegistryKey kr = Registry.CurrentUser.CreateSubKey("MiHaeng4");
 
-            // XLS ë¦¬ìŠ¤íŠ¸
+            // XLS ¸®½ºÆ®
             kr.SetValue("XLS_COUNT", listXLS.Items.Count);
             for(int i = 0; i < listXLS.Items.Count; ++i)
             {
                 kr.SetValue("XLS_" + i.ToString(), listXLS.Items[i].Text);
             }
 
-            // XML ë¦¬ìŠ¤íŠ¸
+            // XML ¸®½ºÆ®
             kr.SetValue("XML_COUNT", listXML.Items.Count);
             for (int i = 0; i < listXML.Items.Count; ++i)
             {
@@ -235,7 +235,7 @@ namespace MiHaeng4
             }
         }
 
-        // í…ìŠ¤íŠ¸ ë°ì´í„°ê°€ ë‹¤ ì½íˆë©´ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œ
+        // ÅØ½ºÆ® µ¥ÀÌÅÍ°¡ ´Ù ÀĞÈ÷¸é È£ÃâµÇ´Â ¸Ş¼Òµå
         public void OnLoadedTextAllData()
         {
             if (bReadyWork == false)

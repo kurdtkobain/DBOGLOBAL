@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-19
 //
-//	Copyright	:	╗о NTL-Inc Co., Ltd
+//	Copyright	:	Б⌠▓ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -70,8 +70,8 @@ public:
 //-----------------------------------------------------------------------------------
 //
 //-----------------------------------------------------------------------------------
-const DWORD CONNECTION_KEEP_ALIVE_TIME			= 5 * 1000; // ╪рдо ©и╪г KEEP ALIVE ©║ ╩Г©К
-const DWORD CONNECTION_KEEP_ALIVE_INTERVAL		= 1 * 1000; // ╪рдо ©и╪г KEEP ALIVE ©║ ╩Г©К
+const DWORD CONNECTION_KEEP_ALIVE_TIME			= 5 * 1000; // Л├▄Л╪⌠ Л≤╣Л┘≤ KEEP ALIVE Л≈░ Л┌╛Л ╘
+const DWORD CONNECTION_KEEP_ALIVE_INTERVAL		= 1 * 1000; // Л├▄Л╪⌠ Л≤╣Л┘≤ KEEP ALIVE Л≈░ Л┌╛Л ╘
 //-----------------------------------------------------------------------------------
 
 

@@ -319,7 +319,7 @@ CNtlSerializer& CNtlSerializer::operator<<(std::string	&str)
 		m_iEndPointer += iTypeSize;
 	}
 
-	// ³¡¿¡ ³Î¹®ÀÚ¸¦ ³Ö¾îÁØ´Ù.
+	// ëì— ë„ë¬¸ìžë¥¼ ë„£ì–´ì¤€ë‹¤.
 	operator<<('\0');
 
 	return *this;

@@ -2,7 +2,7 @@
  *
  * File			: LoginGui.h
  * Author		: HyungSuk, Jang
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2005. 9. 20	
  * Update		: 2007. 10. 15
  * Abstract		: DBO Login gui.
@@ -45,7 +45,7 @@ protected:
 	virtual VOID	HandleEvents( RWS::CMsg &msg );
 
 	VOID			OnTimer(void);
-	VOID			SwitchEnableButtons(bool bEnable);	///< Exit πˆ∆∞¿ª ¡¶ø‹«— πˆ∆∞¿« ¿ÃøÎ∞°¥… º≥¡§
+	VOID			SwitchEnableButtons(bool bEnable);	///< Exit Î≤ÑÌäºÏùÑ Ï†úÏô∏Ìïú Î≤ÑÌäºÏùò Ïù¥Ïö©Í∞ÄÎä• ÏÑ§Ï†ï
 
 	RwInt32			TabButtonHandle();
 
@@ -83,18 +83,18 @@ protected:
 	gui::CSlot			m_slotSigChangedTest;
 	gui::CSlot			m_slotSigActivityTest;
 
-	gui::CButton*		m_pCinemaButton;			///< µøøµªÛ ¿Áª˝ πˆ∆∞
-	gui::CButton*		m_pCreditButton;			///< ¡¶¿€¡¯ ∫∏±‚ πˆ∆∞
+	gui::CButton*		m_pCinemaButton;			///< ÎèôÏòÅÏÉÅ Ïû¨ÏÉù Î≤ÑÌäº
+	gui::CButton*		m_pCreditButton;			///< Ï†úÏûëÏßÑ Î≥¥Í∏∞ Î≤ÑÌäº
 	gui::CButton*		m_pGamePolicyButton;		///< 
 	gui::CButton*		m_pNewAccountButton;		///< 
-	gui::CButton*		m_pLoginButton;				///< ∑Œ±◊¿Œ πˆ∆∞
-	gui::CButton*		m_pExitButton;				///< ≥™∞°±‚ πˆ∆∞
+	gui::CButton*		m_pLoginButton;				///< Î°úÍ∑∏Ïù∏ Î≤ÑÌäº
+	gui::CButton*		m_pExitButton;				///< ÎÇòÍ∞ÄÍ∏∞ Î≤ÑÌäº
 
-	gui::CStaticBox*	m_pAccountName;				///< '∞Ë¡§ ¿Ã∏ß' Ω∫≈¬∆Ω
-	gui::CStaticBox*	m_pPassward;				///< '∫Òπ–π¯»£' ∫Òπ–π¯»£ Ω∫≈¬∆Ω
-	gui::CStaticBox*	m_pNotive;					///< 'Dbo ∞¯¡ˆªÁ«◊' Ω∫≈¬∆Ω
+	gui::CStaticBox*	m_pAccountName;				///< 'Í≥ÑÏ†ï Ïù¥Î¶Ñ' Ïä§ÌÉúÌã±
+	gui::CStaticBox*	m_pPassward;				///< 'ÎπÑÎ∞ÄÎ≤àÌò∏' ÎπÑÎ∞ÄÎ≤àÌò∏ Ïä§ÌÉúÌã±
+	gui::CStaticBox*	m_pNotive;					///< 'Dbo Í≥µÏßÄÏÇ¨Ìï≠' Ïä§ÌÉúÌã±
 
-	gui::CStaticBox*	m_pVersion;					///< Dbo πˆ¿¸ «•Ω√
+	gui::CStaticBox*	m_pVersion;					///< Dbo Î≤ÑÏ†Ñ ÌëúÏãú
 
 	gui::CInputBox*		m_pAccountInput;			///< Account Input
 	gui::CInputBox*		m_pPasswardInput;			///< Passward Input
@@ -105,8 +105,8 @@ protected:
 
 	gui::CFlash*		m_pFlashCredit;
 
-	CSurfaceGui			m_srfInputDialogBack;		///< ¿Œ«≤π⁄Ω∫ πË∞Ê
-	CSurfaceGui			m_NoticeUnderLine;			///< ∞¯¡ˆªÁ«◊ πÿ¡Ÿ
+	CSurfaceGui			m_srfInputDialogBack;		///< Ïù∏ÌíãÎ∞ïÏä§ Î∞∞Í≤Ω
+	CSurfaceGui			m_NoticeUnderLine;			///< Í≥µÏßÄÏÇ¨Ìï≠ Î∞ëÏ§Ñ
 
 
 	void*				m_handleKeyDown;

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-07-11
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -15,7 +15,7 @@
 #pragma once
 
 
-// profile ¼³Á¤½Ã
+// profile ì„¤ì •ì‹œ
 #define __NTL_FUNCTION_PROFILE__
 
 

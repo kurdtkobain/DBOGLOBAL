@@ -465,10 +465,10 @@ void CNtlSpecularManager::SetSpecular(const sNTL_SPECULAR& sNtlSpecular, RwBool 
 /*
 #define SPECULAR_DISTANCE		512
 #define	SPECULAR_TEXTURE_SIZE	512
-//#define dSPECULARMANAGER_USE_PROJ_PERSPECTIVE // ¿ø±ÙÅõ¿µ¸ğµå·Î º¯È¯½Ã Á¦´ë·Î µ¿ÀÛÇÏÁö ¾ÊÀ½. Á¤º¸ Â÷¿øÀ¸·Î ¼Ò½º »èÁ¦ ¾ÈÇÔ.
-// DEFALT		: ÆòÇàÅõ¿µ
-// PERSPECTIVE	: °Å¸®¿¡ µû¸¥ ½ºÄÉÀÏ										
-// PARALLEL		: Å©±â¿¡ µû¸¥ ½ºÄÉÀÏ
+//#define dSPECULARMANAGER_USE_PROJ_PERSPECTIVE // ì›ê·¼íˆ¬ì˜ëª¨ë“œë¡œ ë³€í™˜ì‹œ ì œëŒ€ë¡œ ë™ì‘í•˜ì§€ ì•ŠìŒ. ì •ë³´ ì°¨ì›ìœ¼ë¡œ ì†ŒìŠ¤ ì‚­ì œ ì•ˆí•¨.
+// DEFALT		: í‰í–‰íˆ¬ì˜
+// PERSPECTIVE	: ê±°ë¦¬ì— ë”°ë¥¸ ìŠ¤ì¼€ì¼										
+// PARALLEL		: í¬ê¸°ì— ë”°ë¥¸ ìŠ¤ì¼€ì¼
 
 CNtlSpecularManager::CNtlSpecularManager()
 {
@@ -760,7 +760,7 @@ void CNtlSpecularManager::CalcMatrixTexture()
 //	RwFrameUpdateObjects(m_pFrame);	
 //}
 
-void CNtlSpecularManager::CalcCameraFrustum() //³ôÀÌ °íÁ¤ Åõ¿µ
+void CNtlSpecularManager::CalcCameraFrustum() //ë†’ì´ ê³ ì • íˆ¬ì˜
 {
 	RwMatrix*	pmatLight	= RwFrameGetMatrix(m_pFrame);
 	RwV3d		vAt			= *RwMatrixGetPos(RwFrameGetMatrix(RwCameraGetFrame(CNtlPLGlobal::m_RwCamera)));
@@ -781,7 +781,7 @@ void CNtlSpecularManager::CalcCameraFrustum() //³ôÀÌ °íÁ¤ Åõ¿µ
 
 	API_PL_CameraMatrixLookAt(pmatLight, &vPos, &vAt);
 	
-	RwMatrixUpdate(pmatLight); // ÀÌ°Å ¾ÈÇØµµ µÈ´Ù.c
+	RwMatrixUpdate(pmatLight); // ì´ê±° ì•ˆí•´ë„ ëœë‹¤.c
 	RwFrameUpdateObjects(m_pFrame);	
 }
 

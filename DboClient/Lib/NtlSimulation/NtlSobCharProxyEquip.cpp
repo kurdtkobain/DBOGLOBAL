@@ -448,7 +448,7 @@ void CNtlSobCharEquipProxy::NotifyOwnerStateEnter(RwUInt32 uiStateId)
 
 void CNtlSobCharEquipProxy::NotifyOwnerStateExit(RwUInt32 uiOldState, RwUInt32 uiNewState)
 {
-    // ½ºÅ³ Ä³½ºÆÃ»óÅÂ¿¡¼­´Â ¹«±â¸¦ ÀÚµ¿À¸·Î Á¦°ÅÇÏÁö ¾Ê´Â´Ù.
+    // ìŠ¤í‚¬ ìºìŠ¤íŒ…ìƒíƒœì—ì„œëŠ” ë¬´ê¸°ë¥¼ ìë™ìœ¼ë¡œ ì œê±°í•˜ì§€ ì•ŠëŠ”ë‹¤.
     if((uiOldState == NTL_FSMSID_SKILL_READY && uiNewState == NTL_FSMSID_SKILL_CASTING) ||
        (uiOldState == NTL_FSMSID_SKILL_CASTING && uiNewState == NTL_FSMSID_SKILL_ACTION))
     {
@@ -599,7 +599,7 @@ void CNtlSobCharEquipProxy::SobEquipCreateEventHandler(RWS::CMsg &pMsg)
 				}
 			}
 
-			// sub weapon Áß¿¡¼­ gem°ú °°ÀÌ ¿òÁ÷ÀÏ ¼ö ÀÖ´Â Á¾·ù¶ó¸é...
+			// sub weapon ì¤‘ì—ì„œ gemê³¼ ê°™ì´ ì›€ì§ì¼ ìˆ˜ ìˆëŠ” ì¢…ë¥˜ë¼ë©´...
 			if(Logic_IsMoveableSubWeapon(pItemTblData))
 			{
 				m_pSubWeaponController = NTL_NEW CNtlSubWeaponController;
@@ -708,7 +708,7 @@ void CNtlSobCharEquipProxy::SobEquipCreateEventHandler(RWS::CMsg &pMsg)
 				}
 			}
 			
-			// sub weapon Áß¿¡¼­ gem°ú °°ÀÌ ¿òÁ÷ÀÏ ¼ö ÀÖ´Â Á¾·ù¶ó¸é...
+			// sub weapon ì¤‘ì—ì„œ gemê³¼ ê°™ì´ ì›€ì§ì¼ ìˆ˜ ìˆëŠ” ì¢…ë¥˜ë¼ë©´...
 			if(Logic_IsMoveableSubWeapon(pItemTblData))
 			{
 				m_pSubWeaponController = NTL_NEW CNtlSubWeaponController;
@@ -998,7 +998,7 @@ void CNtlSobCharEquipProxy::MakeItemModelName(std::string& strModelName, RwUInt8
 	if(byModeNameRule == ITEM_MODEL_TYPE_NONE)
 		return;
 
-	// Á¾Á·
+	// ì¢…ì¡±
 	if(byRace == RACE_HUMAN)
 	{
 		strModelName += "_H";
@@ -1012,7 +1012,7 @@ void CNtlSobCharEquipProxy::MakeItemModelName(std::string& strModelName, RwUInt8
 		strModelName += "_M";
 	}
 
-	// ¼ºº°
+	// ì„±ë³„
 	if(byGender == GENDER_MALE)
 	{
 		strModelName += "_M";
@@ -1049,7 +1049,7 @@ void CNtlSobCharEquipProxy::MakeItemModelName(std::string& strModelName, RwUInt8
 
 void CNtlSobCharEquipProxy::StorageMainWeapon(void)
 {
-	// main weaponÀ» change ÇØ¾ß ÇÏ´Â sub weaponÀÌ¸é?
+	// main weaponì„ change í•´ì•¼ í•˜ëŠ” sub weaponì´ë©´?
 	if(m_arrSlotItem[EQUIP_SLOT_TYPE_HAND].pPLItem)
 	{
 		if(Logic_IsWeaponChangeSubWeapon(m_arrSlotItem[EQUIP_SLOT_TYPE_SUB_WEAPON].uiItemTblId))

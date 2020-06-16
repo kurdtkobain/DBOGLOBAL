@@ -813,7 +813,7 @@ _rpToonD3D9RenderCallback(RwResEntry *repEntry,
 			_rwD3D9RenderStateVertexAlphaEnable(TRUE);
 		}
 
-		//¿ÜºÎ¿¡¼­ ÁöÁ¤ÇÑ AlphaEnableÀÌ ÁöÁ¤ÀÌ ¾ÈµÈ´Ù.(by HoDong)
+		//ì™¸ë¶€ì—ì„œ ì§€ì •í•œ AlphaEnableì´ ì§€ì •ì´ ì•ˆëœë‹¤.(by HoDong)
 		//else
 		//{
 		//_rwD3D9RenderStateVertexAlphaEnable(FALSE);

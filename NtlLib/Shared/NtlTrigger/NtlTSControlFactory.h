@@ -19,7 +19,7 @@ public:
 
 // Member variables
 protected:
-	mapdef_CtrlTypeList					m_defCtrlTypeList;		// ½Ç½Ã°£ µ¿Àû »ı¼ºÀ» Áö¿øÇÏ±â À§ÇÑ Å¸ÀÔ ¸®½ºÆ®
+	mapdef_CtrlTypeList					m_defCtrlTypeList;		// ì‹¤ì‹œê°„ ë™ì  ìƒì„±ì„ ì§€ì›í•˜ê¸° ìœ„í•œ íƒ€ì… ë¦¬ìŠ¤íŠ¸
 
 // Constructions and Destructions
 public:
@@ -30,7 +30,7 @@ public:
 	virtual	CNtlTSControlObject*		CreateObj( const std::string& strName );
 	virtual void						DeleteObj( CNtlTSControlObject*& pObj );
 
-	// Runtime »ı¼ºÀ» À§ÇÑ controller type µî·Ï
+	// Runtime ìƒì„±ì„ ìœ„í•œ controller type ë“±ë¡
 	virtual	void						RegisterCtrlType( void ) { return; }
 	virtual	void						UnRegisterCtrlType( void );
 };

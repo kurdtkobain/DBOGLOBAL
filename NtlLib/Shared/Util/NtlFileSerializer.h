@@ -2,7 +2,7 @@
  *
  * File			: NtlFileSerializer.h
  * Author		: 
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2007. 02. 06
  * Abstract		: 
  *****************************************************************************

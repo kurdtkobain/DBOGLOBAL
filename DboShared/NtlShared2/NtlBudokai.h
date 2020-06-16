@@ -4,11 +4,11 @@
 //
 //	Begin		:	2008-04-22
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Ju-hyung Lee
 //
-//	Desc		:	ÃµÇÏÁ¦ÀÏ¹«µµÈ¸
+//	Desc		:	ì²œí•˜ì œì¼ë¬´ë„íšŒ
 //
 //***********************************************************************************
 
@@ -157,27 +157,27 @@ enum eBUDOKAI_PROGRESS_MESSAGE
 {
 	BUDOKAI_PROGRESS_MESSAGE_START = 0,					// The budokai will begin. News ....
 
-	// ¿¹¼±
+	// ì˜ˆì„ 
 	BUDOKAI_PROGRESS_MESSAGE_MINORMATCH_ENTERING,		// Qualification starts to enter. Start your position ....
 	BUDOKAI_PROGRESS_MESSAGE_MINORMATCH_BEFORE_1MIN,	// The preliminary battle will begin soon. Standing ad ...
 	BUDOKAI_PROGRESS_MESSAGE_MINORMATCH_WINNER,			// You have decided to advance to the 32nd ...
 	BUDOKAI_PROGRESS_MESSAGE_MINORMATCH_LOSER,			// You failed to to advance to the 32nd ...
 	BUDOKAI_PROGRESS_MESSAGE_MINORMATCH_ALL_FINISHED,	//All qualifiers have been finished. Main Line Gene ....
 
-	// º»¼±
+	// ë³¸ì„ 
 	BUDOKAI_PROGRESS_MESSAGE_DEPTH_32_BEFORE_10SEC,		// After 10 seconds, you will automatically enter the 32st Stadium.
-	BUDOKAI_PROGRESS_MESSAGE_DEPTH_32_WINNER,			// OOO´ÔÀÇ 32°­.... ÃàÇÏÇÕ´Ï´Ù. 16°­ÁøÃâÀÌ.
-	BUDOKAI_PROGRESS_MESSAGE_DEPTH_32_LOSER,			// OOO´ÔÀÇ 32°­.... ¾ÈÅ¸±õ°Ôµµ, 16°­¿¡ ÁØ..
+	BUDOKAI_PROGRESS_MESSAGE_DEPTH_32_WINNER,			// OOOë‹˜ì˜ 32ê°•.... ì¶•í•˜í•©ë‹ˆë‹¤. 16ê°•ì§„ì¶œì´.
+	BUDOKAI_PROGRESS_MESSAGE_DEPTH_32_LOSER,			// OOOë‹˜ì˜ 32ê°•.... ì•ˆíƒ€ê¹ê²Œë„, 16ê°•ì— ì¤€..
 	BUDOKAI_PROGRESS_MESSAGE_DEPTH_32_ALL_FINISHED,		// All the 32 rounds are finished.
 
 	BUDOKAI_PROGRESS_MESSAGE_DEPTH_16_BEFORE_10SEC,		// After 10 seconds, it automatically enters the 16th Stadium.
-	BUDOKAI_PROGRESS_MESSAGE_DEPTH_16_WINNER,			// OOO´ÔÀÇ 16°­.... ÃàÇÏÇÕ´Ï´Ù. 16°­ÁøÃâÀÌ.
-	BUDOKAI_PROGRESS_MESSAGE_DEPTH_16_LOSER,			// OOO´ÔÀÇ 16°­.... ¾ÈÅ¸±õ°Ôµµ, 16°­¿¡ ÁØ..
+	BUDOKAI_PROGRESS_MESSAGE_DEPTH_16_WINNER,			// OOOë‹˜ì˜ 16ê°•.... ì¶•í•˜í•©ë‹ˆë‹¤. 16ê°•ì§„ì¶œì´.
+	BUDOKAI_PROGRESS_MESSAGE_DEPTH_16_LOSER,			// OOOë‹˜ì˜ 16ê°•.... ì•ˆíƒ€ê¹ê²Œë„, 16ê°•ì— ì¤€..
 	BUDOKAI_PROGRESS_MESSAGE_DEPTH_16_ALL_FINISHED,		// 16th round ends ... Semi finalists
 
 	BUDOKAI_PROGRESS_MESSAGE_DEPTH_08_BEFORE_10SEC,		// After 10 seconds, it will automatically enter the 8th Stadium.
-	BUDOKAI_PROGRESS_MESSAGE_DEPTH_08_WINNER,			// OOO´ÔÀÇ 8°­.... ÃàÇÏÇÕ´Ï´Ù. 8°­ÁøÃâÀÌ.
-	BUDOKAI_PROGRESS_MESSAGE_DEPTH_08_LOSER,			// OOO´ÔÀÇ 8°­.... ¾ÈÅ¸±õ°Ôµµ, 8°­¿¡ ÁØ..
+	BUDOKAI_PROGRESS_MESSAGE_DEPTH_08_WINNER,			// OOOë‹˜ì˜ 8ê°•.... ì¶•í•˜í•©ë‹ˆë‹¤. 8ê°•ì§„ì¶œì´.
+	BUDOKAI_PROGRESS_MESSAGE_DEPTH_08_LOSER,			// OOOë‹˜ì˜ 8ê°•.... ì•ˆíƒ€ê¹ê²Œë„, 8ê°•ì— ì¤€..
 	BUDOKAI_PROGRESS_MESSAGE_DEPTH_08_ALL_FINISHED,		// 8th round ends ... Semi finalists
 
 	//
@@ -262,7 +262,7 @@ enum eBUDOKAI_PROGRESS_MESSAGE
 #define BUDOKAI_MAJOR_MATCH_PLAYER_NUMBER			(BUDOKAI_MAX_INDIVIDUAL_MATCH_COUNT)
 
 
-// ÆÀÀü º»¼± ÁøÃâ ÀÎ¿ø : º¯°æÇÒ °æ¿ì QG_BUDOKAI_TEAM_LIST_RES ÆÐÅ¶ÀÇ Å©±â°¡ ³Ñ¾î°¡Áö ¾Ê´ÂÁö Ã¼Å©ÇÑ´Ù.
+// íŒ€ì „ ë³¸ì„  ì§„ì¶œ ì¸ì› : ë³€ê²½í•  ê²½ìš° QG_BUDOKAI_TEAM_LIST_RES íŒ¨í‚·ì˜ í¬ê¸°ê°€ ë„˜ì–´ê°€ì§€ ì•ŠëŠ”ì§€ ì²´í¬í•œë‹¤.
 #define BUDOKAI_MAJOR_MATCH_TEAM_NUMBER				(BUDOKAI_MAX_TEAM_MATCH_COUNT)
 
 
@@ -291,10 +291,10 @@ enum eBUDOKAI_PROGRESS_MESSAGE
 
 
 
-// ÃÖ´ë Åä³Ê¸ÕÆ® °³ÀÎÀü ´ëÀü È½¼ö
+// ìµœëŒ€ í† ë„ˆë¨¼íŠ¸ ê°œì¸ì „ ëŒ€ì „ íšŸìˆ˜
 #define BUDOKAI_MAX_TOURNAMENT_INDIVIDUAL_MATCH_COUNT	(BUDOKAI_MAJOR_MATCH_PLAYER_NUMBER - 1)
 
-// ÃÖ´ë Åä³Ê¸ÕÆ® ÆÀ ´ëÀü È½¼ö
+// ìµœëŒ€ í† ë„ˆë¨¼íŠ¸ íŒ€ ëŒ€ì „ íšŸìˆ˜
 #define BUDOKAI_MAX_TOURNAMENT_TEAM_MATCH_COUNT			(BUDOKAI_MAJOR_MATCH_TEAM_NUMBER - 1)
 
 
@@ -303,27 +303,27 @@ enum eBUDOKAI_PROGRESS_MESSAGE
 
 
 
-// DB Äõ¸® °ü·Ã
-// Åä³Ê¸ÕÆ® °³ÀÎÀü °á°ú ÃÖ´ë ·¹ÄÚµå Ä«¿îÆ®
+// DB ì¿¼ë¦¬ ê´€ë ¨
+// í† ë„ˆë¨¼íŠ¸ ê°œì¸ì „ ê²°ê³¼ ìµœëŒ€ ë ˆì½”ë“œ ì¹´ìš´íŠ¸
 #define BUDOKAI_MAX_TOURNAMENT_INDIVIDUAL_MATCH_RECORD_COUNT	(BUDOKAI_MAJOR_MATCH_PLAYER_NUMBER * 2)
-// Åä³Ê¸ÕÆ® ÆÀÀü °á°ú ÃÖ´ë ·¹ÄÚµå Ä«¿îÆ®
+// í† ë„ˆë¨¼íŠ¸ íŒ€ì „ ê²°ê³¼ ìµœëŒ€ ë ˆì½”ë“œ ì¹´ìš´íŠ¸
 #define BUDOKAI_MAX_TOURNAMENT_TEAM_MATCH_RECORD_COUNT			(BUDOKAI_MAJOR_MATCH_TEAM_NUMBER * 2)
 
 
 
 //------------------------------------------------------------------------------------
-// history °ü·Ã
+// history ê´€ë ¨
 
-// °³ÀÎÀü ÀÔ»óÀÚ Ä«¿îÆ® : °á¼± 4¸í
+// ê°œì¸ì „ ìž…ìƒìž ì¹´ìš´íŠ¸ : ê²°ì„  4ëª…
 #define	BUDOKAI_MAX_SEASON_HISTORY_INDIVIAUL_WINNER_COUNT		(4)
-// ÆÀÀü ÀÔ»óÀÚ Ä«¿îÆ® : °á¼± 4°³ÆÀ 20¸í
+// íŒ€ì „ ìž…ìƒìž ì¹´ìš´íŠ¸ : ê²°ì„  4ê°œíŒ€ 20ëª…
 #define	BUDOKAI_MAX_SEASON_HISTORY_TEAM_WINNER_COUNT			(NTL_MAX_MEMBER_IN_PARTY * 4)
 
-// °³ÀÎÀü ¹× ÆÀÀü ÀÔ»óÀÚ Ä«¿îÆ®
+// ê°œì¸ì „ ë° íŒ€ì „ ìž…ìƒìž ì¹´ìš´íŠ¸
 #define	BUDOKAI_MAX_SEASON_HISTORY_WINNER_PLAYER_COUNT			(BUDOKAI_MAX_SEASON_HISTORY_INDIVIAUL_WINNER_COUNT + BUDOKAI_MAX_SEASON_HISTORY_TEAM_WINNER_COUNT)
 
 
-// join state¸¦ º¸³¾¶§ ÇÑÆÐÅ¶¿¡ ³ÖÀ»¼ö ÀÖ´Â ÃÖ´ë °¹¼ö
+// join stateë¥¼ ë³´ë‚¼ë•Œ í•œíŒ¨í‚·ì— ë„£ì„ìˆ˜ ìžˆëŠ” ìµœëŒ€ ê°¯ìˆ˜
 const BYTE BUDOkAI_MAX_PLAYER_JOIN_STATE_DATA_COUNT = 100;
 
 
@@ -333,7 +333,7 @@ const BYTE BUDOkAI_MAX_PLAYER_JOIN_STATE_DATA_COUNT = 100;
 #pragma pack(1)
 
 
-// »óÅÂ Á¤º¸ : DB ÀúÀå¿ë
+// ìƒíƒœ ì •ë³´ : DB ì €ìž¥ìš©
 struct sBUDOKAI_STATE_DATA
 {
 	BYTE		byState;		// eBUDOKAI_STATE or eBUDOKAI_MATCHSTATE

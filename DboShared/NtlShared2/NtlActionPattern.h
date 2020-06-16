@@ -3,24 +3,24 @@
 #include "NtlSharedType.h"
 //-----------------------------------------------------------------------------------
 
-#define BOTAP_IDLE1_SECOND ( 500 )				// ½Ã°£ ´ÜÀ§ : 0.5ÃÊ
-#define BOTAP_IDLE2_SECOND ( 1000 )				// ½Ã°£ ´ÜÀ§ : 1ÃÊ [12/13/2007 SGpro]
+#define BOTAP_IDLE1_SECOND ( 500 )				// ì‹œê°„ ë‹¨ìœ„ : 0.5ì´ˆ
+#define BOTAP_IDLE2_SECOND ( 1000 )				// ì‹œê°„ ë‹¨ìœ„ : 1ì´ˆ [12/13/2007 SGpro]
 
 typedef TBLIDX ACTIONPATTERNTBLIDX;
-typedef BYTE ACTIONPATTERNID;   //eACTIONPATTERNID¸¦ ÀúÀå
+typedef BYTE ACTIONPATTERNID;   //eACTIONPATTERNIDë¥¼ ì €ìž¥
 
-typedef BYTE ACTIONPATTERN_FIELDSIZE; //Å×ÀÌºí¿¡ ÀúÀåµÇ¾î ÀÖ´Â Pattern¿¡ ¼ö¸¦ ÀúÀå
+typedef BYTE ACTIONPATTERN_FIELDSIZE; //í…Œì´ë¸”ì— ì €ìž¥ë˜ì–´ ìžˆëŠ” Patternì— ìˆ˜ë¥¼ ì €ìž¥
 typedef BYTE ACTIONPATTERN_FIELD;
 #define INVALID_ACTIONPATTERN_FIELD (-1)
 
-//typedef BYTE ACTIONPATTERN_RECORDSIZE; //Å×ÀÌºí¿¡ ÀúÀåµÇ¾î ÀÖ´Â Pattern¿¡ ¼ö¸¦ ÀúÀå
+//typedef BYTE ACTIONPATTERN_RECORDSIZE; //í…Œì´ë¸”ì— ì €ìž¥ë˜ì–´ ìžˆëŠ” Patternì— ìˆ˜ë¥¼ ì €ìž¥
 //typedef BYTE ACTIONPATTERN_RECORD;
 
 enum eACTIONPATTERNID
 {
-	 BOTAP_MOVE = 0		//Move ÆÐÅ¶À» º¸³¿
-	,BOTAP_IDLE1		//0.5ÃÊÂ¥¸®
-	,BOTAP_IDLE2		//1ÃÊÂ¥¸®
+	 BOTAP_MOVE = 0		//Move íŒ¨í‚·ì„ ë³´ëƒ„
+	,BOTAP_IDLE1		//0.5ì´ˆì§œë¦¬
+	,BOTAP_IDLE2		//1ì´ˆì§œë¦¬
 	,BOTAP_MIDLE1
 	,BOTAP_MIDLE2
 
@@ -30,6 +30,6 @@ enum eACTIONPATTERNID
 
 enum eACTIONPATTERN_LIMIT
 {
-	 MAX_SAVECOUNT_ACTIONPATTERN_FIELD	= 64	//ÇÑ°³ÀÇ PatternÀÌ °¡Áú ¼ö ÀÖ´Â ActionÀÇ ÃÖ´ë ÇÊµå ¼ö	
-	,MAX_SAVECOUNT_ACTIONPATTERN_RECORD = 100	//Å×ÀÌºí¿¡ ÀúÀåÇÒ ¼ö ÀÖ´Â ÃÖ´ë ·¹ÄÚµå
+	 MAX_SAVECOUNT_ACTIONPATTERN_FIELD	= 64	//í•œê°œì˜ Patternì´ ê°€ì§ˆ ìˆ˜ ìžˆëŠ” Actionì˜ ìµœëŒ€ í•„ë“œ ìˆ˜	
+	,MAX_SAVECOUNT_ACTIONPATTERN_RECORD = 100	//í…Œì´ë¸”ì— ì €ìž¥í•  ìˆ˜ ìžˆëŠ” ìµœëŒ€ ë ˆì½”ë“œ
 };

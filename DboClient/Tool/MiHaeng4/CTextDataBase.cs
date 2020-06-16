@@ -23,7 +23,7 @@ namespace MiHaeng4
 
         public void AddData(CTextData data)
         {
-            listText.Add(data); 
+            listText.Add(data);
         }
 
         public void Clear()
@@ -54,7 +54,7 @@ namespace MiHaeng4
             }
             catch
             {
-                MessageBox.Show("íŒŒì¼ì„ ì—´ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ì½ê¸°ì „ìš©ìœ¼ë¡œ ì„¤ì •ë˜ì–´ ìˆëŠ”ì§€ í™•ì¸í•´ ë³´ì„¸ìš”","ëµ¨íƒœëŒì´ í˜„ì¤€!!");
+                MessageBox.Show("ÆÄÀÏÀ» ¿­¼ö ¾ø½À´Ï´Ù. ÀĞ±âÀü¿ëÀ¸·Î ¼³Á¤µÇ¾î ÀÖ´ÂÁö È®ÀÎÇØ º¸¼¼¿ä","ºÍÅÂµ¹ÀÌ ÇöÁØ!!");
                 return false;
             }            
 
@@ -77,7 +77,7 @@ namespace MiHaeng4
                     if (words[i] == "user" || words[i] == "class" || words[i] == "race")
                         continue;
 
-                    // Text All Dataì—ì„œ IDë¥¼ ê²€ìƒ‰í•œë‹¤.                          
+                    // Text All Data¿¡¼­ ID¸¦ °Ë»öÇÑ´Ù.                          
                     string strConvertText = TextAllDataTable.ConvertTag(words[i]);
                     if(strConvertText != null)
                     {

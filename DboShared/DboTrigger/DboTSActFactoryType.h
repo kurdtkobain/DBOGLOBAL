@@ -55,7 +55,7 @@
 
 
 /** 
-	Action °ü·Ã °´Ã¼¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ action entity type class µé
+	Action ê´€ë ¨ ê°ì²´ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ action entity type class ë“¤
 */
 
 

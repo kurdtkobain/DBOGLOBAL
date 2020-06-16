@@ -1,4 +1,4 @@
-﻿// lua_tinker.h
+// lua_tinker.h
 //
 // LuaTinker - Simple and light C++ wrapper for Lua.
 //

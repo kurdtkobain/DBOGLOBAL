@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-10-23
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -19,7 +19,7 @@
 const char* DBO_PURE_MAJIN_MODEL_RESOURCE_NAME = "A_PURE_MAJIN";
 
 //-----------------------------------------------------------------------------------
-// BotData ÃÊ±âÈ­
+// BotData ì´ˆê¸°í™”
 //-----------------------------------------------------------------------------------
 void InitBotData(sBOT_DATA & rsBotData)
 {
@@ -60,7 +60,7 @@ void InitBotData(sBOT_DATA & rsBotData)
 
 
 //-----------------------------------------------------------------------------------
-// NpcData ÃÊ±âÈ­
+// NpcData ì´ˆê¸°í™”
 //-----------------------------------------------------------------------------------
 void InitNpcData(sNPC_DATA & rsNpcData)
 {
@@ -69,7 +69,7 @@ void InitNpcData(sNPC_DATA & rsNpcData)
 
 
 //-----------------------------------------------------------------------------------
-// MobData ÃÊ±âÈ­
+// MobData ì´ˆê¸°í™”
 //-----------------------------------------------------------------------------------
 void InitMobData(sMOB_DATA & rsMobData)
 {
@@ -312,7 +312,7 @@ void CopyCharState( sCHARSTATE* pDest, const sCHARSTATE* pSrc )
 
 
 //-----------------------------------------------------------------------------------
-// ÀüÅõ·Â °è»ê
+// ì „íˆ¬ë ¥ ê³„ì‚°
 //-----------------------------------------------------------------------------------
 DWORD Dbo_CalculatePowerLevel(
 		WORD wLastPhysicalOffence, WORD wLastPhysicalDefence, WORD wLastEnergyOffence, WORD wLastEnergyDefence,
@@ -376,12 +376,12 @@ float Dbo_GetTransformScale( eASPECTSTATE eAspect, BYTE byGrade )
     return 1.0f;
 }
 
-// ·¹º§¿¡ µû¸¥ RP Ball ÃÖ´ëÄ¡¸¦ ¹İÈ¯ÇÑ´Ù.
-// ÇöÀç ±âÈ¹ ->  1~ 9 -> 1°³
-//			 -> 10~19 -> 2°³
+// ë ˆë²¨ì— ë”°ë¥¸ RP Ball ìµœëŒ€ì¹˜ë¥¼ ë°˜í™˜í•œë‹¤.
+// í˜„ì¬ ê¸°íš ->  1~ 9 -> 1ê°œ
+//			 -> 10~19 -> 2ê°œ
 //			 ->     .
 //			 ->     .
-//			 ->     .  (·¹º§ 10 ¸¶´Ù 1°³¾¿ ´Ã¾î³². ÃÖ´ëÄ¡´Â 7)
+//			 ->     .  (ë ˆë²¨ 10 ë§ˆë‹¤ 1ê°œì”© ëŠ˜ì–´ë‚¨. ìµœëŒ€ì¹˜ëŠ” 7)
 const BYTE CalculateRPBallMaxByLevel( const BYTE byLevel )
 {
 	BYTE byNewRPBallMax( 1 );
@@ -398,8 +398,8 @@ const BYTE CalculateRPBallMaxByLevel( const BYTE byLevel )
 //-----------------------------------------------------------------------------------
 DWORD GetSafeRetAdd( DWORD dwMax, DWORD dwCur, DWORD dwAdd )
 {
-	DWORD dwMargin = dwMax - dwCur;	// ÃÖ´ë°ª¿¡¼­ ³²Àº±İ¾×
-	if ( dwMargin > dwAdd )	// ´õÇÒ µ·À» ´õÇÒ ¼ö ÀÖ´Ù. 
+	DWORD dwMargin = dwMax - dwCur;	// ìµœëŒ€ê°’ì—ì„œ ë‚¨ì€ê¸ˆì•¡
+	if ( dwMargin > dwAdd )	// ë”í•  ëˆì„ ë”í•  ìˆ˜ ìˆë‹¤. 
 	{
 		return (dwCur + dwAdd);
 	}

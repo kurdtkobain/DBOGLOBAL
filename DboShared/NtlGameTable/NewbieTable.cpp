@@ -5,7 +5,7 @@
 //
 //	Begin		:	2006-03-27
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Doo  Sup, Chung   ( john@ntl-inc.com )
 //
@@ -127,7 +127,7 @@ bool CNewbieTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		return false;
 	}
 
-	//  [6/7/2006 john] : Ãß°¡ : race, class ¿¡ µû¸¥ tbldat ÀúÀå
+	//  [6/7/2006 john] : ì¶”ê°€ : race, class ì— ë”°ë¥¸ tbldat ì €ìž¥
 	if( false == SetNewbieTbldat( pNewbie->byRace, pNewbie->byClass, pNewbie ) )
 	{
 		_ASSERTE( 0 );

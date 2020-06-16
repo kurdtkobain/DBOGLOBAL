@@ -5,7 +5,7 @@
 
 const DWORD		DBO_MAX_LENGTH_MODEL_NAME = 32;
 
-// ¸ğµç Ä³¸¯ÅÍµéÀÇ °øÅë ¼Ó¼º µ¥ÀÌÅ¸
+// ëª¨ë“  ìºë¦­í„°ë“¤ì˜ ê³µí†µ ì†ì„± ë°ì´íƒ€
 #pragma pack(push, 4)
 struct sCHAR_TBLDAT : public sTBLDAT
 {
@@ -23,7 +23,7 @@ public:
 	WORD			wBasicEng;
 
 	float			fScale;
-	WORD			wAttack_Speed_Rate; // ¸Ç¼Õ °ø°İ½ÃÀÇ ¾Ö´Ï¸ŞÀÌ¼Ç ¼Óµµ¿¡ ´ëÇÑ %
+	WORD			wAttack_Speed_Rate; // ë§¨ì† ê³µê²©ì‹œì˜ ì• ë‹ˆë©”ì´ì…˜ ì†ë„ì— ëŒ€í•œ %
 	BYTE			byAttack_Type;
 	float			fAttack_Range;
 	WORD			wAttack_Rate;

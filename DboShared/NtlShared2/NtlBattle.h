@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-04-24
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -124,15 +124,15 @@ struct sDBO_BATTLE_STATISTICS
 };
 #pragma pack(pop)
 
-// HTB °ü·Ã Á¤ÀÇ
+// HTB ê´€ë ¨ ì •ì˜
 enum eHTB_SKILL_TYPE
 {
 	HTB_SKILL_NONE,
-	HTB_SKILL_DASH,			// htb¸¦ Ã³À½ ½ÃÀÛÇÒ ¶§ client°¡ target¿¡ dash ÀÌµ¿À¸·Î °¡±îÀÌ Á¢±ÙÇÑ´Ù.(ÀÚ¿¬½º·¯¿î ¿¬ÃâÀ» À§ÇÏ¿©)
-	HTB_SKILL_HOMING_UP,	// attacker°¡ targetÀ» µû¶ó¼­ ¿Ã¶ó°£´Ù.
-	HTB_SKILL_HOMING_DOWN,	// attacket°¡ Áö¸éÀ¸·Î ´Ù½Ã ³»·Á¿Â´Ù.
-	HTB_SKILL_JUMPING_UP,	// °øÁß 12m ³ôÀÌ·Î ¹«Á¶°Ç ¿Ã¶ó°£´Ù
-	HTB_SKILL_JUMPING_DOWN,	// °øÁß 12m ³ôÀÌ¿¡¼­ ¹«Á¶°Ç ³»·Á¿Â´Ù
+	HTB_SKILL_DASH,			// htbë¥¼ ì²˜ìŒ ì‹œìž‘í•  ë•Œ clientê°€ targetì— dash ì´ë™ìœ¼ë¡œ ê°€ê¹Œì´ ì ‘ê·¼í•œë‹¤.(ìžì—°ìŠ¤ëŸ¬ìš´ ì—°ì¶œì„ ìœ„í•˜ì—¬)
+	HTB_SKILL_HOMING_UP,	// attackerê°€ targetì„ ë”°ë¼ì„œ ì˜¬ë¼ê°„ë‹¤.
+	HTB_SKILL_HOMING_DOWN,	// attacketê°€ ì§€ë©´ìœ¼ë¡œ ë‹¤ì‹œ ë‚´ë ¤ì˜¨ë‹¤.
+	HTB_SKILL_JUMPING_UP,	// ê³µì¤‘ 12m ë†’ì´ë¡œ ë¬´ì¡°ê±´ ì˜¬ë¼ê°„ë‹¤
+	HTB_SKILL_JUMPING_DOWN,	// ê³µì¤‘ 12m ë†’ì´ì—ì„œ ë¬´ì¡°ê±´ ë‚´ë ¤ì˜¨ë‹¤
 
 	HTB_SKILL_TYPE_UNKNOWN	= 0xFF,
 
@@ -141,18 +141,18 @@ enum eHTB_SKILL_TYPE
 };
 
 
-// ÇÁ¸®¹èÆ² °á°ú
+// í”„ë¦¬ë°°í‹€ ê²°ê³¼
 enum eFREEBATTLE_RESULT
 {
-	FREEBATTLE_RESULT_WIN, // ´ëÀüÁß¿¡ ÇÑ¸íÀÌ HP°¡ 0ÀÌ µÇ¾î ½Â¸®ÇÔ
-	FREEBATTLE_RESULT_LOSE, // ´ëÀüÁß¿¡ ÇÑ¸íÀÌ ´ëÀü¹üÀ§¸¦ ¹þ¾î³ª ½Â¸®ÇÔ
-	FREEBATTLE_RESULT_DRAW, // ½Ã°£ÀÌ °æ°úµÇ¾î ¹«½ÂºÎ°¡ ?
+	FREEBATTLE_RESULT_WIN, // ëŒ€ì „ì¤‘ì— í•œëª…ì´ HPê°€ 0ì´ ë˜ì–´ ìŠ¹ë¦¬í•¨
+	FREEBATTLE_RESULT_LOSE, // ëŒ€ì „ì¤‘ì— í•œëª…ì´ ëŒ€ì „ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ ìŠ¹ë¦¬í•¨
+	FREEBATTLE_RESULT_DRAW, // ì‹œê°„ì´ ê²½ê³¼ë˜ì–´ ë¬´ìŠ¹ë¶€ê°€ ?
 
 	FREEBATTLE_RESULT_COUNT
 };
 
 
-// °ø°Ý ¾×¼Ç Á¤ÀÇ
+// ê³µê²© ì•¡ì…˜ ì •ì˜
 enum eATTACK_ACTION
 {
 	ATTACK_ACTION_HTB,
@@ -164,7 +164,7 @@ enum eATTACK_ACTION
 	INVALID_ATTACK_ACTION,
 };
 
-// °ø°Ý ¾×¼Ç ÇÃ·¡±×
+// ê³µê²© ì•¡ì…˜ í”Œëž˜ê·¸
 enum eATTACK_ACTION_FLAG
 {
 	ATTACK_ACTION_FLAG_HTB			= MAKE_BIT_FLAG( ATTACK_ACTION_HTB ),
@@ -292,11 +292,11 @@ enum eSYSTEM_EFFECT_APPLY_TYPE
 };
 
 //-----------------------------------------------------------------------------------
-// ÀüÅõ °ü·Ã »ó¼ö Á¤ÀÇ : [4/25/2006 zeroera] : ¼öÁ¤ÇÊ¿ä : lua·Î ¿Å±æ °Í
+// ì „íˆ¬ ê´€ë ¨ ìƒìˆ˜ ì •ì˜ : [4/25/2006 zeroera] : ìˆ˜ì •í•„ìš” : luaë¡œ ì˜®ê¸¸ ê²ƒ
 //-----------------------------------------------------------------------------------
-const float			NTL_BATTLE_PUSH_DISTANCE					= 1.0f; // PUSH °Å¸®
-const float			NTL_BATTLE_KNOCKDOWN_DISTANCE				= 5.6f;	// KNOCKDOWN °Å¸®.
-const float			NTL_BATTLE_SLIDING_DISTANCE					= 4.0f; // SLIDING °Å¸®
+const float			NTL_BATTLE_PUSH_DISTANCE					= 1.0f; // PUSH ê±°ë¦¬
+const float			NTL_BATTLE_KNOCKDOWN_DISTANCE				= 5.6f;	// KNOCKDOWN ê±°ë¦¬.
+const float			NTL_BATTLE_SLIDING_DISTANCE					= 4.0f; // SLIDING ê±°ë¦¬
 
 const int			NTL_BATTLE_CHAIN_ATTACK_START				= 1; // chain attack start id 
 
@@ -318,8 +318,8 @@ const DWORD			NTL_BATTLE_KNOCKDOWN_WAKEUP_TIME			= 4000; // KNOCKDOWN TIME FOR N
 const DWORD			NTL_BATTLE_KNOCKDOWN_MIN_WAKEUP_TIME		= 1000; // MIN KNOCKDOWN TIME FOR PC
 const DWORD			NTL_BATTLE_KNOCKDOWN_MAX_WAKEUP_TIME		= 6000; // MAX KNOCKDOWN TIME FOR PC
 const DWORD			NTL_BATTLE_KNOCKDOWN_WAKEUP_TIME_DIFF		= NTL_BATTLE_KNOCKDOWN_MAX_WAKEUP_TIME - NTL_BATTLE_KNOCKDOWN_MIN_WAKEUP_TIME;
-const DWORD			NTL_BATTLE_SLIDING_END_TIME					= 1200; // ½½¶óÀÌµù ³¡³ª´Â Å¸ÀÓ
-const DWORD			NTL_BATTLE_HTB_SANDBAG_END_TIME				= 10000; // HTB½Ã SANDBAG ³¡³ª´Â Å¸ÀÓ
+const DWORD			NTL_BATTLE_SLIDING_END_TIME					= 1200; // ìŠ¬ë¼ì´ë”© ëë‚˜ëŠ” íƒ€ìž„
+const DWORD			NTL_BATTLE_HTB_SANDBAG_END_TIME				= 10000; // HTBì‹œ SANDBAG ëë‚˜ëŠ” íƒ€ìž„
 
 const int			NTL_BATTLE_MAX_NPC_ATTACK_TYPE				= 2; // NPC attacks (currently 2 types)
 
@@ -330,13 +330,13 @@ const float			DBO_FREEBATTLE_CHALLENGE_RANGE				= 10.0f; // Free battle city str
 const float			DBO_FREEBATTLE_MATCH_INSIDE_RADIUS			= 45.0f; // Inside the pre-war range from battle when the reference point (radius)
 const float			DBO_FREEBATTLE_MATCH_OUTSIDE_RADIUS			= 50.0f; // From the pre-war outside of the scope of the battle when the reference point (radius)
 const DWORD			DBO_FREEBATTLE_CHALLENGE_RETRY_TIME			= 10; // Free battle city jaedojeon (s)
-const DWORD			DBO_FREEBATTLE_CHALLENGE_RETRY_MILLITIME	= DBO_FREEBATTLE_CHALLENGE_RETRY_TIME * 1000; // ÇÁ¸®¹èÆ²½Ã ÀçµµÀü(¹Ð¸®¼¼ÄÁµå)
-const DWORD			DBO_FREEBATTLE_CHALLENGE_WAIT_TIME			= 60; // ÇÁ¸®¹èÆ²½Ã ÀçµµÀü(ÃÊ)
-const DWORD			DBO_FREEBATTLE_CHALLENGE_WAIT_MILLITIME		= DBO_FREEBATTLE_CHALLENGE_WAIT_TIME * 1000; // ÇÁ¸®¹èÆ²½Ã ÀçµµÀü(¹Ð¸®¼¼ÄÁµå)
-const DWORD			DBO_FREEBATTLE_OUTSIDE_ALLOW_TIME			= 10; // ÇÁ¸®¹èÆ²½Ã Àå¿ÜÇã¿ë ½Ã°£(ÃÊ)
-const DWORD			DBO_FREEBATTLE_OUTSIDE_ALLOW_MILLITIME		= DBO_FREEBATTLE_OUTSIDE_ALLOW_TIME * 1000; // ÇÁ¸®¹èÆ²½Ã Àå¿ÜÇã¿ë ½Ã°£(¹Ð¸®¼¼ÄÁµå)
-const DWORD			DBO_FREEBATTLE_MATCH_TIME					= 3600; // ÇÁ¸®¹èÆ² °æ±â ½Ã°£(ÃÊ)
-const DWORD			DBO_FREEBATTLE_MATCH_MILLITIME				= DBO_FREEBATTLE_MATCH_TIME * 1000; // ÇÁ¸®¹èÆ² °æ±â½Ã°£(¹Ð¸®¼¼ÄÁµå´ÜÀ§)
+const DWORD			DBO_FREEBATTLE_CHALLENGE_RETRY_MILLITIME	= DBO_FREEBATTLE_CHALLENGE_RETRY_TIME * 1000; // í”„ë¦¬ë°°í‹€ì‹œ ìž¬ë„ì „(ë°€ë¦¬ì„¸ì»¨ë“œ)
+const DWORD			DBO_FREEBATTLE_CHALLENGE_WAIT_TIME			= 60; // í”„ë¦¬ë°°í‹€ì‹œ ìž¬ë„ì „(ì´ˆ)
+const DWORD			DBO_FREEBATTLE_CHALLENGE_WAIT_MILLITIME		= DBO_FREEBATTLE_CHALLENGE_WAIT_TIME * 1000; // í”„ë¦¬ë°°í‹€ì‹œ ìž¬ë„ì „(ë°€ë¦¬ì„¸ì»¨ë“œ)
+const DWORD			DBO_FREEBATTLE_OUTSIDE_ALLOW_TIME			= 10; // í”„ë¦¬ë°°í‹€ì‹œ ìž¥ì™¸í—ˆìš© ì‹œê°„(ì´ˆ)
+const DWORD			DBO_FREEBATTLE_OUTSIDE_ALLOW_MILLITIME		= DBO_FREEBATTLE_OUTSIDE_ALLOW_TIME * 1000; // í”„ë¦¬ë°°í‹€ì‹œ ìž¥ì™¸í—ˆìš© ì‹œê°„(ë°€ë¦¬ì„¸ì»¨ë“œ)
+const DWORD			DBO_FREEBATTLE_MATCH_TIME					= 3600; // í”„ë¦¬ë°°í‹€ ê²½ê¸° ì‹œê°„(ì´ˆ)
+const DWORD			DBO_FREEBATTLE_MATCH_MILLITIME				= DBO_FREEBATTLE_MATCH_TIME * 1000; // í”„ë¦¬ë°°í‹€ ê²½ê¸°ì‹œê°„(ë°€ë¦¬ì„¸ì»¨ë“œë‹¨ìœ„)
 
 // ARENA
 const float			DBO_ARENA_BASE_LOC_X						= 5770.0f;
@@ -356,9 +356,9 @@ const char * DboGetFreeBattleResultString(BYTE byBattleResult);
 
 
 //-----------------------------------------------------------------------------------
-// ÀüÅõ °ü·Ã ÇÔ¼ö Á¤ÀÇ : [4/25/2006 zeroera] : ¼öÁ¤ÇÊ¿ä : lua·Î ¿Å±æ °Í
+// ì „íˆ¬ ê´€ë ¨ í•¨ìˆ˜ ì •ì˜ : [4/25/2006 zeroera] : ìˆ˜ì •í•„ìš” : luaë¡œ ì˜®ê¸¸ ê²ƒ
 //-----------------------------------------------------------------------------------
-BYTE				NtlGetBattleChainAttackSequence(BYTE byCharLevel); // ·¹º§´ç ÃÖ´ë CHAIN ATTACK ¼ö 
+BYTE				NtlGetBattleChainAttackSequence(BYTE byCharLevel); // ë ˆë²¨ë‹¹ ìµœëŒ€ CHAIN ATTACK ìˆ˜ 
 
 //float				NtlGetBattleAttributeBonusRate(BYTE bySubjectAtt, BYTE byTargetAtt); // get battle attribute bonus // old
 
@@ -366,7 +366,7 @@ eSYSTEM_EFFECT_CODE	GetBattleAttributeEffectCode(BYTE byAtt);
 BYTE				GetBattleAttributeEffectApplyType(BYTE byAtt);
 float				GetBattleAttributeEffectApplyValue(BYTE byAtt);
 
-float				NtlGetBattleChainAttackBounsRate(BYTE byAttackSequence); // Ã¼ÀÎ ¾îÅÃ¿¡ µû¸¥ º¸³Ê½º °ø°Ý·ü
+float				NtlGetBattleChainAttackBounsRate(BYTE byAttackSequence); // ì²´ì¸ ì–´íƒì— ë”°ë¥¸ ë³´ë„ˆìŠ¤ ê³µê²©ë¥ 
 
 bool				IsInBattleArena(TBLIDX worldTblidx, CNtlVector& vCurLoc);
 

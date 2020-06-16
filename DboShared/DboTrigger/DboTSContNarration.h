@@ -16,19 +16,19 @@ class CDboTSContNarration : public CNtlTSCont
 
 // Member variables
 protected:
-	eNARRATION_PROGRESS_STATE			m_eProgState;		// Narration ÁøÇà »óÅÂ
+	eNARRATION_PROGRESS_STATE			m_eProgState;		// Narration ì§„í–‰ ìƒíƒœ
 
-	eNARRATION_OWNER_TYPE				m_eOwnerType;		// OwnerÀÇ Á¾·ù
-	unsigned int						m_uiOwnerIdx;		// OwnerÀÇ Å×ÀÌºí ÀÎµ¦½º
+	eNARRATION_OWNER_TYPE				m_eOwnerType;		// Ownerì˜ ì¢…ë¥˜
+	unsigned int						m_uiOwnerIdx;		// Ownerì˜ í…Œì´ë¸” ì¸ë±ìŠ¤
 
-	eNARRATION_OWNER_STATE				m_eOwnerState;		// OwnerÀÇ »óÅÂ
+	eNARRATION_OWNER_STATE				m_eOwnerState;		// Ownerì˜ ìƒíƒœ
 
-	eNARRATION_DIALOG_DIR_TYPE			m_eDialogDirType;	// ´ëÈ­ ¿¬Ãâ Á¾·ù
-	unsigned int						m_uiDialog;			// ´ëÈ­ ³»¿ë
+	eNARRATION_DIALOG_DIR_TYPE			m_eDialogDirType;	// ëŒ€í™” ì—°ì¶œ ì¢…ë¥˜
+	unsigned int						m_uiDialog;			// ëŒ€í™” ë‚´ìš©
 
-	eNARRATION_GUI_TYPE					m_eGUIType;			// GUI Á¾·ù
+	eNARRATION_GUI_TYPE					m_eGUIType;			// GUI ì¢…ë¥˜
 
-	unsigned int						m_uiMaxLifeTime;	// ÀÌ ½Ã°£ ÀÌ»ó ³ª·¹ÀÌ¼Ç Ã¢ÀÌ À¯Áö µÇ´Â °æ¿ì ÀÚµ¿À¸·Î Next·Î ³Ñ¾î°¡¾ß ÇÑ´Ù.
+	unsigned int						m_uiMaxLifeTime;	// ì´ ì‹œê°„ ì´ìƒ ë‚˜ë ˆì´ì…˜ ì°½ì´ ìœ ì§€ ë˜ëŠ” ê²½ìš° ìë™ìœ¼ë¡œ Nextë¡œ ë„˜ì–´ê°€ì•¼ í•œë‹¤.
 
 	NTL_TS_TC_ID						m_tcOkLink;
 	NTL_TS_TC_ID						m_tcCancelLink;
@@ -77,7 +77,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

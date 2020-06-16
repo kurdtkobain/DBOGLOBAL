@@ -1,11 +1,11 @@
 /******************************************************************************
 * File			: CharMakeDisplayPart.h
 * Author		: Hong SungBock
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2009. 2. 5
 * Abstract		: 
 *****************************************************************************
-* Desc			: Ä³¸¯ÅÍ¸¦ ¸¸µé±â À§ÇØ Ä³¸¯ÅÍÀÇ °¢ ºÎºÐÀ» Ç¥½ÃÇÏ´Â ±¸Á¶Ã¼ ¸ðÀ½
+* Desc			: ìºë¦­í„°ë¥¼ ë§Œë“¤ê¸° ìœ„í•´ ìºë¦­í„°ì˜ ê° ë¶€ë¶„ì„ í‘œì‹œí•˜ëŠ” êµ¬ì¡°ì²´ ëª¨ìŒ
 *****************************************************************************/
 
 #pragma once
@@ -21,15 +21,15 @@
 
 enum eDefaultClass
 {
-	DEFAULT_CLASS_HUMAN_FIGHTER,			// ¹«µµ°¡
-	DEFAULT_CLASS_HUMAN_MYSTIC,				// ±â°ø»ç
+	DEFAULT_CLASS_HUMAN_FIGHTER,			// ë¬´ë„ê°€
+	DEFAULT_CLASS_HUMAN_MYSTIC,				// ê¸°ê³µì‚¬
 	DEFAULT_CLASS_HUMAN_ENGINEER,				// 
 
-	DEFAULT_CLASS_NAMEK_FIGHTER,			// ³ª¸ÞÅ© Àü»ç
-	DEFAULT_CLASS_NAMEK_MYSTIC,				// ¿ëÁ·
+	DEFAULT_CLASS_NAMEK_FIGHTER,			// ë‚˜ë©”í¬ ì „ì‚¬
+	DEFAULT_CLASS_NAMEK_MYSTIC,				// ìš©ì¡±
 
-	DEFAULT_CLASS_MAJIN_MIGHTY,				// ´ë¸¶ÀÎ
-	DEFAULT_CLASS_MAJIN_WONDER,				// ÀÇ¸¶ÀÎ
+	DEFAULT_CLASS_MAJIN_MIGHTY,				// ëŒ€ë§ˆì¸
+	DEFAULT_CLASS_MAJIN_WONDER,				// ì˜ë§ˆì¸
 
 	NUM_DEFAULT_CLASS
 };

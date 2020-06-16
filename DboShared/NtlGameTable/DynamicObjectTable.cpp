@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-12-08
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung,DooSup ( john@ntl-inc.com )
 //
@@ -131,7 +131,7 @@ bool CDynamicObjectTable::SetTableData( void* pvTable, WCHAR* pwszSheetName, std
 																					\
 			if ( dwTemp >= INVALID_BYTE )											\
 			{																		\
-				_ASSERTE( !"BYTE Å¸ÀÔÀÇ µ¥ÀÌÅ¸ °ªÀÌ ÃÖ´ë°ª À» ÃÊ°úÇß½À´Ï´Ù." );		\
+				_ASSERTE( !"BYTE íƒ€ì…ì˜ ë°ì´íƒ€ ê°’ì´ ìµœëŒ€ê°’ ì„ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤." );		\
 			}																		\
 			else																	\
 			{																		\
@@ -203,7 +203,7 @@ bool CDynamicObjectTable::SetTableData( void* pvTable, WCHAR* pwszSheetName, std
 		}	
 		else if (0 == wcscmp(pstrDataName->c_str(), L"Note"))
 		{
-			// ±âÈ¹ Àü¿ë ÇÊµå
+			// ê¸°íš ì „ìš© í•„ë“œ
 		}
 		else
 		{

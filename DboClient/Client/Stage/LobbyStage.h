@@ -2,7 +2,7 @@
  *
  * File			: CharacterStage.h
  * Author		: HyungSuk, Jang
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2006. 11. 28	
  * Abstract		: Character stage class
  *****************************************************************************
@@ -71,11 +71,11 @@ private:
 	CNtlPLWorldEntity		*m_pWorldEntity;						// Main World
 	
 	RwV3d					m_vCameraPos;							// Camera Position
-	RwV3d					m_vCameraPosAt;							// Camera°¡ º¸´Â À§Ä¡							
-	RwV3d					m_vAvatarPos;							// AvatarÀÇ À§Ä¡
+	RwV3d					m_vCameraPosAt;							// Cameraê°€ ë³´ëŠ” ìœ„ì¹˜							
+	RwV3d					m_vAvatarPos;							// Avatarì˜ ìœ„ì¹˜
 	RwV3d					m_vAvatarUpdatePos;
 
-	RwReal					m_fAvatarAngleY;						// AvatarÀÇ YÃà È¸Àü °ª
+	RwReal					m_fAvatarAngleY;						// Avatarì˜ Yì¶• íšŒì „ ê°’
 
 	CNtlSobAvatar			*m_pAvatar;								// Avatar
 	RwInt32					m_iAvatarRotState;						// Avatar Rotation State
@@ -87,7 +87,7 @@ private:
 	RwInt8					m_byRace;
 	RwInt8					m_byCharHeightType;
 
-	// ¸¶¿ì½º ÈÙ ½ºÅ©·Ñ¿¡ µû¶ó ÀÚ¿¬½º·¯¿î ¹İÀÀÀ» ÇÏ±â À§ÇØ ¸ğµç ÈÙ ¸Ş¼¼Áö ÀúÀå
+	// ë§ˆìš°ìŠ¤ íœ  ìŠ¤í¬ë¡¤ì— ë”°ë¼ ìì—°ìŠ¤ëŸ¬ìš´ ë°˜ì‘ì„ í•˜ê¸° ìœ„í•´ ëª¨ë“  íœ  ë©”ì„¸ì§€ ì €ì¥
 	std::list<sCameraZoom>	m_listZoomMode;
 	RwReal					m_fReservatedZoomStep;
 	RwReal					m_fTotalZoomStep;
@@ -97,7 +97,7 @@ private:
 	sCameraData				m_CameraData[RACE_COUNT + 1][NUM_CHT][NUM_ZL];
 	RwV3d					m_v3Dir[RACE_COUNT + 1][NUM_CHT][NUM_ZL];
 
-	RwBool					m_bOptionApply;							// CLobbayStage °´Ã¼ »ı¼º½Ã ÇÑ¹ø¸¸ FALSE °ªÀ» °¡Áø´Ù.
+	RwBool					m_bOptionApply;							// CLobbayStage ê°ì²´ ìƒì„±ì‹œ í•œë²ˆë§Œ FALSE ê°’ì„ ê°€ì§„ë‹¤.
 
 private:
 	INPUT_HANDLE m_hKeyDown;
@@ -124,10 +124,10 @@ private:
 
 	void CreateDownLoadAvatar( sPC_SUMMARY *pCharInfo);
 
-	void SetupDefaultCamerabyRace(RwUInt8 byRace);							//AvatarÀÇ À§Ä¡, CameraÀÇ À§Ä¡¸¦ ÃÊ±âÈ­
-	void CreateBackGroundStage( RwUInt32 uiRace, RwBool bForce = false);	//World¸¦ »ı¼º(ÇÑ¹ø¸¸ »ı¼ºÀÌ µÈ´Ù.)
-	void TeleportStage();													//SetUpDefaultCamerabyRace¿¡ ÀÇÇØ¼­ ¼³Á¤µÈ °÷À¸·Î Teleport
-																			//Teleport½Ã ·ÎµùÀÌ ÀÏ¾î³­´Ù.
+	void SetupDefaultCamerabyRace(RwUInt8 byRace);							//Avatarì˜ ìœ„ì¹˜, Cameraì˜ ìœ„ì¹˜ë¥¼ ì´ˆê¸°í™”
+	void CreateBackGroundStage( RwUInt32 uiRace, RwBool bForce = false);	//Worldë¥¼ ìƒì„±(í•œë²ˆë§Œ ìƒì„±ì´ ëœë‹¤.)
+	void TeleportStage();													//SetUpDefaultCamerabyRaceì— ì˜í•´ì„œ ì„¤ì •ëœ ê³³ìœ¼ë¡œ Teleport
+																			//Teleportì‹œ ë¡œë”©ì´ ì¼ì–´ë‚œë‹¤.
 
 	void DestroyBackGroundStage();
 	void DestroyAvatar();

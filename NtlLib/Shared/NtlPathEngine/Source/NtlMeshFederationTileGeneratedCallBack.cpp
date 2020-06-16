@@ -33,9 +33,9 @@ CNtlMeshFederationTileGeneratedCallBack::CNtlMeshFederationTileGeneratedCallBack
 }
 
 /**
-* \brief TILE ÀÌ Generated µÉ ¶§ È£ÃâµÈ´Ù. 
-* \param tileIndex	TILEÀÇ ÇöÀç Index
-* \param tileMesh	TILEÀÇ ÇöÀç iMesh
+* \brief TILE ì´ Generated ë  ë•Œ í˜¸ì¶œëœë‹¤. 
+* \param tileIndex	TILEì˜ í˜„ì¬ Index
+* \param tileMesh	TILEì˜ í˜„ì¬ iMesh
 */
 void CNtlMeshFederationTileGeneratedCallBack::tileGenerated( long tileIndex, iMesh* tileMesh )
 {
@@ -46,7 +46,7 @@ void CNtlMeshFederationTileGeneratedCallBack::tileGenerated( long tileIndex, iMe
 	CNtlFileOutputStream fos(fileName.str().c_str());
 	tileMesh->saveGround(NTLPE_DATA_FORMAT, true, &fos);
 
-	// Agent Size list°¡ ÀÖ°í PreProcess ¿É¼ÇµéÀÌ ÀÖÀ¸¸é PreProcess Ã³¸®¸¦ ÇÑ´Ù.
+	// Agent Size listê°€ ìˆê³  PreProcess ì˜µì…˜ë“¤ì´ ìˆìœ¼ë©´ PreProcess ì²˜ë¦¬ë¥¼ í•œë‹¤.
 	for each( int nAgentSize in m_vecAgentSize )
 	{
 		if( m_bPreProcessCollision )

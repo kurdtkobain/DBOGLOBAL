@@ -143,7 +143,7 @@ void Helper_DestroyAllAtomics(ENTITY_ATOMIC_VEC *pAtomicList)
 		if((*pAtomicList)[i]->bClone)
 		{
 			RpAtomic *pAtomic = (*pAtomicList)[i]->pData;
-			RpAtomicDestroy(pAtomic);  //юл╩Сго╟т ©║╥╞╟║ Ё╜╢ы. ю╫ ©Л╪╠ ╣Щ╟его╟М а╩╢У юш╬Вю╩ гоюз
+			RpAtomicDestroy(pAtomic);  //Л²╢Л┐│М∙≤Й╡▄ Л≈░К÷╛Й╟─ К┌°К▀╓. Л²▄ Л ╟Л└═ К■╢Й╠╟М∙≤ЙЁ═ Л╒─К█■ Л·▒Л≈┘Л²└ М∙≤Л·░
 		}
 
 		NTL_DELETE ((*pAtomicList)[i]);

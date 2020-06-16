@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-01-08
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Jeong Ho, Rho   ( lleo52@ntl-inc.com )
 //
@@ -18,7 +18,7 @@
 
 CNtlSphere::CNtlSphere()
 {
-	// ÃÊ±âÈ­¸¦ ÇÏÁö ¾Ê´Â´Ù
+	// ì´ˆê¸°í™”ë¥¼ í•˜ì§€ ì•ŠëŠ”ë‹¤
 }
 
 

@@ -265,8 +265,8 @@ bool CDboTSEMItemIdentity::AddBuildData( const std::string& strKey, const CNtlTS
 
 	vecdef_TID_LIST& defTIDList = m_defItemIdentityMapper[strKey];
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç teleport ·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ teleport ë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	sITEMIDENTITY_PARAM sParam;
 	CDboTSEMItemIdentity_Recv clRecv;

@@ -88,7 +88,7 @@ RwBool CPetSkillWindowGui::Create()
     m_slotMouseMove  = m_pThis->SigMouseMove().Connect(this, &CPetSkillWindowGui::OnMouseMove);
     m_slotMouseDialogLeave = m_pThis->SigMouseLeave().Connect(this, &CPetSkillWindowGui::OnMouseDialogLeave);
     
-    // Surface ¼³Á¤
+    // Surface ì„¤ì •
     m_surFocus.SetSurface(GetNtlGuiManager()->GetSurfaceManager()->GetSurface("GameCommon.srf", "srfSlotFocusEffect"));
     for(RwInt32 i = 0; i < SUMMON_PET_MAX_SKILL; ++i)
     {
@@ -146,11 +146,11 @@ RwInt32 CPetSkillWindowGui::SwitchDialog( bool bOpen )
 
 void CPetSkillWindowGui::HandleEvents( RWS::CMsg &pMsg )
 {
-    if(pMsg.Id == g_EventSobInfoUpdate)    // PetÀÇ Á¤º¸°¡ Update µÇ¾úÀ»¶§
+    if(pMsg.Id == g_EventSobInfoUpdate)    // Petì˜ ì •ë³´ê°€ Update ë˜ì—ˆì„ë•Œ
     {
 
     }
-    else if(pMsg.Id == g_EventSummonPet)   // PetÀÌ Á×¾úÀ»¶§
+    else if(pMsg.Id == g_EventSummonPet)   // Petì´ ì£½ì—ˆì„ë•Œ
     {
         SDboEventSummonPet* pData = reinterpret_cast<SDboEventSummonPet*>(pMsg.pData);
         if(!pData->bCreate)
@@ -216,7 +216,7 @@ void CPetSkillWindowGui::AdjustDialog()
 
         if(m_uiInfoFlag & E_TRANSFORM_CANCEL)
         {
-            // À§Ä¡
+            // ìœ„ì¹˜
             if(m_uiInfoFlag & E_PET_TYPE_SUMMON)
             {
                 m_pPnlTransformCancelBack->SetPosition(179, 0);
@@ -228,7 +228,7 @@ void CPetSkillWindowGui::AdjustDialog()
                 m_pBtnTransformCancel->SetPosition(0, 0);
             }
 
-            // ¼­ÆäÀÌ½º
+            // ì„œí˜ì´ìŠ¤
             m_pBtnTransformCancel->GetSurfaceFocus()->clear();
             m_pBtnTransformCancel->GetSurfaceUp()->clear();
             m_pBtnTransformCancel->GetSurfaceDown()->clear();            
@@ -260,7 +260,7 @@ void CPetSkillWindowGui::AdjustDialog()
             m_pBtnTransformCancel->Show(FALSE);
         }
 
-        // NOTE: ¾ÆÀÌÅÛÆêÀº ¾ÆÁ÷ ¾ø´Ù.
+        // NOTE: ì•„ì´í…œí«ì€ ì•„ì§ ì—†ë‹¤.
         if(m_uiInfoFlag & E_PET_TYPE_ITEM)
         {
             m_pPnlItemPetBack->Show(TRUE);
@@ -351,7 +351,7 @@ void CPetSkillWindowGui::SetTransformCancel( RwBool bEnable )
 
 VOID CPetSkillWindowGui::OnClickSummonCloseBtn( gui::CComponent* pComponent )
 {
-    // Å¬·ÎÁî ¹öÆ°À» ´©¸£¸é ¼ÒÈ¯ Ãë¼Ò µÈ´Ù.    
+    // í´ë¡œì¦ˆ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì†Œí™˜ ì·¨ì†Œ ëœë‹¤.    
     CNtlSobPet* pSobPet = reinterpret_cast<CNtlSobPet*>(GetNtlSobManager()->GetSobObject(m_uiSummonPetID));
     if(!pSobPet)
         return;
@@ -365,7 +365,7 @@ VOID CPetSkillWindowGui::OnClickSummonCloseBtn( gui::CComponent* pComponent )
 
 VOID CPetSkillWindowGui::OnClickItemCloseBtn( gui::CComponent* pComponent )
 {
-    // Å¬·ÎÁî ¹öÆ°À» ´©¸£¸é ¼ÒÈ¯ Ãë¼Ò µÈ´Ù.
+    // í´ë¡œì¦ˆ ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ì†Œí™˜ ì·¨ì†Œ ëœë‹¤.
     CNtlSobPet* pSobPet = reinterpret_cast<CNtlSobPet*>(GetNtlSobManager()->GetSobObject(m_uiItemPetID));
     if(!pSobPet)
         return;
@@ -379,13 +379,13 @@ VOID CPetSkillWindowGui::OnClickItemCloseBtn( gui::CComponent* pComponent )
 
 void CPetSkillWindowGui::UpdatePetInfo()
 {
-    // ÆêÀÇ ½ºÅ³Á¤º¸¸¦ °¡Á®¿Í¼­ Skill Window¿¡ Ç¥½ÃÇÑ´Ù. 
+    // í«ì˜ ìŠ¤í‚¬ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ Skill Windowì— í‘œì‹œí•œë‹¤. 
     SetSkillIcon();
 }
 
 VOID CPetSkillWindowGui::OnMouseDownSummonAttack(const CKey& key)
 {
-    // ¹öÆ°À§¿¡ ¸¶¿ì½º ¿ìÅ¬¸¯½Ã ¹öÆ° ´Ù¿î ÀÌ¹ÌÁö Ç¥½Ã
+    // ë²„íŠ¼ìœ„ì— ë§ˆìš°ìŠ¤ ìš°í´ë¦­ì‹œ ë²„íŠ¼ ë‹¤ìš´ ì´ë¯¸ì§€ í‘œì‹œ
     if(!m_uiSummonPetID)
         return;
 
@@ -406,7 +406,7 @@ VOID CPetSkillWindowGui::OnClickSummonAttack(const CKey& key)
     if(!m_uiSummonPetID)
         return;
 
-    // ¸¶¿ì½º ¿ìÃø Å¬¸¯½Ã¿¡¸¸ °ø°İÇÏµµ·Ï ÇÑ´Ù.
+    // ë§ˆìš°ìŠ¤ ìš°ì¸¡ í´ë¦­ì‹œì—ë§Œ ê³µê²©í•˜ë„ë¡ í•œë‹¤.
     if(key.m_nID != UD_RIGHT_BUTTON)
         return;
 
@@ -414,12 +414,12 @@ VOID CPetSkillWindowGui::OnClickSummonAttack(const CKey& key)
     m_pBtnSummonAttack->AddSurfaceFocus(m_surAttackBtnUp);    
     m_pBtnSummonAttack->ReleaseMouse();
 
-	// peessi: MouseCapture »óÅÂ¿¡¼­ UI°¡ »ç¶óÁø °æ¿ì¿¡, Äİ¹é¿¡ µû¸¥ ÀÛµ¿À» ¸·´Â´Ù. 
+	// peessi: MouseCapture ìƒíƒœì—ì„œ UIê°€ ì‚¬ë¼ì§„ ê²½ìš°ì—, ì½œë°±ì— ë”°ë¥¸ ì‘ë™ì„ ë§‰ëŠ”ë‹¤. 
 	if( !m_pBtnSummonAttack->IsVisibleTruly() )
 		return;
 
-    //// ¼³Á¤ÇÑ Å¸°ÙÀ» ÆêÀÌ °ø°İÇÏ°Ô ÇÑ´Ù.  
-	// ¼­¹ö·Î PetÀ» ¿Å±â´Â ÀÛ¾÷ Áß
+    //// ì„¤ì •í•œ íƒ€ê²Ÿì„ í«ì´ ê³µê²©í•˜ê²Œ í•œë‹¤.  
+	// ì„œë²„ë¡œ Petì„ ì˜®ê¸°ëŠ” ì‘ì—… ì¤‘
     CNtlSobPet* pSobPet = reinterpret_cast<CNtlSobPet*>(GetNtlSobManager()->GetSobObject(m_uiSummonPetID));
     if(!pSobPet)
         return;
@@ -428,7 +428,7 @@ VOID CPetSkillWindowGui::OnClickSummonAttack(const CKey& key)
     if(hTarget == INVALID_SERIAL_ID)
         return;
 
-    if(!Logic_IsEnemyTagetFromPetActor(pSobPet, hTarget))   // °ø°İÇÒ¼ö ÀÖ´Â ´ë»óÀÎÁö È®ÀÎ
+    if(!Logic_IsEnemyTagetFromPetActor(pSobPet, hTarget))   // ê³µê²©í• ìˆ˜ ìˆëŠ” ëŒ€ìƒì¸ì§€ í™•ì¸
         return;
 
 	API_GetSLPacketGenerator()->SendPetAttackTargetNfy( pSobPet->GetServerSyncAvatarType() );
@@ -438,9 +438,9 @@ VOID CPetSkillWindowGui::OnClickSummonAttack(const CKey& key)
 
 VOID CPetSkillWindowGui::OnMouseEnter( gui::CComponent* pComponent )
 {
-    m_bVisibeFocus = TRUE;      // ¾ÆÀÌÄÜ Æ÷Ä¿½º¸¦ ±×¸°´Ù.
+    m_bVisibeFocus = TRUE;      // ì•„ì´ì½˜ í¬ì»¤ìŠ¤ë¥¼ ê·¸ë¦°ë‹¤.
 
-    // ÅøÆÁÀ» ¶Ù¿î´Ù    
+    // íˆ´íŒì„ ë›°ìš´ë‹¤    
     RwInt32 nX = m_pThis->GetPosition().left;
     RwInt32 nY = m_pThis->GetPosition().top - 60;
     GetInfoWndManager()->ShowInfoWindow(TRUE, CInfoWndManager::INFOWND_JUST_WTEXT, nX, nY, (void*)GetDisplayStringManager()->GetString("DST_PET_TOOLTIP_ATTACK"), DIALOG_PET_SKILL_SLOT); 
@@ -466,7 +466,7 @@ VOID CPetSkillWindowGui::OnMouseLeave( gui::CComponent* pComponent )
 {
     m_bVisibeFocus = FALSE;
 
-    // ÅøÆÁÀ» ¾ø¾Ø´Ù.
+    // íˆ´íŒì„ ì—†ì•¤ë‹¤.
     if(GetInfoWndManager()->GetRequestGui() == DIALOG_PET_SKILL_SLOT)
     {
         GetInfoWndManager()->ShowInfoWindow(FALSE);
@@ -524,7 +524,7 @@ void CPetSkillWindowGui::UpdateSkillIcon( RwReal fElapsedTime )
         {
             RwReal fCurrentTime = 0.0f;
 
-            // ½ºÅ³ÀÇ ³²Àº ÄğÅ¸ÀÓÀ» °¡Á®¿Â´Ù.
+            // ìŠ¤í‚¬ì˜ ë‚¨ì€ ì¿¨íƒ€ì„ì„ ê°€ì ¸ì˜¨ë‹¤.
             fCurrentTime = m_pSobSkillIcon[i]->GetCoolingTime();            
             m_CoolTimeEffect[i].Update(fCurrentTime);            
         }

@@ -2,7 +2,7 @@
 *
 * File			: NtlSerializer.h
 * Author		: HyungSuk, Jang
-* Copyright	: (¡÷)NTL
+* Copyright	: (Ï£º)NTL
 * Date			: 2006. 12. 09	
 * Abstract		: system event definition.
 *****************************************************************************

@@ -59,19 +59,19 @@ enum eOPCODE_GT
 	GT_BUDOKAI_TOURNAMENT_TEAM_LIST_RES,
 	GT_BUDOKAI_TOURNAMENT_TEAM_INFO_RES,
 
-	GT_BUDOKAI_MINOR_MATCH_INDIVIDUAL_LIST_NFY,			// ¿¹¼±Àü ÃâÀü ¸®½ºÆ®(ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö -> ÀÏ¹Ý °ÔÀÓ¼­¹ö)
-	GT_BUDOKAI_MINOR_MATCH_TEAM_LIST_NFY,				// ¿¹¼±Àü ÃâÀü ¸®½ºÆ®(ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö -> ÀÏ¹Ý °ÔÀÓ¼­¹ö)
+	GT_BUDOKAI_MINOR_MATCH_INDIVIDUAL_LIST_NFY,			// ì˜ˆì„ ì „ ì¶œì „ ë¦¬ìŠ¤íŠ¸(ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„ -> ì¼ë°˜ ê²Œìž„ì„œë²„)
+	GT_BUDOKAI_MINOR_MATCH_TEAM_LIST_NFY,				// ì˜ˆì„ ì „ ì¶œì „ ë¦¬ìŠ¤íŠ¸(ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„ -> ì¼ë°˜ ê²Œìž„ì„œë²„)
 
-	GT_BUDOKAI_MINOR_MATCH_TELEPORT_INFO_REQ,			// ¿¹¼±Àü ÅÚ·¹Æ÷Æ® Á¤º¸ (ÀÏ¹Ý °ÔÀÓ¼­¹ö -> ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö)
-	GT_BUDOKAI_MINOR_MATCH_TELEPORT_INFO_RES,			// ¿¹¼±Àü ÅÚ·¹Æ÷Æ® Á¤º¸ (ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö -> ÀÏ¹Ý °ÔÀÓ¼­¹ö)
-	GT_BUDOKAI_PROGRESS_MESSAGE_NFY,					// ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ÁøÇà ¾Ë¸², ¿¹¼±Âü°¡ÀÚ,(ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö -> ÀÏ¹Ý °ÔÀÓ¼­¹ö)
+	GT_BUDOKAI_MINOR_MATCH_TELEPORT_INFO_REQ,			// ì˜ˆì„ ì „ í…”ë ˆí¬íŠ¸ ì •ë³´ (ì¼ë°˜ ê²Œìž„ì„œë²„ -> ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„)
+	GT_BUDOKAI_MINOR_MATCH_TELEPORT_INFO_RES,			// ì˜ˆì„ ì „ í…”ë ˆí¬íŠ¸ ì •ë³´ (ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„ -> ì¼ë°˜ ê²Œìž„ì„œë²„)
+	GT_BUDOKAI_PROGRESS_MESSAGE_NFY,					// ì²œí•˜ì œì¼ë¬´ë„íšŒ ì§„í–‰ ì•Œë¦¼, ì˜ˆì„ ì°¸ê°€ìž,(ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„ -> ì¼ë°˜ ê²Œìž„ì„œë²„)
 
-	GT_BUDOKAI_GM_BUDOKAI_SERVER_ENTER_REQ,				// ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö·Î ÅÚ·¹Æ÷Æ® ¿äÃ»
-	GT_BUDOKAI_GM_BUDOKAI_SERVER_ENTER_RES,				// ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ¼­¹ö·Î ÅÚ·¹Æ÷Æ® ¿äÃ»À» ÇÑ ÀÀ´ä.
+	GT_BUDOKAI_GM_BUDOKAI_SERVER_ENTER_REQ,				// ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„ë¡œ í…”ë ˆí¬íŠ¸ ìš”ì²­
+	GT_BUDOKAI_GM_BUDOKAI_SERVER_ENTER_RES,				// ì²œí•˜ì œì¼ë¬´ë„íšŒ ì„œë²„ë¡œ í…”ë ˆí¬íŠ¸ ìš”ì²­ì„ í•œ ì‘ë‹µ.
 
-	GT_CHAR_MARKING_UPDATE,								// ¸ðµç °ÔÀÓ¼­¹ö·Î 
+	GT_CHAR_MARKING_UPDATE,								// ëª¨ë“  ê²Œìž„ì„œë²„ë¡œ 
 
-	GT_CHAR_SERVER_TELEPORT,							// Å¸ Ã¤³Î¿¡¼­ Player ÃÊ´ë(¼ÒÈ¯)
+	GT_CHAR_SERVER_TELEPORT,							// íƒ€ ì±„ë„ì—ì„œ Player ì´ˆëŒ€(ì†Œí™˜)
 
 	GT_DOJO_CREATE_REQ,
 	GT_DOJO_DELETE_REQ,
@@ -81,9 +81,9 @@ enum eOPCODE_GT
 
 	GT_CONNECT_VALID_CHECK_REQ,
 
-	GT_DOJO_SCRAMBLE_REQ,								// ÀïÅ»Àü ½ÅÃ»
-	GT_DOJO_SCRAMBLE_RESPONSE,							// ÀïÅ»Àü¿¡ ÀÀ´ä
-	GT_DOJO_SCRAMBLE_STATE_CHANGE,						// ÀïÅ»Àü »óÅÂº¯°æ	
+	GT_DOJO_SCRAMBLE_REQ,								// ìŸíƒˆì „ ì‹ ì²­
+	GT_DOJO_SCRAMBLE_RESPONSE,							// ìŸíƒˆì „ì— ì‘ë‹µ
+	GT_DOJO_SCRAMBLE_STATE_CHANGE,						// ìŸíƒˆì „ ìƒíƒœë³€ê²½	
 	GT_DOJO_UPDATE_REQ,
 
 	GT_CONNECT_CHANNEL_CHANGE_REQ,
@@ -92,7 +92,7 @@ enum eOPCODE_GT
 	GT_DOJO_SCRAMBLE_POINT_NFY,
 	GT_DOJO_SCRAMBLE_SHIEFT_SEAL_STATE_NFY,
 
-	GT_SEND_SERVER_RELAY_DATA,							// ´Ù¸¥ °ÔÀÓ¼­¹ö·Î data Àü´Þ
+	GT_SEND_SERVER_RELAY_DATA,							// ë‹¤ë¥¸ ê²Œìž„ì„œë²„ë¡œ data ì „ë‹¬
 
 	GT_DOJO_SCRAMBLE_REWARD_REQ,
 	GT_DOJO_NPC_INFO_REQ,
@@ -264,12 +264,12 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(GT_GUILD_FUNCTION_ADD_REQ)
 	CHARACTERID			masterCharId;
 	BYTE				byFunction;
-	DWORD				dwZenny;		// ÇÊ¿ä±Ý¾×	
+	DWORD				dwZenny;		// í•„ìš”ê¸ˆì•¡	
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(GT_GUILD_GIVE_ZENNY_REQ)
 	CHARACTERID			charId;
-	DWORD				dwZenny;		// ÇöÀç ¼ÒÁö±Ý
+	DWORD				dwZenny;		// í˜„ìž¬ ì†Œì§€ê¸ˆ
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(GT_GUILD_BANK_START_REQ)
@@ -306,10 +306,10 @@ BEGIN_PROTOCOL(GT_BUDOKAI_NOTICE_NFY)
 
 	union
 	{
-		// byNoticeType == BUDOKAI_NOTICE_SYSTEM »ç¿ë
+		// byNoticeType == BUDOKAI_NOTICE_SYSTEM ì‚¬ìš©
 		TBLIDX		tblidxNotice;		
 
-		// byNoticeType == BUDOKAI_NOTICE_GM »ç¿ë
+		// byNoticeType == BUDOKAI_NOTICE_GM ì‚¬ìš©
 		struct sGM_NOTICE
 		{
 			BYTE		byNoticeLength;
@@ -451,7 +451,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(GT_DOJO_FUNCTION_ADD_REQ)
 	CHARACTERID							masterCharId;
 	BYTE								byFunction;
-	DWORD								dwZenny;		// ÇÊ¿ä±Ý¾×	
+	DWORD								dwZenny;		// í•„ìš”ê¸ˆì•¡	
 	BYTE								byPlace;
 	BYTE								byPos;
 	BYTE								byStack;
@@ -477,19 +477,19 @@ BEGIN_PROTOCOL( GT_CONNECT_VALID_CHECK_REQ )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( GT_DOJO_SCRAMBLE_REQ )
-	HOBJECT								charId;		// ½ÅÃ»ÀÚ
-	HOBJECT								dojoTblidx;	// µµÀå
+	HOBJECT								charId;		// ì‹ ì²­ìž
+	HOBJECT								dojoTblidx;	// ë„ìž¥
 	DWORD								dwReqZenny;
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( GT_DOJO_SCRAMBLE_RESPONSE )
-	HOBJECT								charId;		// ½ÅÃ»ÀÚ
-	bool								bIsAccept;	// µµÀå
+	HOBJECT								charId;		// ì‹ ì²­ìž
+	bool								bIsAccept;	// ë„ìž¥
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( GT_DOJO_SCRAMBLE_STATE_CHANGE )
 	TBLIDX								dojoTblidx;
-	BYTE								byState;	// µµÀåÀïÅ»Àü »óÅÂ
+	BYTE								byState;	// ë„ìž¥ìŸíƒˆì „ ìƒíƒœ
 	DOJOTIME							tmNextStepTime;
 END_PROTOCOL()
 //------------------------------------------------------------------
@@ -508,7 +508,7 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( GT_DOJO_SCRAMBLE_RESET )
 	TBLIDX								dojoTblidx;
-	BYTE								byState;	// µµÀåÀïÅ»Àü »óÅÂ
+	BYTE								byState;	// ë„ìž¥ìŸíƒˆì „ ìƒíƒœ
 	DOJOTIME							tmNextStepTime;
 END_PROTOCOL()
 //------------------------------------------------------------------

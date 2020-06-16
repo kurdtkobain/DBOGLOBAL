@@ -107,31 +107,31 @@ public:
 
 
 protected:
-	// »óÅÂ
+	// ìƒíƒœ
 	eEXPORT_STATE					m_eCurState;
 
-	// ¿ÜºÎ ÀÔ·Â µ¥ÀÌÅÍ
+	// ì™¸ë¶€ ì…ë ¥ ë°ì´í„°
 	std::string						m_strExportPath;
 	CNtlNaviResMng*					m_pNaviResMng;
 	CNtlNaviDataMng*				m_pNaviDataMng;
 	sINPUT_PARAM					m_sInputParam;
 
-	// ±âº»°ª ¼³Á¤ µ¥ÀÌÅÍ
+	// ê¸°ë³¸ê°’ ì„¤ì • ë°ì´í„°
 	unsigned int					m_uiCrossTileCntOfSector;
 	float							m_fInvalidTile;
 
-	// Import µ¥ÀÌÅÍ
+	// Import ë°ì´í„°
 	hashdef_OD_INFO_LIST			m_defODInfoList;
 	vecdef_NAVIOBJ_LIST				m_defNaviMeshInfoList;
 	vecdef_NAVIOBJ_LIST				m_defObsMeshInfoList;
 
-	// ºôµå¸¦ À§ÇØ ÇÊ¿äÇÑ µ¥ÀÌÅÍ
+	// ë¹Œë“œë¥¼ ìœ„í•´ í•„ìš”í•œ ë°ì´í„°
 	mapdef_NAVI_RES_ENTITY_LIST		m_defNaviEntityResList;
 	vecdef_FACE_VERTEX_MESH_LIST	m_defPEGroundFVMeshList;
 	vecdef_OBS_ENTITY_LIST			m_defPEObsList;
 	vecdef_AGENT_ENTITY_LIST		m_defAgentList;
 
-	// ºôµåµÈ ÆĞ½º ¿£Áø µ¥ÀÌÅÍ
+	// ë¹Œë“œëœ íŒ¨ìŠ¤ ì—”ì§„ ë°ì´í„°
 	iMesh*							m_pMesh;
 	iCollisionContext*				m_pColContext;
 
@@ -163,7 +163,7 @@ protected:
 
 	//////////////////////////////////////////////////////////////////////////
 	//
-	// World group Á¤º¸ ( Height map, Navigation mesh, Obstacle mesh )
+	// World group ì •ë³´ ( Height map, Navigation mesh, Obstacle mesh )
 	//
 	//////////////////////////////////////////////////////////////////////////
 

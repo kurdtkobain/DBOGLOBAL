@@ -2,7 +2,7 @@
 //	File		:	NtlBlurCamera.cpp
 //	Desc		:	
 //	Begin		:	2006. 2.13
-//	Copyright	:	®œ 2006 by Mahwang CO., Ltd
+//	Copyright	:	‚ìí 2006 by Mahwang CO., Ltd
 //	Author		:	Mahwang
 //	Update		:	
 //***********************************************************************************
@@ -662,7 +662,7 @@ void CNtlBlurCamera::Update_GaussainFiltering(RwRGBA& color, HWND hWnd)
 	m_lpEffect->SetFloat(m_hMapHeight, m_nBlurTextureHeight);
 
 	// ==========================================
-	// ∞°∑Œ πÊ«‚ ∞°øÏΩ√æ» « ≈Õ
+	// Í∞ÄÎ°ú Î∞©Ìñ• Í∞ÄÏö∞ÏãúÏïà ÌïÑÌÑ∞
 	// ==========================================
 	RwCameraClear(m_pGaussianCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
 	if(RwCameraBeginUpdate(m_pGaussianCamera))
@@ -678,7 +678,7 @@ void CNtlBlurCamera::Update_GaussainFiltering(RwRGBA& color, HWND hWnd)
 	m_lpEffect->EndPass();
 
 	// ==========================================
-	// ∞°∑Œ πÊ«‚ ∞°øÏΩ√æ» « ≈Õ
+	// Í∞ÄÎ°ú Î∞©Ìñ• Í∞ÄÏö∞ÏãúÏïà ÌïÑÌÑ∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_GAUSSAIN_Y);
 
@@ -706,7 +706,7 @@ void CNtlBlurCamera::Update_ReductionFiltering(RwRGBA& color, HWND hWnd)
 	m_lpEffect->BeginPass(EFFECT_PASS_NONE);
 
 	// ==========================================
-	// ∫Ì∑Ø »≠∏È √‡º“«œ±‚
+	// Î∏îÎü¨ ÌôîÎ©¥ Ï∂ïÏÜåÌïòÍ∏∞
 	// ==========================================
 	RwCameraClear(m_pReductionCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
 	if(RwCameraBeginUpdate(m_pReductionCamera))
@@ -722,7 +722,7 @@ void CNtlBlurCamera::Update_ReductionFiltering(RwRGBA& color, HWND hWnd)
 
 
 	// ==========================================
-	// ∫Ì∑Ø »≠∏È »Æ¥Î«œ±‚
+	// Î∏îÎü¨ ÌôîÎ©¥ ÌôïÎåÄÌïòÍ∏∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_NONE);
 
@@ -749,7 +749,7 @@ void CNtlBlurCamera::Update_ReductionFiltering(RwRGBA& color, HWND hWnd)
 void CNtlBlurCamera::Update_FakeHDRFiltering(RwRGBA& color, HWND hWnd)
 {
 	// ==========================================
-	// »≠∏È √‡º“«œ±‚
+	// ÌôîÎ©¥ Ï∂ïÏÜåÌïòÍ∏∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_NONE);
 	RwCameraClear(m_pReductionCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
@@ -766,7 +766,7 @@ void CNtlBlurCamera::Update_FakeHDRFiltering(RwRGBA& color, HWND hWnd)
 
 
 	// ==========================================
-	// √‡º“»≠∏È ∫Ì∑Ø ∏‘¿Ã±‚
+	// Ï∂ïÏÜåÌôîÎ©¥ Î∏îÎü¨ Î®πÏù¥Í∏∞
 	// ==========================================
 	for (RwInt32 i = 0; i < m_nFakeHDRBlurCount; ++ i)
 	{
@@ -804,7 +804,7 @@ void CNtlBlurCamera::Update_FakeHDRFiltering(RwRGBA& color, HWND hWnd)
 
 
 	// ==========================================
-	// »≠∏È »Æ¥Î«œ±‚
+	// ÌôîÎ©¥ ÌôïÎåÄÌïòÍ∏∞
 	// ==========================================
 	m_lpEffect->BeginPass(EFFECT_PASS_NONE);
 	RwCameraClear(m_pTempCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
@@ -883,7 +883,7 @@ void CNtlBlurCamera::Update_Last(RwRGBA& color, HWND hWnd)
 	m_lpEffect->BeginPass(EFFECT_PASS_LASTDRAW);
 
 	// ==========================================
-	// √÷¡æ¿˚¿∏∑Œ ±◊∏Æ±‚
+	// ÏµúÏ¢ÖÏ†ÅÏúºÎ°ú Í∑∏Î¶¨Í∏∞
 	// ==========================================
 	RwCameraClear(m_pBlurCamera, &color, rwCAMERACLEARZ|rwCAMERACLEARIMAGE);
 	if(RwCameraBeginUpdate(m_pBlurCamera))
@@ -1062,7 +1062,7 @@ void CNtlBlurCamera::DrawInfo(RtCharset* pCharset, RwInt32 iIdx)
 
 //-------------------------------------------------------------
 // Name: UpdateGaussainWeightTable()
-// Desc: ∞°¡ﬂƒ° ∞ËªÍ
+// Desc: Í∞ÄÏ§ëÏπò Í≥ÑÏÇ∞
 //-------------------------------------------------------------
 void CNtlBlurCamera::UpdateGaussainWeightTable(FLOAT fGaussainDispersion_sq)
 {
@@ -1077,7 +1077,7 @@ void CNtlBlurCamera::UpdateGaussainWeightTable(FLOAT fGaussainDispersion_sq)
 
 //-------------------------------------------------------------
 // Name: CreateReductionTexture()
-// Desc: ∞°¡ﬂƒ° ∞ËªÍ
+// Desc: Í∞ÄÏ§ëÏπò Í≥ÑÏÇ∞
 //-------------------------------------------------------------
 void CNtlBlurCamera::CreateReductionTexture(RwInt32 nTextureSize)
 {

@@ -285,8 +285,8 @@ void CNtlNaviIDGroupExporter::ClearPEAgent( void )
 
 bool CNtlNaviIDGroupExporter::ProcessIDInfoData( void )
 {
-	// Indoor world group Á¤º¸¸¦ ÀÐ´Â´Ù
-	// IndoorÀÇ °æ¿ì ÇÏ³ªÀÇ group¸¸ÀÌ Á¸ÀçÇÔ
+	// Indoor world group ì •ë³´ë¥¼ ì½ëŠ”ë‹¤
+	// Indoorì˜ ê²½ìš° í•˜ë‚˜ì˜ groupë§Œì´ ì¡´ìž¬í•¨
 	CNtlNaviGroupInDoorInfo* pIDInfo = m_pNaviDataMng->Load_GroupInDoor();
 
 	if ( NULL == pIDInfo )
@@ -294,12 +294,12 @@ bool CNtlNaviIDGroupExporter::ProcessIDInfoData( void )
 		return false;
 	}
 
-	// Main navigation mesh µî·Ï
+	// Main navigation mesh ë“±ë¡
 	m_strWorldModelName = pIDInfo->GetModelName();
 
 	int nCnt, i;
 
-	// Navigation mesh µî·Ï
+	// Navigation mesh ë“±ë¡
 
 	nCnt = pIDInfo->GetNaviMeshCnt();
 
@@ -308,7 +308,7 @@ bool CNtlNaviIDGroupExporter::ProcessIDInfoData( void )
 		AttachNaviMeshInfo( pIDInfo->GetNaviMesh( i ) );
 	}
 
-	// Obstacle mesh µî·Ï
+	// Obstacle mesh ë“±ë¡
 
 	nCnt = pIDInfo->GetObsMeshCnt();
 
@@ -341,7 +341,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 			continue;
 		}
 
-		// È¸Àü, ÀÌµ¿, ½ºÄ³ÀÏ Matrix ±¸¼ºÇÑ´Ù
+		// íšŒì „, ì´ë™, ìŠ¤ìºì¼ Matrix êµ¬ì„±í•œë‹¤
 		CNtlNaviMatrix3 matReverse( true );
 		matReverse.Scale( 1.f, 1.f, -1.f );
 
@@ -356,7 +356,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 		CNtlNaviMatrix4 matWorld( true );
 		matWorld.SetElem( matRet );
 
-		// Navigation mesh¸¦ ±¸¼º ¹× µî·ÏÇÑ´Ù
+		// Navigation meshë¥¼ êµ¬ì„± ë° ë“±ë¡í•œë‹¤
 		AttachPEGroundFVMesh( new CNtlNaviPENaviFVMesh( pNaviEntity, matWorld ) );
 
 		pFullPath = m_pNaviResMng->NextNaviRes();
@@ -385,7 +385,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 				continue;
 			}
 
-			// È¸Àü, ÀÌµ¿, ½ºÄ³ÀÏ Matrix ±¸¼ºÇÑ´Ù
+			// íšŒì „, ì´ë™, ìŠ¤ìºì¼ Matrix êµ¬ì„±í•œë‹¤
 			CNtlNaviMatrix3 matReverse( true );
 			matReverse.Scale( 1.f, 1.f, -1.f );
 
@@ -403,7 +403,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 			CNtlNaviVector3 vTrans( pNaviMeshObjInfo->fPosX, pNaviMeshObjInfo->fPosY, pNaviMeshObjInfo->fPosZ );
 			matWorld.SetRow( 3, vTrans );
 
-			// Navigation mesh¸¦ ±¸¼º ¹× µî·ÏÇÑ´Ù
+			// Navigation meshë¥¼ êµ¬ì„± ë° ë“±ë¡í•œë‹¤
 			AttachPEGroundFVMesh( new CNtlNaviPENaviFVMesh( pNaviEntity, matWorld ) );
 
 			pFullPath = m_pNaviResMng->NextNaviRes();
@@ -433,7 +433,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 				continue;
 			}
 
-			// È¸Àü, ÀÌµ¿, ½ºÄ³ÀÏ Matrix ±¸¼ºÇÑ´Ù
+			// íšŒì „, ì´ë™, ìŠ¤ìºì¼ Matrix êµ¬ì„±í•œë‹¤
 			CNtlNaviMatrix3 matReverse( true );
 			matReverse.Scale( 1.f, 1.f, -1.f );
 
@@ -448,10 +448,10 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 			CNtlNaviMatrix4 matWorld( true );
 			matWorld.SetElem( matRet );
 
-			// Navigation mesh¸¦ ±¸¼ºÇÑ´Ù
+			// Navigation meshë¥¼ êµ¬ì„±í•œë‹¤
 			CNtlNaviPENaviFVMesh* pObsNaviMesh = new CNtlNaviPENaviFVMesh( pNaviEntity, matWorld );
 
-			// º¯È¯µÈ Vertex Á¤º¸¸¦ »Ì¾Æ³½´Ù
+			// ë³€í™˜ëœ Vertex ì •ë³´ë¥¼ ë½‘ì•„ë‚¸ë‹¤
 			CNtlConvexHull::vecdef_POS_LIST defPosList;
 			tSigned32 nVertCnt = pObsNaviMesh->vertices();
 			for ( tSigned32 i = 0; i < nVertCnt; ++i )
@@ -467,7 +467,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 			}
 			delete pObsNaviMesh;
 
-			// ÄÁº¤½ºÇæ Á¤º¸¸¦ ±¸¼ºÇÑ´Ù
+			// ì»¨ë²¡ìŠ¤í— ì •ë³´ë¥¼ êµ¬ì„±í•œë‹¤
 			CNtlConvexHull clConvHull( defPosList );
 			clConvHull.BuildHull();
 
@@ -487,7 +487,7 @@ bool CNtlNaviIDGroupExporter::ProcessPrePEData( void )
 				pConvHullPos = clConvHull.NextHull();
 			}
 
-			// ObstacleÀ» µî·ÏÇÑ´ÙÇÑ´Ù
+			// Obstacleì„ ë“±ë¡í•œë‹¤í•œë‹¤
 			if ( !AttachPEObstacle( pFullPath, pObsMeshObjInfo->fPosX, pObsMeshObjInfo->fPosY, pObsMeshObjInfo->fPosZ, pConvHullList, nConvHullCnt ) )
 			{
 				CNtlNaviLog::GetInstance()->Log( "[EXPORT] Building obstacle mesh failed. [%s]", pFullPath );

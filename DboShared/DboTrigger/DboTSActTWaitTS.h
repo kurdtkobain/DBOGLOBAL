@@ -18,7 +18,7 @@ class CDboTSActTWaitTS : public CNtlTSAction
 
 // Member variables
 protected:
-	unsigned int						m_uiWTime;	// ÃÊ´ÜÀ§ ´ë±â ½Ã°£
+	unsigned int						m_uiWTime;	// ì´ˆë‹¨ìœ„ ëŒ€ê¸° ì‹œê°„
 
 // Constructions
 public:
@@ -33,7 +33,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

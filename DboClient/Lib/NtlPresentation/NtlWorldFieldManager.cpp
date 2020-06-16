@@ -452,7 +452,7 @@ RpLight* NtlWorldRemoveLightWhenWorldDestroy(RpLight* light, void *data)
 
 RpAtomic* NtlWorldLogAtmoicWhenWorldDestroy(RpAtomic* atomic, void *data)
 {
-	// Destroy ½Ã AtomicÀÌ ¹°°í ÀÖ´Â Class Á¢±ÙÇÏ¿© ÀÌ¸§À» ¾Ë¾Æ¿Â´Ù.
+	// Destroy ì‹œ Atomicì´ ë¬¼ê³  ìˆëŠ” Class ì ‘ê·¼í•˜ì—¬ ì´ë¦„ì„ ì•Œì•„ì˜¨ë‹¤.
 	if (RpNtlAtomicGetData(atomic))
 	{
 		CNtlPLEntity* pPLEntity = static_cast<CNtlPLEntity*>(RpNtlAtomicGetData(atomic));
@@ -505,7 +505,7 @@ void CNtlWorldFieldManager::Init(RpWorld *pNtlWorld, RwV3d& SpawnPos)
 
 	InitSingleInstance();
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	CNtlWorldSectorManager::Init();
 
 	RwD3D9SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
@@ -583,7 +583,7 @@ void CNtlWorldFieldManager::Free(void)
 
 	DBO_TRACE(m_iCzTestCnt == 0, "CNtlWorldFieldManager Free Cnt Test : " << m_iCzTestCnt);
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	CNtlWorldSectorManager::Free();
 
 	DestroySky();
@@ -866,8 +866,8 @@ void CNtlWorldFieldManager::UpdateDatumDir()
 	}
 	else
 	{
-		// °³¹ß ½Ã Brack¸¦ °É°í ¼­¹öÀÌµ¿(¹ö½ºµî)À» ÇÏ°Ô µÇ¸é m_eMove2°¡ º¯°æ µÇÁö
-		// ¾Ê´Â °æ¿ì°¡ ¹ß»ı ÇÑ´Ù. ÀÌ °æ¿ì ePORTAL Ã³¸®¸¦ °­ÇàÇÑ´Ù.
+		// ê°œë°œ ì‹œ Brackë¥¼ ê±¸ê³  ì„œë²„ì´ë™(ë²„ìŠ¤ë“±)ì„ í•˜ê²Œ ë˜ë©´ m_eMove2ê°€ ë³€ê²½ ë˜ì§€
+		// ì•ŠëŠ” ê²½ìš°ê°€ ë°œìƒ í•œë‹¤. ì´ ê²½ìš° ePORTAL ì²˜ë¦¬ë¥¼ ê°•í–‰í•œë‹¤.
 		// exception; Sync. wasn't matched
 		m_eMoved2 = ePORTAL;
 		DBO_TRACE(FALSE, "Critical errors occured");
@@ -1707,7 +1707,7 @@ RpCollisionTriangle* GetNtlWorldOutdoorCollisionInfo(RpIntersection *pIntersecti
 		vCollPos.y = pLine->start.y + (fRatio * vDelta.y);
 		vCollPos.z = pLine->start.z + (fRatio * vDelta.z);
 
-		// Åø¿¡¼­ÀÇ Mouse Pick Data´Â TransparencyTileµµ Ãæµ¹ÇØ¾ß ÇÑ´Ù.
+		// íˆ´ì—ì„œì˜ Mouse Pick DataëŠ” TransparencyTileë„ ì¶©ëŒí•´ì•¼ í•œë‹¤.
 		if (!dGET_COLLISION_INFO_UPDATE() && GetSceneManager()->GetWorldAttribute(vCollPos) & dNMAP_TRANSPARENCY_TILE_FLAG)
 		{
 			return pRpCollisionTriangle;
@@ -3667,7 +3667,7 @@ RwBool CNtlWorldFieldManager::GetAFieldProp(RwV3d& Pos, sNTL_FIELD_PROP& NtlFiel
 {
 	/*
 	WorldFileFormat - FieldProperty
-	Field Property¸¦ File ¶Ç´Â Memory·Î ºÎÅÍ Á¤º¸¸¦ °¡Á®¿Â´Ù.
+	Field Propertyë¥¼ File ë˜ëŠ” Memoryë¡œ ë¶€í„° ì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 	*/
 
 	RwInt32 Idx = GetFieldIdx(Pos);
@@ -4163,14 +4163,14 @@ RwBool CNtlWorldFieldManager::SaveCurFieldsBeforeExit()
 #endif
 
 // #ifdef dNTL_WORLD_SCHEDULE_LOADING
-// 	// ½ºÄÉÁì·¯¸¦ »ç¿ë ÁßÀÌ¶ó¸é, ¾ÆÁ÷ »èÁ¦µÇÁö ¾ÊÀº Field°¡ ÀÖÀ» ¼ö ÀÖ´Ù. WorldScheduler¸¦ ³¡±îÁö µ¹¸°´Ù.
+// 	// ìŠ¤ì¼€ì¥´ëŸ¬ë¥¼ ì‚¬ìš© ì¤‘ì´ë¼ë©´, ì•„ì§ ì‚­ì œë˜ì§€ ì•Šì€ Fieldê°€ ìˆì„ ìˆ˜ ìˆë‹¤. WorldSchedulerë¥¼ ëê¹Œì§€ ëŒë¦°ë‹¤.
 // 	while (m_WorldScheduler.Scheduling(1.0f, m_WorldScheduler.GetLastPos()))
 // 	{
 // 		++m_iCzTestCnt;
 // 	}
 // #endif
 
-	// FieldManager¸¦ ÃÊ±âÈ­ ÇÏ´Â °Å³ª ¸¶Âù°¡Áö·Î m_eMove2¸¦ eC·Î º¯°æ WorldEeady »óÅÂ¸¦ ÇØÁ¦ ÇÑ´Ù.
+	// FieldManagerë¥¼ ì´ˆê¸°í™” í•˜ëŠ” ê±°ë‚˜ ë§ˆì°¬ê°€ì§€ë¡œ m_eMove2ë¥¼ eCë¡œ ë³€ê²½ WorldEeady ìƒíƒœë¥¼ í•´ì œ í•œë‹¤.
 	m_eMoved2 = eC;
 	for(RwInt32 i = 0; i < 36; ++i)
 	{
@@ -4178,7 +4178,7 @@ RwBool CNtlWorldFieldManager::SaveCurFieldsBeforeExit()
 	}
 
 #ifdef dNTL_WORLD_SCHEDULE_LOADING
-	// ½ºÄÉÁì·¯¸¦ »ç¿ë ÁßÀÌ¶ó¸é, ¾ÆÁ÷ »èÁ¦µÇÁö ¾ÊÀº Field°¡ ÀÖÀ» ¼ö ÀÖ´Ù. WorldScheduler¸¦ ³¡±îÁö µ¹¸°´Ù.
+	// ìŠ¤ì¼€ì¥´ëŸ¬ë¥¼ ì‚¬ìš© ì¤‘ì´ë¼ë©´, ì•„ì§ ì‚­ì œë˜ì§€ ì•Šì€ Fieldê°€ ìˆì„ ìˆ˜ ìˆë‹¤. WorldSchedulerë¥¼ ëê¹Œì§€ ëŒë¦°ë‹¤.
 	while (m_WorldScheduler.Scheduling(1.0f, m_WorldScheduler.GetLastPos()))
 	{
 		++m_iCzTestCnt;
@@ -5253,11 +5253,11 @@ RwBool CNtlWorldFieldManager::GetWorldDecal(RwV3d& vPosition, RwV3d& vSize, RwIn
 	// 	RwInt32		MidX		= static_cast<RwInt32>(vPosition.x / dGET_WORLD_PARAM()->WorldSectorTileSize) * dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 	RwInt32		MidZ		= static_cast<RwInt32>(vPosition.z / dGET_WORLD_PARAM()->WorldSectorTileSize) * dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 
-	// 	// 1¸¦ ´õÇØÁÖ´Â ÀÌÀ¯´Â ¾÷µ¥ÀÌÆ®¸¦ ´ú ÇÏ±â À§ÇÑ ¹æ¹ıÀÌ´Ù.
+	// 	// 1ë¥¼ ë”í•´ì£¼ëŠ” ì´ìœ ëŠ” ì—…ë°ì´íŠ¸ë¥¼ ëœ í•˜ê¸° ìœ„í•œ ë°©ë²•ì´ë‹¤.
 	// 	RwInt32		TileNumHalfX= 1 + (static_cast<RwInt32>(vSize.x * 0.5f) + (dGET_WORLD_PARAM()->WorldSectorTileSize + static_cast<RwInt32>(vSize.x * 0.5f) % dGET_WORLD_PARAM()->WorldSectorTileSize)) / dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 	RwInt32		TileNumHalfZ= 1 + (static_cast<RwInt32>(vSize.z * 0.5f) + (dGET_WORLD_PARAM()->WorldSectorTileSize + static_cast<RwInt32>(vSize.z * 0.5f) % dGET_WORLD_PARAM()->WorldSectorTileSize)) / dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 
-	// 	// 1¸¦ ´õÇØÁÖ´Â ÀÌÀ¯´Â Áß¾Ó Å¸ÀÏÀº ¿¬»ê¿¡¼­ »©±â À§ÇÑ ²Ç¼ö´Ù.
+	// 	// 1ë¥¼ ë”í•´ì£¼ëŠ” ì´ìœ ëŠ” ì¤‘ì•™ íƒ€ì¼ì€ ì—°ì‚°ì—ì„œ ë¹¼ê¸° ìœ„í•œ ê½ìˆ˜ë‹¤.
 	// 	RwInt32		TileNumX	= TileNumHalfX * 2 + 1;
 	// 	RwInt32		TileNumZ    = TileNumHalfZ * 2 + 1;
 	// 
@@ -5476,7 +5476,7 @@ RwBool CNtlWorldFieldManager::GetWorldLightColor(RwV3d& Pos, RwRGBA* pOutColor, 
 		RwV2d ptDist;
 		RwV2dSub(&ptDist, &ptCheckPos, &ptPos);
 
-		// ¿©±â¸¦ Åë°úÇÏÁö ¸øÇÏ´Â ¼½ÅÍ´Â -1 °ªÀ¸·Î º¯°æÇÑ´Ù.
+		// ì—¬ê¸°ë¥¼ í†µê³¼í•˜ì§€ ëª»í•˜ëŠ” ì„¹í„°ëŠ” -1 ê°’ìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 		if (GetSceneManager()->GetActiveWorldType() == AW_HEGITHFIELD && !pSector->m_pAtomic)
 		{
 			vecNeighborSectors.at(i) = -1;
@@ -5489,11 +5489,11 @@ RwBool CNtlWorldFieldManager::GetWorldLightColor(RwV3d& Pos, RwRGBA* pOutColor, 
 		}		
 	}
 
-	// À§¿¡¼­ Àç±¸¼ºµÈ NeighborSectors¸¸ ¿¬»êµÈ´Ù.
+	// ìœ„ì—ì„œ ì¬êµ¬ì„±ëœ NeighborSectorsë§Œ ì—°ì‚°ëœë‹¤.
 	RwRGBAReal	clrfResult;
 	RwBool		bResult = FALSE;
 
-	// Box °Ë»ç.
+	// Box ê²€ì‚¬.
 	for (int i = 0; i < 9; ++i)
 	{
 		if (vecNeighborSectors.at(i) == -1)
@@ -5520,7 +5520,7 @@ RwBool CNtlWorldFieldManager::GetWorldLightColor(RwV3d& Pos, RwRGBA* pOutColor, 
 		}
 	}
 
-	// Box¿¡¼­ Ã¼Å©µÇÁö ¾Ê¾Ò´Ù¸é ±¸¸¦ °Ë»ç ÇÑ´Ù.
+	// Boxì—ì„œ ì²´í¬ë˜ì§€ ì•Šì•˜ë‹¤ë©´ êµ¬ë¥¼ ê²€ì‚¬ í•œë‹¤.
 	if (!bResult)
 	{
 		// WorldLight
@@ -6629,7 +6629,7 @@ RpLight* NtlWorldRemoveLightWhenWorldDestroy(RpLight* light, void *data)
 
 RpAtomic* NtlWorldLogAtmoicWhenWorldDestroy(RpAtomic* atomic, void *data)
 {
-	// Destroy ½Ã AtomicÀÌ ¹°°í ÀÖ´Â Class Á¢±ÙÇÏ¿© ÀÌ¸§À» ¾Ë¾Æ¿Â´Ù.
+	// Destroy ì‹œ Atomicì´ ë¬¼ê³  ìˆëŠ” Class ì ‘ê·¼í•˜ì—¬ ì´ë¦„ì„ ì•Œì•„ì˜¨ë‹¤.
 	if (RpNtlAtomicGetData(atomic))
 	{
 		CNtlPLEntity* pPLEntity = static_cast<CNtlPLEntity*>(RpNtlAtomicGetData(atomic));
@@ -6680,7 +6680,7 @@ void CNtlWorldFieldManager::Init(RpWorld *pNtlWorld, RwV3d& SpawnPos)
 
 	InitSingleInstance();
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	CNtlWorldSectorManager::Init();
 
 	RwD3D9SetRenderState(D3DRS_FILLMODE, D3DFILL_SOLID);
@@ -6756,7 +6756,7 @@ void CNtlWorldFieldManager::Free(void)
 {
 	NTL_FUNCTION("CNtlWorldFieldManager::Free");
 
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	CNtlWorldSectorManager::Free();
 
 	DestroySky();
@@ -7033,8 +7033,8 @@ void CNtlWorldFieldManager::UpdateDatumDir()
 	}
 	else
 	{
-		// °³¹ß ½Ã Brack¸¦ °É°í ¼­¹öÀÌµ¿(¹ö½ºµî)À» ÇÏ°Ô µÇ¸é m_eMove2°¡ º¯°æ µÇÁö
-		// ¾Ê´Â °æ¿ì°¡ ¹ß»ı ÇÑ´Ù. ÀÌ °æ¿ì ePORTAL Ã³¸®¸¦ °­ÇàÇÑ´Ù.
+		// ê°œë°œ ì‹œ Brackë¥¼ ê±¸ê³  ì„œë²„ì´ë™(ë²„ìŠ¤ë“±)ì„ í•˜ê²Œ ë˜ë©´ m_eMove2ê°€ ë³€ê²½ ë˜ì§€
+		// ì•ŠëŠ” ê²½ìš°ê°€ ë°œìƒ í•œë‹¤. ì´ ê²½ìš° ePORTAL ì²˜ë¦¬ë¥¼ ê°•í–‰í•œë‹¤.
 		// exception; Sync. wasn't matched
 		m_eMoved2 = ePORTAL;
 		DBO_TRACE(FALSE, "Critical errors occured");
@@ -7857,7 +7857,7 @@ RpCollisionTriangle* GetNtlWorldOutdoorCollisionInfo(RpIntersection *pIntersecti
 		vCollPos.y = pLine->start.y + (fRatio * vDelta.y);
 		vCollPos.z = pLine->start.z + (fRatio * vDelta.z);
 
-		// Åø¿¡¼­ÀÇ Mouse Pick Data´Â TransparencyTileµµ Ãæµ¹ÇØ¾ß ÇÑ´Ù.
+		// íˆ´ì—ì„œì˜ Mouse Pick DataëŠ” TransparencyTileë„ ì¶©ëŒí•´ì•¼ í•œë‹¤.
 		if (!dGET_COLLISION_INFO_UPDATE() && GetSceneManager()->GetWorldAttribute(vCollPos) & dNMAP_TRANSPARENCY_TILE_FLAG)
 		{
 			return pRpCollisionTriangle;
@@ -9522,7 +9522,7 @@ RwBool CNtlWorldFieldManager::SetAFieldProp(RwV3d& Pos, sNTL_FIELD_PROP& NtlFiel
 {
 	/*
 	WorldFileFormat - FieldProperty
-	Field Property¸¦ File ¶Ç´Â Memory Á¤º¸¸¦ º¯°æÇÑ´Ù.
+	Field Propertyë¥¼ File ë˜ëŠ” Memory ì •ë³´ë¥¼ ë³€ê²½í•œë‹¤.
 	*/
 
 	RwInt32 NumSectorTile	= (dGET_WORLD_PARAM()->WorldSectorTileNum * 2) * (dGET_WORLD_PARAM()->WorldSectorTileNum * 2);
@@ -9813,7 +9813,7 @@ RwBool CNtlWorldFieldManager::GetAFieldProp(RwV3d& Pos, sNTL_FIELD_PROP& NtlFiel
 {
 	/*
 	WorldFileFormat - FieldProperty
-	Field Property¸¦ File ¶Ç´Â Memory·Î ºÎÅÍ Á¤º¸¸¦ °¡Á®¿Â´Ù.
+	Field Propertyë¥¼ File ë˜ëŠ” Memoryë¡œ ë¶€í„° ì •ë³´ë¥¼ ê°€ì ¸ì˜¨ë‹¤.
 	*/
 
 	RwInt32 Idx = GetFieldIdx(Pos);
@@ -10308,7 +10308,7 @@ RwBool CNtlWorldFieldManager::SaveCurFieldsBeforeExit()
 	SaveCurWorldState();
 #endif
 
-	// FieldManager¸¦ ÃÊ±âÈ­ ÇÏ´Â °Å³ª ¸¶Âù°¡Áö·Î m_eMove2¸¦ eC·Î º¯°æ WorldEeady »óÅÂ¸¦ ÇØÁ¦ ÇÑ´Ù.
+	// FieldManagerë¥¼ ì´ˆê¸°í™” í•˜ëŠ” ê±°ë‚˜ ë§ˆì°¬ê°€ì§€ë¡œ m_eMove2ë¥¼ eCë¡œ ë³€ê²½ WorldEeady ìƒíƒœë¥¼ í•´ì œ í•œë‹¤.
 	m_eMoved2 = eC;
 	for(RwInt32 i = 0; i < 36; ++i)
 	{
@@ -10316,7 +10316,7 @@ RwBool CNtlWorldFieldManager::SaveCurFieldsBeforeExit()
 	}
 
 #ifdef dNTL_WORLD_SCHEDULE_LOADING
-	// ½ºÄÉÁì·¯¸¦ »ç¿ë ÁßÀÌ¶ó¸é, ¾ÆÁ÷ »èÁ¦µÇÁö ¾ÊÀº Field°¡ ÀÖÀ» ¼ö ÀÖ´Ù. WorldScheduler¸¦ ³¡±îÁö µ¹¸°´Ù.
+	// ìŠ¤ì¼€ì¥´ëŸ¬ë¥¼ ì‚¬ìš© ì¤‘ì´ë¼ë©´, ì•„ì§ ì‚­ì œë˜ì§€ ì•Šì€ Fieldê°€ ìˆì„ ìˆ˜ ìˆë‹¤. WorldSchedulerë¥¼ ëê¹Œì§€ ëŒë¦°ë‹¤.
 	RwInt32 iCzTestCnt = 0;
 	while (m_WorldScheduler.Scheduling(1.0f, m_WorldScheduler.GetLastPos()))
 	{
@@ -10793,8 +10793,8 @@ RwBool CNtlWorldFieldManager::CreateFieldFromFile(RwInt32 FieldIdx)
 	RwV3d SectorSPos;
 
 	//-------------------------------------------------------------------
-	// 2007.03.23 (Çü¼®)
-	// Pack file ±â´É Ãß°¡
+	// 2007.03.23 (í˜•ì„)
+	// Pack file ê¸°ëŠ¥ ì¶”ê°€
 
 	FILE *pFile = NULL;
 	if(GetNtlResourcePackManager()->GetActiveFlags() & NTL_PACK_TYPE_FLAG_TERRAIN)
@@ -11385,11 +11385,11 @@ RwBool CNtlWorldFieldManager::GetWorldDecal(RwV3d& vPosition, RwV3d& vSize, RwIn
 	// 	RwInt32		MidX		= static_cast<RwInt32>(vPosition.x / dGET_WORLD_PARAM()->WorldSectorTileSize) * dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 	RwInt32		MidZ		= static_cast<RwInt32>(vPosition.z / dGET_WORLD_PARAM()->WorldSectorTileSize) * dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 
-	// 	// 1¸¦ ´õÇØÁÖ´Â ÀÌÀ¯´Â ¾÷µ¥ÀÌÆ®¸¦ ´ú ÇÏ±â À§ÇÑ ¹æ¹ıÀÌ´Ù.
+	// 	// 1ë¥¼ ë”í•´ì£¼ëŠ” ì´ìœ ëŠ” ì—…ë°ì´íŠ¸ë¥¼ ëœ í•˜ê¸° ìœ„í•œ ë°©ë²•ì´ë‹¤.
 	// 	RwInt32		TileNumHalfX= 1 + (static_cast<RwInt32>(vSize.x * 0.5f) + (dGET_WORLD_PARAM()->WorldSectorTileSize + static_cast<RwInt32>(vSize.x * 0.5f) % dGET_WORLD_PARAM()->WorldSectorTileSize)) / dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 	RwInt32		TileNumHalfZ= 1 + (static_cast<RwInt32>(vSize.z * 0.5f) + (dGET_WORLD_PARAM()->WorldSectorTileSize + static_cast<RwInt32>(vSize.z * 0.5f) % dGET_WORLD_PARAM()->WorldSectorTileSize)) / dGET_WORLD_PARAM()->WorldSectorTileSize;
 	// 
-	// 	// 1¸¦ ´õÇØÁÖ´Â ÀÌÀ¯´Â Áß¾Ó Å¸ÀÏÀº ¿¬»ê¿¡¼­ »©±â À§ÇÑ ²Ç¼ö´Ù.
+	// 	// 1ë¥¼ ë”í•´ì£¼ëŠ” ì´ìœ ëŠ” ì¤‘ì•™ íƒ€ì¼ì€ ì—°ì‚°ì—ì„œ ë¹¼ê¸° ìœ„í•œ ê½ìˆ˜ë‹¤.
 	// 	RwInt32		TileNumX	= TileNumHalfX * 2 + 1;
 	// 	RwInt32		TileNumZ    = TileNumHalfZ * 2 + 1;
 	// 
@@ -11608,7 +11608,7 @@ RwBool CNtlWorldFieldManager::GetWorldLightColor(RwV3d& Pos, RwRGBA* pOutColor, 
 		RwV2d ptDist;
 		RwV2dSub(&ptDist, &ptCheckPos, &ptPos);
 
-		// ¿©±â¸¦ Åë°úÇÏÁö ¸øÇÏ´Â ¼½ÅÍ´Â -1 °ªÀ¸·Î º¯°æÇÑ´Ù.
+		// ì—¬ê¸°ë¥¼ í†µê³¼í•˜ì§€ ëª»í•˜ëŠ” ì„¹í„°ëŠ” -1 ê°’ìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 		if (GetSceneManager()->GetActiveWorldType() == AW_HEGITHFIELD && !pSector->m_pAtomic)
 		{
 			vecNeighborSectors.at(i) = -1;
@@ -11621,11 +11621,11 @@ RwBool CNtlWorldFieldManager::GetWorldLightColor(RwV3d& Pos, RwRGBA* pOutColor, 
 		}		
 	}
 
-	// À§¿¡¼­ Àç±¸¼ºµÈ NeighborSectors¸¸ ¿¬»êµÈ´Ù.
+	// ìœ„ì—ì„œ ì¬êµ¬ì„±ëœ NeighborSectorsë§Œ ì—°ì‚°ëœë‹¤.
 	RwRGBAReal	clrfResult;
 	RwBool		bResult = FALSE;
 
-	// Box °Ë»ç.
+	// Box ê²€ì‚¬.
 	for (int i = 0; i < 9; ++i)
 	{
 		if (vecNeighborSectors.at(i) == -1)
@@ -11652,7 +11652,7 @@ RwBool CNtlWorldFieldManager::GetWorldLightColor(RwV3d& Pos, RwRGBA* pOutColor, 
 		}
 	}
 
-	// Box¿¡¼­ Ã¼Å©µÇÁö ¾Ê¾Ò´Ù¸é ±¸¸¦ °Ë»ç ÇÑ´Ù.
+	// Boxì—ì„œ ì²´í¬ë˜ì§€ ì•Šì•˜ë‹¤ë©´ êµ¬ë¥¼ ê²€ì‚¬ í•œë‹¤.
 	if (!bResult)
 	{
 		// WorldLight

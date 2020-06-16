@@ -80,14 +80,14 @@ bool CMobMovePatternTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	sMOVE_PATTERN_TBLDAT * pTbldat = (sMOVE_PATTERN_TBLDAT*) pvTable;
 	sMOVE_PATTERN_TBLDAT * pExistTbldat = NULL;
 
-	// ReloadÀÎ°æ¿ì Data¸¦ Ã£¾Æ UpdateÇØÁØ´Ù
+	// Reloadì¸ê²½ìš° Dataë¥¼ ì°¾ì•„ Updateí•´ì¤€ë‹¤
 	if( bReload )
 	{
 		pExistTbldat = (sMOVE_PATTERN_TBLDAT*) FindData( pTbldat->tblidx );
 		if( pExistTbldat )
 		{
 			CopyMemory( pTbldat, pExistTbldat, pTbldat->GetDataSize() );
-			// µ¥ÀÌÅ¸ÀÇ ÇØÁ¦¸¦ À§ÇÑ false ¹İÈ¯
+			// ë°ì´íƒ€ì˜ í•´ì œë¥¼ ìœ„í•œ false ë°˜í™˜
 			return true; 
 		}
 	}
@@ -138,7 +138,7 @@ bool CMobMovePatternTable::SetTableData(void* pvTable, WCHAR* pwszSheetName, std
 		}
 		else if (0 == wcscmp(pstrDataName->c_str(), L"Note"))
 		{
-//			READ_STR( pPattern->wstrNote, bstrData);	// ¸Ş¸ğ¸®¿¡ ·ÎµåÇÏÁö ¾Ê´Â´Ù.
+//			READ_STR( pPattern->wstrNote, bstrData);	// ë©”ëª¨ë¦¬ì— ë¡œë“œí•˜ì§€ ì•ŠëŠ”ë‹¤.
 		}
 		else
 		{

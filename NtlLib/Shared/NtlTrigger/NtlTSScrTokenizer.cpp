@@ -118,7 +118,7 @@ bool CNtlTSScrTokenizer::Load( const std::string& strFileName, const char* pBuff
 	{
 		m_nMode = eTOKENIZER_MODE_INNER_BUFFER;
 
-		// ÇØ´ç ÆÄÀÏÀ» ¿¬´Ù
+		// í•´ë‹¹ íŒŒì¼ì„ ì—°ë‹¤
 		FILE *pFile;
 		if ( 0 != fopen_s( &pFile, strFileName.c_str(), "rb" ) )
 		{
@@ -126,12 +126,12 @@ bool CNtlTSScrTokenizer::Load( const std::string& strFileName, const char* pBuff
 			return false;
 		}
 
-		// ÆÄÀÏÀÇ Å©±â¸¦ ¾Ë¾Æ³½´Ù
+		// íŒŒì¼ì˜ í¬ê¸°ë¥¼ ì•Œì•„ë‚¸ë‹¤
 		fseek( pFile, 0, SEEK_END );
 		m_nFileSize = ftell( pFile );
 		fseek( pFile, 0, SEEK_SET );
 
-		// ÆÄÀÏÀÇ Å©±â¸¸Å­ ¸Ş¸ğ¸®¸¦ ÇÒ´çÇÑ´Ù
+		// íŒŒì¼ì˜ í¬ê¸°ë§Œí¼ ë©”ëª¨ë¦¬ë¥¼ í• ë‹¹í•œë‹¤
 		m_pFileBuffer = (char*)malloc( m_nFileSize*sizeof(char) );
 		if ( 0 == m_pFileBuffer )
 		{
@@ -139,7 +139,7 @@ bool CNtlTSScrTokenizer::Load( const std::string& strFileName, const char* pBuff
 			return false;
 		}
 
-		// ÇÒ´çµÈ ¸Ş¸ğ¸® ¿µ¿ªÀ¸·Î µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù
+		// í• ë‹¹ëœ ë©”ëª¨ë¦¬ ì˜ì—­ìœ¼ë¡œ ë°ì´í„°ë¥¼ ì €ì¥í•œë‹¤
 		fread( m_pFileBuffer, 1, m_nFileSize, pFile );
 
 		fclose( pFile );
@@ -172,20 +172,20 @@ bool CNtlTSScrTokenizer::Tokenize( void )
 	int nCurLine = 0;
 	while ( nCurPos < m_nFileSize )
 	{
-		// Comment, Space´Â ³Ñ¾î°£´Ù
+		// Comment, SpaceëŠ” ë„˜ì–´ê°„ë‹¤
 		while ( nCurPos < m_nFileSize && ( IsComment( m_pFileBuffer[nCurPos], nCurPos ) || IsSpace( m_pFileBuffer[nCurPos] ) ) )
 		{
 			if ( '\n' == m_pFileBuffer[nCurPos] ) nCurLine++;
 			nCurPos++;
 		}
 
-		// nCurPos °¡ ÆÄÀÏ »çÀÌÁî ÇÏ°í °°´Ù¸é whileÀ» ºüÁ® ³ª°£´Ù
+		// nCurPos ê°€ íŒŒì¼ ì‚¬ì´ì¦ˆ í•˜ê³  ê°™ë‹¤ë©´ whileì„ ë¹ ì ¸ ë‚˜ê°„ë‹¤
 		if ( nCurPos == m_nFileSize ) break;
 
-		// Operator ÀúÀå
+		// Operator ì €ì¥
 		if ( IsOperator( m_pFileBuffer[nCurPos] ) )
 		{
-			// Operator¶ó¸é ÇöÀç À§Ä¡¿Í ¶óÀÎ, ±×¸®°í ÇØ´ç Operator¸¦ TokenÀ¸·Î ÀúÀåÇÑ´Ù
+			// Operatorë¼ë©´ í˜„ì¬ ìœ„ì¹˜ì™€ ë¼ì¸, ê·¸ë¦¬ê³  í•´ë‹¹ Operatorë¥¼ Tokenìœ¼ë¡œ ì €ì¥í•œë‹¤
 			m_defTokens.push_back( CToken( std::string( &m_pFileBuffer[nCurPos], 1 ), nCurPos, nCurLine ) );
 			nCurPos++;
 		}
@@ -193,7 +193,7 @@ bool CNtlTSScrTokenizer::Tokenize( void )
 		{
 			int nTempPos = nCurPos;
 
-			// ¹®ÀÚ¿­ Ã³¸®
+			// ë¬¸ìì—´ ì²˜ë¦¬
 			if ( '"' == m_pFileBuffer[nTempPos] )
 			{
 				int nNumChars = 0;

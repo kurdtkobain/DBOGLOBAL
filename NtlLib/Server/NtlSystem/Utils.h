@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-24
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:
 //
@@ -34,7 +34,7 @@ template <class T>  void SafeSetValue(T * p, T v)
 
 
 // This can handle time in millisecs which can be represented in the range of DWORD type.
-// DWORD ¹üÀ§ ³»¿¡¼­ ³ªÅ¸³¾ ¼ö ÀÖ´Â millisec ´ÜÀ§ÀÇ ½Ã°£À» Ã³¸®ÇÒ ¼ö ÀÖ´Ù.
+// DWORD ë²”ìœ„ ë‚´ì—ì„œ ë‚˜íƒ€ë‚¼ ìˆ˜ ìˆëŠ” millisec ë‹¨ìœ„ì˜ ì‹œê°„ì„ ì²˜ë¦¬í•  ìˆ˜ ìˆë‹¤.
 // by YOSHIKI(2008-10-15)
 struct sNTL_TIME_LENGTH
 {

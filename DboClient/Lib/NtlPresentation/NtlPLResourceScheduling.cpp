@@ -21,7 +21,7 @@
 
 #define MAX_DELETE_SCHEDULING_TIME					0.1f
 
-// ÀÌ ½Ã°£À» ³Ñ±â¸é rest time À» »½Æ¢±â ÇÑ´Ù.
+// ì´ ì‹œê°„ì„ ë„˜ê¸°ë©´ rest time ì„ ë»¥íŠ€ê¸° í•œë‹¤.
 #define MAX_LOAD_CHARACTER_OVER_WEIGHT				0.07f
 #define MAX_LOAD_OBJECT_OVER_WEIGHT					0.05f
 
@@ -49,7 +49,7 @@ CNtlResourceScheduleUnit::CNtlResourceScheduleUnit()
 */
 CNtlResourceScheduleUnit::~CNtlResourceScheduleUnit()
 {
-	// Delete Schedule¿¡ ÀÖ´Â clump ¸¦ »èÁ¦ÇÑ´Ù.
+	// Delete Scheduleì— ìˆëŠ” clump ë¥¼ ì‚­ì œí•œë‹¤.
 	CNtlPLResource *pResource;
 	ListScheduling::iterator itDelete;
 	for(itDelete = m_listClumpDeleteSchedule.begin(); itDelete != m_listClumpDeleteSchedule.end(); itDelete++)
@@ -59,7 +59,7 @@ CNtlResourceScheduleUnit::~CNtlResourceScheduleUnit()
 	}
 	m_listClumpDeleteSchedule.clear();
 
-	// Load Schedule¿¡ ÀÖ´Â clump ¸®½ºÆ®¸¦ »èÁ¦ÇÑ´Ù.
+	// Load Scheduleì— ìˆëŠ” clump ë¦¬ìŠ¤íŠ¸ë¥¼ ì‚­ì œí•œë‹¤.
 	MapScheduling::iterator it;
 	for(it = m_mapClumpLoadSchedule.begin(); it != m_mapClumpLoadSchedule.end(); it++)
 	{
@@ -69,8 +69,8 @@ CNtlResourceScheduleUnit::~CNtlResourceScheduleUnit()
 }
 
 /**
-* \brief Obejct °ü·Ã ClumpµéÀ» ½ºÄÉÁì¸µ ·Îµù ( °ÔÀÓ ½ºÅ×ÀÌÁö·Î ÁøÀÔ µµÁß¿¡ ·ÎµùÇÑ´Ù. )
-* \param fElapsed	(RwReal) ÀÌÀü ¾÷µ¥ÀÌÆ®¿¡¼­ °æ°ú ½Ã°£
+* \brief Obejct ê´€ë ¨ Clumpë“¤ì„ ìŠ¤ì¼€ì¥´ë§ ë¡œë”© ( ê²Œì„ ìŠ¤í…Œì´ì§€ë¡œ ì§„ì… ë„ì¤‘ì— ë¡œë”©í•œë‹¤. )
+* \param fElapsed	(RwReal) ì´ì „ ì—…ë°ì´íŠ¸ì—ì„œ ê²½ê³¼ ì‹œê°„
 */
 void CNtlResourceScheduleUnit::UpdateObjectLoadScheduling(RwReal fElapsed)
 {
@@ -136,8 +136,8 @@ void CNtlResourceScheduleUnit::UpdateObjectLoadScheduling(RwReal fElapsed)
 }
 
 /**
-* \brief Object °ü·Ã clumpµéÀ» Seamless ·Îµù ( °ÔÀÓ µµÁß ½É¸®½º Çü½ÄÀÇ ·Îµù )
-* \param fElapsed	(RwReal) ÀÌÀü ¾÷µ¥ÀÌÆ®¿¡¼­ °æ°úÇÑ ½Ã°£
+* \brief Object ê´€ë ¨ clumpë“¤ì„ Seamless ë¡œë”© ( ê²Œì„ ë„ì¤‘ ì‹¬ë¦¬ìŠ¤ í˜•ì‹ì˜ ë¡œë”© )
+* \param fElapsed	(RwReal) ì´ì „ ì—…ë°ì´íŠ¸ì—ì„œ ê²½ê³¼í•œ ì‹œê°„
 */
 void CNtlResourceScheduleUnit::UpdateObjectLoadSeamlessScheduling(RwReal fElapsed)
 {
@@ -178,7 +178,7 @@ void CNtlResourceScheduleUnit::UpdateObjectLoadSeamlessScheduling(RwReal fElapse
 		dwCount++;
 #endif
 
-		// ÃÊ´ç 20 frm
+		// ì´ˆë‹¹ 20 frm
 		fSum += (RwReal)(GetTickCount() - dwTime)/1000.0f;
 		if(fSum > g_fLoadObjectSeamlessTime)
 			break;
@@ -203,8 +203,8 @@ void CNtlResourceScheduleUnit::UpdateObjectLoadSeamlessScheduling(RwReal fElapse
 }
 
 /**
-* \brief ½ºÄÉÁì¸µ ¾÷µ¥ÀÌÆ®¸¦ ·ÎµùÇÑ´Ù.
-* \param fElapsed	(RwReal) ÀÌÀü ¾÷µ¥ÀÌÆ®¿¡¼­ °æ°úµÈ ½Ã°£
+* \brief ìŠ¤ì¼€ì¥´ë§ ì—…ë°ì´íŠ¸ë¥¼ ë¡œë”©í•œë‹¤.
+* \param fElapsed	(RwReal) ì´ì „ ì—…ë°ì´íŠ¸ì—ì„œ ê²½ê³¼ëœ ì‹œê°„
 */
 void CNtlResourceScheduleUnit::UpdateLoadScheduling(RwReal fElapsed)
 {
@@ -217,12 +217,12 @@ void CNtlResourceScheduleUnit::UpdateLoadScheduling(RwReal fElapsed)
 	if(m_mapClumpLoadSchedule.empty())
 		return;
 
-	// ¿ÀºêÁ§Æ® ¸¸ ¾÷µ¥ÀÌÆ® ÇÑ´Ù.
+	// ì˜¤ë¸Œì íŠ¸ ë§Œ ì—…ë°ì´íŠ¸ í•œë‹¤.
 	UpdateObjectLoadScheduling(fElapsed);
 }
 
 /**
-* \brief ½É¸®½º ¹æ½ÄÀ¸·Î ½ºÄÉÁì·¯¸¦ ¾÷µ¥ÀÌÆ® ÇÑ´Ù.
+* \brief ì‹¬ë¦¬ìŠ¤ ë°©ì‹ìœ¼ë¡œ ìŠ¤ì¼€ì¥´ëŸ¬ë¥¼ ì—…ë°ì´íŠ¸ í•œë‹¤.
 */
 void CNtlResourceScheduleUnit::UpdateLoadSeamlessScheduling(RwReal fElapsed)
 {
@@ -233,7 +233,7 @@ void CNtlResourceScheduleUnit::UpdateLoadSeamlessScheduling(RwReal fElapsed)
 }
 
 /**
-* \brief Áö¿öÁú ¸ñ·ÏÀ» ½ºÄÉÁì¸µÇÑ´Ù.
+* \brief ì§€ì›Œì§ˆ ëª©ë¡ì„ ìŠ¤ì¼€ì¥´ë§í•œë‹¤.
 */
 void CNtlResourceScheduleUnit::UpdateDeleteScheduling(RwReal fElapsed)
 {
@@ -274,8 +274,8 @@ void CNtlResourceScheduleUnit::UpdateDeleteScheduling(RwReal fElapsed)
 }
 
 /**
-* \brief UnitÀÌ ½ºÄÉÁì¸µ ·ÎµåÇÒ EntityÀÇ TypeÀ» ¼ÂÆÃ
-* \param byEntityType	(RwUInt8) ¿£Æ¼Æ¼ÀÇ Å¸ÀÔ
+* \brief Unitì´ ìŠ¤ì¼€ì¥´ë§ ë¡œë“œí•  Entityì˜ Typeì„ ì…‹íŒ…
+* \param byEntityType	(RwUInt8) ì—”í‹°í‹°ì˜ íƒ€ì…
 */
 void CNtlResourceScheduleUnit::SetEntityType(RwUInt8 byEntityType)
 {
@@ -350,7 +350,7 @@ CNtlResourceScheduleCharUnit::~CNtlResourceScheduleCharUnit()
 
 /**
 * \brief Update
-* \param fElapsed	(RwReal) ÀÌÀü ÇÁ·¹ÀÓ¿¡¼­ÀÇ ¾÷µ¥ÀÌÆ® Time
+* \param fElapsed	(RwReal) ì´ì „ í”„ë ˆì„ì—ì„œì˜ ì—…ë°ì´íŠ¸ Time
 */
 void CNtlResourceScheduleCharUnit::Update( RwReal fElapsed ) 
 {
@@ -361,36 +361,36 @@ void CNtlResourceScheduleCharUnit::Update( RwReal fElapsed )
 }
 
 /**
-* \brief ½ºÄÉÁì¸µ ·ÎµùÀ» Node¸¦ µî·ÏÇÑ´Ù.
-* \param pPLEntity	(CNtlPLEntity*) EntityÀÇ ÁÖ¼Ò
+* \brief ìŠ¤ì¼€ì¥´ë§ ë¡œë”©ì„ Nodeë¥¼ ë“±ë¡í•œë‹¤.
+* \param pPLEntity	(CNtlPLEntity*) Entityì˜ ì£¼ì†Œ
 * \param pNode		(SResourceScheduleNode*) ResourceNode
 */
 void CNtlResourceScheduleCharUnit::AddSchedulingNode(CNtlPLEntity *pPLEntity, SResourceScheduleNode *pNode ) 
 {
-	// ¸®½ºÆ®¿¡ µî·ÏµÉ ±¸Á¶Ã¼
+	// ë¦¬ìŠ¤íŠ¸ì— ë“±ë¡ë  êµ¬ì¡°ì²´
 	SResourceScheduleCharUnit sCharUnit;
 	sCharUnit.pPLEntity = pPLEntity;
 	sCharUnit.pNode = pNode;
 
-	// ¸®½ºÆ®¿¡ Ãß°¡ÇÑ´Ù.
+	// ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€í•œë‹¤.
 	m_listCharClumpLoadSchedule.push_back( sCharUnit );
 }
 
 /**
-* \brief ½ºÄÉÁì¸µ ·Îµù¿¡¼­ Node¸¦ »èÁ¦ÇÑ´Ù.
-* \param pPLEntity	(CNtlPLEntity*) »èÁ¦ÇÒ EntityÀÇ Æ÷ÀÎÅÍ
-* \param pResource	(CNtlPLResource*) »èÁ¦ÇÒ ¸®¼Ò½ºÀÇ Æ÷ÀÎÅÍ
+* \brief ìŠ¤ì¼€ì¥´ë§ ë¡œë”©ì—ì„œ Nodeë¥¼ ì‚­ì œí•œë‹¤.
+* \param pPLEntity	(CNtlPLEntity*) ì‚­ì œí•  Entityì˜ í¬ì¸í„°
+* \param pResource	(CNtlPLResource*) ì‚­ì œí•  ë¦¬ì†ŒìŠ¤ì˜ í¬ì¸í„°
 */
 void CNtlResourceScheduleCharUnit::UnLoadScheduling( CNtlPLEntity *pPLEntity, CNtlPLResource *pResource ) 
 {
-	// pResource°¡ NULL·Î µé¾î¿Â´Ù¸é ¸®½ºÆ®¿¡¼­ »èÁ¦ÇØ¾ß ÇÑ´Ù.
-	// multimapÀ¸·Î ÀÚ·á±¸Á¶¸¦ ¹Ù²ã¾ßÇÔ
+	// pResourceê°€ NULLë¡œ ë“¤ì–´ì˜¨ë‹¤ë©´ ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚­ì œí•´ì•¼ í•œë‹¤.
+	// multimapìœ¼ë¡œ ìë£Œêµ¬ì¡°ë¥¼ ë°”ê¿”ì•¼í•¨
 	if(pResource == NULL)
 	{
 		ListCharScheduling::iterator it = m_listCharClumpLoadSchedule.begin();
 		while(it != m_listCharClumpLoadSchedule.end())
 		{
-			// ¸®½ºÆ®¿¡¼­ °Ë»öÇÏ¿© »èÁ¦
+			// ë¦¬ìŠ¤íŠ¸ì—ì„œ ê²€ìƒ‰í•˜ì—¬ ì‚­ì œ
 			if( (*it).pPLEntity == pPLEntity )
 			{
 				CNtlResourceScheduleManager::FreeListFree((void*)(*it).pNode);
@@ -405,14 +405,14 @@ void CNtlResourceScheduleCharUnit::UnLoadScheduling( CNtlPLEntity *pPLEntity, CN
 	}
 	else
 	{
-		// »èÁ¦ÇÒ ¸®½ºÆ®¸¦ µî·ÏÇÑ´Ù.
+		// ì‚­ì œí•  ë¦¬ìŠ¤íŠ¸ë¥¼ ë“±ë¡í•œë‹¤.
 		m_listClumpDeleteSchedule.push_back(pResource);
 	}
 }
 
 /**
-* \brief ½ºÄÉÁì¸µ ·Îµù ÇÒ ¸®½ºÆ®°¡ ºñ¾îÀÖ´Â°¡?
-* \returns ºñ¾îÀÖ´ÂÁö ¿©ºÎ
+* \brief ìŠ¤ì¼€ì¥´ë§ ë¡œë”© í•  ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆëŠ”ê°€?
+* \returns ë¹„ì–´ìˆëŠ”ì§€ ì—¬ë¶€
 */
 RwBool CNtlResourceScheduleCharUnit::IsEmptyLoadScheduling( void ) 
 {
@@ -423,20 +423,20 @@ RwBool CNtlResourceScheduleCharUnit::IsEmptyLoadScheduling( void )
 }
 
 /**
-* \brief Ä³¸¯ÅÍÀÇ ½ºÄÉÁì¸µ¿¡ µé¾î ÀÖ´Â clump¸¦ ·ÎµùÇÑ´Ù.
-* \param fElapsed	(RwReal) °æ°ú½Ã°£
+* \brief ìºë¦­í„°ì˜ ìŠ¤ì¼€ì¥´ë§ì— ë“¤ì–´ ìˆëŠ” clumpë¥¼ ë¡œë”©í•œë‹¤.
+* \param fElapsed	(RwReal) ê²½ê³¼ì‹œê°„
 */
 void CNtlResourceScheduleCharUnit::UpdateCharacterLoadScheduling(RwReal fElapsed)
 {
 	m_fLoadCurrTime += fElapsed;
 
-	// ÀÌÀü¿¡ °É·È´ø ½Ã°£¸¸Å­ Áö³ªÁö ¾Ê¾Ò´Ù¸é ¸®ÅÏÇÑ´Ù.
+	// ì´ì „ì— ê±¸ë ¸ë˜ ì‹œê°„ë§Œí¼ ì§€ë‚˜ì§€ ì•Šì•˜ë‹¤ë©´ ë¦¬í„´í•œë‹¤.
 	if(m_fLoadCurrTime <= m_fLoadSchedulingTime)
 		return;
 
 	m_fLoadCurrTime = 0.0f;
 
-	// ¾ø´Ù¸é ¸®ÅÏ
+	// ì—†ë‹¤ë©´ ë¦¬í„´
 	if( IsEmptyLoadScheduling() )
 		return;
 
@@ -451,14 +451,14 @@ void CNtlResourceScheduleCharUnit::UpdateCharacterLoadScheduling(RwReal fElapsed
 	pPLEntity = (*it).pPLEntity;
 	pNode = (*it).pNode;
 
-	// Entity¿¡°Ô Resource¸¦ ·ÎµùÇÏ±â Àü¿¡ ¾Ë·ÁÁØ´Ù.
+	// Entityì—ê²Œ Resourceë¥¼ ë¡œë”©í•˜ê¸° ì „ì— ì•Œë ¤ì¤€ë‹¤.
 	if(pPLEntity)
 		pPLEntity->CallPreSchedulingResource();
 
-	// ¸®¼Ò½º¸¦ °¡Áö°í ¿Í¼­
+	// ë¦¬ì†ŒìŠ¤ë¥¼ ê°€ì§€ê³  ì™€ì„œ
 	pResource = GetNtlResourceManager()->LoadClump(pNode->chFileName, pNode->chResourcePath);
 
-	// ¸®¼Ò½º¸¦ ·Îµù
+	// ë¦¬ì†ŒìŠ¤ë¥¼ ë¡œë”©
 	if(pPLEntity)
 	{	
 		pPLEntity->CallSchedulingResource(pResource);
@@ -466,7 +466,7 @@ void CNtlResourceScheduleCharUnit::UpdateCharacterLoadScheduling(RwReal fElapsed
 	}
 
 	m_listCharClumpLoadSchedule.erase(it);
-	// ¸®¼Ò½º°¡ ·ÎµùµÈÈÄ¿¡´Â ¹İº¹ÀÚ¸¦ Áö¿öÁØ´Ù.
+	// ë¦¬ì†ŒìŠ¤ê°€ ë¡œë”©ëœí›„ì—ëŠ” ë°˜ë³µìë¥¼ ì§€ì›Œì¤€ë‹¤.
 	CNtlResourceScheduleManager::FreeListFree((void*)pNode);
 
 	dwTime = GetTickCount() - dwTime;
@@ -476,20 +476,20 @@ void CNtlResourceScheduleCharUnit::UpdateCharacterLoadScheduling(RwReal fElapsed
 }
 
 /**
-* \brief Cash µÈ µ¥ÀÌÅÍÀÇ ·Îµù ¼Óµµ¸¦ Çâ»ó½ÃÅ°±â À§ÇÑ ¾÷µ¥ÀÌÆ® ÇÔ¼ö
-* \param fElapsed	(RwReal) ÀÌÀü ¾÷µ¥ÀÌÆ®¿¡¼­ °æ°úµÈ ½Ã°£
+* \brief Cash ëœ ë°ì´í„°ì˜ ë¡œë”© ì†ë„ë¥¼ í–¥ìƒì‹œí‚¤ê¸° ìœ„í•œ ì—…ë°ì´íŠ¸ í•¨ìˆ˜
+* \param fElapsed	(RwReal) ì´ì „ ì—…ë°ì´íŠ¸ì—ì„œ ê²½ê³¼ëœ ì‹œê°„
 */
 void CNtlResourceScheduleCharUnit::UpdateCharacterLoadSeamlessScheduling( RwReal fElapsed ) 
 {
 	m_fLoadCurrTime += fElapsed;
 
-	// ÀÌÀü¿¡ °É·È´ø ½Ã°£¸¸Å­ Áö³ªÁö ¾Ê¾Ò´Ù¸é ¸®ÅÏÇÑ´Ù.
+	// ì´ì „ì— ê±¸ë ¸ë˜ ì‹œê°„ë§Œí¼ ì§€ë‚˜ì§€ ì•Šì•˜ë‹¤ë©´ ë¦¬í„´í•œë‹¤.
 	if(m_fLoadCurrTime <= m_fLoadSchedulingTime)
 		return;
 
 	m_fLoadCurrTime = 0.0f;
 
-	// ¾ø´Ù¸é ¸®ÅÏ
+	// ì—†ë‹¤ë©´ ë¦¬í„´
 	if( IsEmptyLoadScheduling() )
 		return;
 
@@ -513,14 +513,14 @@ void CNtlResourceScheduleCharUnit::UpdateCharacterLoadSeamlessScheduling( RwReal
 		pPLEntity = (*it).pPLEntity;
 		pNode = (*it).pNode;
 
-		// Entity¿¡°Ô Resource¸¦ ·ÎµùÇÏ±â Àü¿¡ ¾Ë·ÁÁØ´Ù.
+		// Entityì—ê²Œ Resourceë¥¼ ë¡œë”©í•˜ê¸° ì „ì— ì•Œë ¤ì¤€ë‹¤.
 		if(pPLEntity)
 			pPLEntity->CallPreSchedulingResource();
 
-		// ¸®¼Ò½º¸¦ °¡Áö°í ¿Í¼­
+		// ë¦¬ì†ŒìŠ¤ë¥¼ ê°€ì§€ê³  ì™€ì„œ
 		pResource = GetNtlResourceManager()->LoadClump(pNode->chFileName, pNode->chResourcePath);
 
-		// ¸®¼Ò½º¸¦ ·Îµù
+		// ë¦¬ì†ŒìŠ¤ë¥¼ ë¡œë”©
 		if(pPLEntity)
 		{	
 			pPLEntity->CallSchedulingResource(pResource);
@@ -641,8 +641,8 @@ void CNtlResourceScheduleManager::AddSchedulingClump(const char *pStrName, const
 
 	RwUInt8 byEntityType = (RwUInt8)pEntity->GetClassType();
 
-	// È®Àå by Kell
-	// Ä³¸¯ÅÍ¿Í ¾ÆÀÌÅÛÀº ´Ù¸¥ ¹æ½ÄÀÇ ½ºÄÉÁì¸µ ·ÎµùÀ» »ç¿ëÇÑ´Ù.
+	// í™•ì¥ by Kell
+	// ìºë¦­í„°ì™€ ì•„ì´í…œì€ ë‹¤ë¥¸ ë°©ì‹ì˜ ìŠ¤ì¼€ì¥´ë§ ë¡œë”©ì„ ì‚¬ìš©í•œë‹¤.
 	CNtlResourceScheduleUnit *pUnit = FindUnit(byEntityType);
 	if(pUnit == NULL)
 	{

@@ -4,11 +4,11 @@
 //
 //	Begin		:	2009-8-14
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	chung,DooSup ( john@ntl-inc.com )
 //
-//	Desc		: HLS´Â È£ÀÌÆ÷ÀÌ ·°¼Å¸® ¼¥ÀÇ ¾àÀÚ·Î Cash¸¦ °®°í ±¸¸ÅÇÏ´Â »óÁ¡À» ¶æÇÑ´Ù.	
+//	Desc		: HLSëŠ” í˜¸ì´í¬ì´ ëŸ­ì…”ë¦¬ ìƒµì˜ ì•½ìžë¡œ Cashë¥¼ ê°–ê³  êµ¬ë§¤í•˜ëŠ” ìƒì ì„ ëœ»í•œë‹¤.	
 //
 //***********************************************************************************
 #pragma once
@@ -16,7 +16,7 @@
 
 
 //-----------------------------------------------------------------------------------
-// Ä³½¬ ¾ÆÀÌÅÛ Å¸ÀÔ
+// ìºì‰¬ ì•„ì´í…œ íƒ€ìž…
 //-----------------------------------------------------------------------------------
 enum eCASHITEM_TYPE
 {
@@ -69,8 +69,8 @@ enum eHLS_TAB_TYPE
 enum eHLS_SELL_TYPE
 {
 	HLS_SELL_TYPE_NORMAL,
-	HLS_SELL_TYPE_PERIOD,	// ±â°£
-	HLS_SELL_TYPE_TOTAL_COUNT,	// °³¼ö
+	HLS_SELL_TYPE_PERIOD,	// ê¸°ê°„
+	HLS_SELL_TYPE_TOTAL_COUNT,	// ê°œìˆ˜
 	
 	HLS_SELL_TYPE_COUNT,
 

@@ -2,7 +2,7 @@
  *
  * File			: NtlBehaviorCharMove.h
  * Author		: HyungSuk, Jang
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2006. 2. 9	
  * Abstract		: character move behavior class
  *****************************************************************************
@@ -33,7 +33,7 @@ struct SNtlEventSobMoveSync;
 #define COLLISION_MOVE_IMPOSSIBLE_COUNT		3
 
 // dash 
-#define DASH_LANDING_TIME					0.166f  // 0.8√ ø° DASH_LANDING_DIST ∏∏≈≠ ∞£¥Ÿ.
+#define DASH_LANDING_TIME					0.166f  // 0.8Ï¥àÏóê DASH_LANDING_DIST ÎßåÌÅº Í∞ÑÎã§.
 
 // jump
 #define JUMP_GRAVITY_SPEED					11.0f
@@ -62,15 +62,15 @@ public:
 	void	AddPathNode(RwV3d vPos);
 	RwBool	PopPathNode(RwV3d& vPos);
 	void	ClearPathNode(void);
-    RwBool  IsMoveSyncState();                                  ///< MoveSync¿ª ∏¬√Áæﬂ«œ¥¬ ªÛ≈¬¿Œ¡ˆ∏¶ π›»Ø«—¥Ÿ (¥Ÿ∏• ƒ≥∏Ø≈ÕøÎ)
-    RwBool  IsMoveSyncSend();                                   ///< MoveSync ∆–≈∂¿ª ∫∏≥ªæﬂ«œ¥¬ ªÛ≈¬¿Œ¡ˆ∏¶ π›»Ø«—¥Ÿ (æ∆πŸ≈∏øÎ)
+    RwBool  IsMoveSyncState();                                  ///< MoveSyncÏùÑ ÎßûÏ∂∞ÏïºÌïòÎäî ÏÉÅÌÉúÏù∏ÏßÄÎ•º Î∞òÌôòÌïúÎã§ (Îã§Î•∏ Ï∫êÎ¶≠ÌÑ∞Ïö©)
+    RwBool  IsMoveSyncSend();                                   ///< MoveSync Ìå®ÌÇ∑ÏùÑ Î≥¥ÎÇ¥ÏïºÌïòÎäî ÏÉÅÌÉúÏù∏ÏßÄÎ•º Î∞òÌôòÌïúÎã§ (ÏïÑÎ∞îÌÉÄÏö©)
 
     virtual RwUInt32 HandleEvents(RWS::CMsg &pMsg);    
 
 protected:    
     virtual void	 UpdateAnimSpeed(void);    
-    virtual RwReal   GetMoveSpeed(RwUInt8 byMoveFlag);          ///< Move Flagø° ∏¬¥¬ º”µµ∏¶ π›»Ø«—¥Ÿ.
-    virtual RwBool   IsMoveSyncEmpty();                         ///< «ˆ¿Á MoveSyncQø° Sync«“ µ•¿Ã≈Õ∞° ¿÷¥¬¡ˆ∏¶ π›»Ø«—¥Ÿ.
+    virtual RwReal   GetMoveSpeed(RwUInt8 byMoveFlag);          ///< Move FlagÏóê ÎßûÎäî ÏÜçÎèÑÎ•º Î∞òÌôòÌïúÎã§.
+    virtual RwBool   IsMoveSyncEmpty();                         ///< ÌòÑÏû¨ MoveSyncQÏóê SyncÌï† Îç∞Ïù¥ÌÑ∞Í∞Ä ÏûàÎäîÏßÄÎ•º Î∞òÌôòÌïúÎã§.
 
 protected:    
 

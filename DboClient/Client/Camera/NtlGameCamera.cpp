@@ -215,7 +215,7 @@ void CNtlGameCamera::HandleEvents(RWS::CMsg &pMsg)
 	{	
 		m_bTargetMoveFlag = FALSE;
 
-		//ÇöÀç ÀÌµ¿µÈ Angle¿¡ °íÁ¤À» ÇÑ´Ù.
+		//í˜„ì¬ ì´ë™ëœ Angleì— ê³ ì •ì„ í•œë‹¤.
 		m_fPrefYAngle = m_fYAngle;
 		m_fSmoothYAngle = m_fOldSmoothYAngle;
 	}

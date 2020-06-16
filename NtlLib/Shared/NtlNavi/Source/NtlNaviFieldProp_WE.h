@@ -27,7 +27,7 @@ protected:
 	unsigned int					m_uiTileCnt;
 
 	// ( unsigned int * m_uiTileCnt )
-	// - unsigned int ( upper 2 byte : ÀÏ¹İ ¸Ê ¼Ó¼º, lower 2 byte : Æ¯¼ö ¸Ê ¼Ó¼º )
+	// - unsigned int ( upper 2 byte : ì¼ë°˜ ë§µ ì†ì„±, lower 2 byte : íŠ¹ìˆ˜ ë§µ ì†ì„± )
 	unsigned int*					m_pTilePropChunk;
 
 

@@ -4,11 +4,11 @@
 //
 //	Begin		:	2006-04-20
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	°ÔÀÓ ¹× ¼­¹ö °ü¸® °ü·Ã
+//	Desc		:	ê²Œìž„ ë° ì„œë²„ ê´€ë¦¬ ê´€ë ¨
 //
 //***********************************************************************************
 #pragma once
@@ -18,9 +18,9 @@
 
 enum eSERVER_TEXT_TYPE
 {
-	SERVER_TEXT_SYSTEM,		// Ã¤ÆÃÃ¢¿¡¸¸ ³ª¿À´Â ¸Þ½ÃÁö
-	SERVER_TEXT_NOTICE,		// È­¸éÀ§¿¡¸¸ Ãâ·ÂµÈ´Ù = NOTIFY
-	SERVER_TEXT_SYSNOTICE,	// Ã¤ÆÃÃ¢°ú È­¸éÀ§¿¡ °°ÀÌ Ãâ·ÂµÈ´Ù.
+	SERVER_TEXT_SYSTEM,		// ì±„íŒ…ì°½ì—ë§Œ ë‚˜ì˜¤ëŠ” ë©”ì‹œì§€
+	SERVER_TEXT_NOTICE,		// í™”ë©´ìœ„ì—ë§Œ ì¶œë ¥ëœë‹¤ = NOTIFY
+	SERVER_TEXT_SYSNOTICE,	// ì±„íŒ…ì°½ê³¼ í™”ë©´ìœ„ì— ê°™ì´ ì¶œë ¥ëœë‹¤.
 	SERVER_TEXT_EMERGENCY,	// Show message with TORI(NPC)
 	SERVER_TEXT_CAUTION,
 	SERVER_TEXT_TERRITORY,
@@ -29,7 +29,7 @@ enum eSERVER_TEXT_TYPE
 	SERVER_TEXT_TYPE_COUNT,
 };
 
-//  ±æµå ·Îµù ÃÖ´ë °¹¼ö
+//  ê¸¸ë“œ ë¡œë”© ìµœëŒ€ ê°¯ìˆ˜
 const DWORD         NTL_GUILD_LOAD_BUFFER_MAX		= 500;
 
 enum eADMIN_LEVEL

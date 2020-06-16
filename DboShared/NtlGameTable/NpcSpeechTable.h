@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-10-29
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:
 //
@@ -88,7 +88,7 @@ public:
 	DWORD				dwDisplayTime;
 	char				szNote[ DBO_MAX_LENGTH_SPEECH_NOTE + 1 ];
 
-// ·ÎµùÁß¿¡ °è»êµÇ´Â °ª
+// ë¡œë”©ì¤‘ì— ê³„ì‚°ë˜ëŠ” ê°’
 	BYTE				bySpeechType; // eNPC_SPEECH_TYPE
 
 protected:

@@ -204,7 +204,7 @@ VOID CDropItemInfoGui::SetState( RwInt32 eState )
 	case HIDE:
 		m_uiDropItemSerial = INVALID_SERIAL_ID;
 		m_pDropItem = NULL;
-		OnMouseLeave( NULL );	// ΐΞΖχΐ©µµΏμ ΄έ±β 
+		OnMouseLeave( NULL );	// μΈν¬μλ„μ° λ‹«κΈ° 
 		Logic_DeleteTexture( m_surIcon.GetTexture() );
 		m_surIcon.UnsetTexture();
 		Show( false );

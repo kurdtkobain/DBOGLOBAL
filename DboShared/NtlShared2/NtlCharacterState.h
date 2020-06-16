@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-31
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -55,8 +55,8 @@ enum eCHARSTATE
 	CHARSTATE_SLEEPING,				// Sleeping
 	CHARSTATE_PARALYZED,			// Paralyzed
 
-	CHARSTATE_HTB,					// HTB¸¦ ½ÇÇàÇÏ°í ÀÖÀ½
-	CHARSTATE_SANDBAG,				// HTB¸¦ ´çÇÏ°í ÀÖÀ½
+	CHARSTATE_HTB,					// HTBë¥¼ ì‹¤í–‰í•˜ê³  ìžˆìŒ
+	CHARSTATE_SANDBAG,				// HTBë¥¼ ë‹¹í•˜ê³  ìžˆìŒ
 	CHARSTATE_CHARGING,				// CHARGING RP
 	CHARSTATE_GUARD,				// Guard mode
 
@@ -77,16 +77,16 @@ enum eCHARSTATE
 
 
 //-----------------------------------------------------------------------------------
-// Aspect ( Ä³¸¯ÅÍ Æ¯ÀÌ »óÅÂ : º¯½Åµî )Áßº¹ºÒ°¡ °³³ä
+// Aspect ( ìºë¦­í„° íŠ¹ì´ ìƒíƒœ : ë³€ì‹ ë“± )ì¤‘ë³µë¶ˆê°€ ê°œë…
 //-----------------------------------------------------------------------------------
 enum eASPECTSTATE
 {
-	ASPECTSTATE_SUPER_SAIYAN,		// ¼öÆÛ »çÀÌ¾îÀÎ
-	ASPECTSTATE_PURE_MAJIN,			// ¼ø¼ö ¸¶ÀÎ
-	ASPECTSTATE_GREAT_NAMEK,		// ±×·¹ÀÌÆ® ³ª¸ÞÅ©ÀÎ
-	ASPECTSTATE_KAIOKEN,				// °è¿Õ±Ç
-	ASPECTSTATE_SPINNING_ATTACK,		// È¸Àü °ø°Ý
-	ASPECTSTATE_VEHICLE,			// Å» °Í
+	ASPECTSTATE_SUPER_SAIYAN,		// ìˆ˜í¼ ì‚¬ì´ì–´ì¸
+	ASPECTSTATE_PURE_MAJIN,			// ìˆœìˆ˜ ë§ˆì¸
+	ASPECTSTATE_GREAT_NAMEK,		// ê·¸ë ˆì´íŠ¸ ë‚˜ë©”í¬ì¸
+	ASPECTSTATE_KAIOKEN,				// ê³„ì™•ê¶Œ
+	ASPECTSTATE_SPINNING_ATTACK,		// íšŒì „ ê³µê²©
+	ASPECTSTATE_VEHICLE,			// íƒˆ ê²ƒ
 	ASPECTSTATE_ROLLING_ATTACK,
 
 	ASPECTSTATE_COUNT,
@@ -95,7 +95,7 @@ enum eASPECTSTATE
 
 
 //-----------------------------------------------------------------------------------
-// Condition, Áßº¹°¡´É °³³ä
+// Condition, ì¤‘ë³µê°€ëŠ¥ ê°œë…
 //-----------------------------------------------------------------------------------
 enum eCHARCONDITION
 {
@@ -190,12 +190,12 @@ enum eCHARCONDITION_FLAG
 //-----------------------------------------------------------------------------------
 enum eCHARLEAVING_TYPE
 {
-	CHARLEAVING_DISCONNECT,			// Á¢¼ÓÀÌ ²ö¾îÁü
-	CHARLEAVING_SERVER_CHANGE,		// ´Ù¸¥ °ÔÀÓ ¼­¹ö·ÎÀÇ ÀÌµ¿
-	CHARLEAVING_CHANNEL_CHANGE,		// ´Ù¸¥ °ÔÀÓ Ã¤³Î·ÎÀÇ ÀÌµ¿
-	CHARLEAVING_CHARACTER_EXIT,		// Ä³¸¯ÅÍ Á¾·á : Lobby·Î ÀÌµ¿
-	CHARLEAVING_GAME_EXIT,			// ACCOUNT Á¾·á : °ÔÀÓ Á¾·á
-	CHARLEAVING_GAME_KICK,			// ½Ã½ºÅÛ¿¡ ÀÇÇÑ Á¾·á(KICK µî)
+	CHARLEAVING_DISCONNECT,			// ì ‘ì†ì´ ëˆì–´ì§
+	CHARLEAVING_SERVER_CHANGE,		// ë‹¤ë¥¸ ê²Œìž„ ì„œë²„ë¡œì˜ ì´ë™
+	CHARLEAVING_CHANNEL_CHANGE,		// ë‹¤ë¥¸ ê²Œìž„ ì±„ë„ë¡œì˜ ì´ë™
+	CHARLEAVING_CHARACTER_EXIT,		// ìºë¦­í„° ì¢…ë£Œ : Lobbyë¡œ ì´ë™
+	CHARLEAVING_GAME_EXIT,			// ACCOUNT ì¢…ë£Œ : ê²Œìž„ ì¢…ë£Œ
+	CHARLEAVING_GAME_KICK,			// ì‹œìŠ¤í…œì— ì˜í•œ ì¢…ë£Œ(KICK ë“±)
 
 	INVALID_CHARLEAVING = INVALID_BYTE,
 };
@@ -220,7 +220,7 @@ const char *				NtlGetAspectStateString(BYTE byStateID);
 const char *				NtlGetConditionStateString(BYTE byStateID);
 
 //-----------------------------------------------------------------------------------
-// »óÅÂ °ü·Ã ±¸Á¶Ã¼
+// ìƒíƒœ ê´€ë ¨ êµ¬ì¡°ì²´
 //-----------------------------------------------------------------------------------
 #pragma pack(1)
 
@@ -278,9 +278,9 @@ struct sCHARSTATE_DESTMOVE
 //-----------------------------------------------------------------------------------
 struct sCHARSTATE_FOLLOWING
 {
-	HOBJECT			hTarget; // Å¸°Ù µû¶ó°¡±âÀÏ¶§ µû¶ó°¥ Å¸°Ù ÇÚµé
-	float			fDistance; // Å¸°Ù ¾Õ¿¡¼­ ¸ØÃâ °Å¸®
-	BYTE			byMovementReason; // °ø°Ý or ½ºÅ³»ç¿ë µîÀÇ FOLLOWÀÇ ÀÌÀ¯¸¦ ¼³Á¤
+	HOBJECT			hTarget; // íƒ€ê²Ÿ ë”°ë¼ê°€ê¸°ì¼ë•Œ ë”°ë¼ê°ˆ íƒ€ê²Ÿ í•¸ë“¤
+	float			fDistance; // íƒ€ê²Ÿ ì•žì—ì„œ ë©ˆì¶œ ê±°ë¦¬
+	BYTE			byMovementReason; // ê³µê²© or ìŠ¤í‚¬ì‚¬ìš© ë“±ì˜ FOLLOWì˜ ì´ìœ ë¥¼ ì„¤ì •
 	BYTE			byMoveFlag;//new
 	sVECTOR3		vDestLoc;//new
 };
@@ -388,7 +388,7 @@ struct sCHARSTATE_PRIVATESHOP
 //-----------------------------------------------------------------------------------
 struct sCHARSTATE_DIRECT_PLAY
 {
-	BYTE				byDirectPlayType; // ¿¬Ãâ Å¸ÀÔ ( eDIRECT_PLAY_TYPE )
+	BYTE				byDirectPlayType; // ì—°ì¶œ íƒ€ìž… ( eDIRECT_PLAY_TYPE )
 	TBLIDX				directTblidx; // production TBLIDX
 };
 //-----------------------------------------------------------------------------------
@@ -401,7 +401,7 @@ struct sCHARSTATE_OPERATING
 //-----------------------------------------------------------------------------------
 struct sCHARSTATE_RIDEON
 {
-	HOBJECT				hTarget; // Å¸°Ù ÇÚµé
+	HOBJECT				hTarget; // íƒ€ê²Ÿ í•¸ë“¤
 };
 //-----------------------------------------------------------------------------------
 struct sCHARSTATE_TURNING

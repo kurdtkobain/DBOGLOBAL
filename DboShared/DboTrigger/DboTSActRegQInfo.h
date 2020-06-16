@@ -7,8 +7,8 @@
 
 /**
 	Register quest information action
-	¿ëµµ : Client quest
-	¼³¸í : Äù½ºÆ® Á¤º¸¸¦ Ãâ·ÂÇÏ±â À§ÇÑ ·ÎÁ÷À» ±¸ÇöÇØ¾ß µÊ
+	ìš©ë„ : Client quest
+	ì„¤ëª… : í€˜ìŠ¤íŠ¸ ì •ë³´ë¥¼ ì¶œë ¥í•˜ê¸° ìœ„í•œ ë¡œì§ì„ êµ¬í˜„í•´ì•¼ ë¨
 */
 
 
@@ -102,7 +102,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-14
 //
-//	Copyright	:	®œ NTL-Inc Co., Ltd
+//	Copyright	:	‚ìí NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -25,7 +25,7 @@
 
 
 //---------------------------------------------------------------------------------------
-// Network Monitor Thread class ( Network ≈¨∑°Ω∫ ≥ª∫ŒøÎ )
+// Network Monitor Thread class ( Network ÌÅ¥ÎûòÏä§ ÎÇ¥Î∂ÄÏö© )
 //---------------------------------------------------------------------------------------
 class CConnectorThread : public CNtlRunObject
 {

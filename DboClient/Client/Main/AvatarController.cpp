@@ -62,8 +62,8 @@
 #include "AlarmManager.h"
 #include "DialogManager.h"
 
-#include "NtlPLObject.h"		//Test ÃßÈÄ »èÁ¦ ¿¹Á¤(by HoDong)
-#include "NtlPLEventGenerator.h"//Test ÃßÈÄ »èÁ¦ ¿¹Á¤(by Peessi)
+#include "NtlPLObject.h"		//Test ì¶”í›„ ì‚­ì œ ì˜ˆì •(by HoDong)
+#include "NtlPLEventGenerator.h"//Test ì¶”í›„ ì‚­ì œ ì˜ˆì •(by Peessi)
 #include "NtlPLEvent.h"
 
 #include "TBGui.h"
@@ -239,7 +239,7 @@ void CAvatarController::Destroy()
 	//test
 	UnLinkMsg(g_EventSCS);
 	
-	// move mark¸¦ »èÁ¦ÇÑ´Ù.
+	// move markë¥¼ ì‚­ì œí•œë‹¤.
 	DeleteMoveMark();
 }
 
@@ -1470,7 +1470,7 @@ int	CAvatarController::KeyboardDownHandler(unsigned int uiKeyData)
 #ifdef _UICONFIG
         GetDboGlobal()->GetDBOUIConfig()->Reflash();
 #endif        
-		// peessi: ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ ´ëÁøÇ¥ Å×½ºÆ®¿ë.
+		// peessi: ì²œí•˜ì œì¼ë¬´ë„íšŒ ëŒ€ì§„í‘œ í…ŒìŠ¤íŠ¸ìš©.
 		//if( !CTBGui::m_pInstance->m_pTournamentGui )
 		//{
 		//	CTBGui::m_pInstance->m_pTournamentGui = NTL_NEW CTBTournamentGui( "BudokaiTournamentGui" );
@@ -1542,7 +1542,7 @@ void CAvatarController::CreateMoveMark(const RwV3d *pPos)
 
 	m_pMoveMark->SetPosition(pPos);
 
-	// »ç¿îµå 
+	// ì‚¬ìš´ë“œ 
 	RwInt32 nSoundIndex = NtlRandomNumber(0, 3);
 	Logic_PlayGUISound((char*)(SOUND_SL_GROUND_PICKING[nSoundIndex]));
 }
@@ -1559,7 +1559,7 @@ void CAvatarController::DeleteMoveMark(void)
 
 void CAvatarController::UpdateMoveMark(RwReal fElapsed)
 {
-	// move mark¸¦ Àá±ñ ¶ç¿ü´Ù°¡ ¾ø¾Ø´Ù.
+	// move markë¥¼ ìž ê¹ ë„ì› ë‹¤ê°€ ì—†ì•¤ë‹¤.
 	if(m_pMoveMark)
 	{
 		m_fMoveMarkTime += fElapsed;
@@ -2453,7 +2453,7 @@ int CAvatarController::ActionPartySelect(unsigned int uiIdx)
 	{
 		CNtlParty *pParty = pSobAvatar->GetParty();
 
-		// ¾Æ¹ÙÅ¸ ¶ÇÇÑ ÆÄÆ¼ ±¸Á¶Ã¼¿¡ ÆÄÆ¼ °¡ÀÔ ¼ø¼­¿¡ µû¶ó Æ÷ÇÔµÈ´Ù
+		// ì•„ë°”íƒ€ ë˜í•œ íŒŒí‹° êµ¬ì¡°ì²´ì— íŒŒí‹° ê°€ìž… ìˆœì„œì— ë”°ë¼ í¬í•¨ëœë‹¤
 		if( pParty->GetAvatarIndex() <= (RwInt32)uiIdx )
 			++uiIdx;
 
@@ -2550,7 +2550,7 @@ int CAvatarController::ActionPartyShareTargetSelect( unsigned int uiSlot )
 }
 
 /**
- * ¼øÂ÷ÀûÀ¸·Î ÆÄÆ¼¸â¹ö¸¦ Å¸°ÙÆÃÇÑ´Ù. 
+ * ìˆœì°¨ì ìœ¼ë¡œ íŒŒí‹°ë©¤ë²„ë¥¼ íƒ€ê²ŸíŒ…í•œë‹¤. 
  */
 int CAvatarController::ActionPartyAutoSelect() 
 {

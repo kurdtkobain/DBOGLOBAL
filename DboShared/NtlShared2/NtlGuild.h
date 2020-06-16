@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-03-19
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -27,9 +27,9 @@ const DWORD DBO_ZENNY_FOR_GUILD_CHANGE_MARK = 10000000;
 
 // WARNING :
 // You can add a new guild function but MUST NOT REMOVE one. These index numbers are synchronized with DB.
-// Guild ±â´ÉÀ» Ãß°¡ÇÒ ¼ö´Â ÀÖÁö¸¸ »èÁ¦ÇØ¼­´Â ¾È µË´Ï´Ù. ÀÎµ¦½º ¹øÈ£µéÀÌ DB¿Í µ¿±âÈ­µÇ¾î ÀÖ½À´Ï´Ù.
+// Guild ê¸°ëŠ¥ì„ ì¶”ê°€í•  ìˆ˜ëŠ” ìˆì§€ë§Œ ì‚­ì œí•´ì„œëŠ” ì•ˆ ë©ë‹ˆë‹¤. ì¸ë±ìŠ¤ ë²ˆí˜¸ë“¤ì´ DBì™€ ë™ê¸°í™”ë˜ì–´ ìˆìŠµë‹ˆë‹¤.
 // by YOSHIKI(2007-04-25)
-// itzrnb - DB¿Í µ¿±â¿Í µÇ¾î ÀÖÀ¸¹Ç·Î ¸Ç ¾ÕÀÌ³ª Áß°£¿¡ »ğÀÔµµ ¾È µË´Ï´Ù. Ãß°¡¸¸ °¡´É
+// itzrnb - DBì™€ ë™ê¸°ì™€ ë˜ì–´ ìˆìœ¼ë¯€ë¡œ ë§¨ ì•ì´ë‚˜ ì¤‘ê°„ì— ì‚½ì…ë„ ì•ˆ ë©ë‹ˆë‹¤. ì¶”ê°€ë§Œ ê°€ëŠ¥
 enum eDBO_GUILD_FUNCTION
 {
 	DBO_GUILD_FUNCTION_MAX_MEMBER_30 = 0,
@@ -166,7 +166,7 @@ struct sDBO_GUILD_DATA
 typedef sDBO_GUILD_DATA sDBO_GUILD_INFO;
 
 
-// GMTool¿ë µ¥ÀÌÅ¸ [4/22/2008 SGpro]
+// GMToolìš© ë°ì´íƒ€ [4/22/2008 SGpro]
 struct sDBO_GMTOOL_GUILD_DATA
 	: public sDBO_GUILD_DATA
 {
@@ -175,7 +175,7 @@ struct sDBO_GMTOOL_GUILD_DATA
 	DWORD			dwZenny;	
 };
 
-// GMTool¿ë Search µ¥ÀÌÅ¸ [7/1/2008 SGpro]
+// GMToolìš© Search ë°ì´íƒ€ [7/1/2008 SGpro]
 struct sDBO_GMTOOL_GUILD_SEARCH_DATA
 {
 	GUILDID			guildId;
@@ -236,7 +236,7 @@ struct sDBO_GUILD_MEMBER_INFO
 	TBLIDX			mapNameTblidx; //new
 };
 
-// GMTool¿ë µ¥ÀÌÅ¸ [4/22/2008 SGpro]
+// GMToolìš© ë°ì´íƒ€ [4/22/2008 SGpro]
 struct sDBO_GMTOOL_GUILD_MEMBER_DATA
 	: public sDBO_GUILD_MEMBER_DATA
 {
@@ -266,12 +266,12 @@ struct sDBO_GUILD_CAHNGE_INFO
 {
 	WCHAR			wszName[NTL_MAX_SIZE_GUILD_NAME + 1];	// ''
 
-	DWORD			dwGuildReputation;		// ±æµå¸í¼º
-	DWORD			dwMaxGuildPointEver;	// Load ±×µ¿¾È dwGuildReputation °¡Àå ÃÖ°í°ª
+	DWORD			dwGuildReputation;		// ê¸¸ë“œëª…ì„±
+	DWORD			dwMaxGuildPointEver;	// Load ê·¸ë™ì•ˆ dwGuildReputation ê°€ì¥ ìµœê³ ê°’
 
 	DWORD64			qwGuildFunctionFlag;	// Replace
 
-	sDBO_GUILD_MARK	sMark;					// ÃÊ±â 0xff
+	sDBO_GUILD_MARK	sMark;					// ì´ˆê¸° 0xff
 
 	WCHAR			awchName[NTL_MAX_SIZE_CHAR_NAME + 1];	// ''
 	WCHAR			awchNotice[NTL_MAX_LENGTH_OF_GUILD_NOTICE + 1];	//''	
@@ -291,28 +291,28 @@ enum eDBO_GUILD_UPDATE_TYPE
 
 enum eDBO_GUILD_ZENNY_UPDATE_TYPE
 {
-	DBO_GUILD_ZENNY_UPDATE_TYPE_LEADER_INCOME = 0,	// ÆÄÆ¼¸®´õ¿¡ÀÇÇÑ ÀÔ±İ -> ÇöÀç´Â ÀÌ ³»¿ª¹Û¿¡ ¾øÀ½
-	DBO_GUILD_ZENNY_UPDATE_TYPE_LEADER_OUTCOME,	// ÆÄÆ¼¸®´õ¿¡ÀÇÇÑ Ãâ±İ-> ÇöÀç´Â ÀÌ ³»¿ª¹Û¿¡ ¾øÀ½
-	DBO_GUILD_ZENNY_UPDATE_TYPE_VILLAGE_INCOME,		// ¸¶À»Äù½ºÆ®µî
-	DBO_GUILD_ZENNY_UPDATE_TYPE_BATTLE_OUTCOME,		// µµÀå ÀïÅ»/ºñ¹«ÀüÀÇ °ÅºÎ ¹è»ó±İ¾× 
-	DBO_GUILD_ZENNY_UPDATE_TYPE_BATTLE_INCOME,		// µµÀå ÀïÅ»/ºñ¹«ÀüÀÇ ½ÅÃ»±İ¾× È¯ºÒ
+	DBO_GUILD_ZENNY_UPDATE_TYPE_LEADER_INCOME = 0,	// íŒŒí‹°ë¦¬ë”ì—ì˜í•œ ì…ê¸ˆ -> í˜„ì¬ëŠ” ì´ ë‚´ì—­ë°–ì— ì—†ìŒ
+	DBO_GUILD_ZENNY_UPDATE_TYPE_LEADER_OUTCOME,	// íŒŒí‹°ë¦¬ë”ì—ì˜í•œ ì¶œê¸ˆ-> í˜„ì¬ëŠ” ì´ ë‚´ì—­ë°–ì— ì—†ìŒ
+	DBO_GUILD_ZENNY_UPDATE_TYPE_VILLAGE_INCOME,		// ë§ˆì„í€˜ìŠ¤íŠ¸ë“±
+	DBO_GUILD_ZENNY_UPDATE_TYPE_BATTLE_OUTCOME,		// ë„ì¥ ìŸíƒˆ/ë¹„ë¬´ì „ì˜ ê±°ë¶€ ë°°ìƒê¸ˆì•¡ 
+	DBO_GUILD_ZENNY_UPDATE_TYPE_BATTLE_INCOME,		// ë„ì¥ ìŸíƒˆ/ë¹„ë¬´ì „ì˜ ì‹ ì²­ê¸ˆì•¡ í™˜ë¶ˆ
 };
 
 
 extern const sDBO_GUILD_FUNCTION_INFO g_aGuildFunctionInfo[DBO_GUILD_FUNCTION_COUNT];
 
 // Checks if a guild has a specified guild function.
-// ±æµå functionÀ» °¡Áö°í ÀÖ´ÂÁö ÆÇ´ÜÇÑ´Ù.
+// ê¸¸ë“œ functionì„ ê°€ì§€ê³  ìˆëŠ”ì§€ íŒë‹¨í•œë‹¤.
 // by YOSHIKI(2007-04-25)
 bool Dbo_HasGuildFunction(DWORD64 qwGuildFunctionFlag, eDBO_GUILD_FUNCTION eGuildFunction);
 
 // Retrieves information of a specified guild function.
-// ÁöÁ¤ÇÑ ±æµå function¿¡ ´ëÇÑ Á¤º¸¸¦ ¾ò´Â´Ù.
+// ì§€ì •í•œ ê¸¸ë“œ functionì— ëŒ€í•œ ì •ë³´ë¥¼ ì–»ëŠ”ë‹¤.
 // by YOSHIKI(2007-04-25)
 const sDBO_GUILD_FUNCTION_INFO* Dbo_GetGuildFunctionInfo(eDBO_GUILD_FUNCTION eGuildFunction);
 
 // Checks if a guild can obtain guild function.
-// ±æµå functionÀ» È¹µæÇÒ ¼ö ÀÖ´ÂÁö ÆÇ´ÜÇÑ´Ù.
+// ê¸¸ë“œ functionì„ íšë“í•  ìˆ˜ ìˆëŠ”ì§€ íŒë‹¨í•œë‹¤.
 // by YOSHIKI(2007-04-25)
 bool Dbo_CanGetGuildFunction(DWORD64 qwGuildFunctionFlag, DWORD dwPoint, DWORD dwZenny, eDBO_GUILD_FUNCTION eGuildFunction, WORD* pwResultCode);
 
@@ -324,12 +324,12 @@ bool Dbo_GetUIGuildFunction(DWORD64 qwGuildFunctionFlag, eDBO_GUILD_FUNCTION eGu
 bool Dbo_GetUIDojoFunction(DWORD64 qwGuildFunctionFlag, eDBO_GUILD_FUNCTION eGuildFunction);
 
 // Returns how many members a guild can have at most.
-// ±æµå°¡ ÃÖ´ë ¸î ¸íÀÇ ±æµå¿øÀ» °¡Áú ¼ö ÀÖ´ÂÁö ¾Ë·ÁÁØ´Ù.
+// ê¸¸ë“œê°€ ìµœëŒ€ ëª‡ ëª…ì˜ ê¸¸ë“œì›ì„ ê°€ì§ˆ ìˆ˜ ìˆëŠ”ì§€ ì•Œë ¤ì¤€ë‹¤.
 // by YOSHIKI(2007-04-26)
 DWORD Dbo_GetMaxGuildMemberCount(DWORD64 qwGuildFunctionFlag);
 
 // Returns how many second masters a guild can have at most.
-// ±æµå°¡ ÃÖ´ë ¸î ¸íÀÇ Second Master¸¦ °¡Áú ¼ö ÀÖ´ÂÁö ¾Ë·ÁÁØ´Ù.
+// ê¸¸ë“œê°€ ìµœëŒ€ ëª‡ ëª…ì˜ Second Masterë¥¼ ê°€ì§ˆ ìˆ˜ ìˆëŠ”ì§€ ì•Œë ¤ì¤€ë‹¤.
 // by YOSHIKI(2007-04-26)
 DWORD Dbo_GetMaxGuildSecondMasterCount(DWORD64 qwGuildFunctionFlag);
 

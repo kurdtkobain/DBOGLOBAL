@@ -6,7 +6,7 @@
 const DWORD		DBO_MAX_LENGTH_HTB_SET_NAME_TEXT = 40;
 const DWORD		DBO_MAX_LENGTH_HTB_SET_ICON_NAME = 32;
 
-// HTB µ¿ÀÛ Á¤º¸
+// HTB ë™ì‘ ì •ë³´
 #pragma pack(push, 4)
 struct sHTB_ACTION
 {
@@ -15,7 +15,7 @@ struct sHTB_ACTION
 };
 #pragma pack(pop)
 
-// HTB ½ºÅ³¸ğÀ½
+// HTB ìŠ¤í‚¬ëª¨ìŒ
 #pragma pack(push, 4)
 struct sHTB_SET_TBLDAT : public sTBLDAT
 {

@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlMeshFederationContainer.h
 * Author		: Haesung, Cho
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2009. 03. 12
 * Abstract		: Ntl MeshFederation Container
 *****************************************************************************

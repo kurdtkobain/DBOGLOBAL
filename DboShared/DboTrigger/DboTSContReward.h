@@ -39,8 +39,8 @@ protected:
 
 	unsigned int						m_uiRewardTblIdx;
 
-	sREWARD_INFO						m_asDefReward[MAX_DEFAULT_REWARD];		// ±âº» º¸»ó
-	sREWARD_INFO						m_asSelReward[MAX_SELECTION_REWARD];	// ¼±ÅÃ º¸»ó
+	sREWARD_INFO						m_asDefReward[MAX_DEFAULT_REWARD];		// ê¸°ë³¸ ë³´ìƒ
+	sREWARD_INFO						m_asSelReward[MAX_SELECTION_REWARD];	// ì„ íƒ ë³´ìƒ
 
 	//new
 	unsigned int						m_uiRewardZenny;
@@ -93,7 +93,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 

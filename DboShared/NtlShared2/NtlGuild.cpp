@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-04-25
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -29,28 +29,28 @@ enum eDBO_DOJO_PEACE_TYPE
 
 const DWORD64 ENABLE_GUILD_FUNCTION = 
 {
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_30 | 			// À¯ÆÄ 20¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_1 |		// À¯ÆÄ »ç¹ü 1¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_NOTICE_BOARD |			// À¯ÆÄ °øÁö »çÇ×
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_POST |					// À¯ÆÄ ¸ÞÀÏ
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_WAREHOUSE |				// À¯ÆÄ Ã¢°í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_50 |			// À¯ÆÄ ¸â¹ö 30¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_2 | 	// À¯ÆÄ »ç¹ü 2¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_70 |			// À¯ÆÄ ¸â¹ö 40¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_90 |			// À¯ÆÄ ÀÌ¸§ º¯°æ
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_3 |		// À¯ÆÄ »ç¹ü 3¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_SET_EMBLEM |			// À¯ÆÄ ¿¥ºí·½ ¼³Á¤
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_110 |			// À¯ÆÄ ¸â¹ö 60¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_130 |			// À¯ÆÄ ¸â¹ö 70¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_4 |		// À¯ÆÄ »ç¹ü 4¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_HAVE_DOJO |			// À¯ÆÄ µµÀå ¼ÒÀ¯
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_USE_DOJO_TELEPORT |	// À¯ÆÄ µµÀå ÅÚ·¹Æ÷Æ®
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_30 | 			// ìœ íŒŒ 20ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_1 |		// ìœ íŒŒ ì‚¬ë²” 1ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_NOTICE_BOARD |			// ìœ íŒŒ ê³µì§€ ì‚¬í•­
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_POST |					// ìœ íŒŒ ë©”ì¼
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_WAREHOUSE |				// ìœ íŒŒ ì°½ê³ 
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_50 |			// ìœ íŒŒ ë©¤ë²„ 30ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_2 | 	// ìœ íŒŒ ì‚¬ë²” 2ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_70 |			// ìœ íŒŒ ë©¤ë²„ 40ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_90 |			// ìœ íŒŒ ì´ë¦„ ë³€ê²½
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_3 |		// ìœ íŒŒ ì‚¬ë²” 3ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_SET_EMBLEM |			// ìœ íŒŒ ì— ë¸”ë ˜ ì„¤ì •
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_110 |			// ìœ íŒŒ ë©¤ë²„ 60ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_130 |			// ìœ íŒŒ ë©¤ë²„ 70ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_SECOND_MASTER_4 |		// ìœ íŒŒ ì‚¬ë²” 4ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_HAVE_DOJO |			// ìœ íŒŒ ë„ìž¥ ì†Œìœ 
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_USE_DOJO_TELEPORT |	// ìœ íŒŒ ë„ìž¥ í…”ë ˆí¬íŠ¸
 	
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_150 |			// À¯ÆÄ ¸â¹ö 80¸í
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_MAKE_DOGI |			// À¯ÆÄ µµº¹
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_CHANGE_EMBLEM |		// À¯ÆÄ ¿¥ºí·½ Ã¼ÀÎÁö
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_DOJO_UPGRADE_2 |			// À¯ÆÄ µµÀå ¾÷±×·¹ÀÌµå2
-	(DWORD64) 1 << DBO_GUILD_FUNCTION_TENKAICHI_SEED |			// À¯ÆÄ ÃµÇÏÁ¦ÀÏ ¹«¼ú ´ëÈ¸ ÃâÀü*/
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_150 |			// ìœ íŒŒ ë©¤ë²„ 80ëª…
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_MAKE_DOGI |			// ìœ íŒŒ ë„ë³µ
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_CAN_CHANGE_EMBLEM |		// ìœ íŒŒ ì— ë¸”ë ˜ ì²´ì¸ì§€
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_DOJO_UPGRADE_2 |			// ìœ íŒŒ ë„ìž¥ ì—…ê·¸ë ˆì´ë“œ2
+	(DWORD64) 1 << DBO_GUILD_FUNCTION_TENKAICHI_SEED |			// ìœ íŒŒ ì²œí•˜ì œì¼ ë¬´ìˆ  ëŒ€íšŒ ì¶œì „*/
 
 	(DWORD64) 1 << DBO_GUILD_FUNCTION_MAX_MEMBER_170 |
 	(DWORD64) 1 << DBO_GUILD_FUNCTION_DOJO_UPGRADE_3 |

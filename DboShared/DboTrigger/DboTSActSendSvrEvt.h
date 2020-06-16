@@ -14,7 +14,7 @@ protected:
 	unsigned int						m_uiType;			// eTRIGGER_SERVER_EVENT_TYPE
 	unsigned char						m_byTriggerType;	// TS_TYPE_QUEST_CS, TS_TYPE_PC_TRIGGER_CS, TS_TYPE_OBJECT_TRIGGER_S, TS_TYPE_INVALID
 	unsigned int						m_uiEvtID;
-	unsigned int						m_uiTblIdx;			// eTRIGGER_SERVER_EVENT_TYPEÀÇ Á¾·ù¿¡ µû¸¥ ÀÎµ¦½º
+	unsigned int						m_uiTblIdx;			// eTRIGGER_SERVER_EVENT_TYPEì˜ ì¢…ë¥˜ì— ë”°ë¥¸ ì¸ë±ìŠ¤
 	unsigned int						m_uiEvtSendType;	// eTS_EVENT_SEND_TYPE
 	float								m_fEvtSendType_Radius;
 
@@ -46,7 +46,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

@@ -129,9 +129,9 @@ inline void CNtlNaviWorldInfo::GetWorldMaxPos( float& fWorldMaxPosX, float& fWor
 class CNtlNaviWorldOutDoorInfo : public CNtlNaviWorldInfo
 {
 protected:
-	float							m_fTileSize;				// ½ÇÁ¦ ¿ùµåÀÇ Å¸ÀÏ »çÀÌÁî
-	float							m_fFieldSize;				// ½ÇÁ¦ ¿ùµåÀÇ ÇÊµå »çÀÌÁî
-	unsigned int					m_uiCrossFieldCntOfGroup;	// Group ´ç ÇÊµåÀÇ °¹¼ö
+	float							m_fTileSize;				// ì‹¤ì œ ì›”ë“œì˜ íƒ€ì¼ ì‚¬ì´ì¦ˆ
+	float							m_fFieldSize;				// ì‹¤ì œ ì›”ë“œì˜ í•„ë“œ ì‚¬ì´ì¦ˆ
+	unsigned int					m_uiCrossFieldCntOfGroup;	// Group ë‹¹ í•„ë“œì˜ ê°¯ìˆ˜
 	float							m_fOverlapSize;
 
 public:

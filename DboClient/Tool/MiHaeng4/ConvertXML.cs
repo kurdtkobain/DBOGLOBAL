@@ -65,7 +65,7 @@ namespace MiHaeng4
             MH4Global.lbXLS.Text = "Loading and Converting... : " + nakedFileName;
             MH4Global.lbXLS.Update();
 
-            // ì¼ë°˜ í€˜ìŠ¤íŠ¸ ë¬¸ì„œì¸ì§€, ìŠ¤íì…œ í€˜ìŠ¤íŠ¸ ë¬¸ì„œì¸ì§€ íŒŒì•…í•œë‹¤.
+            // ÀÏ¹İ Äù½ºÆ® ¹®¼­ÀÎÁö, ½ºÆó¼È Äù½ºÆ® ¹®¼­ÀÎÁö ÆÄ¾ÇÇÑ´Ù.
             bool bIsSpecialXLS = MH4Global.IsSpecialQuestXLS(strFileName);
 
             Thread[] trdList = new Thread[MH4Global.THREAD_MAX];

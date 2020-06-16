@@ -882,7 +882,7 @@ RwBool CNtlPLSky::Render(void)
 
 		SkyLayerRender(m_pBaseSkyLayer[1], TFactor);
 
-		// ±¸¸§°ú SkyBox »çÀÌ¿¡ ÇØ/´ÞÀ» ·»´õ¸µÇÑ´Ù. (2007.08.06 by agebreak)
+		// êµ¬ë¦„ê³¼ SkyBox ì‚¬ì´ì— í•´/ë‹¬ì„ ë Œë”ë§í•œë‹¤. (2007.08.06 by agebreak)
 		CNtlPLVisualManager* pVisualManager = (CNtlPLVisualManager*)GetSceneManager();
 		CNtlPLRenderGroup* pSunGroup = pVisualManager->FindInstanceGroup(PLENTITY_SUN);
 		if(pSunGroup)
@@ -1941,7 +1941,7 @@ void CNtlPLSky::RunableLightning(RwReal fTimeFadeIn, RwReal fTimeFadeOut)
 // 
 // 			SkyLayerRender(m_pBaseSkyLayer[1], TFactor);
 // 
-// 			// ±¸¸§°ú SkyBox »çÀÌ¿¡ ÇØ/´ÞÀ» ·»´õ¸µÇÑ´Ù. (2007.08.06 by agebreak)
+// 			// êµ¬ë¦„ê³¼ SkyBox ì‚¬ì´ì— í•´/ë‹¬ì„ ë Œë”ë§í•œë‹¤. (2007.08.06 by agebreak)
 // 			CNtlPLVisualManager* pVisualManager = (CNtlPLVisualManager*)GetSceneManager();
 // 			CNtlPLRenderGroup* pSunGroup = pVisualManager->FindInstanceGroup(PLENTITY_SUN);
 // 			if(pSunGroup)

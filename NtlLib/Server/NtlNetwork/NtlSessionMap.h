@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-01-23
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -173,8 +173,8 @@ inline CNtlSession * CNtlSessionMap<TKEY>::FindSession(TKEY TKEY)
 //		Return	:
 //-----------------------------------------------------------------------------------
 //
-// Network Processor ¾²·¹µå ÀÌ¿ÜÀÇ ¾²·¹µå¿¡¼­ Session¿¡ ´ëÇÑ ÂüÁ¶¸¦ ÇØ¾ß ÇÒ °æ¿ì »ç¿ëÇÑ´Ù
-// »ç¿ëÈÄ ¹İµå½Ã SessionÀÇ Reference¸¦ ReleaseÇØ ÁÖ¾î¾ß ÇÑ´Ù
+// Network Processor ì“°ë ˆë“œ ì´ì™¸ì˜ ì“°ë ˆë“œì—ì„œ Sessionì— ëŒ€í•œ ì°¸ì¡°ë¥¼ í•´ì•¼ í•  ê²½ìš° ì‚¬ìš©í•œë‹¤
+// ì‚¬ìš©í›„ ë°˜ë“œì‹œ Sessionì˜ Referenceë¥¼ Releaseí•´ ì£¼ì–´ì•¼ í•œë‹¤
 //
 //-----------------------------------------------------------------------------------
 template<class TKEY>

@@ -7,15 +7,15 @@ class CNtlTSScrObject;
 
 /** 
 	Script factory type
-	Script¸¦ ÅëÇØ ÀÚµ¿ »ý¼ºµÇ±â À§ÇØ¼­´Â ¾Æ·¡ Å¬·¡½º¸¦ »ó¼Ó¹Þ¾Æ Factory type Å¬·¡½º¸¦ ±¸ÇöÇØ¾ß ÇÔ
+	Scriptë¥¼ í†µí•´ ìžë™ ìƒì„±ë˜ê¸° ìœ„í•´ì„œëŠ” ì•„ëž˜ í´ëž˜ìŠ¤ë¥¼ ìƒì†ë°›ì•„ Factory type í´ëž˜ìŠ¤ë¥¼ êµ¬í˜„í•´ì•¼ í•¨
 
-	( ÁÖÀÇ )
-	½ºÅ©¸³Æ®¸¦ ÅëÇØ¼­ ·±Å¸ÀÓ ½Ã °´Ã¼ »ý¼ºÀ» Áö¿øÇÏ±â À§ÇØ¼­´Â CNtlTSScrFactoryType À» »ó¼Ó¹Þ´Â Å¬·¡½º¿¡¼­
-	¹Ýµå½Ã TS_DECLARE_REGIST_SCRIPT_RUNTIME_CREATE ¸¦ ¼±¾ð ÇØ¾ß ÇÔ
+	( ì£¼ì˜ )
+	ìŠ¤í¬ë¦½íŠ¸ë¥¼ í†µí•´ì„œ ëŸ°íƒ€ìž„ ì‹œ ê°ì²´ ìƒì„±ì„ ì§€ì›í•˜ê¸° ìœ„í•´ì„œëŠ” CNtlTSScrFactoryType ì„ ìƒì†ë°›ëŠ” í´ëž˜ìŠ¤ì—ì„œ
+	ë°˜ë“œì‹œ TS_DECLARE_REGIST_SCRIPT_RUNTIME_CREATE ë¥¼ ì„ ì–¸ í•´ì•¼ í•¨
 */
 
 
-// »ý¼ºÇÏ°íÀÚ ÇÏ´Â ¿ÀºêÁ§Æ®ÀÇ Å¬·¡½º ÀÌ¸§À» ÆÄ¶ó¹ÌÅÍ·Î ÀÔ·Â ÇÑ´Ù
+// ìƒì„±í•˜ê³ ìž í•˜ëŠ” ì˜¤ë¸Œì íŠ¸ì˜ í´ëž˜ìŠ¤ ì´ë¦„ì„ íŒŒë¼ë¯¸í„°ë¡œ ìž…ë ¥ í•œë‹¤
 #define NTL_TS_DECLARE_REGIST_SCRIPT_RUNTIME_CREATE( classname ) \
 	public: \
 	static const char* OBJ_CLASS_NAME( void ) { return classname::RTTI.GetClassName(); }

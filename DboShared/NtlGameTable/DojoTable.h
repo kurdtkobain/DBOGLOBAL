@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-12-29
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung,DooSup ( mailto:john@ntl-inc.com )
 //
@@ -41,17 +41,17 @@ public:
 	TBLIDX			zoneTblidx; // WorldTable Index
 	TBLIDX			objectTblidx[DOJO_MAX_UPGRADE_OBJECT_COUNT];
 	TBLIDX			mapName;		// town name textalltblidx
-	BYTE			byReceiveHour;	// ½ÅÃ»´ë±â½ÃÀÛ½Ã°£
-	BYTE			byReceiveMinute; // ½ÅÃ»´ë±â½ÃÀÛºÐ
-	BYTE			byRepeatType;	// ½ÅÃ»´ë±â »óÅÂ ¹Ýº¹ ¹æ½Ä eDBO_DOJO_REPEAT_TYPE
-	BYTE			byRepeatTime;	// ½ÅÃ»´ë±â»óÅÂÀÇ ½ÃÀÛÀÌ ¹Ýº¹µÇ´Â ÀÏÁ¤ ½Ã°£ -> ¹Ýº¹Å¸ÀÔÀÌ ½Ã°£ÀÏ°æ¿ì¸¸ »ç¿ë
-	WORD			wWeekBitFlag;   // ½ÅÃ»´ë±â ½ÃÀÛ ¿äÀÏ -> ¿ù¼ö±Ý ÀÏÁÖÀÏ¿¡ ÀÏÁ¤ÇÑ³¯ eDBO_DOJO_WEEK_BITFLAG
-	BYTE			byReceiveDuration; // ½ÃÀÛ½Ã°£¿¡¼­ ½ÅÃ»°¡´ÉÇÑ ½Ã°£ ºÐ ¿¹ 30ºÐ
-	BYTE			byRejectDuration;  // ½ÃÀÛ½Ã°£ ±âÁØ °ÅºÎ°¡´ÉÇÑ ½Ã°£ ºÐ ¿¹ 20ºÐ
-	BYTE			byStandbyDuration; // ÀïÅ»Àü ÁØºñ»óÅÂÀÇ ½ÃÀÛºÎÅÍ Á¾·áµÇ´Â ±â°£ ºÐ ¿¹ 20ºÐ
-	BYTE			byInitialDuration; // ÀïÅ»Àü ÁØºñ»óÅÂ Á¾·á ½ÃÁ¡ºÎÅÍ µµÀå ÃÊ±âÈ­ »óÅÂ°¡ Á¾·áµÇ´Â ±â°£ ¿¹ 7ºÐ
-	BYTE			byReadyDuration;   // ÃÊ±âÈ­»óÅÂ Á¾·á ½Ã°£ ¿¹3ºÐ
-	BYTE			byBattleDuration;  // ÀïÅ»Àü ½ÃÀÛÈÄ ¿Ï·á±îÁöÀÇ ÃÖ´ë ½Ã°£
+	BYTE			byReceiveHour;	// ì‹ ì²­ëŒ€ê¸°ì‹œìž‘ì‹œê°„
+	BYTE			byReceiveMinute; // ì‹ ì²­ëŒ€ê¸°ì‹œìž‘ë¶„
+	BYTE			byRepeatType;	// ì‹ ì²­ëŒ€ê¸° ìƒíƒœ ë°˜ë³µ ë°©ì‹ eDBO_DOJO_REPEAT_TYPE
+	BYTE			byRepeatTime;	// ì‹ ì²­ëŒ€ê¸°ìƒíƒœì˜ ì‹œìž‘ì´ ë°˜ë³µë˜ëŠ” ì¼ì • ì‹œê°„ -> ë°˜ë³µíƒ€ìž…ì´ ì‹œê°„ì¼ê²½ìš°ë§Œ ì‚¬ìš©
+	WORD			wWeekBitFlag;   // ì‹ ì²­ëŒ€ê¸° ì‹œìž‘ ìš”ì¼ -> ì›”ìˆ˜ê¸ˆ ì¼ì£¼ì¼ì— ì¼ì •í•œë‚  eDBO_DOJO_WEEK_BITFLAG
+	BYTE			byReceiveDuration; // ì‹œìž‘ì‹œê°„ì—ì„œ ì‹ ì²­ê°€ëŠ¥í•œ ì‹œê°„ ë¶„ ì˜ˆ 30ë¶„
+	BYTE			byRejectDuration;  // ì‹œìž‘ì‹œê°„ ê¸°ì¤€ ê±°ë¶€ê°€ëŠ¥í•œ ì‹œê°„ ë¶„ ì˜ˆ 20ë¶„
+	BYTE			byStandbyDuration; // ìŸíƒˆì „ ì¤€ë¹„ìƒíƒœì˜ ì‹œìž‘ë¶€í„° ì¢…ë£Œë˜ëŠ” ê¸°ê°„ ë¶„ ì˜ˆ 20ë¶„
+	BYTE			byInitialDuration; // ìŸíƒˆì „ ì¤€ë¹„ìƒíƒœ ì¢…ë£Œ ì‹œì ë¶€í„° ë„ìž¥ ì´ˆê¸°í™” ìƒíƒœê°€ ì¢…ë£Œë˜ëŠ” ê¸°ê°„ ì˜ˆ 7ë¶„
+	BYTE			byReadyDuration;   // ì´ˆê¸°í™”ìƒíƒœ ì¢…ë£Œ ì‹œê°„ ì˜ˆ3ë¶„
+	BYTE			byBattleDuration;  // ìŸíƒˆì „ ì‹œìž‘í›„ ì™„ë£Œê¹Œì§€ì˜ ìµœëŒ€ ì‹œê°„
 	DWORD			dwReceivePoint;
 	DWORD			dwReceiveZenny;
 	TBLIDX			controllerTblidx;

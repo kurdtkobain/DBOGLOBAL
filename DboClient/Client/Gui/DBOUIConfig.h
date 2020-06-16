@@ -2,7 +2,7 @@
 
 #include "NtlXMLDoc.h"
 
-// ¸»Ç³¼± ±¸Á¶Ã¼
+// ë§í’ì„  êµ¬ì¡°ì²´
 struct STeleCastBalloon
 {
     RwV2d v2dOffset;
@@ -16,7 +16,7 @@ struct STeleCastBalloon
     }
 };
 
-// ¾î´À Å¸ÀÔÀÇ ¹æ¼ÛÃ¢À» ºÎ¸¦Áö ¼³Á¤
+// ì–´ëŠ íƒ€ì…ì˜ ë°©ì†¡ì°½ì„ ë¶€ë¥¼ì§€ ì„¤ì •
 enum TELECAST_TYPE
 {
     TELECAST_TYPE_TMQ,                  
@@ -24,26 +24,26 @@ enum TELECAST_TYPE
     TELECAST_TYPE_SERVER_NOTIFY,
 };
 
-/// Telecast°ü·Ã UIConfig ±¸Á¶Ã¼
+/// Telecastê´€ë ¨ UIConfig êµ¬ì¡°ì²´
 struct SUIConfigTeleCast
 {
-    TELECAST_TYPE           m_eTelecastType; ///< ÀÌÀü¿¡ ¼³Á¤ÇÑ ¹æ¼ÛÃ¢ Å¸ÀÔ
-    RwInt32     nYPos;                      ///< Y À§Ä¡
-    RwV2d       v2dSize;                    ///< Å©±â
-    RwReal      fFadeTime;                  ///< Fade ¿¬Ãâ¿¡ °É¸®´Â Time
-    std::string strFadeFlashFile;           ///< Fade ¿¬Ãâ ÇÃ·¡½Ã ÆÄÀÏ¸í
-    std::string strOpeningFlashFile;        ///< Open ¿¬Ãâ ÇÃ·¡½Ã ÆÄÀÏ¸í
-    std::string strClosingFlashFile;        ///< Close ¿¬Ãâ ÇÃ·¡½Ã ÆÄÀÏ¸í
-    std::string strBackNormalFlashFile;     ///< ÀÏ¹İ»óÅÂ ¹è°æ ÇÃ·¡½Ã ÆÄÀÏ¸í
-    std::string strBackWarnFlashFile;       ///< °æ°í/À§Çè »óÅÂ ¹è°æ ÇÃ·¡½Ã ÆÄÀÏ¸í
-    RwReal      fShakeFreq;                 ///< Shake ¿¬Ãâ½Ã ÃÊ´ç Áøµ¿¼ö
-    RwInt32     nShakeAmp;                  ///< Shake ¿¬Ãâ½Ã ÁøÆø (ÇÈ¼¿ ´ÜÀ§)    
-    std::map<RwInt32, STeleCastBalloon>  mapBalloonRes; ///< ¸»Ç³¼± ¸®¼Ò½º ÆÄÀÏ¸í ¸Ê
-    RwReal      fSlideStartVel;             ///< ½½¶óÀÌµå ½ÃÀÛ ¼Óµµ
-    RwReal      fSlideAccel;                ///< ½½¶óÀÌµå °¡¼Óµµ
+    TELECAST_TYPE           m_eTelecastType; ///< ì´ì „ì— ì„¤ì •í•œ ë°©ì†¡ì°½ íƒ€ì…
+    RwInt32     nYPos;                      ///< Y ìœ„ì¹˜
+    RwV2d       v2dSize;                    ///< í¬ê¸°
+    RwReal      fFadeTime;                  ///< Fade ì—°ì¶œì— ê±¸ë¦¬ëŠ” Time
+    std::string strFadeFlashFile;           ///< Fade ì—°ì¶œ í”Œë˜ì‹œ íŒŒì¼ëª…
+    std::string strOpeningFlashFile;        ///< Open ì—°ì¶œ í”Œë˜ì‹œ íŒŒì¼ëª…
+    std::string strClosingFlashFile;        ///< Close ì—°ì¶œ í”Œë˜ì‹œ íŒŒì¼ëª…
+    std::string strBackNormalFlashFile;     ///< ì¼ë°˜ìƒíƒœ ë°°ê²½ í”Œë˜ì‹œ íŒŒì¼ëª…
+    std::string strBackWarnFlashFile;       ///< ê²½ê³ /ìœ„í—˜ ìƒíƒœ ë°°ê²½ í”Œë˜ì‹œ íŒŒì¼ëª…
+    RwReal      fShakeFreq;                 ///< Shake ì—°ì¶œì‹œ ì´ˆë‹¹ ì§„ë™ìˆ˜
+    RwInt32     nShakeAmp;                  ///< Shake ì—°ì¶œì‹œ ì§„í­ (í”½ì…€ ë‹¨ìœ„)    
+    std::map<RwInt32, STeleCastBalloon>  mapBalloonRes; ///< ë§í’ì„  ë¦¬ì†ŒìŠ¤ íŒŒì¼ëª… ë§µ
+    RwReal      fSlideStartVel;             ///< ìŠ¬ë¼ì´ë“œ ì‹œì‘ ì†ë„
+    RwReal      fSlideAccel;                ///< ìŠ¬ë¼ì´ë“œ ê°€ì†ë„
     
-    RwUInt32    uiNPCID;                    ///< NPC Å×ÀÌºí ID (¼­¹ö ¾Ë¸²Ã¢¿¡¼­¸¸ »ç¿ë)
-    RwReal      fShowTime;                  ///< Ç¥½ÃµÉ ½Ã°£ (¼­¹ö ¾Ë¸²Ã¢¿¡¼­¸¸ »ç¿ë)
+    RwUInt32    uiNPCID;                    ///< NPC í…Œì´ë¸” ID (ì„œë²„ ì•Œë¦¼ì°½ì—ì„œë§Œ ì‚¬ìš©)
+    RwReal      fShowTime;                  ///< í‘œì‹œë  ì‹œê°„ (ì„œë²„ ì•Œë¦¼ì°½ì—ì„œë§Œ ì‚¬ìš©)
     
     SUIConfigTeleCast() 
     : fShakeFreq(0), nShakeAmp(0), nYPos(578), fFadeTime(5.0f), m_eTelecastType(TELECAST_TYPE_TMQ)
@@ -64,24 +64,24 @@ struct SUIConfigBroadCast
 {
 	RwReal		fPosXRate;									///< X Pos Rate
 	RwReal		fPosYRate;									///< Y Pos Rate
-	RwReal		fSlideStartVel;								///< Sliding : ½ÃÀÛ ¼Óµµ
-	RwReal		fSlideAccelVel;								///< Sliding : °¡¼Óµµ
-	RwReal		fBlendStartVel;								///< UI Blending : ½ÃÀÛ ¼Óµµ
-	RwReal		fBlendAccelVel;								///< UI Blending : °¡¼Óµµ
-	RwReal		fBlendTextStartVel;							///< Blend text ÅØ½ºÆ® : ½ÃÀÛ ¼Óµµ
-	RwReal		fBlendTextAccelVel;							///< Blend text : °¡¼Óµµ
-	RwReal		fIntervalTextTime;							///< Line : ¾÷µ¥ÀÌÆ® Å¸ÀÓ
-	RwReal		fIntervalPresNum;							///< Line : ÇÑ¹ø¿¡ ³ªÅ¸³¯ ±ÛÀÚ ¼ö
-	RwReal		fFadeSlidePos;								///< Fade-Slide : ½ÃÀÛ OffsetX
-	RwReal		fFadeSlideStartVel;							///< Fade-Slide : ½ÃÀÛ ¼Óµµ
-	RwReal		fFadeSlideAccelVel;							///< Fade-Slide : °¡¼Óµµ
-	RwReal		fShakeXAmp[dBROADCAST_SHAKE_TYPE_NUMS];		///< ShakeX : ¶³¸®´Â Æø
-	RwReal		fShakeXFreq[dBROADCAST_SHAKE_TYPE_NUMS];	///< ShakeX : ¶³¸®´Â ¼Óµµ
-	RwReal		fShakeYAmp[dBROADCAST_SHAKE_TYPE_NUMS];		///< ShakeY : ¶³¸®´Â Æø
-	RwReal		fShakeYFreq[dBROADCAST_SHAKE_TYPE_NUMS];	///< ShakeY : ¶³¸®´Â ¼Óµµ
+	RwReal		fSlideStartVel;								///< Sliding : ì‹œì‘ ì†ë„
+	RwReal		fSlideAccelVel;								///< Sliding : ê°€ì†ë„
+	RwReal		fBlendStartVel;								///< UI Blending : ì‹œì‘ ì†ë„
+	RwReal		fBlendAccelVel;								///< UI Blending : ê°€ì†ë„
+	RwReal		fBlendTextStartVel;							///< Blend text í…ìŠ¤íŠ¸ : ì‹œì‘ ì†ë„
+	RwReal		fBlendTextAccelVel;							///< Blend text : ê°€ì†ë„
+	RwReal		fIntervalTextTime;							///< Line : ì—…ë°ì´íŠ¸ íƒ€ì„
+	RwReal		fIntervalPresNum;							///< Line : í•œë²ˆì— ë‚˜íƒ€ë‚  ê¸€ì ìˆ˜
+	RwReal		fFadeSlidePos;								///< Fade-Slide : ì‹œì‘ OffsetX
+	RwReal		fFadeSlideStartVel;							///< Fade-Slide : ì‹œì‘ ì†ë„
+	RwReal		fFadeSlideAccelVel;							///< Fade-Slide : ê°€ì†ë„
+	RwReal		fShakeXAmp[dBROADCAST_SHAKE_TYPE_NUMS];		///< ShakeX : ë–¨ë¦¬ëŠ” í­
+	RwReal		fShakeXFreq[dBROADCAST_SHAKE_TYPE_NUMS];	///< ShakeX : ë–¨ë¦¬ëŠ” ì†ë„
+	RwReal		fShakeYAmp[dBROADCAST_SHAKE_TYPE_NUMS];		///< ShakeY : ë–¨ë¦¬ëŠ” í­
+	RwReal		fShakeYFreq[dBROADCAST_SHAKE_TYPE_NUMS];	///< ShakeY : ë–¨ë¦¬ëŠ” ì†ë„
 };
 
-// Notify °ü·Ã ±¸Á¶Ã¼
+// Notify ê´€ë ¨ êµ¬ì¡°ì²´
 struct SUIConfigNotifyPosition
 {
 	SUIConfigNotifyPosition(VOID)
@@ -104,7 +104,7 @@ struct SUIConfigNotifyPosition
 	RwReal		fBroadcastNotiry_YPosRate;
 };
 
-/// /script/UIConfig.XML ·ÎºÎÅÍ UI ¼³Á¤µéÀ» ÀĞ¾î¿Í¼­ º¸°üÇÏ°í ÀÖ´Â ½Ì±ÛÅæ Å¬·¡½º
+/// /script/UIConfig.XML ë¡œë¶€í„° UI ì„¤ì •ë“¤ì„ ì½ì–´ì™€ì„œ ë³´ê´€í•˜ê³  ìˆëŠ” ì‹±ê¸€í†¤ í´ë˜ìŠ¤
 class CDBOUIConfig : CNtlXMLDoc
 {
 public:
@@ -114,24 +114,24 @@ public:
     RwBool Load();                              ///< Read Config information from XML file.
     RwBool Reflash();                           ///< Reloads the information from the XML file.
 
-    RwBool LoadTeleCast(TELECAST_TYPE eType);   ///< TeleCast¿ë Á¤º¸µéÀ» ·ÎµùÇÑ´Ù.    
-	RwBool LoadBroadCast();						///< BroadCast¿ë Á¤º¸ ·Îµù
+    RwBool LoadTeleCast(TELECAST_TYPE eType);   ///< TeleCastìš© ì •ë³´ë“¤ì„ ë¡œë”©í•œë‹¤.    
+	RwBool LoadBroadCast();						///< BroadCastìš© ì •ë³´ ë¡œë”©
 	RwBool LoadNotify();					
 
-    SUIConfigTeleCast*  GetTeleCastConfig()		{	return &m_TeleCast;		} ///< TeleCast¿ë Config Á¤º¸¸¦ ¹İÈ¯ÇÑ´Ù.
+    SUIConfigTeleCast*  GetTeleCastConfig()		{	return &m_TeleCast;		} ///< TeleCastìš© Config ì •ë³´ë¥¼ ë°˜í™˜í•œë‹¤.
 	SUIConfigBroadCast*	GetBroadCastConfig()	{	return &m_BroadCast;	}
 	SUIConfigNotifyPosition* GetNotifyConfig()	{	return &m_Notify; }
 
 protected:    
-    RwBool LoadTest();                          ///< Å×½ºÆ®¿ë µ¥ÀÌÅÍµéÀ» ·ÎµùÇÑ´Ù.
+    RwBool LoadTest();                          ///< í…ŒìŠ¤íŠ¸ìš© ë°ì´í„°ë“¤ì„ ë¡œë”©í•œë‹¤.
 
 protected:    
-    char   szBuf[64];                           ///< »ç¿ë ¹öÆÛ
+    char   szBuf[64];                           ///< ì‚¬ìš© ë²„í¼
 
-    SUIConfigTeleCast       m_TeleCast;         ///< Telecast¿ë ¼³Á¤ °´Ã¼
+    SUIConfigTeleCast       m_TeleCast;         ///< Telecastìš© ì„¤ì • ê°ì²´
 	SUIConfigBroadCast		m_BroadCast;		///< BroadCast
 	SUIConfigNotifyPosition	m_Notify;			///< Notify
     
-    RwReal                  m_fCameraTargetRatio; ///< Follow CameraÀÇ Å¸°Ù ³ôÀÌ ºñÀ² (Ä³¸¯ÅÍÀÇ Å°¿¡ ´ëÇÑ ºñÀ²) - Å×½ºÆ®¿ë
+    RwReal                  m_fCameraTargetRatio; ///< Follow Cameraì˜ íƒ€ê²Ÿ ë†’ì´ ë¹„ìœ¨ (ìºë¦­í„°ì˜ í‚¤ì— ëŒ€í•œ ë¹„ìœ¨) - í…ŒìŠ¤íŠ¸ìš©
   
 };

@@ -42,7 +42,7 @@ RwBool CNtlSobPet::Create(void)
 {
 	NTL_FUNCTION("CNtlSobPet::Create");
 
-	// proxy º≥¡§
+	// proxy ÏÑ§Ï†ï
 	m_pSobProxy = NTL_NEW CNtlSobCharProxy;
 	m_pSobProxy->Create(0);
 	m_pSobProxy->SetSobObj(this);
@@ -55,7 +55,7 @@ RwBool CNtlSobPet::Create(void)
 		NTL_RETURN(FALSE);
 	}
 
-	// class name º≥¡§.
+	// class name ÏÑ§Ï†ï.
 	SetClassName(SLCLASS_NAME_PET);
 
 	NTL_RETURN(TRUE);
@@ -65,7 +65,7 @@ void CNtlSobPet::Destroy(void)
 {
 	NTL_FUNCTION("CNtlSobPet::Destroy");
 
-	// owerø° pet «ÿ¡¶.
+	// owerÏóê pet Ìï¥Ï†ú.
 	CNtlSobFeelingActor *pSobFeelingActor = reinterpret_cast<CNtlSobFeelingActor*>( GetNtlSobManager()->GetSobObject(GetOwnerID()) );
 	if(pSobFeelingActor)
 		pSobFeelingActor->GetPetBuffer()->RemovePet(GetSerialID());
@@ -100,7 +100,7 @@ void CNtlSobPet::HandleEvents(RWS::CMsg &pMsg)
 	{
 		SNtlEventSobPetCreate *pSobCreate = reinterpret_cast<SNtlEventSobPetCreate*>(pMsg.pData);
 
-		// owerø° pet µÓ∑œ.
+		// owerÏóê pet Îì±Î°ù.
 		CNtlSobPlayer *pSobPlayer = reinterpret_cast<CNtlSobPlayer*>( GetNtlSobManager()->GetSobObject(pSobCreate->uPetBrief.pPetBrief->hOwner) );
 		if(pSobPlayer)
 			pSobPlayer->GetPetBuffer()->AddPet(pSobCreate->hSerialId);
@@ -136,7 +136,7 @@ void CNtlSobPet::HandleEvents(RWS::CMsg &pMsg)
 		// proxy setting
 		GetSobProxy()->HandleEvents(pMsg);
 
-		// ¡¬«•øÕ πÊ«‚ ºº∆√.
+		// Ï¢åÌëúÏôÄ Î∞©Ìñ• ÏÑ∏ÌåÖ.
 		RwV3d vLoc, vDir;
 		RwV3dAssignMacro(&vLoc, &pSobCreate->vLoc); 
 		RwV3dAssignMacro(&vDir, &pSobCreate->vDir); 

@@ -119,7 +119,7 @@ uLong CNtlUnzip::Read_File_Func( voidpf opaque, voidpf stream, void* buf, uLong 
 
 uLong CNtlUnzip::Write_File_Func( voidpf opaque, voidpf stream, const void* buf, uLong size )
 {
-	// ¸Ş¸ğ¸®¸¦ ÅëÇÑ Unzip¿¡¼­´Â Write¸¦ Áö¿øÇÏÁö ¾Ê½À´Ï´Ù
+	// ë©”ëª¨ë¦¬ë¥¼ í†µí•œ Unzipì—ì„œëŠ” Writeë¥¼ ì§€ì›í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤
 	return 0;
 }
 

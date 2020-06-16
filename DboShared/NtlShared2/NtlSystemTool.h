@@ -13,17 +13,17 @@ int GetIP( std::string strIP );
 //-----------------------------------------------------
 // define
 
-// ÃÖ´ë ÁÖ±âÀû °øÁö °¹¼ö
+// ìµœëŒ€ ì£¼ê¸°ì  ê³µì§€ ê°¯ìˆ˜
 const int NTL_REPEAT_NOTICE_MAX_COUNT = 64;
 
-// ÁÖ±âÀû °øÁöÀÇ ÃÖ´ë ±æÀÌ(multi byte) : °øÁöÀÇ ¹®ÀåÀº µÎ°³·Î ÀÌ·ç¾îÁö¸ç ´ÙÀ½ÀÇ ±æÀÌ´Â ÇÏ³ªÀÇ ¹®Àå¿¡ ´ëÇÑ ÃÖ´ë ±æÀÌ´Ù.(Multi Byte ´ÜÀ§ÀÌ´Ù)
+// ì£¼ê¸°ì  ê³µì§€ì˜ ìµœëŒ€ ê¸¸ì´(multi byte) : ê³µì§€ì˜ ë¬¸ìž¥ì€ ë‘ê°œë¡œ ì´ë£¨ì–´ì§€ë©° ë‹¤ìŒì˜ ê¸¸ì´ëŠ” í•˜ë‚˜ì˜ ë¬¸ìž¥ì— ëŒ€í•œ ìµœëŒ€ ê¸¸ì´ë‹¤.(Multi Byte ë‹¨ìœ„ì´ë‹¤)
 const int NTL_REPEAT_NOTICE_MAX_STRING_LENGTH_MB = 64;
 
-// ½Ã°£ ¹®ÀÚ¿­ÀÇ ÃÖ´ë ±æÀÌ
+// ì‹œê°„ ë¬¸ìžì—´ì˜ ìµœëŒ€ ê¸¸ì´
 const int NTL_GM_TOOL_MAX_DATE_STRING_LENGTH = 31;
 
 
-// °Ë»ö Å¸ÀÔ
+// ê²€ìƒ‰ íƒ€ìž…
 enum eTOOL_SERACH_TYPE
 {
 	NTL_TOOL_SERACH_TYPE_ACCOUNTID = 0,
@@ -36,18 +36,18 @@ enum eTOOL_SERACH_TYPE
 };
 
 
-// KICK_INFO Á¤º¸ÀÇ »ç¿ëÅ¸ÀÔ
+// KICK_INFO ì •ë³´ì˜ ì‚¬ìš©íƒ€ìž…
 enum eKICK_INFO_USE_TYPE
 {
-	KICK_INFO_USE_TOOL_PUBLIC_SEARCH_DATA,		// Åø¿¡¼­ °øÅë °Ë»ö Ã¢ÀÇ µ¥ÀÌÅÍ·Î »ç¿ë
+	KICK_INFO_USE_TOOL_PUBLIC_SEARCH_DATA,		// íˆ´ì—ì„œ ê³µí†µ ê²€ìƒ‰ ì°½ì˜ ë°ì´í„°ë¡œ ì‚¬ìš©
 };
 
 
-// SM_SEARCH_ACCOUNTID_REQ Á¤º¸ÀÇ »ç¿ë Å¸ÀÔ
+// SM_SEARCH_ACCOUNTID_REQ ì •ë³´ì˜ ì‚¬ìš© íƒ€ìž…
 enum eGM_ACCOUNTID_INFO_USE_TYPE
 {
-	GM_ACCOUNTID_INFO_USE_CREATE_GM,			// GMÀ» »ý¼ºÇÒ¶§ »ç¿ë
-	GM_ACCOUNTID_INFO_USE_CONNECT_GM_ACCOUNTID,	// GM°ú AccountID¸¦ ¿¬°áÇÒ ¶§ »ç¿ë
+	GM_ACCOUNTID_INFO_USE_CREATE_GM,			// GMì„ ìƒì„±í• ë•Œ ì‚¬ìš©
+	GM_ACCOUNTID_INFO_USE_CONNECT_GM_ACCOUNTID,	// GMê³¼ AccountIDë¥¼ ì—°ê²°í•  ë•Œ ì‚¬ìš©
 	GM_ACCOUNTID_INFO_USE_MODIFY_GM,
 };
 
@@ -55,61 +55,61 @@ enum eGM_ACCOUNTID_INFO_USE_TYPE
 // GM Tool Authority TYPE
 enum eGM_TOOL_AUTH_TYPE
 {
-	GM_TOOL_AUTH_SEARCH,					// Ä³¸¯ÅÍ °Ë»ö
+	GM_TOOL_AUTH_SEARCH,					// ìºë¦­í„° ê²€ìƒ‰
 
-	GM_TOOL_AUTH_CHAR_INFO,					// Ä³¸¯ÅÍ Á¤º¸
-	GM_TOOL_AUTH_CHAR_INFO_CHANGE,			// Ä³¸¯ÅÍ Á¤º¸ º¯°æ
-	GM_TOOL_AUTH_CHAR_NAME_CHANGE,			// Ä³¸¯ÅÍ¸í º¯°æ
+	GM_TOOL_AUTH_CHAR_INFO,					// ìºë¦­í„° ì •ë³´
+	GM_TOOL_AUTH_CHAR_INFO_CHANGE,			// ìºë¦­í„° ì •ë³´ ë³€ê²½
+	GM_TOOL_AUTH_CHAR_NAME_CHANGE,			// ìºë¦­í„°ëª… ë³€ê²½
 
-	GM_TOOL_AUTH_MAIL_LIST,					// ¸ÞÀÏ Á¤º¸ Á¶È¸
-	GM_TOOL_AUTH_MAIL_CONTENTSEE,			// ¸ÞÀÏ ³»¿ë Á¤º¸ Á¶È¸
-	GM_TOOL_AUTH_MAIL_ITEMSEE,				// ¸ÞÀÏ ¾ÆÀÌÅÛ Á¤º¸ Á¶È¸
-	GM_TOOL_AUTH_MAIL_DELETE,				// ¸ÞÀÏ »èÁ¦
+	GM_TOOL_AUTH_MAIL_LIST,					// ë©”ì¼ ì •ë³´ ì¡°íšŒ
+	GM_TOOL_AUTH_MAIL_CONTENTSEE,			// ë©”ì¼ ë‚´ìš© ì •ë³´ ì¡°íšŒ
+	GM_TOOL_AUTH_MAIL_ITEMSEE,				// ë©”ì¼ ì•„ì´í…œ ì •ë³´ ì¡°íšŒ
+	GM_TOOL_AUTH_MAIL_DELETE,				// ë©”ì¼ ì‚­ì œ
 
 
-	GM_TOOL_AUTH_ITEM_INFO,					// ¾ÆÀÌÅÛ Á¤º¸
-	GM_TOOL_AUTH_ITEM_CREATE,				// ¾ÆÀÌÅÛ »ý¼º/»èÁ¦
+	GM_TOOL_AUTH_ITEM_INFO,					// ì•„ì´í…œ ì •ë³´
+	GM_TOOL_AUTH_ITEM_CREATE,				// ì•„ì´í…œ ìƒì„±/ì‚­ì œ
 
-	GM_TOOL_AUTH_QUEST_INFO,				// Äù½ºÆ® Á¤º¸
-	GM_TOOL_AUTH_QUEST_CHANGE,				// Äù½ºÆ® º¯°æ(»èÁ¦)
+	GM_TOOL_AUTH_QUEST_INFO,				// í€˜ìŠ¤íŠ¸ ì •ë³´
+	GM_TOOL_AUTH_QUEST_CHANGE,				// í€˜ìŠ¤íŠ¸ ë³€ê²½(ì‚­ì œ)
 
-	GM_TOOL_AUTH_PUNISH_INFO,				// Á¦Àç Á¤º¸
-	GM_TOOL_AUTH_PUNISH_CONNECTION,			// Á¢¼Ó Á¦Àç Àû¿ë ¹× ÇØÁ¦
-	GM_TOOL_AUTH_PUNISH_FUNCTION,			// ±â´É Á¦Àç Àû¿ë ¹× ÇØÁ¦
-	GM_TOOL_AUTH_PUNISH_CHAR_NAME_CHANGE,	// Ä³¸¯ÅÍ ÀÌ¸§ º¯°æ(Á¦Àç)
+	GM_TOOL_AUTH_PUNISH_INFO,				// ì œìž¬ ì •ë³´
+	GM_TOOL_AUTH_PUNISH_CONNECTION,			// ì ‘ì† ì œìž¬ ì ìš© ë° í•´ì œ
+	GM_TOOL_AUTH_PUNISH_FUNCTION,			// ê¸°ëŠ¥ ì œìž¬ ì ìš© ë° í•´ì œ
+	GM_TOOL_AUTH_PUNISH_CHAR_NAME_CHANGE,	// ìºë¦­í„° ì´ë¦„ ë³€ê²½(ì œìž¬)
 
-	GM_TOOL_AUTH_GUILD_INFO,				// À¯ÆÄ Á¤º¸ Á¶È¸
-	GM_TOOL_AUTH_GUILD_UPDATE,				// À¯ÆÄ Á¤º¸ ¼öÁ¤
-	GM_TOOL_AUTH_GUILD_ITEM_DELETE,			// ¾ÆÀÌÅÛ »èÁ¦
+	GM_TOOL_AUTH_GUILD_INFO,				// ìœ íŒŒ ì •ë³´ ì¡°íšŒ
+	GM_TOOL_AUTH_GUILD_UPDATE,				// ìœ íŒŒ ì •ë³´ ìˆ˜ì •
+	GM_TOOL_AUTH_GUILD_ITEM_DELETE,			// ì•„ì´í…œ ì‚­ì œ
 
-	GM_TOOL_AUTH_NOTICE_REPEAT_INFO,		// ¹Ýº¹ °øÁö Á¤º¸
-	GM_TOOL_AUTH_NOTICE_REPEAT,				// ¹Ýº¹ °øÁö °¡´É
-	GM_TOOL_AUTH_NOTICE_REALTIME,			// ½Ç½Ã°£ °øÁö °¡´É
+	GM_TOOL_AUTH_NOTICE_REPEAT_INFO,		// ë°˜ë³µ ê³µì§€ ì •ë³´
+	GM_TOOL_AUTH_NOTICE_REPEAT,				// ë°˜ë³µ ê³µì§€ ê°€ëŠ¥
+	GM_TOOL_AUTH_NOTICE_REALTIME,			// ì‹¤ì‹œê°„ ê³µì§€ ê°€ëŠ¥
 
-	GM_TOOL_AUTH_SVRSTATUS_INFO,			// ¼­¹ö »óÅÂ Á¤º¸
-	GM_TOOL_AUTH_SVRSTATUS_CHANGE,			// ¼­¹ö »óÅÂ º¯°æ
-	GM_TOOL_AUTH_SVRSTATUS_SERVERONOFF_CHANGE,			// ¼­¹ö »óÅÂ º¯°æ
+	GM_TOOL_AUTH_SVRSTATUS_INFO,			// ì„œë²„ ìƒíƒœ ì •ë³´
+	GM_TOOL_AUTH_SVRSTATUS_CHANGE,			// ì„œë²„ ìƒíƒœ ë³€ê²½
+	GM_TOOL_AUTH_SVRSTATUS_SERVERONOFF_CHANGE,			// ì„œë²„ ìƒíƒœ ë³€ê²½
 
 	//GM_TOOL_PETITION_1,						// PETITION
 
-	GM_TOOL_AUTH_GM_INFO,					// GM Á¶È¸
-	GM_TOOL_AUTH_GM_CREATE,					// GM »ý¼º
-	GM_TOOL_AUTH_GM_CHANGE,					// GM º¯°æ
-	GM_TOOL_AUTH_GM_DELETE,					// GM »èÁ¦
+	GM_TOOL_AUTH_GM_INFO,					// GM ì¡°íšŒ
+	GM_TOOL_AUTH_GM_CREATE,					// GM ìƒì„±
+	GM_TOOL_AUTH_GM_CHANGE,					// GM ë³€ê²½
+	GM_TOOL_AUTH_GM_DELETE,					// GM ì‚­ì œ
 
-	GM_TOOL_AUTH_GROUP_INFO,				// ±×·ì Á¶È¸
-	GM_TOOL_AUTH_GROUP_CREATE,				// ±×·ì Ãß°¡/»èÁ¦
-	GM_TOOL_AUTH_GROUP_AUTH_CHANGE,			// ±×·ì ±ÇÇÑ ¼³Á¤
-	GM_TOOL_AUTH_GROUP_LEVEL_CHANGE,		// ±×·ì ·¹º§ º¯°æ
+	GM_TOOL_AUTH_GROUP_INFO,				// ê·¸ë£¹ ì¡°íšŒ
+	GM_TOOL_AUTH_GROUP_CREATE,				// ê·¸ë£¹ ì¶”ê°€/ì‚­ì œ
+	GM_TOOL_AUTH_GROUP_AUTH_CHANGE,			// ê·¸ë£¹ ê¶Œí•œ ì„¤ì •
+	GM_TOOL_AUTH_GROUP_LEVEL_CHANGE,		// ê·¸ë£¹ ë ˆë²¨ ë³€ê²½
 
-	GM_TOOL_AUTH_FILTERING_INFO,			// ÇÊÅÍ¸µ Á¶È¸
-	GM_TOOL_AUTH_FILTERING_CREATE,			// Ãß°¡/»èÁ¦/º¯°æ
-	GM_TOOL_AUTH_CHANGE_CHARNAME_FILTERINGISNOT,		//ÇÊÅÍ¸µ Àû¿ë ÇØÁ¦
+	GM_TOOL_AUTH_FILTERING_INFO,			// í•„í„°ë§ ì¡°íšŒ
+	GM_TOOL_AUTH_FILTERING_CREATE,			// ì¶”ê°€/ì‚­ì œ/ë³€ê²½
+	GM_TOOL_AUTH_CHANGE_CHARNAME_FILTERINGISNOT,		//í•„í„°ë§ ì ìš© í•´ì œ
 
-	GM_TOOL_GM_COMMAND_USE,					// GM ¸í·É¾î »ç¿ë [7/1/2008 SGpro]
+	GM_TOOL_GM_COMMAND_USE,					// GM ëª…ë ¹ì–´ ì‚¬ìš© [7/1/2008 SGpro]
 
-	// »õ·Î¿î ±ÇÇÑÀÌ Ãß°¡ µÉ °æ¿ì¿¡´Â °¡Àå ¾Æ·§ÂÊ¿¡ Ãß°¡ ÇØ¾ß ÇÑ´Ù.
-	// ±âÁ¸ ±ÇÇÑ »çÀÌ¿¡ ³¢¾î ³ÖÀ»°æ¿ì DBÀÇ ³»¿ëÀÌ Æ²¾îÁö°Ô µÇ¹Ç·Î ÁÖÀÇÇÑ´Ù.
+	// ìƒˆë¡œìš´ ê¶Œí•œì´ ì¶”ê°€ ë  ê²½ìš°ì—ëŠ” ê°€ìž¥ ì•„ëž«ìª½ì— ì¶”ê°€ í•´ì•¼ í•œë‹¤.
+	// ê¸°ì¡´ ê¶Œí•œ ì‚¬ì´ì— ë¼ì–´ ë„£ì„ê²½ìš° DBì˜ ë‚´ìš©ì´ í‹€ì–´ì§€ê²Œ ë˜ë¯€ë¡œ ì£¼ì˜í•œë‹¤.
 
 	GM_TOOL_AUTH_COUNT,
 	GM_TOOL_AUTH_INVALID = INVALID_BYTE
@@ -118,11 +118,11 @@ enum eGM_TOOL_AUTH_TYPE
 //--------------------------------------------------------------------------------------------------
 //
 
-// SM_SEARCH_PC_DATA_REQ, MS_SEARCH_PC_DATA_RES ÇÁ·ÎÅäÄÝÀÌ ¾î¶² ¿ëµµ·Î »ç¿ëÇÏ´ÂÁö¸¦ ºÐ·ù
+// SM_SEARCH_PC_DATA_REQ, MS_SEARCH_PC_DATA_RES í”„ë¡œí† ì½œì´ ì–´ë–¤ ìš©ë„ë¡œ ì‚¬ìš©í•˜ëŠ”ì§€ë¥¼ ë¶„ë¥˜
 enum eSEARCH_USE_TYPE
 {
-	 SEARCH_USE_SEARCH_PAGE = 0			// °Ë»ö ÆäÀÌÁö¿¡¼­ »ç¿ë
-	,SEARCH_USE_PUBLIC_SEARCH_DATA		// °øÅë °Ë»ö Á¤º¸ ¾÷µ¥ÀÌÆ®¿¡ »ç¿ë
+	 SEARCH_USE_SEARCH_PAGE = 0			// ê²€ìƒ‰ íŽ˜ì´ì§€ì—ì„œ ì‚¬ìš©
+	,SEARCH_USE_PUBLIC_SEARCH_DATA		// ê³µí†µ ê²€ìƒ‰ ì •ë³´ ì—…ë°ì´íŠ¸ì— ì‚¬ìš©
 
 	,SEARCH_USE_TYPE_COUNT
 	,INVALID_SEARCH_USE_TYPE = -1
@@ -131,15 +131,15 @@ enum eSEARCH_USE_TYPE
 //--------------------------------------------------------------------------------------------------
 //
 
-// CQuery_GMLoginInfoLoad °¡ ¾î¶² ¿ëµµ·Î »ç¿ëµÉÁö¸¦ ºÐ·ù
+// CQuery_GMLoginInfoLoad ê°€ ì–´ë–¤ ìš©ë„ë¡œ ì‚¬ìš©ë ì§€ë¥¼ ë¶„ë¥˜
 enum eLOGIN_INFO_USE_TYPE
 {
-	LOGIN_INFO_USE_PUNISHMENT,					// Á¦Àç¿¡¼­ »ç¿ë
-	LOGIN_INFO_USE_TOOL_PUBLIC_SEARCH_DATA,		// Åø¿¡¼­ °øÅë °Ë»ö Ã¢ÀÇ µ¥ÀÌÅÍ·Î »ç¿ë
+	LOGIN_INFO_USE_PUNISHMENT,					// ì œìž¬ì—ì„œ ì‚¬ìš©
+	LOGIN_INFO_USE_TOOL_PUBLIC_SEARCH_DATA,		// íˆ´ì—ì„œ ê³µí†µ ê²€ìƒ‰ ì°½ì˜ ë°ì´í„°ë¡œ ì‚¬ìš©
 };
 
 
-// ÁÖ±âÀû °øÁö : Visible
+// ì£¼ê¸°ì  ê³µì§€ : Visible
 enum eGM_REPEAT_NOTICE_VISIBLE_TYPE
 {
 	GM_REPEAT_NOTICE_DISABLE = 0,
@@ -167,11 +167,11 @@ struct sLOGIN_INFO_USE_PUNISHMENT
 
 struct sLOGIN_INFO_USE_SUBDATA
 {
-	eLOGIN_INFO_USE_TYPE eType;		// Äõ¸® ¿äÃ»À» ÇÑ °÷ÀÇ Å¸ÀÔÀ» ÀúÀå
+	eLOGIN_INFO_USE_TYPE eType;		// ì¿¼ë¦¬ ìš”ì²­ì„ í•œ ê³³ì˜ íƒ€ìž…ì„ ì €ìž¥
 
 	union
 	{
-		sLOGIN_INFO_USE_PUNISHMENT			sUsePunishment;		// LOGIN_INFO_USE_PUNISHMENT ÀÏ¶§ »ç¿ë
+		sLOGIN_INFO_USE_PUNISHMENT			sUsePunishment;		// LOGIN_INFO_USE_PUNISHMENT ì¼ë•Œ ì‚¬ìš©
 	};
 };
 
@@ -179,10 +179,10 @@ struct sLOGIN_INFO_USE_SUBDATA
 //---------------------------------------------------------------------------------------------------------
 //
 
-// KICK Á¤º¸
+// KICK ì •ë³´
 struct sKICK_INFO_USE_SUBDATA
 {
-	eKICK_INFO_USE_TYPE eType;		// Äõ¸® ¿äÃ»À» ÇÑ °÷ÀÇ Å¸ÀÔÀ» ÀúÀå
+	eKICK_INFO_USE_TYPE eType;		// ì¿¼ë¦¬ ìš”ì²­ì„ í•œ ê³³ì˜ íƒ€ìž…ì„ ì €ìž¥
 };	
 
 //
@@ -190,7 +190,7 @@ struct sKICK_INFO_USE_SUBDATA
 
 
 
-// ¼­¹ö±º ÀÌ¸§
+// ì„œë²„êµ° ì´ë¦„
 struct sSERVERFARM_NAME
 {
 	SERVERFARMID	serverFarmId;
@@ -198,10 +198,10 @@ struct sSERVERFARM_NAME
 };
 
 
-// ÇÑ¸í¿¡ ´ëÇÑ Á¤º¸
+// í•œëª…ì— ëŒ€í•œ ì •ë³´
 struct sCHARSEARCH_ENTITY
 {
-	SERVERFARMID	serverFarmId;										// ¼­¹ö±º ¾ÆÀÌµð
+	SERVERFARMID	serverFarmId;										// ì„œë²„êµ° ì•„ì´ë””
 	ACCOUNTID		accountID;											// User Serial
 	WCHAR			wszUserID[NTL_MAX_SIZE_USERID + 1];		// User ID
 	CHARACTERID		charID;												// Character Serial
@@ -210,9 +210,9 @@ struct sCHARSEARCH_ENTITY
 	BYTE			byRace;												// Race
 	BYTE			byClass;											// Class
 	BYTE			byGender;											// Gender
-	BYTE			byDelType;											// »èÁ¦µÈ Ä³¸¯ÅÍ eDEL_TYPE - NtlCharacter.h [6/23/2008 SGpro]
-	sDBO_TIME		tmCreateTime;										// Ä³¸¯ÅÍ »ý¼ºÀÏ [6/23/2008 SGpro]
-	sDBO_TIME		tmDeleteTime;										// Ä³¸¯ÅÍ »èÁ¦ÀÏ [6/23/2008 SGpro]
+	BYTE			byDelType;											// ì‚­ì œëœ ìºë¦­í„° eDEL_TYPE - NtlCharacter.h [6/23/2008 SGpro]
+	sDBO_TIME		tmCreateTime;										// ìºë¦­í„° ìƒì„±ì¼ [6/23/2008 SGpro]
+	sDBO_TIME		tmDeleteTime;										// ìºë¦­í„° ì‚­ì œì¼ [6/23/2008 SGpro]
 };
 
 
@@ -220,8 +220,8 @@ struct sCHARSEARCH_ENTITY
 struct sSERVERSTATUS_ENTITY
 {
 	bool				bIsOn;					// on / off
-	DWORD				dwMaxLoad;				// ÃÖ´ë Çã¿ëÄ¡ µðÆúÆ®°ª
-	DWORD				dwLoad;					// ÇöÀç Á¢¼ÓÀÚ ¼ö
+	DWORD				dwMaxLoad;				// ìµœëŒ€ í—ˆìš©ì¹˜ ë””í´íŠ¸ê°’
+	DWORD				dwLoad;					// í˜„ìž¬ ì ‘ì†ìž ìˆ˜
 	DWORD				dwProcessUsage;			// Process Usage
 	DWORD				dwSystemUsage;			// System Usage
 	DWORD				dwMemoryUsage;			// Memory Usage
@@ -244,7 +244,7 @@ struct sSERVERGROUPSTATUS_ENTITY
 	BYTE				byServerGroupType; // eNtlServerGroupType
 	SERVERFARMID		serverFarmId;
 	BYTE				byServerChannelIndex;
-	bool				bIsLock; //Lock & UnLock ¿©ºÎ¸¦ ÀúÀå
+	bool				bIsLock; //Lock & UnLock ì—¬ë¶€ë¥¼ ì €ìž¥
 };
 
 
@@ -254,23 +254,23 @@ struct sSERVERGROUPSTATUS_ENTITY
 // 
 enum ePUNISH_APPLY_TYPE
 {
-	PUNISH_APPLY_OFF,		// ÇØÁ¦
-	PUNISH_APPLY_ON,		// Àû¿ë
+	PUNISH_APPLY_OFF,		// í•´ì œ
+	PUNISH_APPLY_ON,		// ì ìš©
 };
 
 
-// Á¦Àç ½Ã°£ Á¾·ù
+// ì œìž¬ ì‹œê°„ ì¢…ë¥˜
 enum ePUNISH_PERIOD_TYPE
 {
-	PUNISH_PERIOD_DAY,		// ÀÏ
-	PUNISH_PERIOD_MINUTE,	// ºÐ
-	// PUNISH_PERIOD_NONE,		// ¼±ÅÃÇÏ¼¼¿ä [ by sooshia 07/17/2008 UI»ó »©´Â°Ô ÁÁ´Ù°í ÇÏ¿© »èÁ¦ÇÔ ]
+	PUNISH_PERIOD_DAY,		// ì¼
+	PUNISH_PERIOD_MINUTE,	// ë¶„
+	// PUNISH_PERIOD_NONE,		// ì„ íƒí•˜ì„¸ìš” [ by sooshia 07/17/2008 UIìƒ ë¹¼ëŠ”ê²Œ ì¢‹ë‹¤ê³  í•˜ì—¬ ì‚­ì œí•¨ ]
 
 	PUNISH_PERIOD_COUNT
 };
 
 
-// Á¦Àç ±âº» Á¤º¸
+// ì œìž¬ ê¸°ë³¸ ì •ë³´
 struct sPUNISHMENT_ENTITY
 {
 	SERVERFARMID			serverFarmID;
@@ -301,7 +301,7 @@ struct sPUNISHMENT_ENTITY
 //--------------------------------------------------------------------------------------------------------------
 // GM Registration
 
-// GM °Ë»ö Å¸ÀÔ
+// GM ê²€ìƒ‰ íƒ€ìž…
 enum eGM_SEARCH_TYPE
 {
 	eGM_SEARCH_GROUP = 0,
@@ -319,16 +319,16 @@ union uGM_TOOL_IP_ADDRESS
 };
 
 
-// GM Á¤º¸
+// GM ì •ë³´
 struct sGM_ENTITY
 {
 	ACCOUNTID				gmAccountID;											// User Account ID
 	WCHAR					wszUserID[NTL_MAX_SIZE_USERID + 1];				// User ID
-	ACCOUNTID				accountID;												// Game Server¿¡¼­ÀÇ GM AccountID
+	ACCOUNTID				accountID;												// Game Serverì—ì„œì˜ GM AccountID
 	DWORD					dwGroupSerial;											// Group
-	uGM_TOOL_IP_ADDRESS		uAllowIP;												// Á¢¼Ó °¡´ÉÇÑ IP
+	uGM_TOOL_IP_ADDRESS		uAllowIP;												// ì ‘ì† ê°€ëŠ¥í•œ IP
 
-	WCHAR					wszGMName[NTL_MAX_SIZE_CHAR_NAME + 1];// ´ëÀÀ »óÈ²ÀÇ GM ÀÌ¸§
+	WCHAR					wszGMName[NTL_MAX_SIZE_CHAR_NAME + 1];// ëŒ€ì‘ ìƒí™©ì˜ GM ì´ë¦„
 };
 
 
@@ -357,18 +357,18 @@ struct sGM_ETC_AUTH_FLAG
 
 
 //------------------------------------------------------------------------------
-// °øÁö
+// ê³µì§€
 
 struct sGM_REPEAT_NOTICE_ENTITY
 {
-	DWORD				dwSerial;			// = System Tool¿¡¼­ °øÁö Ãß°¡ ¿äÃ»½Ã INVALID_DWORD °ªÀ¸·Î ¼³Á¤
+	DWORD				dwSerial;			// = System Toolì—ì„œ ê³µì§€ ì¶”ê°€ ìš”ì²­ì‹œ INVALID_DWORD ê°’ìœ¼ë¡œ ì„¤ì •
 	BYTE				byEnable;			// eGM_REPEAT_NOTICE_VISIBLE_TYPE
 	SERVERFARMID		serverFarmID;
 	BYTE				channelID;
 	BYTE				byNoticeType;		// eSERVER_TEXT_TYPE
 	INT64				nStartTime;
 	INT64				nEndTime;
-	WORD				wNoticeTerm;		// °øÁö ÅÒ : ºÐ´ÜÀ§
+	WORD				wNoticeTerm;		// ê³µì§€ í…€ : ë¶„ë‹¨ìœ„
 	WCHAR				wszNotice[NTL_MAX_LENGTH_OF_CHAT_MESSAGE+1];
 };
 
@@ -378,7 +378,7 @@ struct sGM_ACCOUNT_COMMENT
 	WCHAR				wszComment[NTL_MAX_LENGTH_OF_CHAT_MESSAGE+1];
 };
 
-//°¡º¯ ÆÐÅ¶¿ë
+//ê°€ë³€ íŒ¨í‚·ìš©
 struct sGM_PACKET_ACCOUNT_COMMENT
 {
 	ACCOUNTID			accountID;
@@ -386,7 +386,7 @@ struct sGM_PACKET_ACCOUNT_COMMENT
 	WCHAR				wszComment[NTL_MAX_LENGTH_OF_CHAT_MESSAGE+1];
 };
 
-// °Ë»ö Å¸ÀÔ [4/22/2008 SGpro]
+// ê²€ìƒ‰ íƒ€ìž… [4/22/2008 SGpro]
 enum eTOOL_GUILD_SERACH_TYPE
 {
 	NTL_TOOL_GUILD_SERACH_TYPE_GUILDNAME = 0,

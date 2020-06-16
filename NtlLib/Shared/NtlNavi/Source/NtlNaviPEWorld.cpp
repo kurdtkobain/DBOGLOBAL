@@ -83,7 +83,7 @@ bool CNtlNaviPEWorld::ImportPathData( const char* pPath, unsigned char byLoadFla
 
 	if ( byLoadFlags & ePATH_DATA_LOAD_FLAG_LOAD_ONLY_WORLD )
 	{
-		// ÇØ´ç Æú´õ°¡ Á¸ÀçÇÏ´ÂÁö °Ë»çÇÑ´Ù
+		// í•´ë‹¹ í´ë”ê°€ ì¡´ìž¬í•˜ëŠ”ì§€ ê²€ì‚¬í•œë‹¤
 		bool bFindPathFolder = false;
 
 		{
@@ -115,7 +115,7 @@ bool CNtlNaviPEWorld::ImportPathData( const char* pPath, unsigned char byLoadFla
 			}
 		}
 
-		// ÇØ´ç ÆÐ½º¸¦ ¸øÃ£À¸¸é ÆÐ½º µ¥ÀÌÅÍ¸¸ »ç¿ëÇÏÁö ¾Ê´Â °ÍÀ¸·Î Ã³¸®ÇÑ´Ù
+		// í•´ë‹¹ íŒ¨ìŠ¤ë¥¼ ëª»ì°¾ìœ¼ë©´ íŒ¨ìŠ¤ ë°ì´í„°ë§Œ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ê²ƒìœ¼ë¡œ ì²˜ë¦¬í•œë‹¤
 		if ( !bFindPathFolder )
 		{
 			return true;
@@ -135,7 +135,7 @@ bool CNtlNaviPEWorld::ImportPathData( const char* pPath, unsigned char byLoadFla
 
 	SetCurState( eNAVI_PE_STATE_LOADING );
 
-	// Multi-thread ·ÎµùÀÌ ¾Æ´Ñ °æ¿ì
+	// Multi-thread ë¡œë”©ì´ ì•„ë‹Œ ê²½ìš°
 	if ( NULL == CNtlLoadingQueue::GetInstance() )
 	{
 		return CheckLoadComplete();
@@ -262,7 +262,7 @@ unsigned int CNtlNaviPEWorld::GetAttribute( float x, float z )
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 
@@ -278,7 +278,7 @@ unsigned int CNtlNaviPEWorld::GetAttribute( float x, float z )
 					return 0;
 				}
 
-				// Tile id °è»ê
+				// Tile id ê³„ì‚°
 
 				float fTileSize = pODInfo->GetTileSize();
 
@@ -306,7 +306,7 @@ unsigned int CNtlNaviPEWorld::GetAttribute( float x, float z )
 				pIDInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pIDInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Block id °è»ê
+				// Block id ê³„ì‚°
 
 				float fBlockSize = pIDInfo->GetBlockSize();
 
@@ -386,7 +386,7 @@ unsigned int CNtlNaviPEWorld::GetTextAllIndex( float x, float z )
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 
@@ -423,7 +423,7 @@ unsigned int CNtlNaviPEWorld::GetTextAllIndex( float x, float z )
 				pIDInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pIDInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Block id °è»ê
+				// Block id ê³„ì‚°
 
 				float fBlockSize = pIDInfo->GetBlockSize();
 
@@ -473,7 +473,7 @@ unsigned int CNtlNaviPEWorld::GetZoneIndex( float x, float z )
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 
@@ -510,7 +510,7 @@ unsigned int CNtlNaviPEWorld::GetZoneIndex( float x, float z )
 				pIDInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pIDInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Block id °è»ê
+				// Block id ê³„ì‚°
 
 				float fBlockSize = pIDInfo->GetBlockSize();
 
@@ -560,7 +560,7 @@ float CNtlNaviPEWorld::GetHeight( float x, float y, float z )
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -608,7 +608,7 @@ float CNtlNaviPEWorld::GetHeight( float x, float y, float z )
 
 			if ( pIDInfo )
 			{
-				// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+				// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 				if ( m_defGroupDataList.size() != 1 )
 				{
 					return NAVI_FLT_MAX;
@@ -696,7 +696,7 @@ float CNtlNaviPEWorld::GetGuaranteedHeight( float x, float y, float z )
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -744,7 +744,7 @@ float CNtlNaviPEWorld::GetGuaranteedHeight( float x, float y, float z )
 
 			if ( pIDInfo )
 			{
-				// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+				// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 				if ( m_defGroupDataList.size() != 1 )
 				{
 					return NAVI_FLT_MAX;
@@ -810,7 +810,7 @@ bool CNtlNaviPEWorld::FindNearestPos( NAVI_INST_HANDLE hHandle, float fAgentRadi
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -896,7 +896,7 @@ bool CNtlNaviPEWorld::FindNearestPos( NAVI_INST_HANDLE hHandle, float fAgentRadi
 					return false;
 				}
 
-				// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+				// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 				if ( m_defGroupDataList.size() != 1 )
 				{
 					return false;
@@ -992,7 +992,7 @@ bool CNtlNaviPEWorld::FindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentRadiu
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -1082,7 +1082,7 @@ bool CNtlNaviPEWorld::FindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentRadiu
 				return false;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 			if (m_defGroupDataList.size() != 1)
 			{
 				return false;
@@ -1152,17 +1152,17 @@ bool CNtlNaviPEWorld::FindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentRadiu
 }
 
 /**
-* \brief Ãæµ¹ °Ë»ç
-* \remark AgentÀÇ ¹ÝÁö¸§À» ±½±â·Î °¡Áö´Â ÇÏ³ªÀÇ ¶óÀÎÀÌ ObstacleÀÌ³ª Navigation mesh¿¡¼­ Ãæµ¹ÀÌ µÇ´ÂÁö ¾ÈµÇ´ÂÁöÀÇ ¿©ºÎ¸¦ Test ÇÑ´Ù.
-* \param nHandle WORLDÀÇ ID¿Í iMesh Data¸¦ °¡Áö´Â ±¸Á¶Ã¼¸¦ ( void* ) À¸·Î Ä³½ºÆÃÇÏ±â À§ÇØ »ç¿ëµÇ´Â Handle
-* \param fAgentRadius AgentÀÇ ¹ÝÁö¸§
-* \param vSourcePos	½ÃÀÛ ÁÂÇ¥
-* \param vTargetPos ³¡ ÁÂÇ¥
-* \return Ãæµ¹ °á°ú¸¦ ³ªÅ¸³»´Â eCOL_TEST_RESULT ¿­°ÅÇü
+* \brief ì¶©ëŒ ê²€ì‚¬
+* \remark Agentì˜ ë°˜ì§€ë¦„ì„ êµµê¸°ë¡œ ê°€ì§€ëŠ” í•˜ë‚˜ì˜ ë¼ì¸ì´ Obstacleì´ë‚˜ Navigation meshì—ì„œ ì¶©ëŒì´ ë˜ëŠ”ì§€ ì•ˆë˜ëŠ”ì§€ì˜ ì—¬ë¶€ë¥¼ Test í•œë‹¤.
+* \param nHandle WORLDì˜ IDì™€ iMesh Dataë¥¼ ê°€ì§€ëŠ” êµ¬ì¡°ì²´ë¥¼ ( void* ) ìœ¼ë¡œ ìºìŠ¤íŒ…í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” Handle
+* \param fAgentRadius Agentì˜ ë°˜ì§€ë¦„
+* \param vSourcePos	ì‹œìž‘ ì¢Œí‘œ
+* \param vTargetPos ë ì¢Œí‘œ
+* \return ì¶©ëŒ ê²°ê³¼ë¥¼ ë‚˜íƒ€ë‚´ëŠ” eCOL_TEST_RESULT ì—´ê±°í˜•
 */
 eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float fAgentRadius, CNtlNaviVector3& vSourcePos, CNtlNaviVector3& vTargetPos )
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if ( eNAVI_PE_STATE_COMPLETE != GetCurState() )
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -1177,40 +1177,40 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 		{
 			CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-			// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+			// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 			if ( pODInfo )
 			{
-				// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+				// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 				mapdef_AgentList::iterator itAgent = m_defAgentList.find( fAgentRadius );
 				if ( itAgent == m_defAgentList.end() )
 				{
 					return eCOL_TEST_RESULT_FAILED;
 				}
 
-				// ÇöÀç OutDoorÀÇ ÀüÃ¼ Å©±â °è»ê
+				// í˜„ìž¬ OutDoorì˜ ì „ì²´ í¬ê¸° ê³„ì‚°
 				float fMinPosX, fMinPosZ;
 				float fMaxPosX, fMaxPosZ;
 
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
 
-				unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// GroupÀÇ Çà °è»ê
-				unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// GroupÀÇ X °è»ê
-				unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// GroupÀÇ Z °è»ê
+				unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// Groupì˜ í–‰ ê³„ì‚°
+				unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// Groupì˜ X ê³„ì‚°
+				unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// Groupì˜ Z ê³„ì‚°
 				unsigned int uiGroupID = uiGroupX + uiGroupZ * uiCrossGroupCnt;						// Group ID
 
-				// GroupÀÇ ID·Î ÇöÀç X Y °¡ ¼ÓÇØ ÀÖ´Â GroupÀ» ²¨³»¿Â´Ù.
+				// Groupì˜ IDë¡œ í˜„ìž¬ X Y ê°€ ì†í•´ ìžˆëŠ” Groupì„ êº¼ë‚´ì˜¨ë‹¤.
 				mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find( uiGroupID );
 				if ( itGroup == m_defGroupDataList.end() )
 				{
 					return eCOL_TEST_RESULT_FAILED;
 				}
 
-				// Group Data¸¦ ²¨³»¿Â´Ù.
+				// Group Dataë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 				sGROUP_DATA& sGroupData = itGroup->second;
 				if ( NULL == sGroupData.pGroundMesh )
 				{
@@ -1219,7 +1219,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 
 				tSigned32 arTemp[3];
 
-				// SourceÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+				// Sourceì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 				arTemp[0] = (tSigned32) WORLD_COORD_TO_PATH_COORD( x );
 				arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( z );
 				arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vSourcePos.GetY() );
@@ -1229,7 +1229,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 					return eCOL_TEST_RESULT_INVALID_SRC_POS;
 				}
 
-				// TargetÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+				// Targetì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 				arTemp[0] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetX() );
 				arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetZ() );
 				arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetY() );
@@ -1239,7 +1239,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 					return eCOL_TEST_RESULT_INVALID_DEST_POS;
 				}
 
-				// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+				// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 				iCollisionContext* pContext = NULL;
 				if ( hHandle )
 				{
@@ -1256,7 +1256,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 					}
 				}
 
-				// Source ¿Í Target À» ÀÕ´Â LineÀÌ Ãæµ¹µÇ´ÂÁö ¾ÈµÇ´ÂÁö Å×½ºÆ®ÇÑ´Ù.
+				// Source ì™€ Target ì„ ìž‡ëŠ” Lineì´ ì¶©ëŒë˜ëŠ”ì§€ ì•ˆë˜ëŠ”ì§€ í…ŒìŠ¤íŠ¸í•œë‹¤.
 				eCOL_TEST_RESULT eTestResult = eCOL_TEST_RESULT_FAILED;
 				if( sGroupData.pGroundMesh->testLineCollision( itAgent->second.pShape, pContext, cSourcePos, cTargetPos ) )
 					eTestResult = eCOL_TEST_RESULT_COL;
@@ -1279,7 +1279,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 					return eCOL_TEST_RESULT_FAILED;
 				}
 
-				// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ. ±×·¸Áö ¾Ê´Â °æ¿ìÀÇ Data°¡ Àß¸øµÈ °ÍÀÓ
+				// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨. ê·¸ë ‡ì§€ ì•ŠëŠ” ê²½ìš°ì˜ Dataê°€ ìž˜ëª»ëœ ê²ƒìž„
 				if ( m_defGroupDataList.size() != 1 )
 				{
 					return eCOL_TEST_RESULT_FAILED;
@@ -1296,7 +1296,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 				arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( z );
 				arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vSourcePos.GetY() );
 
-				// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+				// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 				cPosition cSourcePos = sGroupData.pGroundMesh->positionNear3DPoint( arTemp, PATH_HORIZ_RANGE, PATH_VERT_RANGE );
 				if ( cSourcePos.cell == -1 )
 				{
@@ -1347,7 +1347,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest( NAVI_INST_HANDLE hHandle, float
 
 eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest(NAVI_INST_HANDLE hHandle, float fAgentRadius, sNAVI_FAST_POS & sSrcFastPos, sNAVI_FAST_POS & sDestFastPos)
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if (eNAVI_PE_STATE_COMPLETE != GetCurState())
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -1375,10 +1375,10 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest(NAVI_INST_HANDLE hHandle, float 
 	{
 		CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-		// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+		// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 		if (pODInfo)
 		{
-			// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+			// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			iCollisionContext* pContext = NULL;
 			if (hHandle)
 			{
@@ -1395,7 +1395,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest(NAVI_INST_HANDLE hHandle, float 
 				}
 			}
 
-			// Source ¿Í Target À» ÀÕ´Â LineÀÌ Ãæµ¹µÇ´ÂÁö ¾ÈµÇ´ÂÁö Å×½ºÆ®ÇÑ´Ù.
+			// Source ì™€ Target ì„ ìž‡ëŠ” Lineì´ ì¶©ëŒë˜ëŠ”ì§€ ì•ˆë˜ëŠ”ì§€ í…ŒìŠ¤íŠ¸í•œë‹¤.
 			eCOL_TEST_RESULT eTestResult = eCOL_TEST_RESULT_FAILED;
 			if (sSrcFastPos.pGround->testLineCollision(itAgent->second.pShape, pContext, sSrcFastPos.pos, sDestFastPos.pos))
 				eTestResult = eCOL_TEST_RESULT_COL;
@@ -1449,7 +1449,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::CollisionTest(NAVI_INST_HANDLE hHandle, float 
 */
 eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, float fAgentRadius, CNtlNaviVector3& vSourcePos, CNtlNaviVector3& vTargetPos, CNtlNaviVector3& vFirstCollison )
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if ( eNAVI_PE_STATE_COMPLETE != GetCurState() )
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -1464,40 +1464,40 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 		{
 			CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-			// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+			// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 			if ( pODInfo )
 			{
-				// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+				// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 				mapdef_AgentList::iterator itAgent = m_defAgentList.find( fAgentRadius );
 				if ( itAgent == m_defAgentList.end() )
 				{
 					return eCOL_TEST_RESULT_FAILED;
 				}
 
-				// ÇöÀç OutDoorÀÇ ÀüÃ¼ Å©±â °è»ê
+				// í˜„ìž¬ OutDoorì˜ ì „ì²´ í¬ê¸° ê³„ì‚°
 				float fMinPosX, fMinPosZ;
 				float fMaxPosX, fMaxPosZ;
 
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
 
-				unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// GroupÀÇ Çà °è»ê
-				unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// GroupÀÇ X °è»ê
-				unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// GroupÀÇ Z °è»ê
+				unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// Groupì˜ í–‰ ê³„ì‚°
+				unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// Groupì˜ X ê³„ì‚°
+				unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// Groupì˜ Z ê³„ì‚°
 				unsigned int uiGroupID = uiGroupX + uiGroupZ * uiCrossGroupCnt;						// Group ID
 
-				// GroupÀÇ ID·Î ÇöÀç X Y °¡ ¼ÓÇØ ÀÖ´Â GroupÀ» ²¨³»¿Â´Ù.
+				// Groupì˜ IDë¡œ í˜„ìž¬ X Y ê°€ ì†í•´ ìžˆëŠ” Groupì„ êº¼ë‚´ì˜¨ë‹¤.
 				mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find( uiGroupID );
 				if ( itGroup == m_defGroupDataList.end() )
 				{
 					return eCOL_TEST_RESULT_FAILED;
 				}
 
-				// Group Data¸¦ ²¨³»¿Â´Ù.
+				// Group Dataë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 				sGROUP_DATA& sGroupData = itGroup->second;
 				if ( NULL == sGroupData.pGroundMesh )
 				{
@@ -1506,7 +1506,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 
 				tSigned32 arTemp[3];
 
-				// SourceÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+				// Sourceì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 				arTemp[0] = (tSigned32) WORLD_COORD_TO_PATH_COORD( x );
 				arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( z );
 				arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vSourcePos.GetY() );
@@ -1516,7 +1516,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					return eCOL_TEST_RESULT_INVALID_SRC_POS;
 				}
 
-				// TargetÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+				// Targetì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 				/*arTemp[0] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetX() );
 				arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetZ() );
 				arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetY() );
@@ -1526,12 +1526,12 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					return eCOL_TEST_RESULT_INVALID_DEST_POS;
 				}*/
 
-				// FirstCollisionTest¿¡¼­´Â TargetPos°¡ Valid ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+				// FirstCollisionTestì—ì„œëŠ” TargetPosê°€ Valid í•  í•„ìš”ê°€ ì—†ë‹¤.
 				cPosition cTargetPos;
 				cTargetPos.x = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetX() );
 				cTargetPos.y = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetZ() );
 				
-				// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+				// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 				iCollisionContext* pContext = NULL;
 				if ( hHandle )
 				{
@@ -1552,12 +1552,12 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 				iCollisionInfo* pCollisionInfo = sGroupData.pGroundMesh->firstCollision( itAgent->second.pShape, pContext, cSourcePos, cTargetPos.x, cTargetPos.y, cTargetPos.cell );
 				if( pCollisionInfo )
 				{
-					// Ãæµ¹µÈ ¸éÀÇ Edge°¡ ¸®ÅÏµÈ´Ù.
+					// ì¶©ëŒëœ ë©´ì˜ Edgeê°€ ë¦¬í„´ëœë‹¤.
 					long lCollisionCoord[4];
 					pCollisionInfo->getCollidingLine(lCollisionCoord);
 					delete pCollisionInfo;
 
-					// Source¿Í DestÀÇ ¶óÀÎ °ú Ãæµ¹µÈ ¸éÀÇ EdgeÀÇ ±³Á¡À» ±¸ÇÑ´Ù.
+					// Sourceì™€ Destì˜ ë¼ì¸ ê³¼ ì¶©ëŒëœ ë©´ì˜ Edgeì˜ êµì ì„ êµ¬í•œë‹¤.
 					float fSourceLineStartX = vSourcePos.GetX();
 					float fSourceLineStartY = vSourcePos.GetZ();
 					float fSourceLineEndX = vTargetPos.GetX();
@@ -1578,7 +1578,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					arTemp2[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossX);
 					arTemp2[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossY);
 
-					// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+					// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 					cPosition cDestPos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp2, PATH_HORIZ_RANGE, PATH_VERT_RANGE * 10);
 					if (cDestPos.cell == -1)
 					{
@@ -1621,7 +1621,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					return eCOL_TEST_RESULT_FAILED;
 				}
 
-				// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ. ±×·¸Áö ¾Ê´Â °æ¿ìÀÇ Data°¡ Àß¸øµÈ °ÍÀÓ
+				// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨. ê·¸ë ‡ì§€ ì•ŠëŠ” ê²½ìš°ì˜ Dataê°€ ìž˜ëª»ëœ ê²ƒìž„
 				if ( m_defGroupDataList.size() != 1 )
 				{
 					return eCOL_TEST_RESULT_FAILED;
@@ -1638,7 +1638,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 				arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( z );
 				arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vSourcePos.GetY() );
 
-				// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+				// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 				cPosition cSourcePos = sGroupData.pGroundMesh->positionNear3DPoint( arTemp, PATH_HORIZ_RANGE, PATH_VERT_RANGE );
 				if ( cSourcePos.cell == -1 )
 				{
@@ -1655,7 +1655,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					return eCOL_TEST_RESULT_INVALID_DEST_POS;
 				}*/
 
-				// FirstCollisionTest¿¡¼­´Â TargetPos°¡ Valid ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+				// FirstCollisionTestì—ì„œëŠ” TargetPosê°€ Valid í•  í•„ìš”ê°€ ì—†ë‹¤.
 				cPosition cTargetPos;
 				cTargetPos.x = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetX() );
 				cTargetPos.y = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetZ() );
@@ -1685,7 +1685,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					pCollisionInfo->getCollidingLine(lCollisionCoord);
 					delete pCollisionInfo;
 
-					// Source¿Í DestÀÇ ¶óÀÎ °ú Ãæµ¹µÈ ¸éÀÇ EdgeÀÇ ±³Á¡À» ±¸ÇÑ´Ù.
+					// Sourceì™€ Destì˜ ë¼ì¸ ê³¼ ì¶©ëŒëœ ë©´ì˜ Edgeì˜ êµì ì„ êµ¬í•œë‹¤.
 					float fSourceLineStartX = vSourcePos.GetX();
 					float fSourceLineStartY = vSourcePos.GetZ();
 					float fSourceLineEndX = vTargetPos.GetX();
@@ -1706,7 +1706,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 					arTemp2[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossX);
 					arTemp2[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossY);
 
-					// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+					// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 					cPosition cDestPos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp2, PATH_HORIZ_RANGE, PATH_VERT_RANGE * 10);
 					if (cDestPos.cell == -1)
 					{
@@ -1743,7 +1743,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest( NAVI_INST_HANDLE hHandle, 
 
 eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, float fAgentRadius, sNAVI_FAST_POS & vSourcePos, CNtlNaviVector3 & vTargetPos, CNtlNaviVector3 & vFirstCollison)
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if (eNAVI_PE_STATE_COMPLETE != GetCurState())
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -1758,17 +1758,17 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, f
 	{
 		CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-		// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+		// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 		if (pODInfo)
 		{
-			// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+			// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 			mapdef_AgentList::iterator itAgent = m_defAgentList.find(fAgentRadius);
 			if (itAgent == m_defAgentList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+			// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			iCollisionContext* pContext = NULL;
 			if (hHandle)
 			{
@@ -1799,12 +1799,12 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, f
 			iCollisionInfo* pCollisionInfo = vSourcePos.pGround->firstCollision(itAgent->second.pShape, pContext, vSourcePos.pos, cTargetPos.x, cTargetPos.y, cTargetPos.cell);
 			if (pCollisionInfo)
 			{
-				// Ãæµ¹µÈ ¸éÀÇ Edge°¡ ¸®ÅÏµÈ´Ù.
+				// ì¶©ëŒëœ ë©´ì˜ Edgeê°€ ë¦¬í„´ëœë‹¤.
 				long lCollisionCoord[4];
 				pCollisionInfo->getCollidingLine(lCollisionCoord);
 				delete pCollisionInfo;
 
-				// Source¿Í DestÀÇ ¶óÀÎ °ú Ãæµ¹µÈ ¸éÀÇ EdgeÀÇ ±³Á¡À» ±¸ÇÑ´Ù.
+				// Sourceì™€ Destì˜ ë¼ì¸ ê³¼ ì¶©ëŒëœ ë©´ì˜ Edgeì˜ êµì ì„ êµ¬í•œë‹¤.
 				float fSourceLineStartX = (float)vSourcePos.pos.x;
 				float fSourceLineStartY = (float)vSourcePos.pos.y;
 				float fSourceLineEndX = (float)cTargetPos.x;
@@ -1826,7 +1826,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, f
 				arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossX);
 				arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossY);
 
-				// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+				// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 				cPosition cSourcePos = vSourcePos.pGround->positionNear3DPoint(arTemp, PATH_HORIZ_RANGE, PATH_VERT_RANGE * 10);
 				if (cSourcePos.cell == -1)
 				{
@@ -1891,7 +1891,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, f
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// FirstCollisionTest¿¡¼­´Â TargetPos°¡ Valid ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+			// FirstCollisionTestì—ì„œëŠ” TargetPosê°€ Valid í•  í•„ìš”ê°€ ì—†ë‹¤.
 			cPosition cTargetPos;
 			cTargetPos.x = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetX());
 			cTargetPos.y = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetZ());
@@ -1905,7 +1905,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, f
 				pCollisionInfo->getCollidingLine(lCollisionCoord);
 				delete pCollisionInfo;
 
-				// Source¿Í DestÀÇ ¶óÀÎ °ú Ãæµ¹µÈ ¸éÀÇ EdgeÀÇ ±³Á¡À» ±¸ÇÑ´Ù.
+				// Sourceì™€ Destì˜ ë¼ì¸ ê³¼ ì¶©ëŒëœ ë©´ì˜ Edgeì˜ êµì ì„ êµ¬í•œë‹¤.
 				float fSourceLineStartX = (float)vSourcePos.pos.x;
 				float fSourceLineStartY = (float)vSourcePos.pos.y;
 				float fSourceLineEndX = (float)cTargetPos.x;
@@ -1927,7 +1927,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FirstCollisionTest(NAVI_INST_HANDLE hHandle, f
 				arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossX);
 				arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossY);
 
-				// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+				// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 				cPosition cSourcePos = vSourcePos.pGround->positionNear3DPoint(arTemp, PATH_HORIZ_RANGE, PATH_VERT_RANGE * 10);
 				if (cSourcePos.cell == -1)
 				{
@@ -1994,7 +1994,7 @@ bool CNtlNaviPEWorld::FindPath( NAVI_INST_HANDLE hHandle, float fAgentRadius, CN
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -2105,7 +2105,7 @@ bool CNtlNaviPEWorld::FindPath( NAVI_INST_HANDLE hHandle, float fAgentRadius, CN
 					return false;
 				}
 
-				// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+				// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 				if ( m_defGroupDataList.size() != 1 )
 				{
 					return false;
@@ -2292,7 +2292,7 @@ bool CNtlNaviPEWorld::FindPath(NAVI_INST_HANDLE hHandle, float fAgentRadius, sNA
 				return false;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 			if (m_defGroupDataList.size() != 1)
 			{
 				return false;
@@ -2385,7 +2385,7 @@ bool CNtlNaviPEWorld::FastFindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentR
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -2471,7 +2471,7 @@ bool CNtlNaviPEWorld::FastFindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentR
 				return false;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 			if (m_defGroupDataList.size() != 1)
 			{
 				return false;
@@ -2538,7 +2538,7 @@ bool CNtlNaviPEWorld::FastFindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentR
 
 eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandle, float fAgentRadius, CNtlNaviVector3 & vSourcePos, CNtlNaviVector3 & vTargetPos, CNtlNaviVector3 & vFirstCollison)
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if (eNAVI_PE_STATE_COMPLETE != GetCurState())
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -2553,40 +2553,40 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 	{
 		CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-		// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+		// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 		if (pODInfo)
 		{
-			// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+			// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 			mapdef_AgentList::iterator itAgent = m_defAgentList.find(fAgentRadius);
 			if (itAgent == m_defAgentList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÇöÀç OutDoorÀÇ ÀüÃ¼ Å©±â °è»ê
+			// í˜„ìž¬ OutDoorì˜ ì „ì²´ í¬ê¸° ê³„ì‚°
 			float fMinPosX, fMinPosZ;
 			float fMaxPosX, fMaxPosZ;
 
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
 
-			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// GroupÀÇ Çà °è»ê
-			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// GroupÀÇ X °è»ê
-			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// GroupÀÇ Z °è»ê
+			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// Groupì˜ í–‰ ê³„ì‚°
+			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// Groupì˜ X ê³„ì‚°
+			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// Groupì˜ Z ê³„ì‚°
 			unsigned int uiGroupID = uiGroupX + uiGroupZ * uiCrossGroupCnt;						// Group ID
 
-																								// GroupÀÇ ID·Î ÇöÀç X Y °¡ ¼ÓÇØ ÀÖ´Â GroupÀ» ²¨³»¿Â´Ù.
+																								// Groupì˜ IDë¡œ í˜„ìž¬ X Y ê°€ ì†í•´ ìžˆëŠ” Groupì„ êº¼ë‚´ì˜¨ë‹¤.
 			mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find(uiGroupID);
 			if (itGroup == m_defGroupDataList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// Group Data¸¦ ²¨³»¿Â´Ù.
+			// Group Dataë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			sGROUP_DATA& sGroupData = itGroup->second;
 			if (NULL == sGroupData.pGroundMesh)
 			{
@@ -2595,7 +2595,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 
 			tSigned32 arTemp[3];
 
-			// SourceÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Sourceì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(x);
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
@@ -2605,12 +2605,12 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 				return eCOL_TEST_RESULT_INVALID_SRC_POS;
 			}
 
-			// FirstCollisionTest¿¡¼­´Â TargetPos°¡ Valid ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+			// FirstCollisionTestì—ì„œëŠ” TargetPosê°€ Valid í•  í•„ìš”ê°€ ì—†ë‹¤.
 			cPosition cTargetPos;
 			cTargetPos.x = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetX());
 			cTargetPos.y = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetZ());
 
-			// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+			// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			iCollisionContext* pContext = NULL;
 			if (hHandle)
 			{
@@ -2631,12 +2631,12 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 			iCollisionInfo* pCollisionInfo = sGroupData.pGroundMesh->firstCollision(itAgent->second.pShape, pContext, cSourcePos, cTargetPos.x, cTargetPos.y, cTargetPos.cell);
 			if (pCollisionInfo)
 			{
-				// Ãæµ¹µÈ ¸éÀÇ Edge°¡ ¸®ÅÏµÈ´Ù.
+				// ì¶©ëŒëœ ë©´ì˜ Edgeê°€ ë¦¬í„´ëœë‹¤.
 				long lCollisionCoord[4];
 				pCollisionInfo->getCollidingLine(lCollisionCoord);
 				delete pCollisionInfo;
 
-				// Source¿Í DestÀÇ ¶óÀÎ °ú Ãæµ¹µÈ ¸éÀÇ EdgeÀÇ ±³Á¡À» ±¸ÇÑ´Ù.
+				// Sourceì™€ Destì˜ ë¼ì¸ ê³¼ ì¶©ëŒëœ ë©´ì˜ Edgeì˜ êµì ì„ êµ¬í•œë‹¤.
 				float fSourceLineStartX = vSourcePos.GetX();
 				float fSourceLineStartY = vSourcePos.GetZ();
 				float fSourceLineEndX = vTargetPos.GetX();
@@ -2657,7 +2657,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 				arTemp2[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossX);
 				arTemp2[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossY);
 
-				// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+				// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 				cPosition cDestPos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp2, 500, PATH_VERT_RANGE * 10);
 				if (cDestPos.cell == -1)
 				{
@@ -2700,7 +2700,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ. ±×·¸Áö ¾Ê´Â °æ¿ìÀÇ Data°¡ Àß¸øµÈ °ÍÀÓ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨. ê·¸ë ‡ì§€ ì•ŠëŠ” ê²½ìš°ì˜ Dataê°€ ìž˜ëª»ëœ ê²ƒìž„
 			if (m_defGroupDataList.size() != 1)
 			{
 				return eCOL_TEST_RESULT_FAILED;
@@ -2717,14 +2717,14 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
 
-			// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+			// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 			cPosition cSourcePos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp, 10, PATH_VERT_RANGE);
 			if (cSourcePos.cell == -1)
 			{
 				return eCOL_TEST_RESULT_INVALID_SRC_POS;
 			}
 
-			// FirstCollisionTest¿¡¼­´Â TargetPos°¡ Valid ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+			// FirstCollisionTestì—ì„œëŠ” TargetPosê°€ Valid í•  í•„ìš”ê°€ ì—†ë‹¤.
 			cPosition cTargetPos;
 			cTargetPos.x = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetX());
 			cTargetPos.y = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetZ());
@@ -2754,7 +2754,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 				pCollisionInfo->getCollidingLine(lCollisionCoord);
 				delete pCollisionInfo;
 
-				// Source¿Í DestÀÇ ¶óÀÎ °ú Ãæµ¹µÈ ¸éÀÇ EdgeÀÇ ±³Á¡À» ±¸ÇÑ´Ù.
+				// Sourceì™€ Destì˜ ë¼ì¸ ê³¼ ì¶©ëŒëœ ë©´ì˜ Edgeì˜ êµì ì„ êµ¬í•œë‹¤.
 				float fSourceLineStartX = vSourcePos.GetX();
 				float fSourceLineStartY = vSourcePos.GetZ();
 				float fSourceLineEndX = vTargetPos.GetX();
@@ -2775,7 +2775,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 				arTemp2[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossX);
 				arTemp2[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(fCrossY);
 
-				// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+				// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 				cPosition cDestPos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp2, 500, PATH_VERT_RANGE * 10);
 				if (cDestPos.cell == -1)
 				{
@@ -2812,7 +2812,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastFirstCollisionTest(NAVI_INST_HANDLE hHandl
 
 eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, float fAgentRadius, CNtlNaviVector3 & vSourcePos, CNtlNaviVector3 & vTargetPos)
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if (eNAVI_PE_STATE_COMPLETE != GetCurState())
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -2828,40 +2828,40 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 	{
 		CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-		// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+		// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 		if (pODInfo)
 		{
-			// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+			// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 			mapdef_AgentList::iterator itAgent = m_defAgentList.find(fAgentRadius);
 			if (itAgent == m_defAgentList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÇöÀç OutDoorÀÇ ÀüÃ¼ Å©±â °è»ê
+			// í˜„ìž¬ OutDoorì˜ ì „ì²´ í¬ê¸° ê³„ì‚°
 			float fMinPosX, fMinPosZ;
 			float fMaxPosX, fMaxPosZ;
 
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
 
-			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// GroupÀÇ Çà °è»ê
-			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// GroupÀÇ X °è»ê
-			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// GroupÀÇ Z °è»ê
+			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// Groupì˜ í–‰ ê³„ì‚°
+			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// Groupì˜ X ê³„ì‚°
+			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// Groupì˜ Z ê³„ì‚°
 			unsigned int uiGroupID = uiGroupX + uiGroupZ * uiCrossGroupCnt;						// Group ID
 
-																								// GroupÀÇ ID·Î ÇöÀç X Y °¡ ¼ÓÇØ ÀÖ´Â GroupÀ» ²¨³»¿Â´Ù.
+																								// Groupì˜ IDë¡œ í˜„ìž¬ X Y ê°€ ì†í•´ ìžˆëŠ” Groupì„ êº¼ë‚´ì˜¨ë‹¤.
 			mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find(uiGroupID);
 			if (itGroup == m_defGroupDataList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// Group Data¸¦ ²¨³»¿Â´Ù.
+			// Group Dataë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			sGROUP_DATA& sGroupData = itGroup->second;
 			if (NULL == sGroupData.pGroundMesh)
 			{
@@ -2870,7 +2870,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 
 			tSigned32 arTemp[3];
 
-			// SourceÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Sourceì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(x);
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
@@ -2880,7 +2880,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_INVALID_SRC_POS;
 			}
 
-			// TargetÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Targetì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetX());
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetZ());
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetY());
@@ -2890,7 +2890,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_INVALID_DEST_POS;
 			}
 
-			// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+			// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			iCollisionContext* pContext = NULL;
 			if (hHandle)
 			{
@@ -2907,7 +2907,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				}
 			}
 
-			// Source ¿Í Target À» ÀÕ´Â LineÀÌ Ãæµ¹µÇ´ÂÁö ¾ÈµÇ´ÂÁö Å×½ºÆ®ÇÑ´Ù.
+			// Source ì™€ Target ì„ ìž‡ëŠ” Lineì´ ì¶©ëŒë˜ëŠ”ì§€ ì•ˆë˜ëŠ”ì§€ í…ŒìŠ¤íŠ¸í•œë‹¤.
 			eCOL_TEST_RESULT eTestResult = eCOL_TEST_RESULT_FAILED;
 			if (sGroupData.pGroundMesh->testLineCollision(itAgent->second.pShape, pContext, cSourcePos, cTargetPos))
 				eTestResult = eCOL_TEST_RESULT_COL;
@@ -2930,7 +2930,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ. ±×·¸Áö ¾Ê´Â °æ¿ìÀÇ Data°¡ Àß¸øµÈ °ÍÀÓ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨. ê·¸ë ‡ì§€ ì•ŠëŠ” ê²½ìš°ì˜ Dataê°€ ìž˜ëª»ëœ ê²ƒìž„
 			if (m_defGroupDataList.size() != 1)
 			{
 				return eCOL_TEST_RESULT_FAILED;
@@ -2947,7 +2947,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
 
-			// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+			// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 			cPosition cSourcePos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp, nHorizRange, PATH_VERT_RANGE * 2);
 			if (cSourcePos.cell == -1)
 			{
@@ -2998,7 +2998,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 
 eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, float fAgentRadius, CNtlNaviVector3 & vSourcePos, CNtlNaviVector3 & vTargetPos, CNtlNaviVector3 & vNewTargetPos)
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if (eNAVI_PE_STATE_COMPLETE != GetCurState())
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -3014,40 +3014,40 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 	{
 		CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-		// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+		// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 		if (pODInfo)
 		{
-			// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+			// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 			mapdef_AgentList::iterator itAgent = m_defAgentList.find(fAgentRadius);
 			if (itAgent == m_defAgentList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÇöÀç OutDoorÀÇ ÀüÃ¼ Å©±â °è»ê
+			// í˜„ìž¬ OutDoorì˜ ì „ì²´ í¬ê¸° ê³„ì‚°
 			float fMinPosX, fMinPosZ;
 			float fMaxPosX, fMaxPosZ;
 
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
 
-			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// GroupÀÇ Çà °è»ê
-			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// GroupÀÇ X °è»ê
-			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// GroupÀÇ Z °è»ê
+			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// Groupì˜ í–‰ ê³„ì‚°
+			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// Groupì˜ X ê³„ì‚°
+			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// Groupì˜ Z ê³„ì‚°
 			unsigned int uiGroupID = uiGroupX + uiGroupZ * uiCrossGroupCnt;						// Group ID
 
-																								// GroupÀÇ ID·Î ÇöÀç X Y °¡ ¼ÓÇØ ÀÖ´Â GroupÀ» ²¨³»¿Â´Ù.
+																								// Groupì˜ IDë¡œ í˜„ìž¬ X Y ê°€ ì†í•´ ìžˆëŠ” Groupì„ êº¼ë‚´ì˜¨ë‹¤.
 			mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find(uiGroupID);
 			if (itGroup == m_defGroupDataList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// Group Data¸¦ ²¨³»¿Â´Ù.
+			// Group Dataë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			sGROUP_DATA& sGroupData = itGroup->second;
 			if (NULL == sGroupData.pGroundMesh)
 			{
@@ -3056,7 +3056,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 
 			tSigned32 arTemp[3];
 
-			// SourceÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Sourceì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(x);
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
@@ -3066,7 +3066,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_INVALID_SRC_POS;
 			}
 
-			// TargetÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Targetì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetX() );
 			arTemp[1] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetZ() );
 			arTemp[2] = (tSigned32) WORLD_COORD_TO_PATH_COORD( vTargetPos.GetY() );
@@ -3076,7 +3076,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_INVALID_DEST_POS;
 			}
 
-			// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+			// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			iCollisionContext* pContext = NULL;
 			if (hHandle)
 			{
@@ -3121,7 +3121,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ. ±×·¸Áö ¾Ê´Â °æ¿ìÀÇ Data°¡ Àß¸øµÈ °ÍÀÓ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨. ê·¸ë ‡ì§€ ì•ŠëŠ” ê²½ìš°ì˜ Dataê°€ ìž˜ëª»ëœ ê²ƒìž„
 			if (m_defGroupDataList.size() != 1)
 			{
 				return eCOL_TEST_RESULT_FAILED;
@@ -3138,7 +3138,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCollisionTest(NAVI_INST_HANDLE hHandle, fl
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
 
-			// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+			// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 			cPosition cSourcePos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp, nHorizRange, PATH_VERT_RANGE * 2);
 			if (cSourcePos.cell == -1)
 			{
@@ -3225,7 +3225,7 @@ bool CNtlNaviPEWorld::FastFindPath(NAVI_INST_HANDLE hHandle, float fAgentRadius,
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -3342,7 +3342,7 @@ bool CNtlNaviPEWorld::FastFindPath(NAVI_INST_HANDLE hHandle, float fAgentRadius,
 				return false;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 			if (m_defGroupDataList.size() != 1)
 			{
 				return false;
@@ -3471,7 +3471,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastChaseFindPath(NAVI_INST_HANDLE hHandle, fl
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -3604,7 +3604,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastChaseFindPath(NAVI_INST_HANDLE hHandle, fl
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 			if (m_defGroupDataList.size() != 1)
 			{
 				return eCOL_TEST_RESULT_FAILED;
@@ -3718,7 +3718,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastChaseFindPath(NAVI_INST_HANDLE hHandle, fl
 
 eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandle, float fAgentRadius, CNtlNaviVector3 & vSourcePos, CNtlNaviVector3 & vTargetPos)
 {
-	// ÇöÀç PathEngine data°¡ ¿ÏÀüÈ÷ ·ÎµùµÇ¾î ÀÖÁö ¾Ê´Ù¸é ¿¬»êÀ» ¼öÇàÇÒ ¼ö ¾ø´Ù.
+	// í˜„ìž¬ PathEngine dataê°€ ì™„ì „ížˆ ë¡œë”©ë˜ì–´ ìžˆì§€ ì•Šë‹¤ë©´ ì—°ì‚°ì„ ìˆ˜í–‰í•  ìˆ˜ ì—†ë‹¤.
 	if (eNAVI_PE_STATE_COMPLETE != GetCurState())
 	{
 		return eCOL_TEST_RESULT_FAILED;
@@ -3734,40 +3734,40 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 	{
 		CNtlNaviWorldOutDoorInfo* pODInfo = (CNtlNaviWorldOutDoorInfo*)m_pNaviDataMng->GetLoadedWorld();
 
-		// OutDoor Á¤º¸¸¦ °¡Á®¿Í¼­ À¯È¿ÇÒ ¶§¸¸ °Ë»çÇÑ´Ù.
+		// OutDoor ì •ë³´ë¥¼ ê°€ì ¸ì™€ì„œ ìœ íš¨í•  ë•Œë§Œ ê²€ì‚¬í•œë‹¤.
 		if (pODInfo)
 		{
-			// ÇöÀç Agent list¿¡¼­ À¯È¿ÇÑ ¹ÝÁö¸§ÀÇ Agent¸¦ ²¨³»¿Â´Ù. ¾ø´Ù¸é Ãæµ¹ ½ÇÆÐ¸¦ ¸®ÅÏÇÑ´Ù.
+			// í˜„ìž¬ Agent listì—ì„œ ìœ íš¨í•œ ë°˜ì§€ë¦„ì˜ Agentë¥¼ êº¼ë‚´ì˜¨ë‹¤. ì—†ë‹¤ë©´ ì¶©ëŒ ì‹¤íŒ¨ë¥¼ ë¦¬í„´í•œë‹¤.
 			mapdef_AgentList::iterator itAgent = m_defAgentList.find(fAgentRadius);
 			if (itAgent == m_defAgentList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÇöÀç OutDoorÀÇ ÀüÃ¼ Å©±â °è»ê
+			// í˜„ìž¬ OutDoorì˜ ì „ì²´ í¬ê¸° ê³„ì‚°
 			float fMinPosX, fMinPosZ;
 			float fMaxPosX, fMaxPosZ;
 
 			pODInfo->GetWorldMinPos(fMinPosX, fMinPosZ);
 			pODInfo->GetWorldMaxPos(fMaxPosX, fMaxPosZ);
 
-			// Field id °è»ê
+			// Field id ê³„ì‚°
 			float fFieldSize = pODInfo->GetFieldSize();
 			float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
 
-			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// GroupÀÇ Çà °è»ê
-			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// GroupÀÇ X °è»ê
-			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// GroupÀÇ Z °è»ê
+			unsigned int uiCrossGroupCnt = (unsigned int)((fMaxPosX - fMinPosX) / fGroupSize);	// Groupì˜ í–‰ ê³„ì‚°
+			unsigned int uiGroupX = (unsigned int)((x - fMinPosX) / fGroupSize);				// Groupì˜ X ê³„ì‚°
+			unsigned int uiGroupZ = (unsigned int)((z - fMinPosZ) / fGroupSize);				// Groupì˜ Z ê³„ì‚°
 			unsigned int uiGroupID = uiGroupX + uiGroupZ * uiCrossGroupCnt;						// Group ID
 
-																								// GroupÀÇ ID·Î ÇöÀç X Y °¡ ¼ÓÇØ ÀÖ´Â GroupÀ» ²¨³»¿Â´Ù.
+																								// Groupì˜ IDë¡œ í˜„ìž¬ X Y ê°€ ì†í•´ ìžˆëŠ” Groupì„ êº¼ë‚´ì˜¨ë‹¤.
 			mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find(uiGroupID);
 			if (itGroup == m_defGroupDataList.end())
 			{
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// Group Data¸¦ ²¨³»¿Â´Ù.
+			// Group Dataë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			sGROUP_DATA& sGroupData = itGroup->second;
 			if (NULL == sGroupData.pGroundMesh)
 			{
@@ -3776,7 +3776,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 
 			tSigned32 arTemp[3];
 
-			// SourceÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Sourceì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(x);
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
@@ -3786,7 +3786,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 				return eCOL_TEST_RESULT_INVALID_SRC_POS;
 			}
 
-			// TargetÀÇ ¿ùµå ÁÂÇ¥ -> ÆÐ½º¿£Áø ÁÂÇ¥
+			// Targetì˜ ì›”ë“œ ì¢Œí‘œ -> íŒ¨ìŠ¤ì—”ì§„ ì¢Œí‘œ
 			arTemp[0] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetX());
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetZ());
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vTargetPos.GetY());
@@ -3796,7 +3796,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 				return eCOL_TEST_RESULT_INVALID_DEST_POS;
 			}
 
-			// ÇöÀç GroupIDÀÇ ¾Ë¸Â´Â Collision context ¸¦ ²¨³»¿Â´Ù.
+			// í˜„ìž¬ GroupIDì˜ ì•Œë§žëŠ” Collision context ë¥¼ êº¼ë‚´ì˜¨ë‹¤.
 			iCollisionContext* pContext = NULL;
 			if (hHandle)
 			{
@@ -3819,7 +3819,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 				return eCOL_TEST_RESULT_INVALID_DEST_POS;
 			}
 
-			// Source ¿Í Target À» ÀÕ´Â LineÀÌ Ãæµ¹µÇ´ÂÁö ¾ÈµÇ´ÂÁö Å×½ºÆ®ÇÑ´Ù.
+			// Source ì™€ Target ì„ ìž‡ëŠ” Lineì´ ì¶©ëŒë˜ëŠ”ì§€ ì•ˆë˜ëŠ”ì§€ í…ŒìŠ¤íŠ¸í•œë‹¤.
 			eCOL_TEST_RESULT eTestResult = eCOL_TEST_RESULT_FAILED;
 			if (sGroupData.pGroundMesh->testLineCollision(itAgent->second.pShape, pContext, cSourcePos, cDestPos))
 				eTestResult = eCOL_TEST_RESULT_COL;
@@ -3842,7 +3842,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 				return eCOL_TEST_RESULT_FAILED;
 			}
 
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ. ±×·¸Áö ¾Ê´Â °æ¿ìÀÇ Data°¡ Àß¸øµÈ °ÍÀÓ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨. ê·¸ë ‡ì§€ ì•ŠëŠ” ê²½ìš°ì˜ Dataê°€ ìž˜ëª»ëœ ê²ƒìž„
 			if (m_defGroupDataList.size() != 1)
 			{
 				return eCOL_TEST_RESULT_FAILED;
@@ -3859,7 +3859,7 @@ eCOL_TEST_RESULT CNtlNaviPEWorld::FastCanMoveNearestDest(NAVI_INST_HANDLE hHandl
 			arTemp[1] = (tSigned32)WORLD_COORD_TO_PATH_COORD(z);
 			arTemp[2] = (tSigned32)WORLD_COORD_TO_PATH_COORD(vSourcePos.GetY());
 
-			// PathEngine»óÀÇ ÁÂÇ¥·Î º¯È¯
+			// PathEngineìƒì˜ ì¢Œí‘œë¡œ ë³€í™˜
 			cPosition cSourcePos = sGroupData.pGroundMesh->positionNear3DPoint(arTemp, nHorizRange, PATH_VERT_RANGE);
 			if (cSourcePos.cell == -1)
 			{
@@ -3945,7 +3945,7 @@ bool CNtlNaviPEWorld::IsValidPos(sNAVI_POS & sSrcPos)
 
 			mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find(uiGroupID);
 
-			// ÇØ´çÇÏ´Â Group ID¸¦ Ã£Áö ¸øÇÔ
+			// í•´ë‹¹í•˜ëŠ” Group IDë¥¼ ì°¾ì§€ ëª»í•¨
 			if (itGroup == m_defGroupDataList.end())
 			{
 				return NULL;
@@ -4062,7 +4062,7 @@ iMesh* CNtlNaviPEWorld::GetNearestMesh( CNtlNaviVector3& vPos )
 				pODInfo->GetWorldMinPos( fMinPosX, fMinPosZ );
 				pODInfo->GetWorldMaxPos( fMaxPosX, fMaxPosZ );
 
-				// Field id °è»ê
+				// Field id ê³„ì‚°
 
 				float fFieldSize = pODInfo->GetFieldSize();
 				float fGroupSize = fFieldSize * pODInfo->GetCrossFieldCntOfGroup();
@@ -4074,7 +4074,7 @@ iMesh* CNtlNaviPEWorld::GetNearestMesh( CNtlNaviVector3& vPos )
 
 				mapdef_GroupDataList::iterator itGroup = m_defGroupDataList.find( uiGroupID );
 
-				// ÇØ´çÇÏ´Â Group ID¸¦ Ã£Áö ¸øÇÔ
+				// í•´ë‹¹í•˜ëŠ” Group IDë¥¼ ì°¾ì§€ ëª»í•¨
 				if ( itGroup == m_defGroupDataList.end() )
 				{
 					return NULL;
@@ -4088,7 +4088,7 @@ iMesh* CNtlNaviPEWorld::GetNearestMesh( CNtlNaviVector3& vPos )
 
 	case eNAVI_INFO_WORLD_INDOOR:
 		{
-			// ÀÎµµ¿öÀÇ °æ¿ì ÇÏ³ªÀÇ navigation mesh ¸¸ Á¸ÀçÇÔ
+			// ì¸ë„ì›Œì˜ ê²½ìš° í•˜ë‚˜ì˜ navigation mesh ë§Œ ì¡´ìž¬í•¨
 			if ( m_defGroupDataList.size() != 1 )
 			{
 				return NULL;
@@ -4150,7 +4150,7 @@ void CNtlNaviPEWorld::Destroy( void )
 
 bool CNtlNaviPEWorld::ImportWorldInfo( const char* pPath )
 {
-	// Navigation data manager »ý¼º
+	// Navigation data manager ìƒì„±
 	if ( !m_pNaviDataMng->Create( pPath ) )
 	{
 		CNtlNaviLog::GetInstance()->Log( "[IMPORT] Creating the navi data manager failed. [%s]", pPath );
@@ -4158,7 +4158,7 @@ bool CNtlNaviPEWorld::ImportWorldInfo( const char* pPath )
 		return false;
 	}
 
-	// Navigation world info ·Îµù
+	// Navigation world info ë¡œë”©
 	if ( NULL == m_pNaviDataMng->Load_World() )
 	{
 		CNtlNaviLog::GetInstance()->Log( "[IMPORT] Can not import world info data. [%s]", pPath );
@@ -4440,12 +4440,12 @@ void CNtlNaviPEWorld::AttachEntityToLoad( CNtlNaviLoadingEntity* pEntity )
 
 	m_defLoadingEntityList.push_back( pEntity );
 
-	// Multi-threadÀ» »ç¿ëÇÑ ·Îµù
+	// Multi-threadì„ ì‚¬ìš©í•œ ë¡œë”©
 	if ( CNtlLoadingQueue::GetInstance() )
 	{
 		CNtlLoadingQueue::GetInstance()->AttachEntityToLoad( pEntity );
 	}
-	// Multi-threadÀ» »ç¿ëÇÏÁö ¾Ê´Â ·Îµù
+	// Multi-threadì„ ì‚¬ìš©í•˜ì§€ ì•ŠëŠ” ë¡œë”©
 	else
 	{
 		pEntity->RunMultiThread();

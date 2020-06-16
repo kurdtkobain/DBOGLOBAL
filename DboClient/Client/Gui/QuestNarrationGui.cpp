@@ -34,7 +34,7 @@
 #include "GUISoundDefine.h"
 
 #define QUEST_NARRATION_TEXT_INTERVAL	0.025f
-#define QUEST_NARRATION_TEXT_FONTNUM	1			// 3 -> 1 ·Î ¼öÁ¤ -by Kell(09. 07. 15)
+#define QUEST_NARRATION_TEXT_FONTNUM	1			// 3 -> 1 ë¡œ ìˆ˜ì • -by Kell(09. 07. 15)
 
 #define QUEST_NARRATION_PCMESSAGE_MARGIN_X	60
 #define QUEST_NARRATION_PCMESSAGE_POS_Y		40
@@ -158,7 +158,7 @@ VOID CQuestNarrationGui::HandleEvents( RWS::CMsg& msg )
 				pData->sNarration.eProgState == eNARRATION_PROGRESS_STATE_SINGLE ) )
 				CNtlPLEventGenerator::ResetCinematic( SNtlEventResetCinematic::QUESTNARRATION );
 
-			// ´Ù½Ã º¸³»ÁÖ¾î¾ßÇÒ Data
+			// ë‹¤ì‹œ ë³´ë‚´ì£¼ì–´ì•¼í•  Data
 			m_pTCUnit = pData->pTCUnit;
 			m_TSKey = pData->sNarration.sTSKey;
 
@@ -170,7 +170,7 @@ VOID CQuestNarrationGui::HandleEvents( RWS::CMsg& msg )
 				pData->sNarrationUserSelect.eProgState == eUSER_SEL_PROGRESS_STATE_SINGLE ) )
 				CNtlPLEventGenerator::ResetCinematic( SNtlEventResetCinematic::QUESTNARRATION );
 
-			// ´Ù½Ã º¸³»ÁÖ¾î¾ßÇÒ Data
+			// ë‹¤ì‹œ ë³´ë‚´ì£¼ì–´ì•¼í•  Data
 			m_pTCUnit = pData->pTCUnit;
 			m_TSKey = pData->sNarrationUserSelect.sTSKey;
 
@@ -251,7 +251,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 		SetState( STATE_ING, eOwnerType );
 	}
 
-	// ÀÌ¹ÌÁö ·Îµå ¹× ÀÌ¸§ Ãâ·Â
+	// ì´ë¯¸ì§€ ë¡œë“œ ë° ì´ë¦„ ì¶œë ¥
 	std::string strFileName;
 
 	if( pData->eOwnerType == eNARRATION_OWNER_NPC )
@@ -260,7 +260,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 		CTextTable* pNPCText = API_GetTableContainer()->GetTextAllTable()->GetNPCTbl();
 		if( !m_pCinematicObject->SetImageTexture( pNPCData->szILLust, pData->eOwnerState ) )
 		{
-			// ±×¸²ÀÌ ¾øÀ¸¸é ±âº»°ª Ãâ·Â. ÀÌ·¡µµ ¾øÀ¸¸é Èò»ö ±×¸² Ãâ·Â
+			// ê·¸ë¦¼ì´ ì—†ìœ¼ë©´ ê¸°ë³¸ê°’ ì¶œë ¥. ì´ë˜ë„ ì—†ìœ¼ë©´ í°ìƒ‰ ê·¸ë¦¼ ì¶œë ¥
 			m_pCinematicObject->SetImageTexture( pNPCData->szILLust, 0 );				
 		}		
 		m_pCinematicObject->ShowImage( TRUE );			
@@ -272,7 +272,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 		CTextTable* pMobText = API_GetTableContainer()->GetTextAllTable()->GetMobTbl();
 		if( !m_pCinematicObject->SetImageTexture( pMobData->szILLust, pData->eOwnerState ) )
 		{
-			// ±×¸²ÀÌ ¾øÀ¸¸é ±âº»°ª Ãâ·Â. ÀÌ·¡µµ ¾øÀ¸¸é Èò»ö ±×¸² Ãâ·Â
+			// ê·¸ë¦¼ì´ ì—†ìœ¼ë©´ ê¸°ë³¸ê°’ ì¶œë ¥. ì´ë˜ë„ ì—†ìœ¼ë©´ í°ìƒ‰ ê·¸ë¦¼ ì¶œë ¥
 			m_pCinematicObject->SetImageTexture( pMobData->szILLust, 0 );				
 		}
 		m_pCinematicObject->ShowImage( TRUE );			
@@ -289,14 +289,14 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 		//m_pCinematicObject->GetPCMessage()->SetPosition( rect );
 
 
-		// ¼±ÅÃ ¸ğµå ´İ±â.
+		// ì„ íƒ ëª¨ë“œ ë‹«ê¸°.
 		for( RwUInt8 i = 0 ; i < CINEMATIC_MAX_PC_SELECT ; ++i )
 			m_pCinematicObject->GetPCSelect( i )->Show( false );
 
 		m_pCinematicObject->GetPCSelectFocus()->Show( false );
 	}
 
-	// Ç³¼±´ëÈ­ ¼¼ÆÃ.
+	// í’ì„ ëŒ€í™” ì„¸íŒ….
 	if( eOwnerType == NPCMOB )
 	{
 		if( pData->eGUIType == eNARRATION_GUI_TYPE_NORMAL )
@@ -309,7 +309,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 		}
 	}
 
-	// ´ëÈ­ Ãâ·Â½ºÅ¸ÀÏ ¼¼ÆÃ
+	// ëŒ€í™” ì¶œë ¥ìŠ¤íƒ€ì¼ ì„¸íŒ…
 	if( eOwnerType == NPCMOB )
 	{
 		if( pData->eDialogDirType == eNARRATION_DIALOG_DIR_TYPE_NORMAL )
@@ -347,7 +347,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 		}
 	}
 
-	// ´ëÈ­ ÀÔ·Â
+	// ëŒ€í™” ì…ë ¥
 	sQUEST_TEXT_DATA_TBLDAT* pTextData = reinterpret_cast<sQUEST_TEXT_DATA_TBLDAT*>( API_GetTableContainer()->GetQuestTextDataTable()->FindData( pData->uiDialog ) );
 	if( pTextData )
 	{
@@ -368,10 +368,10 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationDialog_Req* pData )
 				m_pCinematicObject->SetPCMessage( buf, wcslen( buf ) );
 		}		
 		else
-			m_pCinematicObject->GetBalloon()->Show( false );	// ´ëÈ­ ¾ø´Â °æ¿ì´Â ¸»Ç³¼±À» Ç¥½ÃÇÏÁö ¾ÊÀ½.
+			m_pCinematicObject->GetBalloon()->Show( false );	// ëŒ€í™” ì—†ëŠ” ê²½ìš°ëŠ” ë§í’ì„ ì„ í‘œì‹œí•˜ì§€ ì•ŠìŒ.
 	}	
 
-	// ½Ã°£ ÀÔ·Â
+	// ì‹œê°„ ì…ë ¥
 	m_uiMaxLifeTime = pData->uiMaxLifeTime - (RwUInt32)CINEMATIC_MOVETIME * 1000;	
 	m_uiCurrentTime = 0;
 }
@@ -382,7 +382,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationUserSelectDialog_Req*
 		return;		
 
 	m_eTSState = pData->eProgState;
-	// peessitemp: ¹®ÀÚ Ãâ·Â½ºÅ¸ÀÏÀÌ ¾øÀ¸¹Ç·Î ÀÏ´Ü ÀÌ·¸°Ô...
+	// peessitemp: ë¬¸ì ì¶œë ¥ìŠ¤íƒ€ì¼ì´ ì—†ìœ¼ë¯€ë¡œ ì¼ë‹¨ ì´ë ‡ê²Œ...
 	m_eTextOutType = eNARRATION_DIALOG_DIR_TYPE_INVALID;
 
 	if( m_eTSState == eNARRATION_PROGRESS_STATE_START || m_eTSState == eNARRATION_PROGRESS_STATE_SINGLE )
@@ -394,13 +394,13 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationUserSelectDialog_Req*
 		SetState( STATE_ING, PC_SELECT );
 	}
 
-	// ÀÌ¸§ Ãâ·Â
+	// ì´ë¦„ ì¶œë ¥
 	m_pCinematicObject->SetPCName( Logic_GetName( reinterpret_cast<CNtlSob*>( GetNtlSLGlobal()->GetSobAvatar() ) ) );		
 
 
 	sQUEST_TEXT_DATA_TBLDAT* pTextData = NULL;
 
-	//// ¸»Ç³¼± Ãâ·Â
+	//// ë§í’ì„  ì¶œë ¥
 	//if( pData->uiConv == INVALID_TBLIDX )
 	//{
 	//	m_bShowPCMessageOnPCSelect = FALSE;				
@@ -424,7 +424,7 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationUserSelectDialog_Req*
 	//	}		
 	//}
 
-	// ´ëÈ­¼±ÅÃ ¼¼ÆÃ.
+	// ëŒ€í™”ì„ íƒ ì„¸íŒ….
 	for( RwUInt8 i = 0 ; i < CINEMATIC_MAX_PC_SELECT ; ++i )
 	{
 		if( i >= pData->nBranchCnt )
@@ -455,14 +455,14 @@ VOID CQuestNarrationGui::SetUIData( SNtlEventQuestNarrationUserSelectDialog_Req*
 		}	
 	}
 
-	RwInt32 nPCFrameTextRegionHeight = m_pCinematicObject->GetPCFrame()->GetHeight() - 19;	// MagicalNumber : ÀÌ¹ÌÁö·Î °¡¸®´Â ºÎºĞÀÌ 19 pixel ¸¸Å­.
+	RwInt32 nPCFrameTextRegionHeight = m_pCinematicObject->GetPCFrame()->GetHeight() - 19;	// MagicalNumber : ì´ë¯¸ì§€ë¡œ ê°€ë¦¬ëŠ” ë¶€ë¶„ì´ 19 pixel ë§Œí¼.
 	m_pCinematicObject->SetPCSelectRegion( (RwUInt8)pData->nBranchCnt, (RwUInt8)nPCFrameTextRegionHeight, TRUE );
 
 	m_bySelectID = m_byPCSelectID[0];
 	m_pCinematicObject->SetPCSelectValue( 0 );
 	m_pCinematicObject->GetPCSelectFocus()->Show( true );
 
-	// ½Ã°£ ÀÔ·Â
+	// ì‹œê°„ ì…ë ¥
 	m_uiMaxLifeTime = 0xFFFFFFFF;
 	m_uiCurrentTime = 0;
 }

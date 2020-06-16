@@ -1,16 +1,16 @@
 /******************************************************************************
 * File			: DialogPriority.h
 * Author		: Hong SungBock
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2008. 2. 12
 * Abstract		: 
 *****************************************************************************
-* Desc			: ´ÙÀÌ¾ó·Î±×ÀÇ ·£´õ¸µ ¿ì¼±¼øÀ§¸¦ Á¤ÀÇÇÑ´Ù
-*				  Å« ¼øÀÚÀÇ °ÍÀÌ À§¿¡ ¿Â´Ù
-*				  ¹üÀ§ : 0 ~ 65534
+* Desc			: ë‹¤ì´ì–¼ë¡œê·¸ì˜ ëžœë”ë§ ìš°ì„ ìˆœìœ„ë¥¼ ì •ì˜í•œë‹¤
+*				  í° ìˆœìžì˜ ê²ƒì´ ìœ„ì— ì˜¨ë‹¤
+*				  ë²”ìœ„ : 0 ~ 65534
 *
-*				  ¿ì¼±¼øÀ§ÀÇ °£°ÝÀ» ³ÐÁ÷È÷ ¹ú·ÁµÎ¾î Â÷ÈÄ ¿ì¼ø¼øÀ§°£ Ãß°¡¸¦
-*				  ¿ëÀÌÇÏµµ·Ï ÇÑ´Ù
+*				  ìš°ì„ ìˆœìœ„ì˜ ê°„ê²©ì„ ë„“ì§ížˆ ë²Œë ¤ë‘ì–´ ì°¨í›„ ìš°ìˆœìˆœìœ„ê°„ ì¶”ê°€ë¥¼
+*				  ìš©ì´í•˜ë„ë¡ í•œë‹¤
 *****************************************************************************/
 
 #pragma once
@@ -43,21 +43,21 @@
 #define dDIALOGPRIORITY_RESULT_NARRATION								46300
 #define dDIALOGPRIORITY_RESULT											46200
 
-#define dDIALOGPRIORITY_CALC_POPUP										46000	// °è»ê±â
+#define dDIALOGPRIORITY_CALC_POPUP										46000	// ê³„ì‚°ê¸°
 
-#define dDIALOGPRIORITY_PRIVATE_BUSINESS_PRICE							45100	// ÈïÁ¤ °¡°Ý Á¶Á¤ Ã¢
+#define dDIALOGPRIORITY_PRIVATE_BUSINESS_PRICE							45100	// í¥ì • ê°€ê²© ì¡°ì • ì°½
 
 #define dDIALOGPRIORITY_EFDIALOG										45000	// Entire Focusing Dialog
 #define dDIALOGPRIORITY_EFDIALOG_BACKGROUND								44999	// Entire Focusing Dialog backgound
 
-#define dDIALOGPRIORITY_TBGAMBLERESULT									40000	// ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ °×ºí °á°úÃ¢
+#define dDIALOGPRIORITY_TBGAMBLERESULT									40000	// ì²œí•˜ì œì¼ ë¬´ë„íšŒ ê²œë¸” ê²°ê³¼ì°½
 
-#define dDIALOGPRIORITY_PRIVATE_BUSINESS								35000	// ÈïÁ¤ Ã¢
+#define dDIALOGPRIORITY_PRIVATE_BUSINESS								35000	// í¥ì • ì°½
 
 #define dDIALOGPRIORITY_RPBONUS											34000
-#define dDIALOGPRIORITY_SKILLABILITY_SET								33500	///< ½ºÅ³ ¾îºô¸®Æ¼ ÁöÁ¤ Ã¢
+#define dDIALOGPRIORITY_SKILLABILITY_SET								33500	///< ìŠ¤í‚¬ ì–´ë¹Œë¦¬í‹° ì§€ì • ì°½
 
-#define dDIALOGPRIORITY_MANIA_TIME_SET									33250	///< °ÔÀÓ ¸Å´Ï¾Æ Å¸ÀÓ Àç¼³Á¤ Ã¢
+#define dDIALOGPRIORITY_MANIA_TIME_SET									33250	///< ê²Œìž„ ë§¤ë‹ˆì•„ íƒ€ìž„ ìž¬ì„¤ì • ì°½
 
 #define dDIALOGPRIORITY_CHATTING_OPTION									33155
 

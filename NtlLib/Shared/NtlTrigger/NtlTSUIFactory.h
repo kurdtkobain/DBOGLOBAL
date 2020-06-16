@@ -19,7 +19,7 @@ public:
 
 // Member variables
 protected:
-	mapdef_UITypeList					m_defUITypeList;		// ½Ç½Ã°£ µ¿Àû »ı¼ºÀ» Áö¿øÇÏ±â À§ÇÑ Å¸ÀÔ ¸®½ºÆ®
+	mapdef_UITypeList					m_defUITypeList;		// ì‹¤ì‹œê°„ ë™ì  ìƒì„±ì„ ì§€ì›í•˜ê¸° ìœ„í•œ íƒ€ì… ë¦¬ìŠ¤íŠ¸
 
 // Constructions and Destructions
 public:
@@ -30,7 +30,7 @@ public:
 	virtual	CNtlTSUIObject*				CreateObj( const std::string& strName );
 	virtual void						DeleteObj( CNtlTSUIObject*& pObj );
 
-	// Runtime »ı¼ºÀ» À§ÇÑ UI type µî·Ï
+	// Runtime ìƒì„±ì„ ìœ„í•œ UI type ë“±ë¡
 	virtual	void						RegisterUIType( void ) { return; }
 	virtual	void						UnRegisterUIType( void );
 };

@@ -28,7 +28,7 @@ CHtmlTokenizer::CHtmlTokenizer(const std::string &filename, bool bUsePack)
 	if(!m_bSuccess)
 		return;
 
-	//	´ë¼Ò¹®ÀÚ ±¸ºĞ ¾ÈÇÏ°Ô ¸¸µç´Ù.
+	//	ëŒ€ì†Œë¬¸ì êµ¬ë¶„ ì•ˆí•˜ê²Œ ë§Œë“ ë‹¤.
 	//	ToLower();
 
 	m_strFileName = filename;
@@ -46,7 +46,7 @@ CHtmlTokenizer::CHtmlTokenizer(const wchar_t *pMemory, int nSize)
 
 	wcscpy_s( m_pData, nSize+1 , pMemory );
 
-	// ´ë¼Ò¹®ÀÚ ±¸ºĞ ¾ÈÇÏ°Ô ¸¸µç´Ù.
+	// ëŒ€ì†Œë¬¸ì êµ¬ë¶„ ì•ˆí•˜ê²Œ ë§Œë“ ë‹¤.
 	//	ToLower();
 
 	Tokenize();
@@ -75,7 +75,7 @@ bool CHtmlTokenizer::Load(const char *pFileName, bool bUsePack )
 		char* pData = NULL;
 		int nSize;
 
-		// ÀÏ´Ü ¹öÆÛ¿¡ ´ã¾Æ¼­ ÀĞ¾î¿Â´Ù.
+		// ì¼ë‹¨ ë²„í¼ì— ë‹´ì•„ì„œ ì½ì–´ì˜¨ë‹¤.
 		(*g_fnHtmlCallPack)(pFileName, (void**)&pData, &nSize );
 		if( pData == NULL )
 			return false;
@@ -84,13 +84,13 @@ bool CHtmlTokenizer::Load(const char *pFileName, bool bUsePack )
 		memcpy( pBuffer, pData, sizeof(char) * nSize );
 		pBuffer[nSize] = '\0';
 	
-		// // UTF - 16ÀÏ °æ¿ì¿¡
+		// // UTF - 16ì¼ ê²½ìš°ì—
 		if( abyUnicodeBom[0] == pBuffer[0] &&
 			abyUnicodeBom[1] == pBuffer[1] )
 		{
 			size_t nStrLen = strlen( pBuffer+2 );
-			// WideÇüÀÇ ¹è¿­Àº 2Byte ´ç ÇÏ³ªÀÓ.
-			// ¾ÕÀÇ BOM ÄÚµå¸¦ »« °ÍÀÇ 2¸¦ ³ª´²ÁØ ¸¸Å­ º¹»çÇÑ´Ù.
+			// Wideí˜•ì˜ ë°°ì—´ì€ 2Byte ë‹¹ í•˜ë‚˜ì„.
+			// ì•ì˜ BOM ì½”ë“œë¥¼ ëº€ ê²ƒì˜ 2ë¥¼ ë‚˜ëˆ ì¤€ ë§Œí¼ ë³µì‚¬í•œë‹¤.
 			m_nTotalSize = (int)nStrLen;
 			m_pData = NTL_NEW WCHAR[m_nTotalSize+1];
 			memcpy( m_pData, pBuffer+2, nSize-2 );
@@ -107,7 +107,7 @@ bool CHtmlTokenizer::Load(const char *pFileName, bool bUsePack )
 			m_pData[m_nTotalSize] = L'\0';
 		}
 
-		// ´ã¾Æ³õÀº ¹öÆÛ¸¦ »èÁ¦ÇÑ´Ù.
+		// ë‹´ì•„ë†“ì€ ë²„í¼ë¥¼ ì‚­ì œí•œë‹¤.
 		NTL_ARRAY_DELETE( pData );
 		NTL_ARRAY_DELETE( pBuffer );
 	}
@@ -124,15 +124,15 @@ bool CHtmlTokenizer::Load(const char *pFileName, bool bUsePack )
 			return false;
 #endif
 
-		// Kell's Comment : UTF-16/UCS2 ¸¸ °Ë»çÇÑ´Ù. ÀÌ¿ÜÀÇ ¹æ½ÄÀº MultiByte·Î ÀĞ´Â´Ù.
-		// UTF-16ÀÇ Byte-order Mark´Â 2byte ÀÎ FF FE ¸¦ »ç¿ëÇÏ°í ÀÌ ¹æ½ÄÀº À©µµ¿ìÀÇ
-		// ¸Ş¸ğÀåÀÌ³ª Word¿¡¼­ »ç¿ëÇÏ´Â ¹æ½ÄÀÌ´Ù. (ÁÖÀÇ)
+		// Kell's Comment : UTF-16/UCS2 ë§Œ ê²€ì‚¬í•œë‹¤. ì´ì™¸ì˜ ë°©ì‹ì€ MultiByteë¡œ ì½ëŠ”ë‹¤.
+		// UTF-16ì˜ Byte-order MarkëŠ” 2byte ì¸ FF FE ë¥¼ ì‚¬ìš©í•˜ê³  ì´ ë°©ì‹ì€ ìœˆë„ìš°ì˜
+		// ë©”ëª¨ì¥ì´ë‚˜ Wordì—ì„œ ì‚¬ìš©í•˜ëŠ” ë°©ì‹ì´ë‹¤. (ì£¼ì˜)
 
-		// ¾ÕÀÇ 2 Byte¸¸ ÀĞ¾î¿Â´Ù.
+		// ì•ì˜ 2 Byteë§Œ ì½ì–´ì˜¨ë‹¤.
 		fread( abyHtml_Bom, 2, 1, fp );
 
-		// Unicode(LE)°¡ ¾Æ´Ñ °æ¿ì Assert°¡ °É¸°´Ù.
-		// ÇöÀç´Â MultiByte¿Í Unicode, 2°³ ´Ù ÀĞ¾îµé¾î¾ß ÇÑ´Ù.
+		// Unicode(LE)ê°€ ì•„ë‹Œ ê²½ìš° Assertê°€ ê±¸ë¦°ë‹¤.
+		// í˜„ì¬ëŠ” MultiByteì™€ Unicode, 2ê°œ ë‹¤ ì½ì–´ë“¤ì–´ì•¼ í•œë‹¤.
 		// assert( abyUnicodeBom == abyHtml_Bom );
 
 		// UTF-16(Little-Endian)
@@ -143,7 +143,7 @@ bool CHtmlTokenizer::Load(const char *pFileName, bool bUsePack )
 			int nSize = ftell(fp);
 			fseek(fp, 0, SEEK_SET);
 
-			// Unicode´Â 2byte´ç 1character¸¦ »ç¿ëÇÑ´Ù.
+			// UnicodeëŠ” 2byteë‹¹ 1characterë¥¼ ì‚¬ìš©í•œë‹¤.
 			int nStrLen = m_nTotalSize = (nSize/2);
 			m_pData = NTL_NEW wchar_t[nStrLen];
 			m_pData[nStrLen-1] = L'\0';
@@ -165,7 +165,7 @@ bool CHtmlTokenizer::Load(const char *pFileName, bool bUsePack )
 
 			m_pData = NTL_NEW wchar_t[nSize];
 
-			// Wide Character·Î º¯È¯
+			// Wide Characterë¡œ ë³€í™˜
 			::MultiByteToWideChar( GetACP(), 0,pData, -1, m_pData, nSize );
 
 			NTL_ARRAY_DELETE( pData );
@@ -223,7 +223,7 @@ VOID CHtmlTokenizer::Tokenize(VOID)
 
 	int buff_pos = 0;
 
-	// TOKEN_TEXT Å¸ÀÔÀ» ¸¸µé±â À§ÇØ »ç¿ëµÇ´Â ¹öÆÛ
+	// TOKEN_TEXT íƒ€ì…ì„ ë§Œë“¤ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” ë²„í¼
 #define HTML_BUFFER_SIZE 100000
 	wchar_t *buffer = NTL_NEW wchar_t [HTML_BUFFER_SIZE];
 

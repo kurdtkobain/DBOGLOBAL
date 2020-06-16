@@ -28,9 +28,9 @@ enum eOPCODE_CU
 	CU_SERVER_FARM_INFO_REFRESHED_NFY,
 	CU_SERVER_CHANNEL_INFO_REFRESHED_NFY,
 
-	CU_CONNECT_WAIT_CHECK_RES,				// ´ë±âÀÚ°¡ ÀÖ´ÂÁö ¾ø´ÂÁö ¾Ë¸²
-	CU_CONNECT_WAIT_COUNT_NFY,				// ´ë±âÀÚ º¯È­ ¾Ë¸²
-	CU_CONNECT_WAIT_CANCEL_RES,				// ´ë±â Ãë¼Ò¿¡ ´ëÇÑ ÀÀ´ä
+	CU_CONNECT_WAIT_CHECK_RES,				// ëŒ€ê¸°ìžê°€ ìžˆëŠ”ì§€ ì—†ëŠ”ì§€ ì•Œë¦¼
+	CU_CONNECT_WAIT_COUNT_NFY,				// ëŒ€ê¸°ìž ë³€í™” ì•Œë¦¼
+	CU_CONNECT_WAIT_CANCEL_RES,				// ëŒ€ê¸° ì·¨ì†Œì— ëŒ€í•œ ì‘ë‹µ
 	CU_CONNECT_WAIT_CANCEL_NFY,
 
 	CU_NETMARBLEMEMBERIP_NFY,
@@ -131,8 +131,8 @@ BEGIN_PROTOCOL(CU_SERVER_FARM_INFO_REFRESHED_NFY)
 	BYTE								byServerStatus;		// eDBO_SERVER_STATUS
 	// Load value is stored in percents if it's for Client.
 	// 'dwMaxLoad' should be 100.
-	// Å¬¶óÀÌ¾ðÆ®¿¡¼­ »ç¿ëÇÒ ¸ñÀûÀ¸·Î °ªÀ» ¼¼ÆÃÇÒ ¶§´Â ÆÛ¼¾Æ® ´ÜÀ§·Î ÀúÀåÇÑ´Ù.
-	// 'dwMaxLoad'´Â 100ÀÌ µÈ´Ù.
+	// í´ë¼ì´ì–¸íŠ¸ì—ì„œ ì‚¬ìš©í•  ëª©ì ìœ¼ë¡œ ê°’ì„ ì„¸íŒ…í•  ë•ŒëŠ” í¼ì„¼íŠ¸ ë‹¨ìœ„ë¡œ ì €ìž¥í•œë‹¤.
+	// 'dwMaxLoad'ëŠ” 100ì´ ëœë‹¤.
 	// by YOSHIKI(2008-07-01)
 	DWORD								dwMaxLoad;
 	DWORD								dwLoad;

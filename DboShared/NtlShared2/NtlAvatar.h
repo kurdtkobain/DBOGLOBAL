@@ -159,7 +159,7 @@ struct sAVATAR_ATTRIBUTE
 	WORD wApDegen; //absolute
 
 	WORD wRpRegen; //absolute		RP rate increase. (/ Second)
-	WORD wRpDimimutionRate;			//RP ∞®º“ º”µµ.(/second)
+	WORD wRpDimimutionRate;			//RP Í∞êÏÜå ÏÜçÎèÑ.(/second)
 
 	WORD wPhysicalOffence; //absolute
 	WORD wPhysicalDefence; //absolute

@@ -357,7 +357,7 @@ VOID CChatGui::SetDismovableDisplayPositioin(RwBool bForce /* = FALSE */)
 	RwInt32 iHeight = rtScreen.top;
 	for each( CChatDisplayGui* pDisplayGui in m_listDisplayGui )
 	{
-		// Ã¹ ¹øÂ° µğ½ºÇÃ·¹ÀÌÃ¢Àº Ç×»ó ºÙ¾î´Ù´Ñ´Ù
+		// ì²« ë²ˆì§¸ ë””ìŠ¤í”Œë ˆì´ì°½ì€ í•­ìƒ ë¶™ì–´ë‹¤ë‹Œë‹¤
 		iHeight -= pDisplayGui->GetHeight();
 		pDisplayGui->SetPosition(rtScreen.left, iHeight);
 
@@ -984,7 +984,7 @@ VOID CChatGui::OnESCKeyUp(VOID)
 	GetNtlGuiManager()->GetGuiManager()->SetFocus( GetNtlGuiManager()->GetGuiManager() );
 	m_bChatModeEndReturn = TRUE;
 
-	// dialog manager À» ÀÏÈ¸ cancel process disable setting
+	// dialog manager ì„ ì¼íšŒ cancel process disable setting
 	CDboEventGenerator::DialogEvent(DIALOGEVENT_INPUTEDITBOX_LOST_FOCUS_WITH_ESC_KEY);
 }
 

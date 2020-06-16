@@ -24,7 +24,7 @@ public:
 	BYTE					byEnd_Effect_Position;
 	WORD					wKeep_Animation_Index;
 
-	eSYSTEM_EFFECT_CODE		effectCode; // Effect Code Match ¿ë
+	eSYSTEM_EFFECT_CODE		effectCode; // Effect Code Match ìš©
 
 protected:
 

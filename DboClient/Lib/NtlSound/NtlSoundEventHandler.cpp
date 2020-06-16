@@ -108,7 +108,7 @@ void CNtlSoundEventHandler::HandleEvents(RWS::CMsg &pMsg)
 	//		}
 	//	case DSP_REMOVE_ALL:
 	//		{
-	//			// ÇöÀç´Â FMOD_DSP_TYPE_REVERB¸¸ ¾²ÀÌ°í ÀÖ´Ù
+	//			// í˜„ì¬ëŠ” FMOD_DSP_TYPE_REVERBë§Œ ì“°ì´ê³  ìˆë‹¤
 	//			for( RwUInt8 i = 0 ; i < NUM_CHANNEL_GROUP ; ++i )
 	//			{
 	//				GetSoundManager()->ReleaseGroupEffect(i, FMOD_DSP_TYPE_REVERB);

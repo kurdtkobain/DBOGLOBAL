@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-05-31
 //
-//	Copyright	:	®œ NTL-Inc Co., Ltd
+//	Copyright	:	‚ìí NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -214,7 +214,7 @@ struct sRANKBATTLE_ROOMINFO_PARTY
 {
 	TBLIDX						rankBattleTblidx;	// RankBattle Tblidx
 	ROOMID						roomId;
-	BYTE						byMemberCount;		// Room¿« MemberCount
+	BYTE						byMemberCount;		// RoomÏùò MemberCount
 	sRANKBATTLE_ROOMINFO_MEMBER	asMember[NTL_MAX_MEMBER_IN_PARTY];		// Member
 	HOBJECT						hObject;
 };

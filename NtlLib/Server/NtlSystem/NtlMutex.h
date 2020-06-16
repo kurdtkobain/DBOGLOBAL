@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-11-30
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	Mutex µ¿±âÈ­ ¿ÀºêÁ§Æ® Å¬·¡½º
+//	Desc		:	Mutex ë™ê¸°í™” ì˜¤ë¸Œì íŠ¸ í´ë˜ìŠ¤
 //
 //***********************************************************************************
 
@@ -39,7 +39,7 @@ private:
 	CRITICAL_SECTION	m_mutex;
 };
 
-// Mutex helper class ( Á¾·á½Ã ÀÚµ¿ ÇØÁ¦ )
+// Mutex helper class ( ì¢…ë£Œì‹œ ìë™ í•´ì œ )
 class CNtlAutoMutex
 {
 public:

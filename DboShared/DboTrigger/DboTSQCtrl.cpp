@@ -69,7 +69,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_MOB_KILL; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_DB_TO_LOCAL( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sMobKillCnt[i].nCurMobCnt );
 				}
 			}
@@ -78,7 +78,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_MOB_KILL_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_DB_TO_LOCAL( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sMobKillItemCnt[i].nCurMobLICnt );
 				}
 			}
@@ -87,7 +87,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_DELIVERY_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_DB_TO_LOCAL( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sDeliveryItemCnt[i].nCurItemCnt );
 				}
 			}
@@ -96,7 +96,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_OBJECT_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_DB_TO_LOCAL( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sObjectItemCnt[i].nCurItemCnt );
 				}
 			}
@@ -105,7 +105,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_PUBLIC_MOB_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_DB_TO_LOCAL( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sPublicMobItemCnt[i].nCurItemCnt );
 				}
 			}
@@ -114,7 +114,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_CUSTOM_EVT_CNT; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_DB_TO_LOCAL( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sCustomEvtCnt[i].nCurCnt );
 				}
 			}
@@ -123,7 +123,7 @@ void CDboTSQCtrl::GetSToCEvtDBData( sSTOC_EVT_DB_DATA& sSvrEvtData )
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_VISIT_EVT; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					sSvrEvtData.m_aUserData[i] = (m_sSToCEvtData.uSToCEvtData.sVisitEvt[i].bCompleted ? 1 : 0);
 				}
 			}
@@ -209,7 +209,7 @@ void CDboTSQCtrl::SetSToCEvtDBData( const sSTOC_EVT_DB_DATA& sSvrEvtData, bool b
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_MOB_KILL; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_LOCAL_TO_DB( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sMobKillCnt[i].nCurMobCnt );
 				}
 			}
@@ -218,7 +218,7 @@ void CDboTSQCtrl::SetSToCEvtDBData( const sSTOC_EVT_DB_DATA& sSvrEvtData, bool b
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_MOB_KILL_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_LOCAL_TO_DB( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sMobKillItemCnt[i].nCurMobLICnt );
 				}
 			}
@@ -227,7 +227,7 @@ void CDboTSQCtrl::SetSToCEvtDBData( const sSTOC_EVT_DB_DATA& sSvrEvtData, bool b
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_DELIVERY_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_LOCAL_TO_DB( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sDeliveryItemCnt[i].nCurItemCnt );
 				}
 			}
@@ -236,7 +236,7 @@ void CDboTSQCtrl::SetSToCEvtDBData( const sSTOC_EVT_DB_DATA& sSvrEvtData, bool b
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_OBJECT_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_LOCAL_TO_DB( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sObjectItemCnt[i].nCurItemCnt );
 				}
 			}
@@ -245,7 +245,7 @@ void CDboTSQCtrl::SetSToCEvtDBData( const sSTOC_EVT_DB_DATA& sSvrEvtData, bool b
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_PUBLIC_MOB_ITEM; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_LOCAL_TO_DB( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sPublicMobItemCnt[i].nCurItemCnt );
 				}
 			}
@@ -254,7 +254,7 @@ void CDboTSQCtrl::SetSToCEvtDBData( const sSTOC_EVT_DB_DATA& sSvrEvtData, bool b
 			{
 				for ( int i = 0; i < uSTOC_EVT_DATA::MAX_CUSTOM_EVT_CNT; ++i )
 				{
-					// ÀúÀåÇÏ°íÀÚ ÇÏ´Â µ¥ÀÌÅÍ°¡ Int ÇüÀÎ °æ¿ì ( 4¹ÙÀÌÆ® ¸ø ³Ñ¾î°¨ )
+					// ì €ì¥í•˜ê³ ì í•˜ëŠ” ë°ì´í„°ê°€ Int í˜•ì¸ ê²½ìš° ( 4ë°”ì´íŠ¸ ëª» ë„˜ì–´ê° )
 					SAVE_FROM_LOCAL_TO_DB( sSvrEvtData.m_aUserData[i], m_sSToCEvtData.uSToCEvtData.sCustomEvtCnt[i].nCurCnt );
 				}
 			}
@@ -321,7 +321,7 @@ void CDboTSQCtrl::LoadQuestProgressInfo_V0( const sPROGRESS_QUEST_INFO::uDATA& u
 	if ( uData.sQInfoV0.wQState & eTS_SVR_STATE_USER_OUT_FAILED_WPS )
 	{
 		SetUserOutFailedWPS( true, false );
-		SetFailed( true, false );	// ·Îµù ½ÃÁ¡¿¡ World play script¿¡¼­ User out failed ÇÃ·¡±×¸¦ ÄÒ °æ¿ì´Â ½ÇÆĞÇÑ Äù½ºÆ® ÀÓ.
+		SetFailed( true, false );	// ë¡œë”© ì‹œì ì— World play scriptì—ì„œ User out failed í”Œë˜ê·¸ë¥¼ ì¼  ê²½ìš°ëŠ” ì‹¤íŒ¨í•œ í€˜ìŠ¤íŠ¸ ì„.
 	}
 
 	// Quest progress Loading
@@ -389,11 +389,11 @@ void CDboTSQCtrl::SaveQuestProgressInfo_V0( sPROGRESS_QUEST_INFO::uDATA& uData )
 		uData.sQInfoV0.wQState |= eTS_SVR_STATE_USER_OUT_FAILED_WPS;
 	}
 
-	// Äù½ºÆ® ÁøÇà »óÅÂ ÀúÀå
+	// í€˜ìŠ¤íŠ¸ ì§„í–‰ ìƒíƒœ ì €ì¥
 	uData.sQInfoV0.sMainTSP.tcCurId = m_pSavedCurTSP ? m_pSavedCurTSP->GetID() : NTL_TS_TC_ID_INVALID;
 	uData.sQInfoV0.sMainTSP.tcPreId = m_pSavedPreTSP ? m_pSavedPreTSP->GetID() : NTL_TS_TC_ID_INVALID;
 
-	// ¿¹¿Ü Å¸ÀÌ¸Ó ÀúÀå
+	// ì˜ˆì™¸ íƒ€ì´ë¨¸ ì €ì¥
 	memset( &uData.sQInfoV0.sETSlot, 0xff, sizeof(sEXCEPT_TIMER_SLOT) );
 	mapdef_EXCEPT_TIMER_SLOT::iterator itETimer = m_defExceptTimerSlot.begin();
 	for ( i = 0; itETimer != m_defExceptTimerSlot.end(); ++itETimer, ++i )
@@ -405,16 +405,16 @@ void CDboTSQCtrl::SaveQuestProgressInfo_V0( sPROGRESS_QUEST_INFO::uDATA& uData )
 		uData.sQInfoV0.sETSlot.asExceptTimer[i].uiRemainTime = sTimer.uiRemainTime;
 	}
 
-	// ÀúÀå ½½·Ô ¸Ş¸ğ¸® ÀúÀå
+	// ì €ì¥ ìŠ¬ë¡¯ ë©”ëª¨ë¦¬ ì €ì¥
 	memcpy( &uData.sQInfoV0.sSSM, &m_sSSM, sizeof( sSTORAGE_SLOT_MEMORY ) );
 
-	// ¼­¹ö ÀÌº¥Æ® ÀúÀå
+	// ì„œë²„ ì´ë²¤íŠ¸ ì €ì¥
 	GetSToCEvtDBData( uData.sQInfoV0.sSToCEvtData );
 
-	// ½ÇÇàÇÒ Å¬¶óÀÌ¾ğÆ® ±×·ì
+	// ì‹¤í–‰í•  í´ë¼ì´ì–¸íŠ¸ ê·¸ë£¹
 	uData.sQInfoV0.tgExcCGroup = m_tgExcCGroup;
 
-	// Äù½ºÆ® Á¤º¸
+	// í€˜ìŠ¤íŠ¸ ì •ë³´
 	uData.sQInfoV0.tcQuestInfo = m_tcQuestInfo;
 	uData.sQInfoV0.taQuestInfo = m_taQuestInfo;
 }

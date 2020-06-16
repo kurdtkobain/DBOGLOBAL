@@ -3,7 +3,7 @@
 
 
 /** 
-	Condition °ü·Ã °´Ã¼¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ condition entity type class µé
+	Condition ê´€ë ¨ ê°ì²´ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ condition entity type class ë“¤
 */
 
 

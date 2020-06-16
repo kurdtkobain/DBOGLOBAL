@@ -7,15 +7,15 @@
 
 /**
 	Item action
-	¿ëµµ : Server quest, server trigger pc
-	¼³¸í : ÀÏ¹İ ¾ÆÀÌÅÛÀ» »ı¼º ¹× »èÁ¦ ÇÑ´Ù
+	ìš©ë„ : Server quest, server trigger pc
+	ì„¤ëª… : ì¼ë°˜ ì•„ì´í…œì„ ìƒì„± ë° ì‚­ì œ í•œë‹¤
 */
 
 
 struct stTS_ITEM_INFO
 {
-	eTSITEM_SLOT_TYPE					eItemSlotType;	// ¾ÆÀÌÅÛÀÌ µé¾î°¥ À§Ä¡
-	unsigned int						uiItemIdx;		// »ı¼º ¹× »èÁ¦ÇÒ ¾ÆÀÌÅÛÀÇ ÀÎµ¦½º
+	eTSITEM_SLOT_TYPE					eItemSlotType;	// ì•„ì´í…œì´ ë“¤ì–´ê°ˆ ìœ„ì¹˜
+	unsigned int						uiItemIdx;		// ìƒì„± ë° ì‚­ì œí•  ì•„ì´í…œì˜ ì¸ë±ìŠ¤
 };
 
 
@@ -48,7 +48,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

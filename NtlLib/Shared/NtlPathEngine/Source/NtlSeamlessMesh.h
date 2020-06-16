@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlSeamlessMesh.h
 * Author		: Haesung, Cho
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2009. 03. 19
 * Abstract		: Pathengine seamless mesh
 *****************************************************************************
@@ -29,7 +29,7 @@ public:
 
 	bool		IsLoad();
 
-	// °¡Áö°í ÀÖ´Â Á¤º¸¸¦ »ç¿ëÇÏ¿© Mesh¸¦ ·ÎµåÇÑ´Ù.
+	// ê°€ì§€ê³  ìžˆëŠ” ì •ë³´ë¥¼ ì‚¬ìš©í•˜ì—¬ Meshë¥¼ ë¡œë“œí•œë‹¤.
 	bool		BuildMeshFromIndexs();
 
 	void		SetLoadRange( int nRange );
@@ -39,7 +39,7 @@ public:
 
 protected:
 	bool				m_bIsLoad;
-	int					m_nLoadRange;		///< °Å¸®¸¦ ÆÇ´ÜÇßÀ» ¶§ÀÇ °Å¸®
+	int					m_nLoadRange;		///< ê±°ë¦¬ë¥¼ íŒë‹¨í–ˆì„ ë•Œì˜ ê±°ë¦¬
 };
 
 #endif

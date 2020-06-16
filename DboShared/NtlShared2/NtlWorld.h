@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-11-15
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -29,7 +29,7 @@ enum eGAMERULE_TYPE
 {
 	GAMERULE_NORMAL,		// normal world
 	GAMERULE_RANKBATTLE,	// ranking battle
-	GAMERULE_MUDOSA,		// ÃµÇÏÁ¦ÀÏ¹«µµÈ¸Àå
+	GAMERULE_MUDOSA,		// ì²œí•˜ì œì¼ë¬´ë„íšŒì¥
 	GAMERULE_DOJO,			// dojo
 	GAMERULE_RAID,			// Raid
 	GAMERULE_HUNT,			// ultimate dungeon
@@ -80,7 +80,7 @@ enum eWORLDPLAY_SHARE_TYPE
 
 
 //-----------------------------------------------------------------------------------
-// ¿ùµå °ü·Ã Á¤ÀÇ
+// ì›”ë“œ ê´€ë ¨ ì •ì˜
 //-----------------------------------------------------------------------------------
 const float			NTL_DUMMY_AREA_WIDTH_IN_WORLD = 512.0f;		// in meters
 
@@ -91,7 +91,7 @@ const unsigned int	DYNAMIC_WORLD_SEPARATOR = 10000;
 const int			MAX_DYNAMIC_WORLD_CREATE_COUNT = 1000;
 
 //-----------------------------------------------------------------------------------
-// ¿ùµå °ü·Ã ÇÔ¼ö
+// ì›”ë“œ ê´€ë ¨ í•¨ìˆ˜
 //-----------------------------------------------------------------------------------
 HOBJECT MakeTriggerObjectHandle(HOBJECT hWorldTriggerObjectOffset, DWORD dwTriggerObjectSequence);
 
@@ -100,7 +100,7 @@ const char * NtlGetGameRuleTypeString(BYTE byRuleType);
 
 
 //-----------------------------------------------------------------------------------
-// ¿ùµå °ü·Ã packet structure
+// ì›”ë“œ ê´€ë ¨ packet structure
 //-----------------------------------------------------------------------------------
 #pragma pack(1)
 

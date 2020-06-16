@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-01-17
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -708,7 +708,7 @@ void * CNtlClientNet::PeekPacket(HSERVER hServer)
 }
 
 //-- SGpro --------------------------------------------------------------------------
-//  Purpose : ¼öÁ¤
+//  Purpose : ìˆ˜ì •
 //  Return  :
 //-----------------------------------------------------------------------------------
 void CNtlClientNet::PopPacket(HSERVER hServer)
@@ -1003,7 +1003,7 @@ int CServerConnection::Send()
 	if( false == m_sendBuffer.IsEmpty() )
 	{
 
-		// ¾Æ·¡ ÄÚµå¿¡¼­ ¸¶Áö¸·ÀÎÀÚ¸¦ false¿¡¼­ true·Î ¹Ù²Ş[6/19/2008 SGpro]
+		// ì•„ë˜ ì½”ë“œì—ì„œ ë§ˆì§€ë§‰ì¸ìë¥¼ falseì—ì„œ trueë¡œ ë°”ê¿ˆ[6/19/2008 SGpro]
 		//nSize = m_socket.SendStream( m_sendBuffer.GetQueuePopPtr(), m_sendBuffer.GetCurSize(), false );
 		nSize = m_socket.SendStream( m_sendBuffer.GetQueuePopPtr(), m_sendBuffer.GetCurSize(), true );
 
@@ -1026,7 +1026,7 @@ int CServerConnection::Send()
 
 //-----------------------------------------------------------------------------------
 //		Purpose	:
-//		Return	:	¹ŞÀº ÆĞÅ¶ÀÇ ¼ö
+//		Return	:	ë°›ì€ íŒ¨í‚·ì˜ ìˆ˜
 //-----------------------------------------------------------------------------------
 int	CServerConnection::RecvPendingData()
 {
@@ -1037,7 +1037,7 @@ int	CServerConnection::RecvPendingData()
 	CNtlPacket packet;
 	while( false != bLoop )
 	{
-		// ÆĞÅ¶ Ã¼Å©
+		// íŒ¨í‚· ì²´í¬
 		WORD wPacketLength = 0;
 		if( false == MakeSureCompletedPacket( &m_recvBuffer, &wPacketLength, m_pPacketEncoder ) )
 		{
@@ -1054,7 +1054,7 @@ int	CServerConnection::RecvPendingData()
 		m_recvBuffer.IncreaseWorkPos( packet.GetUsedSize() );
 
 
-		// ¿Ï¼ºµÈ ÆĞÅ¶ Å¥¿¡ ÀúÀå
+		// ì™„ì„±ëœ íŒ¨í‚· íì— ì €ì¥
 		CNtlPacket * pPacket = new CNtlPacket( packet );
 		if( NULL == pPacket )
 		{
@@ -1063,7 +1063,7 @@ int	CServerConnection::RecvPendingData()
 		}
 
 
-		// ÆĞÅ¶ º¹È£È­
+		// íŒ¨í‚· ë³µí˜¸í™”
 		if( m_pPacketEncoder )
 		{
 			if( NTL_SUCCESS != m_pPacketEncoder->RxDecrypt( *pPacket ) )
@@ -1170,7 +1170,7 @@ int	CServerConnection::RecvPendingData()
 
 //-----------------------------------------------------------------------------------
 //		Purpose	:
-//		Return	:	º¸³»¾ß µÇ´Â Send ¹öÆÛ»çÀÌÁî
+//		Return	:	ë³´ë‚´ì•¼ ë˜ëŠ” Send ë²„í¼ì‚¬ì´ì¦ˆ
 //-----------------------------------------------------------------------------------
 int CServerConnection::SendPendingData()
 {
@@ -1452,8 +1452,8 @@ void CClientNetImp::Log(const char * lpszFile, const char * lpszFunc, int nLine,
 //		Return	:
 //-----------------------------------------------------------------------------------
 //
-// ÄÁ³Ø¼Ç »óÅÂ¸¦ ¸¸µé°í, ÀÌ¿¡ µû¶ó Àü¼ÛÇÏµµ·Ï ÇÒ°Í (ºñµ¿±â connect Ãß°¡·Î ÀÎÇÏ¿© serverlist¿¡ ÀÖ¾îµµ Á¢¼Ó ¾ÈµÈ 
-// ÄÁ³Ø¼ÇÀÌ ÀÖÀ» ¼ö ÀÖ´Ù
+// ì»¨ë„¥ì…˜ ìƒíƒœë¥¼ ë§Œë“¤ê³ , ì´ì— ë”°ë¼ ì „ì†¡í•˜ë„ë¡ í• ê²ƒ (ë¹„ë™ê¸° connect ì¶”ê°€ë¡œ ì¸í•˜ì—¬ serverlistì— ìˆì–´ë„ ì ‘ì† ì•ˆëœ 
+// ì»¨ë„¥ì…˜ì´ ìˆì„ ìˆ˜ ìˆë‹¤
 //
 //-----------------------------------------------------------------------------------
 void CClientNetImp::DoAlive()
@@ -1709,7 +1709,7 @@ bool CMsgBaseNetworkImp::Create(HWND hWnd, NtlClientNetEventCallback EventCallba
 //-----------------------------------------------------------------------------------
 void CMsgBaseNetworkImp::Destroy()
 {
-	//  [10/13/2006 zeroera] : ¼öÁ¤ÇÊ¿ä : ¸ÕÀú ÇØÁ¦µÇ¾î¾ß¸¸ ÇÏ´Â °æ¿ì°¡ ÀÖ´Ù
+	//  [10/13/2006 zeroera] : ìˆ˜ì •í•„ìš” : ë¨¼ì € í•´ì œë˜ì–´ì•¼ë§Œ í•˜ëŠ” ê²½ìš°ê°€ ìˆë‹¤
 	CClientNetImp::Destroy();
 
 	m_hWnd =  NULL;
@@ -1794,7 +1794,7 @@ bool CMsgBaseNetworkImp::Connect(char* szServerAddress, WORD wPort, HSERVER * pS
 	mutex.Unlock();
 
 
-	// ÀÌ¹Ì ¼ÒÄÏÀ» ÄÁ³Ø¼Ç¿¡ ÇÒ´ç ÇßÀ¸¹Ç·Î Detach ½ÃÄÑ¼­ Local Variable ¼Ò¸ê½Ã SocketClose¸¦ ¸·À½
+	// ì´ë¯¸ ì†Œì¼“ì„ ì»¨ë„¥ì…˜ì— í• ë‹¹ í–ˆìœ¼ë¯€ë¡œ Detach ì‹œì¼œì„œ Local Variable ì†Œë©¸ì‹œ SocketCloseë¥¼ ë§‰ìŒ
 	socket.Detach();
 
 	*pServerHandle = pConnection->GetRawSocket();
@@ -1847,7 +1847,7 @@ bool CMsgBaseNetworkImp::Disconnect(HSERVER hServer)
 		return false;
 	}
 
-	//¿Ö ÀÖ´ÂÁö ¸ğ¸§.
+	//ì™œ ìˆëŠ”ì§€ ëª¨ë¦„.
 	//_ASSERT( CServerConnection::CONNECTING == pConnection->GetState() );
 
 
@@ -1907,7 +1907,7 @@ bool CMsgBaseNetworkImp::NetMsgProc(WPARAM wParam, LPARAM lParam)
 	CAutoPtr_ServerConnection pConnection = Acquire( wParam );
 	if( false == pConnection.IsValidPtr() )
 	{
-		//Á¤»óÀûÀ¸·Î Ã£Áö ¸øÇÒ °æ¿ì°¡ ÀÖ´Ù.
+		//ì •ìƒì ìœ¼ë¡œ ì°¾ì§€ ëª»í•  ê²½ìš°ê°€ ìˆë‹¤.
 		//NET_LOGDL( "Socket NetMsgProc Error, Find Error Connection[%u]", wParam );
 		return false;
 	}
@@ -2135,10 +2135,10 @@ bool CEventBaseNetworkImp ::Create(HWND hWnd, NtlClientNetEventCallback EventCal
 //		Purpose	:
 //		Return	:
 //-----------------------------------------------------------------------------------
-//  [5/4/2006 zeroera] : ¼öÁ¤ÇÊ¿ä : µğ¹ö±×½ÇÇà½Ã¿¡ Á¾·áÇÏ´Â °æ¿ì ±³Âø»óÅÂ ¹ß»ı
+//  [5/4/2006 zeroera] : ìˆ˜ì •í•„ìš” : ë””ë²„ê·¸ì‹¤í–‰ì‹œì— ì¢…ë£Œí•˜ëŠ” ê²½ìš° êµì°©ìƒíƒœ ë°œìƒ
 void CEventBaseNetworkImp ::Destroy()
 {
-	//  [10/13/2006 zeroera] : ¼öÁ¤ÇÊ¿ä : ¸ÕÀú ÇØÁ¦µÇ¾î¾ß¸¸ ÇÏ´Â °æ¿ì°¡ ÀÖ´Ù
+	//  [10/13/2006 zeroera] : ìˆ˜ì •í•„ìš” : ë¨¼ì € í•´ì œë˜ì–´ì•¼ë§Œ í•˜ëŠ” ê²½ìš°ê°€ ìˆë‹¤
 	CClientNetImp::Destroy();
 
 	for( int i = 0; i < m_nCurConnection; i++ )
@@ -2246,12 +2246,12 @@ bool CEventBaseNetworkImp ::Connect(char* szServerAddress, WORD wPort, HSERVER *
 	}
 
 
-	// ÀÌ¹Ì ¼ÒÄÏÀ» ÄÁ³Ø¼Ç¿¡ ÇÒ´ç ÇßÀ¸¹Ç·Î Detach ½ÃÄÑ¼­ Local Variable ¼Ò¸ê½Ã SocketClose¸¦ ¸·À½
+	// ì´ë¯¸ ì†Œì¼“ì„ ì»¨ë„¥ì…˜ì— í• ë‹¹ í–ˆìœ¼ë¯€ë¡œ Detach ì‹œì¼œì„œ Local Variable ì†Œë©¸ì‹œ SocketCloseë¥¼ ë§‰ìŒ
 	socket.Detach();
 	*pServerHandle = pConnection->GetRawSocket();
 
 
-	// ÀÌº¥Æ®
+	// ì´ë²¤íŠ¸
 	int nIndex = m_nCurConnection;
 
 	WSAEVENT newEvent = m_eventInfo.eventFreeList.front();
@@ -2361,7 +2361,7 @@ bool CEventBaseNetworkImp::InternalDisconnect(HSERVER hServer)
 	pConnection->SetState( CServerConnection::DISCONNECTED );
 
 
-	// ÇØ´ç ÄÁ³Ø¼ÇÀÇ ÀÌº¥Æ® ÇØÁ¦
+	// í•´ë‹¹ ì»¨ë„¥ì…˜ì˜ ì´ë²¤íŠ¸ í•´ì œ
 	CNtlAutoMutex mutex( &m_mutex );
 	mutex.Lock();
 
@@ -2369,7 +2369,7 @@ bool CEventBaseNetworkImp::InternalDisconnect(HSERVER hServer)
 	{
 		if( m_eventInfo.ahServer[ i ] == pConnection->GetHandle() )
 		{
-			// ÀÌº¥Æ® ¹è¿­ Á¤¸®
+			// ì´ë²¤íŠ¸ ë°°ì—´ ì •ë¦¬
 			m_eventInfo.eventFreeList.push_back( m_eventInfo.ahEvent[ i ] );
 
 			m_eventInfo.ahEvent[ i ] = m_eventInfo.ahEvent[ m_nCurConnection - 1 ];
@@ -2465,7 +2465,7 @@ void CEventBaseNetworkImp::PopPacket(HSERVER hServer)
 //-----------------------------------------------------------------------------------
 bool CEventBaseNetworkImp::PushPacket(HSERVER hServer, void * pData, int nDataSize)
 {
-	// Application Thread¿Í Event Thread ¾çÂÊ¿¡¼­ Á¢±Ù °¡´ÉÇÏ¹Ç·Î µ¿±âÈ­ 
+	// Application Threadì™€ Event Thread ì–‘ìª½ì—ì„œ ì ‘ê·¼ ê°€ëŠ¥í•˜ë¯€ë¡œ ë™ê¸°í™” 
 	CNtlAutoMutex mutex( &m_mutex );
 	mutex.Lock();
 
@@ -2570,7 +2570,7 @@ void CEventBaseNetworkImp::OnThreadProc()
 		//dwIndex = dwIndex - WSA_WAIT_EVENT_0;
 
 
-		//// ¼±Á¡¼ø¼­¿¡ ÀÇÇÑ ºÒ°øÆòÇ× event Ã³¸® º¸Á¤
+		//// ì„ ì ìˆœì„œì— ì˜í•œ ë¶ˆê³µí‰í•­ event ì²˜ë¦¬ ë³´ì •
 		//for( DWORD i = dwIndex; i < dwEventTotal; i++ )
 		//{
 		//	dwIndex = WSAWaitForMultipleEvents( 1, &m_eventInfo.ahEvent[i], FALSE, 0, FALSE );
@@ -2689,7 +2689,7 @@ void CEventBaseNetworkImp::OnThreadProc()
 
 
 //-----------------------------------------------------------------------------------
-//		Purpose	: WSAEventSelect¿¡ »ç¿ëÇÒ Event¸¦ »ı¼º
+//		Purpose	: WSAEventSelectì— ì‚¬ìš©í•  Eventë¥¼ ìƒì„±
 //		Return	:
 //-----------------------------------------------------------------------------------
 bool CEventBaseNetworkImp::OpenEvent()

@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlMeshFederation.h
 * Author		: Haesung, Cho
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2009. 03. 14
 * Abstract		: Pathengine iMeshFederation wrapping class
 *****************************************************************************

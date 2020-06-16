@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-09-20
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Jeong Ho, Rho ( lleo52@ntl-inc.com )
 //
@@ -93,7 +93,7 @@ bool CObjectTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	sOBJECT_TBLDAT * pTbldat = (sOBJECT_TBLDAT*) pvTable;
 	sOBJECT_TBLDAT * pExistTbldat = NULL;
 
-	// direction Àç¼³Á¤
+	// direction ì¬ì„¤ì •
 	if (CNtlVector::ZERO == pTbldat->vDir)
 	{
 		pTbldat->vDir = CNtlVector::UNIT_X;
@@ -107,7 +107,7 @@ bool CObjectTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		}
 	}
 
-	// radius °è»ê
+	// radius ê³„ì‚°
 	pTbldat->fRadius = ( ( pTbldat->vMax - pTbldat->vMin ) * 0.5).Length();
 
 
@@ -131,7 +131,7 @@ bool CObjectTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	}
 
 
-	// ObjectÀÇ Sequence ¼³Á¤
+	// Objectì˜ Sequence ì„¤ì •
 	pTbldat->dwSequence = m_dwObjectSequence++;
 
 
@@ -154,7 +154,7 @@ bool CObjectTable::SetTableData( void* pvTable, WCHAR* pwszSheetName, std::wstri
 																					\
 			if ( dwTemp >= INVALID_BYTE )											\
 			{																		\
-				_ASSERTE( !"BYTE Å¸ÀÔÀÇ µ¥ÀÌÅ¸ °ªÀÌ ÃÖ´ë°ª À» ÃÊ°úÇß½À´Ï´Ù." );		\
+				_ASSERTE( !"BYTE íƒ€ì…ì˜ ë°ì´íƒ€ ê°’ì´ ìµœëŒ€ê°’ ì„ ì´ˆê³¼í–ˆìŠµë‹ˆë‹¤." );		\
 			}																		\
 			else																	\
 			{																		\
@@ -307,7 +307,7 @@ bool CObjectTable::SetTableData( void* pvTable, WCHAR* pwszSheetName, std::wstri
 		}
 		else if (0 == wcscmp(pstrDataName->c_str(), L"Note"))
 		{
-			// ±âÈ¹ Àü¿ë ÇÊµå
+			// ê¸°íš ì „ìš© í•„ë“œ
 		}
 		else if ( 0 == wcscmp( pstrDataName->c_str(), L"Contents_Tblidx" ) )
 		{

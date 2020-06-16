@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-09
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung Doo sup   ( john@ntl-inc.com )
 //
@@ -22,7 +22,7 @@
 
 struct sRECIPE_CREATE_DATA
 {
-	TBLIDX	itemTblidx;			// Àç·áÅ×ÀÌºí ÀÎµ¦½º INVALID_
+	TBLIDX	itemTblidx;			// ì¬ë£Œí…Œì´ë¸” ì¸ë±ìŠ¤ INVALID_
 	BYTE	itemRate;
 	BYTE	byUnknown;
 };
@@ -30,7 +30,7 @@ struct sRECIPE_CREATE_DATA
 
 struct sRECIPE_MATERIAL_DATA
 {
-	TBLIDX	materialTblidx;			// Àç·áÅ×ÀÌºí ÀÎµ¦½º INVALID_
+	TBLIDX	materialTblidx;			// ì¬ë£Œí…Œì´ë¸” ì¸ë±ìŠ¤ INVALID_
 	BYTE	byMaterialCount;
 };
 

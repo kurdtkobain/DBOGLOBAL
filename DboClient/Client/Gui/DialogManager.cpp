@@ -101,14 +101,14 @@ VOID CDialogManager::CreateInstance(gui::CGUIManager* pGuiManager)
 	m_pInstance->RegisteRegularDialog();
 	m_pInstance->RegisteEntireFocusingDialog();
 
-	// by Kell : ¾×¼Çº°·Î ´ÙÀÌ¾ó·Î±×¸¦ Ã³¸®ÇÑ´Ù.
+	// by Kell : ì•¡ì…˜ë³„ë¡œ ë‹¤ì´ì–¼ë¡œê·¸ë¥¼ ì²˜ë¦¬í•œë‹¤.
 	GetInputActionMap()->LinkDialogHotKey( m_pInstance, &CDialogManager::HandleDialogAction );
 
 	// create side dialog manager
 	CSideDialogManager::CreateInstance();
 	GetDialogManager()->RegistDialog(DIALOG_SIDEDIALOG_MANAGER, GetSideDialogManager(), &CSideDialogManager::SwitchDialog );
 
-	// ¸¶¿ì½º Ã³¸®¸¦ À§ÇØ
+	// ë§ˆìš°ìŠ¤ ì²˜ë¦¬ë¥¼ ìœ„í•´
 	m_pInstance->m_slotMouse = pGuiManager->SigCaptureMouseDown().Connect( m_pInstance, &CDialogManager::HandleMouse );
 
 	// Link 
@@ -173,8 +173,8 @@ VOID CDialogManager::Update(RwReal fElapsed)
 		}
 	}	
 
-	// ÀÏºÎ Ã¢µéÀº ¼­¹ö·Î ºÎÅÍ ´Ý±â ÀÀ´äÀÌ ¿Í¾ßÁö¸¸ ´ÝÈù´Ù.
-	// µû¶ó¼­ DialogManangerÀÇ Update¿¡¼­ Ã¢ÀÌ ´ÝÈù ÀÌÈÄ¿¡ ¸ÖÆ¼ ´ÙÀÌ¾ó·Î±×¸¦ ¿­¾îÁØ´Ù
+	// ì¼ë¶€ ì°½ë“¤ì€ ì„œë²„ë¡œ ë¶€í„° ë‹«ê¸° ì‘ë‹µì´ ì™€ì•¼ì§€ë§Œ ë‹«ížŒë‹¤.
+	// ë”°ë¼ì„œ DialogManangerì˜ Updateì—ì„œ ì°½ì´ ë‹«ížŒ ì´í›„ì— ë©€í‹° ë‹¤ì´ì–¼ë¡œê·¸ë¥¼ ì—´ì–´ì¤€ë‹¤
 	if( m_bExpectingCloseNPCDialog )
 	{
 		RwInt32 iDialog = GetOpendNPCDIalog();
@@ -249,7 +249,7 @@ VOID CDialogManager::OpenDefaultDialog()
 			OpenDialog(i, INVALID_SERIAL_ID, FALSE);
 	}
 
-	// Pet ÀÌ ÀÖÀ» °æ¿ì Æê °ü·Ã Dialog µéµµ Default Dialog¿Í °°Àº ¹æ½ÄÀ¸·Î ¿­¾îÁØ´Ù.
+	// Pet ì´ ìžˆì„ ê²½ìš° íŽ« ê´€ë ¨ Dialog ë“¤ë„ Default Dialogì™€ ê°™ì€ ë°©ì‹ìœ¼ë¡œ ì—´ì–´ì¤€ë‹¤.
 	 if( CPetStatusBarGui::GetInstance()->GetPetID() != INVALID_SERIAL_ID )
 		 OpenDialog( DIALOG_PET_STATUSBAR );
 
@@ -276,7 +276,7 @@ VOID CDialogManager::CloseNotDefaultDialog()
 
 VOID CDialogManager::CloseAll()
 {
-	// ¼­¹ö·Î ºÎÅÍ ÆÐÅ¶À» ¹Þ¾Æ ´ÝÈ÷´Â dialog¸¦ À§ÇØ¼­ ÄÁ¼ÁÀ» ¹Ì¸® Á¾·áÇÑ´Ù
+	// ì„œë²„ë¡œ ë¶€í„° íŒ¨í‚·ì„ ë°›ì•„ ë‹«ížˆëŠ” dialogë¥¼ ìœ„í•´ì„œ ì»¨ì…‰ì„ ë¯¸ë¦¬ ì¢…ë£Œí•œë‹¤
 	CNtlWorldConceptController* pWorldConcept = GetNtlWorldConcept()->FindGradeExtController(WORLD_CONCEPT_SECOND_GRADE);
 	
 	if( pWorldConcept )
@@ -325,7 +325,7 @@ VOID CDialogManager::SwitchBag(RwBool bOpen)
 			CloseDialog(i, FALSE);
 	}
 
-	// ¿¬¼ÓÇØ¼­ ¼Ò¸®°¡ 5¹ø ³ª´Â °ÍÀ» ¹æÁöÇÏ±â À§ÇØ
+	// ì—°ì†í•´ì„œ ì†Œë¦¬ê°€ 5ë²ˆ ë‚˜ëŠ” ê²ƒì„ ë°©ì§€í•˜ê¸° ìœ„í•´
 	if( bOpen )
 		PlayOpenSound(DIALOG_CAPSULE_1);
 	else
@@ -333,7 +333,7 @@ VOID CDialogManager::SwitchBag(RwBool bOpen)
 }
 
 /**
-* \brief Capsult kit¸¦ Index·Î Switch DialogÇÑ´Ù.
+* \brief Capsult kitë¥¼ Indexë¡œ Switch Dialogí•œë‹¤.
 */
 VOID CDialogManager::SwitchBagByIndex( RwInt32 nIndex )
 {
@@ -345,7 +345,7 @@ VOID CDialogManager::SwitchBagByIndex( RwInt32 nIndex )
 
 	CNtlInventory* pInventory = GetNtlSLGlobal()->GetSobAvatar()->GetInventory();
 
-	// ¾ø´Â Capsule kti¶ó¸é ¾Æ¹«·± ¼öÇàÀ» ÇÏÁö ¾Ê´Â´Ù.
+	// ì—†ëŠ” Capsule ktië¼ë©´ ì•„ë¬´ëŸ° ìˆ˜í–‰ì„ í•˜ì§€ ì•ŠëŠ”ë‹¤.
 	if( pInventory->GetBagItem( nIndex ) == INVALID_SERIAL_ID )
 		return;
 
@@ -378,14 +378,14 @@ VOID CDialogManager::RaiseDialogbyUser(RwInt32 iDialog)
 	{
 		if( iDialog == *it )
 		{
-			// ±âÁ¸¿¡ ÀÌ¹Ì ÀÖ´Ù¸é °¡Àå µÚ·Î..
+			// ê¸°ì¡´ì— ì´ë¯¸ ìžˆë‹¤ë©´ ê°€ìž¥ ë’¤ë¡œ..
 			m_listRaiseDialogbyUser.erase(it);
 			m_listRaiseDialogbyUser.push_back(iDialog);
 			return;
 		}
 	}
 
-	// »õ·Î¿î ´ÙÀÌ¾ó·Î±×°¡ È­¸é¿¡ ³ªÅ¸³­´Ù¸é
+	// ìƒˆë¡œìš´ ë‹¤ì´ì–¼ë¡œê·¸ê°€ í™”ë©´ì— ë‚˜íƒ€ë‚œë‹¤ë©´
 	m_listRaiseDialogbyUser.push_back(iDialog);
 }
 
@@ -514,20 +514,20 @@ VOID CDialogManager::OnMode(eDialogMode eMode)
 		{
 			GetCursorManager()->SetDesignatedCursor( CCursorManager::CS_INVALID_CURSOR );
 
-			// ÀÎÆ÷À©µµ¿ì, ÆË¾÷´ÙÀÌ¾ó·Î±× hide
+			// ì¸í¬ìœˆë„ìš°, íŒì—…ë‹¤ì´ì–¼ë¡œê·¸ hide
 			GetInfoWndManager()->ShowInfoWindow( FALSE );		
 			GetPopupManager()->AllPopupClose();
 
-			// ³ª·¹ÀÌ¼ÇÀÌ Èå¸¦ ¶§´Â ¸ðµç ´ÙÀÌ¾ó·Î±×¸¦ ´Ý´Â´Ù
+			// ë‚˜ë ˆì´ì…˜ì´ íë¥¼ ë•ŒëŠ” ëª¨ë“  ë‹¤ì´ì–¼ë¡œê·¸ë¥¼ ë‹«ëŠ”ë‹¤
 			CloseAll();
 
-			// ³ª·¹ÀÌ¼ÇÁß¿¡´Â ¼­¹ö¸»Ç³¼±¸¸ Ç¥½ÃÇÑ´Ù.
+			// ë‚˜ë ˆì´ì…˜ì¤‘ì—ëŠ” ì„œë²„ë§í’ì„ ë§Œ í‘œì‹œí•œë‹¤.
 			GetBalloonManager()->SetVisibleBalloonType( CBalloonGui::TYPE_SERVER );
 
-			// Ã¤ÆÃÃ¢ÀÇ Æ÷Ä¿½º¸¦ Áö¿î´Ù.
+			// ì±„íŒ…ì°½ì˜ í¬ì»¤ìŠ¤ë¥¼ ì§€ìš´ë‹¤.
 			CDboEventGenerator::ChatGuiMode( FALSE );
 
-			// ÀÔ·ÂµÈ ÀÎÇ² ¸®¼Â
+			// ìž…ë ¥ëœ ì¸í’‹ ë¦¬ì…‹
 			GetInputActionMap()->Reset();
 
 			// Can not input key input
@@ -603,13 +603,13 @@ VOID CDialogManager::OffMode()
 
 		case DIALOGMODE_NARRATION:
 		{
-			// ¿ùµåÄÁ¼Á ÆÇ´ÜÀº Äù½ºÆ® ÀÎµðÄÉÀÌÅÍ¿¡¼­ ÇÑ´Ù.
+			// ì›”ë“œì»¨ì…‰ íŒë‹¨ì€ í€˜ìŠ¤íŠ¸ ì¸ë””ì¼€ì´í„°ì—ì„œ í•œë‹¤.
 			GetSideDialogManager()->OpenDialog(SDIALOG_QUEST_INDICATOR);
 
-			// ¸»Ç³¼± Á¦ÇÑ ÇØÁ¦
+			// ë§í’ì„  ì œí•œ í•´ì œ
 			GetBalloonManager()->SetVisibleBalloonType(CBalloonGui::ALL);
 
-			// ³ª·¹ÀÌ¼Ç ¸ðµå½Ã ¿­±â ¿ä±¸µÈ Ã¢ ¿­±â
+			// ë‚˜ë ˆì´ì…˜ ëª¨ë“œì‹œ ì—´ê¸° ìš”êµ¬ëœ ì°½ ì—´ê¸°
 			LIST_REQUESTED_OPENDIALOG_IN_NARRATION_ITER iter;
 			for (iter = m_listRequestedOpenDialogInNarration.begin(); iter != m_listRequestedOpenDialogInNarration.end(); ++iter)
 			{
@@ -668,7 +668,7 @@ VOID CDialogManager::LocateBag(RwInt32 iScreenWidth, RwInt32 iScreenHeight, RwBo
 		if( !bForce && pGui->IsShow() == FALSE )
 			continue;
 
-		// Ã¹ ¹øÂ° °¡¹æÀÇ À§Ä¡¸¦ Á¤ÇÑ´Ù
+		// ì²« ë²ˆì§¸ ê°€ë°©ì˜ ìœ„ì¹˜ë¥¼ ì •í•œë‹¤
 		if( byBagCount == 0 )
 		{
 			iX = iScreenWidth - dDIALOG_CLEINT_EDGE_GAP - pGui->GetWidth();
@@ -713,17 +713,17 @@ VOID CDialogManager::LocationDialogs(RwInt32 iWidth, RwInt32 iHeight)
 		pGui->SetPosition(iWidth - (pGui->GetWidth() + 10), dDIALOG_CLEINT_EDGE_GAP);
 	}	
 
-	// »çÀÌµå ´ÙÀÌ¾ó·Î±× ÄÁÆ®·Ñ·¯
+	// ì‚¬ì´ë“œ ë‹¤ì´ì–¼ë¡œê·¸ ì»¨íŠ¸ë¡¤ëŸ¬
 	pGui = GetDialog(DIALOG_SIDEDIALOG_CONTROLLER);
 	if( pGui )
 		pGui->SetPosition(iWidth - (pGui->GetWidth() + dDIALOG_CLEINT_EDGE_GAP), 188);
 
-	// »çÀÌµå ´ÙÀÌ¾ó·Î±×
+	// ì‚¬ì´ë“œ ë‹¤ì´ì–¼ë¡œê·¸
 	pGui = GetDialog(DIALOG_SIDEDIALOG_MANAGER);
 	if( pGui )
 		pGui->SetPosition(iWidth - pGui->GetWidth() - dDIALOG_CLEINT_EDGE_GAP, GetDialog(DIALOG_SIDEDIALOG_CONTROLLER)->GetPosition().bottom);
 
-	// »çÀÌµå ¾ÆÀÌÄÜ
+	// ì‚¬ì´ë“œ ì•„ì´ì½˜
 	pGui = GetDialog(DIALOG_SIDEICON);
 	if( pGui )
 		pGui->SetPosition(iWidth, iHeight - 53);
@@ -898,7 +898,7 @@ VOID CDialogManager::LocationDialogs(RwInt32 iWidth, RwInt32 iHeight)
 	if( pGui )
 	{
 		rect = GetDialog(DIALOG_QUICKSLOT)->GetPosition();
-		pGui->SetPosition(rect.left, rect.top - rect.GetHeight() - 4); // Æê ½ºÅ³ Ã¢ À§ÂÊÀ¸·Î
+		pGui->SetPosition(rect.left, rect.top - rect.GetHeight() - 4); // íŽ« ìŠ¤í‚¬ ì°½ ìœ„ìª½ìœ¼ë¡œ
 	}	
 
 	pGui = GetDialog(DIALOG_CHANNGEL_CHANGE);
@@ -960,15 +960,15 @@ VOID CDialogManager::Locate_AutoPosition(RwInt32 iWidth, RwInt32 iHeight)
 	CRectangle rect;
 	RwInt32 iX;	
 
-	// °¡¹æ
+	// ê°€ë°©
 	LocateBag(iWidth, iHeight);
 
 	// Regular Dialog
 	RwInt32 iNeedCloseRegularCount = m_listOpenedRegularDilaog.size() - HowManyOpenMaxRegular();
 	if( iNeedCloseRegularCount > 0 )
 	{
-		// Å¬¶óÀÌ¾ðÆ®ÀÇ ÆøÀÌ ÁÙ¾îµé¾î¼­ ¿­·ÁÀÖ´Â ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×¸¦ ´Ý¾Æ¾ß ÇÏ´Â °æ¿ìÀÌ´Ù
-		// È¤Àº ´ÙÀÌ¾ó·Î±× m_bMovableÀÌ TRUE¿¡¼­ FALSE·Î ¹Ù²î¾óÀ» ¶§ÀÌ´Ù
+		// í´ë¼ì´ì–¸íŠ¸ì˜ í­ì´ ì¤„ì–´ë“¤ì–´ì„œ ì—´ë ¤ìžˆëŠ” ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ë¥¼ ë‹«ì•„ì•¼ í•˜ëŠ” ê²½ìš°ì´ë‹¤
+		// í˜¹ì€ ë‹¤ì´ì–¼ë¡œê·¸ m_bMovableì´ TRUEì—ì„œ FALSEë¡œ ë°”ë€Œì–¼ì„ ë•Œì´ë‹¤
 		LIST_OPENED_REGULAR_DIALOG tempList = m_listOpenedRegularDilaog;
 		LIST_OPENED_REGULAR_ITER it_temp = tempList.begin();
 
@@ -1002,7 +1002,7 @@ VOID CDialogManager::Locate_AutoPosition(RwInt32 iWidth, RwInt32 iHeight)
 		iX = pGui->GetLinkedArea().right + dREGULARDIALOG_GAP;
 	}
 
-	// DIALOG_TUTORIAL_DIALOG_FOCUS´Â ´Ù¸¥ ´ÙÀÌ¾ó·Î±×ÀÇ À§Ä¡¸¦ ¾Ë¾Æ¾ß ÇÏ´Ï Ç×»ó °¡Àå ³ªÁß¿¡ ¿Å±âµµ·Ï ÇÏÀÚ
+	// DIALOG_TUTORIAL_DIALOG_FOCUSëŠ” ë‹¤ë¥¸ ë‹¤ì´ì–¼ë¡œê·¸ì˜ ìœ„ì¹˜ë¥¼ ì•Œì•„ì•¼ í•˜ë‹ˆ í•­ìƒ ê°€ìž¥ ë‚˜ì¤‘ì— ì˜®ê¸°ë„ë¡ í•˜ìž
 	pGui = GetDialog(DIALOG_TUTORIAL_DIALOG_FOCUS);
 	if(pGui)
 	{
@@ -1016,8 +1016,8 @@ VOID CDialogManager::Locate_UserPosition(RwInt32 iWidth, RwInt32 iHeight)
 	CNtlPLGui* pGui;
 	CRectangle rect;
 
-	// Ã¢°í¿Í ±æµå Ã¢°í´Â ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×ÀÌÁö¸¸ Movable ±â´ÉÀÌ È°¼ºÈ­µÇ¾î ÀÖÁö ¾Ê¾Æµµ
-	// ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×ÀÇ À§Ä¡¿¡ ÀÖ´Â´Ù
+	// ì°½ê³ ì™€ ê¸¸ë“œ ì°½ê³ ëŠ” ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ì´ì§€ë§Œ Movable ê¸°ëŠ¥ì´ í™œì„±í™”ë˜ì–´ ìžˆì§€ ì•Šì•„ë„
+	// ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ì˜ ìœ„ì¹˜ì— ìžˆëŠ”ë‹¤
 	pGui = GetDialog(DIALOG_WAREHOUSEBAR);
 	if( pGui )
 		pGui->SetPosition(dREGULARDIALOG_FIRST_X, m_iRegularStrartY);
@@ -1061,7 +1061,7 @@ VOID CDialogManager::Locate_UserDefaultPosition(RwInt32 iWidth, RwInt32 iHeight)
 	CNtlPLGui* pGui;
 	REGULAR_MAP_ITER it_Regular = m_mapRegular.begin();
 
-	// È­¸é¿¡ º¸¿©Áö°í ÀÖ´Â ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×ÀÇ À§Ä¡ Á¶Á¤
+	// í™”ë©´ì— ë³´ì—¬ì§€ê³  ìžˆëŠ” ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ì˜ ìœ„ì¹˜ ì¡°ì •
 	for( ; it_Regular != m_mapRegular.end() ; ++it_Regular )
 	{
 		eDialogType eType = it_Regular->first;
@@ -1092,7 +1092,7 @@ VOID CDialogManager::Locate_UserDefaultPosition(RwInt32 iWidth, RwInt32 iHeight)
 		RaiseDialogbyUser(eType);
 	}
 
-	// È­¸é¿¡ º¸ÀÌÁö ¾Ê´Â ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×ÀÇ À§Ä¡ Á¶Á¤
+	// í™”ë©´ì— ë³´ì´ì§€ ì•ŠëŠ” ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ì˜ ìœ„ì¹˜ ì¡°ì •
 	iXPos = dREGULARDIALOG_FIRST_X;
 	iYPos = dYPOSITION_START;
 
@@ -1117,7 +1117,7 @@ VOID CDialogManager::Locate_UserDefaultPosition(RwInt32 iWidth, RwInt32 iHeight)
 
 VOID CDialogManager::Locate_MovableDefaultPosition()
 {
-	// °¡¹æ
+	// ê°€ë°©
 	LocateBag(GetDboGlobal()->GetScreenWidth(), GetDboGlobal()->GetScreenHeight(), TRUE);
 
 	// Regular Dialog
@@ -1143,8 +1143,8 @@ VOID CDialogManager::Locate_MovableDefaultPosition()
 		}
 	}
 
-	// Ã¢°í¿Í ±æµå Ã¢°í´Â ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×ÀÌÁö¸¸ Movable ±â´ÉÀÌ È°¼ºÈ­µÇ¾î ÀÖÁö ¾Ê¾Æµµ
-	// ·¹±Ö·¯ ´ÙÀÌ¾ó·Î±×ÀÇ À§Ä¡¿¡ ÀÖ´Â´Ù
+	// ì°½ê³ ì™€ ê¸¸ë“œ ì°½ê³ ëŠ” ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ì´ì§€ë§Œ Movable ê¸°ëŠ¥ì´ í™œì„±í™”ë˜ì–´ ìžˆì§€ ì•Šì•„ë„
+	// ë ˆê·¤ëŸ¬ ë‹¤ì´ì–¼ë¡œê·¸ì˜ ìœ„ì¹˜ì— ìžˆëŠ”ë‹¤
 	pGui = GetDialog(DIALOG_WAREHOUSEBAR);
 	if( pGui )
 		pGui->SetPosition(dREGULARDIALOG_FIRST_X, m_iRegularStrartY);
@@ -1447,7 +1447,7 @@ VOID CDialogManager::HandleEvents( RWS::CMsg &msg )
 CNtlPLGui* const CDialogManager::GetpDialogTEST(const char* szFrmFileName)
 {
 	CNtlPLGui* pDialog;
-	DIALOG_MAP::iterator it = m_mapDialog.begin();	/// µî·ÏµÈ dialog °Ë»ö
+	DIALOG_MAP::iterator it = m_mapDialog.begin();	/// ë“±ë¡ëœ dialog ê²€ìƒ‰
 	for( ; it != m_mapDialog.end(); ++it)
 	{
 		pDialog = it->second.pDialog;
@@ -1463,9 +1463,9 @@ CNtlPLGui* const CDialogManager::GetpDialogTEST(const char* szFrmFileName)
 
 RwBool CDialogManager::ShowDialogTEST(RwInt32 iDialog, bool bOpen)
 {
-	/// OpenDialog ¾Æ´Ñ ´Ü¼ø Show·Î.....
+	/// OpenDialog ì•„ë‹Œ ë‹¨ìˆœ Showë¡œ.....
 	CNtlPLGui* pDialog;
-	DIALOG_MAP::iterator it = m_mapDialog.find(iDialog);	/// µî·ÏµÈ dialog °Ë»ö
+	DIALOG_MAP::iterator it = m_mapDialog.find(iDialog);	/// ë“±ë¡ëœ dialog ê²€ìƒ‰
 	if( it != m_mapDialog.end() )
 	{
 		pDialog = it->second.pDialog;
@@ -1475,20 +1475,20 @@ RwBool CDialogManager::ShowDialogTEST(RwInt32 iDialog, bool bOpen)
 			return TRUE;
 		}
 	}
-	else	/// ¾øÀ¸¸é side dialog  °Ë»ç, open
+	else	/// ì—†ìœ¼ë©´ side dialog  ê²€ì‚¬, open
 		return GetSideDialogManager()->ShowDialogTEST(iDialog, bOpen);
 
 	return FALSE;
 }
 
-VOID CDialogManager::ShowAllDialogTEST(bool bOpen)	///< DialogManager, SideDialogManager¿¡ µî·ÏµÈ ¸ðµç dialog open/close
+VOID CDialogManager::ShowAllDialogTEST(bool bOpen)	///< DialogManager, SideDialogManagerì— ë“±ë¡ëœ ëª¨ë“  dialog open/close
 {
 	GetSideDialogManager()->ShowAllDialogTEST(bOpen);
 
 	CNtlPLGui* pDialog;
 	for(RwInt32 i = DIALOG_FIRST + 1 ; i < DIALOG_NUM ; ++i )
-	{	/// OpenDialog ¾Æ´Ñ ´Ü¼ø Show·Î.....
-		DIALOG_MAP::iterator it = m_mapDialog.find(i);	/// µî·ÏµÈ dialog °Ë»ö
+	{	/// OpenDialog ì•„ë‹Œ ë‹¨ìˆœ Showë¡œ.....
+		DIALOG_MAP::iterator it = m_mapDialog.find(i);	/// ë“±ë¡ëœ dialog ê²€ìƒ‰
 		if( it != m_mapDialog.end() )
 		{
 			pDialog = it->second.pDialog;

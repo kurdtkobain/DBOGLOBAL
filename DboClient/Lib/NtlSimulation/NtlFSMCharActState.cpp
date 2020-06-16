@@ -225,7 +225,7 @@ void CNtlFSMCharActIdleState::Enter(void)
 	pMoveStuff->byMoveFlags = NTL_MOVE_NONE;	
     
 
-	// monsterÀÏ °æ¿ì, move pattern Àû¿ë.
+	// monsterì¼ ê²½ìš°, move pattern ì ìš©.
 	if( Logic_IsMovePatternApply(m_pActor) )
 	{
 		m_pIdlePattern = NTL_NEW CNtlBehaviorCharIdlePattern;
@@ -275,7 +275,7 @@ void CNtlFSMCharActIdleState::Enter(void)
 
 void CNtlFSMCharActIdleState::Exit(void)
 {
-	// monsterÀÏ °æ¿ì
+	// monsterì¼ ê²½ìš°
 	if(m_pIdlePattern)
 	{
 //		Logic_GetMovePatternSync(m_pActor->GetSerialID(), 0);
@@ -355,7 +355,7 @@ RwUInt32 CNtlFSMCharActIdleState::HandleEvents(RWS::CMsg &pMsg)
 		if(uiAnimKey == NML_IDLE_01 || uiAnimKey == NML_IDLE_02 || 
 			uiAnimKey == NML_STAFF_IDLE_01 || uiAnimKey == NML_STAFF_IDLE_02)
 		{
-			// monster idle pattern codingÀ» µû·Î ÇÑ´Ù.
+			// monster idle pattern codingì„ ë”°ë¡œ í•œë‹¤.
 			if(m_pIdlePattern)
 			{
 				m_pIdlePattern->NextUnit();
@@ -421,7 +421,7 @@ RwUInt32 CNtlFSMCharActIdleState::HandleEvents(RWS::CMsg &pMsg)
 
 void CNtlFSMCharActIdleState::SetAnim(RwUInt8 byAnimOrder)
 {
-	// idle patternÀÌ ÀÖ´Â monsterÀÏ °æ¿ì¿¡´Â Àû¿ë ¾ÈÇÑ´Ù.
+	// idle patternì´ ìˆëŠ” monsterì¼ ê²½ìš°ì—ëŠ” ì ìš© ì•ˆí•œë‹¤.
 	if(m_pIdlePattern)
 	{
 		return;
@@ -432,7 +432,7 @@ void CNtlFSMCharActIdleState::SetAnim(RwUInt8 byAnimOrder)
 	RwUInt32 uiCurrAnimKey = pSobProxy->GetBaseAnimationKey();
 	RwUInt32 uiNextAnimKey = 0;
 
-    // ³ª¸ŞÅ© º¯½Å Ã¼Å©
+    // ë‚˜ë©”í¬ ë³€ì‹  ì²´í¬
     if(Logic_IsTransformGreatNamek(m_pActor))
     {
         uiNextAnimKey = TRANS_IDLE;
@@ -571,7 +571,7 @@ void CNtlFSMCharActIdleState::UpdateSlipping(RwReal fElapsed)
 
 	if(!CheckSwimming())
 	{
-        //// Ãæµ¹ Ã¼Å©        
+        //// ì¶©ëŒ ì²´í¬        
         //SWorldHeightStuff sHstuff;
         //Logic_GetWorldHeight(m_pActor, &vNewPos, sHstuff);
         //RwUInt8 byColliResult = NTL_CHARACTER_COLLI_NONE;
@@ -591,7 +591,7 @@ void CNtlFSMCharActIdleState::UpdateSlipping(RwReal fElapsed)
         //    }            
         //}
 
-        //// Falling Ã¼Å©
+        //// Falling ì²´í¬
         //if( m_pActor->GetFlags() & SLFLAG_FALLING_ENABLE && vNewPos.y - sHstuff.fFinialHeight > FALLING_CHECK_LEN)
         //{
         //    CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
@@ -695,7 +695,7 @@ void CNtlFSMCharActIdleState::UpdateCalcHeight( RwReal fElapsed )
 
 void CNtlFSMCharActIdleState::UpdateTerror( RwReal fElapsed ) 
 {
-    // ÀÚ±â ÀÚ½ÅÀÌ°Å³ª, ÀÚ½ÅÀÇ ÆêÀÎ °æ¿ì¿¡¸¸ Ã³¸®ÇÑ´Ù.
+    // ìê¸° ìì‹ ì´ê±°ë‚˜, ìì‹ ì˜ í«ì¸ ê²½ìš°ì—ë§Œ ì²˜ë¦¬í•œë‹¤.
     if(m_pActor->GetClassID() == SLCLASS_AVATAR || m_pActor->GetOwnerID() == GetNtlSLGlobal()->GetSobAvatar()->GetSerialID())
     {
         Logic_RandomMove(m_pActor, DBO_MAX_TERROR_MOVEMENT_DISTANCE);        
@@ -777,7 +777,7 @@ void CNtlFSMCharActMoveState::Enter(void)
 	}
     else if(pMoveStuff->byForm == NTL_MOVEFORM_BUS)
     {
-		// Behavior°¡ ÀÌ¹Ì »ı¼º µÇ¾úÀÖ´Â °æ¿ì´Â »ı¼ºÇÏÁö ¾Ê´Â´Ù
+		// Behaviorê°€ ì´ë¯¸ ìƒì„± ë˜ì—ˆìˆëŠ” ê²½ìš°ëŠ” ìƒì„±í•˜ì§€ ì•ŠëŠ”ë‹¤
 		CNtlBehaviorBusMove *pBehavior = NTL_NEW CNtlBehaviorBusMove;
 		AddBehavior(pBehavior);
     }
@@ -870,7 +870,7 @@ RwUInt32 CNtlFSMCharActMoveState::HandleEvents(RWS::CMsg &pMsg)
 	}
 	else if(pMsg.Id == g_EventSobSecondDestMove)
 	{
-		// ¹ö½ºÀÎ °æ¿ì
+		// ë²„ìŠ¤ì¸ ê²½ìš°
 		if ( Logic_IsBus( m_pActor ) )
 		{
 			FSMEvent_CharActSobSecondDestMove( m_pActor, reinterpret_cast<SNtlEventSobSecondDestMove*>(pMsg.pData) ); 
@@ -901,7 +901,7 @@ void CNtlFSMCharActMoveSwimming::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// fly moveÀÎÁö ground moveÀÎÁö¸¦ ÆÇ´ÜÇÑ´Ù.
+	// fly moveì¸ì§€ ground moveì¸ì§€ë¥¼ íŒë‹¨í•œë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
 
@@ -975,11 +975,11 @@ void CNtlFSMCharActAdjustMoveState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// fly moveÀÎÁö ground moveÀÎÁö¸¦ ÆÇ´ÜÇÑ´Ù.
+	// fly moveì¸ì§€ ground moveì¸ì§€ë¥¼ íŒë‹¨í•œë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
 
-	// À¯È¿ ¹üÀ§ °Ë»ö.
+	// ìœ íš¨ ë²”ìœ„ ê²€ìƒ‰.
 	RwV3d vPos = m_pActor->GetPosition(); 
 	RwV3d vDir;
 	RwV3dSubMacro(&vDir, &pMoveStuff->vDest, &vPos);
@@ -1149,7 +1149,7 @@ void CNtlFSMCharActSitDownState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// animationÀ» setting ÇÑ´Ù.
+	// animationì„ setting í•œë‹¤.
 	CNtlSobCharProxy *pSobProxy = reinterpret_cast<CNtlSobCharProxy*>(m_pActor->GetSobProxy());
 	sITEM_TBLDAT *pItemTblData = Logic_GetEquipedWeaponItemTableData(m_pActor);
 	if(pItemTblData && Logic_IsEquipedStaffWeapon(pItemTblData))
@@ -1165,7 +1165,7 @@ void CNtlFSMCharActSitDownState::Exit(void)
 
 void CNtlFSMCharActSitDownState::Update(RwReal fElapsed)
 {
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤.
 //	CNtlFSMCharActStateBase::Update(fElapsed); 
 }
 
@@ -1209,7 +1209,7 @@ void CNtlFSMCharActSitState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// animationÀ» setting ÇÑ´Ù.
+	// animationì„ setting í•œë‹¤.
 	CNtlSobCharProxy *pSobProxy = reinterpret_cast<CNtlSobCharProxy*>(m_pActor->GetSobProxy());
 	sITEM_TBLDAT *pItemTblData = Logic_GetEquipedWeaponItemTableData(m_pActor);
 	if(pItemTblData && Logic_IsEquipedStaffWeapon(pItemTblData))
@@ -1225,7 +1225,7 @@ void CNtlFSMCharActSitState::Exit(void)
 
 void CNtlFSMCharActSitState::Update(RwReal fElapsed)
 {
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤.
 //	CNtlFSMCharActStateBase::Update(fElapsed); 
 }
 
@@ -1255,7 +1255,7 @@ void CNtlFSMCharActStandUpState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// animationÀ» setting ÇÑ´Ù.
+	// animationì„ setting í•œë‹¤.
 	CNtlSobCharProxy *pSobProxy = reinterpret_cast<CNtlSobCharProxy*>(m_pActor->GetSobProxy());
 	sITEM_TBLDAT *pItemTblData = Logic_GetEquipedWeaponItemTableData(m_pActor);
 	if(pItemTblData && Logic_IsEquipedStaffWeapon(pItemTblData))
@@ -1271,7 +1271,7 @@ void CNtlFSMCharActStandUpState::Exit(void)
 
 void CNtlFSMCharActStandUpState::Update(RwReal fElapsed)
 {
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤.
 //	CNtlFSMCharActStateBase::Update(fElapsed); 
 }
 
@@ -1418,8 +1418,8 @@ void CNtlFSMCharActTriggerOperateState::Exit(void)
 
 void CNtlFSMCharActTriggerOperateState::Update(RwReal fElapsed)
 {
-	// CNtlFSMCharActStateBase::Update ÇÔ¼ö¸¦ È£ÃâÇÏÁö ¾Ê´Â´Ù.
-	// ÀÚµ¿À¸·Î »óÅÂ°¡ ³¡³»´Â °ÍÀ» ¾ø¾Ø´Ù..
+	// CNtlFSMCharActStateBase::Update í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•˜ì§€ ì•ŠëŠ”ë‹¤.
+	// ìë™ìœ¼ë¡œ ìƒíƒœê°€ ëë‚´ëŠ” ê²ƒì„ ì—†ì•¤ë‹¤..
 }
 
 RwUInt32 CNtlFSMCharActTriggerOperateState::HandleEvents(RWS::CMsg &pMsg)
@@ -2083,7 +2083,7 @@ void CNtlFSMCharActFollowState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// fly moveÀÎÁö ground moveÀÎÁö¸¦ ÆÇ´ÜÇÑ´Ù.
+	// fly moveì¸ì§€ ground moveì¸ì§€ë¥¼ íŒë‹¨í•œë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
 	SCtrlStuff *pCtrlStuff = pBeData->GetCtrlStuff();
@@ -2190,7 +2190,7 @@ void CNtlFSMCharActFightingFollowState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// fly moveÀÎÁö ground moveÀÎÁö¸¦ ÆÇ´ÜÇÑ´Ù.
+	// fly moveì¸ì§€ ground moveì¸ì§€ë¥¼ íŒë‹¨í•œë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
 	SCtrlStuff *pCtrlStuff = pBeData->GetCtrlStuff();
@@ -2223,13 +2223,13 @@ void CNtlFSMCharActFightingFollowState::Enter(void)
 
     m_byMoveForm = pMoveStuff->byForm;
 
-    // ¾îÅÃ¸ğµå¸¦ ÄÒ´Ù.
+    // ì–´íƒëª¨ë“œë¥¼ ì¼ ë‹¤.
     CNtlSLEventGenerator::SobAutoAttackMode(m_pActor->GetSerialID(), TRUE);    
 }
 
 void CNtlFSMCharActFightingFollowState::Exit(void)
 {
-    // ¾îÅÃ ¸ğµå¸¦ ²ö´Ù.
+    // ì–´íƒ ëª¨ë“œë¥¼ ëˆë‹¤.
     CNtlSLEventGenerator::SobAutoAttackMode(m_pActor->GetSerialID(), FALSE);
 
 	CNtlFSMCharActStateBase::Exit();
@@ -2247,7 +2247,7 @@ void CNtlFSMCharActFightingFollowState::Update( RwReal fElapsed )
 {
     CNtlFSMCharActStateBase::Update(fElapsed);
 
-    // À°ÁöÀÎÁö ¹°¼ÓÀÎÁö ÆÄ¾ÇÇÏ¿© Çàµ¿À» º¯°æÇÏ¿© ÁØ´Ù.
+    // ìœ¡ì§€ì¸ì§€ ë¬¼ì†ì¸ì§€ íŒŒì•…í•˜ì—¬ í–‰ë™ì„ ë³€ê²½í•˜ì—¬ ì¤€ë‹¤.
     SWorldHeightStuff hStuff;
     if(Logic_IsSwimmingActor(m_pActor, &m_pActor->GetPosition(), hStuff))
     {
@@ -2296,7 +2296,7 @@ void CNtlFSMCharActFightingPoseState::Enter(void)
 	CNtlSobCharProxy *pSobProxy = reinterpret_cast<CNtlSobCharProxy*>(m_pActor->GetSobProxy());
 
 	sITEM_TBLDAT *pItemTblData = Logic_GetEquipedWeaponItemTableData(m_pActor);
-    // º¯½Å¶§´Â ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ¾ÈÇÏ°í ¹Ù·Î Idle·Î °£´Ù.
+    // ë³€ì‹ ë•ŒëŠ” ì• ë‹ˆë©”ì´ì…˜ì„ ì•ˆí•˜ê³  ë°”ë¡œ Idleë¡œ ê°„ë‹¤.
     if(Logic_IsTransformGreatNamek(m_pActor))
     {
         pSobProxy->SetBaseAnimation(TRANS_IDLE);        
@@ -2306,8 +2306,8 @@ void CNtlFSMCharActFightingPoseState::Enter(void)
 	else
 		pSobProxy->SetBaseAnimation(BTL_DEF_FP_LOOP);
 
-	// ground fly¸¦ À§ÇØ¼­
-	// À§Ä¡¸¦ ´Ù½ÃÇÑ¹ø ¼ÂÆÃÇÑ´Ù.
+	// ground flyë¥¼ ìœ„í•´ì„œ
+	// ìœ„ì¹˜ë¥¼ ë‹¤ì‹œí•œë²ˆ ì…‹íŒ…í•œë‹¤.
 	RwV3d vPos = m_pActor->GetPosition();
 
 	SWorldHeightStuff sHStuff;
@@ -2316,7 +2316,7 @@ void CNtlFSMCharActFightingPoseState::Enter(void)
 
 	m_pActor->SetPosition(&vPos);
 
-	// À§Ä¡ º¸Á¤À» ÇØ¾ßÇÏ´Â classÀÎÁö¸¦ checkÇÑ´Ù.
+	// ìœ„ì¹˜ ë³´ì •ì„ í•´ì•¼í•˜ëŠ” classì¸ì§€ë¥¼ checkí•œë‹¤.
 	if(!FSMUtil_IsStandingAdjustMoveClass(m_pActor))
 	{
 		m_bAdjustMoveCheck = TRUE;
@@ -2672,8 +2672,8 @@ void CNtlFSMCharActFightingShrinkState::Enter(void)
 	// time setting
 	m_fTime = 0.0f;
 
-	// ground fly¸¦ À§ÇØ¼­
-	// À§Ä¡¸¦ ´Ù½ÃÇÑ¹ø ¼ÂÆÃÇÑ´Ù.
+	// ground flyë¥¼ ìœ„í•´ì„œ
+	// ìœ„ì¹˜ë¥¼ ë‹¤ì‹œí•œë²ˆ ì…‹íŒ…í•œë‹¤.
 	RwV3d vPos = m_pActor->GetPosition();
 
 	SWorldHeightStuff sHStuff;
@@ -2742,7 +2742,7 @@ void CNtlFSMCharActFightingShrinkState::Update(RwReal fElapsed)
 	}
 
 	
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤.
 	//	CNtlFSMCharActStateBase::Update(fElapsed); 
 }
 
@@ -2779,7 +2779,7 @@ void CNtlFSMCharActHurtState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-    // NPC »óÁ¡ ÀÌ¿ëÁßÀÌ¶ó¸é Äµ½½ÇÑ´Ù.
+    // NPC ìƒì  ì´ìš©ì¤‘ì´ë¼ë©´ ìº”ìŠ¬í•œë‹¤.
     if(m_pActor->GetClassID() == SLCLASS_AVATAR)
     {
         if(GetNtlWorldConcept()->IsActivePlayConcept(WORLD_PLAY_NPC_COMMU))
@@ -2831,7 +2831,7 @@ void CNtlFSMCharActKnockDownState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// NPC »óÁ¡ ÀÌ¿ëÁßÀÌ¶ó¸é Äµ½½ÇÑ´Ù.
+	// NPC ìƒì  ì´ìš©ì¤‘ì´ë¼ë©´ ìº”ìŠ¬í•œë‹¤.
 	if(m_pActor->GetClassID() == SLCLASS_AVATAR)
 	{
 		if(GetNtlWorldConcept()->IsActivePlayConcept(WORLD_PLAY_NPC_COMMU))
@@ -2879,8 +2879,8 @@ RwUInt32 CNtlFSMCharActKnockDownState::HandleEvents(RWS::CMsg &pMsg)
 	}
 	else if(pMsg.Id == g_EventSobFainting)
 	{
-		// faint eventÀÏ °æ¿ì¿¡´Â behavior¸¸ event¸¦ º¸³½´Ù.
-		// knockdownµÇ¾î¼­ ¾²·¯Á® ÀÖ´Â »óÅÂ·Î Á×¾î¾ß ÇÏ¹Ç·Î...
+		// faint eventì¼ ê²½ìš°ì—ëŠ” behaviorë§Œ eventë¥¼ ë³´ë‚¸ë‹¤.
+		// knockdownë˜ì–´ì„œ ì“°ëŸ¬ì ¸ ìˆëŠ” ìƒíƒœë¡œ ì£½ì–´ì•¼ í•˜ë¯€ë¡œ...
 		CNtlFSMStateBase::HandleEvents(pMsg);
 		FSMEvent_CharActFainting(m_pActor, reinterpret_cast<SNtlEventSobFainting*>( pMsg.pData ));
 		SetNextStateId(NTL_FSMSID_DIE);
@@ -2888,7 +2888,7 @@ RwUInt32 CNtlFSMCharActKnockDownState::HandleEvents(RWS::CMsg &pMsg)
 	}
 	else if(pMsg.Id == g_EventSobHit)
 	{
-		// ¿©±â´Â Áß¿äÇÑ ºÎºĞ.
+		// ì—¬ê¸°ëŠ” ì¤‘ìš”í•œ ë¶€ë¶„.
 		SNtlEventSobHit *pHit = reinterpret_cast<SNtlEventSobHit*>(pMsg.pData);
 		FSMEvent_CharActHit(m_pActor, pHit); 
 
@@ -2953,8 +2953,8 @@ RwUInt32 CNtlFSMCharActSlidingState::HandleEvents(RWS::CMsg &pMsg)
 
 	if(pMsg.Id == g_EventSobFainting)
 	{
-		// faint eventÀÏ °æ¿ì¿¡´Â behavior¸¸ event¸¦ º¸³½´Ù.
-		// slidingÀÌ ³¡³­ ´ÙÀ½ Á×¾î¾ß ÇÏ¹Ç·Î....
+		// faint eventì¼ ê²½ìš°ì—ëŠ” behaviorë§Œ eventë¥¼ ë³´ë‚¸ë‹¤.
+		// slidingì´ ëë‚œ ë‹¤ìŒ ì£½ì–´ì•¼ í•˜ë¯€ë¡œ....
 		FSMEvent_CharActFainting(m_pActor, reinterpret_cast<SNtlEventSobFainting*>( pMsg.pData ));
 		SetNextStateId(NTL_FSMSID_FAINTING);
 		NTL_RETURN( NTL_FSM_EVENTRES_BLOCK );
@@ -3029,12 +3029,12 @@ void CNtlFSMCharActStunState::Enter(void)
             
         }
         break;
-		case DBO_STUN_TYPE_FROZEN:      // µ¿ÀÛÀ» ¸ØÃá´Ù.        
+		case DBO_STUN_TYPE_FROZEN:      // ë™ì‘ì„ ë©ˆì¶˜ë‹¤.        
         {
             m_fOrgAnimSpeed = pSobProxy->GetAnimSpeed();
             pSobProxy->SetAnimSpeed(0.0f);
             
-            // ÀÌÆåÆ®
+            // ì´í™íŠ¸
             CNtlPLEntity* pEffect = pSobProxy->CreatePLEffect(NTL_VID_STATE_FREEZE, &m_pActor->GetPosition());
             if(pEffect)
             {
@@ -3045,7 +3045,7 @@ void CNtlFSMCharActStunState::Enter(void)
         break;
 		case DBO_STUN_TYPE_TIED:
         {
-            // ¿ì¼± IDLE ¾Ö´Ï¸ŞÀÌ¼Ç
+            // ìš°ì„  IDLE ì• ë‹ˆë©”ì´ì…˜
             RwUInt32 uiNextAnimKey = Logic_GetIdleAnimationID(m_pActor);	            
             pSobProxy->SetBaseAnimation(uiNextAnimKey);
         }
@@ -3150,7 +3150,7 @@ void CNtlFSMCharActStunState::OnStone(RwBool bEffect)
 
     if(bEffect)
     {
-        // ¾Ö´Ï¸ŞÀÌ¼ÇÀ» ¸ØÃá´Ù.
+        // ì• ë‹ˆë©”ì´ì…˜ì„ ë©ˆì¶˜ë‹¤.
         m_fOrgAnimSpeed = pSobProxy->GetAnimSpeed();
         pSobProxy->SetAnimSpeed(0.0f);
 
@@ -3318,11 +3318,11 @@ void CNtlFSMCharActSkillFollowState::Enter(void)
     if(CheckInFollowRange())
         return;
 
-	// char behavior data ¸¦ ¾ò¾î¿Â´Ù.
+	// char behavior data ë¥¼ ì–»ì–´ì˜¨ë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
 	
-	// fly moveÀÎÁö ground moveÀÎÁö¸¦ ÆÇ´ÜÇÑ´Ù.
+	// fly moveì¸ì§€ ground moveì¸ì§€ë¥¼ íŒë‹¨í•œë‹¤.
 	if(pMoveStuff->byForm == NTL_MOVEFORM_GROUND)
 	{
 		CNtlBehaviorBase *pBehavior = NTL_NEW CNtlBehaviorCharGroundMove;
@@ -3369,7 +3369,7 @@ void CNtlFSMCharActSkillFollowState::Update( RwReal fElapsed )
 {
     CNtlFSMCharActStateBase::Update(fElapsed);
 
-    // Falling Ã¼Å©
+    // Falling ì²´í¬
     CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
     SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
     if(pMoveStuff->byMoveResult & NTL_MOVE_RESULT_FALLING)
@@ -3378,7 +3378,7 @@ void CNtlFSMCharActSkillFollowState::Update( RwReal fElapsed )
         SetNextStateId(NTL_FSMSID_FALLING);
     }
 
-    // À°ÁöÀÎÁö ¹°¼ÓÀÎÁö ÆÄ¾ÇÇÏ¿© Çàµ¿À» º¯°æÇÏ¿© ÁØ´Ù.
+    // ìœ¡ì§€ì¸ì§€ ë¬¼ì†ì¸ì§€ íŒŒì•…í•˜ì—¬ í–‰ë™ì„ ë³€ê²½í•˜ì—¬ ì¤€ë‹¤.
     SWorldHeightStuff hStuff;
     if(Logic_IsSwimmingActor(m_pActor, &m_pActor->GetPosition(), hStuff))
     {
@@ -3404,7 +3404,7 @@ void CNtlFSMCharActSkillFollowState::Update( RwReal fElapsed )
 
 RwBool CNtlFSMCharActSkillFollowState::CheckInFollowRange() 
 {
-    // char behavior data ¸¦ ¾ò¾î¿Â´Ù.
+    // char behavior data ë¥¼ ì–»ì–´ì˜¨ë‹¤.
     CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData());     
     SCtrlStuff *pCtrlStuff = pBeData->GetCtrlStuff();
 
@@ -3428,7 +3428,7 @@ void CNtlFSMCharActSkillFocusState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-    // Rp Bonus Effect¿Í ¾Ö´Ï¸ŞÀÌ¼ÇÀ» Àç»ıÇÑ´Ù.
+    // Rp Bonus Effectì™€ ì• ë‹ˆë©”ì´ì…˜ì„ ì¬ìƒí•œë‹¤.
 	CNtlSobCharProxy* pSobProxy = (CNtlSobCharProxy*)m_pActor->GetSobProxy();
 	pSobProxy->SetBaseAnimation(NML_SKILL_ABILITY);    
     pSobProxy->AttachRPBonusEffect();
@@ -3474,7 +3474,7 @@ void CNtlFSMCharActSkillReadyState::Enter(void)
 
 void CNtlFSMCharActSkillReadyState::Update(RwReal fElapsed)
 {
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤.
 	//	CNtlFSMCharActStateBase::Update(fElapsed); 
 
 	if(m_bSkillReq)
@@ -3499,14 +3499,14 @@ RwUInt32 CNtlFSMCharActSkillReadyState::HandleEvents(RWS::CMsg &pMsg)
 	{
 		SNtlEventSobSkillCancel *pSobSkillCancel = reinterpret_cast<SNtlEventSobSkillCancel*>(pMsg.pData);
 
-        // Rp Bonus°¡ Àû¿ëµÇ¾î ÀÖÀ¸¸é ÀÌÆåÆ®¸¦ Á¦°ÅÇÑ´Ù.
+        // Rp Bonusê°€ ì ìš©ë˜ì–´ ìˆìœ¼ë©´ ì´í™íŠ¸ë¥¼ ì œê±°í•œë‹¤.
         CNtlSobCharProxy* pProxy = (CNtlSobCharProxy*)m_pActor->GetSobProxy();
         pProxy->DetachRPBonusEffect();   
 
-        // ¼­ºê¿şÆùÀÌ ÀÖÀ¸¸é ÇØÁ¦ÇÑ´Ù.
+        // ì„œë¸Œì›¨í°ì´ ìˆìœ¼ë©´ í•´ì œí•œë‹¤.
         CNtlPLEventGenerator::AnimEventSubWeaponDeActive(m_pActor->GetSerialID());
 
-		// ¿©±â¼­ ÀÌÀ¯¸¦ ¹àÈù´Ù.
+		// ì—¬ê¸°ì„œ ì´ìœ ë¥¼ ë°íŒë‹¤.
 		if(pSobSkillCancel->wReason == GAME_TARGET_TOO_FAR ||
            pSobSkillCancel->wReason == GAME_TARGET_TOO_CLOSE)
 		{
@@ -3604,7 +3604,7 @@ void CNtlFSMCharActSkillCastingState::Enter(void)
 		LuaExec_SkillCastingEnter(m_pActor->GetSerialID(), pSkillStuff->uiSkillTblId);
 	}
 
-	// casting gui¸¦ À§ÇÑ event¸¦ º¸³½´Ù.
+	// casting guië¥¼ ìœ„í•œ eventë¥¼ ë³´ë‚¸ë‹¤.
 	if(m_pActor->GetClassID() == SLCLASS_AVATAR)
 	{
 		CNtlSLEventGenerator::SobCastingDirect( m_pActor, TRUE, TRUE );
@@ -3681,13 +3681,13 @@ void CNtlFSMCharActSkillCastingState::Exit(void)
 			}
 		}
 
-		// Ä³½ºÆÃ Å¸°Ù ¸¶Å©
+		// ìºìŠ¤íŒ… íƒ€ê²Ÿ ë§ˆí¬
 		if (m_pActor->GetTargetID() == Logic_GetTargetMarkingID())
 		{
 			CNtlSLEventGenerator::SobTargetMarkRelease(Logic_GetTargetMarkingID());
 		}
 
-		// casting gui¸¦ À§ÇÑ event¸¦ º¸³½´Ù.
+		// casting guië¥¼ ìœ„í•œ eventë¥¼ ë³´ë‚¸ë‹¤.
 		if (m_pActor->GetClassID() == SLCLASS_AVATAR)
 		{
 			CNtlSLEventGenerator::SobCastingDirect(m_pActor, TRUE, FALSE);
@@ -3701,7 +3701,7 @@ void CNtlFSMCharActSkillCastingState::Exit(void)
 	CNtlFSMCharActStateBase::Exit();
 }
 
-#define CASTING_CHECK_OCCLUSION     0.5f                        ///< Ä³½ºÆÃÁß¿¡ ¿ÀºêÁ§Æ® ¿ÀÅ¬·ùÁ¯À» Ã¼Å©ÇÒ Å¸ÀÓ
+#define CASTING_CHECK_OCCLUSION     0.5f                        ///< ìºìŠ¤íŒ…ì¤‘ì— ì˜¤ë¸Œì íŠ¸ ì˜¤í´ë¥˜ì ¼ì„ ì²´í¬í•  íƒ€ì„
 
 void CNtlFSMCharActSkillCastingState::Update(RwReal fElapsed)
 {
@@ -3710,10 +3710,10 @@ void CNtlFSMCharActSkillCastingState::Update(RwReal fElapsed)
     {
         m_fOcclusionCheckTime = 0.0f;
 
-        // Ä³½ºÆÃÁß¿¡ ¿ÀºêÁ§Æ® Ãæµ¹ Ã¼Å©¸¦ ÇÑ´Ù.        
+        // ìºìŠ¤íŒ…ì¤‘ì— ì˜¤ë¸Œì íŠ¸ ì¶©ëŒ ì²´í¬ë¥¼ í•œë‹¤.        
         if(Logic_isEnemyTargetOcclusion(m_pActor->GetTargetID()))
         {
-            // ¼­¹ö¿¡ Ä³½ºÆÃ Äµ½½ ÆĞÅ¶À» º¸³½´Ù.
+            // ì„œë²„ì— ìºìŠ¤íŒ… ìº”ìŠ¬ íŒ¨í‚·ì„ ë³´ë‚¸ë‹¤.
             API_GetSLPacketGenerator()->SendCharSkillCastingCanceledNfy(GAME_SKILL_CASTING_CANCELED_OBJECT_OCCLUSION);
         }
     }
@@ -3742,7 +3742,7 @@ RwUInt32 CNtlFSMCharActSkillCastingState::HandleEvents(RWS::CMsg &pMsg)
     {
         Finish();
 
-        // ¼­ºê¿şÆùÀÌ ÀÖÀ¸¸é ÇØÁ¦ÇÑ´Ù.
+        // ì„œë¸Œì›¨í°ì´ ìˆìœ¼ë©´ í•´ì œí•œë‹¤.
         CNtlPLEventGenerator::AnimEventSubWeaponDeActive(m_pActor->GetSerialID());
 
         return NTL_FSM_EVENTRES_CHANGE_STATE;
@@ -3948,7 +3948,7 @@ void CNtlFSMCharActSkillActionState::Exit(void)
 		CNtlSLEventGenerator::TSSkillUse_Skill(m_pActor->GetSerialID(), pSkillStuff, pAttackData);
 	}
 
-    // Rp Bonus°¡ Àû¿ëµÇ¾î ÀÖÀ¸¸é ÀÌÆåÆ®¸¦ Á¦°ÅÇÑ´Ù.
+    // Rp Bonusê°€ ì ìš©ë˜ì–´ ìˆìœ¼ë©´ ì´í™íŠ¸ë¥¼ ì œê±°í•œë‹¤.
     CNtlSobCharProxy* pProxy = (CNtlSobCharProxy*)m_pActor->GetSobProxy();
     pProxy->DetachRPBonusEffect();    
 
@@ -4060,7 +4060,7 @@ RwUInt32 CNtlFSMCharActSkillActionState::HandleEvents(RWS::CMsg &pMsg)
 	{
 		//SetFlags(GetFlags() & ~(NTL_FSMSF_NOT_SKILLUSE | NTL_FSMSF_NOT_INPUT) );
         
-        // Idle »óÅÂ¿Í °°Àº ¸ğµç ÀÔ·ÂÀ» ¹Ş´Â´Ù.
+        // Idle ìƒíƒœì™€ ê°™ì€ ëª¨ë“  ì…ë ¥ì„ ë°›ëŠ”ë‹¤.
         SetFlags(NTL_FSMSF_SKIP_STANDUP | NTL_FSMSF_NOT_RUNJUMP);
 		m_bAnimCancelPoint = TRUE;        
 	}
@@ -4228,7 +4228,7 @@ void CNtlFSMCharActHTBFollowState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// char behavior data ¸¦ ¾ò¾î¿Â´Ù.
+	// char behavior data ë¥¼ ì–»ì–´ì˜¨ë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SMoveStuff *pMoveStuff = pBeData->GetMoveStuff();
 	SCtrlStuff *pCtrlStuff = pBeData->GetCtrlStuff();
@@ -4237,7 +4237,7 @@ void CNtlFSMCharActHTBFollowState::Enter(void)
 	if(Logic_InFollowRange(m_pActor, pTargetActor, pCtrlStuff->fFollowRange))
 		return;
 
-	// fly moveÀÎÁö ground moveÀÎÁö¸¦ ÆÇ´ÜÇÑ´Ù.
+	// fly moveì¸ì§€ ground moveì¸ì§€ë¥¼ íŒë‹¨í•œë‹¤.
 	if(pMoveStuff->byForm == NTL_MOVEFORM_GROUND)
 	{
 		CNtlBehaviorBase *pBehavior = NTL_NEW CNtlBehaviorCharGroundMove;
@@ -4355,11 +4355,11 @@ void CNtlFSMCharActHTBState::EnableSimulation(RwBool bEnable)
 
 	if(bEnable)
 	{
-		// actorÀÇ elasped time ¼³Á¤ÇÑ´Ù.
+		// actorì˜ elasped time ì„¤ì •í•œë‹¤.
 		m_pActor->EnableVisible(FALSE);
 		m_pHTBElapController = GetNtlSobElapsedControlManager()->CreateController(m_pActor, 100.0f, HTB_SIMULATION_WEIGHT_ELAPSED_VALUE);
 		
-		// target actorÀÇ elasped time ¼³Á¤ÇÑ´Ù.
+		// target actorì˜ elasped time ì„¤ì •í•œë‹¤.
 		CNtlSob *pSobObj = GetNtlSobManager()->GetSobObject(pHTBStuff->hTargetSerialId);
 		if(pSobObj)
 		{
@@ -4369,7 +4369,7 @@ void CNtlFSMCharActHTBState::EnableSimulation(RwBool bEnable)
 	}
 	else
 	{
-		// actorÀÇ elasped time ¼³Á¤ÇÑ´Ù.
+		// actorì˜ elasped time ì„¤ì •í•œë‹¤.
 		m_pActor->EnableVisible(TRUE);
 		if(m_pHTBElapController)
 		{
@@ -4377,7 +4377,7 @@ void CNtlFSMCharActHTBState::EnableSimulation(RwBool bEnable)
 			m_pHTBElapController = NULL;
 		}
 
-		// target actorÀÇ elasped time ¼³Á¤ÇÑ´Ù.
+		// target actorì˜ elasped time ì„¤ì •í•œë‹¤.
 		CNtlSob *pSobObj = GetNtlSobManager()->GetSobObject(pHTBStuff->hTargetSerialId);
 		if(pSobObj)
 		{
@@ -4423,11 +4423,11 @@ RwReal CNtlFSMCharActHTBState::GetFirstSkillRange(void)
 
 void CNtlFSMCharActHTBState::NextStepProc(void)
 {
-	// ´ÙÀ½ HTB stepÀ» ÁøÇàÇÑ´Ù.
+	// ë‹¤ìŒ HTB stepì„ ì§„í–‰í•œë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SHTBStuff *pHTBStuff = pBeData->GetHTBStuff();
 
-	// lua ¿¬µ¿ÇÑ´Ù.
+	// lua ì—°ë™í•œë‹¤.
 	if(m_bHTBSuccess)
 	{
 		if(m_pActor->GetClassID() == SLCLASS_AVATAR)
@@ -4437,7 +4437,7 @@ void CNtlFSMCharActHTBState::NextStepProc(void)
 		}
 	}
 
-	// HTB simulation off ½ÃÅ²´Ù.
+	// HTB simulation off ì‹œí‚¨ë‹¤.
 	if(m_bSimulationMode && m_byHTBNextStep >= pHTBStuff->byCurrStep)
 		EnableSimulation(FALSE);
 
@@ -4448,14 +4448,14 @@ void CNtlFSMCharActHTBState::NextStepProc(void)
 		return;
 	}
 
-	// ÇöÀç ÇÃ·¹ÀÌ °¡´ÉÇÑ HTB stepÀ» ±¸ÇÑ´Ù.
+	// í˜„ì¬ í”Œë ˆì´ ê°€ëŠ¥í•œ HTB stepì„ êµ¬í•œë‹¤.
 	if(m_byHTBNextStep >= pHTBStuff->byStepCount)
 	{
 		m_byHTPStepState = EHTB_FINISH;
 		return;
 	}
 
-	// ¼­¹ö·Î HTB ÁøÇà »óÈ²À» º¸³½´Ù.
+	// ì„œë²„ë¡œ HTB ì§„í–‰ ìƒí™©ì„ ë³´ë‚¸ë‹¤.
 	if(m_pActor->GetFlags() & SLFLAG_SERVER_SENDER)
 	{
 		RwV3d vPos = m_pActor->GetPosition();
@@ -4464,7 +4464,7 @@ void CNtlFSMCharActHTBState::NextStepProc(void)
 		API_GetSLPacketGenerator()->SendCharHTBForward(vPos, vDir);
 	}
 
-	// skillÀ» »ç¿ëÇÏ´Â set ÀÌ¸é.
+	// skillì„ ì‚¬ìš©í•˜ëŠ” set ì´ë©´.
 	CHTBSetTable *pHTBSetTbl = API_GetTableContainer()->GetHTBSetTable();
 	sHTB_SET_TBLDAT *pHTBSetTblData = reinterpret_cast<sHTB_SET_TBLDAT*>( pHTBSetTbl->FindData(pHTBStuff->uiSkillTblId) );
     
@@ -4556,7 +4556,7 @@ void CNtlFSMCharActHTBState::NextStepProc(void)
 		}
 	}
 
-	// HTB camera lua script È£Ãâ.
+	// HTB camera lua script í˜¸ì¶œ.
 	if(m_bHTBSuccess)
 	{
 		if(m_pActor->GetClassID() == SLCLASS_AVATAR)
@@ -4617,7 +4617,7 @@ void CNtlFSMCharActHTBState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 	
-	// ÁÂÇ¥ setting
+	// ì¢Œí‘œ setting
 	RwV3d vPos = m_pActor->GetPosition();
 
 	SWorldHeightStuff sHStuff;
@@ -4626,18 +4626,18 @@ void CNtlFSMCharActHTBState::Enter(void)
 
 	m_pActor->SetPosition(&vPos);
 
-	// simulation stepÀ¸·Î ÁøÇàÇØ¾ß ÇÏ´ÂÁö ÆÇ´ÜÇÑ´Ù.
+	// simulation stepìœ¼ë¡œ ì§„í–‰í•´ì•¼ í•˜ëŠ”ì§€ íŒë‹¨í•œë‹¤.
 	CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
 	SHTBStuff *pHTBStuff = pBeData->GetHTBStuff();
 	if(pHTBStuff->byCurrStep > 0)
 		EnableSimulation(TRUE);
 
-	// Ã³À½À¸·Î active skillÀÌ ³ª¿À´Â step
+	// ì²˜ìŒìœ¼ë¡œ active skillì´ ë‚˜ì˜¤ëŠ” step
 	m_byFirstActiveStep = FindFirstActiveStep();
 	// next step procedure
 	NextStepProc();
 
-	// RP Stock Image ¶ç¿ì±â.
+	// RP Stock Image ë„ìš°ê¸°.
 	Logic_ShowHTBRPSelectGui(m_pActor, pHTBStuff->hTargetSerialId);
 }
 
@@ -4645,7 +4645,7 @@ void CNtlFSMCharActHTBState::Exit(void)
 {
     CNtlCameraShakeController::ResetShakeFactor();
 
-	// sub weaponÀÌ ÀåÂøµÇ¾î ÀÖÀ¸¸é, ÀåÂø ÇØÁ¦...
+	// sub weaponì´ ì¥ì°©ë˜ì–´ ìˆìœ¼ë©´, ì¥ì°© í•´ì œ...
 	CNtlPLEventGenerator::AnimEventSubWeaponDeActive(m_pActor->GetSerialID());
 
 	// HTB camera delete 
@@ -4690,7 +4690,7 @@ void CNtlFSMCharActHTBState::Update(RwReal fElapsed)
 						API_GetSLPacketGenerator()->SendCharHTBForward(vPos, vDir);
 					}
 
-                    // HTB°¡ ³¡³ª°íµµ Å¸°ÙÀÌ »ì¾ÆÀÖÀ¸¸é ÀÚµ¿ °ø°İÇÑ´Ù.
+                    // HTBê°€ ëë‚˜ê³ ë„ íƒ€ê²Ÿì´ ì‚´ì•„ìˆìœ¼ë©´ ìë™ ê³µê²©í•œë‹¤.
                     if(m_pActor->GetClassID() == SLCLASS_AVATAR)
                     {
                         CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
@@ -4707,7 +4707,7 @@ void CNtlFSMCharActHTBState::Update(RwReal fElapsed)
 			}
 			else
 			{
-				// next stepÀÌ Á¸ÀçÇÑ´Ù¸é. htb »óÅÂ¸¦ finish ÇÏÁö ¾Ê´Â´Ù.
+				// next stepì´ ì¡´ì¬í•œë‹¤ë©´. htb ìƒíƒœë¥¼ finish í•˜ì§€ ì•ŠëŠ”ë‹¤.
 				ResetFinish();
 			}
 		}
@@ -4832,7 +4832,7 @@ void CNtlFSMCharActHTBSandbagState::BehaviorKnockDownProc(void)
 
 void CNtlFSMCharActHTBSandbagState::BehaviorTossUp(void)
 {
-	// Àá½Ã µ¿¾È ÁöÇü ³ôÀÌ check¿Í ground fly flag¸¦ ²ö´Ù.
+	// ì ì‹œ ë™ì•ˆ ì§€í˜• ë†’ì´ checkì™€ ground fly flagë¥¼ ëˆë‹¤.
 	RwUInt32 uiFlags = m_pActor->GetFlags();
 	uiFlags = (uiFlags | SLFLAG_NOT_WORLD_HEIGHT_CHECK) & ~SLFLAG_CAN_GROUND_FLY;
 	m_pActor->SetFlags( uiFlags);
@@ -4846,7 +4846,7 @@ void CNtlFSMCharActHTBSandbagState::BehaviorTossUp(void)
 
 void CNtlFSMCharActHTBSandbagState::BehaviorTossDown(void)
 {
-    // Àá½Ã µ¿¾È ÁöÇü ³ôÀÌ check¿Í ground fly flag¸¦ ²ö´Ù.
+    // ì ì‹œ ë™ì•ˆ ì§€í˜• ë†’ì´ checkì™€ ground fly flagë¥¼ ëˆë‹¤.
     RwUInt32 uiFlags = m_pActor->GetFlags();
     m_pActor->SetFlags( uiFlags & ~SLFLAG_NOT_WORLD_HEIGHT_CHECK);
 
@@ -4868,7 +4868,7 @@ void CNtlFSMCharActHTBSandbagState::BehaviorHomingDown(void)
 
 void CNtlFSMCharActHTBSandbagState::Enter(void)
 {
-	// ÁÂÇ¥ setting
+	// ì¢Œí‘œ setting
 	RwV3d vPos = m_pActor->GetPosition();
 
 	SWorldHeightStuff sHStuff;
@@ -4877,7 +4877,7 @@ void CNtlFSMCharActHTBSandbagState::Enter(void)
 
 	m_pActor->SetPosition(&vPos);
 
-	// RP Stock Image ¶ç¿ì±â.
+	// RP Stock Image ë„ìš°ê¸°.
 	Logic_ShowSandBagRPSelectGUI(m_pActor);
 
 	CNtlFSMCharActStateBase::Enter();
@@ -4888,13 +4888,13 @@ void CNtlFSMCharActHTBSandbagState::Exit(void)
 	RwUInt32 uiFlags = m_pActor->GetFlags();
 	m_pActor->SetFlags( uiFlags & ~SLFLAG_NOT_WORLD_HEIGHT_CHECK);
 
-	// ground fly °´Ã¼ÀÌ¸é ´Ù½Ã ground fly flag¸¦ ÄÒ´Ù.
+	// ground fly ê°ì²´ì´ë©´ ë‹¤ì‹œ ground fly flagë¥¼ ì¼ ë‹¤.
 	if(Logic_IsGroundFlyActor(m_pActor))
 	{
 		m_pActor->SetFlags(m_pActor->GetFlags() | SLFLAG_CAN_GROUND_FLY);
 	}
 
-    if(m_bSobFaint) // ¸÷ÀÌ ÀÌ¹Ì Á×¾î ÀÖ´Â °æ¿ì
+    if(m_bSobFaint) // ëª¹ì´ ì´ë¯¸ ì£½ì–´ ìˆëŠ” ê²½ìš°
     {
         // If you just jump to Faint, you will be able to play the Faint animation again after the knockdown, so it will not be processed with alpha. (Because he was dead anyway)
         m_pActor->GetSobProxy()->AddVisualSystemEffectAlphaBlend(1.0f, 0.0f, 1.0f, 0.0f, TRUE);
@@ -4956,8 +4956,8 @@ RwUInt32 CNtlFSMCharActHTBSandbagState::HandleEvents(RWS::CMsg &pMsg)
 	}
     else if(pMsg.Id == g_EventSobFainting)
     {
-        // HTB ¸Â´ÂÁß¿¡ Faint°¡ µé¾î¿À¸é ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ¸ØÃß°í Á×´Â ¹®Á¦°¡ ÀÖ´Ù.
-        // ±×·¡¼­ HTB Áß¿¡¼­´Â Faint »óÅÂ·Î ÀüÀÌÇÏÁö ¾Ê°í Exit¿¡¼­ Ã³¸®ÇÑ´Ù.
+        // HTB ë§ëŠ”ì¤‘ì— Faintê°€ ë“¤ì–´ì˜¤ë©´ ì• ë‹ˆë©”ì´ì…˜ì´ ë©ˆì¶”ê³  ì£½ëŠ” ë¬¸ì œê°€ ìˆë‹¤.
+        // ê·¸ë˜ì„œ HTB ì¤‘ì—ì„œëŠ” Faint ìƒíƒœë¡œ ì „ì´í•˜ì§€ ì•Šê³  Exitì—ì„œ ì²˜ë¦¬í•œë‹¤.
         m_bSobFaint = TRUE;        
         NTL_RETURN(NTL_FSM_EVENTRES_BLOCK);
     }
@@ -4989,7 +4989,7 @@ void CNtlFSMCharActItemReadyState::Enter(void)
 
 void CNtlFSMCharActItemReadyState::Update(RwReal fElapsed)
 {
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù.
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤.
 	//	CNtlFSMCharActStateBase::Update(fElapsed); 
 }
 
@@ -5057,7 +5057,7 @@ void CNtlFSMCharActItemCastingState::Enter(void)
         
 	if(m_pActor->GetClassID() == SLCLASS_AVATAR)
 	{
-        // casting gui¸¦ À§ÇÑ event¸¦ º¸³½´Ù.
+        // casting guië¥¼ ìœ„í•œ eventë¥¼ ë³´ë‚¸ë‹¤.
 		if(strlen(pUseItemTblData->szCasting_Effect) > 0)
 		{
 			RwV3d vOffset;
@@ -5069,7 +5069,7 @@ void CNtlFSMCharActItemCastingState::Enter(void)
 		CNtlSLEventGenerator::SobCastingDirect( m_pActor, FALSE, TRUE );
 	}
 
-    // ¾Ö´Ï¸ŞÀÌ¼Ç
+    // ì• ë‹ˆë©”ì´ì…˜
     
     m_pActor->GetSobProxy()->SetBaseAnimation(pUseItemTblData->wCasting_Animation_Start, FALSE);
 
@@ -5084,7 +5084,7 @@ void CNtlFSMCharActItemCastingState::Exit(void)
 		m_pPLEntity = NULL;
 	}
 
-	// casting gui¸¦ À§ÇÑ event¸¦ º¸³½´Ù.
+	// casting guië¥¼ ìœ„í•œ eventë¥¼ ë³´ë‚¸ë‹¤.
 	if(m_pActor->GetClassID() == SLCLASS_AVATAR)
 	{
 		CNtlSLEventGenerator::SobCastingDirect( m_pActor, FALSE, FALSE );
@@ -5165,7 +5165,7 @@ void CNtlFSMCharActFaintingState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// Á×À» ¶§ animation sync¸¦ µ¿±â½ÃÅ²´Ù.
+	// ì£½ì„ ë•Œ animation syncë¥¼ ë™ê¸°ì‹œí‚¨ë‹¤.
 	GetNtlSobManager()->GetAnimSyncManager()->RemoveAnimSyncTarget(m_pActor->GetSerialID());
 	Logic_SetLp(m_pActor, 0);
 
@@ -5186,7 +5186,7 @@ void CNtlFSMCharActFaintingState::Exit(void)
 
 void CNtlFSMCharActFaintingState::Update(RwReal fElapsed)
 {
-	// ¿©±â¿¡¼­´Â behavior°¡ ¾ø±â ¶§¹®¿¡ ±»ÀÌ state¸¦ ¾÷µ¥ÀÌÆ® ÇÒ ÇÊ¿ä°¡ ¾ø´Ù. 
+	// ì—¬ê¸°ì—ì„œëŠ” behaviorê°€ ì—†ê¸° ë•Œë¬¸ì— êµ³ì´ stateë¥¼ ì—…ë°ì´íŠ¸ í•  í•„ìš”ê°€ ì—†ë‹¤. 
 }
 
 
@@ -5227,16 +5227,16 @@ void CNtlFSMCharActDieState::Enter(void)
 {
 	CNtlFSMCharActStateBase::Enter();
 
-	// Á×À» ¶§ animation sync¸¦ µ¿±â½ÃÅ²´Ù.
+	// ì£½ì„ ë•Œ animation syncë¥¼ ë™ê¸°ì‹œí‚¨ë‹¤.
 	GetNtlSobManager()->GetAnimSyncManager()->RemoveAnimSyncTarget(m_pActor->GetSerialID());
 	Logic_SetLp(m_pActor, 0);
 
-	// character pickingÀ» ÇÒ ¼ö ¾ø°Ô ÇÑ´Ù.
+	// character pickingì„ í•  ìˆ˜ ì—†ê²Œ í•œë‹¤.
 	CNtlSobCharProxy *pSobProxy = reinterpret_cast<CNtlSobCharProxy*>(m_pActor->GetSobProxy());
 	CNtlPLCharacter *pPLCharacter = reinterpret_cast<CNtlPLCharacter*>( pSobProxy->GetPLMainEntity() );
 	
-	// ground fly actorÀÌ¸é?
-	// ground fly ±â´É(SLFLAG_CAN_GROUND_FLY)À» »©ÁØ´Ù.
+	// ground fly actorì´ë©´?
+	// ground fly ê¸°ëŠ¥(SLFLAG_CAN_GROUND_FLY)ì„ ë¹¼ì¤€ë‹¤.
 	if(Logic_IsGroundFlyActor(m_pActor))
 	{
 		RwUInt32 uiFlags = m_pActor->GetFlags();
@@ -5244,12 +5244,12 @@ void CNtlFSMCharActDieState::Enter(void)
 		m_pActor->SetFlags(uiFlags);
 	} 
 
-	// ºÎÈ° °¡´ÉÇÑ Ä³¸¯ÅÍ¶ó¸é?
+	// ë¶€í™œ ê°€ëŠ¥í•œ ìºë¦­í„°ë¼ë©´?
 	if(m_pActor->GetFlags() & SLFLAG_CAN_REVIVAL)
 	{
 		m_byDieState = DIE_END;
 
-        // °øÁß¿¡¼­ Á¡ÇÁÁß¿¡ Á×´Â °æ¿ìµµ ÀÖ±â ¶§¹®¿¡, À§Ä¡´Â Áö¸éÀ¸·Î ÀÌµ¿½ÃÅ²´Ù. (¾î»öÇÏ¸é ³ªÁß¿¡ º¯°æÇÑ´Ù)
+        // ê³µì¤‘ì—ì„œ ì í”„ì¤‘ì— ì£½ëŠ” ê²½ìš°ë„ ìˆê¸° ë•Œë¬¸ì—, ìœ„ì¹˜ëŠ” ì§€ë©´ìœ¼ë¡œ ì´ë™ì‹œí‚¨ë‹¤. (ì–´ìƒ‰í•˜ë©´ ë‚˜ì¤‘ì— ë³€ê²½í•œë‹¤)
         RwV3d vPos = m_pActor->GetPosition();
         SWorldHeightStuff sHStuff;
         Logic_GetWorldHeight(m_pActor, &vPos, sHStuff);
@@ -5260,7 +5260,7 @@ void CNtlFSMCharActDieState::Enter(void)
 	{
 		pPLCharacter->SetPicking(FALSE);
 
-        // ÆÄÆ¼ °øÀ¯ Å¸°Ù¿¡ Æ÷ÇÔµÇ¾î ÀÖÀ¸¸é Á¦°ÅÇÑ´Ù.
+        // íŒŒí‹° ê³µìœ  íƒ€ê²Ÿì— í¬í•¨ë˜ì–´ ìˆìœ¼ë©´ ì œê±°í•œë‹¤.
         RwInt32 nSlot = Logic_isPartyShareTarget(m_pActor->GetSerialID());
         if(nSlot > -1)
         {
@@ -5269,7 +5269,7 @@ void CNtlFSMCharActDieState::Enter(void)
 	}    
 
 
-	// animation ½ÇÇà.
+	// animation ì‹¤í–‰.
 	if(m_bDirectDie)
 	{
 		pPLCharacter->SetBlend(BLEND_TWEEN, 0.0f);
@@ -5314,7 +5314,7 @@ void CNtlFSMCharActDieState::UpdateFadeOut(RwReal fElapsed)
 		pSobCharProxy->SetAlpha(1);
 		pSobCharProxy->SetInkThickness(0.0f);
 
-		// ÀÚ½ÅÀÇ petÀÎ °æ¿ì.
+		// ìì‹ ì˜ petì¸ ê²½ìš°.
 		if( (m_pActor->GetFlags() & SLFLAG_SERVER_SENDER) && (m_pActor->GetClassID() == SLCLASS_PET) )
 		{
 			API_GetSLPacketGenerator()->SendPetDismissReq(m_pActor->GetServerSyncAvatarType());
@@ -5441,7 +5441,7 @@ void CNtlFSMCharActPrivateShopState::Enter(void)
 	CNtlPLCharacter *pPLCharacter = reinterpret_cast<CNtlPLCharacter*>( pSobProxy->GetPLMainEntity() );
 	sITEM_TBLDAT *pItemTblData = Logic_GetEquipedWeaponItemTableData(m_pActor);
 
-	// animation ½ÇÇà.
+	// animation ì‹¤í–‰.
 	if(m_bDirectShop)
 	{
 		pPLCharacter->SetBlend(BLEND_TWEEN, 0.0f);
@@ -5694,7 +5694,7 @@ RwUInt32 CNtlFSMCharActDirectionState::HandleEvents(RWS::CMsg &pMsg)
 				CNtlSobProxy *pSobProxy = m_pActor->GetSobProxy();
 				m_pSpawnAlpha	= pSobProxy->AddVisualSystemEffectAlphaBlend(0.0f, 1.0f, 0.2f, 0.2f, FALSE);	
 
-                // GM ÀÌ¸é ÀÌÆåÆ®¸¦ Ç¥½ÃÇÏÁö ¾Ê´Â´Ù.
+                // GM ì´ë©´ ì´í™íŠ¸ë¥¼ í‘œì‹œí•˜ì§€ ì•ŠëŠ”ë‹¤.
                 if(m_pActor->GetClassID() == SLCLASS_PLAYER)
                 {
                     CNtlFSMCharActAgent* pAgent = (CNtlFSMCharActAgent*)m_pActor->GetFSMLayer()->GetFSMAgent();
@@ -5717,7 +5717,7 @@ RwUInt32 CNtlFSMCharActDirectionState::HandleEvents(RWS::CMsg &pMsg)
 				CNtlSobProxy *pSobProxy = m_pActor->GetSobProxy();
 				m_pSpawnAlpha	= pSobProxy->AddVisualSystemEffectAlphaBlend(0.0f, 1.0f, 0.2f, 0.2f, FALSE);				
                 
-                // GM ÀÌ¸é ÀÌÆåÆ®¸¦ Ç¥½ÃÇÏÁö ¾Ê´Â´Ù.
+                // GM ì´ë©´ ì´í™íŠ¸ë¥¼ í‘œì‹œí•˜ì§€ ì•ŠëŠ”ë‹¤.
                 if(m_pActor->GetClassID() == SLCLASS_PLAYER)
                 {
                     CNtlFSMCharActAgent* pAgent = (CNtlFSMCharActAgent*)m_pActor->GetFSMLayer()->GetFSMAgent();
@@ -5980,7 +5980,7 @@ void CNtlFSMCharActDespawnState::Exit(void)
 
 void CNtlFSMCharActDespawnState::ExitDragonBallNpc(void)
 {
-    if(m_byState == DESPAWN_DRAGONBALL_END)     // ¾ÆÁ÷ Alpha ¿¬ÃâÀÌ ³¡³ªÁö ¾Ê¾Ò´Âµ¥ Exit°¡ È£ÃâµÈ °æ¿ì ÀÌÆåÆ®¸¦ º¸¿©ÁØ´Ù.
+    if(m_byState == DESPAWN_DRAGONBALL_END)     // ì•„ì§ Alpha ì—°ì¶œì´ ëë‚˜ì§€ ì•Šì•˜ëŠ”ë° Exitê°€ í˜¸ì¶œëœ ê²½ìš° ì´í™íŠ¸ë¥¼ ë³´ì—¬ì¤€ë‹¤.
     {
         OnEffectDragonDespawn();
     }
@@ -6025,7 +6025,7 @@ void CNtlFSMCharActDespawnState::CreateDespawnEffect( CNtlSobActor* pActor )
     if(!m_pActor)
         return;
 
-    // GM ÀÌ¸é ÀÌÆåÆ®¸¦ Ç¥½ÃÇÏÁö ¾Ê´Â´Ù.
+    // GM ì´ë©´ ì´í™íŠ¸ë¥¼ í‘œì‹œí•˜ì§€ ì•ŠëŠ”ë‹¤.
     if(m_pActor->GetClassID() == SLCLASS_PLAYER)
     {
         CNtlFSMCharActAgent* pAgent = (CNtlFSMCharActAgent*)m_pActor->GetFSMLayer()->GetFSMAgent();
@@ -6126,12 +6126,12 @@ void CNtlFSMCharActOnBus::Exit( void )
 
 void CNtlFSMCharActOnBus::Update( RwReal fElapsed ) 
 {
-	// ¹ö½º¿¡ Å¾½Â ÁßÀÌ¸é.
+	// ë²„ìŠ¤ì— íƒ‘ìŠ¹ ì¤‘ì´ë©´.
 	if(m_byRideState == BUS_RIDE_ON)
 	{
 		if(!m_pTargetActor)    
 		{
-			// Ä³¸¯ÀÌ »ı¼ºµÉ¶§ ¹ö½ºº¸´Ù ¸ÕÀú »ı¼ºµÇ±â ¶§¹®¿¡ ¿©±â¼­ Ã³¸®ÇØ¾ß ÇÑ´Ù.
+			// ìºë¦­ì´ ìƒì„±ë ë•Œ ë²„ìŠ¤ë³´ë‹¤ ë¨¼ì € ìƒì„±ë˜ê¸° ë•Œë¬¸ì— ì—¬ê¸°ì„œ ì²˜ë¦¬í•´ì•¼ í•œë‹¤.
 			CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData());
 			SCtrlStuff *pCtrlStuff = pBeData->GetCtrlStuff();
 			m_pTargetActor = (CNtlSobActor*)GetNtlSobManager()->GetSobObject(pCtrlStuff->sRide.hTargetSerialId);                    
@@ -6219,11 +6219,11 @@ RwUInt32 CNtlFSMCharActOnBus::HandleEvents( RWS::CMsg &pMsg )
 
 void CNtlFSMCharActOnBus::SetRideOn(RwBool bRideOn, RwBool bCreateEffect /* = TRUE */)
 {
-    if(bRideOn)     // Å¾½Â ¿¬Ãâ
+    if(bRideOn)     // íƒ‘ìŠ¹ ì—°ì¶œ
     {
         if(bCreateEffect)
         {
-            // GM ÀÌ¸é ÀÌÆåÆ®¸¦ Ç¥½ÃÇÏÁö ¾Ê´Â´Ù.
+            // GM ì´ë©´ ì´í™íŠ¸ë¥¼ í‘œì‹œí•˜ì§€ ì•ŠëŠ”ë‹¤.
             if(m_pActor->GetClassID() == SLCLASS_PLAYER)
             {
                 CNtlFSMCharActAgent* pAgent = (CNtlFSMCharActAgent*)m_pActor->GetFSMLayer()->GetFSMAgent();
@@ -6248,7 +6248,7 @@ void CNtlFSMCharActOnBus::SetRideOn(RwBool bRideOn, RwBool bCreateEffect /* = TR
             CNtlSLEventGenerator::CameraBus(m_pTargetActor);
         }
 
-		// ´Ù¸¥ °´Ã¼¿¡°Ô ¾Ë·ÁÁØ´Ù.
+		// ë‹¤ë¥¸ ê°ì²´ì—ê²Œ ì•Œë ¤ì¤€ë‹¤.
 		CNtlSLEventGenerator::SobOnBus(m_pActor->GetSerialID(), bRideOn, m_pTargetActor->GetSerialID());
     }
 	else
@@ -6272,7 +6272,7 @@ void CNtlFSMCharActOnBus::SetRideOn(RwBool bRideOn, RwBool bCreateEffect /* = TR
 	    }
 
 
-		// ´Ù¸¥ °´Ã¼¿¡°Ô ¾Ë·ÁÁØ´Ù.
+		// ë‹¤ë¥¸ ê°ì²´ì—ê²Œ ì•Œë ¤ì¤€ë‹¤.
         if(m_pTargetActor)
         {
 		    CNtlSLEventGenerator::SobOnBus(m_pActor->GetSerialID(), bRideOn, m_pTargetActor->GetSerialID());
@@ -6344,12 +6344,12 @@ void CNtlFSMCharActOnVehicle::Exit( void )
 
 void CNtlFSMCharActOnVehicle::Update( RwReal fElapsed ) 
 {
-	// ¹ö½º¿¡ Å¾½Â ÁßÀÌ¸é.
+	// ë²„ìŠ¤ì— íƒ‘ìŠ¹ ì¤‘ì´ë©´.
 	if(m_byRideState == VEHICLE_RIDE_ON)
 	{
 		if(!m_pTargetActor)    
 		{
-			// Ä³¸¯ÀÌ »ı¼ºµÉ¶§ ¹ö½ºº¸´Ù ¸ÕÀú »ı¼ºµÇ±â ¶§¹®¿¡ ¿©±â¼­ Ã³¸®ÇØ¾ß ÇÑ´Ù.
+			// ìºë¦­ì´ ìƒì„±ë ë•Œ ë²„ìŠ¤ë³´ë‹¤ ë¨¼ì € ìƒì„±ë˜ê¸° ë•Œë¬¸ì— ì—¬ê¸°ì„œ ì²˜ë¦¬í•´ì•¼ í•œë‹¤.
 			CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData());
 			SCtrlStuff *pCtrlStuff = pBeData->GetCtrlStuff();
 			m_pTargetActor = (CNtlSobActor*)GetNtlSobManager()->GetSobObject(pCtrlStuff->sRide.hTargetSerialId);                    
@@ -6412,9 +6412,9 @@ RwUInt32 CNtlFSMCharActOnVehicle::HandleEvents( RWS::CMsg &pMsg )
 
 void CNtlFSMCharActOnVehicle::SetRideOn(RwBool bRideOn, RwV3d vPos /* = ZeroAxis */)
 {
-    if(bRideOn)     // Å¾½Â ¿¬Ãâ
+    if(bRideOn)     // íƒ‘ìŠ¹ ì—°ì¶œ
     {
-        // GM ÀÌ¸é ÀÌÆåÆ®¸¦ Ç¥½ÃÇÏÁö ¾Ê´Â´Ù.
+        // GM ì´ë©´ ì´í™íŠ¸ë¥¼ í‘œì‹œí•˜ì§€ ì•ŠëŠ”ë‹¤.
         if(m_pActor->GetClassID() == SLCLASS_PLAYER)
         {
             CNtlFSMCharActAgent* pAgent = (CNtlFSMCharActAgent*)m_pActor->GetFSMLayer()->GetFSMAgent();
@@ -6431,13 +6431,13 @@ void CNtlFSMCharActOnVehicle::SetRideOn(RwBool bRideOn, RwV3d vPos /* = ZeroAxis
             CNtlSLEventGenerator::CameraBus(m_pTargetActor);
         }
 
-		// ´Ù¸¥ °´Ã¼¿¡°Ô ¾Ë·ÁÁØ´Ù.
+		// ë‹¤ë¥¸ ê°ì²´ì—ê²Œ ì•Œë ¤ì¤€ë‹¤.
 		CNtlSLEventGenerator::SobOnBus(m_pActor->GetSerialID(), bRideOn, m_pTargetActor->GetSerialID());
     }
     else
     {
-        // ÇÃ·¹ÀÌ¾î°¡ »ı¼º, ¹ö½º´Â ¾ÆÁ÷ »ı¼ºµÇÁö ¾ÊÀ½=> ³»°¡ ·ÎµùÁß ÇÃ·¹ÀÌ¾î°¡ ¹ö½º¿¡¼­ ³»¸®´Â °æ¿ì.
-        // Actor Ã¼Å©¸¦ ÇÏÁö ¾ÊÀ¸¸é Å©·¡½Ã°¡ ¹ß»ıÇÑ´Ù. ±×·¡¼­ Ã¼Å© ºÎºĞ Ãß°¡ (by agebreak 09.05.21)
+        // í”Œë ˆì´ì–´ê°€ ìƒì„±, ë²„ìŠ¤ëŠ” ì•„ì§ ìƒì„±ë˜ì§€ ì•ŠìŒ=> ë‚´ê°€ ë¡œë”©ì¤‘ í”Œë ˆì´ì–´ê°€ ë²„ìŠ¤ì—ì„œ ë‚´ë¦¬ëŠ” ê²½ìš°.
+        // Actor ì²´í¬ë¥¼ í•˜ì§€ ì•Šìœ¼ë©´ í¬ë˜ì‹œê°€ ë°œìƒí•œë‹¤. ê·¸ë˜ì„œ ì²´í¬ ë¶€ë¶„ ì¶”ê°€ (by agebreak 09.05.21)
         if(!m_pTargetActor)
             return;
 
@@ -6452,7 +6452,7 @@ void CNtlFSMCharActOnVehicle::SetRideOn(RwBool bRideOn, RwV3d vPos /* = ZeroAxis
             CNtlSLEventGenerator::CameraControlDelete(CAMERA_CONTROL_BUS);
         }
 
-		// ´Ù¸¥ °´Ã¼¿¡°Ô ¾Ë·ÁÁØ´Ù.
+		// ë‹¤ë¥¸ ê°ì²´ì—ê²Œ ì•Œë ¤ì¤€ë‹¤.
 		CNtlSLEventGenerator::SobOnBus(m_pActor->GetSerialID(), bRideOn, m_pTargetActor->GetSerialID());
 
 		CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData());
@@ -6522,7 +6522,7 @@ RwUInt32 CNtlFSMCharActTurning::HandleEvents( RWS::CMsg &pMsg )
     }
     else if(pMsg.Id == g_EventSobStanding)
     {       
-		// ¹ö±× ¼öÁ¤(Çü¼®)
+		// ë²„ê·¸ ìˆ˜ì •(í˜•ì„)
         NTL_RETURN(NTL_FSM_EVENTRES_BLOCK);
     }
 	else if(pMsg.Id == g_EventSobSecondDestMove)
@@ -6537,7 +6537,7 @@ RwUInt32 CNtlFSMCharActTurning::HandleEvents( RWS::CMsg &pMsg )
 
 void CNtlFSMCharActTurning::SetNextDirection(RwV3d& vDir)
 {
-	// ¹ö±× ¼öÁ¤(Çü¼®)
+	// ë²„ê·¸ ìˆ˜ì •(í˜•ì„)
 
     m_pActor->SetDirection(&vDir);
     
@@ -6563,7 +6563,7 @@ void CNtlFSMCharTransformSequela::Enter()
     {
         SetAnim(0);        
         
-        // »óÅÂ chcek.
+        // ìƒíƒœ chcek.
         RwV3d vPos = m_pActor->GetPosition();
         SWorldHeightStuff sHStuff;
         Logic_GetWorldHeight(m_pActor, &vPos, sHStuff);
@@ -6831,11 +6831,11 @@ void CNtlFSMCharPushing::Enter()
 {
     CNtlFSMCharActStateBase::Enter();
 
-    // µ¥¹ÌÁö µ¿ÀÛ
+    // ë°ë¯¸ì§€ ë™ì‘
     CNtlBehaviorBase *pBehavior = NTL_NEW CNtlBehaviorCharHurt;
     AddBehavior(pBehavior);
 
-    // Push µ¿ÀÛ    
+    // Push ë™ì‘    
     CNtlBeCharData *pBeData = reinterpret_cast<CNtlBeCharData*>(m_pActor->GetBehaviorData()); 
     SHitStuff *pHitStuff = pBeData->GetHitStuff();
     RwV3d vDir = pBeData->GetCtrlStuff()->uExtra.sPushing.vDestPos - m_pActor->GetPosition();
@@ -6896,7 +6896,7 @@ void CNtlFSMCharRideOnOff::Enter()
 	{
 		case ASPECTSTATE_VEHICLE:
 		{
-			// Vehicle °´Ã¼¸¦ »ı¼ºÇÑ´Ù
+			// Vehicle ê°ì²´ë¥¼ ìƒì„±í•œë‹¤
 
 			sCHARSTATE* pState = pSobPlayer->GetServerFullState();
 
@@ -6943,7 +6943,7 @@ void CNtlFSMCharRideOnOff::Enter()
 				return;
 			}
 
-			// PC °´Ã¼¿Í Vehicle °´Ã¼¸¦ ¿¬°áÇÑ´Ù
+			// PC ê°ì²´ì™€ Vehicle ê°ì²´ë¥¼ ì—°ê²°í•œë‹¤
 
 			CNtlBeCharData* pVehicleBeData = reinterpret_cast< CNtlBeCharData* >( pSobVehicle->GetBehaviorData() );
 			SCtrlStuff* pVehicleCtrlStuff = pVehicleBeData->GetCtrlStuff();
@@ -6963,7 +6963,7 @@ void CNtlFSMCharRideOnOff::Enter()
 				pSobVehicle->EnableVisible( FALSE );
 			}
 
-			// VehicleÀÇ »óÅÂ¸¦ º¯°æÇÑ´Ù
+			// Vehicleì˜ ìƒíƒœë¥¼ ë³€ê²½í•œë‹¤
 
 			CNtlSLEventGenerator::SobStateTransition( pSobVehicle->GetSerialID(), NTL_FSMSID_RIDEONOFF );
 		}
@@ -6971,7 +6971,7 @@ void CNtlFSMCharRideOnOff::Enter()
 
 		case ASPECTSTATE_INVALID:
 		{
-			// Vehicle¸¦ ´ÙÀ½ Æ½¿¡ Á¦°ÅÇÑ´Ù
+			// Vehicleë¥¼ ë‹¤ìŒ í‹±ì— ì œê±°í•œë‹¤
 
 			SERIAL_HANDLE hVehicleID = m_pActor->GetVehicleID();
 			if ( INVALID_SERIAL_ID == hVehicleID )
@@ -6986,7 +6986,7 @@ void CNtlFSMCharRideOnOff::Enter()
 			vDir.y = 0.f;
 			RwV3dNormalize( &vDir, &vDir );
 
-			// PCÀÇ ¹æÇâÀ» º¸Á¤ÇÑ´Ù
+			// PCì˜ ë°©í–¥ì„ ë³´ì •í•œë‹¤
 			((CNtlPLCharacter*)m_pActor->GetSobProxy()->GetPLMainEntity())->SetDirection(&vDir);
 
 			CNtlSobVehicle* pVehicle = (CNtlSobVehicle*)GetNtlSobManager()->GetSobObject( hVehicleID );

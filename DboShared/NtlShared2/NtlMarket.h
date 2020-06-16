@@ -4,7 +4,7 @@
 //
 //	Begin		:	23-sep-2018
 //
-//	Copyright	:	¨Ï DBO GLOBAL
+//	Copyright	:	â“’ DBO GLOBAL
 //
 //	Author		:	Daneos
 //

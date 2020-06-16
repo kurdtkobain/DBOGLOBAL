@@ -80,7 +80,7 @@ public:
 	WORD			wFuncFlag;
 
 	BYTE			byWorldRuleType;	// eGAMERULE_TYPE
-	TBLIDX			worldRuleTbldx;		// �ش��ϴ� �� ���̺� �ε��� ( �긶�� ���̺� Ʋ�� : ��ũ��Ʋ/Ÿ������Ʈ/ ���... )
+	TBLIDX			worldRuleTbldx;		// 해당하는 룰 테이블 인덱스 ( 룰마다 테이블 틀림 : 랭크배틀/타임퀘스트/ 등등... )
 
 	TBLIDX			outWorldTblidx;
 	CNtlVector		outWorldLoc;

@@ -3,9 +3,9 @@
 //
 //	File		:	ConsoleLog.h
 //
-//	Begin		:	2008-03-18 ¿ÀÀü 11:03:20
+//	Begin		:	2008-03-18 ì˜¤ì „ 11:03:20
 //
-//	Copyright	:	¨Ï NTL-Inc Co. Ltd
+//	Copyright	:	â“’ NTL-Inc Co. Ltd
 //
 //	strAuthor	:	Seung Goon. Chi   ( sgpro@ntl-inc.com )
 //

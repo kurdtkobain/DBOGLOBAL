@@ -5,7 +5,7 @@
 //
 //	Begin		:	2006-03-30
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Doo Sup, Chung   ( john@ntl-inc.com )
 //

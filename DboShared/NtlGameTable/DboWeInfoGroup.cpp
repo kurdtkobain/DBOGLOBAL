@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-12-12 first written
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hong Ho Dong   ( battery@ntl-inc.com )
 //
@@ -193,7 +193,7 @@ DWORD CDboWeInfo::GetAttribute(float x, float z)
 	if(!IsTileDataLoaded())
 		return 0;
 	
-	//Tile ÁÂÇ¥°è·Î º¯È¯
+	//Tile ì¢Œí‘œê³„ë¡œ ë³€í™˜
 	float fTileCoordX = x + m_nWidthHalfSize;
 	float fTileCoordZ = z + m_nHeightHalfSize;
 	

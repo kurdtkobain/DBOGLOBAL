@@ -17,7 +17,7 @@ CDboTSActDirIndicator::CDboTSActDirIndicator( void )
 
 void CDboTSActDirIndicator::ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty )
 {
-    #define B2b(val) (val ? true : false)           ///< BOOLÇüÀ» boolÇüÀ¸·Î º¯°æÇÑ´Ù.
+    #define B2b(val) (val ? true : false)           ///< BOOLí˜•ì„ boolí˜•ìœ¼ë¡œ ë³€ê²½í•œë‹¤.
 
 	CNtlTSAction::ApplyScriptDataForScript( clProperty );
 

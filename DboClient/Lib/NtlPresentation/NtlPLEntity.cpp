@@ -81,12 +81,12 @@ RwBool CNtlPLEntity::CullingTest(RwCamera* pRwCamera, RwUInt16 uiRenderFrame)
 	++CNtlPLGlobal::m_uiCullTestCnt;
 #endif
 
-	// Culiing Test¸¦ ½Ãµµ ÇÑ´Ù¸é CullingÀ» »ç¿ëÇÏ°Ú´Ù´Â ÀÇ¹Ì´Ù. ÃÊ±â°ªÀ» º¯°æÇÑ´Ù.
+	// Culiing Testë¥¼ ì‹œë„ í•œë‹¤ë©´ Cullingì„ ì‚¬ìš©í•˜ê² ë‹¤ëŠ” ì˜ë¯¸ë‹¤. ì´ˆê¸°ê°’ì„ ë³€ê²½í•œë‹¤.
 	if (m_uiRenderFrame != uiRenderFrame)
 	{
 		m_uiRenderFrame= uiRenderFrame;
-		// PVS Flag´Â ±âÁ¸ÀÇ ³»¿ëÀ» À¯Áö ÇØ¾ß ÇÑ´Ù.
-		// ÇÑ Frame¿¡¼­ ÇÑ¹ø¸¸ ½Ãµµ µÇ¾î¾ß ÇÏ¸ç, ÇÑ¹ø¸¸ ³»¿ëÀÌ Àû¿ë µÇ¾î¾ß ÇÑ´Ù.
+		// PVS FlagëŠ” ê¸°ì¡´ì˜ ë‚´ìš©ì„ ìœ ì§€ í•´ì•¼ í•œë‹¤.
+		// í•œ Frameì—ì„œ í•œë²ˆë§Œ ì‹œë„ ë˜ì–´ì•¼ í•˜ë©°, í•œë²ˆë§Œ ë‚´ìš©ì´ ì ìš© ë˜ì–´ì•¼ í•œë‹¤.
 		m_uiCullFlags &= NTL_PLEFLAG_CULLED_PVS;
 	}
 

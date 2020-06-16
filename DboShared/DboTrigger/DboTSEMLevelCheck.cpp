@@ -265,8 +265,8 @@ bool CDboTSEMLevelCheck::AddBuildData(const std::string& strKey, const CNtlTSMai
 
 	vecdef_TID_LIST& defTIDList = m_defLevelCheckMapper[strKey];
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç party ·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ party ë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	sLEVELCHECK_PARAM sParam;
 	CDboTSEMLevelCheck_Recv clRecv;

@@ -2,7 +2,7 @@
 *
 * File			: NtlSLEventFunc.h
 * Author		: HyungSuk, Jang
-* Copyright	: (ÁÖ)NTL
+* Copyright	: (ì£¼)NTL
 * Date			: 2005. 9. 01	
 * Abstract		: Simulation layer event function
 *****************************************************************************
@@ -54,11 +54,11 @@ public:
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	static void WorldChange(RwBool bWorldChange);
-	static void CreateWorld(RwBool bCreate);            ///< ¿ùµå°¡ »ı¼ºµÇ°Å³ª ¼Ò¸êµÉ¶§ ÀÌº¥Æ®¸¦ ¹ß»ı
+	static void CreateWorld(RwBool bCreate);            ///< ì›”ë“œê°€ ìƒì„±ë˜ê±°ë‚˜ ì†Œë©¸ë ë•Œ ì´ë²¤íŠ¸ë¥¼ ë°œìƒ
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	/**
-	* avatar/camera ÀÌµ¿ ¹× È¸Àü
+	* avatar/camera ì´ë™ ë° íšŒì „
 	*/
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -106,7 +106,7 @@ public:
 	static void ActionScreenShot(const std::string& strFileName);
 	static void ActionSkillSelectMode(bool bSelect, SERIAL_HANDLE hSerialId);
 
-    // ¾×¼Ç ¾ÆÀÌÄÜÀ» ÀÌ¿ëÇÑ ¾×¼Ç (AvatarController¿¡¼­ ÇÑ¹ø °É·¯Á®¼­ ÀÌº¥Æ®¸¦ º¸³½´Ù)
+    // ì•¡ì…˜ ì•„ì´ì½˜ì„ ì´ìš©í•œ ì•¡ì…˜ (AvatarControllerì—ì„œ í•œë²ˆ ê±¸ëŸ¬ì ¸ì„œ ì´ë²¤íŠ¸ë¥¼ ë³´ë‚¸ë‹¤)
     static void ActionFuncSitAndStand();
     static void ActionFuncBasicAttack();
     static void ActionFuncAssist();
@@ -123,7 +123,7 @@ public:
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	//---------------------------------------------------------
-	// input¿¡ °üÇÑ event
+	// inputì— ê´€í•œ event
 
 	static void SobShowNfy(SERIAL_HANDLE hSerialId, RwBool bVisible);
 
@@ -142,32 +142,32 @@ public:
 	static void SobGotFocus(SERIAL_HANDLE hSerialId);
 	static void SobLostFocus(SERIAL_HANDLE hSerialId);
 
-	// Ä¿¹Â´ÏÆ¼ Å¸°Ù ¼±ÅÃ/ÇØÁ¦ ÀÌº¥Æ®
+	// ì»¤ë®¤ë‹ˆí‹° íƒ€ê²Ÿ ì„ íƒ/í•´ì œ ì´ë²¤íŠ¸
 	static void CommuTargetSelect(CHARACTERID targetID, SERIAL_HANDLE hSerialId, WCHAR* wchName, ECommuTargetType type);
 	static void CommuTargetRelease(SERIAL_HANDLE hSerialId);
 
-	static void BotCaution_Nfy(SERIAL_HANDLE hSerialId);            ///< ¸÷ÀÌ ³¯ ¹ß°¢ÇßÀ»¶§ÀÇ ÀÌº¥Æ® ¹ß»ı    
-	static void BotHelpMe_Nfy(SERIAL_HANDLE hSerialId, RwBool bisRequester);    ///< ¸÷ÀÌ µµ¿òÀ» ¿äÃ»ÇÒ¶§ ¹ß»ıÇÏ´Â ÀÌº¥Æ®
+	static void BotCaution_Nfy(SERIAL_HANDLE hSerialId);            ///< ëª¹ì´ ë‚  ë°œê°í–ˆì„ë•Œì˜ ì´ë²¤íŠ¸ ë°œìƒ    
+	static void BotHelpMe_Nfy(SERIAL_HANDLE hSerialId, RwBool bisRequester);    ///< ëª¹ì´ ë„ì›€ì„ ìš”ì²­í• ë•Œ ë°œìƒí•˜ëŠ” ì´ë²¤íŠ¸
 
 
-	/// °øÀ¯ Å¸°Ù ¼±ÅÃ/ÇØÁ¦ ÀÌº¥Æ®
+	/// ê³µìœ  íƒ€ê²Ÿ ì„ íƒ/í•´ì œ ì´ë²¤íŠ¸
 	static void ShareTargetMarking(SERIAL_HANDLE hSerialId, RwUInt8 bySlot);
 	static void ShareTargetRelease(SERIAL_HANDLE hSerialId);
 
-    /// Å¸°Ù ¸¶Å© ¼±ÅÃ/ÇØÁ¦ ÀÌº¥Æ®
+    /// íƒ€ê²Ÿ ë§ˆí¬ ì„ íƒ/í•´ì œ ì´ë²¤íŠ¸
     static void SobTargetMarkSelect(SERIAL_HANDLE hSerialId);
     static void SobTargetMarkRelease(SERIAL_HANDLE hSerialId);
 
     static void AvatarTargetStateChange(void);
 
-    // ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ ÄªÈ£ 
+    // ì²œí•˜ì œì¼ ë¬´ë„íšŒ ì¹­í˜¸ 
 	static void TenkaichiMarking(SERIAL_HANDLE hSerialID, BYTE byType);
 
 	//
 	static void SobEventTitleEffect(SERIAL_HANDLE hSerialID, bool bCreate, const char* pchBone, const char* pchEffect);
 
 	//---------------------------------------------------------
-	// create/delete¿¡ °üÇÑ ÇÔ¼ö.
+	// create/deleteì— ê´€í•œ í•¨ìˆ˜.
 
 	static void* SobAvatarCreate(RwUInt32 uiClassId, SERIAL_HANDLE hSerialId, sCHARSTATE *pCharState, RwBool bUIAvatarCreate = FALSE);
 
@@ -218,7 +218,7 @@ public:
 	static void SobPetSkillInfo(RwUInt8 bySkillCount, const sSKILL_INFO_PET* pSkillInfoPet);
 
 	//---------------------------------------------------------
-	// move¿¡ °üÇÑ ÇÔ¼ö.
+	// moveì— ê´€í•œ í•¨ìˆ˜.
 	static void SobMove(SERIAL_HANDLE hSerialId, RwUInt8 byMoveFlags, RwUInt8 byFormFlag, RwV3d vCurrLoc, RwV3d vDir, RwUInt32 uiTimeStamp);
     static void SobMoveSync(SERIAL_HANDLE hSerialId, RwV3d& vCurLoc, RwV3d& vCurDir, DWORD dwTimeStamp);
 	static void SobSplineMove(SERIAL_HANDLE hSerialId, RwBool bGroundCheck, RwBool bRunCheck, RwChar *pSplineName, RwV3d vStartPos);
@@ -238,7 +238,7 @@ public:
 	static void SobAirAccel(SERIAL_HANDLE hSerialId, RwUInt8 byMoveFlag, RwUInt8 byMoveDirection, RwV3d& vLoc, RwV3d& vDir);
 	
 	//---------------------------------------------------------
-	// object item¿¡ °üÇÑ ÇÔ¼ö.
+	// object itemì— ê´€í•œ í•¨ìˆ˜.
 	static void SobItemAdd(SERIAL_HANDLE hSerialId, SERIAL_HANDLE hItemSerialId, RwUInt32 uiItemTblId, 
 		sITEM_OPTION_SET* sOptionSet, RwUInt8 byPlace, RwUInt8 bySlotIdx, RwUInt8 byStackCount,
 		RwUInt8 byRank, RwUInt8 byGrade, RwUInt8 byDur, RwUInt8 byMaxDur, RwBool bNeedToIdentify, RwUInt8 byBattleAttribute,
@@ -303,11 +303,11 @@ public:
 	static void EventBattleDungeonRewardFinish();
 
 	//---------------------------------------------------------
-	// object item¿¡ °üÇÑ ÇÔ¼ö.
+	// object itemì— ê´€í•œ í•¨ìˆ˜.
 	static void SobDeleteQuickSlotIcon(SERIAL_HANDLE hSerialId);
 
 	//---------------------------------------------------------
-	// object Warehouse item¿¡ °üÇÑ ÇÔ¼ö.
+	// object Warehouse itemì— ê´€í•œ í•¨ìˆ˜.
 	static void SobWarehouseUpdate(RwUInt32 uiMessageType, RwUInt32 uiSerial, RwUInt32 uiValue = 0 , RwInt32 iValue2 = 0);
 
 	static void SobWarehouseItemCreate(RwUInt8 byItemCount, void* pData);
@@ -326,7 +326,7 @@ public:
 		SERIAL_HANDLE hDestSerial, RwUInt8 byDestPlace, RwUInt8 byDestSlotIdx, RwUInt8 byDestStackCount);
 
 	//---------------------------------------------------------
-	// object quest item¿¡ °üÇÑ ÇÔ¼ö.
+	// object quest itemì— ê´€í•œ í•¨ìˆ˜.
 	static void SobQuestItemAdd(SERIAL_HANDLE hSerialId, RwUInt32 uiQuestItemTblId, RwUInt8 bySlotIdx, RwUInt8 byStackCount);
 
 	static void SobAvatarQuestItemMove(SERIAL_HANDLE hSerialId, RwUInt8 ucSrcSlotIdx, RwUInt32 uiSrcTblIdx, RwUInt8 ucDestSlotIdx, RwUInt32 uiDestTblIdx);
@@ -335,8 +335,8 @@ public:
 
 	static void SobQuestItemUpdate(SERIAL_HANDLE hSerialId, RwUInt8 ucSlotIdx, RwUInt8 ucCount);
 	//---------------------------------------------------------
-	// °ø°İ¿¡ °üÇÑ ÇÔ¼ö.
-	// attack animationÀÌ ¹ßµ¿µÇ´Â ½ÃÁ¡.
+	// ê³µê²©ì— ê´€í•œ í•¨ìˆ˜.
+	// attack animationì´ ë°œë™ë˜ëŠ” ì‹œì .
 	static void SobStanding(SERIAL_HANDLE hSerialId, RwV3d vLoc, RwV3d vDir);
 
 	static void SobFightingMode(SERIAL_HANDLE hSerialId, RwBool bFightingMode);
@@ -355,11 +355,11 @@ public:
 
 	static void SobPetBeginAttack(SERIAL_HANDLE hAttackerSerialId, SERIAL_HANDLE hDefenderSpawnId);
 
-	// attack animationÀÌ ÁøÇàµÇ¸é¼­, Å¸°Ù¿¡ damage¸¦ º¸³¾ ¶§ ¹ßµ¿µÇ´Â ½ÃÁ¡.
+	// attack animationì´ ì§„í–‰ë˜ë©´ì„œ, íƒ€ê²Ÿì— damageë¥¼ ë³´ë‚¼ ë•Œ ë°œë™ë˜ëŠ” ì‹œì .
 
 	static void SobHit(SERIAL_HANDLE hSerialId, const SHitStuff *pHitStuff);
-	static void SobAutoAttackMode(SERIAL_HANDLE hSerialId, RwBool bAttackMode);                                             ///< ÀÚµ¿ °ø°İ ¸ğµå On/Off¸¦ ¾Ë·ÁÁØ´Ù.    
-    static void SobSendAttackEnd(SERIAL_HANDLE hSerialId);                                                                  ///< ¼­¹ö¿¡ ¾îÅÃ»óÅÂ Á¾·á¸¦ ¾Ë·ÁÁØ´Ù.
+	static void SobAutoAttackMode(SERIAL_HANDLE hSerialId, RwBool bAttackMode);                                             ///< ìë™ ê³µê²© ëª¨ë“œ On/Offë¥¼ ì•Œë ¤ì¤€ë‹¤.    
+    static void SobSendAttackEnd(SERIAL_HANDLE hSerialId);                                                                  ///< ì„œë²„ì— ì–´íƒìƒíƒœ ì¢…ë£Œë¥¼ ì•Œë ¤ì¤€ë‹¤.
 	static void SobJump(SERIAL_HANDLE hSerialId, RwUInt8 byMoveDirection, RwV3d vDir, RwV3d vJumpDir);
 	static void SobJumpDirection(SERIAL_HANDLE hSerialId, RwV3d vJumpDir, RwUInt32 uiTimeStamp);
 	static void SobJumpEnd(SERIAL_HANDLE hSerialId);
@@ -378,12 +378,12 @@ public:
 	static void SobProxyGUIUpdate(SERIAL_HANDLE hSerialId, RwUInt32 uiUpdateFlags, RwBool bShow);
 
 	//---------------------------------------------------------
-	// cooling¿¡ °üÇÑ ÇÔ¼ö.
+	// coolingì— ê´€í•œ í•¨ìˆ˜.
 
 	static void SobCooling(SERIAL_HANDLE hSerialId, RwBool bStart);
 
 	//---------------------------------------------------------
-	// skill¿¡ °üÇÑ ÇÔ¼ö.
+	// skillì— ê´€í•œ í•¨ìˆ˜.
 
 	static void SobSkillCancel(SERIAL_HANDLE hSerialId, RwUInt16 wReason);
 
@@ -417,7 +417,7 @@ public:
 	static void SobSkillInfoText(WCHAR* wchMsg, unsigned int uiColor, BYTE byMsgType);
 
 	//---------------------------------------------------------
-	// buff¿¡ °üÇÑ ÇÔ¼ö.
+	// buffì— ê´€í•œ í•¨ìˆ˜.
 
 	static void SobBuffAdd(SERIAL_HANDLE hSerialId, BYTE byBuffIndex, BYTE byBuffType, RwUInt32 uiTblId, RwUInt32 uiRemainTime, RwUInt32 uiKeepTime, sDBO_BUFF_PARAMETER* aBuffParameter);
 	static void SobBuffDrop(SERIAL_HANDLE hSerialId, BYTE byBuffIndex, BYTE byBuffType);
@@ -431,17 +431,17 @@ public:
 	static void SobFakeBuffActivate(SERIAL_HANDLE hSerial, sBUFF_INFO* pBuffInfo);
 
 	//---------------------------------------------------------
-	// simulation object state transition¿¡ °üÇÑ ÇÔ¼ö.
+	// simulation object state transitionì— ê´€í•œ í•¨ìˆ˜.
 	static void SobStateTransition(SERIAL_HANDLE hSerialId, RwUInt32 uiTransState);
 	static void SobServerUpdateState(SERIAL_HANDLE hSerialId, sCHARSTATE *pState);
 	static void SobServerUpdateStatePostMsg(SERIAL_HANDLE hSerialId, sCHARSTATE *pState);
 	static void SobServerUpdateCondition(SERIAL_HANDLE hSerialId, QWORD qwCondition);
-	static void SobServerUpdateAspect(SERIAL_HANDLE hSerialId, sASPECTSTATE& sAspectState);                  ///< Aspect°¡ ¼­¹ö·ÎºÎÅÍ ¾÷µ¥ÀÌÆ®µÉ¶§ È£ÃâµÈ´Ù.
+	static void SobServerUpdateAspect(SERIAL_HANDLE hSerialId, sASPECTSTATE& sAspectState);                  ///< Aspectê°€ ì„œë²„ë¡œë¶€í„° ì—…ë°ì´íŠ¸ë ë•Œ í˜¸ì¶œëœë‹¤.
 	static void SobFainting(SERIAL_HANDLE hSerialId);
-    static void SobUpdateLPStatusNfy(SERIAL_HANDLE hSerialId, RwBool bEmergency);                            ///< ºó»ç »óÅÂ/ ÀÏ¹İ »óÅÂ
+    static void SobUpdateLPStatusNfy(SERIAL_HANDLE hSerialId, RwBool bEmergency);                            ///< ë¹ˆì‚¬ ìƒíƒœ/ ì¼ë°˜ ìƒíƒœ
 
 	//---------------------------------------------------------
-	// simulation object information update¿¡ °üÇÑ ÇÔ¼ö.
+	// simulation object information updateì— ê´€í•œ í•¨ìˆ˜.
 	static void SobUpdate(SERIAL_HANDLE hSerialId, RwUInt32 uiUpdateType, RwUInt32 uiParam1);
 	static void SobNpcCommunity(SERIAL_HANDLE hSerialId, RwBool bShow, RwUInt32 uiTriggerId, RwUInt8 byInputType);
 	static void SobTriggerObjCommunity(SERIAL_HANDLE hSerialId, RwBool bShow, RwUInt32 uiTriggerId, RwUInt8 byInputType);
@@ -455,7 +455,7 @@ public:
     static void NPCCommuExit();
 
 	//---------------------------------------------------------
-	// party¿¡ °üÇÑ ÇÔ¼ö
+	// partyì— ê´€í•œ í•¨ìˆ˜
 	static void PartyUpdate(RwInt32 iMessage, SERIAL_HANDLE hSerial = INVALID_SERIAL_ID, RwUInt32 uiValue = 0, RwInt32 iValue2 = 0);
 
 	static void PartyCreate(WCHAR* pcName);
@@ -474,11 +474,11 @@ public:
 
 	static void PartyMemberLocation(RwUInt32 uiSerial, RwUInt32 uiWorldID, RwUInt32 uiWorldTbl, RwV3d& vCurLoc);
 
-	static void PartyShareTargetRes(WORD wResultCode);                      ///< °øÀ¯ Å¸°Ù ¿äÃ»¿¡ ´ëÇÑ °á°ú ÆĞÅ¶ ÀÌº¥Æ®
-	static void PartyShareTargetNfy(sSHARETARGET_INFO* aShareTargetInfos);  ///< °øÀ¯ Å¸°Ù¿¡ ´ëÇÑ ¾Ë¸² ÆĞÅ¶ ÀÌº¥Æ®
+	static void PartyShareTargetRes(WORD wResultCode);                      ///< ê³µìœ  íƒ€ê²Ÿ ìš”ì²­ì— ëŒ€í•œ ê²°ê³¼ íŒ¨í‚· ì´ë²¤íŠ¸
+	static void PartyShareTargetNfy(sSHARETARGET_INFO* aShareTargetInfos);  ///< ê³µìœ  íƒ€ê²Ÿì— ëŒ€í•œ ì•Œë¦¼ íŒ¨í‚· ì´ë²¤íŠ¸
 
 	//---------------------------------------------------------
-	// guild¿¡ °üÇÑ ÇÔ¼ö
+	// guildì— ê´€í•œ í•¨ìˆ˜
 	static void SLGuildEvent(RwInt32 iMessage, RwUInt32 uiParam = 0xffffffff, void* pData = NULL, void* pExData = NULL);
 	static void NotifyGuildEvent(RwInt32 iMessage, RwUInt32 uiParam = 0xffffffff);
 	static void ChangeGuildName(SERIAL_HANDLE hHandle, WCHAR* pwcGuildName);
@@ -495,7 +495,7 @@ public:
 	static void GuildWarehouseItemStackMove(SERIAL_HANDLE hSrcItem, SERIAL_HANDLE hDestItem, RwUInt8 bySrcPlace, RwUInt8 bySrcPos, RwUInt8 byDestPlace, RwUInt8 byDestPos, RwUInt8 byStackCount, RwUInt8 byStackCount2);
 
 	//---------------------------------------------------------
-	// µµÀå
+	// ë„ì¥
 	static void DojoEvent(RwUInt8 byDojoEvent, RwUInt32 uiParam = 0xffffffff, VOID* pExData = NULL, VOID* pExData2 = NULL, VOID* pExData3 = NULL);
 	static void DojoEventNotify(RwUInt8 byDojoEvent, RwUInt32 uiParam = 0xffffffff, VOID* pExData = NULL, VOID* pExData2 = NULL, VOID* pExData3 = NULL);
 	static void DojoState(RwUInt32 uiDojoTableIndex, RwUInt8 byDojoState, RwUInt64 ui64time);
@@ -511,7 +511,7 @@ public:
 	static void HTBRPResult(RwInt32 iAttackPoint, RwInt32 iDefenderPoint, RwBool bWin, RwBool bAttacker);
 
 	//---------------------------------------------------------
-	// otherparam¿¡ °üÇÑ ÇÔ¼ö
+	// otherparamì— ê´€í•œ í•¨ìˆ˜
 	static void HelpHintEvent(RwUInt32 uiHelpHint);
 	static void BindEvent(RwUInt8 byBindType, RwUInt32 uiWorldID, RwUInt32 uiBindObjectTblIdx);
 	static void BindNotify();
@@ -556,7 +556,7 @@ public:
 	static void BroadMsgNfy_Emergency( std::wstring& wstrSpeech );
 	static void BroadMsgNfy_MiniNarration( RwUInt32 uiMiniNarrationTblIdx );
 
-	//--- DragonBall Collection °ü·Ã
+	//--- DragonBall Collection ê´€ë ¨
 	static void NightEffect(RwBool bOn);
 	static void DBCNarration(const char* pszTextureName, const WCHAR* pwszText, RwInt32 eNarrationState);
 	static void DBCNarrationEnd(void);	
@@ -624,7 +624,7 @@ public:
 	static void ActionMapClientNotify( RwUInt8 byType, RwUInt16 wParam1 = 0xFFFF, RwUInt16 wParam2 = 0xFFFF );
 
 	//---------------------------------------------------------
-	// Á¤º¸ ¾ò¾î¿À±â
+	// ì •ë³´ ì–»ì–´ì˜¤ê¸°
 	static void SobGetState(SERIAL_HANDLE hSerialId, RwUInt8& byServerState, RwUInt8& byClientState, char* chClientState);
 
 	static void SobGetFightingMode(SERIAL_HANDLE hSerialId, RwBool& bFightingMode);	
@@ -636,53 +636,53 @@ public:
 	static void ReloadTS( void );
 
 	static void RegQuest_Nfy( sTS_KEY& sTSKey,
-		bool bNewRegister,						// Äù½ºÆ® µî·Ï½Ã New typeÀÇ µî·Ï ¿©ºÎ
-		bool bQuestShare,						// Äù½ºÆ® °øÀ¯
-		RwUInt32 uiQuestAreaName,				// Äù½ºÆ® Áö¿ª ÀÌ¸§
-		RwUInt32 uiQuestState,					// Äù½ºÆ® »óÅÂ
-		RwUInt32 uiQuestTitle,					// Äù½ºÆ® Á¦¸ñ
-		RwUInt32 uiQuestGoal,					// Äù½ºÆ® ¸ñÀû
-		eQUEST_SORT_TYPE eQuestSortType );		// Äù½ºÆ® Á¾·ùÀÇ Å¸ÀÔ
+		bool bNewRegister,						// í€˜ìŠ¤íŠ¸ ë“±ë¡ì‹œ New typeì˜ ë“±ë¡ ì—¬ë¶€
+		bool bQuestShare,						// í€˜ìŠ¤íŠ¸ ê³µìœ 
+		RwUInt32 uiQuestAreaName,				// í€˜ìŠ¤íŠ¸ ì§€ì—­ ì´ë¦„
+		RwUInt32 uiQuestState,					// í€˜ìŠ¤íŠ¸ ìƒíƒœ
+		RwUInt32 uiQuestTitle,					// í€˜ìŠ¤íŠ¸ ì œëª©
+		RwUInt32 uiQuestGoal,					// í€˜ìŠ¤íŠ¸ ëª©ì 
+		eQUEST_SORT_TYPE eQuestSortType );		// í€˜ìŠ¤íŠ¸ ì¢…ë¥˜ì˜ íƒ€ì…
 
 	static void UnregQuest_Nfy( sTS_KEY& sTSKey );
 
 	static void ShowQuestWindow( sTS_KEY& sTSKey );
 
 	static void ShowQuestWindow_Nfy( sTS_KEY& sTSKey,
-		RwUInt32 uiQuestAreaName,			// Äù½ºÆ® Áö¿ª ÀÌ¸§
-		RwUInt32 uiQuestTitle,				// Äù½ºÆ® Á¦¸ñ
-		RwUInt32 uiQuestSort,				// Äù½ºÆ® Á¾·ù
-		RwUInt32 uiQuestGrade,				// Äù½ºÆ® ³­ÀÌµµ
-		eGRADE_TYPE eGradeType,				// Äù½ºÆ® ³­ÀÌµµ Å¸ÀÔ
-		RwUInt32 uiQuestGoal,				// Äù½ºÆ® ¸ñÇ¥
-		RwUInt32 uiQuestContents,			// Äù½ºÆ® ³»¿ë
-		sREWARD_INFO* psDefaultReward,		// Äù½ºÆ® º¸»ó Á¤º¸ - ±âº» º¸»ó
-		sREWARD_INFO* psSelectReward,		// Äù½ºÆ® º¸»ó Á¤º¸ - ¼±ÅÃ º¸»ó
+		RwUInt32 uiQuestAreaName,			// í€˜ìŠ¤íŠ¸ ì§€ì—­ ì´ë¦„
+		RwUInt32 uiQuestTitle,				// í€˜ìŠ¤íŠ¸ ì œëª©
+		RwUInt32 uiQuestSort,				// í€˜ìŠ¤íŠ¸ ì¢…ë¥˜
+		RwUInt32 uiQuestGrade,				// í€˜ìŠ¤íŠ¸ ë‚œì´ë„
+		eGRADE_TYPE eGradeType,				// í€˜ìŠ¤íŠ¸ ë‚œì´ë„ íƒ€ì…
+		RwUInt32 uiQuestGoal,				// í€˜ìŠ¤íŠ¸ ëª©í‘œ
+		RwUInt32 uiQuestContents,			// í€˜ìŠ¤íŠ¸ ë‚´ìš©
+		sREWARD_INFO* psDefaultReward,		// í€˜ìŠ¤íŠ¸ ë³´ìƒ ì •ë³´ - ê¸°ë³¸ ë³´ìƒ
+		sREWARD_INFO* psSelectReward,		// í€˜ìŠ¤íŠ¸ ë³´ìƒ ì •ë³´ - ì„ íƒ ë³´ìƒ
 		unsigned int uiRewardExp,
 		unsigned int uiRewardZeni,
-		eSTOC_EVT_DATA_TYPE eEvtInfoType,	// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ Å¸ÀÔ
-		const uSTOC_EVT_DATA& uEvtInfoData,	// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ
-		RwUInt32 uiTimeLimit,				// Å¸ÀÓ Á¦ÇÑ Á¤º¸
-		RwUInt32 uiEventType,				// eEVENT_GEN_TYPE ( ÇöÀç´Â eEVENT_GEN_TYPE_CLICK_NPC ¸¸ »ç¿ëÇÔ )
-		RwUInt32 uiEventID,					// uiEventType ¿¡ µû¸¥ ÀÎµ¦½º, eEVENT_GEN_TYPE_CLICK_NPC : Mob table index
+		eSTOC_EVT_DATA_TYPE eEvtInfoType,	// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„° íƒ€ì…
+		const uSTOC_EVT_DATA& uEvtInfoData,	// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„°
+		RwUInt32 uiTimeLimit,				// íƒ€ì„ ì œí•œ ì •ë³´
+		RwUInt32 uiEventType,				// eEVENT_GEN_TYPE ( í˜„ì¬ëŠ” eEVENT_GEN_TYPE_CLICK_NPC ë§Œ ì‚¬ìš©í•¨ )
+		RwUInt32 uiEventID,					// uiEventType ì— ë”°ë¥¸ ì¸ë±ìŠ¤, eEVENT_GEN_TYPE_CLICK_NPC : Mob table index
 		RwBool bIsEventStarter );			// Event type [ True : Starter, False : Reward ]
 
 	static void UpdateQuestState_Nfy( sTS_KEY& sTSKey,
-		RwBool bOutStateMsg,					// Äù½ºÆ® »óÅÂ ¸Ş½ÃÁö Ãâ·Â ¿©ºÎ
-		RwUInt32 uiUpdatedQuestFlag,			// °»½ÅµÈ Äù½ºÆ® »óÅÂ ÇÃ·¡±×
-		RwUInt32 uiQuestState,					// Äù½ºÆ® »óÅÂ
-		RwUInt32 uiQuestTitle,					// Äù½ºÆ® Á¦¸ñ
-		eSTOC_EVT_DATA_TYPE eEvtInfoType,		// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ Å¸ÀÔ
-		const uSTOC_EVT_DATA& uEvtInfoData,		// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ
-		RwUInt32 uiEventType,					// eEVENT_GEN_TYPE ( ÇöÀç´Â eEVENT_GEN_TYPE_CLICK_NPC ¸¸ »ç¿ëÇÔ )
-		RwUInt32 uiEventID,						// uiEventType ¿¡ µû¸¥ ÀÎµ¦½º, eEVENT_GEN_TYPE_CLICK_NPC : Mob table index
+		RwBool bOutStateMsg,					// í€˜ìŠ¤íŠ¸ ìƒíƒœ ë©”ì‹œì§€ ì¶œë ¥ ì—¬ë¶€
+		RwUInt32 uiUpdatedQuestFlag,			// ê°±ì‹ ëœ í€˜ìŠ¤íŠ¸ ìƒíƒœ í”Œë˜ê·¸
+		RwUInt32 uiQuestState,					// í€˜ìŠ¤íŠ¸ ìƒíƒœ
+		RwUInt32 uiQuestTitle,					// í€˜ìŠ¤íŠ¸ ì œëª©
+		eSTOC_EVT_DATA_TYPE eEvtInfoType,		// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„° íƒ€ì…
+		const uSTOC_EVT_DATA& uEvtInfoData,		// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„°
+		RwUInt32 uiEventType,					// eEVENT_GEN_TYPE ( í˜„ì¬ëŠ” eEVENT_GEN_TYPE_CLICK_NPC ë§Œ ì‚¬ìš©í•¨ )
+		RwUInt32 uiEventID,						// uiEventType ì— ë”°ë¥¸ ì¸ë±ìŠ¤, eEVENT_GEN_TYPE_CLICK_NPC : Mob table index
 		RwBool bIsEventStarter );				// Event type [ True : Starter, False : Reward ]
 
 
 	static void UpdateQuestProgressInfo_Nfy( sTS_KEY& sTSKey,
-		eSTOC_EVT_DATA_TYPE eEvtInfoType,	// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ Å¸ÀÔ
-		uSTOC_EVT_DATA& uEvtInfoData,	// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ
-		RwUInt32 uiTimeLimit );			// Å¸ÀÓ Á¦ÇÑ Á¤º¸
+		eSTOC_EVT_DATA_TYPE eEvtInfoType,	// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„° íƒ€ì…
+		uSTOC_EVT_DATA& uEvtInfoData,	// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„°
+		RwUInt32 uiTimeLimit );			// íƒ€ì„ ì œí•œ ì •ë³´
 
 	static void GiveUpQuest( sTS_KEY& sTSKey );
 
@@ -691,99 +691,99 @@ public:
 	static void HideIndicator( sTS_KEY& sTSKey );
 
 	static void ShowIndicator_Nfy( sTS_KEY& sTSKey,
-		RwUInt32 uiQState,						// Äù½ºÆ® »óÅÂ
-		RwUInt32 uiQuestTitle,					// Äù½ºÆ® Á¦¸ñ
-		RwUInt32 uiQuestGoal,					// Äù½ºÆ® ¸ñÀû
-		eSTOC_EVT_DATA_TYPE eEvtInfoType,		// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ Å¸ÀÔ
-		const uSTOC_EVT_DATA& uEvtInfoData,		// ¼­¹ö ÀÌº¥Æ® Á¤º¸ - µ¥ÀÌÅÍ
-		RwUInt32 uiTimeLimit,					// Å¸ÀÓ Á¦ÇÑ Á¤º¸
+		RwUInt32 uiQState,						// í€˜ìŠ¤íŠ¸ ìƒíƒœ
+		RwUInt32 uiQuestTitle,					// í€˜ìŠ¤íŠ¸ ì œëª©
+		RwUInt32 uiQuestGoal,					// í€˜ìŠ¤íŠ¸ ëª©ì 
+		eSTOC_EVT_DATA_TYPE eEvtInfoType,		// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„° íƒ€ì…
+		const uSTOC_EVT_DATA& uEvtInfoData,		// ì„œë²„ ì´ë²¤íŠ¸ ì •ë³´ - ë°ì´í„°
+		RwUInt32 uiTimeLimit,					// íƒ€ì„ ì œí•œ ì •ë³´
 		RwBool bAuto );
 
-	static void DoQuest( sQUEST_INFO& sQuestInfo,							// Quest Á¤º¸
-						 eEVENT_GEN_TYPE eEventGenType,						// Event Á¾·ù
+	static void DoQuest( sQUEST_INFO& sQuestInfo,							// Quest ì •ë³´
+						 eEVENT_GEN_TYPE eEventGenType,						// Event ì¢…ë¥˜
 						 RwUInt32 uiOwnerID,								// Owner ID
-						 RwBool bTransCameraCtrlRight);						// Ä«¸Ş¶ó Á¦¾î±ÇÀ» ³Ñ±â´Â °æ¿ì TRUE
+						 RwBool bTransCameraCtrlRight);						// ì¹´ë©”ë¼ ì œì–´ê¶Œì„ ë„˜ê¸°ëŠ” ê²½ìš° TRUE
 
 	static void QuestProposalDialog_Req( sTS_KEY& sTSKey,
-		RwBool bDisplaySummary,				// Äù½ºÆ® ¿ä¾à Á¤º¸ ¹Ì¸®º¸±â º¸¿©ÁÖ±â ¿©ºÎ
-		RwUInt32 uiQuestTitle,					// Äù½ºÆ® Á¦¸ñ
-		RwUInt32 uiQuestGoal,					// Äù½ºÆ® ¸ñÇ¥
-		RwUInt32 uiQuestSort,					// Äù½ºÆ® Á¾·ù
-		RwUInt32 uiQuestGrade,					// Äù½ºÆ® ³­ÀÌµµ
-		eGRADE_TYPE eGradeType,				// Äù½ºÆ® ³­ÀÌµµ Å¸ÀÔ
-		RwUInt32 uiQuestContents,				// Äù½ºÆ® ³»¿ë
-		const sREWARD_INFO* psDefaultReward,	// Äù½ºÆ® º¸»ó Á¤º¸ - ±âº» º¸»ó
+		RwBool bDisplaySummary,				// í€˜ìŠ¤íŠ¸ ìš”ì•½ ì •ë³´ ë¯¸ë¦¬ë³´ê¸° ë³´ì—¬ì£¼ê¸° ì—¬ë¶€
+		RwUInt32 uiQuestTitle,					// í€˜ìŠ¤íŠ¸ ì œëª©
+		RwUInt32 uiQuestGoal,					// í€˜ìŠ¤íŠ¸ ëª©í‘œ
+		RwUInt32 uiQuestSort,					// í€˜ìŠ¤íŠ¸ ì¢…ë¥˜
+		RwUInt32 uiQuestGrade,					// í€˜ìŠ¤íŠ¸ ë‚œì´ë„
+		eGRADE_TYPE eGradeType,				// í€˜ìŠ¤íŠ¸ ë‚œì´ë„ íƒ€ì…
+		RwUInt32 uiQuestContents,				// í€˜ìŠ¤íŠ¸ ë‚´ìš©
+		const sREWARD_INFO* psDefaultReward,	// í€˜ìŠ¤íŠ¸ ë³´ìƒ ì •ë³´ - ê¸°ë³¸ ë³´ìƒ
 		const sREWARD_INFO* psSelectReward,
 		unsigned int uiRewardExp,
-		unsigned int uiRewardZeni);	// Äù½ºÆ® º¸»ó Á¤º¸ - ¼±ÅÃ º¸»ó
+		unsigned int uiRewardZeni);	// í€˜ìŠ¤íŠ¸ ë³´ìƒ ì •ë³´ - ì„ íƒ ë³´ìƒ
 
-	static void QuestProposalDialog_Res( bool bResult,							// Äù½ºÆ® ¼ö¶ô(true) ¶Ç´Â °ÅÀı(false)
+	static void QuestProposalDialog_Res( bool bResult,							// í€˜ìŠ¤íŠ¸ ìˆ˜ë½(true) ë˜ëŠ” ê±°ì ˆ(false)
 		sTS_KEY& sTSKey );
 
 	static void QuestUserSelectDialog_Req( sTS_KEY& sTSKey,
-		RwUInt32 uiTargetType,				// Å¸°ÙÀÇ Á¾·ù ( eUSER_SEL_TARGET_TYPE -> eUSER_SEL_TARGET_TYPE_NPC, eUSER_SEL_TARGET_TYPE_OBJECT, eUSER_SEL_TARGET_TYPE_INVALID )
-		RwUInt32 uiTargetTblIdx,				// Å¸°ÙÀÇ Å×ÀÌºí ÀÎµ¦½º 
-		RwUInt32 uiQuestTitle,				// Äù½ºÆ® Á¦¸ñ
-		RwUInt32 uiConv,						// ´ëÈ­
-		RwInt32 nBranchCnt,					// ÇöÀç »ç¿ëÁßÀÎ BranchÀÇ °³¼ö
+		RwUInt32 uiTargetType,				// íƒ€ê²Ÿì˜ ì¢…ë¥˜ ( eUSER_SEL_TARGET_TYPE -> eUSER_SEL_TARGET_TYPE_NPC, eUSER_SEL_TARGET_TYPE_OBJECT, eUSER_SEL_TARGET_TYPE_INVALID )
+		RwUInt32 uiTargetTblIdx,				// íƒ€ê²Ÿì˜ í…Œì´ë¸” ì¸ë±ìŠ¤ 
+		RwUInt32 uiQuestTitle,				// í€˜ìŠ¤íŠ¸ ì œëª©
+		RwUInt32 uiConv,						// ëŒ€í™”
+		RwInt32 nBranchCnt,					// í˜„ì¬ ì‚¬ìš©ì¤‘ì¸ Branchì˜ ê°œìˆ˜
 		sTS_BRANCH_INFO* pBranchInfo );		// Branch info
 
-	static void QuestUserSelectDialog_Res( bool bResult,						// Ok(true) ¶Ç´Â Cancel(false)
+	static void QuestUserSelectDialog_Res( bool bResult,						// Ok(true) ë˜ëŠ” Cancel(false)
 		sTS_KEY& sTSKey,
-		NTL_TS_TC_ID tcSelID );				// ¼±ÅÃµÈ Äù½ºÆ® ¾ÆÀÌµğ
+		NTL_TS_TC_ID tcSelID );				// ì„ íƒëœ í€˜ìŠ¤íŠ¸ ì•„ì´ë””
 
 	static void QuestNarrationUserSelectDialog_Req( sTS_KEY& sTSKey,
-		eUSER_SEL_PROGRESS_STATE eProgState,	// ³ª·¡ÀÌ¼Ç ÁøÇà »óÅÂ
-		RwUInt32 uiConv,						// ´ëÈ­
-		RwInt32 nBranchCnt,						// ÇöÀç »ç¿ëÁßÀÎ BranchÀÇ °³¼ö
+		eUSER_SEL_PROGRESS_STATE eProgState,	// ë‚˜ë˜ì´ì…˜ ì§„í–‰ ìƒíƒœ
+		RwUInt32 uiConv,						// ëŒ€í™”
+		RwInt32 nBranchCnt,						// í˜„ì¬ ì‚¬ìš©ì¤‘ì¸ Branchì˜ ê°œìˆ˜
 		sTS_BRANCH_INFO* pBranchInfo );			// Branch info
 
-	static void QuestNarrationUserSelectDialog_Res( bool bResult,							// Ok(true) ¶Ç´Â Cancel(false)
+	static void QuestNarrationUserSelectDialog_Res( bool bResult,							// Ok(true) ë˜ëŠ” Cancel(false)
 		sTS_KEY& sTSKey,
-		NTL_TS_TC_ID tcSelID );					// ¼±ÅÃµÈ Äù½ºÆ® ¾ÆÀÌµğ
+		NTL_TS_TC_ID tcSelID );					// ì„ íƒëœ í€˜ìŠ¤íŠ¸ ì•„ì´ë””
 
 	static void TSFinished( unsigned char byTSType,								// Trigger type ( TS_TYPE_QUEST_CS, TS_TYPE_PC_TRIGGER_CS )
-		NTL_TS_T_ID tID );									// Á¾·áµÇ´Â Æ®¸®°Å ¾ÆÀÌµğ
+		NTL_TS_T_ID tID );									// ì¢…ë£Œë˜ëŠ” íŠ¸ë¦¬ê±° ì•„ì´ë””
 
 	static void TSSkipContainer( NTL_TS_T_ID tID,
 		NTL_TS_TC_ID tcID );
 
 	static void QuestRewardDialog_Req( sTS_KEY& sTSKey,
-		eREWARD_CONTAINER_TYPE eRewardType,		// º¸»ó Å¸ÀÔ
-		RwUInt32 uiLimitTime,					// º¸»ó Á¦ÇÑ½Ã°£
-		RwUInt32 uiQuestTitle,					// Äù½ºÆ® Á¦¸ñ
-		RwUInt32 uiQuestGoal,					// Äù½ºÆ® ¸ñÇ¥
-		RwUInt32 uiQuestSort,					// Äù½ºÆ® Á¾·ù
-		RwUInt32 uiQuestGrade,					// Äù½ºÆ® ³­ÀÌµµ
-		eGRADE_TYPE eGradeType,					// Äù½ºÆ® ³­ÀÌµµ Å¸ÀÔ
-		RwUInt32 uiQuestContents,				// Äù½ºÆ® ¼³¸í
-		const sREWARD_INFO* psDefaultReward,		// Äù½ºÆ® º¸»ó Á¤º¸ - ±âº» º¸»ó
+		eREWARD_CONTAINER_TYPE eRewardType,		// ë³´ìƒ íƒ€ì…
+		RwUInt32 uiLimitTime,					// ë³´ìƒ ì œí•œì‹œê°„
+		RwUInt32 uiQuestTitle,					// í€˜ìŠ¤íŠ¸ ì œëª©
+		RwUInt32 uiQuestGoal,					// í€˜ìŠ¤íŠ¸ ëª©í‘œ
+		RwUInt32 uiQuestSort,					// í€˜ìŠ¤íŠ¸ ì¢…ë¥˜
+		RwUInt32 uiQuestGrade,					// í€˜ìŠ¤íŠ¸ ë‚œì´ë„
+		eGRADE_TYPE eGradeType,					// í€˜ìŠ¤íŠ¸ ë‚œì´ë„ íƒ€ì…
+		RwUInt32 uiQuestContents,				// í€˜ìŠ¤íŠ¸ ì„¤ëª…
+		const sREWARD_INFO* psDefaultReward,		// í€˜ìŠ¤íŠ¸ ë³´ìƒ ì •ë³´ - ê¸°ë³¸ ë³´ìƒ
 		const sREWARD_INFO* psSelectReward,
 		unsigned int uiRewardExp,
-		unsigned int uiRewardZeni);	// Äù½ºÆ® º¸»ó Á¤º¸ - ¼±ÅÃ º¸»ó
+		unsigned int uiRewardZeni);	// í€˜ìŠ¤íŠ¸ ë³´ìƒ ì •ë³´ - ì„ íƒ ë³´ìƒ
 
-	static void QuestRewardDialog_Res( bool bResult,							// Ok(true) ¶Ç´Â Cancel(false)
+	static void QuestRewardDialog_Res( bool bResult,							// Ok(true) ë˜ëŠ” Cancel(false)
 		sTS_KEY& sTSKey,
-		int nSelRwdIdx );						// ¼±ÅÃ º¸»óÀÇ ¼±ÅÃµÈ ÀÎµ¦½º
+		int nSelRwdIdx );						// ì„ íƒ ë³´ìƒì˜ ì„ íƒëœ ì¸ë±ìŠ¤
 
 
 	static void QuestNarrationDialog_Req( sTS_KEY& sTSKey,
-		eNARRATION_PROGRESS_STATE eProgState,			// Narration ÁøÇà »óÅÂ
-		eNARRATION_OWNER_TYPE eOwnerType,				// OwnerÀÇ Á¾·ù
-		RwUInt32 uiOwnerIdx,							// OwnerÀÇ Å×ÀÌºí ÀÎµ¦½º
-		eNARRATION_OWNER_STATE eOwnerState,			// OwnerÀÇ »óÅÂ
-		eNARRATION_DIALOG_DIR_TYPE eDialogDirType,	// ´ëÈ­ ¿¬Ãâ Á¾·ù
-		RwUInt32 uiDialog,							// ´ëÈ­ ³»¿ë
-		eNARRATION_GUI_TYPE eGUIType,					// GUI Á¾·ù
-		RwUInt32 uiMaxLifeTime );						// ÀÌ ½Ã°£ ÀÌ»ó ³ª·¹ÀÌ¼Ç Ã¢ÀÌ À¯Áö µÇ´Â °æ¿ì ÀÚµ¿À¸·Î Next·Î ³Ñ¾î°¡¾ß ÇÑ´Ù.
+		eNARRATION_PROGRESS_STATE eProgState,			// Narration ì§„í–‰ ìƒíƒœ
+		eNARRATION_OWNER_TYPE eOwnerType,				// Ownerì˜ ì¢…ë¥˜
+		RwUInt32 uiOwnerIdx,							// Ownerì˜ í…Œì´ë¸” ì¸ë±ìŠ¤
+		eNARRATION_OWNER_STATE eOwnerState,			// Ownerì˜ ìƒíƒœ
+		eNARRATION_DIALOG_DIR_TYPE eDialogDirType,	// ëŒ€í™” ì—°ì¶œ ì¢…ë¥˜
+		RwUInt32 uiDialog,							// ëŒ€í™” ë‚´ìš©
+		eNARRATION_GUI_TYPE eGUIType,					// GUI ì¢…ë¥˜
+		RwUInt32 uiMaxLifeTime );						// ì´ ì‹œê°„ ì´ìƒ ë‚˜ë ˆì´ì…˜ ì°½ì´ ìœ ì§€ ë˜ëŠ” ê²½ìš° ìë™ìœ¼ë¡œ Nextë¡œ ë„˜ì–´ê°€ì•¼ í•œë‹¤.
 
-	static void QuestNarrationDialog_Res( bool bResult,							// Ok(true) ¶Ç´Â Cancel(false)
+	static void QuestNarrationDialog_Res( bool bResult,							// Ok(true) ë˜ëŠ” Cancel(false)
 		sTS_KEY& sTSKey );
 
 	static void QuestNPCDialog_Req( sTS_KEY& sTSKey,
-		eNPCCONV_TYPE eNPCConvType,					// NPC ´ëÈ­ Å¸ÀÔ
-		unsigned int uiNPCIdx,						// NPC Å×ÀÌºí ÀÎµ¦½º
-		RwUInt32 uiDesc );							// NPC ´ëÈ­
+		eNPCCONV_TYPE eNPCConvType,					// NPC ëŒ€í™” íƒ€ì…
+		unsigned int uiNPCIdx,						// NPC í…Œì´ë¸” ì¸ë±ìŠ¤
+		RwUInt32 uiDesc );							// NPC ëŒ€í™”
 
 	static void QuestNPCDialog_Res( sTS_KEY& sTSKey );
 
@@ -809,10 +809,10 @@ public:
 	static void ShowQuestPosMark( sTS_KEY& sTSKey, RwBool bShow );
 
 	static void QuestObjDialog_Req( sTS_KEY& sTSKey,
-		eOBJCONV_TYPE eObjConvType,				// Object ´ëÈ­ Å¸ÀÔ
-		RwUInt32 uiWorldIdx,					// Object ¼Ò¼Ó world index
-		RwUInt32 uiObjIdx,						// Object Å×ÀÌºí ÀÎµ¦½º
-		RwUInt32 uiDesc );						// Object ´ëÈ­
+		eOBJCONV_TYPE eObjConvType,				// Object ëŒ€í™” íƒ€ì…
+		RwUInt32 uiWorldIdx,					// Object ì†Œì† world index
+		RwUInt32 uiObjIdx,						// Object í…Œì´ë¸” ì¸ë±ìŠ¤
+		RwUInt32 uiDesc );						// Object ëŒ€í™”
 
 	static void QuestObjDialog_Res( sTS_KEY& sTSKey );
 
@@ -890,7 +890,7 @@ public:
 	static void TObjectUpdateState( SERIAL_HANDLE hSerialId, TBLIDX tblIdx, RwUInt8 byMainState, RwUInt8 bySubState, RwUInt32 uiStateTime );
 
 	//---------------------------------------------------------
-	// Æ®¸®°Å ¿ÀºêÁ§Æ® ½ºÄ«¿ìÅÍ ¿¬Ãâ °ü·Ã
+	// íŠ¸ë¦¬ê±° ì˜¤ë¸Œì íŠ¸ ìŠ¤ì¹´ìš°í„° ì—°ì¶œ ê´€ë ¨
 	static void ScouterEvent(int iType, RwUInt32 uiSerailID = 0, int iUserData2 = 0, int iUserData3 = 0, 
 		int iUserData4 = 0, int iUserData5 = 0, int iUserData6 = 0, int iUserData7 = 0, int iUserData8 = 0);
 
@@ -905,7 +905,7 @@ public:
 	static void TMQCleintState(EWorldPlayConcept eWorldConcept, RwUInt32 uiState);
 
 	// UI
-	static void ShowToolTip(RwBool bShow, RwInt32 nX, RwInt32 nY, const std::wstring& wstrText);    //< UIÀÇ ÅøÆÁÀ» Ç¥½ÃÇÑ´Ù. ÁÂÇ¥¸¦ 0À¸·Î ³ÖÀ¸¸é ¸¶¿ì½º Ä¿¼­ À§Ä¡¿¡ Ç¥½ÃÇÑ´Ù.
+	static void ShowToolTip(RwBool bShow, RwInt32 nX, RwInt32 nY, const std::wstring& wstrText);    //< UIì˜ íˆ´íŒì„ í‘œì‹œí•œë‹¤. ì¢Œí‘œë¥¼ 0ìœ¼ë¡œ ë„£ìœ¼ë©´ ë§ˆìš°ìŠ¤ ì»¤ì„œ ìœ„ì¹˜ì— í‘œì‹œí•œë‹¤.
 	static void UIConfigReload();
 
 	// Portal System
@@ -926,7 +926,7 @@ public:
 	static void BlackListDelRes(WORD wResultCode, RwUInt32 uiTargetID);
 	static void FriendInfo(sFRIEND_INFO* pInfo, bool bIsFirst);
 	static void FriendInfoChange(RwUInt32 uiTargetID, BYTE byChangeType, DWORD dwChangeValue);
-	static void FriendInfoNotify(RwInt32 nNotifyType, RwUInt32 uiTargetID);             ///< UI °»½ÅÀ» À§ÇÑ ÀÌº¥Æ® (µ¥ÀÌÅÍ->UI)
+	static void FriendInfoNotify(RwInt32 nNotifyType, RwUInt32 uiTargetID);             ///< UI ê°±ì‹ ì„ ìœ„í•œ ì´ë²¤íŠ¸ (ë°ì´í„°->UI)
 
 	// KnockDownNotify -> Client Wakeup
 	static void KnockDownNfy();
@@ -937,7 +937,7 @@ public:
 	// Popo Icon Notify
 	static void PopoNotify( const WCHAR* pwcTitle, const WCHAR* pwcBuffer, RwBool bImmediate = FALSE, RwReal fLifeTime = 0.0f );
 
-	// ¹ö½º ¹× Å»°Í °ü·Ã ÀÌº¥Æ®
+	// ë²„ìŠ¤ ë° íƒˆê²ƒ ê´€ë ¨ ì´ë²¤íŠ¸
 	static void SobOnBus(SERIAL_HANDLE hSerialId, RwBool bRideOn, SERIAL_HANDLE hBusSerialId);
 	static void SobOnVehicle( SERIAL_HANDLE hSerialId, RwBool bRideOn, SERIAL_HANDLE hDriverId, RwUInt32 uiVehicleTblIdx );
 
@@ -952,19 +952,19 @@ public:
 	static void CharmPointUpdate(RwUInt32 uiCharmPoint);
 	static void CharmPointNotify(RwUInt32 uiCharmPoint);
 
-	// º¯½Å °ü·Ã ÀÌº¥Æ®
-	static void SobTransform(SERIAL_HANDLE hSerialId, const sASPECTSTATE& aspectState);                                 ///< PCÀÇ º¯½Å ÀÌº¥Æ®
-    static void SobMobTransform(SERIAL_HANDLE hSerialId, TBLIDX tblTransformMobId);                                     ///< MobÀÇ º¯½Å ÀÌº¥Æ®
-    static void SobTransformCandy(SERIAL_HANDLE hSerialId, RwBool bTransform);                                          ///< »çÅÁ º¯½Å ÀÌº¥Æ®
-    static void SobTransformSequela(SERIAL_HANDLE hSerialId);                                                           ///< ÃÊ»çÀÌ¾ßÀÎ º¯½Å ÈŞÀ¯Áõ ÀÌº¥Æ® (¾Æ¹ÙÅ¸ Àü¿ë)
+	// ë³€ì‹  ê´€ë ¨ ì´ë²¤íŠ¸
+	static void SobTransform(SERIAL_HANDLE hSerialId, const sASPECTSTATE& aspectState);                                 ///< PCì˜ ë³€ì‹  ì´ë²¤íŠ¸
+    static void SobMobTransform(SERIAL_HANDLE hSerialId, TBLIDX tblTransformMobId);                                     ///< Mobì˜ ë³€ì‹  ì´ë²¤íŠ¸
+    static void SobTransformCandy(SERIAL_HANDLE hSerialId, RwBool bTransform);                                          ///< ì‚¬íƒ• ë³€ì‹  ì´ë²¤íŠ¸
+    static void SobTransformSequela(SERIAL_HANDLE hSerialId);                                                           ///< ì´ˆì‚¬ì´ì•¼ì¸ ë³€ì‹  íœ´ìœ ì¦ ì´ë²¤íŠ¸ (ì•„ë°”íƒ€ ì „ìš©)
 
 	static void SobCinematicScale(SERIAL_HANDLE hSerialId, float fScale, float fTime);
 
-	// ÄÁµğ¼Ç °ü·Ã ÀÌº¥Æ®
-	static void SobAfterEffectRemainTimeNfy(DWORD dwTimeRemaining);                                                     ///< º¯½ÅÈŞÀ¯Áõ ³²Àº ½Ã°£
-	static void SobCondConfused(RwBool bAffect, SERIAL_HANDLE hSubject, SERIAL_HANDLE hTargetSerialId);                 ///< È¥¶õ »óÅÂ
-	static void SobCondTerror(RwBool bAffect, SERIAL_HANDLE hSubject, SERIAL_HANDLE hAttackerSerialId);                 ///< °øÆ÷ »óÅÂ
-    static void SobCondHidingKi(RwBool bAffect, SERIAL_HANDLE hSubject);                                                ///< ±â¼û±â±â
+	// ì»¨ë””ì…˜ ê´€ë ¨ ì´ë²¤íŠ¸
+	static void SobAfterEffectRemainTimeNfy(DWORD dwTimeRemaining);                                                     ///< ë³€ì‹ íœ´ìœ ì¦ ë‚¨ì€ ì‹œê°„
+	static void SobCondConfused(RwBool bAffect, SERIAL_HANDLE hSubject, SERIAL_HANDLE hTargetSerialId);                 ///< í˜¼ë€ ìƒíƒœ
+	static void SobCondTerror(RwBool bAffect, SERIAL_HANDLE hSubject, SERIAL_HANDLE hAttackerSerialId);                 ///< ê³µí¬ ìƒíƒœ
+    static void SobCondHidingKi(RwBool bAffect, SERIAL_HANDLE hSubject);                                                ///< ê¸°ìˆ¨ê¸°ê¸°
 
 	// Tutorial
 	static void TLDefaultSkin( const char* pFontName, RwRGBA& rgbFontBackColor, RwRGBA& rgbFontColor, RwInt32 nFontSize, RwUInt32 uiFontAllign, RwV2d& vFontOffset, RwV2d& vMsgLayerOffset, RwV2d& vOkOffset, RwV2d& vIMGOffset );
@@ -988,7 +988,7 @@ public:
 	static void TLDisableDialogMoveOption(RwBool bDiableDialogMoveOption);
 	static void TLEnableSkip(RwBool bEnableSkip);
 
-	// ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸
+	// ì²œí•˜ì œì¼ ë¬´ë„íšŒ
 	static void MinorMatchStateUpdate( RwUInt8 byMatchState, RwUInt8 byStage, RwUInt32 dwRemainTime, RwBool bEnterState );
 	static void MinorMatchTeamInfo( RwUInt8 byMatchIndex, RwUInt8 byTeamCount, RwUInt16 wTeamInfo_var, sVARIABLE_DATA* pData );
 	static void MinorMatchPlayerState( RwUInt32 hPlayer, RwUInt8 byPcState );

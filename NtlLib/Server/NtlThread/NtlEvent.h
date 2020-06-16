@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-11-30
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	Event µ¿±âÈ­ ¿ÀºêÁ§Æ® Å¬·¡½º
+//	Desc		:	Event ë™ê¸°í™” ì˜¤ë¸Œì íŠ¸ í´ë˜ìŠ¤
 //
 //***********************************************************************************
 
@@ -33,16 +33,16 @@ public:
 
 
 
-	// ÀÌº¥Æ® ÃÊ±âÈ­
+	// ì´ë²¤íŠ¸ ì´ˆê¸°í™”
 	void			Reset();
 
-	//  ÀÌº¥Æ® Åëº¸
+	//  ì´ë²¤íŠ¸ í†µë³´
 	void			Notify();
 
-	// ÀÌº¥Æ® ´ë±â ( unconditional )
+	// ì´ë²¤íŠ¸ ëŒ€ê¸° ( unconditional )
 	void			Wait();
 
-	// ÀÌº¥Æ® ´ë±â ( conditional )
+	// ì´ë²¤íŠ¸ ëŒ€ê¸° ( conditional )
 	int				Wait( unsigned int millisecs );
 
 

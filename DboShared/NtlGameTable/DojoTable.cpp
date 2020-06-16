@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-12-29
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung,DooSup   ( mailto:john@ntl-inc.com )
 //

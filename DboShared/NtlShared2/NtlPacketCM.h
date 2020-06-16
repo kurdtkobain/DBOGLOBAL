@@ -57,13 +57,13 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(CM_LOGIN_REQ)
 ACCOUNTID			accountId;
-BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// ¿Œ¡ı≈∞
+BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// Ïù∏Ï¶ùÌÇ§
 SERVERFARMID		serverId;
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(CM_MOVE_REQ)
 ACCOUNTID			accountId;
-BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// ¿Œ¡ı≈∞
+BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// Ïù∏Ï¶ùÌÇ§
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(CM_LOGOUT_REQ)

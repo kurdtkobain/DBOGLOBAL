@@ -2,7 +2,7 @@
 //	File		:	NtlBlurCamera.cpp
 //	Desc		:	
 //	Begin		:	2006. 2.13
-//	Copyright	:	¨Ï 2006 by agebreak CO., Ltd
+//	Copyright	:	â“’ 2006 by agebreak CO., Ltd
 //	Author		:	agebreak
 //	Update		:	
 //***********************************************************************************
@@ -299,7 +299,7 @@ void Set2DVertex(RwIm2DVertex* pVertex, RwReal fX, RwReal fY, RwReal fZ, RwReal 
     RwIm2DVertexSetIntRGBA(pVertex, 255, 255, 255, 255); 
 }
 
-// ±¼Àı ÀÌÆåÆ®¸¦ ±¸ÇöÇÏ±â À§ÇØ¼­ ViewÀÇ VertexÀÇ ¼ö¸¦ ´Ã¸®´Â ÇÔ¼ö
+// êµ´ì ˆ ì´í™íŠ¸ë¥¼ êµ¬í˜„í•˜ê¸° ìœ„í•´ì„œ Viewì˜ Vertexì˜ ìˆ˜ë¥¼ ëŠ˜ë¦¬ëŠ” í•¨ìˆ˜
 void SetViewVertex(RwIm2DVertex* pVertex, RwInt32 nWidht, RwInt32 nHeight, RwCamera* pCamera)
 {
     int nCount = 0;
@@ -506,7 +506,7 @@ void CNtlPostEffectCamera::Update_Power_MonoPower()
 void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 {
 	// ==========================================
-	// È­¸é Ãà¼ÒÇÏ±â
+	// í™”ë©´ ì¶•ì†Œí•˜ê¸°
 	// ==========================================
 	if (SUCCEEDED(m_lpEffect->BeginPass(EFFECT_PASS_NONE)))
 	{
@@ -515,7 +515,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 		{
 			if(RwCameraBeginUpdate(m_pReductionCamera))
 			{
-				// camera¸¦ update ÇÑÈÄ render state¸¦ ¸ÔÀÎ´Ù.
+				// cameraë¥¼ update í•œí›„ render stateë¥¼ ë¨¹ì¸ë‹¤.
 				RwRenderStateSet(rwRENDERSTATECULLMODE,	(void *)rwCULLMODECULLNONE);
 
 				BeginPostEffectState(FALSE);
@@ -534,7 +534,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 	}
 
 	// ==========================================
-	// Ãà¼ÒÈ­¸é ºí·¯ ¸ÔÀÌ±â
+	// ì¶•ì†Œí™”ë©´ ë¸”ëŸ¬ ë¨¹ì´ê¸°
 	// ==========================================
 	if (SUCCEEDED(m_lpEffect->BeginPass(EFFECT_PASS_16BOX)))
 	{
@@ -545,11 +545,11 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 		{
 			if(RwCameraBeginUpdate(m_pFakeHDRCamera))
 			{
-				// camera¸¦ update ÇÑÈÄ render state¸¦ ¸ÔÀÎ´Ù.
+				// cameraë¥¼ update í•œí›„ render stateë¥¼ ë¨¹ì¸ë‹¤.
 				RwRenderStateSet(rwRENDERSTATECULLMODE,	(void *)rwCULLMODECULLNONE);
 
-				//programmable vertex PipelineÀÎ °æ¿ì TextureStateÀÇ TexCoordIndex°¡ Stage ¸í°ú °°¾Æ¾ß ÇÑ´Ù.(by HoDong 2007. 4. 12)
-				//Test¸¦ 1ÁÖÀÏ Á¤µµ º¸´Ù°¡ Á¤¸®¸¦ ÇÑ´Ù.
+				//programmable vertex Pipelineì¸ ê²½ìš° TextureStateì˜ TexCoordIndexê°€ Stage ëª…ê³¼ ê°™ì•„ì•¼ í•œë‹¤.(by HoDong 2007. 4. 12)
+				//Testë¥¼ 1ì£¼ì¼ ì •ë„ ë³´ë‹¤ê°€ ì •ë¦¬ë¥¼ í•œë‹¤.
 
 				// CzStateChange : Start
 				// CzStateChange : Old
@@ -587,11 +587,11 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 		{
 			if(RwCameraBeginUpdate(m_pReductionCamera))
 			{
-				// camera¸¦ update ÇÑÈÄ render state¸¦ ¸ÔÀÎ´Ù.
+				// cameraë¥¼ update í•œí›„ render stateë¥¼ ë¨¹ì¸ë‹¤.
 				RwRenderStateSet(rwRENDERSTATECULLMODE,	(void *)rwCULLMODECULLNONE);
 
-				// programmable vertex PipelineÀÎ °æ¿ì TextureStateÀÇ TexCoordIndex°¡ Stage ¸í°ú °°¾Æ¾ß ÇÑ´Ù.(by HoDong 2007. 4. 12)
-				// Test¸¦ 1ÁÖÀÏ Á¤µµ º¸´Ù°¡ Á¤¸®¸¦ ÇÑ´Ù.
+				// programmable vertex Pipelineì¸ ê²½ìš° TextureStateì˜ TexCoordIndexê°€ Stage ëª…ê³¼ ê°™ì•„ì•¼ í•œë‹¤.(by HoDong 2007. 4. 12)
+				// Testë¥¼ 1ì£¼ì¼ ì •ë„ ë³´ë‹¤ê°€ ì •ë¦¬ë¥¼ í•œë‹¤.
 
 				// CzStateChange : Start
 				// CzStateChange : Old
@@ -621,7 +621,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 	}
 	
 	// ==========================================
-	// È­¸é È®´ëÇÏ±â
+	// í™”ë©´ í™•ëŒ€í•˜ê¸°
 	// ==========================================
 	if (SUCCEEDED(m_lpEffect->BeginPass(EFFECT_PASS_NONE)))
 	{
@@ -630,7 +630,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 		{
 			if(RwCameraBeginUpdate(m_pTempCamera))
 			{
-				// camera¸¦ update ÇÑÈÄ render state¸¦ ¸ÔÀÎ´Ù.
+				// cameraë¥¼ update í•œí›„ render stateë¥¼ ë¨¹ì¸ë‹¤.
 				RwRenderStateSet(rwRENDERSTATECULLMODE,	(void *)rwCULLMODECULLNONE);
 
 				BeginPostEffectState(FALSE);
@@ -652,7 +652,7 @@ void CNtlPostEffectCamera::Update_FakeHDRFiltering()
 
 //-------------------------------------------------------------
 // Name: CreateReductionTexture()
-// Desc: °¡ÁßÄ¡ °è»ê
+// Desc: ê°€ì¤‘ì¹˜ ê³„ì‚°
 //-------------------------------------------------------------
 void CNtlPostEffectCamera::CreateReductionTexture(RwInt32 nTextureSize)
 {
@@ -832,7 +832,7 @@ RwCamera* CNtlPostEffectCamera::MainCameraBeginUpdate(RwReal fElapsed)
 			//m_lpEffect->BeginPass(EFFECT_PASS_LASTDRAW);
 			//m_lpEffect->CommitChanges();
 			
-			// Test¸¦ 1ÁÖÀÏ Á¤µµ º¸´Ù°¡ Á¤¸®¸¦ ÇÑ´Ù.(by HoDong 2007.4.11)
+			// Testë¥¼ 1ì£¼ì¼ ì •ë„ ë³´ë‹¤ê°€ ì •ë¦¬ë¥¼ í•œë‹¤.(by HoDong 2007.4.11)
 			RwD3D9SetTextureStageState (0, D3DTSS_COLOROP,		D3DTOP_SELECTARG1);
 			RwD3D9SetTextureStageState (0, D3DTSS_COLORARG1,	D3DTA_TEXTURE);
 			
@@ -963,7 +963,7 @@ void CNtlPostEffectCamera::UpdateMotionBlur(RwReal fElapsedTime)
 		NTL_RPROFILE_VOID()
 	}
 
-    // ¾ËÆÄ°ªÀ» ¾÷µ¥ÀÌÆ® ÇÑ´Ù.
+    // ì•ŒíŒŒê°’ì„ ì—…ë°ì´íŠ¸ í•œë‹¤.
     if(m_fBlurAlpha > EFFECT_BLUR_ALPHA)
     {
         m_fBlurAlpha -= (m_fBlurFadeVelocity * fElapsedTime);
@@ -973,7 +973,7 @@ void CNtlPostEffectCamera::UpdateMotionBlur(RwReal fElapsedTime)
         }
     }
 
-    // ÇöÀç È­¸éÀ» ºí·¯ ´©Àû ÅØ½ºÃÄ¿¡ ¾ËÆÄ°ªÀ» ÁÖ°í Âï´Â´Ù.
+    // í˜„ì¬ í™”ë©´ì„ ë¸”ëŸ¬ ëˆ„ì  í…ìŠ¤ì³ì— ì•ŒíŒŒê°’ì„ ì£¼ê³  ì°ëŠ”ë‹¤.
     for(int i = 0; i < 4; ++i)
     {
         RwIm2DVertexSetRealRGBA(&m_RhwBlurVertex[i], 255, 255, 255, m_fBlurAlpha);
@@ -989,7 +989,7 @@ void CNtlPostEffectCamera::UpdateMotionBlur(RwReal fElapsedTime)
         RwCameraEndUpdate(m_pMotionBlurCamera);
     }
 
-    // ´©Àû ºí·¯ ÅØ½ºÃÄ¸¦ ÇöÀçÈ­¸é¿¡ Âï´Â´Ù.
+    // ëˆ„ì  ë¸”ëŸ¬ í…ìŠ¤ì³ë¥¼ í˜„ì¬í™”ë©´ì— ì°ëŠ”ë‹¤.
     RwIm2DVertex rhwVertex[4];
     memcpy(rhwVertex, m_RhwVertex, sizeof(RwIm2DVertex) * 4);
     for(int i = 0; i < 4; ++i)
@@ -1027,7 +1027,7 @@ void CNtlPostEffectCamera::SetEnableBlur(RwBool bEnable, RwReal fFadeTime /* = 0
     {
 		if (RwCameraClear(m_pMotionBlurCamera, &m_BackgroundColor, rwCAMERACLEARZ|rwCAMERACLEARIMAGE))
 		{
-			// ÇöÀç È­¸éÀ» ºí·¯ ´©Àû ÅØ½ºÃÄ¿¡ ¾ËÆÄ°ªÀ» ÁÖ°í Âï´Â´Ù.
+			// í˜„ì¬ í™”ë©´ì„ ë¸”ëŸ¬ ëˆ„ì  í…ìŠ¤ì³ì— ì•ŒíŒŒê°’ì„ ì£¼ê³  ì°ëŠ”ë‹¤.
 			for(int i = 0; i < 4; ++i)
 			{
 				RwIm2DVertexSetRealRGBA(&m_RhwBlurVertex[i], 255, 255, 255, 255);

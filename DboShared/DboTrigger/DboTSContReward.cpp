@@ -188,7 +188,7 @@ void CDboTSContReward::ApplyScriptDataForScript( const CNtlTSScrProperty& clProp
 		int i = 0;
 		sREWARD_INFO stInfo;
 
-		// ±‚∫ª ∫∏ªÛ
+		// Í∏∞Î≥∏ Î≥¥ÏÉÅ
 		for ( i = 0; i < 4; ++i )
 		{
 			stInfo.m_eType = eREWARD_TYPE_INVALID;
@@ -216,7 +216,7 @@ void CDboTSContReward::ApplyScriptDataForScript( const CNtlTSScrProperty& clProp
 			m_asDefReward[i] = stInfo;
 		}
 
-		// º±≈√ ∫∏ªÛ
+		// ÏÑ†ÌÉù Î≥¥ÏÉÅ
 		for ( i = 0; i < 4; ++i )
 		{
 			stInfo.m_eType = eREWARD_TYPE_INVALID;
@@ -286,7 +286,7 @@ void CDboTSContReward::TakeScriptDataForScript( CNtlTSScrProperty& clProperty )
 		sREWARD_INFO stInfo;
 		char szKey[128];
 
-		// ±‚∫ª ∫∏ªÛ
+		// Í∏∞Î≥∏ Î≥¥ÏÉÅ
 		for ( i = 0; i < 4; ++i )
 		{
 			memcpy( &stInfo, &m_asDefReward[i], sizeof( sREWARD_INFO ) );
@@ -307,7 +307,7 @@ void CDboTSContReward::TakeScriptDataForScript( CNtlTSScrProperty& clProperty )
 			}
 		}
 
-		// º±≈√ ∫∏ªÛ
+		// ÏÑ†ÌÉù Î≥¥ÏÉÅ
 		for ( i = 0; i < 4; ++i )
 		{
 			memcpy( &stInfo, &m_asSelReward[i], sizeof( sREWARD_INFO ) );

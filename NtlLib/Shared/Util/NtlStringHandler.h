@@ -33,7 +33,7 @@
 	buffer[character_count] = L'\0';
 
 // These functions stores a result string in new heap area, so Ntl_CleanUpHeapString(W) MUST be called to dealloc the memory.
-// ÀÌ ÇÔ¼öµéÀº °á°ú ¹®ÀÚ¿­À» »õ·Î¿î Èü ¿µ¿ª¿¡ ÀúÀåÇÏ¹Ç·Î ¸Ş¸ğ¸®¸¦ ÇØÁ¦ÇÏ±â À§ÇØ Ntl_CleanUpHeapString(W) ÇÔ¼ö¸¦ È£ÃâÇØ¾ß ÇÕ´Ï´Ù.
+// ì´ í•¨ìˆ˜ë“¤ì€ ê²°ê³¼ ë¬¸ìì—´ì„ ìƒˆë¡œìš´ í™ ì˜ì—­ì— ì €ì¥í•˜ë¯€ë¡œ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•˜ê¸° ìœ„í•´ Ntl_CleanUpHeapString(W) í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ì•¼ í•©ë‹ˆë‹¤.
 // by YOSHIKI(2007-02-05)
 WCHAR* Ntl_MB2WC(const char* pszOriginalString);
 char* Ntl_WC2MB(const WCHAR* pwszOriginalString);

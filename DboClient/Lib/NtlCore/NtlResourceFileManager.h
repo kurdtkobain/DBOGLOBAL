@@ -2,7 +2,7 @@
 //	File		:	NtlResourceFileManager.h
 //	Desc		:	
 //	Begin		:	2004.9.23
-//	Copyright	:	¨Ï 2004 by agebreak CO., Ltd
+//	Copyright	:	â“’ 2004 by agebreak CO., Ltd
 //	Author		:	agebreak
 //	Update		:	
 //***********************************************************************************
@@ -171,10 +171,10 @@ public:
 
 			if(FindFileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY)
 			{
-				//  µğ·ºÅä¸®ÀÌ¸é
+				//  ë””ë ‰í† ë¦¬ì´ë©´
 				if(FindFileData.cFileName[0] == '.')
 				{
-					//  Dot µğ·ºÅä¸®´Â ½ºÅµÇÑ´Ù.
+					//  Dot ë””ë ‰í† ë¦¬ëŠ” ìŠ¤í‚µí•œë‹¤.
 				} 
 				else
 				{

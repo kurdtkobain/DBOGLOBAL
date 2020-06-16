@@ -36,11 +36,11 @@ class CNtlTSRTTI
 // Member variables
 private:
 
-	// Å¬·¡½ºÀÇ ÀÌ¸§¿¡ ´ëÇÑ ¸â¹ö º¯¼ö¸¦ const char* ·Î »ç¿ëÇØ¼­
-	// »ý¼ºÀÚ¸¦ ÅëÇØ ³Ñ°Ü¹ÞÀº ¹®ÀÚ¿­ÀÇ Æ÷ÀÎÅÍ¸¦ ±×´ë·Î ÀúÀåÇØµµ »ó°ü¾ø´Â
-	// ÀÌÀ¯´Â ¿ÜºÎ¿¡¼­ ³Ñ°Ü ¹Þ´Â Å¬·¡½º ÀÌ¸§ÀÌ Àü¿ª º¯¼ö·Î ÀúÀåµÇ¹Ç·Î
-	// ´ÜÁö ÇØ´ç ¹®ÀÚ¿­ÀÇ Æ÷ÀÎÅÍ¸¦ ¸â¹öº¯¼ö·Î ÀúÀåÇÏ´Â °ÍÀÌ ¸Þ¸ð¸®
-	// Àý¾à Â÷¿ø¿¡¼­ ÀÌÁ¡ÀÌ ÀÖ´Ù.
+	// í´ëž˜ìŠ¤ì˜ ì´ë¦„ì— ëŒ€í•œ ë©¤ë²„ ë³€ìˆ˜ë¥¼ const char* ë¡œ ì‚¬ìš©í•´ì„œ
+	// ìƒì„±ìžë¥¼ í†µí•´ ë„˜ê²¨ë°›ì€ ë¬¸ìžì—´ì˜ í¬ì¸í„°ë¥¼ ê·¸ëŒ€ë¡œ ì €ìž¥í•´ë„ ìƒê´€ì—†ëŠ”
+	// ì´ìœ ëŠ” ì™¸ë¶€ì—ì„œ ë„˜ê²¨ ë°›ëŠ” í´ëž˜ìŠ¤ ì´ë¦„ì´ ì „ì—­ ë³€ìˆ˜ë¡œ ì €ìž¥ë˜ë¯€ë¡œ
+	// ë‹¨ì§€ í•´ë‹¹ ë¬¸ìžì—´ì˜ í¬ì¸í„°ë¥¼ ë©¤ë²„ë³€ìˆ˜ë¡œ ì €ìž¥í•˜ëŠ” ê²ƒì´ ë©”ëª¨ë¦¬
+	// ì ˆì•½ ì°¨ì›ì—ì„œ ì´ì ì´ ìžˆë‹¤.
 
 	const char*							m_pClassName;
 
@@ -52,7 +52,7 @@ public:
 	CNtlTSRTTI( const char* pClassName, const CNtlTSRTTI* pBaseRTTI );
 
 
-// ¸â¹ö ÇÔ¼ö.
+// ë©¤ë²„ í•¨ìˆ˜.
 public:
 	const char*							GetClassName( void ) const;
 

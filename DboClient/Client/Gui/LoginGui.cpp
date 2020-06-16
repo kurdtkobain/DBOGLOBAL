@@ -57,14 +57,14 @@ RwBool CLogInGui::Create()
 
 	m_pFrame = (gui::CFrame*)GetComponent("frmParent");
 
-	// πË∞Ê
+	// Î∞∞Í≤Ω
 	m_pFlashBackground = (gui::CFlash*)GetComponent("flaBackground");
 
 	m_pFlashCredit = (gui::CFlash*)GetComponent("flaCredit");
 	m_pFlashCredit->Show(false);
 
 
-	// µøøµªÛ ¿Áª˝ πˆ∆∞
+	// ÎèôÏòÅÏÉÅ Ïû¨ÏÉù Î≤ÑÌäº
 	m_pCinemaButton = (gui::CButton*)GetComponent("CinemaButton");
 	m_pCinemaButton->SetTextFont(DEFAULT_FONT, 105, DEFAULT_FONT_ATTR);
 	m_pCinemaButton->SetTextFocusColor(INFOCOLOR_LOBBY_FOC);
@@ -72,7 +72,7 @@ RwBool CLogInGui::Create()
 	m_pCinemaButton->SetText( GetDisplayStringManager()->GetString("DST_LOGIN_PLAY_MOVIE") );
 	m_slotCinemaButton = m_pCinemaButton->SigClicked().Connect( this, &CLogInGui::ClickedCinemaButton);
 
-	// ¡¶¿€¡¯ ∫∏±‚ πˆ∆∞
+	// Ï†úÏûëÏßÑ Î≥¥Í∏∞ Î≤ÑÌäº
 	m_pCreditButton = (gui::CButton*)GetComponent("CreditButton");
 	m_pCreditButton->SetTextFont(DEFAULT_FONT, 105, DEFAULT_FONT_ATTR);
 	m_pCreditButton->SetTextFocusColor(INFOCOLOR_LOBBY_FOC);
@@ -115,24 +115,24 @@ RwBool CLogInGui::Create()
 	// Input box background
 	m_srfInputDialogBack.SetSurface(GetNtlGuiManager()->GetSurfaceManager()->GetSurface( "Login.srf", "srfInputDialogBack" ));
 
-	// ∞¯¡ˆªÁ«◊ πÿ¡Ÿ
+	// Í≥µÏßÄÏÇ¨Ìï≠ Î∞ëÏ§Ñ
 	m_NoticeUnderLine.SetSurface(GetNtlGuiManager()->GetSurfaceManager()->GetSurface( "Login.srf", "underLine" ));
 
-	// '∞Ë¡§ ¿Ã∏ß' Ω∫≈¬∆Ω
+	// 'Í≥ÑÏ†ï Ïù¥Î¶Ñ' Ïä§ÌÉúÌã±
 	rect.SetRectWH(417, 588, 60, 30);
 	m_pAccountName = NTL_NEW gui::CStaticBox( rect, m_pFrame, GetNtlGuiManager()->GetSurfaceManager(), COMP_TEXT_CENTER );
 	m_pAccountName->CreateFontStd(DEFAULT_FONT, DEFAULT_FONT_SIZE, DEFAULT_FONT_ATTR);
 	m_pAccountName->SetText( GetDisplayStringManager()->GetString("DST_LOGIN_ID") );
 	m_pAccountName->Enable(false);
 
-	// '∫Òπ–π¯»£' Ω∫≈¬∆Ω
+	// 'ÎπÑÎ∞ÄÎ≤àÌò∏' Ïä§ÌÉúÌã±
 	rect.SetRectWH(417, 616, 60, 30);
 	m_pPassward = NTL_NEW gui::CStaticBox( rect, m_pFrame, GetNtlGuiManager()->GetSurfaceManager(), COMP_TEXT_CENTER );
 	m_pPassward->CreateFontStd(DEFAULT_FONT, DEFAULT_FONT_SIZE, DEFAULT_FONT_ATTR);
 	m_pPassward->SetText( GetDisplayStringManager()->GetString("DST_LOGIN_PASSWARD") );
 	m_pPassward->Enable(false);
 
-	// 'Dbo ∞¯¡ˆªÁ«◊' Ω∫≈¬∆Ω
+	// 'Dbo Í≥µÏßÄÏÇ¨Ìï≠' Ïä§ÌÉúÌã±
 	rect.SetRectWH(773, 436, 220, 30);
 	m_pNotive = NTL_NEW gui::CStaticBox( rect, m_pFrame, GetNtlGuiManager()->GetSurfaceManager(), COMP_TEXT_CENTER);
 	m_pNotive->CreateFontStd(DEFAULT_FONT, DEFAULT_FONT_SIZE, DEFAULT_FONT_ATTR);
@@ -180,7 +180,7 @@ RwBool CLogInGui::Create()
 
 	m_handleKeyDown = CInputHandler::GetInstance()->LinkKeyDown(this, &CLogInGui::KeyboardDownHandler);
 
-	// event µÓ∑œ.
+	// event Îì±Î°ù.
 	LinkMsg(g_EventLoginGuiEnable, 0);
 	LinkMsg(g_EventLogInStageStateEnter, 0);
 	LinkMsg(g_EventLogInStageStateExit, 0);

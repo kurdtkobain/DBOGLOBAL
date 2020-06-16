@@ -89,8 +89,8 @@ bool CDboTSEMItem::AddBuildData( const std::string& strKey, const CNtlTSMain::ma
 	sITEM_PARAM sParam;
 	CDboTSEMItem_Recv clRecv;
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç Item id·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ Item idë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	CNtlTSTrigger* pTrig;
 	CNtlTSMain::mapdef_TLIST::const_iterator citTSBegin = TList.begin();

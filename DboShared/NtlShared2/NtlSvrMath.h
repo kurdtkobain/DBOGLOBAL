@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-01-08
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Jeong Ho, Rho   ( lleo52@ntl-inc.com )
 //
@@ -32,8 +32,8 @@ public:
 
 	static bool Line2DSphere2DTest( const CNtlLine& rLine, const CNtlSphere& rSphere );
 
-	// rLine ¿¡¼­ y °ªÀº ¹«½ÃµÈ´Ù.
-	// rBBox ¿¡¼­ y °ª ¹× y Ãà°ªÀº ¹«½ÃµÈ´Ù.
+	// rLine ì—ì„œ y ê°’ì€ ë¬´ì‹œëœë‹¤.
+	// rBBox ì—ì„œ y ê°’ ë° y ì¶•ê°’ì€ ë¬´ì‹œëœë‹¤.
 	static bool Line2DBBox2DTest( const CNtlLine& rLine, const CNtlBBox& rBBox );
 	static float CalculateObjectRadius( const CNtlVector vMax, const CNtlVector vMin, const float fObjectScale, const float fscale=1);
 };

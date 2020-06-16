@@ -48,9 +48,9 @@ public:
 
 public:
 
-	BYTE			byTimeQuestType; // Å¸ÀÓÄù½ºÆ® Å¸ÀÔ ( eTIMEQUEST_TYPE )
-	BYTE			byDifficultyFlag; // ³­ÀÌµµ ÇÃ·¡±×( eTIMEQUEST_DIFFICULTY_FLAG )
-	DWORD			dwStartTime; // ½ÃÀÛ½Ã°£ ( ÇÏ·ç 00:00 À» ±âÁØÀ¸·Î ½ÃÀÛµÇ´Â ºĞ´ÜÀ§¸¦ ³Ö´Â´Ù )
+	BYTE			byTimeQuestType; // íƒ€ì„í€˜ìŠ¤íŠ¸ íƒ€ì… ( eTIMEQUEST_TYPE )
+	BYTE			byDifficultyFlag; // ë‚œì´ë„ í”Œë˜ê·¸( eTIMEQUEST_DIFFICULTY_FLAG )
+	DWORD			dwStartTime; // ì‹œì‘ì‹œê°„ ( í•˜ë£¨ 00:00 ì„ ê¸°ì¤€ìœ¼ë¡œ ì‹œì‘ë˜ëŠ” ë¶„ë‹¨ìœ„ë¥¼ ë„£ëŠ”ë‹¤ )
 
 	TBLIDX			startCharacterDirection;
 	TBLIDX			startObjectIndex;
@@ -69,7 +69,7 @@ public:
 	TBLIDX			dayRecordMailTblidx;
 	TBLIDX			bestRecordMailTblidx;
 
-	BYTE			byResetTime;				// ¸®¼Â ½ÃÅ°´Â ½Ã°£ 0~23 »ç¿ë
+	BYTE			byResetTime;				// ë¦¬ì…‹ ì‹œí‚¤ëŠ” ì‹œê°„ 0~23 ì‚¬ìš©
 
 	WCHAR			wszPrologueDirection[ DBO_MAX_LENGTH_PROLOGUE_DIRECTION + 1 ];
 	sTIMEQUEST_DATASET sTimeQuestDataset[ MAX_TIMEQUEST_DIFFICULTY ];

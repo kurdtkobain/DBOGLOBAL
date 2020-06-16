@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlSimpleDOM.h
 * Author		: Haesung, Cho
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2009. 03. 11
 * Abstract		: Pathengine cSimpleDOM
 *****************************************************************************

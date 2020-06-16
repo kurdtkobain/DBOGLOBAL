@@ -2,7 +2,7 @@
  *
  * File			: ChatGui.h
  * Author		: Peessi
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2007. 5. 10	
  * Abstract		: DBO chatting gui.
  *****************************************************************************
@@ -34,7 +34,7 @@ public:
 
 	struct sChatOption
 	{
-		RwBool				bAlwaysInput;				///< √§∆√¿‘∑¬»ƒ ¿‘∑¬∏µÂ∞° ¿Ø¡ˆµ«¥¬¡ˆ ø©∫Œ
+		RwBool				bAlwaysInput;				///< Ï±ÑÌåÖÏûÖÎ†•ÌõÑ ÏûÖÎ†•Î™®ÎìúÍ∞Ä Ïú†ÏßÄÎêòÎäîÏßÄ Ïó¨Î∂Ä
 		bool				bLockChatDisplay;
 		bool				bShowChatScroll;
 		RwUInt8				byAlpha;
@@ -42,7 +42,7 @@ public:
 
 	struct sPositionInfo
 	{
-		RwInt32				iOldScreenHeight;			///< ≈¨∂Û¿Ãæ∆Æ ResizeΩ√ «œ¥‹ø°º≠ ¿œ¡§«— ∞≈∏Æ ¿Ø¡ˆ ¿ß«ÿ
+		RwInt32				iOldScreenHeight;			///< ÌÅ¥ÎùºÏù¥Ïñ∏Ìä∏ ResizeÏãú ÌïòÎã®ÏóêÏÑú ÏùºÏ†ïÌïú Í±∞Î¶¨ Ïú†ÏßÄ ÏúÑÌï¥
 	};
 
 
@@ -96,7 +96,7 @@ private:
 	VOID	Option_Alpha(RwUInt8 byAlpha);
 	VOID	Option_DisplayChatLogType(RwUInt8 byDisplayIndex, eChatType eType, RwBool bEnable);
 
-	// Option_DisplayChatLogType «‘ºˆ∏¶ ∏µŒ »£√‚«— µ⁄ø° ±◊ ∞·∞˙∏¶ ¿˚øÎ«œ±‚ ¿ß«— «‘ºˆ
+	// Option_DisplayChatLogType Ìï®ÏàòÎ•º Î™®Îëê Ìò∏Ï∂úÌïú Îí§Ïóê Í∑∏ Í≤∞Í≥ºÎ•º Ï†ÅÏö©ÌïòÍ∏∞ ÏúÑÌïú Ìï®Ïàò
 	VOID	Option_RefreshDisplayChatLog(RwUInt8 byDisplayIndex);
 
 	//! Callbacks
@@ -152,7 +152,7 @@ protected:
 
 	RwBool				m_bChatModeEndReturn;
 	RwBool				m_bRenderBackground;
-	RwBool				m_bInitializedOption;			/// ø…º«ø° µ˚∏• √ ±‚»≠∏¶ «ﬂ¥Ÿ
+	RwBool				m_bInitializedOption;			/// ÏòµÏÖòÏóê Îî∞Î•∏ Ï¥àÍ∏∞ÌôîÎ•º ÌñàÎã§
 	eChatType			m_eChatType;
 	sChatOption			m_ChatOption;
 	sPositionInfo		m_tPositionInfo;	

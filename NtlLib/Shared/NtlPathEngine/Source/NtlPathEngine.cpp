@@ -61,11 +61,11 @@ bool CNtlPathEngine::Create( const char* pPathEngineDllName, BOOL bSeamless )
 		return false;
 	}
 
-	// pLog°¡ NULL ÀÌ¶ó¸é PathEngine ³»ºÎ¿¡¼­ Log¸¦ ³²±âÁö ¸øÇÑ´Ù.
+	// pLogê°€ NULL ì´ë¼ë©´ PathEngine ë‚´ë¶€ì—ì„œ Logë¥¼ ë‚¨ê¸°ì§€ ëª»í•œë‹¤.
 	if( NULL == CNtlPathEngineLog::GetInstance() )
 		CNtlPathEngineLog::GetInstance()->Log( "Failed to start ntl pathengine log system in %d", CNtlPathEngineLog::GetInstance() );
 
-	// DLL ¿¡¼­ PathEngineÀÇ interface¸¦ °¡Áö°í ¿Â´Ù.
+	// DLL ì—ì„œ PathEngineì˜ interfaceë¥¼ ê°€ì§€ê³  ì˜¨ë‹¤.
 	tGetInterfaceFunction getInterfaceFunction = (tGetInterfaceFunction)procAddress;
 	m_pPathEngine = getInterfaceFunction(CNtlPathEngineLog::GetInstance());
 	if( NULL == m_pPathEngine )
@@ -75,7 +75,7 @@ bool CNtlPathEngine::Create( const char* pPathEngineDllName, BOOL bSeamless )
 		return false;
 	}
 
-	// DLLÀÇ Version Check
+	// DLLì˜ Version Check
 	if( m_pPathEngine->getInterfaceMajorVersion() != PATHENGINE_INTERFACE_MAJOR_VERSION ||
 		m_pPathEngine->getInterfaceMinorVersion() < PATHENGINE_INTERFACE_MINOR_VERSION )
 	{

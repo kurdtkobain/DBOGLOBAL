@@ -26,11 +26,11 @@ protected:
 
 	std::string						m_strPathName;
 
-	// Export ¿ë º¯¼ö
+	// Export ìš© ë³€ìˆ˜
 	CNtlNaviInfo*					m_pCreatedWorldInfo;
 	listdef_NAVI_INFO_LIST			m_defCreatedObjList;
 
-	// Import ¿ë º¯¼ö
+	// Import ìš© ë³€ìˆ˜
 	CNtlNaviWorldInfo*				m_pLoadedWorldInfo;
 	listdef_NAVI_INFO_LIST			m_defLoadedObjList;
 
@@ -48,7 +48,7 @@ public:
 	//
 	//////////////////////////////////////////////////////////////////////////
 
-	// Info entity »ı¼º
+	// Info entity ìƒì„±
 	CNtlNaviWorldOutDoorInfo*		Create_WorldOutDoor( void );
 	CNtlNaviWorldInDoorInfo*		Create_WorldInDoor( void );
 	CNtlNaviGroupOutDoorInfo*		Create_GroupOutDoor( void );
@@ -56,12 +56,12 @@ public:
 	CNtlNaviPropOutDoorInfo*		Create_PropOutDoor( void );
 	CNtlNaviPropInDoorInfo*			Create_PropInDoor( void );
 
-	// Info entity Á¦°Å
+	// Info entity ì œê±°
 	void							Delete_NaviInfo( CNtlNaviInfo*& pNaviInfo );
 	void							Delete_AllNaviInfoExceptWorldInfo( void );
 	void							Delete_AllNaviInfo( void );
 
-	// ÇöÀç »ı¼ºµÈ ¸ğµç µ¥ÀÌÅÍ¸¦ ÆÄÀÏ¿¡ ÀúÀåÇÑ´Ù
+	// í˜„ì¬ ìƒì„±ëœ ëª¨ë“  ë°ì´í„°ë¥¼ íŒŒì¼ì— ì €ì¥í•œë‹¤
 	bool							Flush( void );
 
 	//////////////////////////////////////////////////////////////////////////

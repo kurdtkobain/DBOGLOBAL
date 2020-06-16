@@ -1,7 +1,7 @@
 /******************************************************************************
 * File			: OptionGraphicTab.h
 * Author		: Hae sung, Cho
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2009. 3. 24
 * Abstract		: 
 *****************************************************************************
@@ -13,7 +13,7 @@
 
 #pragma once
 
-//// Video Mode ∏ÆΩ∫∆Æ
+//// Video Mode Î¶¨Ïä§Ìä∏
 typedef struct _SVideoModeInfo
 {
 	RwInt32 iWidth;
@@ -98,18 +98,18 @@ protected:
 	DEVICE_RESTORE_HANDLE m_hRestore;
 
 protected:
-	gui::CDialog*		m_pThis;			///< «ˆ¿Á Dialog
-	gui::CDialog*		m_pScrollDialog;	///< Ω∫≈©∑— µ«¥¬ Dialog
+	gui::CDialog*		m_pThis;			///< ÌòÑÏû¨ Dialog
+	gui::CDialog*		m_pScrollDialog;	///< Ïä§ÌÅ¨Î°§ ÎêòÎäî Dialog
 
 	gui::CSlot			m_slotAbsoluteMouseWheel;
 
-	gui::CStaticBox*	m_pStbResolutionTitle;	///< «ÿªÛµµ º≥¡§
-	gui::CStaticBox*	m_pStbResolution;		///< «ÿªÛµµ
-	gui::CComboBox*		m_pCbbResolution;		///< «ÿªÛµµ º≥¡§ ƒﬁ∫∏π⁄Ω∫
+	gui::CStaticBox*	m_pStbResolutionTitle;	///< Ìï¥ÏÉÅÎèÑ ÏÑ§Ï†ï
+	gui::CStaticBox*	m_pStbResolution;		///< Ìï¥ÏÉÅÎèÑ
+	gui::CComboBox*		m_pCbbResolution;		///< Ìï¥ÏÉÅÎèÑ ÏÑ§Ï†ï ÏΩ§Î≥¥Î∞ïÏä§
 	gui::CSlot			m_slotListToggled;	
 
-	gui::CStaticBox*	m_pStbGamma;			///< π‡±‚
-	gui::CScrollBar*	m_pScbGamma;			///< π‡±‚ º≥¡§ Ω∫≈©∑—πŸ
+	gui::CStaticBox*	m_pStbGamma;			///< Î∞ùÍ∏∞
+	gui::CScrollBar*	m_pScbGamma;			///< Î∞ùÍ∏∞ ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§Î∞î
 	gui::CSlot			m_slotGammaSliderMoved;
 	gui::CSlot			m_slotGammaValueChanged;
 
@@ -118,68 +118,68 @@ protected:
 	gui::CSlot			m_slotFpsSliderMoved;
 	gui::CSlot			m_slotFpsValueChanged;
 
-	gui::CButton*		m_pBtnWindowMode;		///< ¿©µµøÏ ∏µÂ º≥¡§ ≈‰±€πŸ
+	gui::CButton*		m_pBtnWindowMode;		///< ÏúàÎèÑÏö∞ Î™®Îìú ÏÑ§Ï†ï ÌÜ†Í∏ÄÎ∞î
 
-	gui::CStaticBox*	m_pStbEffectTitle;		///< »ø∞˙ ≈∏¿Ã∆≤
-	gui::CStaticBox*	m_pStbGraphicQuality;	///< ¿¸√º ±◊∑°«» «∞¡˙
-	gui::CStaticBox*	m_pStbGraphicQualityLow;	///< ≥∑¿Ω
-	gui::CStaticBox*	m_pStbGraphicQualityMiddle;	///< ∫∏≈Î
-	gui::CStaticBox*	m_pStbGraphicQualityHigh;	///< ≥Ù¿Ω
-	gui::CStaticBox*	m_pStbGraphicQualityUser;	///< ªÁøÎ¿⁄ º≥¡§
-	gui::CScrollBar*	m_pScbGraphicQuality;		///< ±◊∑°«» «∞¡˙ º≥¡§ Ω∫≈©∑—πŸ
+	gui::CStaticBox*	m_pStbEffectTitle;		///< Ìö®Í≥º ÌÉÄÏù¥ÌãÄ
+	gui::CStaticBox*	m_pStbGraphicQuality;	///< Ï†ÑÏ≤¥ Í∑∏ÎûòÌîΩ ÌíàÏßà
+	gui::CStaticBox*	m_pStbGraphicQualityLow;	///< ÎÇÆÏùå
+	gui::CStaticBox*	m_pStbGraphicQualityMiddle;	///< Î≥¥ÌÜµ
+	gui::CStaticBox*	m_pStbGraphicQualityHigh;	///< ÎÜíÏùå
+	gui::CStaticBox*	m_pStbGraphicQualityUser;	///< ÏÇ¨Ïö©Ïûê ÏÑ§Ï†ï
+	gui::CScrollBar*	m_pScbGraphicQuality;		///< Í∑∏ÎûòÌîΩ ÌíàÏßà ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§Î∞î
 	gui::CSlot			m_slotQualitySliderMoved;
 	gui::CSlot			m_slotQualityValueChanged;
 
-	gui::CStaticBox*	m_pStbTerrainDist;		///< ¡ˆ«¸ Ω√æﬂ∞≈∏Æ
-	gui::CScrollBar*	m_pScbTerrainDist;		///< ¡ˆ«¸ Ω√æﬂ∞≈∏Æ º≥¡§ Ω∫≈©∑— πŸ
+	gui::CStaticBox*	m_pStbTerrainDist;		///< ÏßÄÌòï ÏãúÏïºÍ±∞Î¶¨
+	gui::CScrollBar*	m_pScbTerrainDist;		///< ÏßÄÌòï ÏãúÏïºÍ±∞Î¶¨ ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotTerrainSliderMoved;
 	gui::CSlot			m_slotTerrainValueChanged;
 	
-	gui::CStaticBox*	m_pStbObjectDist;		///< ªÁπ∞ Ω√æﬂ∞≈∏Æ
-	gui::CScrollBar*	m_pScbObjectDist;		///< ªÁπ∞ Ω√æﬂ∞≈∏Æ º≥¡§ Ω∫≈©∑— πŸ
+	gui::CStaticBox*	m_pStbObjectDist;		///< ÏÇ¨Î¨º ÏãúÏïºÍ±∞Î¶¨
+	gui::CScrollBar*	m_pScbObjectDist;		///< ÏÇ¨Î¨º ÏãúÏïºÍ±∞Î¶¨ ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotObjectSliderMoved;
 	gui::CSlot			m_slotObjectValueChanged;
 
-	gui::CButton*		m_pBtnTerrainShadow;	///< ¡ˆ«¸ ±◊∏≤¿⁄
+	gui::CButton*		m_pBtnTerrainShadow;	///< ÏßÄÌòï Í∑∏Î¶ºÏûê
 	gui::CSlot			m_slotTerrainShadowToggled;
 
-	gui::CButton*		m_pBtnWaterEffect;		///< π∞ »ø∞˙
+	gui::CButton*		m_pBtnWaterEffect;		///< Î¨º Ìö®Í≥º
 	gui::CSlot			m_slotWaterEffectToggled;
 
-	/*gui::CStaticBox*	m_pStbCharacterDist;	///< ƒ≥∏Ø≈Õ Ω√æﬂ∞≈∏Æ
-	gui::CScrollBar*	m_pScbCharacterDist;	///< ƒ≥∏Ø≈Õ Ω√æﬂ∞≈∏Æ º≥¡§ Ω∫≈©∑— πŸ
+	/*gui::CStaticBox*	m_pStbCharacterDist;	///< Ï∫êÎ¶≠ÌÑ∞ ÏãúÏïºÍ±∞Î¶¨
+	gui::CScrollBar*	m_pScbCharacterDist;	///< Ï∫êÎ¶≠ÌÑ∞ ÏãúÏïºÍ±∞Î¶¨ ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotCharacterDistSliderMoved;
 	gui::CSlot			m_slotCharacterDistValueChanged;*/
 
-	gui::CButton*		m_pBtnCharacterShadow;	///< ƒ≥∏Ø≈Õ ±◊∏≤¿⁄
+	gui::CButton*		m_pBtnCharacterShadow;	///< Ï∫êÎ¶≠ÌÑ∞ Í∑∏Î¶ºÏûê
 	gui::CSlot			m_slotCharacterShadowToggled;
 
-	gui::CStaticBox*	m_pStbMagicEffect;		///< ∏∂π˝ ºº∫Œ»ø∞˙
-	gui::CScrollBar*	m_pScbMagicEffect;		///< ∏∂π˝ ºº∫Œ»ø∞˙ º≥¡§ Ω∫≈©∑— πŸ
+	gui::CStaticBox*	m_pStbMagicEffect;		///< ÎßàÎ≤ï ÏÑ∏Î∂ÄÌö®Í≥º
+	gui::CScrollBar*	m_pScbMagicEffect;		///< ÎßàÎ≤ï ÏÑ∏Î∂ÄÌö®Í≥º ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotMagicEffectSliderMoved;
 	gui::CSlot			m_slotMagicEffectValueChanged;
 
-	gui::CStaticBox*	m_pStbWeatherEffect;	///< ≥Øææ »ø∞˙
-	gui::CScrollBar*	m_pScbWeatherEffect;	///< ≥Øææ »ø∞˙ º≥¡§ Ω∫≈©∑— πŸ
+	gui::CStaticBox*	m_pStbWeatherEffect;	///< ÎÇ†Ïî® Ìö®Í≥º
+	gui::CScrollBar*	m_pScbWeatherEffect;	///< ÎÇ†Ïî® Ìö®Í≥º ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotWeatherEffectSliderMoved;
 	gui::CSlot			m_slotWeatherEffectValueChanged;
 
-	gui::CStaticBox*	m_pStbTextureQuality;	///< ≈ÿΩ∫√ƒ «ÿªÛµµ
-	gui::CScrollBar*	m_pScbTextureQuality;	///< ≈ÿΩ∫√ƒ «ÿªÛµµ º≥¡§ Ω∫≈©∑— πŸ
+	gui::CStaticBox*	m_pStbTextureQuality;	///< ÌÖçÏä§Ï≥ê Ìï¥ÏÉÅÎèÑ
+	gui::CScrollBar*	m_pScbTextureQuality;	///< ÌÖçÏä§Ï≥ê Ìï¥ÏÉÅÎèÑ ÏÑ§Ï†ï Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotTextureQualitySliderMoved;
 	gui::CSlot			m_slotTextureQualityValueChanged;
 
-	gui::CStaticBox*	m_pStbCharacterEffectTitle;	///< ƒ≥∏Ø≈Õ »ø∞˙ ≈∏¿Ã∆≤
-	gui::CButton*		m_pBtnCartoonEdge;			///< ƒ´≈˜Ωƒ ø‹∞˚º±
-	/*gui::CButton*		m_pBtnUpgradeEffect;		///< æ˜±◊∑π¿ÃµÂ »ø∞˙*/
+	gui::CStaticBox*	m_pStbCharacterEffectTitle;	///< Ï∫êÎ¶≠ÌÑ∞ Ìö®Í≥º ÌÉÄÏù¥ÌãÄ
+	gui::CButton*		m_pBtnCartoonEdge;			///< Ïπ¥Ìà∞Ïãù Ïô∏Í≥ΩÏÑ†
+	/*gui::CButton*		m_pBtnUpgradeEffect;		///< ÏóÖÍ∑∏Î†àÏù¥Îìú Ìö®Í≥º*/
 	gui::CSlot			m_slotCartoonEdgeToggled;
 	/*gui::CSlot			m_slotUpgradeEffectToggled;*/
 
 	gui::CStaticBox*	m_pStbEtcTitle;				
-	gui::CButton*		m_pBtnHdrEffect;			///< HDR »ø∞˙
+	gui::CButton*		m_pBtnHdrEffect;			///< HDR Ìö®Í≥º
 	gui::CSlot			m_slotHdrEffectToggled;
 	
-	gui::CScrollBar*	m_pThisScrollBar;			///< Ω∫≈©∑— πŸ
+	gui::CScrollBar*	m_pThisScrollBar;			///< Ïä§ÌÅ¨Î°§ Î∞î
 	gui::CSlot			m_slotScrollBarChanged;
 	gui::CSlot			m_slotScrollBarSliderMoved;
 

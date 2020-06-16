@@ -6,7 +6,7 @@
 
 
 /** 
-	UI °´Ã¼¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ UI type class µé
+	UI ê°ì²´ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ UI type class ë“¤
 */
 
 

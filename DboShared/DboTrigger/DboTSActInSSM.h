@@ -7,9 +7,9 @@
 
 /**
 	Input SSM action
-	SSM¿¡ ÁÖ¾îÁø °ªÀ» ÀÔ·ÂÇÑ´Ù
-	¿ëµµ : ¸ğµÎ
-	¼³¸í : Slot storage memory¿¡ ÇØ´ç °ªÀ» ÀÔ·ÂÇÒ ¶§ »ç¿ë
+	SSMì— ì£¼ì–´ì§„ ê°’ì„ ì…ë ¥í•œë‹¤
+	ìš©ë„ : ëª¨ë‘
+	ì„¤ëª… : Slot storage memoryì— í•´ë‹¹ ê°’ì„ ì…ë ¥í•  ë•Œ ì‚¬ìš©
 */
 
 
@@ -20,7 +20,7 @@ class CDboTSActInSSM : public CNtlTSAction
 // Member variables
 protected:
 	eSSM_ID								m_eSSMId;
-	unsigned int						m_uiValue;	// SSM ¿¡ ÀÔ·ÂÇÒ °ª
+	unsigned int						m_uiValue;	// SSM ì— ì…ë ¥í•  ê°’
 
 // Constructions
 public:
@@ -38,7 +38,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

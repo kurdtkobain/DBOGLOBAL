@@ -25,7 +25,7 @@ iErrorHandler::eAction CNtlPathEngineLog::handle( const char* pchErrorType, cons
 	// Log
 	Log( "%s\t: %s (%s)\n", pchErrorType, pchErrorString, attributes );
 
-	// Error°¡ Handling µÇ¾îµµ ¾îÇÃ¸®ÄÉÀÌ¼ÇÀº Áö¼ÓÀûÀ¸·Î µ¹¸°´Ù.
+	// Errorê°€ Handling ë˜ì–´ë„ ì–´í”Œë¦¬ì¼€ì´ì…˜ì€ ì§€ì†ì ìœ¼ë¡œ ëŒë¦°ë‹¤.
 	return iErrorHandler::CONTINUE;
 }
 

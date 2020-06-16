@@ -2,7 +2,7 @@
 *
 * File			: NtlSoundManaager.h
 * Author		: Hong SungBock
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2006. 7. 11	
 * Abstract		: Ntl Sound Manager by Singleton
 *****************************************************************************
@@ -65,17 +65,17 @@ public:
 
 	// System
 
-	///< FMOD System √ ±‚»≠, Channel Group √ ±‚»≠
-	///< fDopplerScale : π›«‚( ¿Ωø¯¿« ¿Ãµø º”µµ, º“∏Æ∏¶ µË¥¬ ¡÷√º¿« ¿Ãµø º”µµø° µ˚∏• ¿Ω∆ƒ¿« ∫Ø»≠)
-	///< fDistanceFactor : º“∏Æ∞° µÈ∏Æ¥¬ ±Ê¿Ã¿« ∫Ò¿≤(ex : 1πÃ≈Õ, 1ºæ∆º)
-	///< fRollOffScale : ∞®ºË(∞≈∏Æø° µ˚∏• ∫“∑˝¿« ≈©±‚ ∞®º“
+	///< FMOD System Ï¥àÍ∏∞Ìôî, Channel Group Ï¥àÍ∏∞Ìôî
+	///< fDopplerScale : Î∞òÌñ•( ÏùåÏõêÏùò Ïù¥Îèô ÏÜçÎèÑ, ÏÜåÎ¶¨Î•º Îì£Îäî Ï£ºÏ≤¥Ïùò Ïù¥Îèô ÏÜçÎèÑÏóê Îî∞Î•∏ ÏùåÌååÏùò Î≥ÄÌôî)
+	///< fDistanceFactor : ÏÜåÎ¶¨Í∞Ä Îì§Î¶¨Îäî Í∏∏Ïù¥Ïùò ÎπÑÏú®(ex : 1ÎØ∏ÌÑ∞, 1ÏÑºÌã∞)
+	///< fRollOffScale : Í∞êÏá†(Í±∞Î¶¨Ïóê Îî∞Î•∏ Î∂àÎ•®Ïùò ÌÅ¨Í∏∞ Í∞êÏÜå
 	void		Init(const char* pcPath, float fMasterVolume = 1.0, float fDopplerScale = 1.0,
 					 float fDistacneFactor = 1.0, float fRollOffScale = 1.0);				
 
 	void		Reset();
-	void		Release();					///< FMOD Ω√Ω∫≈€ Shut down
+	void		Release();					///< FMOD ÏãúÏä§ÌÖú Shut down
 
-	void		SetListenerPosition(float fXPos, float fYPos, float fZPos);	///< Lister 3D ¿ßƒ° º≥¡§
+	void		SetListenerPosition(float fXPos, float fYPos, float fZPos);	///< Lister 3D ÏúÑÏπò ÏÑ§Ï†ï
 
 	void		SetListenerPosition(float fXPos, float fYPos, float fZPos, 
 									float fXFoward, float fYFoward, float fZFoward, 
@@ -83,10 +83,10 @@ public:
 
 	int			Play(sNtlSoundPlayParameta* pParameta);
 
-	int			ReplayEnvironmentSound(CNtlSound* pSound);///< ø¿∫Í¡ß∆Æ π¬¡˜ ¥ŸΩ√ «√∑π¿Ã «—¥Ÿ.(«⁄µÈ¿Ã πŸ≤Ó¡ˆ æ ¥¬¥Ÿ)
-	int			Replay(CNtlSound* pSound);		///< ±‚¡∏ø° «√∑π¿Ãµ«∞Ì ¿÷¥¬ ªÁøÓµÂ∏¶ ¥ŸΩ√ «√∑π¿Ã«—¥Ÿ.
+	int			ReplayEnvironmentSound(CNtlSound* pSound);///< Ïò§Î∏åÏ†ùÌä∏ ÎÆ§ÏßÅ Îã§Ïãú ÌîåÎ†àÏù¥ ÌïúÎã§.(Ìï∏Îì§Ïù¥ Î∞îÎÄåÏßÄ ÏïäÎäîÎã§)
+	int			Replay(CNtlSound* pSound);		///< Í∏∞Ï°¥Ïóê ÌîåÎ†àÏù¥ÎêòÍ≥† ÏûàÎäî ÏÇ¨Ïö¥ÎìúÎ•º Îã§Ïãú ÌîåÎ†àÏù¥ÌïúÎã§.
 
-	void		Update(float fElapsed);			///< ∞¢ ChannelGroup UpdateøÕ FMOD::System->update()
+	void		Update(float fElapsed);			///< Í∞Å ChannelGroup UpdateÏôÄ FMOD::System->update()
 
 
 
@@ -94,48 +94,48 @@ public:
 	//				 Master Group
 	//////////////////////////////////////////////////////////////////////////
 
-	unsigned int	GetPlayingChannels();			///< «ˆ¿Á ø¨¡÷µ«∞Ì sound channel¿« ∞πºˆ
+	unsigned int	GetPlayingChannels();			///< ÌòÑÏû¨ Ïó∞Ï£ºÎêòÍ≥† sound channelÏùò Í∞ØÏàò
 
-	///< ∫º∑˝
+	///< Î≥ºÎ•®
 	void		SetMasterVolume(float fVolume);
 	float		GetMasterVolume();
 
-	// »ø∞˙ ¿˚øÎ
+	// Ìö®Í≥º Ï†ÅÏö©
 	void		SetMasterEffect(FMOD_DSP_TYPE eType);
 	void		ReleaseMasterEffect(FMOD_DSP_TYPE eType);
 
-	void		SetMute(bool bMute);					///< ¿¸√º ªÁøÓµÂ¿« Mute º≥¡§
+	void		SetMute(bool bMute);					///< Ï†ÑÏ≤¥ ÏÇ¨Ïö¥ÎìúÏùò Mute ÏÑ§Ï†ï
 
 
 	//////////////////////////////////////////////////////////////////////////
 	//				 Channel Group
 	//////////////////////////////////////////////////////////////////////////
 
-	void		StopGroup(int iChannelGroup);	///< √§≥Œ ±◊∑Ï ¿¸√º∏¶ ¡Ô∞¢ Release Ω√≈≤¥Ÿ.
+	void		StopGroup(int iChannelGroup);	///< Ï±ÑÎÑê Í∑∏Î£π Ï†ÑÏ≤¥Î•º Ï¶âÍ∞Å Release ÏãúÌÇ®Îã§.
 
 	CNtlChannelGroup*	GetChannelGroup(int iChannelGroup);
 	char*		GetGroupName(int iChannelGroup);
 
-	void		SetGroupVolume(int iChannelGroup, float fVolume);///< ChannelGroup¿« ∫º∑˝¿ª º≥¡§«—¥Ÿ
-	float		GetGroupVolume(int iChannelGroup);				///< ChannelGroup¿« ∫º∑˝¿ª π›»Ø«—¥Ÿ
+	void		SetGroupVolume(int iChannelGroup, float fVolume);///< ChannelGroupÏùò Î≥ºÎ•®ÏùÑ ÏÑ§Ï†ïÌïúÎã§
+	float		GetGroupVolume(int iChannelGroup);				///< ChannelGroupÏùò Î≥ºÎ•®ÏùÑ Î∞òÌôòÌïúÎã§
 
-	// »ø∞˙ ¿˚øÎ
+	// Ìö®Í≥º Ï†ÅÏö©
 	void		SetGroupEffect(int iChannelGroup, FMOD_DSP_TYPE eType);
 	void		ReleaseGroupEffect(int iChannelGroup, FMOD_DSP_TYPE eType);
 
-	void		SetMute(int iChannelGroup, bool bMute);	///< ChannelGroup¿« »∞º∫»≠∏¶ º≥¡§ t : ≤Ù±‚, f : ƒ—±‚
+	void		SetMute(int iChannelGroup, bool bMute);	///< ChannelGroupÏùò ÌôúÏÑ±ÌôîÎ•º ÏÑ§Ï†ï t : ÎÅÑÍ∏∞, f : ÏºúÍ∏∞
 
 	void		SetProhibition(int iChannelGroup, RwBool bProhibition);
 	RwBool		IsProhibition(int iChannelGroup);
 
-	void		SetValidGroupRange(int iChannelGroup, float fRange);	///< √§≥Œ ±◊∑Ï∫∞ ø¨¡÷ ∞°¥…«— ∞≈∏Æ∏¶ º≥¡§«—¥Ÿ.
-	float		GetValidGroupRange(int iChannelGroup);				///< √§≥Œ ±◊∑Ï∫∞ ø¨¡÷ ∞°¥…«— ∞≈∏Æ∏¶ æÀæ∆∫ª¥Ÿ.
+	void		SetValidGroupRange(int iChannelGroup, float fRange);	///< Ï±ÑÎÑê Í∑∏Î£πÎ≥Ñ Ïó∞Ï£º Í∞ÄÎä•Ìïú Í±∞Î¶¨Î•º ÏÑ§Ï†ïÌïúÎã§.
+	float		GetValidGroupRange(int iChannelGroup);				///< Ï±ÑÎÑê Í∑∏Î£πÎ≥Ñ Ïó∞Ï£º Í∞ÄÎä•Ìïú Í±∞Î¶¨Î•º ÏïåÏïÑÎ≥∏Îã§.
 
 	void		FadeIn(int iGroup, float fDestVolume, unsigned int ulTime);
-	///< fVolume¿Ã «ˆ¿Á ∫º∑˝∫∏¥Ÿ ≈©∞≈≥™ ulTime¿Ã 0 ¿Ã«œ∏È Ω««‡µ«¡ˆ æ ¥¬¥Ÿ
+	///< fVolumeÏù¥ ÌòÑÏû¨ Î≥ºÎ•®Î≥¥Îã§ ÌÅ¨Í±∞ÎÇò ulTimeÏù¥ 0 Ïù¥ÌïòÎ©¥ Ïã§ÌñâÎêòÏßÄ ÏïäÎäîÎã§
 
 	void		FadeOut(int iGroup, float fDestVolume, unsigned int ulTime);
-	///< fVolume¿Ã «ˆ¿Á ∫º∑˝∫∏¥Ÿ ¿€∞≈≥™ ulTime¿Ã 0 ¿Ã«œ∏È Ω««‡µ«¡ˆ æ ¥¬¥Ÿ
+	///< fVolumeÏù¥ ÌòÑÏû¨ Î≥ºÎ•®Î≥¥Îã§ ÏûëÍ±∞ÎÇò ulTimeÏù¥ 0 Ïù¥ÌïòÎ©¥ Ïã§ÌñâÎêòÏßÄ ÏïäÎäîÎã§
 
 	bool		IsMute(int iChannelGroup);
 
@@ -144,15 +144,15 @@ public:
 	//				 Channel
 	//////////////////////////////////////////////////////////////////////////
 
-	void		Stop(SOUND_HANDLE& rHandle);	///< ªÁøÓµÂ∏¶ Release Ω√≈≤¥Ÿ.
-	int			SetSoundPosition(SOUND_HANDLE hHandle, float fPosX, float fPosY, float fPosZ);	///< √§≥Œ¿« 3D ∞¯∞£ªÛ¿« ¿ßƒ°∏¶ ¿ÃµøΩ√≈≤¥Ÿ.
+	void		Stop(SOUND_HANDLE& rHandle);	///< ÏÇ¨Ïö¥ÎìúÎ•º Release ÏãúÌÇ®Îã§.
+	int			SetSoundPosition(SOUND_HANDLE hHandle, float fPosX, float fPosY, float fPosZ);	///< Ï±ÑÎÑêÏùò 3D Í≥µÍ∞ÑÏÉÅÏùò ÏúÑÏπòÎ•º Ïù¥ÎèôÏãúÌÇ®Îã§.
 
-	const char*	GetSoundName(SOUND_HANDLE hHandle);	///< ªÁøÓµÂ¿« ¿Ã∏ß¿ª π›»Ø«—¥Ÿ
+	const char*	GetSoundName(SOUND_HANDLE hHandle);	///< ÏÇ¨Ïö¥ÎìúÏùò Ïù¥Î¶ÑÏùÑ Î∞òÌôòÌïúÎã§
 
-	void		SetChannelVolume(SOUND_HANDLE hHandle, float fVolume);	///< Channel¿« ∫º∑˝¿ª º≥¡§«—¥Ÿ
-	float		GetChannelVolume(SOUND_HANDLE hHandle);					///< Channel¿« ∫º∑˝¿ª π›»Ø«—¥Ÿ
+	void		SetChannelVolume(SOUND_HANDLE hHandle, float fVolume);	///< ChannelÏùò Î≥ºÎ•®ÏùÑ ÏÑ§Ï†ïÌïúÎã§
+	float		GetChannelVolume(SOUND_HANDLE hHandle);					///< ChannelÏùò Î≥ºÎ•®ÏùÑ Î∞òÌôòÌïúÎã§
 
-	// »ø∞˙ ¿˚øÎ
+	// Ìö®Í≥º Ï†ÅÏö©
 	void		SetChannelEffect(SOUND_HANDLE hHandle, FMOD_DSP_TYPE eType);
 	void		ReleaseChannelEffect(SOUND_HANDLE hHandle, FMOD_DSP_TYPE eType);
 
@@ -160,26 +160,26 @@ public:
 	void		GetMinMaxDistance(SOUND_HANDLE hHandle, float &fMinDistance, float &fMaxDistance);
 
 	void		FadeIn(SOUND_HANDLE hHandle, float fDestVolume, unsigned int ulTime);
-	///< fVolume¿Ã «ˆ¿Á ∫º∑˝∫∏¥Ÿ ≈©∞≈≥™ ulTime¿Ã 0 ¿Ã«œ∏È Ω««‡µ«¡ˆ æ ¥¬¥Ÿ
+	///< fVolumeÏù¥ ÌòÑÏû¨ Î≥ºÎ•®Î≥¥Îã§ ÌÅ¨Í±∞ÎÇò ulTimeÏù¥ 0 Ïù¥ÌïòÎ©¥ Ïã§ÌñâÎêòÏßÄ ÏïäÎäîÎã§
 
 	void		FadeOut(SOUND_HANDLE hHandle, float fDestVolume, unsigned int ulTime);
-	///< fVolume¿Ã «ˆ¿Á ∫º∑˝∫∏¥Ÿ ¿€∞≈≥™ ulTime¿Ã 0 ¿Ã«œ∏È Ω««‡µ«¡ˆ æ ¥¬¥Ÿ
+	///< fVolumeÏù¥ ÌòÑÏû¨ Î≥ºÎ•®Î≥¥Îã§ ÏûëÍ±∞ÎÇò ulTimeÏù¥ 0 Ïù¥ÌïòÎ©¥ Ïã§ÌñâÎêòÏßÄ ÏïäÎäîÎã§
 
-	CNtlSound*	GetSound(SOUND_HANDLE hHandle);			///< ªÁøÓµÂ ¡§∫∏∏¶ π›»Ø«—¥Ÿ.
+	CNtlSound*	GetSound(SOUND_HANDLE hHandle);			///< ÏÇ¨Ïö¥Îìú Ï†ïÎ≥¥Î•º Î∞òÌôòÌïúÎã§.
 
 protected:
-	void		CreateChannelGroups();		///< Channel Group ¿ª √ ±‚»≠«—¥Ÿ	
+	void		CreateChannelGroups();		///< Channel Group ÏùÑ Ï¥àÍ∏∞ÌôîÌïúÎã§	
 
 	int			CanPlay(int iChannelGroups, const char* pcName,
-						float fPosX, float fPosY, float fPosZ);	///< ªı∑ŒøÓ ªÁøÓµÂ∏¶ ø¨¡÷«“ ºˆ ¿÷¥¬¡ˆ ø©∫Œ
+						float fPosX, float fPosY, float fPosZ);	///< ÏÉàÎ°úÏö¥ ÏÇ¨Ïö¥ÎìúÎ•º Ïó∞Ï£ºÌï† Ïàò ÏûàÎäîÏßÄ Ïó¨Î∂Ä
 
 	int			CanPlay(sNtlSoundPlayParameta* pParameta);
 
 	bool		IsValidGroupRange(int iChannelGroup, float fPosX, float fPosY, float fPosZ);
-	///< √§≥Œ ±◊∑Ï∫∞ ø¨¡÷«“ ºˆ ¿÷¥¬ π¸¿ß≥ªø° ªÁøÓµÂ¿Œ¡ˆ ∞ÀªÁ
+	///< Ï±ÑÎÑê Í∑∏Î£πÎ≥Ñ Ïó∞Ï£ºÌï† Ïàò ÏûàÎäî Î≤îÏúÑÎÇ¥Ïóê ÏÇ¨Ïö¥ÎìúÏù∏ÏßÄ Í≤ÄÏÇ¨
 
 	float		LengthFromListenerToSound(float fPosX, float fPosY, float fPosZ);
-	bool		IsExistGroup(int iGroup);	///< true : æÀ∏¬¥¬ Group index, false : ¡∏¿Á«œ¡ˆ æ ¥¬ ±◊∑Ï index
+	bool		IsExistGroup(int iGroup);	///< true : ÏïåÎßûÎäî Group index, false : Ï°¥Ïû¨ÌïòÏßÄ ÏïäÎäî Í∑∏Î£π index
 
 
 protected:
@@ -190,7 +190,7 @@ protected:
 	CNtlSoundSubSystem*		m_pSubSystem;
 
 #ifdef _DEBUG
-	int						m_iDebugFlag;				///< crtdbgøÎ
+	int						m_iDebugFlag;				///< crtdbgÏö©
 #endif
 };
 

@@ -24,7 +24,7 @@ bool NTLPE_RangesOverlap( const cHorizontalRange& r1, const cHorizontalRange& r2
 	return true;
 }
 
-// srcRange¿¡ destRange°¡ Æ÷ÇÔµÇ³ª ¾ÈµÇ³ª È®ÀÎ
+// srcRangeì— destRangeê°€ í¬í•¨ë˜ë‚˜ ì•ˆë˜ë‚˜ í™•ì¸
 extern bool NTLPE_RangesInclusion( const cHorizontalRange& srcRange, const cHorizontalRange& destRange )
 {
 	if( srcRange.maxX < destRange.maxX )
@@ -43,7 +43,7 @@ extern bool NTLPE_RangesInclusion( const cHorizontalRange& srcRange, const cHori
 }
 
 /**
-* \brief °¢ Min MaxÀÇ Áß¾Ó ÀÇ °Å¸®¸¦ ±¸ÇÑ´Ù.
+* \brief ê° Min Maxì˜ ì¤‘ì•™ ì˜ ê±°ë¦¬ë¥¼ êµ¬í•œë‹¤.
 */
 extern int NTLPE_RangesLengthTo( const cHorizontalRange& r1, const cHorizontalRange& r2 )
 {

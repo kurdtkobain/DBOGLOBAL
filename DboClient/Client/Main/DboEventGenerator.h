@@ -2,7 +2,7 @@
  *
  * File			: DboEvenetGenerator.h
  * Author		: HyungSuk, Jang
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2005. 9. 27	
  * Abstract		: DBO event generator
  *****************************************************************************
@@ -111,18 +111,18 @@ public:
 
 	static void OpenHelpContent(RwUInt32 uiDialogType);
 
-	static void	EnableItemIcon( RwBool bEnable, RwInt32 ePlace, RwUInt32 uiSlotIdx, RwInt32 nPlaceIdx = -1 ); // peessi: nPlaceIdx¥¬ WareHouse, Bagø°∏∏ æ≤¿”.
+	static void	EnableItemIcon( RwBool bEnable, RwInt32 ePlace, RwUInt32 uiSlotIdx, RwInt32 nPlaceIdx = -1 ); // peessi: nPlaceIdxÎäî WareHouse, BagÏóêÎßå Ïì∞ÏûÑ.
 	static void CapsuleLockItem( RwBool bEnable, RwInt32 ePlace, RwUInt32 uiSlotIdx, RwInt32 nPlaceIdx = -1 );
 	static void CapsuleLockItemWithoutBag( RwBool bEnable, SERIAL_HANDLE hItem );
 
 	static void DirectMoveIcon(RwUInt32 uiSrcSerial, RwUInt32 eSrcPlace, RwUInt32 eDestPlace, RwUInt32 uiSrcSlotIdx, RwUInt32 uiSrcStackCount);
 
-	// ∞≥¿ŒªÛ¡°
+	// Í∞úÏù∏ÏÉÅÏ†ê
 	static void PrivateShopSelectNfy(RwUInt8 uiPrivateShopPos, RwUInt8 uiItemState);
 	static void RegPrivateShopCartItem(RwUInt32 uiSerial, RwUInt32 uiPlace, RwUInt32 uiPos, RwUInt32 uiStackCount, RwUInt32 uiPrice, void* pData);
 	static void RegPrivateShopItem(RwUInt32 uiPlace, RwUInt32 uiIndex, RwUInt32 uiPos);
 
-	// ∞≥¿ŒªÛ¡° »Ô¡§
+	// Í∞úÏù∏ÏÉÅÏ†ê Ìù•Ï†ï
 	static void PrivateShopBusinessStart(RwUInt8 uiType, RwUInt32 uiShopOwner, WCHAR* pwcTargetName, sPRIVATESHOP_ITEM_DATA* pPrivateShopItemData, void* pGui);
 	static void PrivateShopBusinessFluctuations(RwUInt8 uiType, sPRIVATESHOP_ITEM_DATA* pPrivateShopItemData, RwUInt32 uiStartPrice);
 	static void PrivateShopBusinessCloseNfy(RwUInt32 uiShopOwner);
@@ -178,7 +178,7 @@ public:
 	// Link Script
 	static void ScriptLinkNotify(RwUInt8 byType, RwUInt8 byAction, WCHAR* pwcValue );
 
-	// ¡÷ªÁ¿ß
+	// Ï£ºÏÇ¨ÏúÑ
 	static void DiceStart(RwUInt8 byWorkID, void* pExData = NULL);
 	static void DiceResult(SERIAL_HANDLE hHandle, RwUInt8 byWorkID, RwUInt8 byResultNum);
 	static void DiceResultShow(SERIAL_HANDLE hHandle, RwUInt8 byWorkID, RwUInt8 byResultNum);
@@ -267,7 +267,7 @@ public:
 	static void OpenBagGui();
 	static void OpenScouterBackgroundGui();
     //////////////////////////////////////////////////////////////////////////
-    // «—±π ªÛøÎ»≠ ∞¸∑√
+    // ÌïúÍµ≠ ÏÉÅÏö©Ìôî Í¥ÄÎ†®
     static void UpdateNetPy(NETP netPy, NETP dwAccumulationNetP, DWORD timeNextGainTime);       
     static void NetMarbleMemberShipNfy();
 };

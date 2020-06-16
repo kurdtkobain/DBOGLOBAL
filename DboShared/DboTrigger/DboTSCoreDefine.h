@@ -108,21 +108,21 @@ struct sTS_BRANCH_INFO
 enum
 {
 	// Server, storage, and related conditions
-	eTS_PROG_STATE_PROGRESS_FAILED				= 0x00000001,	// Äù½ºÆ® ÁøÇà ½ÇÆÐ ÇÃ·¡±×
-	eTS_PROG_STATE_ERROR_BLOCK					= 0x00000002,	// Äù½ºÆ® ¿¡·¯ Ã³¸®¸¦ À§ÇÑ ÇÃ·¡±×
-	eTS_PROG_STATE_ESCORT						= 0x00000004,	// È£À§ »óÅÂ
-	eTS_PROG_STATE_SVR_EVT_WORLD_RANGE			= 0x00000008,	// ¼­¹öÀÌº¥Æ®(¸÷Å³...)ÀÇ Àû¿ë ´ë»óÀÌ ¿ùµå ( ÀÌ ÇÃ·¡±×°¡ ÄÑÁ® ÀÖÁö ¾ÊÀ¸¸é ÆÄÆ¼ ±âÁØÀ¸·Î Ã³¸®µÊ )
-	eTS_PROG_STATE_WPS_MODE						= 0x00000010,	// World play script ¾×¼ÇÀÌ µ¿ÀÛÁß
-	eTS_PROG_STATE_USER_OUT_FAILED_WPS			= 0x00000020,	// World play script µ¿ÀÛÁß À¯Àú°¡ ·Î±× ¾Æ¿ô ÇÑ °æ¿ì Failed Ã³¸® µÇ¾î¾ß ÇÏ´Â °æ¿ì¸¦ ÀúÀåÇÏ´Â ÇÃ·¡±×
+	eTS_PROG_STATE_PROGRESS_FAILED				= 0x00000001,	// í€˜ìŠ¤íŠ¸ ì§„í–‰ ì‹¤íŒ¨ í”Œëž˜ê·¸
+	eTS_PROG_STATE_ERROR_BLOCK					= 0x00000002,	// í€˜ìŠ¤íŠ¸ ì—ëŸ¬ ì²˜ë¦¬ë¥¼ ìœ„í•œ í”Œëž˜ê·¸
+	eTS_PROG_STATE_ESCORT						= 0x00000004,	// í˜¸ìœ„ ìƒíƒœ
+	eTS_PROG_STATE_SVR_EVT_WORLD_RANGE			= 0x00000008,	// ì„œë²„ì´ë²¤íŠ¸(ëª¹í‚¬...)ì˜ ì ìš© ëŒ€ìƒì´ ì›”ë“œ ( ì´ í”Œëž˜ê·¸ê°€ ì¼œì ¸ ìžˆì§€ ì•Šìœ¼ë©´ íŒŒí‹° ê¸°ì¤€ìœ¼ë¡œ ì²˜ë¦¬ë¨ )
+	eTS_PROG_STATE_WPS_MODE						= 0x00000010,	// World play script ì•¡ì…˜ì´ ë™ìž‘ì¤‘
+	eTS_PROG_STATE_USER_OUT_FAILED_WPS			= 0x00000020,	// World play script ë™ìž‘ì¤‘ ìœ ì €ê°€ ë¡œê·¸ ì•„ì›ƒ í•œ ê²½ìš° Failed ì²˜ë¦¬ ë˜ì–´ì•¼ í•˜ëŠ” ê²½ìš°ë¥¼ ì €ìž¥í•˜ëŠ” í”Œëž˜ê·¸
 
 	// Without regard to server storage
-	eTS_PROG_STATE_CLEARED						= 0x00010000,	// Äù½ºÆ® Å¬¸®¾î
-	eTS_PROG_STATE_EXIT							= 0x00020000,	// Á¾·á »óÅÂ
-	eTS_PROG_STATE_CS_COM_WAIT					= 0x00040000,	// ¼­¹ö¿Í Å¬¶óÀÌ¾ðÆ® Åë½Å Áß
-	eTS_PROG_STATE_CLIENT_COM_WAIT				= 0x00080000,	// Å¬¶óÀÌ¾ðÆ®¿Í Åë½Å Áß
-	eTS_PROG_STATE_SVR_COM_WAIT					= 0x00100000,	// ¼­¹ö¿Í Åë½Å Áß
-	eTS_PROG_STATE_UI_PROGRESS					= 0x00200000,	// Äù½ºÆ® ÁøÇàÁßÀÎ »óÅÂ
-	eTS_PROG_STATE_SVR_COM_AFTER_CLIENT_WAIT	= 0x00400000,	// ¼­¹ö¿Í Åë½ÅÈÄ Å¬¶óÀÌ¾ðÆ® ´ë±â
+	eTS_PROG_STATE_CLEARED						= 0x00010000,	// í€˜ìŠ¤íŠ¸ í´ë¦¬ì–´
+	eTS_PROG_STATE_EXIT							= 0x00020000,	// ì¢…ë£Œ ìƒíƒœ
+	eTS_PROG_STATE_CS_COM_WAIT					= 0x00040000,	// ì„œë²„ì™€ í´ë¼ì´ì–¸íŠ¸ í†µì‹  ì¤‘
+	eTS_PROG_STATE_CLIENT_COM_WAIT				= 0x00080000,	// í´ë¼ì´ì–¸íŠ¸ì™€ í†µì‹  ì¤‘
+	eTS_PROG_STATE_SVR_COM_WAIT					= 0x00100000,	// ì„œë²„ì™€ í†µì‹  ì¤‘
+	eTS_PROG_STATE_UI_PROGRESS					= 0x00200000,	// í€˜ìŠ¤íŠ¸ ì§„í–‰ì¤‘ì¸ ìƒíƒœ
+	eTS_PROG_STATE_SVR_COM_AFTER_CLIENT_WAIT	= 0x00400000,	// ì„œë²„ì™€ í†µì‹ í›„ í´ë¼ì´ì–¸íŠ¸ ëŒ€ê¸°
 	eTS_PROG_STATE_SUCCESS						= 0x00800000,	// Success
 	eTS_PROG_STATE_COMPLETE						= 0x01000000,	// Complete
 };
@@ -316,48 +316,48 @@ enum eBROAD_MSG_EXCUTION_TYPE
 };
 
 /**
-* \brief Mini Narration UI °¡ Èçµé¸®´Â °­µµ
+* \brief Mini Narration UI ê°€ í”ë“¤ë¦¬ëŠ” ê°•ë„
 */
 enum eBROAD_MSG_UI_DIR_TYPE
 {
-	eBROAD_MSG_UI_DIR_TYPE_NORMAL,				///< Shake ¾øÀ½
-	eBROAD_MSG_UI_DIR_TYPE_WARNING,				///< Shake ¾à
-	eBROAD_MSG_UI_DIR_TYPE_DANGER				///< Shake °­
+	eBROAD_MSG_UI_DIR_TYPE_NORMAL,				///< Shake ì—†ìŒ
+	eBROAD_MSG_UI_DIR_TYPE_WARNING,				///< Shake ì•½
+	eBROAD_MSG_UI_DIR_TYPE_DANGER				///< Shake ê°•
 };
 
 /**
-* \brief Mini Narration UIÀÇ Show/Hide ¿¬Ãâ Type
+* \brief Mini Narration UIì˜ Show/Hide ì—°ì¶œ Type
 */
 enum eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE
 {
-	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE_NORMAL,			///< ±×³É ³ªÅ¸³ª±â
+	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE_NORMAL,			///< ê·¸ëƒ¥ ë‚˜íƒ€ë‚˜ê¸°
 	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE_FADE,			///< Fade in/out
 	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE_SLIDE,			///< Slide in/out
 	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE_FADE_SLIDE		///< Fade/Slide in/out
 };
 
 /**
-* \brief Mini Narration UIÀÇ ¸»Ç³¼±¸ð¾ç Type
+* \brief Mini Narration UIì˜ ë§í’ì„ ëª¨ì–‘ Type
 */
 enum eBROAD_MSG_UI_BALLOON_SHAPE_TYPE
 {
-	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE_BC_NORMAL,		///< ÀÏ¹Ý ¸»Ç³¼±
-	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE_BC_STAR,		///< ¿ÜÄ¡´Â ¸»Ç³¼±
-	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE_BC_THINK		///< »ý°¢ÇÏ´Â ¸»Ç³¼±
+	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE_BC_NORMAL,		///< ì¼ë°˜ ë§í’ì„ 
+	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE_BC_STAR,		///< ì™¸ì¹˜ëŠ” ë§í’ì„ 
+	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE_BC_THINK		///< ìƒê°í•˜ëŠ” ë§í’ì„ 
 };
 
 /**
-* \brief Mini Narration UIÀÇ Text ¿¬Ãâ Type
+* \brief Mini Narration UIì˜ Text ì—°ì¶œ Type
 */
 enum eBROAD_MSG_UI_SPEECH_DIR_TYPE
 {
-	eBROAD_MSG_UI_SPEECH_DIR_TYPE_NORMAL,			///< ±×³É ³ªÅ¸³ª±â
-	eBROAD_MSG_UI_SPEECH_DIR_TYPE_BLENDING,			///< ºí·»µù µÇ¸é¼­ ³ªÅ¸³ª±â
-	eBROAD_MSG_UI_SPEECH_DIR_TYPE_LINE				///< ÇÑ±ÛÀÚ¾¿ ³ªÅ¸³ª±â
+	eBROAD_MSG_UI_SPEECH_DIR_TYPE_NORMAL,			///< ê·¸ëƒ¥ ë‚˜íƒ€ë‚˜ê¸°
+	eBROAD_MSG_UI_SPEECH_DIR_TYPE_BLENDING,			///< ë¸”ë Œë”© ë˜ë©´ì„œ ë‚˜íƒ€ë‚˜ê¸°
+	eBROAD_MSG_UI_SPEECH_DIR_TYPE_LINE				///< í•œê¸€ìžì”© ë‚˜íƒ€ë‚˜ê¸°
 };
 
 /**
-* \brief Mini Narration UIÀÇ OwnerÀÇ Condition(°¨Á¤, Type¿¡ µû¶ó¼­ ÀÏ·¯½ºÆ®°¡ ¹Ù²ï´Ù.)
+* \brief Mini Narration UIì˜ Ownerì˜ Condition(ê°ì •, Typeì— ë”°ë¼ì„œ ì¼ëŸ¬ìŠ¤íŠ¸ê°€ ë°”ë€ë‹¤.)
 */
 enum eBROAD_MSG_OWNER_CONDITION
 {
@@ -368,7 +368,7 @@ enum eBROAD_MSG_OWNER_CONDITION
 };
 
 /**
-* \brief Mini Narration UI¿¡¼­ ÀÐ¾îµéÀÏ Table
+* \brief Mini Narration UIì—ì„œ ì½ì–´ë“¤ì¼ Table
 */
 enum eBROAD_MSG_OWNER_TYPE
 {
@@ -378,23 +378,23 @@ enum eBROAD_MSG_OWNER_TYPE
 };
 
 /**
-* \brief BroadCast MsgÀÇ Data ±¸Á¶Ã¼
+* \brief BroadCast Msgì˜ Data êµ¬ì¡°ì²´
 */
 struct sBROAD_MSG_DATA
 {
-	eBROAD_MSG_UI_DIR_TYPE				eUIDirType;				///< ÀüÃ¼ ¿¬Ãâ Type
-	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE		eUIShowHideType;		///< µîÀå ¿¬Ãâ Type
-	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE	eUIBalloonShapeType;	///< ¸»Ç³¼± Type
-	eBROAD_MSG_UI_SPEECH_DIR_TYPE		eUISpeechDirType;		///< ÅØ½ºÆ® ¿¬Ãâ Type
+	eBROAD_MSG_UI_DIR_TYPE				eUIDirType;				///< ì „ì²´ ì—°ì¶œ Type
+	eBROAD_MSG_UI_SHOWHIDE_DIR_TYPE		eUIShowHideType;		///< ë“±ìž¥ ì—°ì¶œ Type
+	eBROAD_MSG_UI_BALLOON_SHAPE_TYPE	eUIBalloonShapeType;	///< ë§í’ì„  Type
+	eBROAD_MSG_UI_SPEECH_DIR_TYPE		eUISpeechDirType;		///< í…ìŠ¤íŠ¸ ì—°ì¶œ Type
 
-	eBROAD_MSG_OWNER_CONDITION			eOwnerCondition;		///< ÀÏ·¯½ºÆ® Type
+	eBROAD_MSG_OWNER_CONDITION			eOwnerCondition;		///< ì¼ëŸ¬ìŠ¤íŠ¸ Type
 
 	eBROAD_MSG_OWNER_TYPE				eOwnerType;				///< NPC/MOB Table
 	unsigned int						uiOwnerTblIdx;			///< Table Index
 
 	std::wstring						wstrSpeech;				///< Text ( load from table )
 
-	float								fDisplayTime;			///< ¹æ¼Û Ã¢À» º¸¿© ÁÖ´Â ½Ã°£ (ÃÊ´ÜÀ§)
+	float								fDisplayTime;			///< ë°©ì†¡ ì°½ì„ ë³´ì—¬ ì£¼ëŠ” ì‹œê°„ (ì´ˆë‹¨ìœ„)
 };
 
 typedef std::vector< sBROAD_MSG_DATA > vecdef_BroadMsgDataList;
@@ -442,7 +442,7 @@ enum eEVENT_GEN_TYPE
 	eEVENT_GEN_TYPE_INVALID				= 0xffffffff
 };
 
-// ¾ÆÀÌÅÛ »ç¿ë ´ë»óÀÇ Á¾·ù
+// ì•„ì´í…œ ì‚¬ìš© ëŒ€ìƒì˜ ì¢…ë¥˜
 enum eEVENT_ITEM_TARGET_TYPE
 {
 	eEVENT_ITEM_TARGET_TYPE_MOB,
@@ -453,7 +453,7 @@ enum eEVENT_ITEM_TARGET_TYPE
 	eEVENT_ITEM_TARGET_TYPE_INVALID		= 0xffffffff
 };
 
-// ½ºÄ«¿ìÅÍ »ç¿ë ´ë»óÀÇ Á¾·ù
+// ìŠ¤ì¹´ìš°í„° ì‚¬ìš© ëŒ€ìƒì˜ ì¢…ë¥˜
 enum eEVENT_SCOUTER_TARGET_TYPE
 {
 	eEVENT_SCOUTER_TARGET_TYPE_MOB,
@@ -464,7 +464,7 @@ enum eEVENT_SCOUTER_TARGET_TYPE
 	eEVENT_SCOUTER_TARGET_TYPE_INVALID	= 0xffffffff
 };
 
-// ½ºÅ³ Å¸ÀÔ
+// ìŠ¤í‚¬ íƒ€ìž…
 enum eEVENT_SKILL_TYPE
 {
 	eEVENT_SKILL_TYPE_DASH,
@@ -474,7 +474,7 @@ enum eEVENT_SKILL_TYPE
 	eEVENT_SKILL_TYPE_INVALID
 };
 
-// ½ºÅ³ »ç¿ë ´ë»óÀÇ Á¾·ù
+// ìŠ¤í‚¬ ì‚¬ìš© ëŒ€ìƒì˜ ì¢…ë¥˜
 enum eEVENT_SKILL_TARGET_TYPE
 {
 	eEVENT_SKILL_TARGET_TYPE_MOB,
@@ -507,23 +507,23 @@ enum eEVENT_COL_RGN_TYPE
 
 enum eCOL_RESULT_TYPE
 {
-	// ºñÃæµ¹½Ã
-	eCOL_RESULT_TYPE_NOT_COLLISION		= 0x00000000,	// Ãæµ¹ÀÌ ¹ß»ýÇÏÁö ¾ÊÀ½
+	// ë¹„ì¶©ëŒì‹œ
+	eCOL_RESULT_TYPE_NOT_COLLISION		= 0x00000000,	// ì¶©ëŒì´ ë°œìƒí•˜ì§€ ì•ŠìŒ
 
-	// Ãæµ¹½Ã
-	eCOL_RESULT_TYPE_ENTER				= 0x00000001,	// Ãæµ¹ ¿µ¿ª ¾ÈÀ¸·Î µé¾î¿È
-	eCOL_RESULT_TYPE_LEAVE				= 0x00000002,	// Ãæµ¹ ¿µ¿ª ¹ÛÀ¸·Î ³ª°¨
-	eCOL_RESULT_TYPE_THROUGH			= 0x00000004,	// Ãæµ¹ ¿µ¿ªÀ» Åë°úÇÔ
+	// ì¶©ëŒì‹œ
+	eCOL_RESULT_TYPE_ENTER				= 0x00000001,	// ì¶©ëŒ ì˜ì—­ ì•ˆìœ¼ë¡œ ë“¤ì–´ì˜´
+	eCOL_RESULT_TYPE_LEAVE				= 0x00000002,	// ì¶©ëŒ ì˜ì—­ ë°–ìœ¼ë¡œ ë‚˜ê°
+	eCOL_RESULT_TYPE_THROUGH			= 0x00000004,	// ì¶©ëŒ ì˜ì—­ì„ í†µê³¼í•¨
 };
 
 enum eRB_COND_FLAG
 {
 	eRB_COND_FLAG_INVALID				= 0x00000000,
 
-	eRB_COND_FLAG_PRIVATE_ENTER			= 0x00000001,	// °³ÀÎÀü Âü¿©
-	eRB_COND_FLAG_PARTY_ENTER			= 0x00000002,	// ÆÄÆ¼Àü Âü¿©
-	eRB_COND_FLAG_PRIVATE_WIN			= 0x00000004,	// °³ÀÎÀü ½Â¸®
-	eRB_COND_FLAG_PARTY_WIN				= 0x00000008,	// ÆÄÆ¼Àü ½Â¸®
+	eRB_COND_FLAG_PRIVATE_ENTER			= 0x00000001,	// ê°œì¸ì „ ì°¸ì—¬
+	eRB_COND_FLAG_PARTY_ENTER			= 0x00000002,	// íŒŒí‹°ì „ ì°¸ì—¬
+	eRB_COND_FLAG_PRIVATE_WIN			= 0x00000004,	// ê°œì¸ì „ ìŠ¹ë¦¬
+	eRB_COND_FLAG_PARTY_WIN				= 0x00000008,	// íŒŒí‹°ì „ ìŠ¹ë¦¬
 };
 
 //////////////////////////////////////////////////////////////////////////
@@ -532,7 +532,7 @@ enum eRB_COND_FLAG
 //
 //////////////////////////////////////////////////////////////////////////
 
-// SSM µ¿ÀÛ ¹æ½Ä
+// SSM ë™ìž‘ ë°©ì‹
 enum eSSM_OP_TYPE
 {
 	eSSM_OP_TYPE_EQUAL,
@@ -546,7 +546,7 @@ enum eSSM_OP_TYPE
 	eSSM_OP_TYPE_INVALID				= 0xffffffff
 };
 
-// PS µ¿ÀÛ ¹æ½Ä
+// PS ë™ìž‘ ë°©ì‹
 enum ePS_OP_TYPE
 {
 	ePS_OP_TYPE_EMPTY,
@@ -586,14 +586,14 @@ enum eTS_BUDOKAI_STATE
 //
 //////////////////////////////////////////////////////////////////////////
 
-// Äù½ºÆ® ¾ÆÀÌÅÛ
+// í€˜ìŠ¤íŠ¸ ì•„ì´í…œ
 enum eQITEM_TYPE
 {
 	eQITEM_TYPE_CREATE,
 	eQITEM_TYPE_DELETE
 };
 
-// ÀÏ¹Ý ¾ÆÀÌÅÛ
+// ì¼ë°˜ ì•„ì´í…œ
 enum eTSITEM_TYPE
 {
 	eTSITEM_TYPE_CREATE,
@@ -639,7 +639,7 @@ enum eSTOC_EVT_DATA_TYPE
 };
 
 
-// ¸÷ Á×ÀÌ±â
+// ëª¹ ì£½ì´ê¸°
 struct sSTOC_EVT_DATA_MOB_KILL_CNT
 {
 	unsigned int								uiMobIdx;
@@ -647,7 +647,7 @@ struct sSTOC_EVT_DATA_MOB_KILL_CNT
 	int											nCurMobCnt;
 };
 
-// ¸÷ ¾ÆÀÌÅÛ ·çÆÃ ÇÏ±â
+// ëª¹ ì•„ì´í…œ ë£¨íŒ… í•˜ê¸°
 struct sSTOC_EVT_DATA_MOB_KILL_ITEM_CNT
 {
 	unsigned int								uiMobLIIdx;
@@ -655,7 +655,7 @@ struct sSTOC_EVT_DATA_MOB_KILL_ITEM_CNT
 	int											nCurMobLICnt;
 };
 
-// ¾ÆÀÌÅÛ ¹è´ÞÇÏ±â
+// ì•„ì´í…œ ë°°ë‹¬í•˜ê¸°
 struct sSTOC_EVT_DATA_DELIVERY_ITEM
 {
 	unsigned int								uiItemIdx;
@@ -663,7 +663,7 @@ struct sSTOC_EVT_DATA_DELIVERY_ITEM
 	int											nCurItemCnt;
 };
 
-// ¿ÀºêÁ§Æ® ¾ÆÀÌÅÛ
+// ì˜¤ë¸Œì íŠ¸ ì•„ì´í…œ
 struct sSTOC_EVT_DATA_OBJECT_ITEM
 {
 	unsigned int								uiItemIdx;
@@ -684,22 +684,22 @@ struct sSTOC_EVT_DATA_PUBLIC_MOB_ITEM_CNT
 // Custom event count (increased)
 struct sSTOC_EVT_DATA_CUSTOM_EVT_CNT
 {
-	unsigned int								uiQTextTblIdx;			// Äù½ºÆ® ÅØ½ºÆ® Å×ÀÌºí ÀÎµ¦½º
-	unsigned int								uiCustomEvtID;			// »ç¿ë 
-	int											nMaxCnt;				// ÃÖ´ë Ä«¿îÅÍ
-	int											nCurCnt;				// ÃÖ¼Ò Ä«¿îÅÍ
+	unsigned int								uiQTextTblIdx;			// í€˜ìŠ¤íŠ¸ í…ìŠ¤íŠ¸ í…Œì´ë¸” ì¸ë±ìŠ¤
+	unsigned int								uiCustomEvtID;			// ì‚¬ìš© 
+	int											nMaxCnt;				// ìµœëŒ€ ì¹´ìš´í„°
+	int											nCurCnt;				// ìµœì†Œ ì¹´ìš´í„°
 };
 
 // Server events, such as visiting the NPC ...
 struct sSTOC_EVT_DATA_VISIT_EVT
 {
 	bool										bCompleted;
-	unsigned char								byObjType;				// eOBJTYPE : [ OBJTYPE_NPC | OBJTYPE_TOBJECT ] ¸¸ »ç¿ë ÇÑ´Ù.
+	unsigned char								byObjType;				// eOBJTYPE : [ OBJTYPE_NPC | OBJTYPE_TOBJECT ] ë§Œ ì‚¬ìš© í•œë‹¤.
 	unsigned int								uiWorldTblIdx;
 	unsigned int								uiObjTblIdx;
 	unsigned int								uiIndicatorQText;
 	unsigned int								uiDialogText;
-	unsigned int								uiItemTblIdx;			// »ý¼ºÇÒ Äù½ºÆ® ¾ÆÀÌÅÛ tblidx [10/15/2008 niam]
+	unsigned int								uiItemTblIdx;			// ìƒì„±í•  í€˜ìŠ¤íŠ¸ ì•„ì´í…œ tblidx [10/15/2008 niam]
 };
 
 union uSTOC_EVT_DATA
@@ -724,7 +724,7 @@ union uSTOC_EVT_DATA
 	sSTOC_EVT_DATA_VISIT_EVT					sVisitEvt[MAX_VISIT_EVT];
 };
 
-// ¼­¹ö ÀÌº¥Æ® °Ë»ç Á¶°ÇÀÇ Á¾·ù
+// ì„œë²„ ì´ë²¤íŠ¸ ê²€ì‚¬ ì¡°ê±´ì˜ ì¢…ë¥˜
 enum eSTOC_EVT_COND_DATA_TYPE
 {
 	eSTOC_EVT_COND_DATA_TYPE_AUTO_EQUIP_ITEM,
@@ -773,7 +773,7 @@ union uSTOC_EVT_COND_DATA
 	sSTOC_EVT_COND_DATA_HAVE_QITEM				sHaveQItem[MAX_HAVE_QITEM];
 };
 
-// ¼­¹ö ÀÌº¥Æ® °Ë»ç º¸Á¶ Á¶°ÇÀÇ Á¾·ù
+// ì„œë²„ ì´ë²¤íŠ¸ ê²€ì‚¬ ë³´ì¡° ì¡°ê±´ì˜ ì¢…ë¥˜
 enum eSTOC_EVT_SUB_COND_DATA_FLAG
 {
 	eSTOC_EVT_SUB_COND_DATA_FLAG_INVALID			= 0x00000000,
@@ -791,7 +791,7 @@ struct sSTOC_EVT_SUB_COND_DATA
 	sSTOC_EVT_SUB_COND_DATA_LEVEL_DIFF_LESS		sLevelDiffLess;
 };
 
-// NPC ´ëÈ­ Å¸ÀÔ
+// NPC ëŒ€í™” íƒ€ìž…
 enum eNPCCONV_TYPE
 {
 	eNPCCONV_TYPE_DIALOGBOX,
@@ -800,7 +800,7 @@ enum eNPCCONV_TYPE
 	eNPCCONV_TYPE_INVALID						= 0xffffffff
 };
 
-// Object ´ëÈ­ Å¸ÀÔ
+// Object ëŒ€í™” íƒ€ìž…
 enum eOBJCONV_TYPE
 {
 	eOBJCONV_TYPE_DIALOGBOX,
@@ -822,14 +822,14 @@ enum eGRADE_TYPE
 	eGRADE_TYPE_INVALID							= 0xffffffff
 };
 
-// ½Å ¿¬Ãâ Å¸ÀÔ
+// ì‹  ì—°ì¶œ íƒ€ìž…
 enum eCINE_TYPE
 {
 	eCINE_TYPE_NARRATION,
 	eCINE_TYPE_INVALID							= 0xffffffff
 };
 
-// Æ®¸®°Å ½ÇÇà Å¸ÀÔ
+// íŠ¸ë¦¬ê±° ì‹¤í–‰ íƒ€ìž…
 enum eEXC_TRIG_TYPE
 {
 	eEXC_TRIG_TYPE_QUEST,
@@ -838,14 +838,14 @@ enum eEXC_TRIG_TYPE
 	eEXC_TRIG_TYPE_WORLD
 };
 
-// Æ÷Å» Å¸ÀÔ
+// í¬íƒˆ íƒ€ìž…
 enum ePORTAL_TYPE
 {
 	ePORTAL_TYPE_TELEPORT,
 	ePORTAL_TYPE_GATEWAY,
 };
 
-// À©µµ¿ì Å¸ÀÔ
+// ìœˆë„ìš° íƒ€ìž…
 enum eWINDOW_TYPE
 {
 	eWINDOW_TYPE_TUTORIALHINT,
@@ -857,7 +857,7 @@ enum eWINDOW_TYPE
 	eWINDOW_TYPE_INVALID
 };
 
-// º¸»óÀÇ ÃÖ´ë °¡´É °³¼ö
+// ë³´ìƒì˜ ìµœëŒ€ ê°€ëŠ¥ ê°œìˆ˜
 #define MAX_DEFAULT_REWARD				(4)
 #define MAX_SELECTION_REWARD			(4)
 
@@ -867,7 +867,7 @@ enum eREWARD_CONTAINER_TYPE
 	eREWARD_CONTAINER_TYPE_TMQ
 };
 
-// º¸»ó Á¾·ù
+// ë³´ìƒ ì¢…ë¥˜
 
 enum eREWARD_TYPE
 {
@@ -895,7 +895,7 @@ enum eTSSTATE_TYPE
 	eTSSTATE_TYPE_REMOVE
 };
 
-// TS ¹æ¼Û Å¸ÀÔ
+// TS ë°©ì†¡ íƒ€ìž…
 enum eTSTELECAST_TYPE
 {
 	eTSTELECAST_TYPE_TIME,
@@ -905,7 +905,7 @@ enum eTSTELECAST_TYPE
 	eTSTELECAST_TYPE_INVALID = 0xff
 };
 
-// ÆÄÆ¼ ÀÎ½ºÅÏ½º ´øÁ¯
+// íŒŒí‹° ì¸ìŠ¤í„´ìŠ¤ ë˜ì ¼
 enum ePARTY_DUNGEON_TYPE
 {
 	ePARTY_DUNGEON_TYPE_ENTER,
@@ -913,7 +913,7 @@ enum ePARTY_DUNGEON_TYPE
 	ePARTY_DUNGEON_TYPE_INVALID
 };
 
-// Time Leap Quest ´øÁ¯
+// Time Leap Quest ë˜ì ¼
 enum eTLQ_DUNGEON_TYPE
 {
 	eTLQ_DUNGEON_TYPE_ENTER,
@@ -921,7 +921,7 @@ enum eTLQ_DUNGEON_TYPE
 	eTLQ_DUNGEON_TYPE_INVALID
 };
 
-// Dojo ´øÁ¯
+// Dojo ë˜ì ¼
 enum eDOJO_DUNGEON_TYPE
 {
 	eDOJO_DUNGEON_TYPE_ENTER,
@@ -929,7 +929,7 @@ enum eDOJO_DUNGEON_TYPE
 	eDOJO_DUNGEON_TYPE_INVALID
 };
 
-// Æ®¸®°Å ¿ÀºêÁ§Æ® Ä£¹Ðµµ Å¸ÀÔ
+// íŠ¸ë¦¬ê±° ì˜¤ë¸Œì íŠ¸ ì¹œë°€ë„ íƒ€ìž…
 enum eTOBJ_FRIENDLY
 {
 	eTOBJ_FRIENDLY_PC,
@@ -1023,11 +1023,11 @@ union uREG_C_TIMING_EXCUTE_DATA
 
 //////////////////////////////////////////////////////////////////////////
 //
-//	±âÅ¸
+//	ê¸°íƒ€
 //
 //////////////////////////////////////////////////////////////////////////
 
-// GUI ¿Í Åë½Å ÇÏ´Â °úÁ¤¿¡¼­ ÇÊ¿äÇÑ Å¸ÀÔ
+// GUI ì™€ í†µì‹  í•˜ëŠ” ê³¼ì •ì—ì„œ í•„ìš”í•œ íƒ€ìž…
 enum eQUEST_PROGRESS_TYPE
 {
 	eQUEST_PROGRESS_TYPE_NEW,
@@ -1035,18 +1035,18 @@ enum eQUEST_PROGRESS_TYPE
 	eQUEST_PROGRESS_TYPE_REWARD
 };
 
-// GUI ¿Í Åë½Å ÇÏ´Â °úÁ¤¿¡¼­ ÇÊ¿äÇÑ ±¸Á¶Ã¼
+// GUI ì™€ í†µì‹  í•˜ëŠ” ê³¼ì •ì—ì„œ í•„ìš”í•œ êµ¬ì¡°ì²´
 struct sQUEST_INFO 
 {
 	sTS_KEY					sKey;
-	bool					bVisitOP;				// Visit¿¡¼­¸¸ »ç¿ëµÊ
-	unsigned int			uiVisitTitle;			// Visit¿¡¼­¸¸ »ç¿ëµÊ
-	unsigned int			uiVisitDiag;			// Visit¿¡¼­¸¸ »ç¿ëµÊ
+	bool					bVisitOP;				// Visitì—ì„œë§Œ ì‚¬ìš©ë¨
+	unsigned int			uiVisitTitle;			// Visitì—ì„œë§Œ ì‚¬ìš©ë¨
+	unsigned int			uiVisitDiag;			// Visitì—ì„œë§Œ ì‚¬ìš©ë¨
 	eQUEST_PROGRESS_TYPE	eProgType;
 	DWORD					dwQuestTitle;
 	DWORD					dwQuestStartDialog;
-	unsigned int			uiNPCTblIdx;			// Quest search¿¡¼­¸¸ »ç¿ëµÊ
-	float					fXPos, fZPos;			// Quest search¿¡¼­¸¸ »ç¿ëµÊ
+	unsigned int			uiNPCTblIdx;			// Quest searchì—ì„œë§Œ ì‚¬ìš©ë¨
+	float					fXPos, fZPos;			// Quest searchì—ì„œë§Œ ì‚¬ìš©ë¨
 };
 
 typedef std::vector<sQUEST_INFO> vecdef_QUEST_INFO_LIST;
@@ -1144,7 +1144,7 @@ struct SRB_DATA
 //
 //////////////////////////////////////////////////////////////////////////
 
-// ÀÌº¥Æ® ÄÄÆ÷³ÍÆ®ÀÇ ¾ÆÀÌµð
+// ì´ë²¤íŠ¸ ì»´í¬ë„ŒíŠ¸ì˜ ì•„ì´ë””
 #define DBO_EVENT_TYPE_ID_CLICK_NPC				(NTL_TSENTITY_TYPE_EVENT_NEXT+0)
 #define DBO_EVENT_TYPE_ID_CLICK_OBJECT			(NTL_TSENTITY_TYPE_EVENT_NEXT+1)
 #define DBO_EVENT_TYPE_ID_COL_OBJECT			(NTL_TSENTITY_TYPE_EVENT_NEXT+2)
@@ -1178,7 +1178,7 @@ struct SRB_DATA
 #define DBO_EVENT_TYPE_ID_LEVELCHECK			(NTL_TSENTITY_TYPE_EVENT_NEXT+29)
 
 
-// Á¶°Ç ÄÄÆ÷³ÍÆ®ÀÇ ¾ÆÀÌµð
+// ì¡°ê±´ ì»´í¬ë„ŒíŠ¸ì˜ ì•„ì´ë””
 #define DBO_COND_TYPE_ID_CHECK_LVL				(NTL_TSENTITY_TYPE_COND_NEXT+0)
 #define DBO_COND_TYPE_ID_CHECK_PCCLS			(NTL_TSENTITY_TYPE_COND_NEXT+1)
 #define DBO_COND_TYPE_ID_CHECK_PCRACE			(NTL_TSENTITY_TYPE_COND_NEXT+2)
@@ -1207,7 +1207,7 @@ struct SRB_DATA
 #define DBO_COND_TYPE_ID_LEVEL_CHECK			(NTL_TSENTITY_TYPE_COND_NEXT+25)
 
 
-// ¾×¼Ç ÄÄÆ÷³ÍÆ®ÀÇ ¾ÆÀÌµð
+// ì•¡ì…˜ ì»´í¬ë„ŒíŠ¸ì˜ ì•„ì´ë””
 #define DBO_ACT_TYPE_ID_ACT_ITEM				(NTL_TSENTITY_TYPE_ACT_NEXT+0)
 #define DBO_ACT_TYPE_ID_ACT_STOCEVT				(NTL_TSENTITY_TYPE_ACT_NEXT+1)
 #define DBO_ACT_TYPE_ID_ACT_QITEM				(NTL_TSENTITY_TYPE_ACT_NEXT+2)
@@ -1261,7 +1261,7 @@ struct SRB_DATA
 #define DBO_ACT_TYPE_ID_ACT_SKYDGN				(NTL_TSENTITY_TYPE_ACT_NEXT+49)
 
 
-// ÄÁÅ×ÀÌ³Ê ÄÄÆ÷³ÍÆ®ÀÇ ¾ÆÀÌµð
+// ì»¨í…Œì´ë„ˆ ì»´í¬ë„ŒíŠ¸ì˜ ì•„ì´ë””
 #define DBO_CONT_TYPE_ID_CONT_GCOND				(NTL_TSENTITY_TYPE_CONT_NEXT+0)
 #define DBO_CONT_TYPE_ID_CONT_START				(NTL_TSENTITY_TYPE_CONT_NEXT+1)
 #define DBO_CONT_TYPE_ID_CONT_GACT				(NTL_TSENTITY_TYPE_CONT_NEXT+2)

@@ -4,7 +4,7 @@
 
 /** 
 	Event mapper server event
-	Æ¯Á¤ server event°¡ Á¦°øÇÒ ¼ö ÀÖ´Â Trigger id¸¦ ¿ÜºÎ¿¡ Á¦°øÇÒ Ã¥ÀÓÀ» °¡Áø´Ù
+	íŠ¹ì • server eventê°€ ì œê³µí•  ìˆ˜ ìˆëŠ” Trigger idë¥¼ ì™¸ë¶€ì— ì œê³µí•  ì±…ì„ì„ ê°€ì§„ë‹¤
 */
 
 

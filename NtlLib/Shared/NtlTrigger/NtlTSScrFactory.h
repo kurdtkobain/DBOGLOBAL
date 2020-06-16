@@ -8,7 +8,7 @@ class CNtlTSScrFactoryType;
 
 /** 
 	Script factory
-	Script ¸¦ ÅëÇØ¼­ °´Ã¼¸¦ ÀÚµ¿»ý¼ºÇÏ±â À§ÇØ¼­´Â ¾Æ·¡ Å¬·¡½º¸¦ »ó¼Ó¹Þ¾Æ Factory Å¬·¡½º¸¦ ±¸ÇöÇØ¾ß ÇÔ
+	Script ë¥¼ í†µí•´ì„œ ê°ì²´ë¥¼ ìžë™ìƒì„±í•˜ê¸° ìœ„í•´ì„œëŠ” ì•„ëž˜ í´ëž˜ìŠ¤ë¥¼ ìƒì†ë°›ì•„ Factory í´ëž˜ìŠ¤ë¥¼ êµ¬í˜„í•´ì•¼ í•¨
 */
 
 
@@ -20,8 +20,8 @@ public:
 
 // Methods
 public:
-	// »ý¼ºÇÏ°íÀÚ ÇÏ´Â Å¬·¡½º ÀÌ¸§À» ÆÄ¶ó¹ÌÅÍ·Î ÀÔ·ÂÇÏ¸é,
-	// ÇØ´ç Å¬·¡½º¸¦ »ý¼ºÇÒ ¼ö ÀÖ´Â FactoryTypeÀÌ ¸®ÅÏµÈ´Ù
+	// ìƒì„±í•˜ê³ ìž í•˜ëŠ” í´ëž˜ìŠ¤ ì´ë¦„ì„ íŒŒë¼ë¯¸í„°ë¡œ ìž…ë ¥í•˜ë©´,
+	// í•´ë‹¹ í´ëž˜ìŠ¤ë¥¼ ìƒì„±í•  ìˆ˜ ìžˆëŠ” FactoryTypeì´ ë¦¬í„´ëœë‹¤
 	virtual	CNtlTSScrFactoryType*		GetFactoryType( const std::string& strClassName ) = 0;
 
 	virtual	CNtlTSScrObject*			CreateObj( const std::string& strTypeName ) = 0;

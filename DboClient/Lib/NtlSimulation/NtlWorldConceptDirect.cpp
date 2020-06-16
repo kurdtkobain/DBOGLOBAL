@@ -14,7 +14,7 @@
 #include "InputActionMap.h"
 #include "NtlStorageManager.h"
 
-// World Concept Direct¿¡¼­ Àû¿ëÇÒ ÁöÇü ¹× »ç¹° ½Ã¾ß°Å¸®
+// World Concept Directì—ì„œ ì ìš©í•  ì§€í˜• ë° ì‚¬ë¬¼ ì‹œì•¼ê±°ë¦¬
 #define dDIRECT_TERRAIN_FAR		(512.f)
 #define dDIRECT_OBJECT_FAR		(512.f)
 
@@ -58,15 +58,15 @@ void CNtlWorldConceptDirect::ChangeState(RwInt32 iState)
 			GetInputActionMap()->Reset();
 			CNtlSLEventGenerator::ActionMapHalt();
 
-            // Entity CullingÀ» ²ö´Ù (by agebreak)
+            // Entity Cullingì„ ëˆë‹¤ (by agebreak)
             CNtlPLGlobal::m_bEntityNotCulling = TRUE;
 
-			// ÁöÇü ½Ã¾ß °Å¸®, »ç¹° ½Ã¾ß °Å¸® ¿É¼ÇÀ» ÃÖ´ë·Î ¼³Á¤ÇÑ´Ù.
-			// ÁöÇü ½Ã¾ß°Å¸® ( 1lv : 200, 2lv : 300, 3lv : 400, 4lv : 512 )
+			// ì§€í˜• ì‹œì•¼ ê±°ë¦¬, ì‚¬ë¬¼ ì‹œì•¼ ê±°ë¦¬ ì˜µì…˜ì„ ìµœëŒ€ë¡œ ì„¤ì •í•œë‹¤.
+			// ì§€í˜• ì‹œì•¼ê±°ë¦¬ ( 1lv : 200, 2lv : 300, 3lv : 400, 4lv : 512 )
 			if( GetNtlPLOptionManager()->GetTerrainFar() != dDIRECT_TERRAIN_FAR )
 				GetNtlPLOptionManager()->SetTerrainFar( dDIRECT_TERRAIN_FAR );
 			
-			// »ç¹° ½Ã¾ß°Å¸® : 200, 300, 400, 512 )
+			// ì‚¬ë¬¼ ì‹œì•¼ê±°ë¦¬ : 200, 300, 400, 512 )
 			if( GetNtlPLOptionManager()->GetObjectFar() != dDIRECT_OBJECT_FAR )
 				GetNtlPLOptionManager()->SetObjectFar( dDIRECT_OBJECT_FAR );
 
@@ -76,8 +76,8 @@ void CNtlWorldConceptDirect::ChangeState(RwInt32 iState)
 		{
 			CNtlWorldConceptController::ChangeState(WORLD_PLAY_NONE);
 
-			// ¿É¼Ç º¹¿ø
-			// ÁöÇü ½Ã¾ß°Å¸® ( 1lv : 200, 2lv : 300, 3lv : 400, 4lv : 512 )
+			// ì˜µì…˜ ë³µì›
+			// ì§€í˜• ì‹œì•¼ê±°ë¦¬ ( 1lv : 200, 2lv : 300, 3lv : 400, 4lv : 512 )
 			RwInt32 nTerrainRangeLevel = GetNtlStorageManager()->GetIntData( dSTORAGE_GRAPHIC_TERRAIN_RANGE );
 			RwReal fTerranRange = 512.f;
 			switch( nTerrainRangeLevel )
@@ -91,7 +91,7 @@ void CNtlWorldConceptDirect::ChangeState(RwInt32 iState)
 			if( GetNtlPLOptionManager()->GetTerrainFar() != fTerranRange )
 				GetNtlPLOptionManager()->SetTerrainFar( fTerranRange );
 
-			// »ç¹° ½Ã¾ß°Å¸® : 200, 300, 400, 512 )
+			// ì‚¬ë¬¼ ì‹œì•¼ê±°ë¦¬ : 200, 300, 400, 512 )
 			RwInt32 nObjectRangeLevel = GetNtlStorageManager()->GetIntData( dSTORAGE_GRAPHIC_OBJECT_RANGE );
 			RwReal fObjectRange = 512.f;
 			switch( nObjectRangeLevel )

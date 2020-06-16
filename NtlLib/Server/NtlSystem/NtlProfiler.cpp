@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-07-10
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -147,7 +147,7 @@ void CNtlProfileNode::Call()
 
 //-----------------------------------------------------------------------------------
 //		Purpose	:
-//		Return	: Recursive°¡ ¾Æ´Ï¸é true
+//		Return	: Recursiveê°€ ì•„ë‹ˆë©´ true
 //-----------------------------------------------------------------------------------
 bool CNtlProfileNode::Return()
 {

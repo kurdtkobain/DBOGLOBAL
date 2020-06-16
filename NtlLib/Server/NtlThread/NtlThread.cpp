@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-11-30 
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -19,7 +19,7 @@
 #include "NtlLog.h"
 
 //---------------------------------------------------------------------------------------
-// Key class ( Thread Å¬·¡½º ³»ºÎ¿ë )
+// Key class ( Thread í´ëž˜ìŠ¤ ë‚´ë¶€ìš© )
 //---------------------------------------------------------------------------------------
 class CThreadKey
 {
@@ -53,12 +53,12 @@ private:
 
 
 //---------------------------------------------------------------------------------------
-// MainThread class  ( Thread Å¬·¡½º ³»ºÎ¿ë ) ApplicationÀÇ ¸ÞÀÎ ¾²·¡µå Á¤º¸¸¦ »ý¼ºÇÏ±â À§ÇÔ
+// MainThread class  ( Thread í´ëž˜ìŠ¤ ë‚´ë¶€ìš© ) Applicationì˜ ë©”ì¸ ì“°ëž˜ë“œ ì •ë³´ë¥¼ ìƒì„±í•˜ê¸° ìœ„í•¨
 //---------------------------------------------------------------------------------------
 class CMainRun : public CNtlRunObject
 {
 public:
-	void Run() { /*MainRunÀº È£ÃâµÇÁö ¸»¾Æ¾ß ÇÑ´Ù.*/ };
+	void Run() { /*MainRunì€ í˜¸ì¶œë˜ì§€ ë§ì•„ì•¼ í•œë‹¤.*/ };
 };
 
 class CMainThread : public CNtlThread
@@ -72,7 +72,7 @@ public:
 };
 
 //---------------------------------------------------------------------------------------
-// Helper class  ( Thread Å¬·¡½º ³»ºÎ¿ë )
+// Helper class  ( Thread í´ëž˜ìŠ¤ ë‚´ë¶€ìš© )
 //---------------------------------------------------------------------------------------
 class CThreadHelper
 {
@@ -94,11 +94,11 @@ public:
 
 char * s_thread_status_string[CNtlThread::MAX_STATUS] = 
 {
-	"STATUS_NOT_RUNNING",		// µ¿ÀÛÇÏÁö ¾Ê´Â »óÅÂ ( ÃÊ±â »óÅÂ )
-	"STATUS_PREPARING_TO_RUN",	// µ¿ÀÛ ÁØºñ »óÅÂ
-	"STATUS_RUNNING",			// µ¿ÀÛ »óÅÂ
-	"STATUS_PAUSED",			// ¸ØÃã »óÅÂ
-	"STATUS_DEAD",				// Á¾·á »óÅÂ
+	"STATUS_NOT_RUNNING",		// ë™ìž‘í•˜ì§€ ì•ŠëŠ” ìƒíƒœ ( ì´ˆê¸° ìƒíƒœ )
+	"STATUS_PREPARING_TO_RUN",	// ë™ìž‘ ì¤€ë¹„ ìƒíƒœ
+	"STATUS_RUNNING",			// ë™ìž‘ ìƒíƒœ
+	"STATUS_PAUSED",			// ë©ˆì¶¤ ìƒíƒœ
+	"STATUS_DEAD",				// ì¢…ë£Œ ìƒíƒœ
 };
 
 const char * CNtlThread::GetStatusString()
@@ -139,7 +139,7 @@ CNtlThread *	CNtlThread::m_pMainThread = 0;
 
 
 //------------------------------------------------------
-// ¾²·¹µå RunÀÌ ½ÇÇàµÇ±â Àü¿¡ 1¹ø È£Ãâ
+// ì“°ë ˆë“œ Runì´ ì‹¤í–‰ë˜ê¸° ì „ì— 1ë²ˆ í˜¸ì¶œ
 //------------------------------------------------------
 void CNtlThread::Init()
 {
@@ -291,7 +291,7 @@ void CNtlThread::Join()
 //-----------------------------------------------------------------------------------
 CNtlThread::CNtlThread(CNtlRunObject * pRunObject, const char * name, bool bAutoDelete)
 {
-	// »ç¿ë ¾ÈÇÔ »óÅÂ
+	// ì‚¬ìš© ì•ˆí•¨ ìƒíƒœ
 	InterlockedExchange((LONG*)&m_status, eSTATUS_NOT_RUNNING);
 
 	m_bAutoDelete			= bAutoDelete;
@@ -302,7 +302,7 @@ CNtlThread::CNtlThread(CNtlRunObject * pRunObject, const char * name, bool bAuto
 
 	m_pRunObject->SetThread( this );
 
-	// ÃÊ±âÈ­ »óÅÂ
+	// ì´ˆê¸°í™” ìƒíƒœ
 	InterlockedExchange((LONG*)&m_status, eSTATUS_PREPARING_TO_RUN);
 }
 
@@ -338,10 +338,10 @@ CNtlThread * CNtlThread::GetCurrentThread()
 //		Purpose	:
 //		Return	:
 //-----------------------------------------------------------------------------------
-// Thread Á¤¸®ÀÇ µÎ°¡Áö °æ¿ì
-// 1. Á¾·á½Ã¿¡´Â ¹Ì»ç¿ëÁß »©°í ¸ðµÎ Á¤¸®
-// 2. Á¾·á½Ã°¡ ¾Æ´Ò °æ¿ì¿¡´Â ÇöÀç DEAD »óÅÂÀÇ THREAD¸¸ Á¤¸®
-// ÁÖÀÇ»çÇ×!! : GarbageCollectÀÇ °æ¿ì Lock()ÀÌ µÇ°í µé¾î¿Â´Ù.
+// Thread ì •ë¦¬ì˜ ë‘ê°€ì§€ ê²½ìš°
+// 1. ì¢…ë£Œì‹œì—ëŠ” ë¯¸ì‚¬ìš©ì¤‘ ë¹¼ê³  ëª¨ë‘ ì •ë¦¬
+// 2. ì¢…ë£Œì‹œê°€ ì•„ë‹ ê²½ìš°ì—ëŠ” í˜„ìž¬ DEAD ìƒíƒœì˜ THREADë§Œ ì •ë¦¬
+// ì£¼ì˜ì‚¬í•­!! : GarbageCollectì˜ ê²½ìš° Lock()ì´ ë˜ê³  ë“¤ì–´ì˜¨ë‹¤.
 //-----------------------------------------------------------------------------------
 CNtlThreadFactory::CNtlThreadFactory()
 {
@@ -382,7 +382,7 @@ void CNtlThreadFactory::GarbageCollect(bool bShutDown)
 			
 			CNtlLock lock(&m_Mutex);
 
-			pThread = (CNtlThread*) m_ThreadList.GetFirst();	// Ã³À½ºÎÅÍ ÀçÁ¤¸®
+			pThread = (CNtlThread*) m_ThreadList.GetFirst();	// ì²˜ìŒë¶€í„° ìž¬ì •ë¦¬
 		}
 		else
 		{
@@ -512,7 +512,7 @@ void CNtlThreadFactory::Shutdown()
 	//{
 	//	m_bClosed = true;
 
-	//	// ¾²·¹µå Á¾·á
+	//	// ì“°ë ˆë“œ ì¢…ë£Œ
 	//	CNtlThread * pThread = (CNtlThread*) m_pThreadList->GetFirst();
 	//	while( pThread )
 	//	{
@@ -545,7 +545,7 @@ void CNtlThreadFactory::CloseAll()
 	{
 		m_bClosed = true;
 
-		// ¾²·¹µå Á¾·á
+		// ì“°ë ˆë“œ ì¢…ë£Œ
 		CNtlThread * pThread = (CNtlThread*) m_ThreadList.GetFirst();
 		while( pThread )
 		{

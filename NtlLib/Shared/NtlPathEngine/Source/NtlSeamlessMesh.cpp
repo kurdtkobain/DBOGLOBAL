@@ -133,7 +133,7 @@ int CNtlSeamlessMesh::GetLoadRange()
 }
 
 /**
-* \brief SuperÀÇ Å¬·¡½º¿Í´Â ´Ù¸£°Ô ¹«Á¶°Ç °æ°è ¿µ¿ªÀ» °Ë»çÇÏ¿© ¸®ÅÏÇÑ´Ù.
+* \brief Superì˜ í´ë˜ìŠ¤ì™€ëŠ” ë‹¤ë¥´ê²Œ ë¬´ì¡°ê±´ ê²½ê³„ ì˜ì—­ì„ ê²€ì‚¬í•˜ì—¬ ë¦¬í„´í•œë‹¤.
 */
 bool CNtlSeamlessMesh::IsRangeOverlapped( cHorizontalRange range )
 {

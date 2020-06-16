@@ -2,14 +2,14 @@
  *
  * File			: InputAction.h
  * Author		: HyungSuk, Jang
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2005. 8. 26	
  * Abstract		: Input action 
  *****************************************************************************
  * Desc         : 
  *
  * 1st Refactoring(2008. 1. 15 ~ 1. 20 ) : 
- * ¿⁄∑·±∏¡∂øÕ ∏≈¥œ¿˙∏¶ øœ¿¸ ∫–∏Æ( InputActionMap <-> ActionMap )
+ * ÏûêÎ£åÍµ¨Ï°∞ÏôÄ Îß§ÎãàÏ†ÄÎ•º ÏôÑÏ†Ñ Î∂ÑÎ¶¨( InputActionMap <-> ActionMap )
  *
  *****************************************************************************/
 
@@ -64,18 +64,18 @@ public:
 	void SetActive(RwBool bActive);
 
 public:
-	// CActionMap ¿Œ≈Õ∆‰¿ÃΩ∫
-	void			InitInputMode();					///< ¿‘∑¬ ∏µÂ «ÿ¡¶
-	RwUInt32		GetInputMode();						///< æÓ∂≤ ACTION¿Ã INPUTMODE¿Œ¡ˆ
-	void			SetInputMode( RwUInt32 nAction );	///< nActionø° ¿‘∑¬ ∏µÂ ¡ˆ¡§
+	// CActionMap Ïù∏ÌÑ∞ÌéòÏù¥Ïä§
+	void			InitInputMode();					///< ÏûÖÎ†• Î™®Îìú Ìï¥Ï†ú
+	RwUInt32		GetInputMode();						///< Ïñ¥Îñ§ ACTIONÏù¥ INPUTMODEÏù∏ÏßÄ
+	void			SetInputMode( RwUInt32 nAction );	///< nActionÏóê ÏûÖÎ†• Î™®Îìú ÏßÄÏ†ï
 
-	std::wstring	GetKeyName( RwUInt32 nAction );		///< æ◊º«¿Ã ∞°¡ˆ∞Ì ¿÷¥¬ ≈∞¿« ¿Ã∏ß
+	std::wstring	GetKeyName( RwUInt32 nAction );		///< Ïï°ÏÖòÏù¥ Í∞ÄÏßÄÍ≥† ÏûàÎäî ÌÇ§Ïùò Ïù¥Î¶Ñ
 	unsigned short	FindKey( RwUInt32 nAction );
 
-	void			InitDefaultActionMap();				///< µ∆˙∆Æ æ◊º«∏ ¿∏∑Œ º¬∆√
+	void			InitDefaultActionMap();				///< ÎîîÌè¥Ìä∏ Ïï°ÏÖòÎßµÏúºÎ°ú ÏÖãÌåÖ
 
-	RwBool			ApplyActionMap();					///< æ◊º«∏ ¿« ¿˚øÎ(º≠πˆ∑Œ ∆–≈∂ ¿¸º€)
-	void			CancleActionMap();					///< ¿˚øÎ √Îº“
+	RwBool			ApplyActionMap();					///< Ïï°ÏÖòÎßµÏùò Ï†ÅÏö©(ÏÑúÎ≤ÑÎ°ú Ìå®ÌÇ∑ Ï†ÑÏÜ°)
+	void			CancleActionMap();					///< Ï†ÅÏö© Ï∑®ÏÜå
 
 	// Ignore Key
 	RwBool			RegisterIgnoreKey( RwUInt8 byKey, int nRefCount );
@@ -94,11 +94,11 @@ protected:
 	void HitTestUpDbClickDashMap(SInputDashMap& sDashMap);
 	void CallDashMove(RwUInt32 uiServerDashMoveFlags);
 
-	// æ◊º«ID∏¶ ≥—∞‹ √≥∏Æ«œ∞‘ ∫Ø∞Êµ» «‘ºˆµÈ
-	void ActionDownMoveHandler(RwUInt32 uiAction);		///< æ◊º«ø° ¿««— ¿Ãµø æ◊º« «⁄µÈ∑Ø
-	void ActionDownDashMoveHandler(RwUInt32 uiAction);	///< æ◊º«ø° ¿««— ¥ÎΩ¨ æ◊º« «⁄µÈ∑Ø
-	void ActionDownBehaviorHandler(RwUInt32 uiAction);	///< æ◊º«ø° ¿««— «‡µø æ◊º« «⁄µÈ∑Ø
-	void ActionDownGuiHandler(RwUInt32 uiAction);		///< æ◊º«ø° ¿««— GUI æ◊º« «⁄µÈ∑Ø
+	// Ïï°ÏÖòIDÎ•º ÎÑòÍ≤® Ï≤òÎ¶¨ÌïòÍ≤å Î≥ÄÍ≤ΩÎêú Ìï®ÏàòÎì§
+	void ActionDownMoveHandler(RwUInt32 uiAction);		///< Ïï°ÏÖòÏóê ÏùòÌïú Ïù¥Îèô Ïï°ÏÖò Ìï∏Îì§Îü¨
+	void ActionDownDashMoveHandler(RwUInt32 uiAction);	///< Ïï°ÏÖòÏóê ÏùòÌïú ÎåÄÏâ¨ Ïï°ÏÖò Ìï∏Îì§Îü¨
+	void ActionDownBehaviorHandler(RwUInt32 uiAction);	///< Ïï°ÏÖòÏóê ÏùòÌïú ÌñâÎèô Ïï°ÏÖò Ìï∏Îì§Îü¨
+	void ActionDownGuiHandler(RwUInt32 uiAction);		///< Ïï°ÏÖòÏóê ÏùòÌïú GUI Ïï°ÏÖò Ìï∏Îì§Îü¨
 
 	void ActionUpMoveHandler(RwUInt32 uiAction);			
 	void ActionUpDashMoveHandler(RwUInt32 uiAction);		
@@ -119,54 +119,54 @@ private:
 	INPUT_HANDLE m_hMouseDown;
 	INPUT_HANDLE m_hMouseUp;
 
-	CNtlCallbackParam1 *m_pCallKeyboardMove;		///< ≈∞∫∏µÂ ¿Ãµø
-	CNtlCallbackParam1 *m_pCallKeyboardDashMove;	///< ≈∞∫∏µÂ ¥ÎΩ¨ ¿Ãµø
-	CNtlCallbackParam0 *m_pCallAvatarSelect;		///< æ∆πŸ≈∏ º±≈√
-	CNtlCallbackParam1 *m_pCallJump;				///< ¡°«¡
-	CNtlCallbackParam1 *m_pCallCharging;			///< ±‚ ∏¿∏±‚
-	CNtlCallbackParam1 *m_pCallBlocking;			///< ∫Ì∑œ ∏µÂ
-	CNtlCallbackParam1 *m_pCallSitAndStand;			///< æ…æ∆ ¿œæÓº≠
-	CNtlCallbackParam0 *m_pCallAutoRun;				///< ¿⁄µø ¥ﬁ∏Æ±‚
-	CNtlCallbackParam1 *m_pCallSkillQuickSlotDown;	///< ƒ¸ΩΩ∑‘ ¥ŸøÓ
-	CNtlCallbackParam1 *m_pCallSkillQuickSlotUp;	///< ƒ¸ΩΩ∑‘ æ˜
+	CNtlCallbackParam1 *m_pCallKeyboardMove;		///< ÌÇ§Î≥¥Îìú Ïù¥Îèô
+	CNtlCallbackParam1 *m_pCallKeyboardDashMove;	///< ÌÇ§Î≥¥Îìú ÎåÄÏâ¨ Ïù¥Îèô
+	CNtlCallbackParam0 *m_pCallAvatarSelect;		///< ÏïÑÎ∞îÌÉÄ ÏÑ†ÌÉù
+	CNtlCallbackParam1 *m_pCallJump;				///< Ï†êÌîÑ
+	CNtlCallbackParam1 *m_pCallCharging;			///< Í∏∞ Î™®ÏúºÍ∏∞
+	CNtlCallbackParam1 *m_pCallBlocking;			///< Î∏îÎ°ù Î™®Îìú
+	CNtlCallbackParam1 *m_pCallSitAndStand;			///< ÏïâÏïÑ ÏùºÏñ¥ÏÑú
+	CNtlCallbackParam0 *m_pCallAutoRun;				///< ÏûêÎèô Îã¨Î¶¨Í∏∞
+	CNtlCallbackParam1 *m_pCallSkillQuickSlotDown;	///< ÌÄµÏä¨Î°Ø Îã§Ïö¥
+	CNtlCallbackParam1 *m_pCallSkillQuickSlotUp;	///< ÌÄµÏä¨Î°Ø ÏóÖ
 	CNtlCallbackParam1 *m_pCallSkillQuickSlotExDown;
 	CNtlCallbackParam1 *m_pCallSkillQuickSlotExUp;
 	CNtlCallbackParam1 *m_pCallSkillQuickSlotEx2Down;
 	CNtlCallbackParam1 *m_pCallSkillQuickSlotEx2Up;
-	CNtlCallbackParam1 *m_pCallSkillQuickSlotChange;///< ƒ¸ΩΩ∑‘ PREV, NEXT
+	CNtlCallbackParam1 *m_pCallSkillQuickSlotChange;///< ÌÄµÏä¨Î°Ø PREV, NEXT
 	CNtlCallbackParam0 *m_pCallExit;				///< Exit
-	CNtlCallbackParam0 *m_pCallLooting;				///< æ∆¿Ã≈€ ¡›±‚
-	CNtlCallbackParam1 *m_pCallDialogAction;		///< Dialogø° ∫∏≥æ æ◊º«
-	CNtlCallbackParam0 *m_pCallTabKey;				///< ≈«¿« æ◊º«
-	CNtlCallbackParam0 *m_pCallAutoTarget;			///< ∞°±ÓøÓ ¿˚ º±≈√
-	CNtlCallbackParam0 *m_pCallAutoAttack;			///< ¿⁄µø ∞¯∞›
-	CNtlCallbackParam0 *m_pCallAutoFollow;			///< ¿⁄µø µ˚∂Û∞°±‚
-	CNtlCallbackParam1 *m_pCallPartySelect;			///< ∆ƒ∆ºø¯ º±≈√
-	CNtlCallbackParam0 *m_pCallPartyAutoSelect;		///< ∆ƒ∆ºø¯ ¿⁄µø º±≈√
-    CNtlCallbackParam0 *m_pCallScouterUse;          ///< Ω∫ƒ´øÏ≈Õ ªÁøÎ (by agebreak)
-	CNtlCallbackParam1 *m_pCallTargetMarking;		///< ≈∏∞Ÿ ∏∂≈∑
-	CNtlCallbackParam1 *m_pCallTargetSelecting;		///< ≈∏∞Ÿ ºø∑∫∆√
-	CNtlCallbackParam1 *m_pCallChatPageChange;			///< √§∆√ ∆‰¿Ã¡ˆ (0 UP 1 DOWN)
+	CNtlCallbackParam0 *m_pCallLooting;				///< ÏïÑÏù¥ÌÖú Ï§çÍ∏∞
+	CNtlCallbackParam1 *m_pCallDialogAction;		///< DialogÏóê Î≥¥ÎÇº Ïï°ÏÖò
+	CNtlCallbackParam0 *m_pCallTabKey;				///< ÌÉ≠Ïùò Ïï°ÏÖò
+	CNtlCallbackParam0 *m_pCallAutoTarget;			///< Í∞ÄÍπåÏö¥ Ï†Å ÏÑ†ÌÉù
+	CNtlCallbackParam0 *m_pCallAutoAttack;			///< ÏûêÎèô Í≥µÍ≤©
+	CNtlCallbackParam0 *m_pCallAutoFollow;			///< ÏûêÎèô Îî∞ÎùºÍ∞ÄÍ∏∞
+	CNtlCallbackParam1 *m_pCallPartySelect;			///< ÌååÌã∞Ïõê ÏÑ†ÌÉù
+	CNtlCallbackParam0 *m_pCallPartyAutoSelect;		///< ÌååÌã∞Ïõê ÏûêÎèô ÏÑ†ÌÉù
+    CNtlCallbackParam0 *m_pCallScouterUse;          ///< Ïä§Ïπ¥Ïö∞ÌÑ∞ ÏÇ¨Ïö© (by agebreak)
+	CNtlCallbackParam1 *m_pCallTargetMarking;		///< ÌÉÄÍ≤ü ÎßàÌÇπ
+	CNtlCallbackParam1 *m_pCallTargetSelecting;		///< ÌÉÄÍ≤ü ÏÖÄÎ†âÌåÖ
+	CNtlCallbackParam1 *m_pCallChatPageChange;			///< Ï±ÑÌåÖ ÌéòÏù¥ÏßÄ (0 UP 1 DOWN)
 	
 
 	RwUInt32	m_uiKey1MoveValidFlags;
 	RwUInt32	m_uiKey2MoveValidFlags;
-	RwUInt32	m_uiMoveFlags;						///< ≈¨∂Û¿Ãæ∆Æø°º≠ ªÁøÎµ«¥¬ Move Flags
+	RwUInt32	m_uiMoveFlags;						///< ÌÅ¥ÎùºÏù¥Ïñ∏Ìä∏ÏóêÏÑú ÏÇ¨Ïö©ÎêòÎäî Move Flags
 	RwBool		m_bRBtnDown;
-	RwUInt32	m_uiServerMoveFlags;				///< º≠πˆø° ∫∏≥ª¥¬ Move Flags
-	RwBool		m_bActive;							///< InputActionMap¿Ã ¿€µø¡ﬂ¿Œ¡ˆ¿« ø©∫Œ
-	RwBool		m_bAcceptServer;					///< º≠πˆø° ¿˚øÎ¿Ã ∞°¥…«— ªÛ≈¬
+	RwUInt32	m_uiServerMoveFlags;				///< ÏÑúÎ≤ÑÏóê Î≥¥ÎÇ¥Îäî Move Flags
+	RwBool		m_bActive;							///< InputActionMapÏù¥ ÏûëÎèôÏ§ëÏù∏ÏßÄÏùò Ïó¨Î∂Ä
+	RwBool		m_bAcceptServer;					///< ÏÑúÎ≤ÑÏóê Ï†ÅÏö©Ïù¥ Í∞ÄÎä•Ìïú ÏÉÅÌÉú
 
-	typedef std::map<RwUInt32, RwBool> FLAGMAP;		///< ªÛ≈¬∏¶ »∏∫πΩ√ƒ—¡‡æﬂ «“ æ◊º«µÈ
+	typedef std::map<RwUInt32, RwBool> FLAGMAP;		///< ÏÉÅÌÉúÎ•º ÌöåÎ≥µÏãúÏºúÏ§òÏïº Ìï† Ïï°ÏÖòÎì§
 	FLAGMAP m_mapFlag;
 
-	typedef std::map<RwUInt8, RwUInt8>	IGNOREMAP;	///< π´Ω√µ«¥¬ ≈∞∏¶ ∏æ∆≥ı¿∫ ∏ 
+	typedef std::map<RwUInt8, RwUInt8>	IGNOREMAP;	///< Î¨¥ÏãúÎêòÎäî ÌÇ§Î•º Î™®ÏïÑÎÜìÏùÄ Îßµ
 	IGNOREMAP m_mapIgnore;
 
-	typedef std::map<RwUInt16, RwUInt8> SPECMAP;	///< ∆Ø¡§«— µø¿€¿ª «ÿæﬂ«œ¥¬ æ◊º«
+	typedef std::map<RwUInt16, RwUInt8> SPECMAP;	///< ÌäπÏ†ïÌïú ÎèôÏûëÏùÑ Ìï¥ÏïºÌïòÎäî Ïï°ÏÖò
 	SPECMAP	m_mapSpecialAction;
 
-	typedef std::map<RwUInt8, RwUInt8> UPDOWNREF;	///< ≈∞∞° æ˜/¥ŸøÓ µ«¥¬ »Ωºˆ∏¶ √º≈©«—¥Ÿ.
+	typedef std::map<RwUInt8, RwUInt8> UPDOWNREF;	///< ÌÇ§Í∞Ä ÏóÖ/Îã§Ïö¥ ÎêòÎäî ÌöüÏàòÎ•º Ï≤¥ÌÅ¨ÌïúÎã§.
 	UPDOWNREF m_mapUpdownRef;
 
 	SInputDashMap m_sFrontDashMap;
@@ -174,7 +174,7 @@ private:
 	SInputDashMap m_sRightDashMap;
 	SInputDashMap m_sBackDashMap;
 
-	// æ◊º«∏  ≈¨∑°Ω∫(ActionMap.h) by Kell
+	// Ïï°ÏÖòÎßµ ÌÅ¥ÎûòÏä§(ActionMap.h) by Kell
 	CActionMapManager m_ActionMapManager;
 
 public:

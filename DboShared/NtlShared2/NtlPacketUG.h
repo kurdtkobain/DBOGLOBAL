@@ -364,7 +364,7 @@ BEGIN_PROTOCOL(UG_GAME_ENTER_REQ)
 	ACCOUNTID			accountId;
 	CHARACTERID			charId;
 	BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];
-	bool				bTutorialMode;	// Æ©Åä¸®¾ó ¿äÃ» °ª
+	bool				bTutorialMode;	// íŠœí† ë¦¬ì–¼ ìš”ì²­ ê°’
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GAME_LEAVE_REQ)
@@ -498,12 +498,12 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_CHAR_ATTACK_BEGIN)
 	BYTE				byAvatarType;		// eDBO_AVATAR_TYPE
-	BYTE				byType;	// Çü¼® : ÀÓ½Ã
+	BYTE				byType;	// í˜•ì„ : ìž„ì‹œ
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_CHAR_ATTACK_END)
 	BYTE				byAvatarType;		// eDBO_AVATAR_TYPE
-	BYTE				byType;	// Çü¼® : ÀÓ½Ã
+	BYTE				byType;	// í˜•ì„ : ìž„ì‹œ
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_CHAR_CHARGE)
@@ -543,7 +543,7 @@ BEGIN_PROTOCOL( UG_CHAR_AWAY_REQ )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_CHAR_KEY_UPDATE_REQ )
-	BYTE	byCount;		// º¯°æ°¹¼ö
+	BYTE	byCount;		// ë³€ê²½ê°¯ìˆ˜
 	sSHORTCUT_UPDATE_DATA asData[NTL_SHORTCUT_MAX_COUNT];	 
 END_PROTOCOL()
 //-----------------------------------------------------------------
@@ -602,13 +602,13 @@ BEGIN_PROTOCOL(UG_HTB_START_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_HTB_LEARN_REQ)
-	HOBJECT				hTrainer; // Æ®·¹ÀÌ³Ê ÇÚµé
-	TBLIDX				skillId; // HTB set Å×ÀÌºí ¹øÈ£
+	HOBJECT				hTrainer; // íŠ¸ë ˆì´ë„ˆ í•¸ë“¤
+	TBLIDX				skillId; // HTB set í…Œì´ë¸” ë²ˆí˜¸
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_HTB_FORWARD_REQ)
-	sVECTOR3			vCurLoc; // ÁøÇà À§Ä¡
-	sVECTOR2			vCurDir; // ÁøÇà ¹æÇâ
+	sVECTOR3			vCurLoc; // ì§„í–‰ ìœ„ì¹˜
+	sVECTOR2			vCurDir; // ì§„í–‰ ë°©í–¥
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_HTB_RP_BALL_USE_REQ)
@@ -680,8 +680,8 @@ BYTE				byCorePos;
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_ITEM_IDENTIFY_REQ)
-	BYTE				byPlace;			// ¾ÆÀÌÅÛ È®ÀÎ½ÃÀÇ È®ÀÎ ÇÒ ¾ÆÀÌÅÛÀÇ ÄÁÅ×ÀÌ³Ê À§Ä¡
-	BYTE				byPos;				// ¾ÆÀÌÅÛÀÇ Æ÷Áö¼Ç.
+	BYTE				byPlace;			// ì•„ì´í…œ í™•ì¸ì‹œì˜ í™•ì¸ í•  ì•„ì´í…œì˜ ì»¨í…Œì´ë„ˆ ìœ„ì¹˜
+	BYTE				byPos;				// ì•„ì´í…œì˜ í¬ì§€ì…˜.
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_ZENNY_PICK_REQ)
@@ -719,7 +719,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(UG_PARTY_INVITE_REQ)
 	HOBJECT				hTarget;
 	// If the player belong to a party, the part of 'wszPartyName' doesn't need to be sent when inviting another player.
-	// ÀÌ¹Ì ÆÄÆ¼¿¡ °¡ÀÔÇÑ »óÅÂ¿¡¼­ ´Ù¸¥ ÇÃ·¹ÀÌ¾î¸¦ ÃÊ´ëÇÒ ¶§¿¡´Â wszPartyName ºÎºÐÀ» Àü¼ÛÇÏÁö ¾Ê¾Æµµ µÈ´Ù.
+	// ì´ë¯¸ íŒŒí‹°ì— ê°€ìž…í•œ ìƒíƒœì—ì„œ ë‹¤ë¥¸ í”Œë ˆì´ì–´ë¥¼ ì´ˆëŒ€í•  ë•Œì—ëŠ” wszPartyName ë¶€ë¶„ì„ ì „ì†¡í•˜ì§€ ì•Šì•„ë„ ëœë‹¤.
 	// by YOSHIKI(2009-02-13)
 	WCHAR				wszPartyName[NTL_MAX_SIZE_PARTY_NAME + 1];
 END_PROTOCOL()
@@ -727,7 +727,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(UG_PARTY_INVITE_CHARID_REQ)
 	CHARACTERID			targetCharId;
 	// If the player belong to a party, the part of 'wszPartyName' doesn't need to be sent when inviting another player.
-	// ÀÌ¹Ì ÆÄÆ¼¿¡ °¡ÀÔÇÑ »óÅÂ¿¡¼­ ´Ù¸¥ ÇÃ·¹ÀÌ¾î¸¦ ÃÊ´ëÇÒ ¶§¿¡´Â wszPartyName ºÎºÐÀ» Àü¼ÛÇÏÁö ¾Ê¾Æµµ µÈ´Ù.
+	// ì´ë¯¸ íŒŒí‹°ì— ê°€ìž…í•œ ìƒíƒœì—ì„œ ë‹¤ë¥¸ í”Œë ˆì´ì–´ë¥¼ ì´ˆëŒ€í•  ë•Œì—ëŠ” wszPartyName ë¶€ë¶„ì„ ì „ì†¡í•˜ì§€ ì•Šì•„ë„ ëœë‹¤.
 	// by YOSHIKI(2009-02-13)
 	WCHAR				wszPartyName[NTL_MAX_SIZE_PARTY_NAME + 1];
 END_PROTOCOL()
@@ -735,7 +735,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(UG_PARTY_INVITE_CHAR_NAME_REQ)
 	WCHAR				wszTargetName[NTL_MAX_SIZE_CHAR_NAME + 1];
 	// If the player belong to a party, the part of 'wszPartyName' doesn't need to be sent when inviting another player.
-	// ÀÌ¹Ì ÆÄÆ¼¿¡ °¡ÀÔÇÑ »óÅÂ¿¡¼­ ´Ù¸¥ ÇÃ·¹ÀÌ¾î¸¦ ÃÊ´ëÇÒ ¶§¿¡´Â wszPartyName ºÎºÐÀ» Àü¼ÛÇÏÁö ¾Ê¾Æµµ µÈ´Ù.
+	// ì´ë¯¸ íŒŒí‹°ì— ê°€ìž…í•œ ìƒíƒœì—ì„œ ë‹¤ë¥¸ í”Œë ˆì´ì–´ë¥¼ ì´ˆëŒ€í•  ë•Œì—ëŠ” wszPartyName ë¶€ë¶„ì„ ì „ì†¡í•˜ì§€ ì•Šì•„ë„ ëœë‹¤.
 	// by YOSHIKI(2009-02-13)
 	WCHAR				wszPartyName[NTL_MAX_SIZE_PARTY_NAME + 1];
 END_PROTOCOL()
@@ -793,8 +793,8 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_BANK_ZENNY_REQ)
 	HOBJECT				handle;			// NpcHandle
-	DWORD				dwZenny;		// »©°Å³ª ³ÖÀ» ¾×¼ö
-	bool				bIsSave;		// 1 Àº ³ÖÀ» °æ¿ì 0 Àº »©´Â°æ¿ì
+	DWORD				dwZenny;		// ë¹¼ê±°ë‚˜ ë„£ì„ ì•¡ìˆ˜
+	bool				bIsSave;		// 1 ì€ ë„£ì„ ê²½ìš° 0 ì€ ë¹¼ëŠ”ê²½ìš°
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_BANK_BUY_REQ)
@@ -821,7 +821,7 @@ BEGIN_PROTOCOL(UG_SOCIAL_ACTION)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_TS_CONFIRM_STEP_REQ)  
-	BYTE				byTsType; // Æ®¸®°Å Å¸ÀÔ
+	BYTE				byTsType; // íŠ¸ë¦¬ê±° íƒ€ìž…
 	NTL_TS_T_ID			tId;
 	NTL_TS_TC_ID		tcCurId;
 	NTL_TS_TC_ID		tcNextId;
@@ -842,7 +842,7 @@ BEGIN_PROTOCOL(UG_TS_CONFIRM_STEP_FOR_USE_ITEM_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_TS_UPDATE_STATE)
-	BYTE				byTsType;	// Æ®¸®°Å Å¸ÀÔ
+	BYTE				byTsType;	// íŠ¸ë¦¬ê±° íƒ€ìž…
 	NTL_TS_T_ID			tId;
 	BYTE				byType;
 	WORD				wTSState;
@@ -881,11 +881,11 @@ BEGIN_PROTOCOL(UG_QUEST_OBJECT_VISIT_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_FREEBATTLE_CHALLENGE_REQ)  
-	HOBJECT				hTarget;	// ´ëÀü½ÅÃ» »ó´ëÄ³¸¯ÅÍÀÇ ÇÚµé
+	HOBJECT				hTarget;	// ëŒ€ì „ì‹ ì²­ ìƒëŒ€ìºë¦­í„°ì˜ í•¸ë“¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_FREEBATTLE_ACCEPT_RES)  
-	BYTE				byAccept; // 1: ¼ö¶ô 0: °ÅÀý 2: ¼ö¶ôÇÒ»óÅÂ°¡ ¾Æ´Ô ´ëÀü ¼ö¶ô ¿©ºÎ
+	BYTE				byAccept; // 1: ìˆ˜ë½ 0: ê±°ì ˆ 2: ìˆ˜ë½í• ìƒíƒœê°€ ì•„ë‹˜ ëŒ€ì „ ìˆ˜ë½ ì—¬ë¶€
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_QUICK_SLOT_UPDATE_REQ)  
@@ -916,7 +916,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(UG_TRADE_ADD_REQ)			// Register items in exchange window
 	HOBJECT				hTarget;			// Target Handle
 	HOBJECT				hItem;				// Item Handle
-	BYTE				byCount;			// Are some of the items that overlap? Default 1 °³
+	BYTE				byCount;			// Are some of the items that overlap? Default 1 ê°œ
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_TRADE_DEL_REQ)			// Items dropped in exchange window
@@ -924,29 +924,29 @@ BEGIN_PROTOCOL(UG_TRADE_DEL_REQ)			// Items dropped in exchange window
 	HOBJECT				hItem;				// Item Handle
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL(UG_TRADE_MODIFY_REQ)			// ±³È¯Ã¢¿¡ ¾ÆÀÌÅÛ µî·Ï
-	HOBJECT				hTarget;			// Å¸°Ù ÇÚµé
-	HOBJECT				hItem;				// ¾ÆÀÌÅÛ ÇÚµé
-	BYTE				byCount;			// °ãÃÄÀÖ´Â ¾ÆÀÌÅÛÁß ¸î°³ÀÎ°¡? Default 1°³
+BEGIN_PROTOCOL(UG_TRADE_MODIFY_REQ)			// êµí™˜ì°½ì— ì•„ì´í…œ ë“±ë¡
+	HOBJECT				hTarget;			// íƒ€ê²Ÿ í•¸ë“¤
+	HOBJECT				hItem;				// ì•„ì´í…œ í•¸ë“¤
+	BYTE				byCount;			// ê²¹ì³ìžˆëŠ” ì•„ì´í…œì¤‘ ëª‡ê°œì¸ê°€? Default 1ê°œ
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL(UG_TRADE_ZENNY_UPDATE_REQ)	// ±³È¯Ã¢¿¡ Á¦´Ï µî·Ï ¹× º¯°æ
+BEGIN_PROTOCOL(UG_TRADE_ZENNY_UPDATE_REQ)	// êµí™˜ì°½ì— ì œë‹ˆ ë“±ë¡ ë° ë³€ê²½
 	HOBJECT				hTarget;			// TargetHandle
-	DWORD				dwZenny;			// ¿Å±æ ¸¸Å­ÀÇ Á¦´Ï (ÀÚ±â°¡ °®°í ÀÖ´Â Á¦´Ï ÇÑµµ ³»)
+	DWORD				dwZenny;			// ì˜®ê¸¸ ë§Œí¼ì˜ ì œë‹ˆ (ìžê¸°ê°€ ê°–ê³  ìžˆëŠ” ì œë‹ˆ í•œë„ ë‚´)
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL(UG_TRADE_END_REQ)			// ±³È¯ ¿Ï·á ¹öÆ° Å¬¸¯
-	HOBJECT				hTarget;			// Å¸°Ù ÇÚµé
-	DWORD				dwPacketCount;		// »ó´ë¹æÀÇ º¯°æ Ä«¿îÆ® ( »ó´ë¹æÀÌ ¹°°ÇÀ» ¿Ã·Á³õ°Å³ª »èÁ¦ È¤Àº º¯°æ µî ÆÐÅ¶¹ÞÀº °³¼ö )
-	bool				bIsSet;				// false : È®ÀÎÇ®±â true: È®ÀÎÀá±Ý
+BEGIN_PROTOCOL(UG_TRADE_END_REQ)			// êµí™˜ ì™„ë£Œ ë²„íŠ¼ í´ë¦­
+	HOBJECT				hTarget;			// íƒ€ê²Ÿ í•¸ë“¤
+	DWORD				dwPacketCount;		// ìƒëŒ€ë°©ì˜ ë³€ê²½ ì¹´ìš´íŠ¸ ( ìƒëŒ€ë°©ì´ ë¬¼ê±´ì„ ì˜¬ë ¤ë†“ê±°ë‚˜ ì‚­ì œ í˜¹ì€ ë³€ê²½ ë“± íŒ¨í‚·ë°›ì€ ê°œìˆ˜ )
+	bool				bIsSet;				// false : í™•ì¸í’€ê¸° true: í™•ì¸ìž ê¸ˆ
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL(UG_TRADE_CANCEL_REQ)			// ±³È¯ Ãë¼Ò È¤Àº Ä³¸¯Á¾·á °Å¸® ÀÌÅ»½Ã »ç¿ë
-	HOBJECT				hTarget;			// Å¸°Ù ÇÚµé
+BEGIN_PROTOCOL(UG_TRADE_CANCEL_REQ)			// êµí™˜ ì·¨ì†Œ í˜¹ì€ ìºë¦­ì¢…ë£Œ ê±°ë¦¬ ì´íƒˆì‹œ ì‚¬ìš©
+	HOBJECT				hTarget;			// íƒ€ê²Ÿ í•¸ë“¤
 END_PROTOCOL()
 //------------------------------------------------------------------
-BEGIN_PROTOCOL(UG_TRADE_DENY_REQ)			// ±³È¯ Ãë¼Ò È¤Àº Ä³¸¯Á¾·á °Å¸® ÀÌÅ»½Ã »ç¿ë
-	bool				bIsDeny;			// true: °ÅÀý ÇÏµµ·Ï false: ÇØÁ¦ ¿ø»óÅÂ
+BEGIN_PROTOCOL(UG_TRADE_DENY_REQ)			// êµí™˜ ì·¨ì†Œ í˜¹ì€ ìºë¦­ì¢…ë£Œ ê±°ë¦¬ ì´íƒˆì‹œ ì‚¬ìš©
+	bool				bIsDeny;			// true: ê±°ì ˆ í•˜ë„ë¡ false: í•´ì œ ì›ìƒíƒœ
 END_PROTOCOL()
 //------------------------------------------------------------------	
 BEGIN_PROTOCOL(UG_GUILD_CREATE_REQ)
@@ -989,13 +989,13 @@ BEGIN_PROTOCOL(UG_RANKBATTLE_LEAVE_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_DRAGONBALL_CHECK_REQ)
-	HOBJECT				hObject;						  // TS Object Á¦´Ü	 
-	sITEM_POSITION_DATA sData[NTL_ITEM_MAX_DRAGONBALL];   // ÀÎº¥»óÀÇ µå·¡°ïº¼¾ÆÀÌÅÛ
+	HOBJECT				hObject;						  // TS Object ì œë‹¨	 
+	sITEM_POSITION_DATA sData[NTL_ITEM_MAX_DRAGONBALL];   // ì¸ë²¤ìƒì˜ ë“œëž˜ê³¤ë³¼ì•„ì´í…œ
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_DRAGONBALL_REWARD_REQ)
-	HOBJECT				hObject;						  // TS Object Á¦´Ü	
-	TBLIDX				rewardTblidx;					  // ¼±ÅÃ º¸»ó Å×ÀÌºí ÀÎµ¦½º
+	HOBJECT				hObject;						  // TS Object ì œë‹¨	
+	TBLIDX				rewardTblidx;					  // ì„ íƒ ë³´ìƒ í…Œì´ë¸” ì¸ë±ìŠ¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_PRIVATESHOP_CREATE_REQ )
@@ -1006,7 +1006,7 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_PRIVATESHOP_OPEN_REQ )
 	WCHAR					wcPrivateShopName[NTL_MAX_PRIVATESHOP_NAME_IN_UNICODE + 1];	
-	bool					bIsOwnerEmpty; //trueÀÌ¸é ÁÖÀÎÀÌ ÀÚ¸®¸¦ ºñ¿î°Í
+	bool					bIsOwnerEmpty; //trueì´ë©´ ì£¼ì¸ì´ ìžë¦¬ë¥¼ ë¹„ìš´ê²ƒ
 	BYTE					byNoticeSize;
 	WCHAR					wcNotice[NTL_MAX_PRIVATESHOP_NOTICE_IN_UNICODE + 1];
 END_PROTOCOL()
@@ -1045,68 +1045,68 @@ END_PROTOCOL()
 BEGIN_PROTOCOL( UG_PRIVATESHOP_ITEM_SELECT_REQ )
 	HOBJECT						hOwner;
 	BYTE						byPrivateShopInventorySlotPos;
-	BYTE						byItemState;//eITEMSTATE °ªÀ» °®´Â´Ù
+	BYTE						byItemState;//eITEMSTATE ê°’ì„ ê°–ëŠ”ë‹¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_START_REQ )
-	HOBJECT				hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
+	HOBJECT				hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_SEND_REQ )
-	HOBJECT		hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
+	HOBJECT		hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
 	BYTE		byMailType;	// eMAIL_TYPE	
-	sITEM_POSITION_DATA sItemData;	// ¾ÆÀÌÅÛÆ÷Áö¼Ç
+	sITEM_POSITION_DATA sItemData;	// ì•„ì´í…œí¬ì§€ì…˜
 	DWORD		dwZenny;		// Req or Give Zenny
-	BYTE		byDay;		// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
-	WCHAR		wszTargetName[NTL_MAX_SIZE_CHAR_NAME + 1];	// ¹ÞÀ» Ä³¸¯ ÀÌ¸§
-	BYTE		byTextSize;	// °¡º¯±æÀÌ ÆÐÅ¶¿ë ÅØ½ºÆ® »çÀÌÁî
-	WCHAR		wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ¸ÞÀÏ³»¿ë
+	BYTE		byDay;		// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
+	WCHAR		wszTargetName[NTL_MAX_SIZE_CHAR_NAME + 1];	// ë°›ì„ ìºë¦­ ì´ë¦„
+	BYTE		byTextSize;	// ê°€ë³€ê¸¸ì´ íŒ¨í‚·ìš© í…ìŠ¤íŠ¸ ì‚¬ì´ì¦ˆ
+	WCHAR		wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ë©”ì¼ë‚´ìš©
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_READ_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
-	MAILID	mailID;	// ¸ÞÀÏ ¾ÆÀÌµð
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
+	MAILID	mailID;	// ë©”ì¼ ì•„ì´ë””
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_DEL_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
-	MAILID	mailID;	// ¸ÞÀÏ ¾ÆÀÌµð
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
+	MAILID	mailID;	// ë©”ì¼ ì•„ì´ë””
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_RETURN_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
-	MAILID	mailID;	// ¸ÞÀÏ ¾ÆÀÌµð	
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
+	MAILID	mailID;	// ë©”ì¼ ì•„ì´ë””	
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_RELOAD_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_LOAD_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
 	BYTE	byCount;
-	MAILID	aMailID[NTL_MAX_MAIL_SLOT_COUNT];	// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID	aMailID[NTL_MAX_MAIL_SLOT_COUNT];	// ë©”ì¼ ì•„ì´ë””
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_ITEM_RECEIVE_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
-	MAILID	mailID;	// ¸ÞÀÏ ¾ÆÀÌµð
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
+	MAILID	mailID;	// ë©”ì¼ ì•„ì´ë””
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_LOCK_REQ )
-	HOBJECT	hObject;	// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
-	MAILID	mailID;	// ¸ÞÀÏ ¾ÆÀÌµð
+	HOBJECT	hObject;	// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
+	MAILID	mailID;	// ë©”ì¼ ì•„ì´ë””
 	bool	bIsLock;		// Lock 1: Unlock: 0
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_MAIL_MULTI_DEL_REQ )
-	HOBJECT	hObject;								// ¸ÞÀÏ¼Û¼ö½ÅÅ¾ ¿ÀºêÁ§Æ® (½ºÄ«¿ìÆ®ÆÄÃ÷ Âø¿ë½Ã INVALID_OBJECT )
+	HOBJECT	hObject;								// ë©”ì¼ì†¡ìˆ˜ì‹ íƒ‘ ì˜¤ë¸Œì íŠ¸ (ìŠ¤ì¹´ìš°íŠ¸íŒŒì¸  ì°©ìš©ì‹œ INVALID_OBJECT )
 	BYTE	byCount;
-	MAILID	aMailID[NTL_MAX_COUNT_OF_MULTI_DEL];		// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID	aMailID[NTL_MAX_COUNT_OF_MULTI_DEL];		// ë©”ì¼ ì•„ì´ë””
 END_PROTOCOL()
 //------------------------------------------------------------------
 //BEGIN_PROTOCOL( UG_PORTAL_START_REQ )
-//	HOBJECT				handle;			// ÇØ´ç NPC °Ë»çÈÄ Æ÷Å» Á¤º¸ ·Îµù
+//	HOBJECT				handle;			// í•´ë‹¹ NPC ê²€ì‚¬í›„ í¬íƒˆ ì •ë³´ ë¡œë”©
 //END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_PORTAL_ADD_REQ )
@@ -1115,7 +1115,7 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_PORTAL_REQ )
 	HOBJECT				handle;			
-	BYTE				byPoint;		// 0~7±îÁö ¼±ÅÃµÈ ÀÎµ¦½º
+	BYTE				byPoint;		// 0~7ê¹Œì§€ ì„ íƒëœ ì¸ë±ìŠ¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_WAR_FOG_UPDATE_REQ )
@@ -1124,7 +1124,7 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GUILD_FUNCTION_ADD_REQ)
 	HOBJECT				hGuildManagerNpc;
-	BYTE				byFunction;			// Ãß°¡ÇÒ ±â´É ¹øÈ£ eDBO_GUILD_FUNCTION
+	BYTE				byFunction;			// ì¶”ê°€í•  ê¸°ëŠ¥ ë²ˆí˜¸ eDBO_GUILD_FUNCTION
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GUILD_GIVE_ZENNY)
@@ -1133,11 +1133,11 @@ BEGIN_PROTOCOL(UG_GUILD_GIVE_ZENNY)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GUILD_BANK_START_REQ)
-	HOBJECT				handle;			// Ã¢°í NpcHandle
+	HOBJECT				handle;			// ì°½ê³  NpcHandle
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GUILD_BANK_MOVE_REQ)
-	HOBJECT				handle;			// Ã¢°í NpcHandle	
+	HOBJECT				handle;			// ì°½ê³  NpcHandle	
 	BYTE				bySrcPlace;
 	BYTE				bySrcPos;
 	BYTE				byDestPlace;
@@ -1145,7 +1145,7 @@ BEGIN_PROTOCOL(UG_GUILD_BANK_MOVE_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GUILD_BANK_MOVE_STACK_REQ)
-	HOBJECT				handle;			// Ã¢°í NpcHandle
+	HOBJECT				handle;			// ì°½ê³  NpcHandle
 	BYTE				bySrcPlace;
 	BYTE				bySrcPos;
 	BYTE				byDestPlace;
@@ -1158,12 +1158,12 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_GUILD_BANK_ZENNY_REQ)
 	HOBJECT				handle;			// NpcHandle
-	DWORD				dwZenny;		// »©°Å³ª ³ÖÀ» ¾×¼ö
-	bool				bIsSave;		// 1 Àº ³ÖÀ» °æ¿ì 0 Àº »©´Â°æ¿ì
+	DWORD				dwZenny;		// ë¹¼ê±°ë‚˜ ë„£ì„ ì•¡ìˆ˜
+	bool				bIsSave;		// 1 ì€ ë„£ì„ ê²½ìš° 0 ì€ ë¹¼ëŠ”ê²½ìš°
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_CROSSFIRE_REQ )
-	HOBJECT				hAnotherUser;		//À¯Á®°¡ ¼±ÅÃÇÑ User ÇÚµé
+	HOBJECT				hAnotherUser;		//ìœ ì ¸ê°€ ì„ íƒí•œ User í•¸ë“¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_GUILD_CREATE_MARK_REQ )
@@ -1237,7 +1237,7 @@ BEGIN_PROTOCOL(UG_BUDOKAI_MUDOSA_INFO_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_BUDOKAI_MUDOSA_TELEPORT_REQ)
-	BYTE			byMudosaIndex;				// ¹«µµ»ç ÀÎµ¦½º
+	BYTE			byMudosaIndex;				// ë¬´ë„ì‚¬ ì¸ë±ìŠ¤
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_BUDOKAI_PARTY_MAKER_REQ)
@@ -1302,7 +1302,7 @@ BEGIN_PROTOCOL(UG_SKILL_INIT_REQ)
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_TELEPORT_CONFIRM_REQ)
-	bool				bTeleport;		// true : È®ÀÎ, false : Ãë¼Ò
+	bool				bTeleport;		// true : í™•ì¸, false : ì·¨ì†Œ
 	BYTE				byTeleportIndex;
 END_PROTOCOL()
 //------------------------------------------------------------------
@@ -1341,9 +1341,9 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(UG_DOJO_FUNCTION_ADD_REQ)
 	HOBJECT				hGuildManagerNpc;
-	BYTE				byFunction;			// Ãß°¡ÇÒ ±â´É ¹øÈ£ eDBO_GUILD_FUNCTION
-	BYTE				byPlace;			// È£ÀÌÆ÷ÀÌ¶ôÀÌ ÇÊ¿ä½Ã ÀÎº¥À§Ä¡ ºÒÇÊ¿ä½Ã INVALID_BYTE
-	BYTE				byPos;				// È£ÀÌÆ÷ÀÌ¶ôÀÌ ÇÊ¿ä½Ã ÀÎº¥À§Ä¡ ºÒÇÊ¿ä½Ã INVALID_BYTE
+	BYTE				byFunction;			// ì¶”ê°€í•  ê¸°ëŠ¥ ë²ˆí˜¸ eDBO_GUILD_FUNCTION
+	BYTE				byPlace;			// í˜¸ì´í¬ì´ë½ì´ í•„ìš”ì‹œ ì¸ë²¤ìœ„ì¹˜ ë¶ˆí•„ìš”ì‹œ INVALID_BYTE
+	BYTE				byPos;				// í˜¸ì´í¬ì´ë½ì´ í•„ìš”ì‹œ ì¸ë²¤ìœ„ì¹˜ ë¶ˆí•„ìš”ì‹œ INVALID_BYTE
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL( UG_DOGI_CREATE_REQ )

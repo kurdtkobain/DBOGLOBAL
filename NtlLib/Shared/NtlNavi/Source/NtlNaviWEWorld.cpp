@@ -25,7 +25,7 @@ bool CNtlNaviWEWorld::ImportWEData( const char* pPath )
 {
 	Destroy();
 
-	// Navigation data manager »ı¼º
+	// Navigation data manager ìƒì„±
 	if ( !m_pNaviDataMng->Create( pPath ) )
 	{
 		CNtlNaviLog::GetInstance()->Log( "[IMPORT] Creating the navi data manager failed. [%s]", pPath );
@@ -33,7 +33,7 @@ bool CNtlNaviWEWorld::ImportWEData( const char* pPath )
 		return false;
 	}
 
-	// Navigation world info ·Îµù
+	// Navigation world info ë¡œë”©
 	if ( NULL == m_pNaviDataMng->Load_World() )
 	{
 		CNtlNaviLog::GetInstance()->Log( "[IMPORT] Can not import world info data. [%s]", pPath );
@@ -502,13 +502,13 @@ bool CNtlNaviWEWorld::ExportODWorldProperty( const char* pExportPath, vecdef_Gro
 		{
 			unsigned int uiFieldID = (unsigned int) ((unsigned int)((fX - fMinPosX) / fFieldSize) + (unsigned int)((fZ - fMinPosZ) / fFieldSize) * uiCrossFieldCntOfWorld );
 
-			// ±×·ì ´ç Field °¹¼ö (Çà)
+			// ê·¸ë£¹ ë‹¹ Field ê°¯ìˆ˜ (í–‰)
 			unsigned int uiCrossFieldCntOfGroup = pWorldOD->GetCrossFieldCntOfGroup();
 
-			// ¿ùµå ´ç ±×·ì °¹¼ö (Çà)
+			// ì›”ë“œ ë‹¹ ê·¸ë£¹ ê°¯ìˆ˜ (í–‰)
 			unsigned int uiCrossGroupCntOfWorld = uiCrossFieldCntOfWorld / uiCrossFieldCntOfGroup;
 
-			// ±×·ìÀÇ »çÀÌÁî
+			// ê·¸ë£¹ì˜ ì‚¬ì´ì¦ˆ
 			float fCrossGroupSize = uiCrossFieldCntOfGroup * fFieldSize;
 
 			unsigned int uiGroupID = (unsigned int) ((unsigned int)((fX - fMinPosX) / fCrossGroupSize) + (unsigned int)((fZ - fMinPosZ) / fCrossGroupSize) * uiCrossGroupCntOfWorld );

@@ -335,9 +335,9 @@ BOOL CNtlTokenizerW::Load(const char *pFileName, CallTokenPack fnCallPack)
 		m_pData = NULL;
 	}
 
-	// Kell's Comment : UTF-16/UCS2 ¸¸ °Ë»çÇÑ´Ù. ÀÌ¿ÜÀÇ ¹æ½ÄÀº MultiByte·Î ÀĞ´Â´Ù.
-	// UTF-16ÀÇ Byte-order Mark´Â 2byte ÀÎ FF FE ¸¦ »ç¿ëÇÏ°í ÀÌ ¹æ½ÄÀº À©µµ¿ìÀÇ
-	// ¸Ş¸ğÀåÀÌ³ª Word¿¡¼­ »ç¿ëÇÏ´Â ¹æ½ÄÀÌ´Ù. (ÁÖÀÇ)
+	// Kell's Comment : UTF-16/UCS2 ë§Œ ê²€ì‚¬í•œë‹¤. ì´ì™¸ì˜ ë°©ì‹ì€ MultiByteë¡œ ì½ëŠ”ë‹¤.
+	// UTF-16ì˜ Byte-order MarkëŠ” 2byte ì¸ FF FE ë¥¼ ì‚¬ìš©í•˜ê³  ì´ ë°©ì‹ì€ ìœˆë„ìš°ì˜
+	// ë©”ëª¨ì¥ì´ë‚˜ Wordì—ì„œ ì‚¬ìš©í•˜ëŠ” ë°©ì‹ì´ë‹¤. (ì£¼ì˜)
 
 	const BYTE byBomOffset = 2;
 	const BYTE abyUnicodeBom[2] = { 0xFF, 0xFE };
@@ -382,11 +382,11 @@ BOOL CNtlTokenizerW::Load(const char *pFileName, CallTokenPack fnCallPack)
 		if(fp == NULL)
 			return FALSE;
 #endif
-		// ¾ÕÀÇ 2 Byte¸¸ ÀĞ¾î¿Â´Ù.
+		// ì•ì˜ 2 Byteë§Œ ì½ì–´ì˜¨ë‹¤.
 		BYTE abyFileBom[2] = { 0, };
 		fread( abyFileBom, 1, 2, fp );
 
-		// ÇöÀç´Â MultiByte¿Í Unicode, 2°³ ´Ù ÀĞ¾îµé¾î¾ß ÇÑ´Ù.
+		// í˜„ì¬ëŠ” MultiByteì™€ Unicode, 2ê°œ ë‹¤ ì½ì–´ë“¤ì–´ì•¼ í•œë‹¤.
 
 		// UTF-16(Little-Endian)
 		if( abyUnicodeBom[0] == abyFileBom[0] &&
@@ -395,10 +395,10 @@ BOOL CNtlTokenizerW::Load(const char *pFileName, CallTokenPack fnCallPack)
 			fseek(fp, byBomOffset, SEEK_END);
 			int nSize = ftell(fp);
 
-			// Cut BOM ( Byte Order Mark ) ¸¸Å­ Â©¶óÁØ´Ù.
+			// Cut BOM ( Byte Order Mark ) ë§Œí¼ ì§¤ë¼ì¤€ë‹¤.
 			fseek(fp, 2, SEEK_SET);
 
-			// Unicode´Â 2byte´ç 1character¸¦ »ç¿ëÇÑ´Ù.
+			// UnicodeëŠ” 2byteë‹¹ 1characterë¥¼ ì‚¬ìš©í•œë‹¤.
 			int nStrLen = (nSize/2);
 			m_iTotalSize = nSize/2;
 			m_pData = new wchar_t[nStrLen];
@@ -421,7 +421,7 @@ BOOL CNtlTokenizerW::Load(const char *pFileName, CallTokenPack fnCallPack)
 			m_pData = new wchar_t[nSize];
 			m_iTotalSize = nSize;
 
-			// Wide Character·Î º¯È¯
+			// Wide Characterë¡œ ë³€í™˜
 			::MultiByteToWideChar( GetACP(), 0,pData, -1, m_pData, nSize );
 
 			delete [] pData;

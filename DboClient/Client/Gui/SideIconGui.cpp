@@ -42,7 +42,7 @@
 
 #include "SCSSideIconGui.h"
 
-// SideIconÀ» »ý¼ºÇÏ°í SideIconGui¿¡ µî·ÏÇÏ´Â ¸ÅÅ©·Î
+// SideIconì„ ìƒì„±í•˜ê³  SideIconGuiì— ë“±ë¡í•˜ëŠ” ë§¤í¬ë¡œ
 #define RegisterSideIcon( pSideIcon, ClassName, szName, id ) \
 	{ \
 	pSideIcon = NTL_NEW ClassName(szName); \
@@ -60,7 +60,7 @@
 	RocateSideIcon(); \
 	} \
 
-// SideView¸¦ »ý¼ºÇÏ°í SideViewGui¿¡ µî·ÏÇÏ´Â ¸ÅÅ©·Î
+// SideViewë¥¼ ìƒì„±í•˜ê³  SideViewGuiì— ë“±ë¡í•˜ëŠ” ë§¤í¬ë¡œ
 #define RegisterSideView( pSideView, ClassName, szName, id ) \
 	{ \
 	pSideView = NTL_NEW ClassName(szName); \
@@ -77,7 +77,7 @@
 	pSideView->GetDialog()->SetPriority( dDIALOGPRIORITY_SIDEICON ); \
 	}
 
-// SideIconÀ» ÇØÁ¦ & ¼Ò¸ê
+// SideIconì„ í•´ì œ & ì†Œë©¸
 #define UnRegisterSideIcon( pSideIcon, id ) \
 	{ \
 	if( pSideIcon ) \
@@ -89,7 +89,7 @@
 	RocateSideIcon(); \
 	}
 
-// SideView¸¦ ÇØÁ¦ & ¼Ò¸ê
+// SideViewë¥¼ í•´ì œ & ì†Œë©¸
 #define UnRegisterSideView( pSideView, id ) \
 	{ \
 	if( pSideView ) \
@@ -504,7 +504,7 @@ RwInt32 CSideIconGui::SwitchDialog(bool bOpen)
 
 void CSideIconGui::RocateSideIcon()
 {
-	// Á¤·Ä
+	// ì •ë ¬
 	SortSideIcon();
 
 	RwInt32 iPosX		= s_pSideIconGui->GetPosition().left;
@@ -655,13 +655,13 @@ void CSideIconGui::OnSideViewShow(CSideViewBase* pSideView, bool bShow)
 }
 
 /**
-* \brief SideIconÀÇ ¹ú·é Ã¢À» Ãâ·ÂÇÑ´Ù.
+* \brief SideIconì˜ ë²Œë£¬ ì°½ì„ ì¶œë ¥í•œë‹¤.
 *
-* SideView´Â ÇÏ³ª¸¸ Ãâ·ÂÇÑ´Ù.
+* SideViewëŠ” í•˜ë‚˜ë§Œ ì¶œë ¥í•œë‹¤.
 */
 void CSideIconGui::OpenSideView(CSideIconBase* pSideIcon, const eSideViewType& eSideView, void* pData)
 {
-	// DialogMode¶ó¸é SideView¸¦ Ãâ·ÂÇÏÁö ¾Ê´Â´Ù.
+	// DialogModeë¼ë©´ SideViewë¥¼ ì¶œë ¥í•˜ì§€ ì•ŠëŠ”ë‹¤.
 	if( GetDialogManager()->IsMode( DIALOGMODE_NARRATION ) )
 		return;
 
@@ -769,7 +769,7 @@ void CSideViewBase::Show(bool bShow)
 {
 	if (IsShow() != (RwBool)bShow)
 	{
-		// ³ª·¹ÀÌ¼Ç ¸ðµå Áß, SideView¸¦ SHOW(TRUE)ÇÏ¶ó´Â ¸í·ÉÀÌ ¿Â´Ù¸é ¸®ÅÏÇÑ´Ù.
+		// ë‚˜ë ˆì´ì…˜ ëª¨ë“œ ì¤‘, SideViewë¥¼ SHOW(TRUE)í•˜ë¼ëŠ” ëª…ë ¹ì´ ì˜¨ë‹¤ë©´ ë¦¬í„´í•œë‹¤.
 		if( GetDialogManager()->IsMode( DIALOGMODE_NARRATION ) && bShow)
 			return;
 

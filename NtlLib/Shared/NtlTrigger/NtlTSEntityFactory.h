@@ -21,7 +21,7 @@ public:
 
 // Member variables
 protected:
-	mapdef_EntityTypeList				m_defEntityTypeList;		// ½Ç½Ã°£ µ¿Àû »ı¼ºÀ» Áö¿øÇÏ±â À§ÇÑ Å¸ÀÔ ¸®½ºÆ®
+	mapdef_EntityTypeList				m_defEntityTypeList;		// ì‹¤ì‹œê°„ ë™ì  ìƒì„±ì„ ì§€ì›í•˜ê¸° ìœ„í•œ íƒ€ì… ë¦¬ìŠ¤íŠ¸
 
 // Constructions and Destructions
 public:
@@ -35,7 +35,7 @@ public:
 	virtual	CNtlTSScrObject*			CreateObj( const std::string& strName );
 	virtual void						DeleteObj( CNtlTSScrObject*& pObj );
 
-	// Runtime »ı¼ºÀ» À§ÇÑ Entity type µî·Ï
+	// Runtime ìƒì„±ì„ ìœ„í•œ Entity type ë“±ë¡
 	virtual	void						RegisterEntityType( void );
 	virtual	void						UnRegisterEntityType( void );
 };

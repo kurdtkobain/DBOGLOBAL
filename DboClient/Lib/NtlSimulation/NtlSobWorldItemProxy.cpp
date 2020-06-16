@@ -94,7 +94,7 @@ VOID CNtlSobWorldItemProxy::CreatePLWorldItem( RWS::CMsg& msg )
 		{
 			if( pAttr->IsDragonBall() )
 			{
-                // µå·¡°ïº¼ Å¸ÀÔÀ» ÆÇ´ÜÇÑ´Ù.
+                // ë“œëž˜ê³¤ë³¼ íƒ€ìž…ì„ íŒë‹¨í•œë‹¤.
                 sITEM_TBLDAT* pTblDat = pAttr->GetItemTbl();
                 if(!pTblDat)
                     return;

@@ -276,7 +276,7 @@ VOID CNtlPLCinematicGui::SetCinematicFlash( void* pData )
 	}		
 	else 
 	{
-		// Flash´Â ´Ù Áö¿öÁø ÈÄ¿¡ Flash »èÁ¦°¡ ³¯¾Æ¿Â´Ù. 
+		// FlashëŠ” ë‹¤ ì§€ì›Œì§„ í›„ì— Flash ì‚­ì œê°€ ë‚ ì•„ì˜¨ë‹¤. 
 		if( IsStateNone( ALL ) )
 		{
 			m_pCinematicObject->SwitchDialog( false );

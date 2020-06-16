@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-12-09
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	¿¬°áµÈ ¹è¿­ ±¸Á¶
+//	Desc		:	ì—°ê²°ëœ ë°°ì—´ êµ¬ì¡°
 //
 //***********************************************************************************
 
@@ -457,21 +457,21 @@ public:
 
 protected:
 
-	unsigned int		m_size;	// ÇöÀç »ç¿ëÁßÀÎ °³¼ö
+	unsigned int		m_size;	// í˜„ì¬ ì‚¬ìš©ì¤‘ì¸ ê°œìˆ˜
 
-	unsigned int		m_maxSize;	// ÃÖ´ë »ç¿ëÇÑ °³¼ö
+	unsigned int		m_maxSize;	// ìµœëŒ€ ì‚¬ìš©í•œ ê°œìˆ˜
 
-	POSITION			m_end; // ¹è¿­ÀÇ ³¡°ª (end´Â ¹è¿­³¡ + 1ÀÇ À§Ä¡)
+	POSITION			m_end; // ë°°ì—´ì˜ ëê°’ (endëŠ” ë°°ì—´ë + 1ì˜ ìœ„ì¹˜)
 
-	POSITION			m_begin; // »ç¿ëÇÏ´Â Ã¹¹øÂ° À§Ä¡°ª
+	POSITION			m_begin; // ì‚¬ìš©í•˜ëŠ” ì²«ë²ˆì§¸ ìœ„ì¹˜ê°’
 
-	POSITION			m_rBegin; // »ç¿ëÇÏ´Â ¸Ç ¸¶Áö¸· À§Ä¡°ª
+	POSITION			m_rBegin; // ì‚¬ìš©í•˜ëŠ” ë§¨ ë§ˆì§€ë§‰ ìœ„ì¹˜ê°’
 
-	POSITION			m_emptyHead; // ºñ¾îÀÖ´Â ¸Ç Ã³À½ À§Ä¡
+	POSITION			m_emptyHead; // ë¹„ì–´ìˆëŠ” ë§¨ ì²˜ìŒ ìœ„ì¹˜
 
-	POSITION			m_emptyTail; // ºñ¾îÀÖ´Â ¸¶Áö¸· À§Ä¡(eraseµÈ ¿ø¼Ò´Â ÀÌµÚ¿¡ »ğÀÔµÈ´Ù)
+	POSITION			m_emptyTail; // ë¹„ì–´ìˆëŠ” ë§ˆì§€ë§‰ ìœ„ì¹˜(eraseëœ ì›ì†ŒëŠ” ì´ë’¤ì— ì‚½ì…ëœë‹¤)
 
-	sBUCKET*			m_array; // ½ÇÁ¦ ¹è¿­
+	sBUCKET*			m_array; // ì‹¤ì œ ë°°ì—´
 
 	int					MAX_SIZE;
 

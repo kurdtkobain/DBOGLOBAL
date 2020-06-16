@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-06-01
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -180,7 +180,7 @@ bool CTimeQuestTable::SetTableData( void* pvTable, WCHAR* pwszSheetName, std::ws
 		}
 		else if (0 == wcscmp(pstrDataName->c_str(), L"Note"))
 		{
-			// ±âÈ¹ Àü¿ë ÇÊµå
+			// ê¸°íš ì „ìš© í•„ë“œ
 		}
 		else if( 0 == wcsncmp(pstrDataName->c_str(), L"Name_", wcslen(L"Name_") ) )
 		{

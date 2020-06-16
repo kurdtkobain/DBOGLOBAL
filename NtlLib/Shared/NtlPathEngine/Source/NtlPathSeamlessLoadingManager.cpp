@@ -11,7 +11,7 @@
 
 CNtlPathSeamlessLoadingManager::CNtlPathSeamlessLoadingManager()
 {
-	// Thread°¡ »ı¼ºµÇ¾ú´ÂÁö È®ÀÎÇÏ±â À§ÇÑ ºÎ¿ï
+	// Threadê°€ ìƒì„±ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ê¸° ìœ„í•œ ë¶€ìš¸
 	m_bCreatedThread = false;
 	m_hEventForThread = NULL;
 	m_bExit = false;
@@ -26,25 +26,25 @@ CNtlPathSeamlessLoadingManager::~CNtlPathSeamlessLoadingManager()
 
 bool CNtlPathSeamlessLoadingManager::Create()
 {
-	// ÀÌº¥Æ® »ı¼º
+	// ì´ë²¤íŠ¸ ìƒì„±
 	m_hEventForThread = CreateEvent( NULL, FALSE, FALSE, NULL );
 	if( NULL == m_hEventForThread )
 		return false;
 
-	// ¾²·¹µå·Î´õ Å¬·¡½º »ı¼º
+	// ì“°ë ˆë“œë¡œë” í´ë˜ìŠ¤ ìƒì„±
 	if( !m_ThreadLoader.Create() )
 		return false;
 
-	// ¾²·¹µå »ı¼º
+	// ì“°ë ˆë“œ ìƒì„±
 	for( int i = 0; i < eMAX_THREAD_CNT; ++i )
 	{
 		m_ahThread[i] = (HANDLE)_beginthreadex( 
-			NULL,	// ÇÚµéÀÇ »ó¼Ó ¿©ºÎ ( NULLÀº »ó¼Ó ´ë»ó¿¡¼­ Á¦¿Ü )
-			0,		// ¾²·¹µå »ı¼º ½Ã »ı¼ºµÉ ½ºÅÃ»çÀÌÁî ( 0 Àº Default 1MByte )
-			&CNtlPathSeamlessLoader::ThreadFunc,	// ¾²·¹µå·Î µ¿ÀÛÇÒ ÇÔ¼ö
-			NULL,	// ¾²·¹µå·Î Àü´ŞµÇ´Â ¸Å°³º¯¼öÀÇ Æ÷ÀÎÅÍ
-			0,		// ¾²·¹µåÀÇ »ı¼º ¹× ½ÇÇàÀ» Á¶ÀıÇÏ±â À§ÇÑ Flag
-			NULL);	// ¾²·¹µå ID¸¦ Àü´Ş¹Ş±â À§ÇÑ º¯¼öÀÇ ÁÖ¼Ò°ª
+			NULL,	// í•¸ë“¤ì˜ ìƒì† ì—¬ë¶€ ( NULLì€ ìƒì† ëŒ€ìƒì—ì„œ ì œì™¸ )
+			0,		// ì“°ë ˆë“œ ìƒì„± ì‹œ ìƒì„±ë  ìŠ¤íƒì‚¬ì´ì¦ˆ ( 0 ì€ Default 1MByte )
+			&CNtlPathSeamlessLoader::ThreadFunc,	// ì“°ë ˆë“œë¡œ ë™ì‘í•  í•¨ìˆ˜
+			NULL,	// ì“°ë ˆë“œë¡œ ì „ë‹¬ë˜ëŠ” ë§¤ê°œë³€ìˆ˜ì˜ í¬ì¸í„°
+			0,		// ì“°ë ˆë“œì˜ ìƒì„± ë° ì‹¤í–‰ì„ ì¡°ì ˆí•˜ê¸° ìœ„í•œ Flag
+			NULL);	// ì“°ë ˆë“œ IDë¥¼ ì „ë‹¬ë°›ê¸° ìœ„í•œ ë³€ìˆ˜ì˜ ì£¼ì†Œê°’
 	}
 
 	m_bCreatedThread = true;
@@ -64,9 +64,9 @@ void CNtlPathSeamlessLoadingManager::Update( float fElapsed )
 		CNtlPathEngineLog::GetInstance()->Log("Reservation %d", m_listLoadReservation.size() );
 	}
 
-	// ReservationÀÌ ÀÖ´ÂÁö È®ÀÎÇÑ´Ù.
-	// ÀÖ´Ù¸é Thread Event¸¦ Signaled ·Î º¯°æÇÑ´Ù.
-	// ¾ø´Ù¸é Thread Event¸¦ ResetÇÏ¿© UnSignaled ·Î µ¹¾Æ°¡°Ô ÇÑ´Ù.
+	// Reservationì´ ìˆëŠ”ì§€ í™•ì¸í•œë‹¤.
+	// ìˆë‹¤ë©´ Thread Eventë¥¼ Signaled ë¡œ ë³€ê²½í•œë‹¤.
+	// ì—†ë‹¤ë©´ Thread Eventë¥¼ Resetí•˜ì—¬ UnSignaled ë¡œ ëŒì•„ê°€ê²Œ í•œë‹¤.
 	if( !m_listLoadReservation.empty() )
 		SetThreadEvent();
 	else
@@ -78,13 +78,13 @@ void CNtlPathSeamlessLoadingManager::Destroy()
 {
 	if( m_bCreatedThread )
 	{
-		// Á¾·á¸¦ ¼±¾ğÇØÁÖ°í
+		// ì¢…ë£Œë¥¼ ì„ ì–¸í•´ì£¼ê³ 
 		SetExit();
 		
-		// Event¸¦ Åë°ú½ÃÅ²´Ù. ( ±×·¡¾ßÁö ThreadLoader°¡ Á¾·áµÇ¾ú´ÂÁö °Ë»çÇÒ ¼ö ÀÖ´Ù. )
+		// Eventë¥¼ í†µê³¼ì‹œí‚¨ë‹¤. ( ê·¸ë˜ì•¼ì§€ ThreadLoaderê°€ ì¢…ë£Œë˜ì—ˆëŠ”ì§€ ê²€ì‚¬í•  ìˆ˜ ìˆë‹¤. )
 		SetThreadEvent();
 
-		// ¸ğµç ½º·¹µå°¡ ¸ØÃâ ¶§±îÁö ±â´Ù¸°´Ù.
+		// ëª¨ë“  ìŠ¤ë ˆë“œê°€ ë©ˆì¶œ ë•Œê¹Œì§€ ê¸°ë‹¤ë¦°ë‹¤.
 		WaitForMultipleObjectsEx( eMAX_THREAD_CNT, m_ahThread, TRUE, INFINITE, FALSE );
 
 		for( int i=0; i < eMAX_THREAD_CNT; ++i )
@@ -119,7 +119,7 @@ void CNtlPathSeamlessLoadingManager::LoadReservation( CNtlSeamlessMesh* pMesh )
 	keyname << "_";
 	keyname << pMesh->GetTileIndex();
 	
-	// ¿¹¾à µÇ¾î ÀÖ°Å³ª ·ÎµùÀÌ ¿Ï·á µÇ¾î ÀÖÀ¸¸é Ãß°¡ÇÏÁö ¾Ê´Â´Ù.
+	// ì˜ˆì•½ ë˜ì–´ ìˆê±°ë‚˜ ë¡œë”©ì´ ì™„ë£Œ ë˜ì–´ ìˆìœ¼ë©´ ì¶”ê°€í•˜ì§€ ì•ŠëŠ”ë‹¤.
 	mapdef_seamMesh::iterator reserIt = m_mapLoadReservation.find( keyname.str().c_str() );
 	mapdef_seamMesh::iterator loadedIt = m_mapLoaded.find( keyname.str().c_str() );
 	if( reserIt == m_mapLoadReservation.end() &&
@@ -173,7 +173,7 @@ void CNtlPathSeamlessLoadingManager::Loaded( CNtlSeamlessMesh* pMesh )
 	keyname << "_";
 	keyname << pMesh->GetTileIndex();
 
-	// ÀÌ¹Ì ·ÎµåµÇ¾î ÀÖ´Ù¸é »èÁ¦ÇÏ°í ·ÎµåµÇ¾î ÀÖÁö ¾Ê´Ù¸é Ãß°¡ÇÑ´Ù.
+	// ì´ë¯¸ ë¡œë“œë˜ì–´ ìˆë‹¤ë©´ ì‚­ì œí•˜ê³  ë¡œë“œë˜ì–´ ìˆì§€ ì•Šë‹¤ë©´ ì¶”ê°€í•œë‹¤.
 	mapdef_seamMesh::iterator loadedIt = m_mapLoaded.find( keyname.str().c_str() );
 	if( loadedIt == m_mapLoaded.end() )
 	{
@@ -265,10 +265,10 @@ void CNtlPathSeamlessLoadingManager::RemoveReservationByRangeOver( cHorizontalRa
 	{
 		CNtlSeamlessMesh* pMesh = (*it);
 
-		// ¹ş¾î³µ´Ù.
+		// ë²—ì–´ë‚¬ë‹¤.
 		if( !NTLPE_RangesOverlap( pMesh->GetRangeAtWorld(), range ) )
 		{
-			// KeyNameÀ¸·Î Map¿¡¼­µµ Á¦°Å
+			// KeyNameìœ¼ë¡œ Mapì—ì„œë„ ì œê±°
 			std::ostringstream keyname;
 			keyname << pMesh->GetWorldIndex();
 			keyname << "_";
@@ -279,7 +279,7 @@ void CNtlPathSeamlessLoadingManager::RemoveReservationByRangeOver( cHorizontalRa
 			if( reserIt != m_mapLoadReservation.end() )
 				m_mapLoadReservation.erase( reserIt );
 
-			// Æ÷ÀÎÅÍ »èÁ¦
+			// í¬ì¸í„° ì‚­ì œ
 			delete pMesh;
 			pMesh = NULL;
 

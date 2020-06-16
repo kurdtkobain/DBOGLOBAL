@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-01-17
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -54,9 +54,9 @@
 
 
 //---------------------------------------------------------------------------------------
-const unsigned int ALIVE_PACKET_FREQUENCY	= 3 * 1000; // ¼­¹ö¿¡ Alive PingÀ» º¸³»´Â ½Ã°£ °£°İ
+const unsigned int ALIVE_PACKET_FREQUENCY	= 3 * 1000; // ì„œë²„ì— Alive Pingì„ ë³´ë‚´ëŠ” ì‹œê°„ ê°„ê²©
 //---------------------------------------------------------------------------------------
-typedef SOCKET HSERVER;	// ¼­¹ö ÇÚµé °ª ( = ¼ÒÄÏ °ª )
+typedef SOCKET HSERVER;	// ì„œë²„ í•¸ë“¤ ê°’ ( = ì†Œì¼“ ê°’ )
 typedef void (*NtlClientNetLogCallback)(const char * format); // Application Log Callback
 typedef void (*NtlClientNetEventCallback)(HSERVER hServer, int nEvent);	// Application Event Callback
 //-- define -------------------------------------------------------------------------

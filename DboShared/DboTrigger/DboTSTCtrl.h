@@ -62,18 +62,18 @@ public:
 
 	struct sCONT_SYNC_QUEUE
 	{
-		hashdef_ENTITY_LIST				defContSyncQueue;		// µ¿±âÈ­ ÄÁÅ×ÀÌ³Ê ¾×¼Ç ¸®½ºÆ®
+		hashdef_ENTITY_LIST				defContSyncQueue;		// ë™ê¸°í™” ì»¨í…Œì´ë„ˆ ì•¡ì…˜ ë¦¬ìŠ¤íŠ¸
 	};
 
 // Member variables
 protected:
-	CDboTSTAgency*						m_pParent;				// ºÎ¸ğ ( Agency )
+	CDboTSTAgency*						m_pParent;				// ë¶€ëª¨ ( Agency )
 
-	unsigned int						m_uiCurState;			// Æ®¸®°Å ½Ã½ºÅÛÀÇ ÇöÀç »óÅÂ
-	CNtlTSCont*							m_pCurTSP;				// ÇöÀç ÁøÇàÁßÀÎ TSP
-	mapdef_EXCEPT_TIMER_SLOT			m_defExceptTimerSlot;	// ¿¹¿Ü Å¸ÀÌ¸Ó
-	sSTORAGE_SLOT_MEMORY				m_sSSM;					// ÀúÀå ½½·Ô ¸Ş¸ğ¸®
-	sCONT_SYNC_QUEUE					m_sSyncQueue;			// µ¿±âÈ­ ÄÁÅ×ÀÌ³Ê Å¥
+	unsigned int						m_uiCurState;			// íŠ¸ë¦¬ê±° ì‹œìŠ¤í…œì˜ í˜„ì¬ ìƒíƒœ
+	CNtlTSCont*							m_pCurTSP;				// í˜„ì¬ ì§„í–‰ì¤‘ì¸ TSP
+	mapdef_EXCEPT_TIMER_SLOT			m_defExceptTimerSlot;	// ì˜ˆì™¸ íƒ€ì´ë¨¸
+	sSTORAGE_SLOT_MEMORY				m_sSSM;					// ì €ì¥ ìŠ¬ë¡¯ ë©”ëª¨ë¦¬
+	sCONT_SYNC_QUEUE					m_sSyncQueue;			// ë™ê¸°í™” ì»¨í…Œì´ë„ˆ í
 
 	// TSP Waiting progress
 	unsigned int						m_uiTWPeriod;
@@ -149,19 +149,19 @@ public:
 	unsigned int						GetCurState( void ) const;
 	void								SetCurState( unsigned int uiState );
 
-	bool								IsError( void ) const;					// TS ¿¡·¯
-	bool								IsFailed( void ) const;					// TS ÁøÇà ½ÇÆĞ ( °ÔÀÓÀûÀÎ ½ÇÆĞ )
-	bool								IsCleared( void ) const;				// Äù½ºÆ® Å¬¸®¾î »óÅÂ
-	bool								IsCSComunication( void ) const;			// Å¬¶óÀÌ¾ğÆ®¿Í ¼­¹öÀÇ Åë½ÅÁß
-	bool								IsClientWait( void ) const;				// Å¬¶óÀÌ¾ğÆ®¿Í Åë½ÅÁß
-	bool								IsSvrWait( void ) const;				// ¼­¹ö¿Í Åë½ÅÁß
-	bool								IsExitState( void ) const;				// Á¾·á »óÅÂ
-	bool								IsUIProgress( void ) const;				// UI ÂÊ¿¡ ÁøÇà »óÅÂ¸¦ ¾Ë·ÁÁÖ±â À§ÇÑ ÇÃ·¡±×
-	bool								IsSvrComAfterClientWait( void ) const;	// ¼­¹ö¿Í Åë½ÅÈÄ Å¬¶óÀÌ¾ğÆ® ÁøÇà ´ë±â
-	bool								IsEscort( void ) const;					// È£À§
-	bool								IsSvrEvtWorldRange( void ) const;		// ¼­¹öÀÌº¥Æ®(¸÷Å³...)ÀÇ Àû¿ë ´ë»óÀÌ ¿ùµå ( ÀÌ ÇÃ·¡±×°¡ ÄÑÁ® ÀÖÁö ¾ÊÀ¸¸é ÆÄÆ¼ ±âÁØÀ¸·Î Ã³¸®µÊ )
-	bool								IsWPSMode( void ) const;				// World play script ¾×¼ÇÀÌ µ¿ÀÛÁß
-	bool								IsUserOutFailedWPS( void ) const;		// World play script°¡ µ¿ÀÛÁß À¯Àú°¡ ·Î±× ¾Æ¿ô ÇÑ °æ¿ì Failed Ã³¸® µÇ¾î¾ß ÇÏ´Â °æ¿ì¸¦ ÀúÀåÇÏ´Â ÇÃ·¡±×
+	bool								IsError( void ) const;					// TS ì—ëŸ¬
+	bool								IsFailed( void ) const;					// TS ì§„í–‰ ì‹¤íŒ¨ ( ê²Œì„ì ì¸ ì‹¤íŒ¨ )
+	bool								IsCleared( void ) const;				// í€˜ìŠ¤íŠ¸ í´ë¦¬ì–´ ìƒíƒœ
+	bool								IsCSComunication( void ) const;			// í´ë¼ì´ì–¸íŠ¸ì™€ ì„œë²„ì˜ í†µì‹ ì¤‘
+	bool								IsClientWait( void ) const;				// í´ë¼ì´ì–¸íŠ¸ì™€ í†µì‹ ì¤‘
+	bool								IsSvrWait( void ) const;				// ì„œë²„ì™€ í†µì‹ ì¤‘
+	bool								IsExitState( void ) const;				// ì¢…ë£Œ ìƒíƒœ
+	bool								IsUIProgress( void ) const;				// UI ìª½ì— ì§„í–‰ ìƒíƒœë¥¼ ì•Œë ¤ì£¼ê¸° ìœ„í•œ í”Œë˜ê·¸
+	bool								IsSvrComAfterClientWait( void ) const;	// ì„œë²„ì™€ í†µì‹ í›„ í´ë¼ì´ì–¸íŠ¸ ì§„í–‰ ëŒ€ê¸°
+	bool								IsEscort( void ) const;					// í˜¸ìœ„
+	bool								IsSvrEvtWorldRange( void ) const;		// ì„œë²„ì´ë²¤íŠ¸(ëª¹í‚¬...)ì˜ ì ìš© ëŒ€ìƒì´ ì›”ë“œ ( ì´ í”Œë˜ê·¸ê°€ ì¼œì ¸ ìˆì§€ ì•Šìœ¼ë©´ íŒŒí‹° ê¸°ì¤€ìœ¼ë¡œ ì²˜ë¦¬ë¨ )
+	bool								IsWPSMode( void ) const;				// World play script ì•¡ì…˜ì´ ë™ì‘ì¤‘
+	bool								IsUserOutFailedWPS( void ) const;		// World play scriptê°€ ë™ì‘ì¤‘ ìœ ì €ê°€ ë¡œê·¸ ì•„ì›ƒ í•œ ê²½ìš° Failed ì²˜ë¦¬ ë˜ì–´ì•¼ í•˜ëŠ” ê²½ìš°ë¥¼ ì €ì¥í•˜ëŠ” í”Œë˜ê·¸
 	bool								IsSuccess( void ) const;				// Success
 	bool								IsComplete( void ) const;				// Complete
 

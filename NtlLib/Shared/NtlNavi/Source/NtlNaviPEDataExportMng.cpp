@@ -20,7 +20,7 @@ bool CNtlNaviPEDataExportMng::Create( void )
 {
 	m_pNaviResMng = new CNtlNaviResMng;
 
-	// Export Manager¿¡¼­ 
+	// Export Managerì—ì„œ 
 	if ( !m_pNaviResMng->Load( PE_MODEL_DATA_FOLDER ) )
 	{
 		CNtlNaviLog::GetInstance()->Log( "[EXPORT] Creating path engine export manager failed." );
@@ -73,13 +73,13 @@ bool CNtlNaviPEDataExportMng::UpdateToolData( void )
 }
 
 /**
-* \brief ÇöÀç PEDataExport Manager¿¡ ·ÎµùµÇ¾î ÀÖ´Â ¿ùµåÀÇ Resource ID ¸¦ std::list¿¡ Ãâ·ÂÇÑ´Ù.
-* \remark Resource ID°¡ ÇÏ³ªµµ ´ã°Ü ÀÖÁö ¾Ê´Ù¸é ·ÎµùµÇ¾î ÀÖ´Â ¿ùµå°¡ ¾ø´Ù´Â °ÍÀÌ´Ù.
-* \param listOut WorldÀÇ Resource ID°¡ Ãâ·ÂµÉ std::list container
+* \brief í˜„ìž¬ PEDataExport Managerì— ë¡œë”©ë˜ì–´ ìžˆëŠ” ì›”ë“œì˜ Resource ID ë¥¼ std::listì— ì¶œë ¥í•œë‹¤.
+* \remark Resource IDê°€ í•˜ë‚˜ë„ ë‹´ê²¨ ìžˆì§€ ì•Šë‹¤ë©´ ë¡œë”©ë˜ì–´ ìžˆëŠ” ì›”ë“œê°€ ì—†ë‹¤ëŠ” ê²ƒì´ë‹¤.
+* \param listOut Worldì˜ Resource IDê°€ ì¶œë ¥ë  std::list container
 */
 void CNtlNaviPEDataExportMng::GetListImportedWorldIDList( vecdef_WorldIDList& vecOut )
 {
-	// ¿ùµå°¡ ´ã°Ü ÀÖ´Â ÀÚ·á±¸Á¶¸¦ ¼øÈ¸ÇÏ¸é¼­ list¿¡ Ãâ·ÂÇØÁØ´Ù.
+	// ì›”ë“œê°€ ë‹´ê²¨ ìžˆëŠ” ìžë£Œêµ¬ì¡°ë¥¼ ìˆœíšŒí•˜ë©´ì„œ listì— ì¶œë ¥í•´ì¤€ë‹¤.
 	mapdef_WE_WORLD_LIST::iterator it = m_defWEWorldList.begin();
 	for ( ; it != m_defWEWorldList.end(); )
 	{
@@ -165,7 +165,7 @@ bool CNtlNaviPEDataExportMng::ExportWorldList( const char* pRootPath, mapdef_Exp
 	std::string strRootPath = pRootPath;
 	AttachBackSlash( strRootPath );
 
-	// ÀÍ½ºÆ÷Æ®ÇÒ ¸®½ºÆ®°¡ ¾ø´Ù.
+	// ìµìŠ¤í¬íŠ¸í•  ë¦¬ìŠ¤íŠ¸ê°€ ì—†ë‹¤.
 	if( list.empty() )
 	{
 		CNtlNaviLog::GetInstance()->Log( "[EXPORT] Export list is empty." );

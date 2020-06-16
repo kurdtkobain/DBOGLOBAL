@@ -88,7 +88,7 @@ private:
 	RwBool	IsAvaliableHeight( SNtlEventShowIndicator_Nfy* pData );
 	RwBool	IsAvaliableHeight(VOID);
 
-	RwInt32 FindData( RwUInt32 nID, SNtlEventShowIndicator_Nfy** ppData );	// index ∏Æ≈œ.
+	RwInt32 FindData( RwUInt32 nID, SNtlEventShowIndicator_Nfy** ppData );	// index Î¶¨ÌÑ¥.
 	VOID	CreateData( SNtlEventShowIndicator_Nfy* pData );
 	VOID	DeleteData( RwUInt32 nID );
 	VOID	DeleteAllData(VOID);	

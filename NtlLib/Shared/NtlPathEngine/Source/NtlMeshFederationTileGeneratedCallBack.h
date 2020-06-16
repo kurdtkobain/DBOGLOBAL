@@ -1,14 +1,14 @@
 /*****************************************************************************
 * File			: NtlMeshFederationTileGeneratedCallBack.h
 * Author		: Haesung, Cho
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2009. 03. 11
 * Abstract		: Pathengine MeshFederationTileGenerated callback class
 *****************************************************************************
 * Desc:
 *
-* ÇöÀçÀÇ Äİ¹é Å¬·¡½º´Â PathEngineÀÇ Mesh Federation ±â´ÉÀ» »ç¿ë ÇÒ¶§ ¸¸µé¾îÁö´Â
-* °¢ TILE µéÀÇ ÆÄÀÏµéÀ» »ı¼ºÇÒ ¶§ ÇÏ´Â Çàµ¿µéÀ» Á¤ÀÇÇØÁÖ´Â Callback class ÀÌ´Ù.
+* í˜„ì¬ì˜ ì½œë°± í´ë˜ìŠ¤ëŠ” PathEngineì˜ Mesh Federation ê¸°ëŠ¥ì„ ì‚¬ìš© í• ë•Œ ë§Œë“¤ì–´ì§€ëŠ”
+* ê° TILE ë“¤ì˜ íŒŒì¼ë“¤ì„ ìƒì„±í•  ë•Œ í•˜ëŠ” í–‰ë™ë“¤ì„ ì •ì˜í•´ì£¼ëŠ” Callback class ì´ë‹¤.
 *****************************************************************************/
 
 #ifndef _NTL_MESH_FEDERATION_TILE_GENERATED_CALLBACK_H_
@@ -28,7 +28,7 @@ public:
 		bool bPreProcessPathFind = false,
 		vecdef_AgentSize* vecAgentSize = NULL );
 
-	// tileÀÌ generated µÉ ¶§ »ç¿ëµÇ´Â ÇÔ¼ö
+	// tileì´ generated ë  ë•Œ ì‚¬ìš©ë˜ëŠ” í•¨ìˆ˜
 	void tileGenerated(long tileIndex, iMesh* tileMesh);
 
 protected:

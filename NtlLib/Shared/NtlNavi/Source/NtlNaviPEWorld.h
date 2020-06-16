@@ -24,9 +24,9 @@ class CNtlNaviPEWorld : public CNtlNaviEntityPE
 public:
 	enum eNAVI_PE_STATE
 	{
-		eNAVI_PE_STATE_PRE_LOADING,	// ÀüÃ³¸® ·Îµù Áß
-		eNAVI_PE_STATE_LOADING,		// ·Îµù Áß
-		eNAVI_PE_STATE_COMPLETE		// ·Îµù ¿Ï·á
+		eNAVI_PE_STATE_PRE_LOADING,	// ì „ì²˜ë¦¬ ë¡œë”© ì¤‘
+		eNAVI_PE_STATE_LOADING,		// ë¡œë”© ì¤‘
+		eNAVI_PE_STATE_COMPLETE		// ë¡œë”© ì™„ë£Œ
 	};
 
 	// Property

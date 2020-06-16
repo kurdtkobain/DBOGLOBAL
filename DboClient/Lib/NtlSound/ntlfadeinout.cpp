@@ -70,7 +70,7 @@ void CNtlFadeInOut::Update()
 
 		unsigned long ulCurTime = GetTickCount();
 
-		// °¢°¢ÀÇ sFadeInOutÀÇ ¾÷µ¥ÀÌÆ® Å¸ÀÓÀ» Ã¼Å©ÇÑ´Ù
+		// ê°ê°ì˜ sFadeInOutì˜ ì—…ë°ì´íŠ¸ íƒ€ìž„ì„ ì²´í¬í•œë‹¤
 		if( ulCurTime - fade.ulApplyTime >= SOUND_FADEINOUT_INTERVAL_TIME )
 		{
 			if( fade.eResourceType == SRT_CHANNEL )
@@ -111,8 +111,8 @@ void CNtlFadeInOut::Update()
 				pFMODChannelGroup->setVolume( Logic_CalcPlayVolume(pNtlVolume) );
 			}
 			else
-			{	// ¸¸¿¡ ÇÏ³ª ChannelGroup Å¬·¡½º ´Ü¿¡¼­ »èÁ¦°¡ µÇ¾î sFadeInOut¿¡¼­
-				// °¡Áö°í ÀÖ´Â Æ÷ÀÎÅÍ°¡ ´õÀÌ»ó µ¥ÀÌÅÍ¸¦ °¡¸®Å°Áö ¾Ê´Â´Ù¸é »èÁ¦ÇÑ´Ù.
+			{	// ë§Œì— í•˜ë‚˜ ChannelGroup í´ëž˜ìŠ¤ ë‹¨ì—ì„œ ì‚­ì œê°€ ë˜ì–´ sFadeInOutì—ì„œ
+				// ê°€ì§€ê³  ìžˆëŠ” í¬ì¸í„°ê°€ ë”ì´ìƒ ë°ì´í„°ë¥¼ ê°€ë¦¬í‚¤ì§€ ì•ŠëŠ”ë‹¤ë©´ ì‚­ì œí•œë‹¤.
 				fade.bFinish = true;
 			}
 		}

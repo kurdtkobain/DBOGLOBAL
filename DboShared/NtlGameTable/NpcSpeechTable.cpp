@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-10-29
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:
 //
@@ -285,7 +285,7 @@ bool CNpcSpeechTable::LoadFromBinary(CNtlSerializer& serializer, bool bReload, b
 			break;
 		}
 		//printf("npc speech %u \n", pTableData->tblidx);
-		//  [4/26/2008 zeroera] : ¼³¸í : ½ÇÆĞÇÏ´õ¶óµµ LoadÀÇ Á¾·á¿©ºÎ´Â File Loading¿¡¼­ °áÁ¤ÇÑ´Ù
+		//  [4/26/2008 zeroera] : ì„¤ëª… : ì‹¤íŒ¨í•˜ë”ë¼ë„ Loadì˜ ì¢…ë£Œì—¬ë¶€ëŠ” File Loadingì—ì„œ ê²°ì •í•œë‹¤
 		if( false == AddTable(pTableData, bReload, bUpdate) )
 		{
 			delete pTableData;

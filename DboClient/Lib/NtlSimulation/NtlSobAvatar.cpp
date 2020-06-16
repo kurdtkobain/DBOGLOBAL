@@ -80,7 +80,7 @@ RwBool CNtlSobAvatar::CreateContents(void)
 	if(!m_SkillContainer.Create())
 		return FALSE;
 
-	// DB¿¡ ÀúÀåµÈ Ä³¸¯ÅÍ ID
+	// DBì— ì €ì¥ëœ ìºë¦­í„° ID
 	SAvatarInfo* pAvatarInfo = GetNtlSLGlobal()->GetAvatarInfo();
 	m_charID = pAvatarInfo->sCharPf.charId;
 
@@ -119,7 +119,7 @@ RwBool CNtlSobAvatar::CreateContents(void)
 	// Hoipoi Mix
 	m_HoipoiMix.Create();
 
-	// µµÀå
+	// ë„ì¥
 	m_Dojo.Create();
 
 	m_bValidAvatarData = true;
@@ -245,7 +245,7 @@ void CNtlSobAvatar::CreateEvent(void)
 	LinkMsg(g_EventPrivateShopItemState, 0);
 	LinkMsg(g_EventPrivateShopItemBuying, 0);
 		
-	// quest ¼ö¶ô ¹× º¸»ó.
+	// quest ìˆ˜ë½ ë° ë³´ìƒ.
 	LinkMsg(g_EventQuestAcceptProposal_Nfy, 0);
 	LinkMsg(g_EventQuestAcceptReward_Nfy, 0);
 
@@ -290,15 +290,15 @@ void CNtlSobAvatar::CreateEvent(void)
     LinkMsg(g_EventDirectionNfy, NULL);
     LinkMsg(g_EventWorldChange, NULL);
 
-    // º¯½Å
+    // ë³€ì‹ 
     LinkMsg(g_EventTransform, NULL);
 
-    // ÄÁµğ¼Ç °ü·Ã
+    // ì»¨ë””ì…˜ ê´€ë ¨
     LinkMsg(g_EventAfterEffectRemainTimeNfy, NULL);
 
 	LinkMsg(NPEI_IS_MAPNAME_CHANGE, 0);
 
-	// Ã¤³Î º¯°æ
+	// ì±„ë„ ë³€ê²½
 	LinkMsg(g_EventGameServerChannelChanged, 0);
 
 	// TS Data reload
@@ -306,7 +306,7 @@ void CNtlSobAvatar::CreateEvent(void)
 
 	LinkMsg(g_EventBusMove, 0);
 
-	// µµÀå
+	// ë„ì¥
 	LinkMsg(g_EventDojo, 0);	
 	LinkMsg(g_EventDojoState, 0);
 	LinkMsg(g_EventScrambleDefaultInfo, 0);
@@ -381,7 +381,7 @@ void CNtlSobAvatar::DestroyEvent(void)
 	UnLinkMsg(g_EventPrivateShopItemState);
 	UnLinkMsg(g_EventPrivateShopItemBuying);
 
-	// quest ¼ö¶ô ¹× º¸»ó.
+	// quest ìˆ˜ë½ ë° ë³´ìƒ.
 	UnLinkMsg(g_EventQuestAcceptProposal_Nfy);
 	UnLinkMsg(g_EventQuestAcceptReward_Nfy);
 
@@ -445,7 +445,7 @@ RwBool CNtlSobAvatar::Create(void)
 
 	SetFlags(GetFlags() | SLFLAG_NOT_HITSHOCK | SLFLAG_CAMERASHAKE_ENABLE | SLFLAG_SERVER_SENDER);
 
-	// class name ¼³Á¤.
+	// class name ì„¤ì •.
 	SetClassName(SLCLASS_NAME_AVATAR);
 
 	if(!CreateContents())
@@ -583,11 +583,11 @@ void CNtlSobAvatar::HandleEvents(RWS::CMsg &pMsg)
 		CNtlSobActor::HandleEvents(pMsg); 
 
 		//--------------------------
-		// event ¹ß»ı.
+		// event ë°œìƒ.
 		// gui data update
 		CNtlSLEventGenerator::SobUpdate(GetSerialID(), EVENT_AIUT_ATTR | EVENT_AIUT_SKILL | EVENT_AIUT_ITEM | EVENT_AIUT_ZENNY | EVENT_AIUT_QUESTITEM | EVENT_AIUT_BUFF, 0 );
 		
-		if( Logic_IsFirstClass( this ) && pAvatarInfo->sCharPf.bChangeClass )	// 1Â÷Á÷ÀÌ¸é¼­ ÀüÁ÷°¡´ÉÇÒ ‹š¸¸ º¸³½´Ù.
+		if( Logic_IsFirstClass( this ) && pAvatarInfo->sCharPf.bChangeClass )	// 1ì°¨ì§ì´ë©´ì„œ ì „ì§ê°€ëŠ¥í•  Â‹Âšë§Œ ë³´ë‚¸ë‹¤.
 			CNtlSLEventGenerator::ChangeClassAuthorityChanged( pAvatarInfo->sCharPf.bChangeClass );
 		
 		// server sync avatar type
@@ -792,15 +792,15 @@ void CNtlSobAvatar::HandleEvents(RWS::CMsg &pMsg)
         if(GetSobProxy())
             GetSobProxy()->HandleEvents(pMsg);
 
-        CNtlSobPlayer::HandleEvents(pMsg); // Idle¿¡¼­µµ Ã³¸®ÇÑ´Ù.
+        CNtlSobPlayer::HandleEvents(pMsg); // Idleì—ì„œë„ ì²˜ë¦¬í•œë‹¤.
     }
     else if(pMsg.Id == g_EventWorldChange || pMsg.Id == g_EventDirectionNfy)            
     {
-        // ÅøÆÁÀ» º¸ÀÌ°í ÀÖ´Â °æ¿ì ÇØÁ¦ÇÑ´Ù.
-        // Å¬¶óÀÌ¾ğÆ® ·¹ÀÌ¾îÀÇ UIÂÊÀ¸·Î ¸Ş½ÃÁö¸¦ ½÷¼­ ÅøÆÁ Á¦°Å
+        // íˆ´íŒì„ ë³´ì´ê³  ìˆëŠ” ê²½ìš° í•´ì œí•œë‹¤.
+        // í´ë¼ì´ì–¸íŠ¸ ë ˆì´ì–´ì˜ UIìª½ìœ¼ë¡œ ë©”ì‹œì§€ë¥¼ ì´ì„œ íˆ´íŒ ì œê±°
         CNtlSLEventGenerator::ShowToolTip(FALSE, 0, 0, L"");
 
-        // ÇÁ¸®Ä«¸Ş¶óÀÎ °æ¿ì ÇØÁ¦ÇÑ´Ù
+        // í”„ë¦¬ì¹´ë©”ë¼ì¸ ê²½ìš° í•´ì œí•œë‹¤
         CNtlSLEventGenerator::CameraControlDelete(CAMERA_CONTROL_FREE);
 
         if(GetSobProxy())

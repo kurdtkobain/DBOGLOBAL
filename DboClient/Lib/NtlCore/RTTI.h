@@ -4,70 +4,70 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Ä¿½ºÅÒ ¸®¾ó Å¸ÀÓ Å¸ÀÔ ÀÎÆ÷¸ÞÀÌ¼Ç ÀÔ´Ï´Ù.
-// ÀÏ´Ü ÅÛÇÃ¸´, ´ÙÁß»ó¼Ó °ËÁõ ¾È‰ç½À´Ï´Ù. ÀÏ¹Ý »ó¼Ó ¿Ïº® ±¸ÇöµÇ±¸¿©
-// Âü°í ¼­ÀûÀº °ÔÀÓ ÄÚµù ÄÄÇÃ¸´ ÀÌ±¸¿©
-// ½ºÆ®¸µ ºñ±³ÇØ¼­ Àû¿ëÇÏ´Â°Å´Ï±î ½Ç½Ã°£Àº ÇÏÁö ¸¶½Ã±¸¿©
-// ±¸ÇöÀº ¹Ø¿¡ º¸¼¼¿©
+// ì»¤ìŠ¤í…€ ë¦¬ì–¼ íƒ€ìž„ íƒ€ìž… ì¸í¬ë©”ì´ì…˜ ìž…ë‹ˆë‹¤.
+// ì¼ë‹¨ í…œí”Œë¦¿, ë‹¤ì¤‘ìƒì† ê²€ì¦ ì•ˆÂ‰ç‡Ÿìœ±æ±‚? ì¼ë°˜ ìƒì† ì™„ë²½ êµ¬í˜„ë˜êµ¬ì—¬
+// ì°¸ê³  ì„œì ì€ ê²Œìž„ ì½”ë”© ì»´í”Œë¦¿ ì´êµ¬ì—¬
+// ìŠ¤íŠ¸ë§ ë¹„êµí•´ì„œ ì ìš©í•˜ëŠ”ê±°ë‹ˆê¹Œ ì‹¤ì‹œê°„ì€ í•˜ì§€ ë§ˆì‹œêµ¬ì—¬
+// êµ¬í˜„ì€ ë°‘ì— ë³´ì„¸ì—¬
 //
-// ¿ì¼± Çì´õ¿¡¼­¿© ´ÙÀ½°ú °°ÀÌ ³ÊÁÖ±¸¿© mfc¶û ºñ½ÁÇÕ´Ï´Ù.
+// ìš°ì„  í—¤ë”ì—ì„œì—¬ ë‹¤ìŒê³¼ ê°™ì´ ë„ˆì£¼êµ¬ì—¬ mfcëž‘ ë¹„ìŠ·í•©ë‹ˆë‹¤.
 //   
 //
 /*
-class CÈ£µ¿
+class Cí˜¸ë™
 {
 	NTL_RTTI_SYSTEM_DECL;
 };
 
-class CÇü¼® : public CÈ£µ¿
+class Cí˜•ì„ : public Cí˜¸ë™
 {
 	NTL_RTTI_SYSTEM_DECL;
 
-	void È£µ¿¾¾¬ž¿À();
+	void í˜¸ë™ì”¨?ì˜¤();
 };
 
-class C¿ìµð : public CÈ£µ¿
+class Cìš°ë”” : public Cí˜¸ë™
 {
 	NTL_RTTI_SYSTEM_DECL;
 
-	void ¿ìµ¿µ¿¹Ùº¸();
+	void ìš°ë™ë™ë°”ë³´();
 };
 
-class CÁØÃ¶ : public CÈ£µ¿
+class Cì¤€ì²  : public Cí˜¸ë™
 {
 	NTL_RTTI_SYSTEM_DECL;
 
-	void ¸Ç³¯³ª¸¸°¡Áö±¸¸Ó¶ó±×·¡();
+	void ë§¨ë‚ ë‚˜ë§Œê°€ì§€êµ¬ë¨¸ë¼ê·¸ëž˜();
 };
 */
-// ±¸ÇöºÎ¿¡¼­´Â ´ÙÀ½°ú °°ÀÌ ÇØÁÝ´Ï´Ù.
+// êµ¬í˜„ë¶€ì—ì„œëŠ” ë‹¤ìŒê³¼ ê°™ì´ í•´ì¤ë‹ˆë‹¤.
 //
-// ¿ì¸®´Â ¿ìµ¿µ¿À» ºÎ¸ð·Î »ó¼Ó ¹Þ¾Ò´Ù°í ÇÕ´Ï´Ù.
+// ìš°ë¦¬ëŠ” ìš°ë™ë™ì„ ë¶€ëª¨ë¡œ ìƒì† ë°›ì•˜ë‹¤ê³  í•©ë‹ˆë‹¤.
 //
-// NTL_RTTI_SYSTEM_IMPL_NOPARENT(CÈ£µ¿);
-// NTL_RTTI_SYSTEM_IMPL(CÇü¼®, CÈ£µ¿);
-// NTL_RTTI_SYSTEM_IMPL(C¿ìµð, CÈ£µ¿);
-// NTL_RTTI_SYSTEM_IMPL(CÁØÃ¶, CÈ£µ¿);
+// NTL_RTTI_SYSTEM_IMPL_NOPARENT(Cí˜¸ë™);
+// NTL_RTTI_SYSTEM_IMPL(Cí˜•ì„, Cí˜¸ë™);
+// NTL_RTTI_SYSTEM_IMPL(Cìš°ë””, Cí˜¸ë™);
+// NTL_RTTI_SYSTEM_IMPL(Cì¤€ì² , Cí˜¸ë™);
 
 
-// ÀÌ·¸°Ô ÇØ³õ±¸¿©
-// CÈ£µ¿ *pATM1 = new CÇü¼®;
-// CÈ£µ¿ *pATM2 = new C¿ìµð;
-// CÈ£µ¿ *pATM3 = new CÁØÃ¶;
+// ì´ë ‡ê²Œ í•´ë†“êµ¬ì—¬
+// Cí˜¸ë™ *pATM1 = new Cí˜•ì„;
+// Cí˜¸ë™ *pATM2 = new Cìš°ë””;
+// Cí˜¸ë™ *pATM3 = new Cì¤€ì² ;
 //
-// ´ëÃæ ÀÌ·¸°Ô µÇ°ÚÁ® ±×´ã¿¡ ½Ç½Ã°£¿¡ ÀÓÀÇÀÇ È£µ¿Æ÷ÀÎÅÍ°¡ ¸ÕÁö¸¦ ¾Ë¾Æ³»·Á¸é
-// ´ÙÀ½°ú °°½À´Ï´Ù.
+// ëŒ€ì¶© ì´ë ‡ê²Œ ë˜ê² ì ¸ ê·¸ë‹´ì— ì‹¤ì‹œê°„ì— ìž„ì˜ì˜ í˜¸ë™í¬ì¸í„°ê°€ ë¨¼ì§€ë¥¼ ì•Œì•„ë‚´ë ¤ë©´
+// ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.
 //
-// void OnÈ£µ¿¸í·ÉL¹öÆ°Å¬¸¯()
+// void Oní˜¸ë™ëª…ë ¹Lë²„íŠ¼í´ë¦­()
 //{
 //
-//	// ÇöÀç È£µ¿ Æ÷ÀÎÅÍ°¡ ÁØÃ¶ Æ÷ÀÎÅÍÁø ¾Ë·Á¸é
-//	if(pATM->GetCRTTIS().DerivesFrom(CÁØÃ¶::s_CRTTIS))
+//	// í˜„ìž¬ í˜¸ë™ í¬ì¸í„°ê°€ ì¤€ì²  í¬ì¸í„°ì§„ ì•Œë ¤ë©´
+//	if(pATM->GetCRTTIS().DerivesFrom(Cì¤€ì² ::s_CRTTIS))
 //  {
-//      // ±×¸®±¸ ¿©±â¼­ Å¸ÀÔ Ä³½ºÆ® ÇÏ°í ÁØÃ¶¾¾ÀÇ ÇÔ¼ö¸¦ ºÎ¸¨´Ï´Ù.
-//      reinterpret_cast<CÁØÃ¶*>(pATM3)->¸Ç³¯³ª¸¸°¡Áö±¸¸Ó¶ó±×·¡();
+//      // ê·¸ë¦¬êµ¬ ì—¬ê¸°ì„œ íƒ€ìž… ìºìŠ¤íŠ¸ í•˜ê³  ì¤€ì² ì”¨ì˜ í•¨ìˆ˜ë¥¼ ë¶€ë¦…ë‹ˆë‹¤.
+//      reinterpret_cast<Cì¤€ì² *>(pATM3)->ë§¨ë‚ ë‚˜ë§Œê°€ì§€êµ¬ë¨¸ë¼ê·¸ëž˜();
 //	    
-//      // ÀÌ·¸°Ô µË´Ï´Ù.
+//      // ì´ë ‡ê²Œ ë©ë‹ˆë‹¤.
 //  }
 //
 //}

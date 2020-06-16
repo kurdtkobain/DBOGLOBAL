@@ -1,4 +1,4 @@
-﻿#include "gui_precomp.h"
+#include "gui_precomp.h"
 #include "gui_inputbox_generic.h"
 #include "gui_componentoption.h"
 #include "gui_texture.h"

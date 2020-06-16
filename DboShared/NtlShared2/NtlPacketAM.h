@@ -59,7 +59,7 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(AM_LOGIN_REQ)
 	ACCOUNTID	accountId;
-	BYTE		abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// ¿Œ¡ı≈∞
+	BYTE		abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// Ïù∏Ï¶ùÌÇ§
 	DWORD		dwkey;
 END_PROTOCOL()
 //------------------------------------------------------------------

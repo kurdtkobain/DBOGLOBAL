@@ -44,14 +44,14 @@ RwBool CContractGui::Create()
 
 	CRectangle rect;
 
-	// ¾à°ü ¼³¸í
+	// ì•½ê´€ ì„¤ëª…
 	m_pContractHtml = (gui::CHtmlBox*)GetComponent("hbxContract");
 	m_pContractHtml->SetLineSpace(8);
 
 	m_pTitleText = (gui::CStaticBox*)GetComponent("stbDialogName");
 	m_pTitleText->SetText(GetDisplayStringManager()->GetString("DST_CONTRACT_TITLE"));
 
-	// °è¾à ³»¿ëÀ» ÀĞ¾î ´Ş¶ó´Â ³»¿ë
+	// ê³„ì•½ ë‚´ìš©ì„ ì½ì–´ ë‹¬ë¼ëŠ” ë‚´ìš©
 	m_pPleaseRead = (gui::CStaticBox*)GetComponent("stbPleaseRead");
 	m_pPleaseRead->SetText( GetDisplayStringManager()->GetString("DST_CONTRACT_PLEASE_READ") );
 
@@ -65,12 +65,12 @@ RwBool CContractGui::Create()
 	m_pOKButton->SetText( GetDisplayStringManager()->GetString("DST_LOBBY_OK") );
 	m_slotAgreementButton = m_pOKButton->SigClicked().Connect( this, &CContractGui::OnClicked_OKButton);
 
-	// Cancel ¹öÆ°
+	// Cancel ë²„íŠ¼
 	m_pCancelButton = (gui::CButton*)GetComponent("btnCancel");
 	m_pCancelButton->SetText( GetDisplayStringManager()->GetString("DST_CONTRACT_NOT_ACCEPT") );
 	m_slotCancelButton = m_pCancelButton->SigClicked().Connect( this, &CContractGui::OnClicked_CancelButton);
 
-	// °ËÀº ¹è°æ
+	// ê²€ì€ ë°°ê²½
 	m_srfBackground.SetColor(0, 0, 0, 100);
 
 	// default value

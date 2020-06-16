@@ -2,7 +2,7 @@
 #define _NTL_TSCORESTATIC_H_
 
 
-// Äù½ºÆ®¿¡¼­ »ç¿ëµÇ´Â ÀÓ½Ã µ¥ÀÌÅÍ Ã³¸® ¹öÆÛ
+// í€˜ìŠ¤íŠ¸ì—ì„œ ì‚¬ìš©ë˜ëŠ” ìž„ì‹œ ë°ì´í„° ì²˜ë¦¬ ë²„í¼
 extern char g_NtlTSString[1024];
 
 

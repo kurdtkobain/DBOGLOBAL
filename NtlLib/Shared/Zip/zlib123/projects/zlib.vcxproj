@@ -117,7 +117,6 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <BrowseInformationFile>$(OutDir)</BrowseInformationFile>
       <XMLDocumentationFileName>$(OutDir)</XMLDocumentationFileName>
-      <AdditionalOptions>/source-charset:EUC-KR /execution-charset:EUC-KR %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -197,7 +196,6 @@
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <BrowseInformationFile>$(OutDir)</BrowseInformationFile>
       <XMLDocumentationFileName>$(OutDir)</XMLDocumentationFileName>
-      <AdditionalOptions>/source-charset:EUC-KR /execution-charset:EUC-KR %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>

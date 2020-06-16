@@ -16,7 +16,7 @@ protected:
 	unsigned int						m_uiNPCTblIdx;
 	unsigned char						m_byMessageType;
 	unsigned int						m_uiSpeechTblIdx;
-	unsigned int						m_uiDisplayTime;	// ¹Ğ¸® ¼¼ÄÁµå
+	unsigned int						m_uiDisplayTime;	// ë°€ë¦¬ ì„¸ì»¨ë“œ
 
 
 // Constructions
@@ -46,7 +46,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

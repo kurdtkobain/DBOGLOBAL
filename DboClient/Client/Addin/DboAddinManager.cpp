@@ -41,14 +41,14 @@ void CDBOAddinManager::HandleEvents( RWS::CMsg &pMsg )
 {
     if(pMsg.Id == g_EventScreenShot)
     {
-        // ½ºÅ©¸°¼¦À» ÂïÀºÈÄ¿¡ ³¯¶ó¿À´Â ÀÌº¥Æ®
+        // ìŠ¤í¬ë¦°ìƒ·ì„ ì°ì€í›„ì— ë‚ ë¼ì˜¤ëŠ” ì´ë²¤íŠ¸
         OnEventScreenShot(pMsg);
     }
 }
 
 void CDBOAddinManager::OnEventScreenShot( RWS::CMsg& pMsg ) 
 {
-    // png·Î ÀúÀåµÈ ÆÄÀÏÀ» jpg·Î º¯È¯ÇÑ´Ù.
+    // pngë¡œ ì €ìž¥ëœ íŒŒì¼ì„ jpgë¡œ ë³€í™˜í•œë‹¤.
     SNtlEventScreenShot* pData = (SNtlEventScreenShot*)pMsg.pData;
     std::string strOrgfileName, strDestFileName;
     strOrgfileName = pData->strFileName;

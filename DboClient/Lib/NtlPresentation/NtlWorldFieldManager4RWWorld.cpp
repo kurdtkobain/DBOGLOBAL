@@ -639,7 +639,7 @@ RpAtomic* GetNtlWorldIndoorCollisionInfo(RpIntersection* pIntersection, RpWorldS
 // 				RwV3d vCollPos;
 // 				RwV3dAdd(&vCollPos, &pCollInfo->RayOri, &vScale);
 // 
-// 				// Åø¿¡¼­ÀÇ Mouse Pick Data´Â TransparencyTileµµ Ãæµ¹ÇØ¾ß ÇÑ´Ù. ÀÎµµ¾î¿¡¼­´Â ±»ÀÌ ÇÊ¿ä ÇÏÁö ¾ÊÀ» °Í °°´Ù.
+// 				// íˆ´ì—ì„œì˜ Mouse Pick DataëŠ” TransparencyTileë„ ì¶©ëŒí•´ì•¼ í•œë‹¤. ì¸ë„ì–´ì—ì„œëŠ” êµ³ì´ í•„ìš” í•˜ì§€ ì•Šì„ ê²ƒ ê°™ë‹¤.
 // // 				if (!dGET_COLLISION_INFO_UPDATE() && GetSceneManager()->GetWorldAttribute(vCollPos) & dNMAP_TRANSPARENCY_TILE_FLAG)
 // // 				{
 // // 					continue;
@@ -669,7 +669,7 @@ RpCollisionTriangle* GetNtlWorldIndoorCollisionInfo( RpIntersection *pIntersecti
 		vCollPos.y = pLine->start.y + (fRatio * vDelta.y);
 		vCollPos.z = pLine->start.z + (fRatio * vDelta.z);
 		
-		// Åø¿¡¼­ÀÇ Mouse Pick Data´Â TransparencyTileµµ Ãæµ¹ÇØ¾ß ÇÑ´Ù. ÀÎµµ¾î¿¡¼­´Â ±»ÀÌ ÇÊ¿ä ÇÏÁö ¾ÊÀ» °Í °°´Ù.
+		// íˆ´ì—ì„œì˜ Mouse Pick DataëŠ” TransparencyTileë„ ì¶©ëŒí•´ì•¼ í•œë‹¤. ì¸ë„ì–´ì—ì„œëŠ” êµ³ì´ í•„ìš” í•˜ì§€ ì•Šì„ ê²ƒ ê°™ë‹¤.
 // 		if (!dGET_COLLISION_INFO_UPDATE() && GetSceneManager()->GetWorldAttribute(vCollPos) & dNMAP_TRANSPARENCY_TILE_FLAG)
 // 		{
 // 			continue;
@@ -894,7 +894,7 @@ void CNtlWorldFieldManager4RWWorld::SetAnotherField(RwBool ChangeStraightAway)
 
 void CNtlWorldFieldManager4RWWorld::UpdateMsg(RwV3d& Pos)
 {
-	// world field switching effect : ÀÎµµ¾î¿¡¼­´Â FieldChanged Message¸¦ º¸³»Áö ¾Ê´Â´Ù.
+	// world field switching effect : ì¸ë„ì–´ì—ì„œëŠ” FieldChanged Messageë¥¼ ë³´ë‚´ì§€ ì•ŠëŠ”ë‹¤.
 // 	if(GetFieldPropVariationStarting())
 // 	{
 // 		// Update current map name
@@ -939,7 +939,7 @@ RwBool CNtlWorldFieldManager4RWWorld::UpdateFieldMap(RwV3d& Pos)
 	// update old datum index
 	m_OldDatumIdx = m_NewDatumIdx;
 
-	// send msgs right after another fields : ÀÎµµ¾î ¿¡¼­´Â FieldChagedMessage¸¦ º¸³»Áö ¾Ê´Â´Ù.
+	// send msgs right after another fields : ì¸ë„ì–´ ì—ì„œëŠ” FieldChagedMessageë¥¼ ë³´ë‚´ì§€ ì•ŠëŠ”ë‹¤.
 	// CNtlPLEventGenerator::IsAnotherFieldChangedWithoutDelay();
 
 	return TRUE;
@@ -1194,7 +1194,7 @@ RpWorldSector* CollisionWorldSectorDecalIndoor(RpIntersection * pIntersection, R
 			DecalCallbackParam*	pDecalParam = (DecalCallbackParam*)pData;
 			RwInt32				nBuffCnt	= *pDecalParam->pBufferCnt;
 
-			// ÃÖ´ë °³¼ö¸¦ ³ÑÀ¸¸é Vertex¸¦ »ý¼ºÇÏÁö ¾Ê°í Äµ½½ÇÑ´Ù.
+			// ìµœëŒ€ ê°œìˆ˜ë¥¼ ë„˜ìœ¼ë©´ Vertexë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  ìº”ìŠ¬í•œë‹¤.
 			if(nBuffCnt + 2 >= pDecalParam->nMaxVertextCnt)	
 			{
 				*(pDecalParam->pBufferCnt) += 3;
@@ -1233,7 +1233,7 @@ RpCollisionTriangle* CollisionWorldSectorDecalIndoor(RpIntersection *pIntersecti
 	DecalCallbackParam*	pDecalParam = (DecalCallbackParam*)pData;
 	RwInt32				nBuffCnt	= *pDecalParam->pBufferCnt;
 
-	// ÃÖ´ë °³¼ö¸¦ ³ÑÀ¸¸é Vertex¸¦ »ý¼ºÇÏÁö ¾Ê°í Äµ½½ÇÑ´Ù.
+	// ìµœëŒ€ ê°œìˆ˜ë¥¼ ë„˜ìœ¼ë©´ Vertexë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  ìº”ìŠ¬í•œë‹¤.
 	if(nBuffCnt + 2 >= pDecalParam->nMaxVertextCnt)
 	{
 		*(pDecalParam->pBufferCnt) += 3;
@@ -1285,7 +1285,7 @@ RwBool CNtlWorldFieldManager4RWWorld::GetWorldDecal(RwV3d& vPosition, RwV3d& vSi
 
 	DecalCallbackParam decalCallbackParam;		
 	decalCallbackParam.vPos					= vPosition;
-	decalCallbackParam.pBufferCnt			= (RwInt32*)&nRenderVertexCount; ///< ÇöÀç±îÁö »ý¼ºµÈ Vertex ¹öÆÛÀÇ ´ÙÀ½ºÎÅÍ ´ã´Â´Ù.
+	decalCallbackParam.pBufferCnt			= (RwInt32*)&nRenderVertexCount; ///< í˜„ìž¬ê¹Œì§€ ìƒì„±ëœ Vertex ë²„í¼ì˜ ë‹¤ìŒë¶€í„° ë‹´ëŠ”ë‹¤.
 	decalCallbackParam.pVertices			= pVertices;			
 	decalCallbackParam.fIntersectionRadius	= sqrtf(vSize.x * vSize.x + vSize.z * vSize.z) * 0.5f;
 	decalCallbackParam.fScale				= 1.0f;

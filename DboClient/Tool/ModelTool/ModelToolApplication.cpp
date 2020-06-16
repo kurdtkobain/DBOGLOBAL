@@ -91,7 +91,7 @@ RwBool CModelToolApplication::CreateSubSystem(RwUInt32 iWidth, RwUInt32 iHeight,
 		NTL_RETURN(FALSE);
 	}
     
-	// Active Camera·Î ¼¼ÆÃÇÑ´Ù.
+	// Active Cameraë¡œ ì„¸íŒ…í•œë‹¤.
 	CNtlPLGlobal::SetActiveCamera(m_pCamera->GetCamera());
 
     RwRGBA colorTextForeGround = {255, 255, 255, 255};
@@ -100,36 +100,36 @@ RwBool CModelToolApplication::CreateSubSystem(RwUInt32 iWidth, RwUInt32 iHeight,
 	if(!m_pCharset)
 		NTL_RETURN(FALSE);
 
-    // Hit Time Ç¥½Ã¿ë CharsetÀ» »ý¼ºÇÑ´Ù.
+    // Hit Time í‘œì‹œìš© Charsetì„ ìƒì„±í•œë‹¤.
     RwRGBA colorHitForeGround = {255, 255, 255, 255};
     RwRGBA colorHitBackGround = {255, 0, 0, 255};
     m_pCharsetHitTime = RtCharsetCreate(&colorHitForeGround, &colorHitBackGround);
 
-	// Visual Manager¸¦ »ý¼ºÇÑ´Ù.
+	// Visual Managerë¥¼ ìƒì„±í•œë‹¤.
 	m_pVisualManager = NTL_NEW CNtlPLVisualManager();
 	if(!m_pVisualManager->Create())
 	{
 		NTL_RETURN(FALSE);
 	}
 
-	// Active Scene Manager¸¦ setting ÇÑ´Ù.
+	// Active Scene Managerë¥¼ setting í•œë‹¤.
 	CNtlPLSceneManagerFactory::ActiveSceneManager(m_pVisualManager);
 
-	// Property Container¸¦ »ý¼ºÇÏ°í, µ¥ÀÌÅÍ¸¦ Load ÇÑ´Ù.	
+	// Property Containerë¥¼ ìƒì„±í•˜ê³ , ë°ì´í„°ë¥¼ Load í•œë‹¤.	
 	//if(!m_PropContainer.Load(""))
 	//{
 	//	NTL_ASSERTFAIL("Property Container Load Fail!");
 	//	NTL_RETURN(FALSE);
 	//}
 
-	// RpWorld¸¦ Create ÇÑ´Ù.
+	// RpWorldë¥¼ Create í•œë‹¤.
 	RwBBox bb;
 	bb.inf.x = -1000.0f; bb.inf.y = -1000.0f; bb.inf.z = -1000.0f;
 	bb.sup.x = bb.sup.y = bb.sup.z = 1000.0f;
 	m_pWorld = RpWorldCreate(&bb);
 	CNtlPLGlobal::SetActiveWorld(m_pWorld);
 
-	// RpWorld¿¡ Camea¸¦ AddÇÑ´Ù.
+	// RpWorldì— Cameaë¥¼ Addí•œë‹¤.
 	RpWorldAddCamera(CNtlPLGlobal::m_pRpWorld, CNtlPLGlobal::m_RwCamera);
 
 	// Ambient Light Create
@@ -142,7 +142,7 @@ RwBool CModelToolApplication::CreateSubSystem(RwUInt32 iWidth, RwUInt32 iHeight,
 	m_pLtDirectional = RpLightCreate(rpLIGHTDIRECTIONAL);
 	if(m_pLtDirectional)
 	{
-		RwFrame* pFrame = NULL;		// Directional Light¸¦ ºÙÀÏ Frame
+		RwFrame* pFrame = NULL;		// Directional Lightë¥¼ ë¶™ì¼ Frame
 		RpLightSetColor(m_pLtDirectional, &color);
 
 		pFrame = RwFrameCreate();
@@ -160,10 +160,10 @@ RwBool CModelToolApplication::CreateSubSystem(RwUInt32 iWidth, RwUInt32 iHeight,
 	m_pCharacter = new CMTCharacter;
 	m_pCharacter->Create();
 
-    // ¹è°æÀ» »ý¼ºÇÑ´Ù.
+    // ë°°ê²½ì„ ìƒì„±í•œë‹¤.
     CreateWorld();
 
-    // ¸Þ¸ð¸® »ç¿ë³»¿ëÀ» ±¸ÇÏ±â À§ÇØ¼­ DirectX7 °³Ã¼¸¦ »ý¼ºÇÑ´Ù.
+    // ë©”ëª¨ë¦¬ ì‚¬ìš©ë‚´ìš©ì„ êµ¬í•˜ê¸° ìœ„í•´ì„œ DirectX7 ê°œì²´ë¥¼ ìƒì„±í•œë‹¤.
     DirectDrawCreateEx(NULL, (void**)&m_lpDD, IID_IDirectDraw7, NULL);
     
 	NTL_RETURN(TRUE);
@@ -199,7 +199,7 @@ void CModelToolApplication::Destroy()
 
 	m_ResoureManager.Destroy();
 
-	// Light destroy (todo. Lightµµ Class WrappingÇÏ¸é ¾ÈµÉ±î?)
+	// Light destroy (todo. Lightë„ Class Wrappingí•˜ë©´ ì•ˆë ê¹Œ?)
 	RpWorldRemoveLight(CNtlPLGlobal::m_pRpWorld, m_pLtAmbient);
 	RpWorldRemoveLight(CNtlPLGlobal::m_pRpWorld, m_pLtDirectional);
 
@@ -353,7 +353,7 @@ void CModelToolApplication::DisplayInfo()
     RsSprintf(caption, RWSTRING("FPS : %4.2f"), GetFps());
     RsCharsetPrint(m_pCharset, caption, 0, 0, rsPRINTPOSTOPRIGHT); 
 
-    // ºñµð¿À ¸Þ¸ð¸®¸¦ ±¸ÇÑ´Ù.    
+    // ë¹„ë””ì˜¤ ë©”ëª¨ë¦¬ë¥¼ êµ¬í•œë‹¤.    
     DDSCAPS2      ddsCaps2; 
     DWORD         dwTotal; 
     DWORD         dwFree;
@@ -369,7 +369,7 @@ void CModelToolApplication::DisplayInfo()
     float fTotalVideoMem = (float)dwTotal / (1024.0f * 1024.0f);
     float fUseVideoMem = (float)(dwTotal - dwFree) / (1024.0f * 1024.0f);
 
-    // ½Ã½ºÅÛ ¸Þ¸ð¸®¸¦ ±¸ÇÑ´Ù.
+    // ì‹œìŠ¤í…œ ë©”ëª¨ë¦¬ë¥¼ êµ¬í•œë‹¤.
     MEMORYSTATUS MemStatus;
     MemStatus.dwLength=sizeof(MemStatus);
     GlobalMemoryStatus(&MemStatus);
@@ -385,7 +385,7 @@ void CModelToolApplication::DisplayInfo()
 
 void CModelToolApplication::DisplayHitTime()
 {
-    // ¼³Á¤µÈ HitTime½Ã¿¡ HitTimeÀ» È­¸é¿¡ Ç¥½ÃÇÑ´Ù.
+    // ì„¤ì •ëœ HitTimeì‹œì— HitTimeì„ í™”ë©´ì— í‘œì‹œí•œë‹¤.
 
     if(!m_pAnimEditChar || !m_pAnimEditChar->GetProperty())
         return;
@@ -398,7 +398,7 @@ void CModelToolApplication::DisplayHitTime()
     //if(!pAnimData)
     //    return;
 
-    //// ¾Ö´Ï¸ÞÀÌ¼ÇÀÇ ÇöÀç ½Ã°£
+    //// ì• ë‹ˆë©”ì´ì…˜ì˜ í˜„ìž¬ ì‹œê°„
     //RwReal fCurrentAnimTime = m_pAnimEditChar->GetBaseCurrentAnimTime();
     //RwBool bVisible = FALSE;
 
@@ -409,7 +409,7 @@ void CModelToolApplication::DisplayHitTime()
     //   {
     //       if(pEventAnim->eEventID == EVENT_ANIM_HIT && pEventAnim->fTime != 0.00f)
     //       {
-    //           // ÀÌº¥Æ® Å¸ÀÓ¿¡¼­ 0.5ÃÊ µ¿¾È Ç¥½ÃÇÑ´Ù.
+    //           // ì´ë²¤íŠ¸ íƒ€ìž„ì—ì„œ 0.5ì´ˆ ë™ì•ˆ í‘œì‹œí•œë‹¤.
     //           if(fCurrentAnimTime >= pEventAnim->fTime && fCurrentAnimTime < (pEventAnim->fTime + 0.5f))
     //           {
     //                bVisible = TRUE;
@@ -462,14 +462,14 @@ RwBool CModelToolApplication::Update(RwReal fTime, RwReal fElapsedTime)
         }
 
 
-        // Wireframe Ç¥½Ã
+        // Wireframe í‘œì‹œ
         if(m_bViewWire)
         {
             if(m_pAnimEditChar)
                 m_pAnimEditChar->RenderWireFrame();
         }
 
-        // World Ç¥½Ã
+        // World í‘œì‹œ
         if(m_bViewWorld)
         {
             if(m_pResWorld)
@@ -478,7 +478,7 @@ RwBool CModelToolApplication::Update(RwReal fTime, RwReal fElapsedTime)
                 RpClumpRender(m_pResSky->GetClump());
         }
 
-        // Hierarchy Ç¥½Ã
+        // Hierarchy í‘œì‹œ
         if(m_bViewHierarchy)
         {
             if(m_pCharacter)
@@ -487,7 +487,7 @@ RwBool CModelToolApplication::Update(RwReal fTime, RwReal fElapsedTime)
                 m_pAnimEditChar->RenderHierarchy();
         }
         
-        // È­¸é¿¡ Á¤º¸ Ç¥½Ã
+        // í™”ë©´ì— ì •ë³´ í‘œì‹œ
         DisplayInfo();
         if(m_pAnimEditChar)
         {
@@ -501,7 +501,7 @@ RwBool CModelToolApplication::Update(RwReal fTime, RwReal fElapsedTime)
 
 	RwCameraShowRaster(m_pCamera->GetCamera(), GetHWnd(), 0);
     
-    // ¾Ö´Ï¸ÞÀÌ¼Ç Åøºä ¾÷µ¥ÀÌÆ®
+    // ì• ë‹ˆë©”ì´ì…˜ íˆ´ë·° ì—…ë°ì´íŠ¸
     CAnimToolView::GetInstance()->Update();
 
 	NTL_RETURN(TRUE);
@@ -587,7 +587,7 @@ RwBool CModelToolApplication::CreateWorld()
     if(!m_pResWorld)
         return FALSE;
 
-    //todo. Å×½ºÆ®¿ë ÀÓ½Ã ¼öÄ¡
+    //todo. í…ŒìŠ¤íŠ¸ìš© ìž„ì‹œ ìˆ˜ì¹˜
     //RwV3d vTrans;
     //vTrans.x = 305.0f;
     //vTrans.y = 26.4f;

@@ -265,8 +265,8 @@ bool CDboTSEMBudokai::AddBuildData( const std::string& strKey, const CNtlTSMain:
 
 	vecdef_TID_LIST& defTIDList = m_defBudokaiMapper[strKey];
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç collision regionÀ¸·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ collision regionìœ¼ë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	sBUDOKAI_PARAM sParam;
 	CDboTSEMBudokai_Recv clRecv;

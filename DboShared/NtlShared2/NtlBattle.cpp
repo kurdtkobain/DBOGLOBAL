@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-04-24
 //
-//	Copyright	:	®œ NTL-Inc Co., Ltd
+//	Copyright	:	‚ìí NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -30,13 +30,13 @@ const char * s_battle_attack_type_string[ BATTLE_ATTACK_TYPE_COUNT ] =
 
 const char * s_battle_attack_result_string[ BATTLE_ATTACK_RESULT_COUNT ] = 
 {
-	"BATTLE_ATTACK_RESULT_HIT", // ¿œπ› ∞¯∞›
-	"BATTLE_ATTACK_RESULT_CRITICAL_HIT", // ≈©∏Æ∆ºƒÆ ∞¯∞›
-	"BATTLE_ATTACK_RESULT_DODGE", // »∏««
-	"BATTLE_ATTACK_RESULT_RESISTED", // ¿˙«◊
-	"BATTLE_ATTACK_RESULT_BLOCK", // ∫Ì∂Ù
-	"BATTLE_ATTACK_RESULT_KNOCKDOWN", // ≥À¥ŸøÓ
-	"BATTLE_ATTACK_RESULT_SLIDING", // ΩΩ∂Û¿Ãµ˘
+	"BATTLE_ATTACK_RESULT_HIT", // ÏùºÎ∞ò Í≥µÍ≤©
+	"BATTLE_ATTACK_RESULT_CRITICAL_HIT", // ÌÅ¨Î¶¨Ìã∞Ïπº Í≥µÍ≤©
+	"BATTLE_ATTACK_RESULT_DODGE", // ÌöåÌîº
+	"BATTLE_ATTACK_RESULT_RESISTED", // Ï†ÄÌï≠
+	"BATTLE_ATTACK_RESULT_BLOCK", // Î∏îÎùΩ
+	"BATTLE_ATTACK_RESULT_KNOCKDOWN", // ÎÑâÎã§Ïö¥
+	"BATTLE_ATTACK_RESULT_SLIDING", // Ïä¨ÎùºÏù¥Îî©
 };
 
 const char * s_freebattle_result_string[ FREEBATTLE_RESULT_COUNT ] = 

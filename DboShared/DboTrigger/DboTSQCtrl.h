@@ -28,7 +28,7 @@ public:
 		eSTOC_EVT_COND_DATA_TYPE		eSToCEvtCondDataType;
 		uSTOC_EVT_COND_DATA				uSToCEvtCondData;
 
-		unsigned int					uiSToCEvtSubCondDataType;	// eSTOC_EVT_SUB_COND_DATA_FLAG ¿Ã Bit flag∑Œ µÓ∑œµ 
+		unsigned int					uiSToCEvtSubCondDataType;	// eSTOC_EVT_SUB_COND_DATA_FLAG Ïù¥ Bit flagÎ°ú Îì±Î°ùÎê®
 		sSTOC_EVT_SUB_COND_DATA			sSToCEvtSubCondData;
 
 		void Init( void )

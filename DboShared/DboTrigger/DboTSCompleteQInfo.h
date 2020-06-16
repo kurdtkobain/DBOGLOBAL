@@ -36,7 +36,7 @@ public:
 
 	void								SetAllFlagsClear( NTL_TS_T_ID tId );
 
-	// Start Id <= ??? < End Id : ¹Ý°è ¹üÀ§ »ç¿ë
+	// Start Id <= ??? < End Id : ë°˜ê³„ ë²”ìœ„ ì‚¬ìš©
 	void								InitQuest( NTL_TS_T_ID tStartId, NTL_TS_T_ID tEndId );
 };
 

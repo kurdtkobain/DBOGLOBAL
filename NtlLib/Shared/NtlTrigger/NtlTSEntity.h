@@ -22,7 +22,7 @@ class CNtlTSEntity : public CNtlTSScrObject
 
 // Member variables
 protected:
-	CNtlTSEntity*						m_pParent;		// ºÎ¸ğ Entity
+	CNtlTSEntity*						m_pParent;		// ë¶€ëª¨ Entity
 
 // Constructions and Destructions
 public:
@@ -38,23 +38,23 @@ public:
 
 	CNtlTSEntity*						GetRoot( void );
 
-	// ÀÚ½Å ¹× ÀÚ½Ä entityµé¿¡ ´ëÇÑ Å½»ö ¹× ½ÇÇà
+	// ìì‹  ë° ìì‹ entityë“¤ì— ëŒ€í•œ íƒìƒ‰ ë° ì‹¤í–‰
 	virtual	NTL_TSRESULT				SearchSelf( CNtlTSRecv* pTSRecv, void* pParam );
 	virtual	NTL_TSRESULT				RunSelf( CNtlTSRecv* pTSRecv, void* pParam );
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®¿¡¼­ »ç¿ëµÇ´Â ºÎ¸ğ °ü·Ã ÇÔ¼öµé
+	// ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì‚¬ìš©ë˜ëŠ” ë¶€ëª¨ ê´€ë ¨ í•¨ìˆ˜ë“¤
 	virtual	CNtlTSScrObject*			GetParentForScript( void );
 	virtual	void						SetParentForScript( CNtlTSScrObject* pParent );
 
-	// ½ºÅ©¸³Æ®¿¡¼­ »ç¿ëµÇ´Â ÀÚ½Ä °ü·Ã ÇÔ¼öµé
+	// ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì‚¬ìš©ë˜ëŠ” ìì‹ ê´€ë ¨ í•¨ìˆ˜ë“¤
 	virtual	CNtlTSScrObject*			BeginChildForScript( void ) { return 0; }
 	virtual	CNtlTSScrObject*			NextChildForScript( void ) { return 0; }
 	virtual	void						AttachChildForScript( CNtlTSScrObject* ) { return; }
 
 public:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& ) { return; }
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& ) { return; }
 

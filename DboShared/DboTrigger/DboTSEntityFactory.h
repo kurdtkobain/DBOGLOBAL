@@ -11,7 +11,7 @@ class CDboTSEntityFactory : public CNtlTSEntityFactory
 {
 // Methods
 public:
-	// Runtime »ı¼ºÀ» À§ÇÑ Entity type µî·Ï
+	// Runtime ìƒì„±ì„ ìœ„í•œ Entity type ë“±ë¡
 	virtual	void						RegisterEntityType( void );
 };
 

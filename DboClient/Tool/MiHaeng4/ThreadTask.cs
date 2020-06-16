@@ -10,9 +10,9 @@ namespace MiHaeng4
 {
     class ThreadTask
     {
-        private int rowStart;   // ì²˜ìŒ ì‹œìž‘í•˜ëŠ” í–‰
-        private int rowCnt;     // í–‰ ì¹´ìš´íŠ¸
-        private int rowInc;     // ì¦ê°€í•˜ëŠ” ì–‘
+        private int rowStart;   // Ã³À½ ½ÃÀÛÇÏ´Â Çà
+        private int rowCnt;     // Çà Ä«¿îÆ®
+        private int rowInc;     // Áõ°¡ÇÏ´Â ¾ç
         private Excel.Range rng;
         private CTextDataBase dataBase;
         private static Object thisLock = new Object();
@@ -33,7 +33,7 @@ namespace MiHaeng4
             this.rng = rng;
         }
 
-        // TextAllDataë¥¼ ì½ì–´ì„œ ë§µì— ì €ìž¥í•œë‹¤.
+        // TextAllData¸¦ ÀÐ¾î¼­ ¸Ê¿¡ ÀúÀåÇÑ´Ù.
         public void InsertTextAllData()
         {
             string row;
@@ -84,7 +84,7 @@ namespace MiHaeng4
                 sbPreFix.Remove(0, sbPreFix.Length);
 
                 MH4Global.pgbXLS.Value = Math.Min(MH4Global.pgbXLS.Maximum, MH4Global.pgbXLS.Value + 1);
-                rngVal = (Excel.Range)rng.Cells[i, 2];  // IDì˜ Prefix                                                
+                rngVal = (Excel.Range)rng.Cells[i, 2];  // IDÀÇ Prefix                                                
                 if (rngVal.Value2 == null)
                     continue;
 
@@ -99,11 +99,11 @@ namespace MiHaeng4
                     sbID.Append(j >= 10 ? j.ToString() : "0" + j.ToString());                                                            
 
                     rngVal = (Excel.Range)rng.Cells[i, MH4Global.colList[j]];
-                    if (rngVal.Value2 == null) // ë¬¸ìžì—´ì´ ì—†ìœ¼ë©´ @
+                    if (rngVal.Value2 == null) // ¹®ÀÚ¿­ÀÌ ¾øÀ¸¸é @
                     {
                         sbText.Append("@");
                     }
-                    else // ìŠ¤íŽ˜ì´ìŠ¤ë§Œ ìžˆëŠ” ê²½ìš°ë„ ìžˆë‹¤. ì´ ê²½ìš°ë„ @ì²˜ë¦¬
+                    else // ½ºÆäÀÌ½º¸¸ ÀÖ´Â °æ¿ìµµ ÀÖ´Ù. ÀÌ °æ¿ìµµ @Ã³¸®
                     {
                         sbText.Append(rngVal.Value2.ToString().TrimStart(' '));
                         if(sbText.Length > 0)
@@ -131,7 +131,7 @@ namespace MiHaeng4
             }
         }
 
-        // Special Quest ìš© XLSë¥¼ ë¡œë”©í•œë‹¤. (ì¼ë°˜ í€˜ìŠ¤íŠ¸ ë¬¸ì„œì™€ í˜•ì‹ì´ ë‹¤ë¥´ë‹¤)
+        // Special Quest ¿ë XLS¸¦ ·ÎµùÇÑ´Ù. (ÀÏ¹Ý Äù½ºÆ® ¹®¼­¿Í Çü½ÄÀÌ ´Ù¸£´Ù)
         public void LoadXLSSpecial()
         {
             Excel.Range rngVal1, rngVal2;
@@ -161,7 +161,7 @@ namespace MiHaeng4
 
                 sbID.Append(rngVal1.Value2.ToString());
 
-                // í…ìŠ¤íŠ¸ ë¬¸ìžì—´ ( C ì—´ + H ì—´)                
+                // ÅØ½ºÆ® ¹®ÀÚ¿­ ( C ¿­ + H ¿­)                
                 rngVal1 = rng.get_Range("C" + i.ToString(), Missing.Value);
                 rngVal2 = rng.get_Range("H" + i.ToString(), Missing.Value);
                 
@@ -194,7 +194,7 @@ namespace MiHaeng4
             }
         }
 
-        // ë©”íƒ€ íƒœê·¸ ê°’ì„ colì— ë§žê²Œ ë°˜í™˜í•œë‹¤.
+        // ¸ÞÅ¸ ÅÂ±× °ªÀ» col¿¡ ¸Â°Ô ¹ÝÈ¯ÇÑ´Ù.
         private string GetMetaTag(int row, int col)
         {
             StringBuilder sbRet = new StringBuilder("[metatag = ");
@@ -212,7 +212,7 @@ namespace MiHaeng4
                 }
                 else
                 {
-                    // ìŠ¤íŽ˜ì´ìŠ¤ë§Œ ìžˆëŠ” ê²½ìš°ë„ ìžˆë‹¤. 
+                    // ½ºÆäÀÌ½º¸¸ ÀÖ´Â °æ¿ìµµ ÀÖ´Ù. 
                     string tag = rngTag.Value2.ToString();
                     tag = tag.TrimStart(' ');
                     if(tag.Length > 0)

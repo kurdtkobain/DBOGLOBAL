@@ -29,7 +29,7 @@ protected:
 	CDboTSMain*							m_pParent;
 	CDboTSTRecv*						m_pRecv;
 
-	mapdef_TRIGGER_LIST					m_defCurTList;		// ÇöÀç ÁøÇà ÁßÀÎ Æ®¸®°Å Á¤º¸
+	mapdef_TRIGGER_LIST					m_defCurTList;		// í˜„ì¬ ì§„í–‰ ì¤‘ì¸ íŠ¸ë¦¬ê±° ì •ë³´
 
 // Constructions and Destructions
 public:
@@ -38,21 +38,21 @@ public:
 
 // Methods
 public:
-	// Æ®¸®°Å ¿¡ÀÌÁ¯½Ã °»½Å
+	// íŠ¸ë¦¬ê±° ì—ì´ì ¼ì‹œ ê°±ì‹ 
 	virtual void						Update( void );
 
-	// ÁÖ Æ®¸®°Å ½Ã½ºÅÛ
+	// ì£¼ íŠ¸ë¦¬ê±° ì‹œìŠ¤í…œ
 	CDboTSMain*							GetParent( void );
 	void								SetParent( CDboTSMain* pParent );
 
-	// Æ®¸®°Å ¸®½Ã¹ö
+	// íŠ¸ë¦¬ê±° ë¦¬ì‹œë²„
 	CDboTSTRecv*						GetRecv( void );
 	void								SetRecv( CDboTSTRecv* pRecv );
 
-	// ÇöÀç ÁøÇà ÁßÀÎ Æ®¸®°Å ¸®½ºÆ®
+	// í˜„ì¬ ì§„í–‰ ì¤‘ì¸ íŠ¸ë¦¬ê±° ë¦¬ìŠ¤íŠ¸
 	mapdef_TRIGGER_LIST*				GetCurTList( void ) { return &m_defCurTList; }
 
-	// ÁøÇàÁß Æ®¸®°Å
+	// ì§„í–‰ì¤‘ íŠ¸ë¦¬ê±°
 	CDboTSTCtrl*						FindProgressTrigger( NTL_TS_T_ID tId );
 	void								AttachProgressTrigger( NTL_TS_T_ID tId, CDboTSTCtrl* pCtrl );
 	void								DetachProgressTrigger( NTL_TS_T_ID tId );

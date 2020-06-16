@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-02-02
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -49,7 +49,7 @@ public:
 private:
 
 	// We use a file name without a file extension.
-	// È­ÀÏ È®ÀåÀÚ°¡ Æ÷ÇÔµÇÁö ¾ÊÀº È­ÀÏ ÀÌ¸§À» »ç¿ëÇÑ´Ù.
+	// í™”ì¼ í™•ì¥ìê°€ í¬í•¨ë˜ì§€ ì•Šì€ í™”ì¼ ì´ë¦„ì„ ì‚¬ìš©í•œë‹¤.
 	// by YOSHIKI(2007-02-02)
 	std::string							m_astrFileName[CTableContainer::TABLE_COUNT];
 

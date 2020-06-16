@@ -2,7 +2,7 @@
  *
  * File			: NtlLuaState.h
  * Author		: HyungSuk, Jang
- * Copyright	: (¡÷)NTL
+ * Copyright	: (Ï£º)NTL
  * Date			: 2006. 2. 20	
  * Abstract		: lua state class
  *****************************************************************************

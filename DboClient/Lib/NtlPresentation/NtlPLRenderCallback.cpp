@@ -79,7 +79,7 @@ void NtlAtomicRender(RpAtomic * pAtomic, const RwV3d *pCameraPos)
 		RwUInt32 uiRenderFlags = RpNtlAtomicGetFlag(pAtomic);
 	if(uiRenderFlags & NTL_FINAL_SORT)
 	{
-		// sorterø° atomic¿ª √ﬂ∞°«—¥Ÿ.	
+		// sorterÏóê atomicÏùÑ Ï∂îÍ∞ÄÌïúÎã§.	
 		GetAtomicSorterContainer()->Push(PLSORT_ATOMIC, pAtomic, pCameraPos);
 	}
 	else
@@ -160,7 +160,7 @@ RpWorldSector* NtlWorldSectorAtomicCallback(RpWorldSector *pWorldSector, void *d
 				{
 					ENtlPLEntityType eNtlPLEntityType = pPLEntity->GetClassType();
 
-#ifdef dNTL_WORLD_CULLING_NEW // CullingTest¿« º∫∞¯ ¿Øπ´¥¬ IsVisible¿ª √º≈© «œ¥¬ ∞Õ∞˙ ∞∞¥Ÿ.
+#ifdef dNTL_WORLD_CULLING_NEW // CullingTestÏùò ÏÑ±Í≥µ Ïú†Î¨¥Îäî IsVisibleÏùÑ Ï≤¥ÌÅ¨ ÌïòÎäî Í≤ÉÍ≥º Í∞ôÎã§.
 					if (eNtlPLEntityType == PLENTITY_OBJECT || eNtlPLEntityType == PLENTITY_CHARACTER || eNtlPLEntityType == PLENTITY_ITEM)
 					{
 						if (pPLEntity->CullingTest((RwCamera*)RWSRCGLOBAL(curCamera), CNtlPLGlobal::m_uiRenderFrame))
@@ -374,7 +374,7 @@ RpWorldSector* NtlWorldSectorAtomicCallback(RpWorldSector *pWorldSector, void *d
 // 							else
 // 							{
 // #ifdef dNTL_WORLD_TOOL_MODE
-// 								// World Toolø°º≠ Object Visible¿ª Off Ω√≈≤ ∞ÊøÏ Object¥¬ ∑ª¥ı∏µ «œ¡ˆ æ ¥¬¥Ÿ. (07.10.24 by agebreak)
+// 								// World ToolÏóêÏÑú Object VisibleÏùÑ Off ÏãúÌÇ® Í≤ΩÏö∞ ObjectÎäî Î†åÎçîÎßÅ ÌïòÏßÄ ÏïäÎäîÎã§. (07.10.24 by agebreak)
 // 								if(CNtlPLGlobal::m_bObjectRender || pPLEntity->GetClassType() != PLENTITY_OBJECT )
 // 								{
 // 									if( !(RpNtlAtomicGetFlag(atomic) & NTL_NOT_VISIBLE) )
@@ -527,7 +527,7 @@ RpWorldSector* NtlWorldSectorRenderCallback(RpWorldSector *pWorldSector, void *d
 // }
 // #endif
 
-// ¿ŒµµæÓ
+// Ïù∏ÎèÑÏñ¥
 RpWorldSector* NtlWorldSectorRenderCallBack_PVSBBox(RpWorldSector* worldSector)
 {
 	RwRGBA			rgbaColor	= { 0, 0, 0, 25};

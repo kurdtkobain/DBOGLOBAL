@@ -36,7 +36,7 @@ protected:
 //	hashdef_GroupList					m_GroupList;
 //	hashdef_GroupList::iterator			m_itGroupList;
 
-	unsigned int						m_uiTitle;		// Æ®¸®°ÅÀÇ Á¦¸ñ
+	unsigned int						m_uiTitle;		// íŠ¸ë¦¬ê±°ì˜ ì œëª©
 
 	unsigned int						m_uiQuestCategory;		// new unknown
 
@@ -53,11 +53,11 @@ public:
 	NTL_TS_T_ID							GetID( void ) const;
 	NTL_TS_T_ID							SetID( NTL_TS_T_ID tID );
 
-	// ¹İº¹ Äù½ºÆ®
+	// ë°˜ë³µ í€˜ìŠ¤íŠ¸
 	bool								IsRepeatQuest( void ) const;
 	void								SetRepeatQuest( bool bCanRepeat );
 
-	// °øÀ¯ °¡´É Äù½ºÆ®
+	// ê³µìœ  ê°€ëŠ¥ í€˜ìŠ¤íŠ¸
 	bool								IsShareQuest( void ) const;
 	void								SetShareQuest( bool bCanShare );
 

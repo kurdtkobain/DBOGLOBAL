@@ -15,7 +15,7 @@ namespace MiHaeng4
             MH4Global.pgbXML.Maximum = fileNames.Length;
             MH4Global.pgbXML.Value = 0;
 
-            // HTML í—¤ë”
+            // HTML Çì´õ
             swMergeXML.WriteLine("<dataroot>");
             swMergeXML.WriteLine("<Table_Data_KOR>");
             swMergeXML.WriteLine("<F1>Quest_Text_Index</F1>");
@@ -41,7 +41,7 @@ namespace MiHaeng4
                     else
                     {
                         string line = sr.ReadLine();
-                        if(!sr.EndOfStream) // ë§ˆì§€ë§‰ ì¤„ì¸ ê²½ìš°ì—ëŠ” XMLì˜ í’‹ì´ê¸° ë•Œë¬¸ì— ì“°ì§€ ì•ŠëŠ”ë‹¤.
+                        if(!sr.EndOfStream) // ¸¶Áö¸· ÁÙÀÎ °æ¿ì¿¡´Â XMLÀÇ Ç²ÀÌ±â ¶§¹®¿¡ ¾²Áö ¾Ê´Â´Ù.
                         {
                             swMergeXML.WriteLine(line);
                         }                        

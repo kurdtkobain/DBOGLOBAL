@@ -25,7 +25,7 @@ enum eOPCODE_MC
 	MC_GAME_SERVER_FARM_INFO_CHANGED_NFY,
 	MC_GAME_SERVER_CHANNEL_INFO_CHANGED_NFY,
 
-	MC_SERVER_USER_ALL_KICK_REQ,					// ¡¢º” ¡ﬂ¿Œ ªÁøÎ¿⁄¿« ∞≠¡¶ logout
+	MC_SERVER_USER_ALL_KICK_REQ,					// Ï†ëÏÜç Ï§ëÏù∏ ÏÇ¨Ïö©ÏûêÏùò Í∞ïÏ†ú logout
 	MC_SERVER_VERSION_CHANGED_NFY, // by sooshia 07/23/2008
 
 	MC_SERVER_TURNOFF_FOR_DEVEL_NFY,
@@ -145,7 +145,7 @@ END_PROTOCOL()
 BEGIN_PROTOCOL(MC_MOVE_RES)
 WORD				wResultCode;
 ACCOUNTID			accountId;
-BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// ¿Œ¡ı≈∞
+BYTE				abyAuthKey[NTL_MAX_SIZE_AUTH_KEY];	// Ïù∏Ï¶ùÌÇ§
 END_PROTOCOL()
 //------------------------------------------------------------------
 BEGIN_PROTOCOL(MC_CHARACTER_EXIT_RES)

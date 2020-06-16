@@ -1,4 +1,4 @@
-﻿#include "precomp_ntlsimulation.h"
+#include "precomp_ntlsimulation.h"
 #include "NtlBehaviorCharMove.h"
 
 // shared 

@@ -12,7 +12,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 
-// ÇÁ·Î±×·¥¿¡¼­ »ç¿ëÇÏ´Â ÇÏÀ§ °³³äÀÇ ¼Ó¼º
+// í”„ë¡œê·¸ëž¨ì—ì„œ ì‚¬ìš©í•˜ëŠ” í•˜ìœ„ ê°œë…ì˜ ì†ì„±
 enum eDBO_WORLD_ATTR_BASIC
 {
 	DBO_WORLD_ATTR_BASIC_FORBID_PC_BATTLE = 0,
@@ -37,7 +37,7 @@ enum eDBO_WORLD_ATTR_BASIC
 };
 
 
-// ÁöÇü Åø¿¡¼­ »ç¿ëÇÏ´Â »óÀ§ °³³äÀÇ ¼Ó¼º(eDBO_WORLD_ATTR_BASICÀÇ ±×·ì)
+// ì§€í˜• íˆ´ì—ì„œ ì‚¬ìš©í•˜ëŠ” ìƒìœ„ ê°œë…ì˜ ì†ì„±(eDBO_WORLD_ATTR_BASICì˜ ê·¸ë£¹)
 enum eDBO_WORLD_ATTR_GROUP
 {
 	DBO_WORLD_ATTR_GROUP_TOWN = 0,
@@ -83,12 +83,12 @@ enum eDBO_WORLD_ATTR_GROUP
 
 enum eCOL_TEST_RESULT
 {
-	eCOL_TEST_RESULT_FAILED,			// Ãæµ¹ °Ë»ç ½ÇÆÐ
-	eCOL_TEST_RESULT_INVALID_SRC_POS,	// ½ÃÀÛ À§Ä¡°¡ Àß¸ø µÇ¾úÀ½
-	eCOL_TEST_RESULT_INVALID_DEST_POS,	// Á¾·á À§Ä¡°¡ Àß¸ø µÇ¾úÀ½
-	eCOL_TEST_RESULT_NOT_SAME_GROUP,	// ½ÃÀÛÁ¡°ú ¸ñÇ¥Á¡ÀÇ ¼Ò¼Ó ±×·ìÀÌ ´Ù¸§
-	eCOL_TEST_RESULT_COL,				// Ãæµ¹ µÇ¾úÀ½
-	eCOL_TEST_RESULT_NO_COL				// Ãæµ¹ ¾ÈµÇ¾úÀ½
+	eCOL_TEST_RESULT_FAILED,			// ì¶©ëŒ ê²€ì‚¬ ì‹¤íŒ¨
+	eCOL_TEST_RESULT_INVALID_SRC_POS,	// ì‹œìž‘ ìœ„ì¹˜ê°€ ìž˜ëª» ë˜ì—ˆìŒ
+	eCOL_TEST_RESULT_INVALID_DEST_POS,	// ì¢…ë£Œ ìœ„ì¹˜ê°€ ìž˜ëª» ë˜ì—ˆìŒ
+	eCOL_TEST_RESULT_NOT_SAME_GROUP,	// ì‹œìž‘ì ê³¼ ëª©í‘œì ì˜ ì†Œì† ê·¸ë£¹ì´ ë‹¤ë¦„
+	eCOL_TEST_RESULT_COL,				// ì¶©ëŒ ë˜ì—ˆìŒ
+	eCOL_TEST_RESULT_NO_COL				// ì¶©ëŒ ì•ˆë˜ì—ˆìŒ
 };
 
 
@@ -184,7 +184,7 @@ enum ePATH_DATA_LOAD_FLAG
 
 typedef std::vector< unsigned int > vecdef_WorldIDList;
 
-// Tool °ú NtlNavi ¿¡¼­ÀÇ Åë½ÅÀ» À§ÇÑ ÀÚ·á±¸Á¶
+// Tool ê³¼ NtlNavi ì—ì„œì˜ í†µì‹ ì„ ìœ„í•œ ìžë£Œêµ¬ì¡°
 typedef std::vector< unsigned int > vecdef_GroupIDList;
 typedef std::map< unsigned int, vecdef_GroupIDList > mapdef_ExportList;
 

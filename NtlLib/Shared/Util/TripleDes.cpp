@@ -408,7 +408,7 @@ void CTripleDes::CryptByBlock(uint32 SK[96], char* originalData, char* outputDat
 {
 	uint32 pi[2]={0},tmp =0;
 	int i =0, j=0,k =0;
-	//block ´ÜÀ§·Î Â¥¸¥´Ù.
+	//block ë‹¨ìœ„ë¡œ ì§œë¥¸ë‹¤.
 	for (i=0; i< 2;i++)
 		GET_UINT32( pi[i], originalData, i*4 );
     

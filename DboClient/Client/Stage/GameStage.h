@@ -2,7 +2,7 @@
  *
  * File			: GameStage.h
  * Author		: HyungSuk, Jang
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2005. 8. 17	
  * Abstract		: Game stage class
  *****************************************************************************
@@ -92,14 +92,14 @@ private:
 
 public:
 	// Multi thread loading
-		// ¸ŞÀÎ ¾²·¹µå°¡ È£ÃâÇÏ´Â ÇÔ¼ö
-		// ¿ëµµ : ¾²·¹µå µ¥ÀÌÅÍ ·ÎµùÀ» ½ÃÀÛÇÏ±â Àü »çÀü ÀÛ¾÷À» ¼öÇàÇÑ´Ù
+		// ë©”ì¸ ì“°ë ˆë“œê°€ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜
+		// ìš©ë„ : ì“°ë ˆë“œ ë°ì´í„° ë¡œë”©ì„ ì‹œì‘í•˜ê¸° ì „ ì‚¬ì „ ì‘ì—…ì„ ìˆ˜í–‰í•œë‹¤
 	void PreMutiThreadLoading( void );
-		// µ¥ÀÌÅÍ ·Îµù ¾²·¹µå°¡ È£ÃâÇÏ´Â ÇÔ¼ö
-		// ¿ëµµ : ¾²·¹µå¸¦ ÀÌ¿ëÇØ µ¥ÀÌÅÍ ·ÎµùÀ» ¼öÇàÇÑ´Ù
+		// ë°ì´í„° ë¡œë”© ì“°ë ˆë“œê°€ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜
+		// ìš©ë„ : ì“°ë ˆë“œë¥¼ ì´ìš©í•´ ë°ì´í„° ë¡œë”©ì„ ìˆ˜í–‰í•œë‹¤
 	void MutiThreadLoading( void );
-		// ¸ŞÀÎ ¾²·¹µå°¡ È£ÃâÇÏ´Â ÇÔ¼ö
-		// ¿ëµµ : ¾²·¹µå µ¥ÀÌÅÍ ·Îµù ÈÄ »çÈÄ ÀÛ¾÷À» ¼öÇàÇÑ´Ù
+		// ë©”ì¸ ì“°ë ˆë“œê°€ í˜¸ì¶œí•˜ëŠ” í•¨ìˆ˜
+		// ìš©ë„ : ì“°ë ˆë“œ ë°ì´í„° ë¡œë”© í›„ ì‚¬í›„ ì‘ì—…ì„ ìˆ˜í–‰í•œë‹¤
 	void PostMutiThreadLoading( void );
 
 	virtual void PostRender(void);
@@ -136,7 +136,7 @@ protected:
 	void	UpdateTeleportLoadingSpawnReadyScene(RwReal fElapsed);
 	void	UpdateTeleportLoadingLoadFinishScene(RwReal fElapsed);
 
-    void    UpdateSoundListener();                              ///< »óÈ²¿¡ µû¸¥ »ç¿îµå ¸®½º³Ê¸¦ ¼¼ÆÃÇÑ´Ù.
+    void    UpdateSoundListener();                              ///< ìƒí™©ì— ë”°ë¥¸ ì‚¬ìš´ë“œ ë¦¬ìŠ¤ë„ˆë¥¼ ì„¸íŒ…í•œë‹¤.
 	
 	void	UpdateDebugDisplay(RwReal fElapsed);
 

@@ -293,7 +293,7 @@ enum eSKILL_TRANSFORM_USE_INFO_FLAG
 };
 
 //-----------------------------------------------------------------------------------
-// Ω∫≈≥ ¿Ã∆Â∆Æ ƒ⁄µÂ ¡§¿«
+// Ïä§ÌÇ¨ Ïù¥ÌéôÌä∏ ÏΩîÎìú Ï†ïÏùò
 //-----------------------------------------------------------------------------------
 #ifdef DEF_SYSTEM_EFFECT_CODE
 	#undef DEF_SYSTEM_EFFECT_CODE
@@ -313,7 +313,7 @@ enum eSYSTEM_EFFECT_CODE
 
 
 //-----------------------------------------------------------------------------------
-// Ω∫≈≥ ∞¸∑√ ¡§¿«
+// Ïä§ÌÇ¨ Í¥ÄÎ†® Ï†ïÏùò
 //-----------------------------------------------------------------------------------
 const unsigned int NTL_MAX_PC_HAVE_SKILL = 60; //new 60 old 120
 
@@ -363,7 +363,7 @@ const float DBO_STRIKE_RUSH_MOVEMENT_SPEED = 60.0f;					// in m/s
 
 
 //-----------------------------------------------------------------------------------
-// HTB ∞¸∑√ ¡§¿«
+// HTB Í¥ÄÎ†® Ï†ïÏùò
 //-----------------------------------------------------------------------------------
 const DWORD			NTL_HTB_MAX_PC_HAVE_HTB_SKILL				= 2;	// The maximum number of HTB skills the PC has // 30
 const DWORD			NTL_HTB_MAX_SKILL_COUNT_IN_SET				= 10;	// The maximum number of skills that can be included in an HTB skill set
@@ -509,7 +509,7 @@ struct sDBO_LP_EP_RECOVERED
 	DWORD		dwTargetEpRecoveredWhenHit;
 };
 
-// System Effect ∞·∞˙
+// System Effect Í≤∞Í≥º
 struct sDBO_SYSTEM_EFFECT_RESULT
 {
 

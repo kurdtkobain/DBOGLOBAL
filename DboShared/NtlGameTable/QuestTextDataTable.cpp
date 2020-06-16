@@ -198,7 +198,7 @@ bool CQuestTextDataTable::LoadFromBinary(CNtlSerializer& serializer, bool bReloa
 
 		delete [] pwszText;
 
-		//  [4/26/2008 zeroera] : ¼³¸í : ½ÇÆĞÇÏ´õ¶óµµ LoadÀÇ Á¾·á¿©ºÎ´Â File Loading¿¡¼­ °áÁ¤ÇÑ´Ù
+		//  [4/26/2008 zeroera] : ì„¤ëª… : ì‹¤íŒ¨í•˜ë”ë¼ë„ Loadì˜ ì¢…ë£Œì—¬ë¶€ëŠ” File Loadingì—ì„œ ê²°ì •í•œë‹¤
 		if( false == AddTable(pTableData, bReload, bUpdate) )
 		{
 			delete pTableData;

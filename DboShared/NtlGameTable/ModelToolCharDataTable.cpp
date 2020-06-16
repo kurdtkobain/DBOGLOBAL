@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-03-08
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hong Ho Dong   ( battery@ntl-inc.com )
 //
@@ -141,7 +141,7 @@ sCHAR_DATA_INFO *sMODELTOOL_CHAR_TBLDAT::GetChainAttack(BYTE byClass, BYTE byWea
 			break;
 	}
 	
-	// Human FighterÀÏ °æ¿ì Ç×»ó Glove ÀÌ´Ù.
+	// Human Fighterì¼ ê²½ìš° í•­ìƒ Glove ì´ë‹¤.
 	if(byClass == PC_CLASS_STREET_FIGHTER)
 		nRemapAnimKeyID = NTL_ST_INDEX_ANIM_ATTACK_GLOVE + byChainSequence - NTL_ST_CHAIN_SEQUENCE;
 	
@@ -182,7 +182,7 @@ bool CModelToolCharDataTable::Create(const char *lpszPath, bool bIsSharedAccess,
 	UNREFERENCED_PARAMETER(szCryptPassword);
 	std::string strPath( lpszPath );
 
-	////3°¡Áö XmlÀ» ¸ğµÎ ÀĞµµ·Ï º¯°æÀ» ÇÑ´Ù.
+	////3ê°€ì§€ Xmlì„ ëª¨ë‘ ì½ë„ë¡ ë³€ê²½ì„ í•œë‹¤.
 	//if(LoadPropertyList(lpszPath, "CharacterPropertyList.xml") == false)
 	//	return false;
 
@@ -1112,8 +1112,8 @@ BYTE sMODELTOOL_CHAR_TBLDAT::GetSkillAnimationPushCount(ANIMATIONID skillAnimati
 
 
 //-----------------------------------------------------------------------------------
-//		Purpose	: AnimationÀÇ Hit TimeÀ» ¾ò¾î¿Â´Ù.                
-//		Return	: HitÀÇ Ã¹¹øÂ° Time (Skill ½ÃÀü½ÃÀÇ Ã¹¹øÂ° Hit°¡ ÇÊ¿ä)
+//		Purpose	: Animationì˜ Hit Timeì„ ì–»ì–´ì˜¨ë‹¤.                
+//		Return	: Hitì˜ ì²«ë²ˆì§¸ Time (Skill ì‹œì „ì‹œì˜ ì²«ë²ˆì§¸ Hitê°€ í•„ìš”)
 //-----------------------------------------------------------------------------------
 DWORD sMODELTOOL_CHAR_TBLDAT::GetSkillAnimationFirstHitTime(ANIMATIONID skillAnimationId)
 {
@@ -1132,8 +1132,8 @@ DWORD sMODELTOOL_CHAR_TBLDAT::GetSkillAnimationFirstHitTime(ANIMATIONID skillAni
 
 
 //-----------------------------------------------------------------------------------
-//		Purpose	: AnimationÀÇ Hit TimeÀ» ¾ò¾î¿Â´Ù.                
-//		Return	: HitÀÇ ¸¶Áö¸· Time (Skill ½ÃÀü½ÃÀÇ ¸¶Áö¸· Hit°¡ ÇÊ¿ä)
+//		Purpose	: Animationì˜ Hit Timeì„ ì–»ì–´ì˜¨ë‹¤.                
+//		Return	: Hitì˜ ë§ˆì§€ë§‰ Time (Skill ì‹œì „ì‹œì˜ ë§ˆì§€ë§‰ Hitê°€ í•„ìš”)
 //-----------------------------------------------------------------------------------
 DWORD sMODELTOOL_CHAR_TBLDAT::GetSkillAnimationSkillCancelTime(ANIMATIONID skillAnimationId)
 {
@@ -1168,7 +1168,7 @@ DWORD sMODELTOOL_CHAR_TBLDAT::GetSkillAnimationSkillCancelTime(ANIMATIONID skill
 //-----------------------------------------------------------------------------------
 DWORD sMODELTOOL_CHAR_TBLDAT::GetNpcAttackDurationTime(BYTE byAttackType)
 {
-	sCHAR_DATA_INFO * pCharAnimData = GetAnim( ITEM_TYPE_UNKNOWN, (ANIMATIONID) ( byAttackType + ATTACK_ANIMATION_START ) ); // ÀÓ½Ã
+	sCHAR_DATA_INFO * pCharAnimData = GetAnim( ITEM_TYPE_UNKNOWN, (ANIMATIONID) ( byAttackType + ATTACK_ANIMATION_START ) ); // ì„ì‹œ
 	if( NULL == pCharAnimData )
 	{
 		return 0;

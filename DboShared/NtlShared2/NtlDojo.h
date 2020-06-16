@@ -4,7 +4,7 @@
 //
 //	Begin		:	2009-01-07
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Chung,DooSup (mailto:john@ntl-inc.com)
 //
@@ -174,7 +174,7 @@ struct sDBO_DOJO_TELEPORT_DATA
 
 
 //--------------------------
-// Ãâ·Â Condition
+// ì¶œë ¥ Condition
 
 enum eDOJO_PROGRESS_MESSAGE
 {

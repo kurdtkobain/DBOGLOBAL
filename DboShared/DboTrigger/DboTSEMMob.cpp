@@ -63,7 +63,7 @@ bool CDboTSEMMob::AddBuildData( const std::string& strKey, const CNtlTSMain::map
 	CTable::TABLEIT itBegin = pMobTbl->Begin();
 	CTable::TABLEIT itEnd = pMobTbl->End();
 
-	// Mob tableÀ» ¼øÈ¸ÇÏ¿© Mob groupÀ» ÃßÃâÇÑ´Ù
+	// Mob tableì„ ìˆœíšŒí•˜ì—¬ Mob groupì„ ì¶”ì¶œí•œë‹¤
 	for ( ; itBegin != itEnd; ++itBegin )
 	{
 		sMOB_TBLDAT* pMobData = (sMOB_TBLDAT*)itBegin->second;
@@ -84,8 +84,8 @@ bool CDboTSEMMob::AddBuildData( const std::string& strKey, const CNtlTSMain::map
 
 		defTIDList.clear();
 
-		// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç Mob group id·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-		// trigger¸¦ Ã£´Â´Ù
+		// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ Mob group idë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+		// triggerë¥¼ ì°¾ëŠ”ë‹¤
 		CNtlTSTrigger* pTrig;
 		CNtlTSMain::mapdef_TLIST::const_iterator citTSBegin = TList.begin();
 		CNtlTSMain::mapdef_TLIST::const_iterator citTSEnd = TList.end();

@@ -232,9 +232,9 @@ static void NtlMatExtRenderCallback( RwResEntry *repEntry, void *object,RwUInt8 
 			}
 		}
 
-		// Cz : WorldEditor¿¡¼­ Shadow Property¸¦ ÃßÃâÇÒ ¶§ rxGEOMETRY_TEXTURED, rxGEOMETRY_TEXTURED2 Flag¸¦
-		// Á¦°Å ÇÏ±â ¶§¹®¿¡ ÃßÃâ ½Ã Texture°¡ NULL·Î ¼³Á¤µÇ¾î Radeon¿¡¼­ ShadowMapÀÌ RenderµÇÁö ¾Ê´Â´Ù.
-		// WorldEditor¿¡¼­´Â ÀÌºÎºĞÀ» ±³Ã¼ÇÏ¿© »ç¿ëÇÑ´Ù.
+		// Cz : WorldEditorì—ì„œ Shadow Propertyë¥¼ ì¶”ì¶œí•  ë•Œ rxGEOMETRY_TEXTURED, rxGEOMETRY_TEXTURED2 Flagë¥¼
+		// ì œê±° í•˜ê¸° ë•Œë¬¸ì— ì¶”ì¶œ ì‹œ Textureê°€ NULLë¡œ ì„¤ì •ë˜ì–´ Radeonì—ì„œ ShadowMapì´ Renderë˜ì§€ ì•ŠëŠ”ë‹¤.
+		// WorldEditorì—ì„œëŠ” ì´ë¶€ë¶„ì„ êµì²´í•˜ì—¬ ì‚¬ìš©í•œë‹¤.
 #ifdef dNTL_WORLD_TOOL_MODE
 		if (material->texture != NULL && (flags & (rxGEOMETRY_TEXTURED | rxGEOMETRY_TEXTURED2)) != 0)
 		{
@@ -402,7 +402,7 @@ static void NtlMatExtRenderCallback( RwResEntry *repEntry, void *object,RwUInt8 
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-		// ¼±ÅÃÇßÀ»¶§ ¹à°Ô Ã³¸® µÇ´Â ºÎºĞ
+		// ì„ íƒí–ˆì„ë•Œ ë°ê²Œ ì²˜ë¦¬ ë˜ëŠ” ë¶€ë¶„
 		if(RpNtlMaterialExtGetFlag(material) & rpNTL_MATERIAL_ADD_COLOR)
 		{
 			D3DCOLOR    matColor;

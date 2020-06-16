@@ -613,7 +613,7 @@ void CNtlSobManager::UpdateOptionRangeOut(RwReal fElapsed)
 					if(CNtlSobFactory::IsClientCreateSerialId(hSerialId))
 						continue;
 
-					// camera¿Í ÇöÀç °Å¸® check
+					// cameraì™€ í˜„ì¬ ê±°ë¦¬ check
 					vPos = pSobObj->GetPosition();
 					v2dSobPos.x = vPos.x;
 					v2dSobPos.y = vPos.z;
@@ -630,7 +630,7 @@ void CNtlSobManager::UpdateOptionRangeOut(RwReal fElapsed)
 					{
 						if(bRangeOut)
 						{
-							// Range Out List¿¡¼­ »èÁ¦ÇÑ´Ù.
+							// Range Out Listì—ì„œ ì‚­ì œí•œë‹¤.
 							RemoveOptionRangeOut(hSerialId);
 						}
 					}
@@ -638,7 +638,7 @@ void CNtlSobManager::UpdateOptionRangeOut(RwReal fElapsed)
 					{
 						if(!bRangeOut)
 						{
-							// Range Out List¿¡ Ãß°¡ÇÑ´Ù.
+							// Range Out Listì— ì¶”ê°€í•œë‹¤.
 							pSobProxy = pSobObj->GetSobProxy();
 							if(pSobProxy == NULL)
 								continue;
@@ -667,7 +667,7 @@ void CNtlSobManager::Update(RwReal fElapsed)
 
 	m_pMoveFrameSkip->Update(CNtlTimer::GetFps());
 
-	// slot itemÀÌ ¾Æ´Ñ °æ¿ì.
+	// slot itemì´ ì•„ë‹Œ ê²½ìš°.
 	RwReal fWeightElapsed;
 	MapObject::iterator it;
 	for(it = m_mapUpdate.begin(); it != m_mapUpdate.end(); )  
@@ -700,13 +700,13 @@ void CNtlSobManager::Update(RwReal fElapsed)
 			++it;
 	}
 
-//  Àá½Ã ÁÖ¼® Ã³¸®
+//  ì ì‹œ ì£¼ì„ ì²˜ë¦¬
 //	UpdateOptionRangeOut(fElapsed);
 
 	// elapsed control update
 	GetNtlSobElapsedControlManager()->Update(fElapsed);
 
-	// remove queue Ã³¸®.
+	// remove queue ì²˜ë¦¬.
 	if(m_listRemoveQueue.size() == 0)
 		return;
 
@@ -1143,7 +1143,7 @@ RwUInt32 CNtlSobManager::GetSobObjectUpdateCount(void) const
 	return (RwUInt32)m_mapUpdate.size();
 }
 
-/// °¡Àå °¡±î¿î ·çÆÃ °¡´ÉÇÑ ¿ùµå ¾ÆÀÌÅÛÀ» Ã£¾Æ¼­ ¹İÈ¯ÇÑ´Ù.
+/// ê°€ì¥ ê°€ê¹Œìš´ ë£¨íŒ… ê°€ëŠ¥í•œ ì›”ë“œ ì•„ì´í…œì„ ì°¾ì•„ì„œ ë°˜í™˜í•œë‹¤.
 CNtlSob* CNtlSobManager::GetSobNearWorldItem(const RwV3d& vLoc)
 {
 	CNtlSobGroup *pGroup = FindGroup(SLCLASS_WORLD_ITEM);
@@ -1318,7 +1318,7 @@ void CNtlSobManager::SobPlayerChangeGuildEmblemHandler(RWS::CMsg &pMsg)
 	{
 		CNtlSobCharProxy *pSobCharProxy = reinterpret_cast<CNtlSobCharProxy*>( pSobPlayer->GetSobProxy() );
 
-		// °ÔÀÓÁß¿¡ ¿¥ºí·½ÀÌ º¯°æµÇ¾ú´Ù
+		// ê²Œì„ì¤‘ì— ì— ë¸”ë ˜ì´ ë³€ê²½ë˜ì—ˆë‹¤
 		pSobCharProxy->SetEmblemFactor(pEvent->byTypeA, pEvent->byTypeAColor,
 									   pEvent->byTypeB, pEvent->byTypeBColor,
 									   pEvent->byTypeC, pEvent->byTypeCColor);
@@ -1506,7 +1506,7 @@ void CNtlSobManager::EventObjectThreadLoadCompleteEventHandler(RWS::CMsg& pMsg)
 	}
 }
 
-// ÇöÀç Ä³¸¯ÅÍ°¡ TMQ »óÅÂÀÎÁö È®ÀÎÇÏ°í, TMQ »óÅÂ¶ó¸é Ä«¸Ş¶óÇÑÅ× Ä«¸Ş¶ó ¿¬Ãâ ÀÌº¥Æ®¸¦ º¸³½´Ù.
+// í˜„ì¬ ìºë¦­í„°ê°€ TMQ ìƒíƒœì¸ì§€ í™•ì¸í•˜ê³ , TMQ ìƒíƒœë¼ë©´ ì¹´ë©”ë¼í•œí…Œ ì¹´ë©”ë¼ ì—°ì¶œ ì´ë²¤íŠ¸ë¥¼ ë³´ë‚¸ë‹¤.
 void CNtlSobManager::TMQEventHandler( RWS::CMsg &pMsg ) 
 {
     if(pMsg.Id == g_EventAnimTMQ)
@@ -1538,8 +1538,8 @@ void CNtlSobManager::PostEffectEventHandler( RWS::CMsg& pMsg )
 {
     SNtlEventPostEffect* pData = (SNtlEventPostEffect*)pMsg.pData;    
 
-    // ¾Æ·¡ Á¤ÀÇµÈ Å¬·¡½ºÀÇ ÀÌº¥Æ®¸¸ ¿¬ÃâÇÑ´Ù.
-    // ´Ù¸¥ PCµéÀÇ ÀÌº¥Æ®´Â ¿¬ÃâÇÏÁö ¾Ê´Â´Ù.
+    // ì•„ë˜ ì •ì˜ëœ í´ë˜ìŠ¤ì˜ ì´ë²¤íŠ¸ë§Œ ì—°ì¶œí•œë‹¤.
+    // ë‹¤ë¥¸ PCë“¤ì˜ ì´ë²¤íŠ¸ëŠ” ì—°ì¶œí•˜ì§€ ì•ŠëŠ”ë‹¤.
     CNtlSob* pSob = GetSobObject(pData->uiSerialID);
     if(pSob->GetClassID() == SLCLASS_AVATAR || 
        pSob->GetClassID() == SLCLASS_NPC || 
@@ -1554,12 +1554,12 @@ void CNtlSobManager::EventCreateWorldHandler( RWS::CMsg& pMsg )
 {
     SNtlEventCreateWorld* pData = (SNtlEventCreateWorld*)pMsg.pData;
     
-    if(pData->bCreate)      // ¿ùµå°¡ »õ·Î »ı¼ºµÉ¶§
+    if(pData->bCreate)      // ì›”ë“œê°€ ìƒˆë¡œ ìƒì„±ë ë•Œ
     {
-        // ¾Æ¹ÙÅ¸¸¸ Ãß°¡ÇÑ´Ù.
+        // ì•„ë°”íƒ€ë§Œ ì¶”ê°€í•œë‹¤.
         GetNtlSLGlobal()->GetSobAvatar()->GetSobProxy()->AddWorld();
     }
-    else    // ¿ùµå°¡ Á¦°Å µÉ¶§
+    else    // ì›”ë“œê°€ ì œê±° ë ë•Œ
     {
         RemoveWorld();
     }
@@ -1583,7 +1583,7 @@ void CNtlSobManager::SobCondConfusedEventHandler( RWS::CMsg& pMsg )
     CNtlSob* pSob = GetSobObject(pData->hSubject);
     if(pSob)
     {
-        // ÀÚ±â ÀÚ½ÅÀÌ°Å³ª, ÀÚ½ÅÀÇ ÆêÀÎ °æ¿ì¿¡¸¸ Ã³¸®ÇÑ´Ù.
+        // ìê¸° ìì‹ ì´ê±°ë‚˜, ìì‹ ì˜ í«ì¸ ê²½ìš°ì—ë§Œ ì²˜ë¦¬í•œë‹¤.
         if(pSob->GetClassID() == SLCLASS_AVATAR || pSob->GetOwnerID() == GetNtlSLGlobal()->GetSobAvatar()->GetSerialID())
         {
             pSob->HandleEvents(pMsg);
@@ -1597,7 +1597,7 @@ void CNtlSobManager::SobCondTerrorEventHandler( RWS::CMsg& pMsg )
     CNtlSob* pSob = GetSobObject(pData->hSubject);
     if(pSob)
     {
-        // ÀÚ±â ÀÚ½ÅÀÌ°Å³ª, ÀÚ½ÅÀÇ ÆêÀÎ °æ¿ì¿¡¸¸ Ã³¸®ÇÑ´Ù.
+        // ìê¸° ìì‹ ì´ê±°ë‚˜, ìì‹ ì˜ í«ì¸ ê²½ìš°ì—ë§Œ ì²˜ë¦¬í•œë‹¤.
         if(pSob->GetClassID() == SLCLASS_AVATAR || pSob->GetOwnerID() == GetNtlSLGlobal()->GetSobAvatar()->GetSerialID())
         {
             pSob->HandleEvents(pMsg);

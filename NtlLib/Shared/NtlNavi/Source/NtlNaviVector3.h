@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 /**
-*	Vector3 Å¬·¡½º
+*	Vector3 í´ë˜ìŠ¤
 *
 *	\file		NtlNaviVector3.h
 *	\author		Jeong Ho, Rho
@@ -68,15 +68,15 @@ public:
 	inline			void					SetElem( float* pfVal );
 
 
-// ¸â¹ö ÇÔ¼ö.
+// ë©¤ë²„ í•¨ìˆ˜.
 public:
 
-	// º¤ÅÍÀÇ ¸ğµç ¿ä¼ÒµéÀ» ¹«È¿È­ÇÑ´Ù.
+	// ë²¡í„°ì˜ ëª¨ë“  ìš”ì†Œë“¤ì„ ë¬´íš¨í™”í•œë‹¤.
 
 	inline			void					MakeInvalid( void );
 
 
-	// º¤ÅÍ¸¦ ´ÜÀ§ º¤ÅÍ·Î ¸¸µç´Ù.
+	// ë²¡í„°ë¥¼ ë‹¨ìœ„ ë²¡í„°ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeUnitX( void );
 
@@ -85,68 +85,68 @@ public:
 	inline			void					MakeUnitZ( void );
 
 
-	// ¿µ º¤ÅÍ·Î ¸¸µç´Ù.
+	// ì˜ ë²¡í„°ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeZero( void );
 
 
-	// Á¤±ÔÈ­.
+	// ì •ê·œí™”.
 
 	inline			CNtlNaviVector3			GetNormalize( void ) const;
 
 	inline			void					MakeNormalize( void );
 
 
-	// µÎ º¤ÅÍ¸¦ ÀÌ¿ëÇÏ¿© ÀÚ½ÅÀ» ¼±Çü º¸°£ < T = V1 + t * ( V2 - V1 ) > ÇÑ´Ù.
+	// ë‘ ë²¡í„°ë¥¼ ì´ìš©í•˜ì—¬ ìì‹ ì„ ì„ í˜• ë³´ê°„ < T = V1 + t * ( V2 - V1 ) > í•œë‹¤.
 
 	inline			void					MakeLerp( const CNtlNaviVector3& v3Val1, const CNtlNaviVector3& v3Val2, float t );
 
 
-	// ±æÀÌ.
+	// ê¸¸ì´.
 	inline			float					GetLength( void ) const;
 
 
-	// ±æÀÌÀÇ Á¦°ö.
+	// ê¸¸ì´ì˜ ì œê³±.
 
 	inline			float					GetLengthSquared( void ) const;
 
 
-	// ³»Àû.
+	// ë‚´ì .
 
 	inline			float					GetDot( const CNtlNaviVector3& v3Val ) const;
 
 
-	// ¿ÜÀû < R = T ^ V >.
+	// ì™¸ì  < R = T ^ V >.
 
 	inline			CNtlNaviVector3			GetCross( const CNtlNaviVector3& v3Val ) const;
 
 	inline			void					MakeCross( const CNtlNaviVector3& v3Val );
 
 
-	// ºÎÇÇ.
+	// ë¶€í”¼.
 
 	inline			float					GetVolume( void ) const;
 
 
-	// ÀÚ½Å°ú ÁÖ¾îÁø °ª(ÆÄ¶ó¹ÌÅÍ) °£ÀÇ °Å¸®.
+	// ìì‹ ê³¼ ì£¼ì–´ì§„ ê°’(íŒŒë¼ë¯¸í„°) ê°„ì˜ ê±°ë¦¬.
 
 	inline			float					GetDistance( const CNtlNaviVector3& v3Val ) const;
 
 
-	// ÀÚ½Å°ú ÁÖ¾îÁø °ª(ÆÄ¶ó¹ÌÅÍ) °£ÀÇ °Å¸®ÀÇ Á¦°ö.
+	// ìì‹ ê³¼ ì£¼ì–´ì§„ ê°’(íŒŒë¼ë¯¸í„°) ê°„ì˜ ê±°ë¦¬ì˜ ì œê³±.
 
 	inline			float					GetDistanceSquared( const CNtlNaviVector3& v3Val ) const;
 
 
-// ¿¬»êÀÚ.
+// ì—°ì‚°ì.
 public:
 
-	// ÇÒ´ç ¿¬»êÀÚ.
+	// í• ë‹¹ ì—°ì‚°ì.
 
 	inline			CNtlNaviVector3&		operator = ( const CNtlNaviVector3& v3Val );
 
 
-	// ¸â¹ö Á¢±Ù ¿¬»êÀÚ.
+	// ë©¤ë²„ ì ‘ê·¼ ì—°ì‚°ì.
 
 	inline			float&					operator [] ( int nIdx );
 
@@ -158,14 +158,14 @@ public:
 	inline			const float&			operator () ( int nIdx ) const;
 
 
-	// ºñ±³ ¿¬»êÀÚ.
+	// ë¹„êµ ì—°ì‚°ì.
 
 	inline			bool					operator == ( const CNtlNaviVector3& v3Val ) const;
 
 	inline			bool					operator != ( const CNtlNaviVector3& v3Val ) const;
 
 
-	// »ê¼ú ¿¬»êÀÚ.
+	// ì‚°ìˆ  ì—°ì‚°ì.
 
 	inline			CNtlNaviVector3			operator - ( void ) const;
 
@@ -183,7 +183,7 @@ public:
 	inline			CNtlNaviVector3			operator - ( const CNtlNaviVector3& v3Val ) const;
 
 
-	// »ê¼ú °»½Å ¿¬»êÀÚ.
+	// ì‚°ìˆ  ê°±ì‹  ì—°ì‚°ì.
 
 	inline			CNtlNaviVector3&		operator *= ( float fVal );
 
@@ -199,41 +199,41 @@ public:
 	inline			CNtlNaviVector3&		operator -= ( const CNtlNaviVector3& v3Val );
 
 
-	// Çüº¯È¯ ¿¬»êÀÚ.
+	// í˜•ë³€í™˜ ì—°ì‚°ì.
 
 	inline									operator float* ( void );
 
 	inline									operator const float* ( void ) const;
 
 
-	// ³»Àû ¿¬»êÀÚ.
+	// ë‚´ì  ì—°ì‚°ì.
 
 	inline			float					operator | ( const CNtlNaviVector3& v3Val ) const;
 
 
-	// ¿ÜÀû ¿¬»êÀÚ.
+	// ì™¸ì  ì—°ì‚°ì.
 
 	inline			CNtlNaviVector3			operator ^ ( const CNtlNaviVector3& v3Val ) const;
 
 
-	// ³»Àû °»½Å ¿¬»êÀÚ < T = T * (T | V) >.
+	// ë‚´ì  ê°±ì‹  ì—°ì‚°ì < T = T * (T | V) >.
 
 	inline			CNtlNaviVector3&		operator |= ( const CNtlNaviVector3& v3Val );
 
 
-	// ¿ÜÀû °»½Å ¿¬»êÀÚ < T = T ^ V >.
+	// ì™¸ì  ê°±ì‹  ì—°ì‚°ì < T = T ^ V >.
 
 	inline			CNtlNaviVector3&		operator ^= ( const CNtlNaviVector3& v3Val );
 
 
-	// Friend Ã³¸® ¿¬»êÀÚ.
+	// Friend ì²˜ë¦¬ ì—°ì‚°ì.
 
 	inline friend	CNtlNaviVector3			operator * ( float fVal1, const CNtlNaviVector3& v3Val2 );
 
 	inline friend	CNtlNaviVector3			operator / ( float fVal1, const CNtlNaviVector3& v3Val2 );
 
 
-// ³»ºÎ ±¸Çö.
+// ë‚´ë¶€ êµ¬í˜„.
 protected:
 
 	inline			int						CompareArrays( const CNtlNaviVector3& v3Val ) const;

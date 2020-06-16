@@ -4,7 +4,7 @@
 //
 //	Begin		:	2009-07-28
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Lee Ju-hyeong
 //
@@ -47,7 +47,7 @@ bool IsBudokaiOpen( BYTE byState )
 
 
 //-----------------------------------------------------------------------------------
-//		Purpose	: ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ÀÇ ´ÙÀ½ÁÖ±â¸¦ ¾Ë¾Æ³½´Ù.
+//		Purpose	: ì²œí•˜ì œì¼ë¬´ë„íšŒì˜ ë‹¤ìŒì£¼ê¸°ë¥¼ ì•Œì•„ë‚¸ë‹¤.
 //		Return	:
 //-----------------------------------------------------------------------------------
 BUDOKAITIME CalcBudokaiNextStartTime( BUDOKAITIME tmDefaultTime, BYTE byOpenTerm, BYTE byOpenDayOfWeek, BYTE byOpenHour, BYTE byOpenMinute )
@@ -63,7 +63,7 @@ BUDOKAITIME CalcBudokaiNextStartTime( BUDOKAITIME tmDefaultTime, BYTE byOpenTerm
 		return 0;
 	}
 
-	// ´ÙÀ½ÁÖ±â Ã¹¹øÂ° ÀÏ¿äÀÏ ½ÃÀÛ ½Ã°£
+	// ë‹¤ìŒì£¼ê¸° ì²«ë²ˆì§¸ ì¼ìš”ì¼ ì‹œì‘ ì‹œê°„
 	time_t tmSunday = tmPrevOpenTime
 		- ( sPrevOpenTime.tm_wday * 24 * 60 * 60
 		+ sPrevOpenTime.tm_hour * 60 * 60
@@ -72,7 +72,7 @@ BUDOKAITIME CalcBudokaiNextStartTime( BUDOKAITIME tmDefaultTime, BYTE byOpenTerm
 		+ 7 * 24 * 60 * 60;
 
 
-	// ´ÙÀ½ ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ ½Ã°£
+	// ë‹¤ìŒ ì²œí•˜ì œì¼ ë¬´ë„íšŒ ì‹œê°„
 	time_t tmNextBudokaiTime = tmSunday
 		+ ( byOpenTerm * 7 * 24 * 60 * 60			// term
 		+ byOpenDayOfWeek * 24 * 60 * 60			// day

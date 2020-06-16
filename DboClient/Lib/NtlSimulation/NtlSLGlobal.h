@@ -2,7 +2,7 @@
  *
  * File			: NtlSobGlobal.h
  * Author		: HyungSuk, Jang
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2005. 8. 23	
  * Abstract		: Simulation global type
  *****************************************************************************
@@ -41,34 +41,34 @@ typedef struct _SAvatarInfo
 	RwUInt32			uiSerialId;										// avatar serial id
 	sPC_PROFILE			sCharPf;										// avatar profile
 	sCHARSTATE			sCharState;										// avatar state
-	RwUInt16			wItemCount;									// À¯È¿ÇÑ item count	
+	RwUInt16			wItemCount;									// ìœ íš¨í•œ item count	
 	sITEM_PROFILE		sItemPf[NTL_MAX_COUNT_USER_HAVE_INVEN_ITEM];	// item profile
-	RwUInt8				bySkillCount;									// ¿ìÈ¿ÇÑ skill count
+	RwUInt8				bySkillCount;									// ìš°íš¨í•œ skill count
 	sSKILL_INFO			sSkillPf[NTL_MAX_PC_HAVE_SKILL];				// skill profile
-	RwUInt8				byHTBCount;										// À¯È¿ÇÑ HTB count
+	RwUInt8				byHTBCount;										// ìœ íš¨í•œ HTB count
 	sHTB_SKILL_INFO		sHTBPf[NTL_HTB_MAX_PC_HAVE_HTB_SKILL];			// HTB profile
 	RwUInt8				byBuffCount;
 	sBUFF_INFO			sBuffPf[DBO_MAX_BUFF_CHARACTER_HAS];
 	sWORLD_INFO			sOldWorldInfo;
 	sWORLD_INFO			sWorldInfo;
-	sQUEST_COMPLETE_INFO sQuestCompleteInfo;								// Äù½ºÆ® ¿Ï·á Á¤º¸
-	RwUInt8				byQuestProgressInfoCount;							// Äù½ºÆ® ÁøÇà Á¤º¸ °³¼ö
-	sQUEST_PROGRESS_INFO sQuestProgressInfo[eMAX_CAN_PROGRESS_QUEST_NUM];	// Äù½ºÆ® ÁøÇà Á¤º¸
-	sQUEST_INVENTORY_FULLDATA sQuestInventoryInfo;							// Äù½ºÆ® ÀÎº¥Åä¸® Á¤º¸
-	RwUInt8				bySetQuickSlotInfo;									// Äü½½·Ô Á¤º¸°¡ µé¾î¿À¸é TRUE;
-	RwUInt8				byQuickSlotInfoCount;								// Äü½½·Ô Á¤º¸ °³¼ö
-	sQUICK_SLOT_PROFILE	sQuickSlotInfo[NTL_CHAR_QUICK_SLOT_MAX_COUNT];		// Äü½½·Ô Á¤º¸
-    RwUInt8             byMaxRpStock;                                       ///< ÃÖ´ë RP Stock °³¼ö
+	sQUEST_COMPLETE_INFO sQuestCompleteInfo;								// í€˜ìŠ¤íŠ¸ ì™„ë£Œ ì •ë³´
+	RwUInt8				byQuestProgressInfoCount;							// í€˜ìŠ¤íŠ¸ ì§„í–‰ ì •ë³´ ê°œìˆ˜
+	sQUEST_PROGRESS_INFO sQuestProgressInfo[eMAX_CAN_PROGRESS_QUEST_NUM];	// í€˜ìŠ¤íŠ¸ ì§„í–‰ ì •ë³´
+	sQUEST_INVENTORY_FULLDATA sQuestInventoryInfo;							// í€˜ìŠ¤íŠ¸ ì¸ë²¤í† ë¦¬ ì •ë³´
+	RwUInt8				bySetQuickSlotInfo;									// í€µìŠ¬ë¡¯ ì •ë³´ê°€ ë“¤ì–´ì˜¤ë©´ TRUE;
+	RwUInt8				byQuickSlotInfoCount;								// í€µìŠ¬ë¡¯ ì •ë³´ ê°œìˆ˜
+	sQUICK_SLOT_PROFILE	sQuickSlotInfo[NTL_CHAR_QUICK_SLOT_MAX_COUNT];		// í€µìŠ¬ë¡¯ ì •ë³´
+    RwUInt8             byMaxRpStock;                                       ///< ìµœëŒ€ RP Stock ê°œìˆ˜
 	
-	RwUInt8				byMailCount;										// ¸ŞÀÏ °¹¼ö
-	RwUInt8				byUnreadMailCountNormal;							// ¾È ÀĞÀº ÆíÁö : ÀÏ¹İ ¸ŞÀÏ
-	RwUInt8				byUnreadMailCountManager;							// ¾È ÀĞÀº ÆíÁö : ¸Å´ÏÁ® ¸ŞÀÏ
+	RwUInt8				byMailCount;										// ë©”ì¼ ê°¯ìˆ˜
+	RwUInt8				byUnreadMailCountNormal;							// ì•ˆ ì½ì€ í¸ì§€ : ì¼ë°˜ ë©”ì¼
+	RwUInt8				byUnreadMailCountManager;							// ì•ˆ ì½ì€ í¸ì§€ : ë§¤ë‹ˆì ¸ ë©”ì¼
 
-	char				acWarFogFlag[NTL_MAX_SIZE_WAR_FOG];					// ¿öÆ÷±× Á¤º¸
+	char				acWarFogFlag[NTL_MAX_SIZE_WAR_FOG];					// ì›Œí¬ê·¸ ì •ë³´
 
 	char				abyTitleIndexFlag[NTL_MAX_CHAR_TITLE_COUNT_IN_FLAG];
 
-	sRANKBATTLE_SCORE_INFO sRankBattleScoreInfo;							// ·©Å©¹èÆ² ÀüÀû Á¤º¸
+	sRANKBATTLE_SCORE_INFO sRankBattleScoreInfo;							// ë­í¬ë°°í‹€ ì „ì  ì •ë³´
 
 	RwUInt8				byDojoBriefCount;
 	sDBO_DOJO_BRIEF		sDojoBrief[DBO_MAX_COUNT_DOJO_IN_WORLD];
@@ -80,7 +80,7 @@ typedef struct _SAvatarInfo
 }SAvatarInfo;
 
 /**
-* \brief ¼ÒÈ¯¼öÀÇ Á¤º¸
+* \brief ì†Œí™˜ìˆ˜ì˜ ì •ë³´
 */
 typedef struct _SSummonPetInfo
 {
@@ -90,7 +90,7 @@ typedef struct _SSummonPetInfo
 }SSummonPetInfo;
 
 /**
-* \brief ¼ÒÈ¯¼ö ½ºÅ³ÀÇ Á¤º¸
+* \brief ì†Œí™˜ìˆ˜ ìŠ¤í‚¬ì˜ ì •ë³´
 */
 typedef struct _SSummonPetSkillInfo
 {
@@ -99,18 +99,18 @@ typedef struct _SSummonPetSkillInfo
 }SSummonPetSkillInfo;
 
 /**
-* \brief ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ »óÅÂ¿¡ ´ëÇÑ Á¤º¸
+* \brief ì²œí•˜ì œì¼ ë¬´ë„íšŒ ìƒíƒœì— ëŒ€í•œ ì •ë³´
 */
 typedef struct _STenkaichiBudokaiInfo
 {
-	sBUDOKAI_UPDATE_STATE_INFO			sStateInfo;			///< ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ ¸ŞÀÎ ½ºÅ×ÀÌÆ®
-	sBUDOKAI_UPDATE_MATCH_STATE_INFO	sMatchStateInfo[MAX_BUDOKAI_STATE];	///< ¸ÅÄ¡ »óÅÂ
-	sBUDOKAI_JOIN_INFO					sJoinInfo;							///< ÇÃ·¹ÀÌ¾îÀÇ ½ÅÃ» »óÅÂ
+	sBUDOKAI_UPDATE_STATE_INFO			sStateInfo;			///< ì²œí•˜ì œì¼ ë¬´ë„íšŒ ë©”ì¸ ìŠ¤í…Œì´íŠ¸
+	sBUDOKAI_UPDATE_MATCH_STATE_INFO	sMatchStateInfo[MAX_BUDOKAI_STATE];	///< ë§¤ì¹˜ ìƒíƒœ
+	sBUDOKAI_JOIN_INFO					sJoinInfo;							///< í”Œë ˆì´ì–´ì˜ ì‹ ì²­ ìƒíƒœ
 } STenkaichiBudokaiInfo;
 
 /**
 * \brief	!! AdjustMoney !!
-*			¼­¹ö¿Í Å¬¶óÀÌ¾ğÆ® °£ÀÇ Á¦´Ï »ç¿ë Å¸ÀÌ¹ÖÀ» ¸ÂÃçÁÖ±â À§ÇÏ¿© ÀúÀå. (ÆÄÆ¼Âü,¸ŞÀÏ µî..)
+*			ì„œë²„ì™€ í´ë¼ì´ì–¸íŠ¸ ê°„ì˜ ì œë‹ˆ ì‚¬ìš© íƒ€ì´ë°ì„ ë§ì¶°ì£¼ê¸° ìœ„í•˜ì—¬ ì €ì¥. (íŒŒí‹°ì°¸,ë©”ì¼ ë“±..)
 */
 struct SAdjustZennyInfo
 {
@@ -131,7 +131,7 @@ struct SAvatarRecipeInfo
 
 /**
 * \brief	!! PassiveSkillEffect !!
-*			ÆĞ½Ãºê ½ºÅ³¿¡ µû¸¥ ½ºÅ³ º¯È­¸¦ ÀúÀå. 
+*			íŒ¨ì‹œë¸Œ ìŠ¤í‚¬ì— ë”°ë¥¸ ìŠ¤í‚¬ ë³€í™”ë¥¼ ì €ì¥. 
 */
 struct SPassiveSkillEffect
 {
@@ -145,7 +145,7 @@ typedef std::list<SPassiveSkillEffect>::iterator	LIST_PASSIVE_SKILL_EFFECT_ITER;
 
 /**
 * \brief	GameManiaTime
-* GMT Á¤º¸¸¦ ÀúÀå
+* GMT ì •ë³´ë¥¼ ì €ì¥
 */
 struct SGameManiaTimeInfo
 {
@@ -156,7 +156,7 @@ struct SGameManiaTimeInfo
 
 /**
 * \ingroup Simulation
-* \brief Simulation layer¿¡¼­ ÀÚÀ¯·Ó°Ô Á¢±ÙÇÒ ¼ö ÀÖ´Â Àü¿ª ÀÚ·á±¸Á¶
+* \brief Simulation layerì—ì„œ ììœ ë¡­ê²Œ ì ‘ê·¼í•  ìˆ˜ ìˆëŠ” ì „ì—­ ìë£Œêµ¬ì¡°
 */
 class CNtlSLGlobal
 {
@@ -164,18 +164,18 @@ private:
 
 	static CNtlSLGlobal		*m_pInstance;
 	
-	SAvatarInfo				m_sAvatarInfo;						///< °ÔÀÓ ÁøÀÔ½Ã avatar Á¤º¸¸¦ ´ã´Â ÀÚ·á±¸Á¶
-	STenkaichiBudokaiInfo	m_sTenkaichiBudokaiInfo;			///< °ÔÀÓ ÁøÀÔ½Ã ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ Á¤º¸¸¦ ´ã´Â ÀÚ·á±¸Á¶
-	SSummonPetInfo			m_sSummonPetInfo;					///< avatar°¡ summon pet ¼ÒÈ¯½Ã º¸³»ÁÖ´Â Á¤º¸
-	SSummonPetSkillInfo		m_sSummonPetSkillInfo;				///< avatar°¡ summon pet ¼ÒÈ¯½Ã º¸³»ÁÖ´Â Á¤º¸ (skill)
-	SAdjustZennyInfo		m_sAdjustZennyInfo;					///< ¼­¹ö,Å¬¶óÀÌ¾ğÆ®°£ Á¦´Ï»ç¿ëÅ¸ÀÌ¹ÖÀÌ ´Ù¸§À¸·Î ÀÎÇØ »ı±â´Â °ÍÀ» º¸Á¤.
-	SAvatarRecipeInfo		m_sAvatarRecipeInfo;				///< °ÔÀÓ ÁøÀÔ½Ã ¾Æ¹ÙÅ¸ÀÇ ·¹½ÃÇÇ µ¥Æ¼Å¸¸¦ ´ã´Â ÀÚ·á±¸Á¶
+	SAvatarInfo				m_sAvatarInfo;						///< ê²Œì„ ì§„ì…ì‹œ avatar ì •ë³´ë¥¼ ë‹´ëŠ” ìë£Œêµ¬ì¡°
+	STenkaichiBudokaiInfo	m_sTenkaichiBudokaiInfo;			///< ê²Œì„ ì§„ì…ì‹œ ì²œí•˜ì œì¼ ë¬´ë„íšŒ ì •ë³´ë¥¼ ë‹´ëŠ” ìë£Œêµ¬ì¡°
+	SSummonPetInfo			m_sSummonPetInfo;					///< avatarê°€ summon pet ì†Œí™˜ì‹œ ë³´ë‚´ì£¼ëŠ” ì •ë³´
+	SSummonPetSkillInfo		m_sSummonPetSkillInfo;				///< avatarê°€ summon pet ì†Œí™˜ì‹œ ë³´ë‚´ì£¼ëŠ” ì •ë³´ (skill)
+	SAdjustZennyInfo		m_sAdjustZennyInfo;					///< ì„œë²„,í´ë¼ì´ì–¸íŠ¸ê°„ ì œë‹ˆì‚¬ìš©íƒ€ì´ë°ì´ ë‹¤ë¦„ìœ¼ë¡œ ì¸í•´ ìƒê¸°ëŠ” ê²ƒì„ ë³´ì •.
+	SAvatarRecipeInfo		m_sAvatarRecipeInfo;				///< ê²Œì„ ì§„ì…ì‹œ ì•„ë°”íƒ€ì˜ ë ˆì‹œí”¼ ë°í‹°íƒ€ë¥¼ ë‹´ëŠ” ìë£Œêµ¬ì¡°
 	SGameManiaTimeInfo		m_sGameManiaTimeInfo;
-	LIST_PASSIVE_SKILL_EFFECT m_listPassveSkillEffectInfo;		///< ¾Æ¹ÙÅ¸ »ı¼º ÀÌÀü¿¡ ³¯¶ó¿À´Â ½ºÅ³º° ÆĞ½ÃºêÀÌÆåÆ® Àû¿ë Á¤º¸.
+	LIST_PASSIVE_SKILL_EFFECT m_listPassveSkillEffectInfo;		///< ì•„ë°”íƒ€ ìƒì„± ì´ì „ì— ë‚ ë¼ì˜¤ëŠ” ìŠ¤í‚¬ë³„ íŒ¨ì‹œë¸Œì´í™íŠ¸ ì ìš© ì •ë³´.
 
-	CNtlSobAvatar			*m_pSobAvatar;						///< avatar °´Ã¼ instance pointer
+	CNtlSobAvatar			*m_pSobAvatar;						///< avatar ê°ì²´ instance pointer
 	RwBool					m_bWorldUpdateAvaterPos;
-	DBOTIME					m_ServerTimeOffset;					///< ( ¼­¹öÅ¸ÀÓ - Å¬¶óÀÌ¾ğÆ® ), Å¬¶óÀÌ¾ğÆ® Å¸ÀÓ¿¡ ´õÇØ¼­ »ç¿ë.
+	DBOTIME					m_ServerTimeOffset;					///< ( ì„œë²„íƒ€ì„ - í´ë¼ì´ì–¸íŠ¸ ), í´ë¼ì´ì–¸íŠ¸ íƒ€ì„ì— ë”í•´ì„œ ì‚¬ìš©.
 
 	HOBJECT					m_hNpcFacingHandle;
 

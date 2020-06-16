@@ -2,14 +2,14 @@
 *
 * File			: NtlFadeInOut.h
 * Author		: Hong SungBock
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2006. 7. 12	
 * Abstract		: Fade In/Out Effect
 *****************************************************************************
-* Desc			: Channel, ChannelGroup¿¡ Effect¸¦ Àû¿ëÇÒ ¼ö ÀÖ´Ù
+* Desc			: Channel, ChannelGroupì— Effectë¥¼ ì ìš©í•  ìˆ˜ ìˆë‹¤
 *
-*				  FMOD System¿¡¼­ Fade In/Out Effect¸¦ Á¦°øÇÏÁö ¾Ê¾Æ¼­
-*				  µû·Î ±¸ÇöÇÏ¿´´Ù.
+*				  FMOD Systemì—ì„œ Fade In/Out Effectë¥¼ ì œê³µí•˜ì§€ ì•Šì•„ì„œ
+*				  ë”°ë¡œ êµ¬í˜„í•˜ì˜€ë‹¤.
 *****************************************************************************/
 
 #pragma once
@@ -26,11 +26,11 @@ class CNtlChannelGroup;
 struct sFadeInOut
 {
 	eFadeInOutType		eFadeType;					///< Fade In/Out Type
-	eSoundResourceType	eResourceType;				///< »ç¿îµå Á¾·ù
+	eSoundResourceType	eResourceType;				///< ì‚¬ìš´ë“œ ì¢…ë¥˜
 	bool				bFinish;	
-	float				fDestVolume;				///< ÃÖÁ¾ º¯È¯µÈ º¼·ı
-	float				fAdjustVolume;				///< ¸Å¹ø º¯È­µÇ´Â º¼·ı¾ç
-	unsigned long		ulApplyTime;				///< ÀÌÀü¿¡ Fade In/Out È¿°ú°¡ Àû¿ëµÈ ½Ã°£
+	float				fDestVolume;				///< ìµœì¢… ë³€í™˜ëœ ë³¼ë¥¨
+	float				fAdjustVolume;				///< ë§¤ë²ˆ ë³€í™”ë˜ëŠ” ë³¼ë¥¨ì–‘
+	unsigned long		ulApplyTime;				///< ì´ì „ì— Fade In/Out íš¨ê³¼ê°€ ì ìš©ëœ ì‹œê°„
 
 	union
 	{

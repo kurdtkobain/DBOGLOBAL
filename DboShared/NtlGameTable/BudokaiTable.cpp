@@ -4,7 +4,7 @@
 //
 //	Begin		:	2008-04-20
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Ju-hyoung   ( niam@ntl-inc.com )
 //
@@ -209,22 +209,22 @@ bool CBudokaiTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	//----------------------------------
 	// Junior
 
-	// ½ÃÀÛ ÁÖ±â
+	// ì‹œì‘ ì£¼ê¸°
 	BUDOKAI_TBLDAT_START(L"Junior_OpenTerm")
 		BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byJiniorOpenTerm, INVALID_BYTE)
 	BUDOKAI_TBLDAT_END()
 
-	// ¿äÀÏ
+	// ìš”ì¼
 	BUDOKAI_TBLDAT_START(L"Junior_OpenDayOfWeek")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byJiniorOpenDayOfWeek, 6)
 	BUDOKAI_TBLDAT_END()
 
-	// ½Ã°£
+	// ì‹œê°„
 	BUDOKAI_TBLDAT_START(L"Junior_OpenHour")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byJiniorOpenHour, 23)
 	BUDOKAI_TBLDAT_END()
 
-	// ºĞ
+	// ë¶„
 	BUDOKAI_TBLDAT_START(L"Junior_OpenMinute")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byJiniorOpenMinute, 59)
 	BUDOKAI_TBLDAT_END()
@@ -233,28 +233,28 @@ bool CBudokaiTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	//----------------------------------
 	// Adult
 
-	// ½ÃÀÛ ÁÖ±â
+	// ì‹œì‘ ì£¼ê¸°
 	BUDOKAI_TBLDAT_START(L"OpenTerm")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byOpenTerm, INVALID_BYTE)
 	BUDOKAI_TBLDAT_END()
 
-	// ¿äÀÏ
+	// ìš”ì¼
 	BUDOKAI_TBLDAT_START(L"OpenDayOfWeek")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byOpenDayOfWeek, 6)
 	BUDOKAI_TBLDAT_END()
 
-	// ½Ã°£
+	// ì‹œê°„
 	BUDOKAI_TBLDAT_START(L"OpenHour")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byOpenHour, 23)
 	BUDOKAI_TBLDAT_END()
 
-	// ºĞ
+	// ë¶„
 	BUDOKAI_TBLDAT_START(L"OpenMinute")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byOpenMinute, 59)
 	BUDOKAI_TBLDAT_END()
 
 
-	// level Á¦ÇÑ
+	// level ì œí•œ
 	BUDOKAI_TBLDAT_START(L"Junior_Level_Min")
 	BUDOKAI_TBLDAT_SET_BYTE( 0, m_sBudokaiTblInfo.byJuniorLevelMin, 100)
 	BUDOKAI_TBLDAT_END()
@@ -272,17 +272,17 @@ bool CBudokaiTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	BUDOKAI_TBLDAT_END()
 
 
-	// °¢ °æ±â »çÀÌÀÇ term
+	// ê° ê²½ê¸° ì‚¬ì´ì˜ term
 	BUDOKAI_TBLDAT_START(L"MatchIntervalTime")
 	BUDOKAI_TBLDAT_SET_DWORD( 0, m_sBudokaiTblInfo.dwMatchIntervalTime, INVALID_DWORD)
 	BUDOKAI_TBLDAT_END()
 
-	// ÃµÇÏÁ¦ÀÏ¹«µµÈ¸ Àç½ÃÀÛ(¼­¹ö½ÃÀÛÀ¸·Î ÀÎÇÑ)½Ã ±âº» ´ë±â ½Ã°£
+	// ì²œí•˜ì œì¼ë¬´ë„íšŒ ì¬ì‹œì‘(ì„œë²„ì‹œì‘ìœ¼ë¡œ ì¸í•œ)ì‹œ ê¸°ë³¸ ëŒ€ê¸° ì‹œê°„
 	BUDOKAI_TBLDAT_START(L"Budokai_Restart_Delay_Time")
 	BUDOKAI_TBLDAT_SET_DWORD( 0, m_sBudokaiTblInfo.dwBudokaiRestartDelayTime, INVALID_DWORD)
 	BUDOKAI_TBLDAT_END()
 
-	// °¢ stepº° ´ë±â ½Ã°£
+	// ê° stepë³„ ëŒ€ê¸° ì‹œê°„
 	BUDOKAI_TBLDAT_START(L"OpenNoticeTime")
 	BUDOKAI_TBLDAT_SET_DWORD( 0, m_sBudokaiTblInfo.dwOpenNoticeTime, INVALID_DWORD)
 	BUDOKAI_TBLDAT_END()
@@ -312,7 +312,7 @@ bool CBudokaiTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	BUDOKAI_TBLDAT_END()
 
 
-	// °¢ stepº° ¾Ë¶÷ ½Ã°£
+	// ê° stepë³„ ì•ŒëŒ ì‹œê°„
 	BUDOKAI_TBLDAT_START(L"MinorMatch_Last_Alram")
 	BUDOKAI_TBLDAT_SET_DWORD( 0, m_sBudokaiTblInfo.dwMinorMatch_AlramTime, INVALID_DWORD)
 	BUDOKAI_TBLDAT_END()
@@ -326,7 +326,7 @@ bool CBudokaiTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	BUDOKAI_TBLDAT_END()
 
 
-	// FinalMatch °ü·Ã
+	// FinalMatch ê´€ë ¨
 	BUDOKAI_TBLDAT_START(L"FinalMatch_DirectionTime")
 	BUDOKAI_TBLDAT_SET_DWORD( 0, m_sBudokaiTblInfo.dwFinalMatchDirectionTime, INVALID_DWORD)
 	BUDOKAI_TBLDAT_END()
@@ -367,7 +367,7 @@ bool CBudokaiTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	BUDOKAI_TBLDAT_END()
 
 
-	// ¼Ò½ÄÁö
+	// ì†Œì‹ì§€
 	BUDOKAI_TBLDAT_START(L"Open_Notice")
 	BUDOKAI_TBLDAT_SET_STR( 0, m_sBudokaiTblInfo.sNoticeFile.wszOpenNotice)
 	BUDOKAI_TBLDAT_END()
@@ -776,7 +776,7 @@ bool CBudokaiTable::SetTableData( void* pvTable, WCHAR* pwszSheetName, std::wstr
 		}
 		else if (0 == wcscmp(pstrDataName->c_str(), L"Note"))
 		{
-//			READ_STR( pTbldat->wstrNote, bstrData);	// ¸Ş¸ğ¸®¿¡ ·ÎµåÇÏÁö ¾Ê´Â´Ù.
+//			READ_STR( pTbldat->wstrNote, bstrData);	// ë©”ëª¨ë¦¬ì— ë¡œë“œí•˜ì§€ ì•ŠëŠ”ë‹¤.
 		}
 		else
 		{

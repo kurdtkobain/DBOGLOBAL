@@ -33,11 +33,11 @@ CNtlMeshFederationBuilder::~CNtlMeshFederationBuilder( void )
 }
 
 /**
-* \brief WorldMesh¿¡¼­ FederationÀ» »ç¿ëÇÑ´Ù.
+* \brief WorldMeshì—ì„œ Federationì„ ì‚¬ìš©í•œë‹¤.
 */
 void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorldMeshName, long tileSize, long overlap )
 {
-	// Mesh ÀüÃ¼¸¦ ÀĞ¾îµéÀÎ´Ù.
+	// Mesh ì „ì²´ë¥¼ ì½ì–´ë“¤ì¸ë‹¤.
 	iMesh* worldMesh;
 	{
 		char* buffer;
@@ -50,10 +50,10 @@ void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorl
 		NTLPE_FreeBuffer(buffer);
 	}
 
-	// Mesh Federation Tile Generated Callback »ı¼º
+	// Mesh Federation Tile Generated Callback ìƒì„±
 	CNtlMeshFederationTileGeneratedCallBack callback( pWorldMeshName );
 
-	// Federation µéÀ» »ı¼ºÇÑ´Ù. »ı¼ºµÇ´Â °¢ Å¸ÀÏµéÀº callback Å¬·¡½º¿¡ ÀÇÇØ¼­ Á¦¾îµÈ´Ù.
+	// Federation ë“¤ì„ ìƒì„±í•œë‹¤. ìƒì„±ë˜ëŠ” ê° íƒ€ì¼ë“¤ì€ callback í´ë˜ìŠ¤ì— ì˜í•´ì„œ ì œì–´ëœë‹¤.
 	iMeshFederation* federation;
 	federation = GetNtlPathEngine()->GetPathEngine()->buildMeshFederation_FromWorldMesh(
 		worldMesh,
@@ -61,7 +61,7 @@ void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorl
 		callback
 		);
 
-	// »ı¼ºµÈ FederationÀÇ Á¤º¸¸¦ Çì´õ·Î¼­ ÀúÀåÇÑ´Ù.
+	// ìƒì„±ëœ Federationì˜ ì •ë³´ë¥¼ í—¤ë”ë¡œì„œ ì €ì¥í•œë‹¤.
 	std::ostringstream fileName;
 	fileName << pWorldMeshName;
 	fileName << NTLPE_FEDERATION_APPEND_HEADER;
@@ -73,7 +73,7 @@ void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorl
 
 void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorldMeshName, long tileSize, long overlap, bool bPreProcessCollision, bool bPreProcessPathFind, std::vector< int >& vecAgentSize )
 {
-	// Mesh ÀüÃ¼¸¦ ÀĞ¾îµéÀÎ´Ù.
+	// Mesh ì „ì²´ë¥¼ ì½ì–´ë“¤ì¸ë‹¤.
 	iMesh* worldMesh;
 	{
 		char* buffer;
@@ -86,10 +86,10 @@ void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorl
 		NTLPE_FreeBuffer(buffer);
 	}
 
-	// Mesh Federation Tile Generated Callback »ı¼º
+	// Mesh Federation Tile Generated Callback ìƒì„±
 	CNtlMeshFederationTileGeneratedCallBack callback( pWorldMeshName, bPreProcessCollision, bPreProcessPathFind, &vecAgentSize );
 
-	// Federation µéÀ» »ı¼ºÇÑ´Ù. »ı¼ºµÇ´Â °¢ Å¸ÀÏµéÀº callback Å¬·¡½º¿¡ ÀÇÇØ¼­ Á¦¾îµÈ´Ù.
+	// Federation ë“¤ì„ ìƒì„±í•œë‹¤. ìƒì„±ë˜ëŠ” ê° íƒ€ì¼ë“¤ì€ callback í´ë˜ìŠ¤ì— ì˜í•´ì„œ ì œì–´ëœë‹¤.
 	iMeshFederation* federation;
 	federation = GetNtlPathEngine()->GetPathEngine()->buildMeshFederation_FromWorldMesh(
 		worldMesh,
@@ -97,7 +97,7 @@ void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorl
 		callback
 		);
 
-	// »ı¼ºµÈ FederationÀÇ Á¤º¸¸¦ Çì´õ·Î¼­ ÀúÀåÇÑ´Ù.
+	// ìƒì„±ëœ Federationì˜ ì •ë³´ë¥¼ í—¤ë”ë¡œì„œ ì €ì¥í•œë‹¤.
 	std::ostringstream fileName;
 	fileName << pWorldMeshName;
 	fileName << NTLPE_FEDERATION_APPEND_HEADER;
@@ -107,11 +107,11 @@ void CNtlMeshFederationBuilder::BuildFederation_FromWorldMesh( const char* pWorl
 	delete federation;
 }
 /**
-* \brief placement Á¤º¸·Î FederationÀ» »ç¿ëÇÑ´Ù.
+* \brief placement ì •ë³´ë¡œ Federationì„ ì‚¬ìš©í•œë‹¤.
 */
 void CNtlMeshFederationBuilder::BuildFederation_TileByTile( const char* placementFilename, long tileSize, long overlap )
 {
-	// PlaceMent Á¤º¸°¡ ´ã±ä text ÆÄÀÏÀ» ÆÄ½ÌÇÑ´Ù.
+	// PlaceMent ì •ë³´ê°€ ë‹´ê¸´ text íŒŒì¼ì„ íŒŒì‹±í•œë‹¤.
 	CNtlSimpleDOM placementScript;
 	{
 		std::string fileName("");
@@ -130,8 +130,8 @@ void CNtlMeshFederationBuilder::BuildFederation_TileByTile( const char* placemen
 	std::vector<iContentChunk*> loadedChunks;
 	std::vector<iContentChunkInstance*> placedInstances;
 
-	// Chunk¸¦ ·ÎµåÇÏ°í
-	// Instance¸¦ »ı¼ºÇÑ´Ù.
+	// Chunkë¥¼ ë¡œë“œí•˜ê³ 
+	// Instanceë¥¼ ìƒì„±í•œë‹¤.
 	LoadContentChunkPlacement(placementScript, loadedChunks, placedInstances, true);
 	if(placedInstances.empty())
 	{
@@ -139,11 +139,11 @@ void CNtlMeshFederationBuilder::BuildFederation_TileByTile( const char* placemen
 		return;
 	}
 
-	// WorldRange ¸¦ ¼³Á¤ÇØÁØ´Ù.
+	// WorldRange ë¥¼ ì„¤ì •í•´ì¤€ë‹¤.
 	
 	cHorizontalRange worldRange;
 	
-	// Test¿ë ÄÚµå ( MultiField )
+	// Testìš© ì½”ë“œ ( MultiField )
 	worldRange.minX = -204800;
 	worldRange.minY = -204800;
 	worldRange.maxX = 204800;
@@ -153,14 +153,14 @@ void CNtlMeshFederationBuilder::BuildFederation_TileByTile( const char* placemen
 
 	iMeshFederation* federation = GetNtlPathEngine()->GetPathEngine()->buildMeshFederation_TilingOnly(worldRange, tileSize, overlap);
 
-	// Tile µéÀ» »ı¼ºÇØÁØ´Ù.
+	// Tile ë“¤ì„ ìƒì„±í•´ì¤€ë‹¤.
 	long i;
 	for(i = 0; i != federation->size(); ++i)
 	{
 		BuildTile(placementFilename, federation, i, placedInstances);
 	}
 
-	// Header file »ı¼º
+	// Header file ìƒì„±
 	std::ostringstream fileName;
 	fileName << placementFilename;
 	fileName << NTLPE_DATA_EXTENSION;

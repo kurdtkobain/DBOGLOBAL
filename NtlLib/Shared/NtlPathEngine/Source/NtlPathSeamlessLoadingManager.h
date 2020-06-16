@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlPathSeamlessLoadingManager.h
 * Author		: Haesung, Cho
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2009. 03. 19
 * Abstract		: Pathengine seamless loading manager
 *****************************************************************************
@@ -42,19 +42,19 @@ public:
 	void	Update( float fElapsed );
 	void	Destroy();
 
-	// ·Îµù ¿¹¾àÀ» ÇÑ´Ù.
+	// ë¡œë”© ì˜ˆì•½ì„ í•œë‹¤.
 	void	LoadReservation( CNtlSeamlessMesh* pMesh );
 
-	// °¡Àå ¸ÕÀú ·Îµù ¿¹¾à µÈ °ÍÀ» °¡Á®¿Â´Ù.
+	// ê°€ì¥ ë¨¼ì € ë¡œë”© ì˜ˆì•½ ëœ ê²ƒì„ ê°€ì ¸ì˜¨ë‹¤.
 	CNtlSeamlessMesh*	GetLoadReservation();
 
-	// ·Îµù ¿¹¾àµÇ¾î ÀÖ´Â °Íµé Áß¿¡ °Å¸®¿¡¼­ ¹ş¾î³­ TileµéÀ» »èÁ¦ÇÑ´Ù.
+	// ë¡œë”© ì˜ˆì•½ë˜ì–´ ìˆëŠ” ê²ƒë“¤ ì¤‘ì— ê±°ë¦¬ì—ì„œ ë²—ì–´ë‚œ Tileë“¤ì„ ì‚­ì œí•œë‹¤.
 	void	RemoveReservationByRangeOver( cHorizontalRange& range );
 
-	// ¿Ï·á°¡ µÇ¾ú´Ù´Â °ÍÀ» ¾Ë¸°´Ù.
+	// ì™„ë£Œê°€ ë˜ì—ˆë‹¤ëŠ” ê²ƒì„ ì•Œë¦°ë‹¤.
 	void	Loaded( CNtlSeamlessMesh* pMesh );
 	
-	// °¡Àå ¸ÕÀú ·Îµù ¿Ï·áµÈ °ÍÀ» °¡Á®¿Â´Ù.
+	// ê°€ì¥ ë¨¼ì € ë¡œë”© ì™„ë£Œëœ ê²ƒì„ ê°€ì ¸ì˜¨ë‹¤.
 	CNtlSeamlessMesh*	GetLoadedMesh();
 
 	HANDLE				GetEvent();
@@ -67,25 +67,25 @@ public:
 protected:
 	CNtlPathCS			m_ReservationCS;
 	mapdef_seamMesh		m_mapLoadReservation;
-	listdef_seamMesh	m_listLoadReservation;	// ¼ø¼­¸¦ ÀúÀåÇÏ±â À§ÇØ
+	listdef_seamMesh	m_listLoadReservation;	// ìˆœì„œë¥¼ ì €ì¥í•˜ê¸° ìœ„í•´
 
 	CNtlPathCS			m_LoadedCS;
 	mapdef_seamMesh		m_mapLoaded;
 	listdef_seamMesh	m_listLoaded;
 
-	// Thread¸¦ Á¦¾îÇÏ±â À§ÇÑ ÀÌº¥Æ®
+	// Threadë¥¼ ì œì–´í•˜ê¸° ìœ„í•œ ì´ë²¤íŠ¸
 
 	CNtlPathCS			m_EventCS;
 	HANDLE				m_hEventForThread;
 
-	// ThreadÀÇ Handle
+	// Threadì˜ Handle
 	HANDLE				m_ahThread[eMAX_THREAD_CNT];
 	DWORD				m_dwThreadID[eMAX_THREAD_CNT];
 
-	// Thread°¡ »ı¼ºµÇ¾ú´ÂÁö È®ÀÎÇÏ±â À§ÇÑ ºÎ¿ï
+	// Threadê°€ ìƒì„±ë˜ì—ˆëŠ”ì§€ í™•ì¸í•˜ê¸° ìœ„í•œ ë¶€ìš¸
 	bool				m_bCreatedThread;
 	
-	// ÀÌ °´Ã¼°¡ Destroy °¡ µÇ¾ú´Ù´Â °ÍÀ» ¾Ë¸²
+	// ì´ ê°ì²´ê°€ Destroy ê°€ ë˜ì—ˆë‹¤ëŠ” ê²ƒì„ ì•Œë¦¼
 	CNtlPathCS			m_ExitCS;
 	bool				m_bExit;
 

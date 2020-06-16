@@ -2,7 +2,7 @@
  *
  * File			: NtlTypeAnimData.h
  * Author		: HongHoDong
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2006. 4. 11	
  * Abstract		: NTL NtlTypeAnimData
  *****************************************************************************
@@ -19,12 +19,12 @@
 #include "NtlCharacterData.h"
 #include "NtlSerializer.h"
 
-/// ÇÃ·¡±× °ü·Ã ¼³Á¤µé
+/// í”Œëž˜ê·¸ ê´€ë ¨ ì„¤ì •ë“¤
 #define ANIM_FLAG_CULL_TEST_ALL_ATOMIC  0x00000001
 
 /*!
  * \Animation
- * STypeAnimData: º¯ÇÏÁö ¾Ê´Â Data(Read¸¸ °¡´É)
+ * STypeAnimData: ë³€í•˜ì§€ ì•ŠëŠ” Data(Readë§Œ ê°€ëŠ¥)
  * 
  */
 class AnimEvent_CompareFunc : public std::binary_function<SEventAnim *, SEventAnim *, bool> 
@@ -41,13 +41,13 @@ public:
 
 struct STypeAnimData
 {
-	std::string			strAnimName;							///< Animation File ÀÌ¸§
+	std::string			strAnimName;							///< Animation File ì´ë¦„
 	RwUInt32			uiAnimKey;								///< Animation Key
-	RwReal              fPlayTime;                              ///< AnimationÀÇ PlayTime
-    RwUInt32            flagAnim;                               ///< ¾Ö´Ï¸ÞÀÌ¼Ç °ü·ÃµÈ ¼³Á¤ ÇÃ·¡±×
+	RwReal              fPlayTime;                              ///< Animationì˜ PlayTime
+    RwUInt32            flagAnim;                               ///< ì• ë‹ˆë©”ì´ì…˜ ê´€ë ¨ëœ ì„¤ì • í”Œëž˜ê·¸
 
-	std::vector<SEventAnim *> vecAnimEvent;						///< Animation Eventµé (fTime¿¡ Á¤·ÄÀÌ µÇ¾î ÀÖ¾î¾ß ÇÑ´Ù.)
-	RwBool						m_bReLoad;						///< Resource¸¦ »õ·Î ÀÐ¾î¾ß ÇÒ °æ¿ì
+	std::vector<SEventAnim *> vecAnimEvent;						///< Animation Eventë“¤ (fTimeì— ì •ë ¬ì´ ë˜ì–´ ìžˆì–´ì•¼ í•œë‹¤.)
+	RwBool						m_bReLoad;						///< Resourceë¥¼ ìƒˆë¡œ ì½ì–´ì•¼ í•  ê²½ìš°
 	
 	STypeAnimData() : uiAnimKey(INVALID_GRAPHIC_ANIMATION_ID), m_bReLoad(FALSE), fPlayTime(0.0f), flagAnim(0)
 	{
@@ -62,8 +62,8 @@ struct STypeAnimData
 			{
 				if(vecAnimEvent[i] != NULL)
 				{
-                    // Hit Event¿¡´Â Multi Hissidan µ¥ÀÌÅÍ°¡ µ¿ÀûÀ¸·Î ÇÒ´çµÇ¾î ÀÖ±â ¶§¹®¿¡
-                    // Çüº¯È¯À» ÇÑÈÄ¿¡ Áö¿öÁà¾ß ÇÑ´Ù.
+                    // Hit Eventì—ëŠ” Multi Hissidan ë°ì´í„°ê°€ ë™ì ìœ¼ë¡œ í• ë‹¹ë˜ì–´ ìžˆê¸° ë•Œë¬¸ì—
+                    // í˜•ë³€í™˜ì„ í•œí›„ì— ì§€ì›Œì¤˜ì•¼ í•œë‹¤.
                     if(vecAnimEvent[i]->eEventID == EVENT_ANIM_HIT)
                     {
                         SEventAnimHit* pEventAnimHit = (SEventAnimHit*)vecAnimEvent[i];
@@ -86,7 +86,7 @@ struct STypeAnimData
 		sort(vecAnimEvent.begin(), vecAnimEvent.end(), cf);
 	}
 
-    //--------- ÇÃ·¡±× °ü·Ã
+    //--------- í”Œëž˜ê·¸ ê´€ë ¨
     void    SetCullTestAllAtomic(RwBool bFlag) {flagAnim |= ANIM_FLAG_CULL_TEST_ALL_ATOMIC;}
     RwBool  IsCullTestAllAtomic() {return flagAnim & ANIM_FLAG_CULL_TEST_ALL_ATOMIC;}
 };
@@ -112,7 +112,7 @@ public:
 	STypeAnimData	*Get(RwUInt32 uiKey);									///< Get STypeAnimData
 	STypeAnimData	*Add(RwUInt32 uiKey, const std::string &strAnimName);	///< Add STypeAnimData
     STypeAnimData	*Add(RwUInt32 uiKey, STypeAnimData *pTypeAnimData);     ///< Add STypeAnimData 
-    void            Remove(RwUInt32 uiKey);                                 ///< ¸Ê¿¡¼­ µ¥ÀÌÅÍ¸¦ Á¦°ÅÇÑ´Ù. (by Agebreak. 2006.05.01)
+    void            Remove(RwUInt32 uiKey);                                 ///< ë§µì—ì„œ ë°ì´í„°ë¥¼ ì œê±°í•œë‹¤. (by Agebreak. 2006.05.01)
 
     TYPE_ANIM_MAP	*GetTypeAnimMap();
 
@@ -121,8 +121,8 @@ public:
     void SetAnimPath(std::string& strAnimPath) { m_strAnimPath = strAnimPath;}
     std::string GetAnimPath() {return m_strAnimPath;}
 
-	void	SaveSerialize( CNtlSerializer& sOut);						///< Serialize °´Ã¼¿¡ µ¥ÀÌÅÍ¸¦ ÀúÀåÇÑ´Ù.
-	void	LoadSerialize( CNtlSerializer& sIn);						///< Serailize °´Ã¼¿¡¼­ µ¥ÀÌÅÍ¸¦ ·ÎµåÇÑ´Ù.
+	void	SaveSerialize( CNtlSerializer& sOut);						///< Serialize ê°ì²´ì— ë°ì´í„°ë¥¼ ì €ìž¥í•œë‹¤.
+	void	LoadSerialize( CNtlSerializer& sIn);						///< Serailize ê°ì²´ì—ì„œ ë°ì´í„°ë¥¼ ë¡œë“œí•œë‹¤.
 };
 
 #endif

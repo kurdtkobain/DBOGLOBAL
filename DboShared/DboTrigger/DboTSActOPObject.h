@@ -11,9 +11,9 @@ class CDboTSActOPObject : public CNtlTSAction
 
 // Member variables
 protected:
-	bool								m_bApply;				// True Àû¿ë, False ÇØÁ¦
-	unsigned int						m_uiOperateTime;		// ¹Ğ¸® ¼¼ÄÁµå
-	unsigned int						m_uiDirectionTblIdx;	// µğ·º¼Ç Å×ÀÌºí ÀÎµ¦½º
+	bool								m_bApply;				// True ì ìš©, False í•´ì œ
+	unsigned int						m_uiOperateTime;		// ë°€ë¦¬ ì„¸ì»¨ë“œ
+	unsigned int						m_uiDirectionTblIdx;	// ë””ë ‰ì…˜ í…Œì´ë¸” ì¸ë±ìŠ¤
 
 // Constructions
 public:
@@ -34,7 +34,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

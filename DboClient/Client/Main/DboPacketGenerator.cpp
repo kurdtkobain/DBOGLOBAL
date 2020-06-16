@@ -948,7 +948,7 @@ bool CGamePacketGenerator::SendNPCShopBuy(RwUInt32 uiNPCSerial, sSHOP_BUY_CART* 
 
 bool CGamePacketGenerator::SendNPCShopSell(RwInt32 uiNPCSerial, sSHOP_SELL_CART* pShopSellCart[NTL_MAX_SELL_SHOPPING_CART])
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_SHOP_SELL_RES) )
 		return true;
 
@@ -980,7 +980,7 @@ bool CGamePacketGenerator::SendNPCShopSell(RwInt32 uiNPCSerial, sSHOP_SELL_CART*
 	iLength = sizeof(sPacket.wOpCode) + sizeof(sPacket.handle) + sizeof(sPacket.bySellCount)
 		+ ( sizeof(sSHOP_SELL_CART) * sPacket.bySellCount );
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_SHOP_SELL_RES);
 	return m_pNetSender->SendPacket(iLength, &sPacket);
 }
@@ -1072,7 +1072,7 @@ bool CGamePacketGenerator::SendEventItemShopEndReq()
 
 bool CGamePacketGenerator::SendItemRepair(RwInt32 uiNPCSerial, RwUInt8 iPlace, RwUInt8 iPos)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_ITEM_REPAIR_RES) )
 		return true;
 	
@@ -1084,14 +1084,14 @@ bool CGamePacketGenerator::SendItemRepair(RwInt32 uiNPCSerial, RwUInt8 iPlace, R
 	sPacket.byPlace = iPlace;
 	sPacket.byPos = iPos;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_ITEM_REPAIR_RES);
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);	
 }
 
 bool CGamePacketGenerator::SendItemIdentification(RwUInt8 byPlace, RwUInt8 byPos)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_ITEM_IDENTIFY_RES) )
 		return true;
 
@@ -1102,7 +1102,7 @@ bool CGamePacketGenerator::SendItemIdentification(RwUInt8 byPlace, RwUInt8 byPos
 	sPacket.byPlace = byPlace;
 	sPacket.byPos = byPos;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_ITEM_IDENTIFY_RES);
 	
 	// Item Identify Effect
@@ -1124,7 +1124,7 @@ bool CGamePacketGenerator::SendPCInfoView(RwUInt32 uiSerial)
 
 bool CGamePacketGenerator::SendItemAllRepair(RwInt32 uiNPCSerial)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_ITEM_EQUIP_REPAIR_RES) )
 		return true;
 
@@ -1134,7 +1134,7 @@ bool CGamePacketGenerator::SendItemAllRepair(RwInt32 uiNPCSerial)
 	sPacket.wOpCode = UG_ITEM_EQUIP_REPAIR_REQ;
 	sPacket.handle = uiNPCSerial;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_ITEM_EQUIP_REPAIR_RES);
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);	
 }
@@ -1295,7 +1295,7 @@ bool CGamePacketGenerator::SendPartyInvite(RwUInt32 uiSerial)
 
 bool CGamePacketGenerator::SendPartyInvite_CharID( RwUInt32 uiCharID ) 
 {
-	// ÀÌ ÆÐÅ¶ÀÇ ÀÀ´äÀ¸·Î´Â UG_PARTY_INVITE_REQ ÀÇ ÀÀ´ä°ú °°Àº °ÍÀÌ ¿Â´Ù
+	// ì´ íŒ¨í‚·ì˜ ì‘ë‹µìœ¼ë¡œëŠ” UG_PARTY_INVITE_REQ ì˜ ì‘ë‹µê³¼ ê°™ì€ ê²ƒì´ ì˜¨ë‹¤
 	if( API_GetSLPacketLockManager()->IsLock(GU_PARTY_INVITE_RES) )
 		return true;
 
@@ -1311,7 +1311,7 @@ bool CGamePacketGenerator::SendPartyInvite_CharID( RwUInt32 uiCharID )
 
 bool CGamePacketGenerator::SendPartyInvite_Name(const WCHAR* pcName)
 {
-	// ÀÌ ÆÐÅ¶ÀÇ ÀÀ´äÀ¸·Î´Â UG_PARTY_INVITE_REQ ÀÇ ÀÀ´ä°ú °°Àº °ÍÀÌ ¿Â´Ù
+	// ì´ íŒ¨í‚·ì˜ ì‘ë‹µìœ¼ë¡œëŠ” UG_PARTY_INVITE_REQ ì˜ ì‘ë‹µê³¼ ê°™ì€ ê²ƒì´ ì˜¨ë‹¤
 	if( API_GetSLPacketLockManager()->IsLock(GU_PARTY_INVITE_RES) )
 		return true;
 
@@ -1464,7 +1464,7 @@ bool CGamePacketGenerator::SendBankMove(RwUInt32 uiNPCSerial, RwUInt8 bySrcPlace
 	sPacket.byDestPlace = byDestPlace;
 	sPacket.byDestPos = byDestPos;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_BANK_MOVE_RES);
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
 }
@@ -1485,7 +1485,7 @@ bool CGamePacketGenerator::SendBankMoveStack(RwUInt32 uiNPCSerial, RwUInt8 bySrc
 	sPacket.byDestPos = byDestPos;
 	sPacket.byStackCount = byStackCount;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_BANK_MOVE_STACK_RES);
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
 }
@@ -1517,7 +1517,7 @@ bool CGamePacketGenerator::SendBankZenny(RwUInt32 uiNPCSerial, RwUInt32 uiZenny,
 	sPacket.dwZenny = uiZenny;
 	sPacket.bIsSave = bIsSave;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_BANK_ZENNY_RES);
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
 }
@@ -1556,7 +1556,7 @@ bool CGamePacketGenerator::SendBankDeleteItem(RwUInt8 byPlace, RwUInt8 byPos, Rw
 	sPacket.byPlace = byPlace;
 	sPacket.byPos = byPos;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_BANK_ITEM_DELETE_RES);
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
 }
@@ -1637,7 +1637,7 @@ bool CGamePacketGenerator::SendTradeAddReq(RwUInt32 uiTarget, RwUInt32 uiItem, R
 
 bool CGamePacketGenerator::SendTradeDelReq(RwUInt32 uiTarget, RwUInt32 uiItem)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_TRADE_DEL_RES) )
 		return true;
 
@@ -1648,7 +1648,7 @@ bool CGamePacketGenerator::SendTradeDelReq(RwUInt32 uiTarget, RwUInt32 uiItem)
 	sPacket.hTarget = uiTarget;
 	sPacket.hItem = uiItem;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_TRADE_DEL_RES);
 
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
@@ -1656,7 +1656,7 @@ bool CGamePacketGenerator::SendTradeDelReq(RwUInt32 uiTarget, RwUInt32 uiItem)
 
 bool CGamePacketGenerator::SendTradeUpdateItem(RwUInt32 uiTarget, RwUInt32 uiItem, RwUInt8 byCount)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_TRADE_MODIFY_RES) )
 		return true;
 
@@ -1668,7 +1668,7 @@ bool CGamePacketGenerator::SendTradeUpdateItem(RwUInt32 uiTarget, RwUInt32 uiIte
 	sPacket.hItem = uiItem;
 	sPacket.byCount = byCount;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_TRADE_MODIFY_RES);
 
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
@@ -1676,7 +1676,7 @@ bool CGamePacketGenerator::SendTradeUpdateItem(RwUInt32 uiTarget, RwUInt32 uiIte
 
 bool CGamePacketGenerator::SendTradeZennyUpdateReq(RwUInt32 uiTarget, RwUInt32 uiZenny)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_TRADE_ZENNY_UPDATE_RES) )
 		return true;
 
@@ -1687,7 +1687,7 @@ bool CGamePacketGenerator::SendTradeZennyUpdateReq(RwUInt32 uiTarget, RwUInt32 u
 	sPacket.hTarget = uiTarget;
 	sPacket.dwZenny = uiZenny;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_TRADE_ZENNY_UPDATE_RES);
 
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);
@@ -1695,7 +1695,7 @@ bool CGamePacketGenerator::SendTradeZennyUpdateReq(RwUInt32 uiTarget, RwUInt32 u
 
 bool CGamePacketGenerator::SendTradeEndReq(RwUInt32 uiTarget, RwUInt32 uiPacketCount, bool bLock)
 {
-	// ¼­¹ö·ÎºÎÅÍ ¸ÕÀúº¸³½ ¸Þ¼¼Áö°¡ ÀÖ´Âµ¥ ¾ÆÁ÷ ¾È¿Ô´Ù¸é false ¸®ÅÏ
+	// ì„œë²„ë¡œë¶€í„° ë¨¼ì €ë³´ë‚¸ ë©”ì„¸ì§€ê°€ ìžˆëŠ”ë° ì•„ì§ ì•ˆì™”ë‹¤ë©´ false ë¦¬í„´
 	if( API_GetSLPacketLockManager()->IsLock(GU_TRADE_END_RES) )
 		return true;
 
@@ -1707,7 +1707,7 @@ bool CGamePacketGenerator::SendTradeEndReq(RwUInt32 uiTarget, RwUInt32 uiPacketC
 	sPacket.dwPacketCount = uiPacketCount;
 	sPacket.bIsSet = bLock;
 
-	// ¼­¹ö·ÎºÎÅÍ ÀÀ´äÀ» ±â´Ù¸®´Â ¸Þ¼¼Áö ¸ñ·Ï¿¡ Ãß°¡
+	// ì„œë²„ë¡œë¶€í„° ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„¸ì§€ ëª©ë¡ì— ì¶”ê°€
 	API_GetSLPacketLockManager()->Lock(GU_TRADE_END_RES);
 
 	return m_pNetSender->SendPacket(sizeof(sPacket), &sPacket);

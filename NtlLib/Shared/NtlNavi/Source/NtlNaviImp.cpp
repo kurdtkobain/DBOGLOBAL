@@ -139,14 +139,14 @@ void CNtlNaviImp::Delete( void )
 
 bool CNtlNaviImp::ImportWorldToolData( const char* pRootFolder )
 {
-	// ±âÁ¸ÀÇ CNtlNaviPEDataExportMng°¡ ÀÖÀ¸¸é »èÁ¦
+	// ê¸°ì¡´ì˜ CNtlNaviPEDataExportMngê°€ ìˆìœ¼ë©´ ì‚­ì œ
 	if ( m_pNaviPEDataExporter )
 	{
 		delete m_pNaviPEDataExporter;
 		m_pNaviPEDataExporter = NULL;
 	}
 
-	// »õ·Î¿î CNtlNaviPEDataExportMng »ı¼º
+	// ìƒˆë¡œìš´ CNtlNaviPEDataExportMng ìƒì„±
 	m_pNaviPEDataExporter = new CNtlNaviPEDataExportMng;
 
 	if ( !m_pNaviPEDataExporter->Create() )
@@ -176,7 +176,7 @@ void CNtlNaviImp::GetListImportedWorldIDList( vecdef_WorldIDList& vecOut )
 {
 	if( m_pNaviPEDataExporter == NULL )
 	{
-		// ¾ÆÁ÷ Data Export manager°¡ »ı¼ºµÇ¾î ÀÖÁö ¾Ê´Ù.
+		// ì•„ì§ Data Export managerê°€ ìƒì„±ë˜ì–´ ìˆì§€ ì•Šë‹¤.
 		return;
 	}
 
@@ -280,11 +280,11 @@ iMesh* CNtlNaviImp::GetNearestMesh( NAVI_INST_HANDLE hHandle, sNAVI_POS& vPos )
 }
 
 /**
-* \brief ÆĞ½º ¿£Áø µ¥ÀÌÅ¸¸¦ ·ÎµåÇÑ´Ù.
-* \param pRootFolder		ÆĞ½º¿£Áø Data°¡ µé¾î ÀÖ´Â »óÀ§ Æú´õ
-* \param defWorldIDList		¿ùµåÀÇ Resource ID list
+* \brief íŒ¨ìŠ¤ ì—”ì§„ ë°ì´íƒ€ë¥¼ ë¡œë“œí•œë‹¤.
+* \param pRootFolder		íŒ¨ìŠ¤ì—”ì§„ Dataê°€ ë“¤ì–´ ìˆëŠ” ìƒìœ„ í´ë”
+* \param defWorldIDList		ì›”ë“œì˜ Resource ID list
 * \param byLoadFlags		Load flags
-* \return ¼º°ø¿©ºÎ
+* \return ì„±ê³µì—¬ë¶€
 */
 bool CNtlNaviImp::LoadPathEngineData( const char* pRootFolder, vecdef_WorldIDList& defWorldIDList, unsigned char byLoadFlags )
 {
@@ -439,9 +439,9 @@ bool CNtlNaviImp::CanSupportAgent( NAVI_INST_HANDLE hHandle, float fAgentRadius 
 }
 
 /**
-* \brief World ÀÇ 
-* \param x		WorldÀÇ X ÁÂÇ¥
-* \param z		WorldÀÇ Z ÁÂÇ¥
+* \brief World ì˜ 
+* \param x		Worldì˜ X ì¢Œí‘œ
+* \param z		Worldì˜ Z ì¢Œí‘œ
 * \return
 */
 unsigned int CNtlNaviImp::GetTextAllIndex( NAVI_INST_HANDLE hHandle, float x, float z )
@@ -650,13 +650,13 @@ bool CNtlNaviImp::FindNearestPos(NAVI_INST_HANDLE hHandle, float fAgentRadius, s
 }
 
 /**
-* \brief Source position ¿¡¼­ Target position ±îÁö Ãæµ¹ Å×½ºÆ®¸¦ ÇÑ´Ù.
-* \remark ÀÌ ÇÔ¼ö´Â Ãæµ¹ÀÌ µÇ¾ú³Ä ¾ÈµÇ¾ú³Ä¸¸ ÆÇ´ÜÇÑ´Ù. Ãæµ¹ÀÌ µÈ °÷ÀÇ À§Ä¡°¡ ÇÊ¿äÇÏ´Ù¸é CNtlNaviImp::FirstCollisionTest ÇÔ¼ö¸¦ ÂüÁ¶ÇÑ´Ù.
-* \param hHandle WORLDÀÇ ID¿Í iMesh Data¸¦ °¡Áö´Â ±¸Á¶Ã¼¸¦ ( void* ) À¸·Î Ä³½ºÆÃÇÏ±â À§ÇØ »ç¿ëµÇ´Â Handle
-* \param lAgentRadius AgentÀÇ ¹İÁö¸§
-* \param vSourcePos	½ÃÀÛ ÁÂÇ¥
-* \param vTargetPos ³¡ ÁÂÇ¥
-* \return Ãæµ¹ °á°ú¸¦ ³ªÅ¸³»´Â eCOL_TEST_RESULT ¿­°ÅÇü
+* \brief Source position ì—ì„œ Target position ê¹Œì§€ ì¶©ëŒ í…ŒìŠ¤íŠ¸ë¥¼ í•œë‹¤.
+* \remark ì´ í•¨ìˆ˜ëŠ” ì¶©ëŒì´ ë˜ì—ˆëƒ ì•ˆë˜ì—ˆëƒë§Œ íŒë‹¨í•œë‹¤. ì¶©ëŒì´ ëœ ê³³ì˜ ìœ„ì¹˜ê°€ í•„ìš”í•˜ë‹¤ë©´ CNtlNaviImp::FirstCollisionTest í•¨ìˆ˜ë¥¼ ì°¸ì¡°í•œë‹¤.
+* \param hHandle WORLDì˜ IDì™€ iMesh Dataë¥¼ ê°€ì§€ëŠ” êµ¬ì¡°ì²´ë¥¼ ( void* ) ìœ¼ë¡œ ìºìŠ¤íŒ…í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” Handle
+* \param lAgentRadius Agentì˜ ë°˜ì§€ë¦„
+* \param vSourcePos	ì‹œì‘ ì¢Œí‘œ
+* \param vTargetPos ë ì¢Œí‘œ
+* \return ì¶©ëŒ ê²°ê³¼ë¥¼ ë‚˜íƒ€ë‚´ëŠ” eCOL_TEST_RESULT ì—´ê±°í˜•
 */
 eCOL_TEST_RESULT CNtlNaviImp::CollisionTest( NAVI_INST_HANDLE hHandle, float fAgentRadius, sNAVI_POS& sSrcPos, sNAVI_POS& sDestPos )
 {
@@ -706,14 +706,14 @@ eCOL_TEST_RESULT CNtlNaviImp::CollisionTest(NAVI_INST_HANDLE hHandle, float fAge
 }
 
 /**
-* \brief Source position ¿¡¼­ Target position ±îÁö Ãæµ¹ Å×½ºÆ®¸¦ ÇÏ¿© Ãæµ¹µÈ °÷ÀÇ positionÀ» ¾Ë¾Æ³½´Ù.
-* \remark ÇöÀç ÀÌ ÇÔ¼ö´Â WORLDÀÇ Y ÁÂÇ¥´Â Á¤È®ÇÏÁö ¾ÊÀ¸¹Ç·Î YÀÇ Á¤È®µµ´Â º¸ÁõÇÒ ¼ö ¾ø´Ù.
-* \param hHandle WORLDÀÇ ID¿Í iMesh Data¸¦ °¡Áö´Â ±¸Á¶Ã¼¸¦ ( void* ) À¸·Î Ä³½ºÆÃÇÏ±â À§ÇØ »ç¿ëµÇ´Â Handle
-* \param lAgentRadius AgentÀÇ ¹İÁö¸§
-* \param sSrcPos ½ÃÀÛ ÁÂÇ¥
-* \param sDestPos ³¡ ÁÂÇ¥
-* \param sFirstCollisionPos Ãæµ¹µÈ °÷ÀÇ ÁÂÇ¥°¡ Ãâ·ÂµÈ´Ù.
-* \return Ãæµ¹ °á°ú¸¦ ³ªÅ¸³»´Â eCOL_TEST_RESULT ¿­°ÅÇü
+* \brief Source position ì—ì„œ Target position ê¹Œì§€ ì¶©ëŒ í…ŒìŠ¤íŠ¸ë¥¼ í•˜ì—¬ ì¶©ëŒëœ ê³³ì˜ positionì„ ì•Œì•„ë‚¸ë‹¤.
+* \remark í˜„ì¬ ì´ í•¨ìˆ˜ëŠ” WORLDì˜ Y ì¢Œí‘œëŠ” ì •í™•í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ Yì˜ ì •í™•ë„ëŠ” ë³´ì¦í•  ìˆ˜ ì—†ë‹¤.
+* \param hHandle WORLDì˜ IDì™€ iMesh Dataë¥¼ ê°€ì§€ëŠ” êµ¬ì¡°ì²´ë¥¼ ( void* ) ìœ¼ë¡œ ìºìŠ¤íŒ…í•˜ê¸° ìœ„í•´ ì‚¬ìš©ë˜ëŠ” Handle
+* \param lAgentRadius Agentì˜ ë°˜ì§€ë¦„
+* \param sSrcPos ì‹œì‘ ì¢Œí‘œ
+* \param sDestPos ë ì¢Œí‘œ
+* \param sFirstCollisionPos ì¶©ëŒëœ ê³³ì˜ ì¢Œí‘œê°€ ì¶œë ¥ëœë‹¤.
+* \return ì¶©ëŒ ê²°ê³¼ë¥¼ ë‚˜íƒ€ë‚´ëŠ” eCOL_TEST_RESULT ì—´ê±°í˜•
 */
 eCOL_TEST_RESULT CNtlNaviImp::FirstCollisionTest( NAVI_INST_HANDLE hHandle, float fAgentRadius, sNAVI_POS& sSrcPos, sNAVI_POS& sDestPos, sNAVI_POS& sFirstCollisionPos )
 {

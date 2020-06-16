@@ -1,8 +1,8 @@
-/// Å¬¶óÀÌ¾ðÆ® ¼­Æ÷Æ® Åø(Mr.PoPo)¿Í Å¬¶óÀÌ¾ðÆ® °£¿¡ Àü¼ÛÇÏ´Â À©µµ¿ì ¸Þ½ÃÁö
+/// í´ë¼ì´ì–¸íŠ¸ ì„œí¬íŠ¸ íˆ´(Mr.PoPo)ì™€ í´ë¼ì´ì–¸íŠ¸ ê°„ì— ì „ì†¡í•˜ëŠ” ìœˆë„ìš° ë©”ì‹œì§€
 
 #pragma once
 
-#define MSG_FROM_MRPOPO                 (WM_USER + 2374)                  ///< ¼­Æ÷Æ® Åø·ÎºÎÅÍÀÇ ¸Þ½ÃÁö
+#define MSG_FROM_MRPOPO                 (WM_USER + 2374)                  ///< ì„œí¬íŠ¸ íˆ´ë¡œë¶€í„°ì˜ ë©”ì‹œì§€
 
 enum EMrPoPoMsg
 {
@@ -15,7 +15,7 @@ enum EMrPoPoMsg
     MSG_MRPOPO_SETSPEED,
     MSG_MRPOPO_SETOFFENCE,
     MSG_MRPOPO_SETDEFNECE,
-    MSG_MRPOPO_TEST_CROWD,                          ///< °üÁß ¿¬Ãâ Å×½ºÆ®
+    MSG_MRPOPO_TEST_CROWD,                          ///< ê´€ì¤‘ ì—°ì¶œ í…ŒìŠ¤íŠ¸
     MSG_MRPOPO_TELEPORT,
     MSG_MRPOPO_TELE_DIRECT_X,
     MSG_MRPOPO_TELE_DIRECT_Z,
@@ -30,35 +30,35 @@ enum EMrPoPoMsg
     MSG_MRPOPO_CREATE_LEVEL_ITEMS,
     MSG_MRPOPO_SUPER_MODE,    
 
-    // Å¬¶óÀÌ¾ðÆ® Ä¡Æ®
-    MSG_MRPOPO_ELAPSEDTIME_WEIGHT = 1000,                  ///< ½Ã°£ Á¶Àý
-    MSG_MRPOPO_DUMP_TO_CONSOLE,                     ///< ÄÜ¼ÖÃ¢ ´ýÇÁ
-    MSG_MRPOPO_DUMP_TO_GUI,                         ///< GUI ´ýÇÁ
-    MSG_MRPOPO_DUMP_TO_FILE,                        ///< ÆÄÀÏ ´ýÇÁ
-    MSG_MRPOPO_DUMP,                                ///< ´ýÇÁ¸¦ ¶á´Ù    
-    MSG_MRPOPO_DUMP_REG,                            ///< Å¸°ÙÀ» ´ýÇÁ ´ë»ó¿¡ µî·Ï
-    MSG_MRPOPO_DUMP_UNREG,                          ///< Å¸°ÙÀ» ´ýÇÁ ´ë»ó¿¡ Á¦°Å
-    MSG_MRPOPO_LOWSPEC_CHAR,                        ///< Àú»ç¾ç Ä³¸¯ÅÍ
-    MSG_MRPOPO_LOWSPEC_EFFECT,                      ///< Àú»ç¾ç ÀÌÆåÆ®
-    MSG_MRPOPO_TEST1,                               ///< Å×½ºÆ®°ª Á¶Àý
-    MSG_MRPOPO_TEST2,                               ///< Å×½ºÆ®°ª Á¶Àý
-    MSG_MRPOPO_TEST3,                               ///< Å×½ºÆ®°ª Á¶Àý
-    MSG_MRPOPO_TENKAICHI_MARK,                      ///< ÃµÇÏÁ¦ÀÏ ¹«µµÈ¸ ¸¶Å© Å×½ºÆ®
-    MSG_MRPOPO_TEST_CHANGECOLOR,                    ///< ÄÃ·¯ º¯°æ ÀÌº¥Æ® Å×½ºÆ®
-    MSG_MRPOPO_TRANSLATE_STATE,                     ///< »óÅÂ º¯°æ
-    MSG_MRPOPO_TRANSFORM,                           ///< º¯½Å 
-    MSG_MRPOPO_STUN,                                ///< ½ºÅÏ »óÅÂµé Å×½ºÆ®
-    MSG_MRPOPO_TARGET_MARKING,                      ///< ½ºÅ³ÀÇ Å¸°ÙÀ¸·Î Å¸°ÔÆÃ Å×½ºÆ®
-    MSG_MRPOPO_PUSHING,                             ///< È¸Àü °ø°Ý¿¡ ÀÇÇÑ Push Å×½ºÆ®
+    // í´ë¼ì´ì–¸íŠ¸ ì¹˜íŠ¸
+    MSG_MRPOPO_ELAPSEDTIME_WEIGHT = 1000,                  ///< ì‹œê°„ ì¡°ì ˆ
+    MSG_MRPOPO_DUMP_TO_CONSOLE,                     ///< ì½˜ì†”ì°½ ë¤í”„
+    MSG_MRPOPO_DUMP_TO_GUI,                         ///< GUI ë¤í”„
+    MSG_MRPOPO_DUMP_TO_FILE,                        ///< íŒŒì¼ ë¤í”„
+    MSG_MRPOPO_DUMP,                                ///< ë¤í”„ë¥¼ ëœ¬ë‹¤    
+    MSG_MRPOPO_DUMP_REG,                            ///< íƒ€ê²Ÿì„ ë¤í”„ ëŒ€ìƒì— ë“±ë¡
+    MSG_MRPOPO_DUMP_UNREG,                          ///< íƒ€ê²Ÿì„ ë¤í”„ ëŒ€ìƒì— ì œê±°
+    MSG_MRPOPO_LOWSPEC_CHAR,                        ///< ì €ì‚¬ì–‘ ìºë¦­í„°
+    MSG_MRPOPO_LOWSPEC_EFFECT,                      ///< ì €ì‚¬ì–‘ ì´íŽ™íŠ¸
+    MSG_MRPOPO_TEST1,                               ///< í…ŒìŠ¤íŠ¸ê°’ ì¡°ì ˆ
+    MSG_MRPOPO_TEST2,                               ///< í…ŒìŠ¤íŠ¸ê°’ ì¡°ì ˆ
+    MSG_MRPOPO_TEST3,                               ///< í…ŒìŠ¤íŠ¸ê°’ ì¡°ì ˆ
+    MSG_MRPOPO_TENKAICHI_MARK,                      ///< ì²œí•˜ì œì¼ ë¬´ë„íšŒ ë§ˆí¬ í…ŒìŠ¤íŠ¸
+    MSG_MRPOPO_TEST_CHANGECOLOR,                    ///< ì»¬ëŸ¬ ë³€ê²½ ì´ë²¤íŠ¸ í…ŒìŠ¤íŠ¸
+    MSG_MRPOPO_TRANSLATE_STATE,                     ///< ìƒíƒœ ë³€ê²½
+    MSG_MRPOPO_TRANSFORM,                           ///< ë³€ì‹  
+    MSG_MRPOPO_STUN,                                ///< ìŠ¤í„´ ìƒíƒœë“¤ í…ŒìŠ¤íŠ¸
+    MSG_MRPOPO_TARGET_MARKING,                      ///< ìŠ¤í‚¬ì˜ íƒ€ê²Ÿìœ¼ë¡œ íƒ€ê²ŒíŒ… í…ŒìŠ¤íŠ¸
+    MSG_MRPOPO_PUSHING,                             ///< íšŒì „ ê³µê²©ì— ì˜í•œ Push í…ŒìŠ¤íŠ¸
 
-    // ±×·¡ÇÈ ¼³Á¤
-    MSG_MRPOPO_SPEC_TERRAIN_DIST = 2000,             ///< ÁöÇü °Å¸®
-    MSG_MRPOPO_SPEC_TERRAIN_SHADOW,                 ///< ÁöÇü ±×¸²ÀÚ
-    MSG_MRPOPO_SPEC_WATER_SPECULAR,                 ///< ¹°ÀÇ ½ºÆåÅ§¶ó
-	MSG_MRPOPO_SPEC_CHAR_DIST,                      ///< Ä³¸¯ÅÍ Dist
-    MSG_MRPOPO_SPEC_CHAR_EDGE,                      ///< Ä³¸¯ÅÍ EDGE
-	MSG_MRPOPO_SPEC_CHAR_GRAYCOLOR,                 ///< Ä³¸¯ÅÍ Gray Color
-    MSG_MRPOPO_SPEC_EFFECT,                         ///< ·Î¿ì ½ºÆå ÀÌÆåÆ®
+    // ê·¸ëž˜í”½ ì„¤ì •
+    MSG_MRPOPO_SPEC_TERRAIN_DIST = 2000,             ///< ì§€í˜• ê±°ë¦¬
+    MSG_MRPOPO_SPEC_TERRAIN_SHADOW,                 ///< ì§€í˜• ê·¸ë¦¼ìž
+    MSG_MRPOPO_SPEC_WATER_SPECULAR,                 ///< ë¬¼ì˜ ìŠ¤íŽ™í˜ë¼
+	MSG_MRPOPO_SPEC_CHAR_DIST,                      ///< ìºë¦­í„° Dist
+    MSG_MRPOPO_SPEC_CHAR_EDGE,                      ///< ìºë¦­í„° EDGE
+	MSG_MRPOPO_SPEC_CHAR_GRAYCOLOR,                 ///< ìºë¦­í„° Gray Color
+    MSG_MRPOPO_SPEC_EFFECT,                         ///< ë¡œìš° ìŠ¤íŽ™ ì´íŽ™íŠ¸
 	MSG_MRPOPO_SPEC_EFFECT_PARTICLE_RATIO,          ///< Particle Ratio
 	MSG_MRPOPO_SPEC_EFFECT_MESH,					///< Mesh Effect
 	MSG_MRPOPO_SPEC_EFFECT_DECAL,			        ///< Decal Effect
@@ -66,28 +66,28 @@ enum EMrPoPoMsg
 
 enum EMPPTeleport
 {
-    MPP_TELE_YAHOI,             // ¾ßÈ£ÀÌ ¸¶À»
-    MPP_TELE_YUREKA,            // À¯·¹Ä« °ø¿ø
-    MPP_TELE_DALPANG,           // ´ÞÆØÀÌ ¸¶À»
-    MPP_TELE_DRAGON,            // ¿ëÀÇ ÄÚ°ñÀÌ
-    MPP_TELE_BAEE,              // ¹è¿¡ ºô¸®Áö
-    MPP_TELE_AJIRANG,           // ¾ÆÁö¶ûÀÌ »ù
-    MPP_TELE_KARINGA_1,         // Ä«¸°°¡ÀÇ ¸¶À» 1
-    MPP_TELE_KARINGA_2,         // Ä«¸°°¡ÀÇ ¸¶À» 2
-    MPP_TELE_GREAT_TREE,        // ±×·¹ÀÌÆ® Æ®¸®
-    MPP_TELE_KARINGA_3,         // Ä«¸°°¡ÀÇ ¾îÃÌ
-    MPP_TELE_MERMAID,           // ÀÎ¾î»ó
-    MPP_TELE_GANNET,            // °¡³Ý Ãµ¹®´ë
-    MPP_TELE_EMERALD,           // ¿¡¸Þ¶öµå ºñÄ¡
-    MPP_TELE_TEMBARIN,          // ÅÛ¹ö¸° Ä·ÇÁ    
-    MPP_TELE_CELL,              // ¼Ð¸µ
-    MPP_TELE_BUU,               // ºÎ¿ì ±â³ä°ü
-    MPP_TELE_CC,                // CC ¿ª»ç ¹Ú¹°°ü
-    MPP_TELE_MUSHROOM,          // ¹ö¼¸ÃÌ
+    MPP_TELE_YAHOI,             // ì•¼í˜¸ì´ ë§ˆì„
+    MPP_TELE_YUREKA,            // ìœ ë ˆì¹´ ê³µì›
+    MPP_TELE_DALPANG,           // ë‹¬íŒ½ì´ ë§ˆì„
+    MPP_TELE_DRAGON,            // ìš©ì˜ ì½”ê³¨ì´
+    MPP_TELE_BAEE,              // ë°°ì— ë¹Œë¦¬ì§€
+    MPP_TELE_AJIRANG,           // ì•„ì§€ëž‘ì´ ìƒ˜
+    MPP_TELE_KARINGA_1,         // ì¹´ë¦°ê°€ì˜ ë§ˆì„ 1
+    MPP_TELE_KARINGA_2,         // ì¹´ë¦°ê°€ì˜ ë§ˆì„ 2
+    MPP_TELE_GREAT_TREE,        // ê·¸ë ˆì´íŠ¸ íŠ¸ë¦¬
+    MPP_TELE_KARINGA_3,         // ì¹´ë¦°ê°€ì˜ ì–´ì´Œ
+    MPP_TELE_MERMAID,           // ì¸ì–´ìƒ
+    MPP_TELE_GANNET,            // ê°€ë„· ì²œë¬¸ëŒ€
+    MPP_TELE_EMERALD,           // ì—ë©”ëž„ë“œ ë¹„ì¹˜
+    MPP_TELE_TEMBARIN,          // í…œë²„ë¦° ìº í”„    
+    MPP_TELE_CELL,              // ì…¸ë§
+    MPP_TELE_BUU,               // ë¶€ìš° ê¸°ë…ê´€
+    MPP_TELE_CC,                // CC ì—­ì‚¬ ë°•ë¬¼ê´€
+    MPP_TELE_MUSHROOM,          // ë²„ì„¯ì´Œ
 	MPP_TELE_PAPAYA,
 };
 
-/// ´ýÇÁ Å¸°Ù
+/// ë¤í”„ íƒ€ê²Ÿ
 enum EMPPDumpTarget
 {
     MPP_DUMP_SELF,

@@ -85,7 +85,7 @@ bool CSystemEffectTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 
 	sSYSTEM_EFFECT_TBLDAT * pTbldat = (sSYSTEM_EFFECT_TBLDAT*) pvTable;
 
-	//  [8/31/2006 zeroera] : Ãß°¡ : System Effect Code MatchUp Table
+	//  [8/31/2006 zeroera] : ì¶”ê°€ : System Effect Code MatchUp Table
 	{
 		char buffer[256] = { 0x00, };
 		WideCharToMultiByte( ::GetACP(), 0, pTbldat->wszName, -1, buffer, 256, NULL, NULL );

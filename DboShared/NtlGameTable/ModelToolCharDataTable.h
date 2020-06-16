@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-03-5
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hong Ho Dong   ( battery@ntl-inc.com )
 //
@@ -60,15 +60,15 @@ const int NTL_ST_INDEX_ANIM_MODULE_SKILL = 1022;
 
 struct sCHAR_DATA_INFO
 {
-	float	fDurationTime;			// Animation ÀüÃ¼ ½Ã°£
-	BYTE	byPushCount;			// Push °¹¼ö
-	BYTE	byKnockDownCount;		// Knock Down °¹¼ö(ÇöÀç 1°³)
-    bool    bKB2Push;               ///< ³Ë´Ù¿îÀ» Push·Î º¯°æÇÏ´ÂÁö À¯¹« 
-	bool	bDataLoaded;			// Data°¡ Load°¡ µÇ´ÂÁö
+	float	fDurationTime;			// Animation ì „ì²´ ì‹œê°„
+	BYTE	byPushCount;			// Push ê°¯ìˆ˜
+	BYTE	byKnockDownCount;		// Knock Down ê°¯ìˆ˜(í˜„ìž¬ 1ê°œ)
+    bool    bKB2Push;               ///< ë„‰ë‹¤ìš´ì„ Pushë¡œ ë³€ê²½í•˜ëŠ”ì§€ ìœ ë¬´ 
+	bool	bDataLoaded;			// Dataê°€ Loadê°€ ë˜ëŠ”ì§€
 
-	BYTE	byHitCount;						// HitÀÇ °¹¼ö
+	BYTE	byHitCount;						// Hitì˜ ê°¯ìˆ˜
 	float	aHitTime[NTL_MAX_SIZE_HIT];		// Hit Time
-    float   fSkillCancelTime;               ///< ½ºÅ³ Äµ½½ ÀÌº¥Æ®ÀÇ Å¸ÀÌ¹Ö
+    float   fSkillCancelTime;               ///< ìŠ¤í‚¬ ìº”ìŠ¬ ì´ë²¤íŠ¸ì˜ íƒ€ì´ë°
 
 	sCHAR_DATA_INFO() : fDurationTime(0), 
 		                byPushCount(0), 
@@ -97,9 +97,9 @@ public:
 	bool Add(int nAnimKeyID, float fDurationTime, BYTE byPushCount, BYTE byKnockDownCount, BYTE byHitCount, float *pHitTime, bool bKB2Push = false);
     bool AddSkillCancelTime(int nAnimKeyID, float fTime);
 	
-	sCHAR_DATA_INFO *GetChainAttack(BYTE byClass, BYTE byWeapon, BYTE byChainSequence);			//ChainAttackÀÇ °æ¿ì ¾ò´Â´Ù.
+	sCHAR_DATA_INFO *GetChainAttack(BYTE byClass, BYTE byWeapon, BYTE byChainSequence);			//ChainAttackì˜ ê²½ìš° ì–»ëŠ”ë‹¤.
 
-	sCHAR_DATA_INFO *GetAnim(BYTE byWeapon, ANIMATIONID AnimKeyID); //AnimationKey¸¦ ³ÖÀ¸¸é Data¸¦ ¾ò´Â´Ù.(ÇöÀç PCÀÇ ½ºÅ³°ú MOB¿¡ °üÇÑ ANI¸¸ °¡´É, PC ¹«±â¿¡ µû¸¥ ´Ù¸¥ ¾Ö´Ï´Â ÃßÈÄ ÀÎÅÍÆäÀÌ½º ÀçÀÛ¼º)
+	sCHAR_DATA_INFO *GetAnim(BYTE byWeapon, ANIMATIONID AnimKeyID); //AnimationKeyë¥¼ ë„£ìœ¼ë©´ Dataë¥¼ ì–»ëŠ”ë‹¤.(í˜„ìž¬ PCì˜ ìŠ¤í‚¬ê³¼ MOBì— ê´€í•œ ANIë§Œ ê°€ëŠ¥, PC ë¬´ê¸°ì— ë”°ë¥¸ ë‹¤ë¥¸ ì• ë‹ˆëŠ” ì¶”í›„ ì¸í„°íŽ˜ì´ìŠ¤ ìž¬ìž‘ì„±)
 
 
 public:
@@ -114,7 +114,7 @@ public:
 
 
 	bool				GetSkillKnockDown(ANIMATIONID skillAnimationId);
-    bool                GetSkillKB2Push(ANIMATIONID skillAnimationId);                              ///< ³Ë´Ù¿îÀ» Push·Î Àû¿ëÇÒÁö À¯¹«¸¦ ¹ÝÈ¯
+    bool                GetSkillKB2Push(ANIMATIONID skillAnimationId);                              ///< ë„‰ë‹¤ìš´ì„ Pushë¡œ ì ìš©í• ì§€ ìœ ë¬´ë¥¼ ë°˜í™˜
 	float				GetSkillAnimationLength(ANIMATIONID skillAnimationId);
 	BYTE				GetSkillAnimationPushCount(ANIMATIONID skillAnimationId);
 	DWORD				GetSkillAnimationFirstHitTime(ANIMATIONID skillAnimationId);

@@ -20,10 +20,10 @@ class CDboTSActETimerS : public CNtlTSAction
 protected:
 	eEXCEPT_TIMER_SORT					m_eExceptTimerSort;
 
-	// ´ë±â ½Ã°£
+	// ëŒ€ê¸° ì‹œê°„
 	unsigned int						m_uiTime;
 
-	// ½ÇÇàÇÒ Except group id
+	// ì‹¤í–‰í•  Except group id
 	NTL_TS_TG_ID						m_tgId;
 
 // Constructions
@@ -48,7 +48,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

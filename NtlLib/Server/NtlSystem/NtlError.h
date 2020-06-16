@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-11-30
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	Error Ã³¸® °ü·Ã 
+//	Desc		:	Error ì²˜ë¦¬ ê´€ë ¨ 
 //
 //***********************************************************************************
 

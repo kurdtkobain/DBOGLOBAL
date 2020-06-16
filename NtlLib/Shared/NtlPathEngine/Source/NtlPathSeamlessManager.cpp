@@ -59,11 +59,11 @@ void CNtlPathSeamlessManager::Update( float fElapsed )
 {
 	CNtlPathSeamlessLoadingManager::GetInstance()->Update( fElapsed );
 
-	// ·ÎµùÀÌ ¿Ï·áµÈ ¸Ş½Ã°¡ ÀÖ´Ù.
+	// ë¡œë”©ì´ ì™„ë£Œëœ ë©”ì‹œê°€ ìˆë‹¤.
 	CNtlSeamlessMesh* pMesh = CNtlPathSeamlessLoadingManager::GetInstance()->GetLoadedMesh();
 	if( pMesh )
 	{
-		// ÇöÀç °°Àº Å¸ÀÏÀÌ ·ÎµåµÇ¾î ÀÖ´Ù¸é »èÁ¦ÇÏ°í ¸®ÅÏÇÑ´Ù.
+		// í˜„ì¬ ê°™ì€ íƒ€ì¼ì´ ë¡œë“œë˜ì–´ ìˆë‹¤ë©´ ì‚­ì œí•˜ê³  ë¦¬í„´í•œë‹¤.
 		if( IsLoadedMesh( pMesh ) )
 		{
 			delete pMesh;
@@ -72,7 +72,7 @@ void CNtlPathSeamlessManager::Update( float fElapsed )
 			return;
 		}
 
-		// ÇöÀç World Index¿Í ´Ù¸¥ °÷ÀÇ Å¸ÀÏÀÌ¶ó¸é »èÁ¦
+		// í˜„ì¬ World Indexì™€ ë‹¤ë¥¸ ê³³ì˜ íƒ€ì¼ì´ë¼ë©´ ì‚­ì œ
 		if( m_nCurrentWorldIndex != pMesh->GetWorldIndex() )
 		{
 			delete pMesh;
@@ -81,7 +81,7 @@ void CNtlPathSeamlessManager::Update( float fElapsed )
 			return;
 		}
 
-		// ÇöÀç Seamless Range¿¡¼­ ¹ş¾î³ª ÀÖ´Ù¸é »èÁ¦ÇÏ°í ¸®ÅÏÇÑ´Ù.
+		// í˜„ì¬ Seamless Rangeì—ì„œ ë²—ì–´ë‚˜ ìˆë‹¤ë©´ ì‚­ì œí•˜ê³  ë¦¬í„´í•œë‹¤.
 		if( IsSeamlessRangeOver( pMesh ) )
 		{
 			delete pMesh;
@@ -97,7 +97,7 @@ void CNtlPathSeamlessManager::Update( float fElapsed )
 	static float fTimer = 0.0f;
 	fTimer += fElapsed;
 
-	// 1ÃÊ¿¡ ÇÑ¹ø¾¿ Á¤º¸ Ãâ·Â
+	// 1ì´ˆì— í•œë²ˆì”© ì •ë³´ ì¶œë ¥
 	if( fTimer > 5.0f )
 	{
 		fTimer = 0.0f;
@@ -119,7 +119,7 @@ void CNtlPathSeamlessManager::Destroy()
 
 void CNtlPathSeamlessManager::ClearMeshFederationContainer( void )
 {
-	// Federation list¸¦ Áö¿öÁØ´Ù.
+	// Federation listë¥¼ ì§€ì›Œì¤€ë‹¤.
 	for each( std::pair < int, CNtlMeshFederationContainer* > pair in m_mapWorldPath )
 	{
 		if( pair.second )
@@ -148,7 +148,7 @@ void CNtlPathSeamlessManager::ClearSeamlessMesh( void )
 
 void CNtlPathSeamlessManager::AddAgentSize( int nAgnetSize )
 {
-	// °Ë»çÇØº¸°í ¾øÀ¸¸é ³Ö´Â´Ù.
+	// ê²€ì‚¬í•´ë³´ê³  ì—†ìœ¼ë©´ ë„£ëŠ”ë‹¤.
 	for each( int nOldSize in m_vecAgentSize )
 	{
 		if( nOldSize == nAgnetSize )
@@ -178,11 +178,11 @@ void CNtlPathSeamlessManager::ChangeWorld( int nWorldIndex )
 	if( !m_bIsStart )
 		m_bIsStart = true;
 
-	// ·Îµå µÇÁö ¾Ê¾Ò´ø WorldIndex¶ó¸é MeshFederation header¸¦ ÀĞ¾îµé¿©¿Â´Ù.
+	// ë¡œë“œ ë˜ì§€ ì•Šì•˜ë˜ WorldIndexë¼ë©´ MeshFederation headerë¥¼ ì½ì–´ë“¤ì—¬ì˜¨ë‹¤.
 	if( !IsLoadedWorld( nWorldIndex ) )
 		LoadWorldMeshFederation( nWorldIndex );
 	
-	// ÇöÀç ÀÖ´ø World¿Í ChangeµÇ´Â World ÀÇ Index°¡ ´Ù¸£´Ù¸é
+	// í˜„ì¬ ìˆë˜ Worldì™€ Changeë˜ëŠ” World ì˜ Indexê°€ ë‹¤ë¥´ë‹¤ë©´
 	if( m_nCurrentWorldIndex != nWorldIndex )
 	{
 		m_nCurrentWorldIndex = nWorldIndex;
@@ -251,13 +251,13 @@ bool CNtlPathSeamlessManager::IsSeamlessRangeOver( CNtlSeamlessMesh* pMesh )
 	seamRange.minX = m_nCurrentPositionX - m_nSeamlessRange;
 	seamRange.minY = m_nCurrentPositionY - m_nSeamlessRange;
 
-	// ·¹ÀÎÁö°¡ °ãÄ¡´ÂÁö ¾È °ãÄ¡´ÂÁö È®ÀÎÇÑ´Ù.
+	// ë ˆì¸ì§€ê°€ ê²¹ì¹˜ëŠ”ì§€ ì•ˆ ê²¹ì¹˜ëŠ”ì§€ í™•ì¸í•œë‹¤.
 	return !NTLPE_RangesOverlap( pMesh->GetRangeAtWorld(), seamRange );
 }
 
 bool CNtlPathSeamlessManager::UpdatePosition( int nPositionX, int nPositionY, int nPositionZ /*= 0*/ )
 {
-	// SeamlessManager°¡ ±¸µ¿µÇ°í ÀÖÁö ¾Ê°Å³ª World°¡ INVALID ¸¦ °¡¸£Å°°í ÀÖ´Ù¸é Update¸¦ ÇÏÁö ¸øÇÑ´Ù.
+	// SeamlessManagerê°€ êµ¬ë™ë˜ê³  ìˆì§€ ì•Šê±°ë‚˜ Worldê°€ INVALID ë¥¼ ê°€ë¥´í‚¤ê³  ìˆë‹¤ë©´ Updateë¥¼ í•˜ì§€ ëª»í•œë‹¤.
 	if( !m_bIsStart )
 		return false;
 
@@ -269,10 +269,10 @@ bool CNtlPathSeamlessManager::UpdatePosition( int nPositionX, int nPositionY, in
 	m_nCurrentPositionY = nPositionY;
 	m_nCurrentPositionZ = nPositionZ;
 
-	// OverlappedµÇ´Â MeshFederation HeaderµéÀ» World³»¿¡¼­ ÀĞ¾î¿Â´Ù.
+	// Overlappedë˜ëŠ” MeshFederation Headerë“¤ì„ Worldë‚´ì—ì„œ ì½ì–´ì˜¨ë‹¤.
 	std::list < CNtlMeshFederation* > listOverlapped;
 	
-	// AgentÀÇ Seamless ¿µ¿ªÀ» ¼³Á¤ÇÏ°í °¢ Tileµé°ú °ãÄ¡´Â Áö È®ÀÎÇÑ´Ù.
+	// Agentì˜ Seamless ì˜ì—­ì„ ì„¤ì •í•˜ê³  ê° Tileë“¤ê³¼ ê²¹ì¹˜ëŠ” ì§€ í™•ì¸í•œë‹¤.
 	cHorizontalRange agentRange, tileRange, tileLocalRange;
 	agentRange.maxX = nPositionX + m_nSeamlessRange;
 	agentRange.maxY = nPositionY + m_nSeamlessRange;
@@ -294,12 +294,12 @@ bool CNtlPathSeamlessManager::UpdatePosition( int nPositionX, int nPositionY, in
 	}
 
 	listdef_NtlSeamlessMesh listSeam;
-	// °ãÄ¡´Â Å¸ÀÏÀÇ ¸®½ºÆ®¸¦ ÀÛ¼ºÇÑ´Ù.
+	// ê²¹ì¹˜ëŠ” íƒ€ì¼ì˜ ë¦¬ìŠ¤íŠ¸ë¥¼ ì‘ì„±í•œë‹¤.
 	for each( CNtlMeshFederation* mf in listOverlapped )
 	{
 		for( int i=0; i < mf->GetTileCount(); ++i )
 		{
-			// Å¸ÀÏÀÇ ¿µ¿ªÀ» °®°í ¿Â´Ù.
+			// íƒ€ì¼ì˜ ì˜ì—­ì„ ê°–ê³  ì˜¨ë‹¤.
 			mf->getRepresentedRegion_World( i, tileRange );
 			mf->getRepresentedRegion_Local( i, tileLocalRange );
 
@@ -307,16 +307,16 @@ bool CNtlPathSeamlessManager::UpdatePosition( int nPositionX, int nPositionY, in
 			long nCenterAtWorldY;
 			mf->getTileCenter( i, nCenterAtWorldX, nCenterAtWorldY );
 
-			// Å¸ÀÏÀÇ ¿µ¿ªÀÌ °ãÄ¡´ÂÁö È®ÀÎÇÑ´Ù.
+			// íƒ€ì¼ì˜ ì˜ì—­ì´ ê²¹ì¹˜ëŠ”ì§€ í™•ì¸í•œë‹¤.
 			if( NTLPE_RangesOverlap( agentRange, tileRange ) )
 			{
 				nOverlapCount++;
 
-				// ÀÌ¹Ì Á¸Àç ÇÑ´Ù¸é ¸®½ºÆ®¿¡ ´ãÁö ¾Ê°í ³Ñ¾î°£´Ù.
+				// ì´ë¯¸ ì¡´ì¬ í•œë‹¤ë©´ ë¦¬ìŠ¤íŠ¸ì— ë‹´ì§€ ì•Šê³  ë„˜ì–´ê°„ë‹¤.
 				if( IsLoadedMesh( m_nCurrentWorldIndex, mf->GetFieldIndex(), i ) )
 					continue;
 
-				// ¸®½ºÆ®¿¡ ´ã´Â´Ù.
+				// ë¦¬ìŠ¤íŠ¸ì— ë‹´ëŠ”ë‹¤.
 				CNtlSeamlessMesh* pMesh = CreateSeamlessMesh( m_nCurrentWorldIndex, mf->GetFieldIndex(), i, tileRange, tileLocalRange
 					,nCenterAtWorldX, nCenterAtWorldY);
 				
@@ -332,14 +332,14 @@ bool CNtlPathSeamlessManager::UpdatePosition( int nPositionX, int nPositionY, in
 		}
 	}
 
-	// ÁÖ¾îÁø ºñ±³ ÇÔ¼ö·Î ¾Ë¸Â°Ô Á¤·ÄÇÑ´Ù.
+	// ì£¼ì–´ì§„ ë¹„êµ í•¨ìˆ˜ë¡œ ì•Œë§ê²Œ ì •ë ¬í•œë‹¤.
 	listSeam.sort(CNtlPathSeamlessManager::SortSeamlessMeshCompare);
 
-	// ½ÇÁ¦·Î ·Îµù Queue¿¡ ´ã¾ÆÁØ´Ù.
+	// ì‹¤ì œë¡œ ë¡œë”© Queueì— ë‹´ì•„ì¤€ë‹¤.
 	for each( CNtlSeamlessMesh* pMesh in listSeam )
 		CNtlPathSeamlessLoadingManager::GetInstance()->LoadReservation( pMesh );
 
-	// ÇöÀç ·ÎµåµÇ¾î ÀÖ´Â MeshÁß¿¡¼­ °Å¸®°¡ ¹ş¾î³­ °Íµé »èÁ¦
+	// í˜„ì¬ ë¡œë“œë˜ì–´ ìˆëŠ” Meshì¤‘ì—ì„œ ê±°ë¦¬ê°€ ë²—ì–´ë‚œ ê²ƒë“¤ ì‚­ì œ
 	listdef_NtlSeamlessMesh::iterator it = m_listMesh.begin();
 	while( it != m_listMesh.end() )
 	{
@@ -358,7 +358,7 @@ bool CNtlPathSeamlessManager::UpdatePosition( int nPositionX, int nPositionY, in
 		}
 	}
 
-	// ·Îµù ¿¹¾à µÇ¾î ÀÖ´Â °Íµé Áß¿¡¼­ °Å¸®°¡ ¹ş¾î³­ °Íµé »èÁ¦
+	// ë¡œë”© ì˜ˆì•½ ë˜ì–´ ìˆëŠ” ê²ƒë“¤ ì¤‘ì—ì„œ ê±°ë¦¬ê°€ ë²—ì–´ë‚œ ê²ƒë“¤ ì‚­ì œ
 	CNtlPathSeamlessLoadingManager::GetInstance()->RemoveReservationByRangeOver( agentRange );
 
 	return true;
@@ -370,8 +370,8 @@ iPath* CNtlPathSeamlessManager::FindShortestPath( int nAgentSize,
 												 int nDestPositionX, int nDestPositionY, int nDestPositionZ,
 												 std::list< cPosition >& listPath)
 {
-	// ÇöÀç ·Îµù µÈ Tile Áß¿¡ src ¿Í dest¸¦ ´Ù Æ÷ÇÔÇÏ°í ÀÖ´Â TileÀ» Ã£¾Æ³½´Ù.
-	// Src X ¿Í Dest X ·Î Min Max X ¸¦ °¡¸®°í
+	// í˜„ì¬ ë¡œë”© ëœ Tile ì¤‘ì— src ì™€ destë¥¼ ë‹¤ í¬í•¨í•˜ê³  ìˆëŠ” Tileì„ ì°¾ì•„ë‚¸ë‹¤.
+	// Src X ì™€ Dest X ë¡œ Min Max X ë¥¼ ê°€ë¦¬ê³ 
 	cHorizontalRange rangeTarget;
 	
 	if( nSrcPositionX < nDestPositionX )
@@ -401,13 +401,13 @@ iPath* CNtlPathSeamlessManager::FindShortestPath( int nAgentSize,
 		if( !pMesh->IsLoad() )
 			continue;
 
-		// ¸¸¾à Source¿Í Dest°¡ Æ÷ÇÔµÈ ¿µ¿ªÀ» ´Ù Æ÷ÇÔÇÏ°í ÀÖ´Â Å¸ÀÏÀÌ ÀÖ´Ù¸é
+		// ë§Œì•½ Sourceì™€ Destê°€ í¬í•¨ëœ ì˜ì—­ì„ ë‹¤ í¬í•¨í•˜ê³  ìˆëŠ” íƒ€ì¼ì´ ìˆë‹¤ë©´
 		if( NTLPE_RangesInclusion( pMesh->GetRangeAtWorld(), rangeTarget ) )
 		{
-			// Source ÀÇ Æ÷Áö¼ÇÀ» ±¸ÇÑ´Ù. TileÀ» °¢°¢ LocalÁÂÇ¥¸¦ °¡Áö°í ÀÖÀ¸¹Ç·Î Local ÁÂÇ¥·Î ÀüÈ¯ÇØÁØ´Ù.
+			// Source ì˜ í¬ì§€ì…˜ì„ êµ¬í•œë‹¤. Tileì„ ê°ê° Localì¢Œí‘œë¥¼ ê°€ì§€ê³  ìˆìœ¼ë¯€ë¡œ Local ì¢Œí‘œë¡œ ì „í™˜í•´ì¤€ë‹¤.
 			nSrcPositionX = nSrcPositionX - pMesh->GetTileCenterAtWorldX();
 			nSrcPositionY = nSrcPositionY - pMesh->GetTileCenterAtWorldY();
-			// ³ôÀÌ°ªÀº ÀüÈ¯ÇÏÁö ¾Ê´Â´Ù.
+			// ë†’ì´ê°’ì€ ì „í™˜í•˜ì§€ ì•ŠëŠ”ë‹¤.
 
 
 			long point[]={nSrcPositionX,nSrcPositionY,nSrcPositionZ};
@@ -418,7 +418,7 @@ iPath* CNtlPathSeamlessManager::FindShortestPath( int nAgentSize,
 				return NULL;
 			}
 
-			// DestÀÇ Æ÷Áö¼Ç ( ·ÎÄÃ·Î º¯È¯ )
+			// Destì˜ í¬ì§€ì…˜ ( ë¡œì»¬ë¡œ ë³€í™˜ )
 			nDestPositionX = nDestPositionX - pMesh->GetTileCenterAtWorldX();
 			nDestPositionY = nDestPositionY - pMesh->GetTileCenterAtWorldY();
 
@@ -438,7 +438,7 @@ iPath* CNtlPathSeamlessManager::FindShortestPath( int nAgentSize,
 				{
 					cPosition pos = pPath->position( i );
 
-					// World·Î º¯È¯
+					// Worldë¡œ ë³€í™˜
 					pos.x += pMesh->GetTileCenterAtWorldX();
 					pos.y += pMesh->GetTileCenterAtWorldY();
 
@@ -540,7 +540,7 @@ CNtlMeshFederationContainer* CNtlPathSeamlessManager::CreateMeshFederationContai
 	mapdef_WorldMeshFederation::iterator it =  m_mapWorldPath.find( nWorldIndex );
 	if( it == m_mapWorldPath.end() )
 	{
-		// ¾øÀ¸¸é »ı¼º Ãß°¡ ÇÏ°í ¸®ÅÏ
+		// ì—†ìœ¼ë©´ ìƒì„± ì¶”ê°€ í•˜ê³  ë¦¬í„´
 		CNtlMeshFederationContainer* federation = new CNtlMeshFederationContainer(nWorldIndex);
 		m_mapWorldPath.insert( std::make_pair( nWorldIndex, federation ) );
 
@@ -548,7 +548,7 @@ CNtlMeshFederationContainer* CNtlPathSeamlessManager::CreateMeshFederationContai
 	}
 	else
 	{
-		// ÀÖ´Ù¸é ±×³É ¸®ÅÏ
+		// ìˆë‹¤ë©´ ê·¸ëƒ¥ ë¦¬í„´
 		CNtlMeshFederationContainer* federation = (*it).second;
 
 		return federation;
@@ -557,7 +557,7 @@ CNtlMeshFederationContainer* CNtlPathSeamlessManager::CreateMeshFederationContai
 
 bool CNtlPathSeamlessManager::LoadWorldMeshFederation( int nWorldIndex )
 {
-	// nWorldIndex ÀÌ¸§À» °¡Áø Æú´õ¿¡¼­ worldinfo.txt¸¦ ÀĞ¾î¿Â´Ù.
+	// nWorldIndex ì´ë¦„ì„ ê°€ì§„ í´ë”ì—ì„œ worldinfo.txtë¥¼ ì½ì–´ì˜¨ë‹¤.
 	std::ostringstream filename;
 
 	// (WorldIndex)/worldinfo.txt
@@ -581,7 +581,7 @@ bool CNtlPathSeamlessManager::LoadWorldMeshFederation( int nWorldIndex )
 		CNtlSimpleDOM::LoadWhiteSpaceDelimited( is, worldinfoScript );
 	}
 
-	// Scirpt ¿¡ ´ã±ä ÇÊµå Á¤º¸µéÀ» ÀĞ¾î¿Â´Ù.
+	// Scirpt ì— ë‹´ê¸´ í•„ë“œ ì •ë³´ë“¤ì„ ì½ì–´ì˜¨ë‹¤.
 	if( !LoadWorldMeshFederationByInfoScript( nWorldIndex, worldinfoScript ) )
 		return false;
 
@@ -590,10 +590,10 @@ bool CNtlPathSeamlessManager::LoadWorldMeshFederation( int nWorldIndex )
 
 bool CNtlPathSeamlessManager::LoadWorldMeshFederationByInfoScript( int nWorldIndex, const CNtlSimpleDOM& worldinfoScript )
 {
-	// worldinfoScript._name Á¤º¸¸¦ È°¿ëÇØ¼­ Version Check ³ª Format Ã¼Å© µîÀ» ÇÑ´Ù.
+	// worldinfoScript._name ì •ë³´ë¥¼ í™œìš©í•´ì„œ Version Check ë‚˜ Format ì²´í¬ ë“±ì„ í•œë‹¤.
 
-	// ½ºÅ©¸³Æ®°¡ ¼º°øÇß°í »çÀÌÁî°¡ Á¸ÀçÇÑ´Ù¸é Federation Container¸¦ »ı¼ºÇÏ°í
-	// ½ºÅ©¸³Æ®¿¡ ¾Ë¸ÂÀº Field dataµéÀ» ·ÎµåÇÑ´Ù.
+	// ìŠ¤í¬ë¦½íŠ¸ê°€ ì„±ê³µí–ˆê³  ì‚¬ì´ì¦ˆê°€ ì¡´ì¬í•œë‹¤ë©´ Federation Containerë¥¼ ìƒì„±í•˜ê³ 
+	// ìŠ¤í¬ë¦½íŠ¸ì— ì•Œë§ì€ Field dataë“¤ì„ ë¡œë“œí•œë‹¤.
 	CNtlMeshFederationContainer* federation = CreateMeshFederationContainer( nWorldIndex );
 
 	for( int i=0; i < (int)worldinfoScript._children.size(); ++i )

@@ -1,7 +1,7 @@
 /*****************************************************************************
 * File			: NtlPathSeamlessLoader.h
 * Author		: Haesung, Cho
-* Copyright		: (¡÷)NTL
+* Copyright		: (Ï£º)NTL
 * Date			: 2009. 03. 19
 * Abstract		: Pathengine seamless loader
 *****************************************************************************

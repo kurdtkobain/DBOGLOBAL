@@ -19,11 +19,11 @@
 
 typedef unsigned int NTL_TSRESULT;
 
-#define NTL_TSRESULT_TYPE_SUCCESS				(0x00000000)	// ¼º°ø
-#define NTL_TSRESULT_TYPE_ERROR					(0x10000000)	// ÇÁ·Î±×·¥ÀûÀÎ ½ÇÆÐ
+#define NTL_TSRESULT_TYPE_SUCCESS				(0x00000000)	// ì„±ê³µ
+#define NTL_TSRESULT_TYPE_ERROR					(0x10000000)	// í”„ë¡œê·¸ëž¨ì ì¸ ì‹¤íŒ¨
 
-#define NTL_TSRESULT_TYPE_COND_CAN_PROGRESS		(0x00000001)	// Á¶°Ç °Ë»ç¿¡¼­ Á¶°ÇÀº ¸¸Á·ÇÏÁö ¸øÇßÁö¸¸ ¾ÕÀ¸·Î ¸¸Á·ÇÒ °¡´É¼º ÀÖÀ½
-#define NTL_TSRESULT_TYPE_COND_CANT_PROGRESS	(0x00000002)	// Á¶°Ç °Ë»ç¿¡¼­ ¾ÕÀ¸·Î Á¶°Ç °Ë»ç¸¦ ÇØµµ ¹«Á¶°Ç False °¡ ³ª¿À´Â »óÈ²
+#define NTL_TSRESULT_TYPE_COND_CAN_PROGRESS		(0x00000001)	// ì¡°ê±´ ê²€ì‚¬ì—ì„œ ì¡°ê±´ì€ ë§Œì¡±í•˜ì§€ ëª»í–ˆì§€ë§Œ ì•žìœ¼ë¡œ ë§Œì¡±í•  ê°€ëŠ¥ì„± ìžˆìŒ
+#define NTL_TSRESULT_TYPE_COND_CANT_PROGRESS	(0x00000002)	// ì¡°ê±´ ê²€ì‚¬ì—ì„œ ì•žìœ¼ë¡œ ì¡°ê±´ ê²€ì‚¬ë¥¼ í•´ë„ ë¬´ì¡°ê±´ False ê°€ ë‚˜ì˜¤ëŠ” ìƒí™©
 
 
 /** 

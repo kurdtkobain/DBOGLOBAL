@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-01-31
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -265,7 +265,7 @@ public:
 		virtual bool Call( const char* pfilename, CNtlFileSerializer* pSeralize, const char* pszCryptPassword ) = 0;
 	};
 
-	// Create »ç¿ë ½Ã pCall ÀÌ NULL ÀÏ °æ¿ì ÀÌÀüÀÇ ¹æ½Ä°ú µ¿ÀÏÇÏ°Ô µ¿ÀÛÇÑ´Ù. pCall -> Client »ç¿ë¿ë 
+	// Create ì‚¬ìš© ì‹œ pCall ì´ NULL ì¼ ê²½ìš° ì´ì „ì˜ ë°©ì‹ê³¼ ë™ì¼í•˜ê²Œ ë™ì‘í•œë‹¤. pCall -> Client ì‚¬ìš©ìš© 
 	// Create pCall used in this way, the behavior is the same as the previous case NULL. pCall -> Client for use
 	bool							Create(CNtlBitFlagManager& rTableFlag, char* pszPath, CTableFileNameList* pFileNameList, CTable::eLOADING_METHOD eLoadingMethod, DWORD dwCodePage, ICallBack* pCall );	
 
@@ -602,9 +602,9 @@ protected:
 	CCharmTable*					m_pCharmTable;
 
 // Quest
-	CQuestDropTable*				m_pQuestDropTable;		// Äù½ºÆ® µå·Ó ¾ÆÀÌÅÛ Å×ÀÌºí
+	CQuestDropTable*				m_pQuestDropTable;		// í€˜ìŠ¤íŠ¸ ë“œë¡­ ì•„ì´í…œ í…Œì´ë¸”
 
-	CQuestItemTable*				m_pQuestItemTable;		// Äù½ºÆ® ¾ÆÀÌÅÛ Å×ÀÌºí
+	CQuestItemTable*				m_pQuestItemTable;		// í€˜ìŠ¤íŠ¸ ì•„ì´í…œ í…Œì´ë¸”
 
 	CQuestProbabilityTable*			m_pQuestProbalityTable;
 

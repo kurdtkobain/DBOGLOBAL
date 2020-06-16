@@ -1,14 +1,14 @@
 /*****************************************************************************
 * File			: NtlPathEngineHelper.h
 * Author		: Haesung, Cho
-* Copyright		: (ÁÖ)NTL
+* Copyright		: (ì£¼)NTL
 * Date			: 2009. 03. 16
 * Abstract		: NTL Pathengine seamless loading/pathfinding module
 *****************************************************************************
 * Desc:
 *
-* ÇöÀç agent positionÀ» ±âÁØÀ¸·Î °¡Àå °¡±î¿î À§Ä¡ÀÇ Tile µé ºÎÅÍ ·ÎµåÇÏ¿© list¿¡ ³Ö¾î ³õ´Â´Ù.
-* 03. 16 ±âÁØ ÇöÀç ÀÛ¼ºÁß
+* í˜„ì¬ agent positionì„ ê¸°ì¤€ìœ¼ë¡œ ê°€ì¥ ê°€ê¹Œìš´ ìœ„ì¹˜ì˜ Tile ë“¤ ë¶€í„° ë¡œë“œí•˜ì—¬ listì— ë„£ì–´ ë†“ëŠ”ë‹¤.
+* 03. 16 ê¸°ì¤€ í˜„ì¬ ì‘ì„±ì¤‘
 *****************************************************************************/
 
 #ifndef _NTL_PATH_SEAMLESS_H_
@@ -46,7 +46,7 @@ public:
 	bool	IsLoadedWorld( int nWorldIndex );
 	int		GetLoadedWorldSize();
 
-	// Mesh °ü·Ã
+	// Mesh ê´€ë ¨
 	bool	IsLoadedMesh( CNtlSeamlessMesh* pMesh );
 	bool	IsLoadedMesh( int nWorldIndex, int nFieldIndex, int nTileIndex );
 
@@ -54,7 +54,7 @@ public:
 
 	bool	UpdatePosition( int nPositionX, int nPositionY, int nPositionZ = 0);
 	
-	// Path ¿äÃ» ÇÔ¼ö
+	// Path ìš”ì²­ í•¨ìˆ˜
 	iPath*	FindShortestPath( int nAgentSize, int nSrcPositionX, int nSrcPositionY,
 		int nSrcPositionZ, int nDestPositionX, int nDestPositionY , int nDestPositionZ,
 		std::list<cPosition>& listPath);
@@ -88,11 +88,11 @@ protected:
 	int								m_nCurrentPositionY;
 	int								m_nCurrentPositionZ;
 
-	// ±¸µ¿µÇ°í ÀÖ´Â PathManagerÀÇ AgentSizeµé
+	// êµ¬ë™ë˜ê³  ìˆëŠ” PathManagerì˜ AgentSizeë“¤
 	typedef std::vector< int >		vecdef_AgentSize;
 	vecdef_AgentSize				m_vecAgentSize;
 
-	// ÇöÀç Seamless°¡ ±¸µ¿µÇ°í ÀÖ´Â°¡?
+	// í˜„ì¬ Seamlessê°€ êµ¬ë™ë˜ê³  ìˆëŠ”ê°€?
 	bool							m_bIsStart;
 };
 

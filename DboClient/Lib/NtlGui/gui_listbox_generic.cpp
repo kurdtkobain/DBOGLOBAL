@@ -398,7 +398,7 @@ VOID CListBox_Generic::SelectItem( INT nIndex, bool bSelect )
 	}
 	else
 	{
-		// ÇöÀç ¾Èº¸ÀÌ´Â ÀÎµ¦½º¸¦ ¼±ÅÃÇßÀ» °æ¿ì, ±× ÀÎµ¦½º¸¦ Ã¹ ÀÎµ¦½º·Î ÇÏ°í Ãâ·Â.
+		// í˜„ì¬ ì•ˆë³´ì´ëŠ” ì¸ë±ìŠ¤ë¥¼ ì„ íƒí–ˆì„ ê²½ìš°, ê·¸ ì¸ë±ìŠ¤ë¥¼ ì²« ì¸ë±ìŠ¤ë¡œ í•˜ê³  ì¶œë ¥.
 		if( bSelect )
 			SetTopItem( nIndex );	
 	}	
@@ -508,7 +508,7 @@ VOID CListBox_Generic::SetBkMode( INT nBkMode )
 
 VOID CListBox_Generic::Sort( bool bAscending )
 {
-	// ¹Ì±¸Çö.
+	// ë¯¸êµ¬í˜„.
 }
 
 VOID CListBox_Generic::ClearAll(VOID)
@@ -693,7 +693,7 @@ VOID CListBox_Generic::ReviseItem()
 	}
 }
 
-// ÇÏÀÌ¶óÀÌÆ®, ÅØ½ºÆ® Ãâ·Â°ü·Ã.
+// í•˜ì´ë¼ì´íŠ¸, í…ìŠ¤íŠ¸ ì¶œë ¥ê´€ë ¨.
 VOID CListBox_Generic::DrawItem(VOID)
 {
 	ClearSelectionMasks();
@@ -1245,7 +1245,7 @@ VOID CListBox_Generic::OnResize(int nOldWidth, int nOldHeight)
 	CRectangle rect = m_pListBox->GetScreenRect();
 	std::list<CSurface>::iterator it;
 
-	// ListBoxÀÇ ¹è°æÀº ´Ã¾î³­´Ù. 
+	// ListBoxì˜ ë°°ê²½ì€ ëŠ˜ì–´ë‚œë‹¤. 
 	for( it = m_listSurface.begin() ; it != m_listSurface.end() ; ++it )
 	{
 		(*it).m_SnapShot.rtRect.left = rect.left;

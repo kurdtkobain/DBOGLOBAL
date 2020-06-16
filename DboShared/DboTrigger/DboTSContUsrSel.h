@@ -23,10 +23,10 @@ public:
 // Member variables
 protected:
 	eUSER_SEL_TYPE						m_eUSType;
-	eUSER_SEL_PROGRESS_STATE			m_eUSProgState;		// eUSER_SEL_TYPE_NARRATION ÀÎ °æ¿ì¸¸ À¯È¿ÇÔ
-	eUSER_SEL_TARGET_TYPE				m_eTargetType;		// eUSER_SEL_TYPE_GENERAL ÀÎ °æ¿ì¸¸ À¯È¿ÇÔ
-	unsigned int						m_uiTargetTblIdx;	// eUSER_SEL_TYPE_GENERAL ÀÎ °æ¿ì¸¸ À¯È¿ÇÔ
-	unsigned int						m_uiDesc;			// eUSER_SEL_TYPE_NARRATION / eUSER_SEL_TYPE_GENERAL ÀÎ °æ¿ì À¯È¿ÇÔ
+	eUSER_SEL_PROGRESS_STATE			m_eUSProgState;		// eUSER_SEL_TYPE_NARRATION ì¸ ê²½ìš°ë§Œ ìœ íš¨í•¨
+	eUSER_SEL_TARGET_TYPE				m_eTargetType;		// eUSER_SEL_TYPE_GENERAL ì¸ ê²½ìš°ë§Œ ìœ íš¨í•¨
+	unsigned int						m_uiTargetTblIdx;	// eUSER_SEL_TYPE_GENERAL ì¸ ê²½ìš°ë§Œ ìœ íš¨í•¨
+	unsigned int						m_uiDesc;			// eUSER_SEL_TYPE_NARRATION / eUSER_SEL_TYPE_GENERAL ì¸ ê²½ìš° ìœ íš¨í•¨
 	mapdef_NEXT_LINK					m_defNextLink;
 	NTL_TS_TC_ID						m_tcCancelLink;
 	NTL_TS_TC_ID						m_tcLogInLink;
@@ -72,7 +72,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

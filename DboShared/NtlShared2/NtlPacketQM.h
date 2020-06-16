@@ -44,7 +44,7 @@ END_PROTOCOL()
 //------------------------------------------------------------------
 /*BEGIN_PROTOCOL( QM_CHAR_PUNISH_RES )
 WORD					wResultCode;
-ACCOUNTID				managerID;			// SYSTEM Tool ¿¡ Á¢¼ÓÇÑ À¯ÀúÀÇ ½Ã¸®¾ó
+ACCOUNTID				managerID;			// SYSTEM Tool ì— ì ‘ì†í•œ ìœ ì €ì˜ ì‹œë¦¬ì–¼
 BYTE					byQueryType;			  // 
 
 CHARACTERID				charTargetID;								// target CharID 	

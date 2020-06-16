@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-03-27
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Doo  Sup, Chung   ( john@ntl-inc.com )
 //
@@ -266,7 +266,7 @@ bool CSpawnTable::SetTableData(void* pvTable, WCHAR* pwszSheetName, std::wstring
 		{
 			pSpawn->path_Table_Index = READ_TBLIDX(bstrData);
 
-			//-ÀÓ½Ã Å×ÀÌºí Ãß°¡ Àü±îÁö
+			//-ìž„ì‹œ í…Œì´ë¸” ì¶”ê°€ ì „ê¹Œì§€
 			pSpawn->playScript = INVALID_TBLIDX;
 			pSpawn->playScriptScene = INVALID_TBLIDX;
 		}

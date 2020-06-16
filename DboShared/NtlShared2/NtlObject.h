@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-04-07
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -44,7 +44,7 @@ enum eOBJTYPE
 	OBJTYPE_ITEM,	// ITEM TYPE is not generated in the field. (Has character only)
 	
 	MAX_OBJTYPE,
-	MAX_SPAWNOBJTYPE = OBJTYPE_DYNAMIC,	// ÇÊµå¿¡ »ı¼ºµÇ´Â ¿ÀºêÁ§Æ® Å¸ÀÔÀÇ MAX
+	MAX_SPAWNOBJTYPE = OBJTYPE_DYNAMIC,	// í•„ë“œì— ìƒì„±ë˜ëŠ” ì˜¤ë¸Œì íŠ¸ íƒ€ì…ì˜ MAX
 	INVALID_OBJTYPE = 0xFF,
 
 	OBJTYPE_FIRST = OBJTYPE_PC,
@@ -52,11 +52,11 @@ enum eOBJTYPE
 };
 
 
-// Object¸¦ »ı¼ºÇÑ source
+// Objectë¥¼ ìƒì„±í•œ source
 enum eDBO_OBJECT_SOURCE
 {
-	DBO_OBJECT_SOURCE_SKILL = 0,		// ½ºÅ³¿¡ ÀÇÇØ »ı±ä object
-	DBO_OBJECT_SOURCE_ITEM,				// ¾ÆÀÌÅÛ¿¡ ÀÇÇØ »ı±ä object
+	DBO_OBJECT_SOURCE_SKILL = 0,		// ìŠ¤í‚¬ì— ì˜í•´ ìƒê¸´ object
+	DBO_OBJECT_SOURCE_ITEM,				// ì•„ì´í…œì— ì˜í•´ ìƒê¸´ object
 
 	DBO_OBJECT_SOURCE_UNKNOWN = 0xFF,
 
@@ -65,7 +65,7 @@ enum eDBO_OBJECT_SOURCE
 };
 
 
-// Trigger objectÀÇ ±â´É
+// Trigger objectì˜ ê¸°ëŠ¥
 enum eDBO_TRIGGER_OBJECT_FUNC
 {
 	eDBO_TRIGGER_OBJECT_FUNC_SELECTION				= 0x1,
@@ -86,7 +86,7 @@ enum eDBO_TRIGGER_OBJECT_FUNC
 	eDBO_TRIGGER_OBJECT_FUNC_AUCTION_HOUSE			= 0x8000,
 };
 
-// Dynamic ObjectÀÇ state
+// Dynamic Objectì˜ state
 enum eDYNAMIC_OBJECT_STATE
 {
 	eDYNAMIC_OBJECT_STATE_SPAWN,
@@ -106,11 +106,11 @@ enum eDYNAMIC_OBJECT_FUNCTION
 	eDYNAMIC_OBJECT_FUNCTION_INVALID = 0xFF,
 };
 
-// Dynamic ObjectÀÇ ±â´É
+// Dynamic Objectì˜ ê¸°ëŠ¥
 enum eDBO_DYNAMIC_OBJECT_TYPE
 {
-	eDBO_DYNAMIC_OBJECT_TYPE_HOIPOI_MIX_MACHINE		= 1,		// È£ÀÌÆ÷ÀÌ ¹Í½º ·»Å» ¸Ó½Å
-	eDBO_DYNAMIC_OBJECT_TYPE_CAPSULE_HOUSE,						// È£ÀÌÆ÷ÀÌ ¹Í½º Ä³½¬ ¸Ó½Å
+	eDBO_DYNAMIC_OBJECT_TYPE_HOIPOI_MIX_MACHINE		= 1,		// í˜¸ì´í¬ì´ ë¯¹ìŠ¤ ë Œíƒˆ ë¨¸ì‹ 
+	eDBO_DYNAMIC_OBJECT_TYPE_CAPSULE_HOUSE,						// í˜¸ì´í¬ì´ ë¯¹ìŠ¤ ìºì‰¬ ë¨¸ì‹ 
 
 	eDBO_DYNAMIC_OBJECT_TYPE_NONE = 0xFF,
 };
@@ -158,35 +158,35 @@ enum eRELATION_TYPE
 //-----------------------------------------------------------------------------------
 //
 //-----------------------------------------------------------------------------------
-const unsigned int MAX_PC = 3000;	// ÀüÃ¼ PC ¼ö
+const unsigned int MAX_PC = 3000;	// ì „ì²´ PC ìˆ˜
 
-const unsigned int MAX_NPC = 4000;	// ÀüÃ¼ NPC ¼ö
+const unsigned int MAX_NPC = 4000;	// ì „ì²´ NPC ìˆ˜
 
-const unsigned int MAX_MOB = 100000;	// ÀüÃ¼ MOB ¼ö
+const unsigned int MAX_MOB = 100000;	// ì „ì²´ MOB ìˆ˜
 
-const unsigned int MAX_SUMMON_PET = MAX_PC;	// ÀüÃ¼ Summon Pet ¼ö
+const unsigned int MAX_SUMMON_PET = MAX_PC;	// ì „ì²´ Summon Pet ìˆ˜
 
-const unsigned int MAX_ITEM_PET = MAX_PC;	// ÀüÃ¼ Item Pet ¼ö
+const unsigned int MAX_ITEM_PET = MAX_PC;	// ì „ì²´ Item Pet ìˆ˜
 
-const unsigned int MAX_DROP_ITEM = 10000;	// ÀüÃ¼ DROP µÇ´Â ITEM ¼ö
+const unsigned int MAX_DROP_ITEM = 10000;	// ì „ì²´ DROP ë˜ëŠ” ITEM ìˆ˜
 
-const unsigned int MAX_DROP_MONEY = 10000;	// ÀüÃ¼ DROP µÇ´Â MONEY ¼ö
+const unsigned int MAX_DROP_MONEY = 10000;	// ì „ì²´ DROP ë˜ëŠ” MONEY ìˆ˜
 
-const unsigned int MAX_PC_HAVE_ITEM = 600;	// PC°¡ °¡Áö´Â ÃÖ´ë ITEM ¼ö
+const unsigned int MAX_PC_HAVE_ITEM = 600;	// PCê°€ ê°€ì§€ëŠ” ìµœëŒ€ ITEM ìˆ˜
 
 const unsigned int MAX_TRIGGER_OBJECT = 60000; // The total number of static objects trigger
 
-const unsigned int MAX_DYNAMIC_OBJECT = MAX_PC; // ÀüÃ¼ µ¿Àû ¿ÀºêÁ§Æ® ¼ö PC ´ç ÇÑ°³¸¸ Çã¿ë
+const unsigned int MAX_DYNAMIC_OBJECT = MAX_PC; // ì „ì²´ ë™ì  ì˜¤ë¸Œì íŠ¸ ìˆ˜ PC ë‹¹ í•œê°œë§Œ í—ˆìš©
 
-const unsigned int MAX_BOT = MAX_NPC + MAX_MOB + MAX_SUMMON_PET + MAX_ITEM_PET;		// BOT ¼ö ( ¼­¹ö ³»ºÎ Ã³¸®¿ë )
+const unsigned int MAX_BOT = MAX_NPC + MAX_MOB + MAX_SUMMON_PET + MAX_ITEM_PET;		// BOT ìˆ˜ ( ì„œë²„ ë‚´ë¶€ ì²˜ë¦¬ìš© )
 
-const unsigned int MAX_ITEM = MAX_PC * MAX_PC_HAVE_ITEM;	// ÀüÃ¼ ¾ÆÀÌÅÛ ¼ö
+const unsigned int MAX_ITEM = MAX_PC * MAX_PC_HAVE_ITEM;	// ì „ì²´ ì•„ì´í…œ ìˆ˜
 
 const unsigned int MAX_GAME_OBJECT = MAX_PC + MAX_BOT + MAX_ITEM + MAX_DROP_ITEM + MAX_DROP_MONEY + MAX_TRIGGER_OBJECT + MAX_DYNAMIC_OBJECT; // The total number of objects
 
-const float		   DBO_MAX_DISTANCE_OF_DYNAMIC_OBJECT = 20.0f;		// DYNAMIC OBJECT ¼³Ä¡ Çã¿ë ÃÖ´ë °Å¸®
+const float		   DBO_MAX_DISTANCE_OF_DYNAMIC_OBJECT = 20.0f;		// DYNAMIC OBJECT ì„¤ì¹˜ í—ˆìš© ìµœëŒ€ ê±°ë¦¬
 
-const unsigned int DYNAMIC_OBJECT_CHECK_TERM = 1000;	// ´ÙÀÌ³ª¹Í¿ÀºêÁ§Æ®ÀÇ ÁÖÀÎ°ú °Å¸® ÀÌ°İ Ã¼Å© ÅÒ  seconds
+const unsigned int DYNAMIC_OBJECT_CHECK_TERM = 1000;	// ë‹¤ì´ë‚˜ë¯¹ì˜¤ë¸Œì íŠ¸ì˜ ì£¼ì¸ê³¼ ê±°ë¦¬ ì´ê²© ì²´í¬ í…€  seconds
 
 const unsigned int DYNAMIC_OBJECT_DESPAWN_TERM = 1000;
 
@@ -209,7 +209,7 @@ typedef BYTE DYNAMIC_OBJECT_STATE;
 struct sDYNAMIC_OBJECT_BRIEF
 {
 	BYTE		byObjectType;	// eDBO_DYNAMIC_OBJECT_TYPE
-	TBLIDX		idObjectTblidx;	// ÇØ´çÇÏ´Â tblidx(dynamic object°¡ ¾Æ´Ñ hoipoi, capsule houseµîÀÇ tblidx)
+	TBLIDX		idObjectTblidx;	// í•´ë‹¹í•˜ëŠ” tblidx(dynamic objectê°€ ì•„ë‹Œ hoipoi, capsule houseë“±ì˜ tblidx)
 	HOBJECT		hOwner;
 };
 

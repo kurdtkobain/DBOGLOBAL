@@ -82,14 +82,14 @@ bool CExpTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 	sEXP_TBLDAT * pTbldat = (sEXP_TBLDAT*) pvTable;
 	sEXP_TBLDAT * pExistTbldat = NULL;
 
-	// ReloadÀÎ°æ¿ì Data¸¦ Ã£¾Æ UpdateÇØÁØ´Ù
+	// Reloadì¸ê²½ìš° Dataë¥¼ ì°¾ì•„ Updateí•´ì¤€ë‹¤
 	if( bReload )
 	{
 		pExistTbldat = (sEXP_TBLDAT*) FindData( pTbldat->tblidx );
 		if( pExistTbldat )
 		{
 			CopyMemory( pTbldat, pExistTbldat, pTbldat->GetDataSize() );
-			// µ¥ÀÌÅ¸ÀÇ ÇØÁ¦¸¦ À§ÇÑ false ¹İÈ¯
+			// ë°ì´íƒ€ì˜ í•´ì œë¥¼ ìœ„í•œ false ë°˜í™˜
 			return true; 
 		}
 	}

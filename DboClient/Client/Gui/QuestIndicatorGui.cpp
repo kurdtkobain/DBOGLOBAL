@@ -322,7 +322,7 @@ VOID CQuestIndicatorGui::HandleEvents( RWS::CMsg& msg )
 		//{
 		//	SNtlEventShowIndicator_Nfy* pBackData = NULL;
 		//	pBackData = m_listData.back();
-		//	m_pQuestGui->GetQuestListGui()->CancelIndicator( pBackData->sTSKey, TRUE );	// ¸Þ½ÃÁö¸¦ ¶ç¿ìÁö ¾Ê±â À§ÇØ AutoÇÃ·¡±× ÀÓÀÇ TRUE¼¼ÆÃ.
+		//	m_pQuestGui->GetQuestListGui()->CancelIndicator( pBackData->sTSKey, TRUE );	// ë©”ì‹œì§€ë¥¼ ë„ìš°ì§€ ì•Šê¸° ìœ„í•´ Autoí”Œëž˜ê·¸ ìž„ì˜ TRUEì„¸íŒ….
 		//}
 	}
 	else if( msg.Id == g_EventUpdateQuestState_Nfy )
@@ -441,12 +441,12 @@ VOID CQuestIndicatorGui::DrawData( RwInt32 nIdx, SNtlEventShowIndicator_Nfy* pIn
 		m_IndicatorItem[nIdx].m_pGoalResult[j]->Show( false );			
 	}
 
-	// DataÀÔ·Â
+	// Dataìž…ë ¥
 	m_IndicatorItem[nIdx].m_TSKey = pIndicatorData->sTSKey;
 	m_IndicatorItem[nIdx].m_uiQuestTitle = pIndicatorData->uiQuestTitle;
 	m_IndicatorItem[nIdx].m_uiQuestGoal = pIndicatorData->uiQuestGoal;
 
-	// Á¦¸ñ
+	// ì œëª©
 	CQuestTextDataTable* pTable = API_GetTableContainer()->GetQuestTextDataTable();
 	sQUEST_TEXT_DATA_TBLDAT* pData = reinterpret_cast<sQUEST_TEXT_DATA_TBLDAT*>( pTable->FindData( pIndicatorData->uiQuestTitle ) );
 	std::wstring wstrTitle;
@@ -573,7 +573,7 @@ VOID CQuestIndicatorGui::DrawData( RwInt32 nIdx, SNtlEventShowIndicator_Nfy* pIn
 		}
 	}
 
-	// ½Ã°£.
+	// ì‹œê°„.
 	if( pIndicatorData->uiTimeLimit != INVALID_DWORD )
 	{
 		RwUInt32 uiTime;

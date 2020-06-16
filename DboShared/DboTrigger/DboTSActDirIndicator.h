@@ -36,8 +36,8 @@ public:
 
 // Member variables
 protected:
-	bool								m_bSelfDirIndicator;	// ÀÚ½Å¿¡°Ô¸¸ Àû¿ë µÇ¾ß ÇÏ´ÂÁö¿¡ ´ëÇÑ ÇÃ·¡±×
-	bool								m_bDirIndicatorStart;	// True ¸é ½ÃÀÛ, False ¸é Á¾·á
+	bool								m_bSelfDirIndicator;	// ìì‹ ì—ê²Œë§Œ ì ìš© ë˜ì•¼ í•˜ëŠ”ì§€ì— ëŒ€í•œ í”Œë˜ê·¸
+	bool								m_bDirIndicatorStart;	// True ë©´ ì‹œì‘, False ë©´ ì¢…ë£Œ
 	unsigned char						m_byDirType;
 	uDirData							m_uiData;
 
@@ -65,7 +65,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-08-6
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	john@ntl-inc.com
 //
@@ -19,16 +19,16 @@
 const BYTE		MAIL_SEND_REQUIRED_LEVEL = 29;		// Level required to send mail
 const DWORD		NTL_MAX_BASIC_MAIL_SEND_ZENNY	= 10;		// Commission
 const DWORD		NTL_MAX_ATTACH_MAIL_SEND_ZENNY	= 20;		// Commission
-const DWORD		NTL_MAX_MAIL_SEND_ZENNY_AMOUNTS	= 100000000;	// Ã·ºÎ ÃÖ´ë°¡´É ±Ý¾×
-const DWORD		NTL_MAX_MAIL_SLOT_COUNT	= 30;				// ÃÖ´ë ¸ÞÀÏ ½½·ÔÀÇ °³¼ö
-const DWORD		NTL_MAIL_RELOAD_TIME    = 1 * 60 * 1000;    // DB ³»¿ë°ú µ¿±âÈ­ ½Ã°£ Á¶Á¤ ÇÊ¿ä
-const DWORD		NTL_MAIL_DISTANCE_CHECK_TIME = 3 * 1000;	// ¸ÞÀÏ¹Ú½º¿ÍÀÇ °Å¸® Ã¼Å© ½Ã°£ 
-const BYTE		NTL_DEFAULT_MAIL_KEEPING_PERIOD = 10;		// ±âº» ¸ÞÀÏ À¯Áö ±â°£. ÀÏ(day) ´ÜÀ§
-const DWORD		NTL_MAX_COUNT_OF_MULTI_DEL		= 6;		// ¸ÖÆ¼µ¨°¡´É ÃÖ´ë¼ö
-const BYTE		NTL_MAX_COUNT_MULTI_MAIL		= 50;		// GM-TOOL ¸ÖÆ¼¸ÞÀÏ ÃÖ´ëÄ¡
+const DWORD		NTL_MAX_MAIL_SEND_ZENNY_AMOUNTS	= 100000000;	// ì²¨ë¶€ ìµœëŒ€ê°€ëŠ¥ ê¸ˆì•¡
+const DWORD		NTL_MAX_MAIL_SLOT_COUNT	= 30;				// ìµœëŒ€ ë©”ì¼ ìŠ¬ë¡¯ì˜ ê°œìˆ˜
+const DWORD		NTL_MAIL_RELOAD_TIME    = 1 * 60 * 1000;    // DB ë‚´ìš©ê³¼ ë™ê¸°í™” ì‹œê°„ ì¡°ì • í•„ìš”
+const DWORD		NTL_MAIL_DISTANCE_CHECK_TIME = 3 * 1000;	// ë©”ì¼ë°•ìŠ¤ì™€ì˜ ê±°ë¦¬ ì²´í¬ ì‹œê°„ 
+const BYTE		NTL_DEFAULT_MAIL_KEEPING_PERIOD = 10;		// ê¸°ë³¸ ë©”ì¼ ìœ ì§€ ê¸°ê°„. ì¼(day) ë‹¨ìœ„
+const DWORD		NTL_MAX_COUNT_OF_MULTI_DEL		= 6;		// ë©€í‹°ë¸ê°€ëŠ¥ ìµœëŒ€ìˆ˜
+const BYTE		NTL_MAX_COUNT_MULTI_MAIL		= 50;		// GM-TOOL ë©€í‹°ë©”ì¼ ìµœëŒ€ì¹˜
 const BYTE		NTL_MAX_LOAD_MAIL_PACKET		= 8;
 //-----------------------------------------------------------------------------------
-// ¸ÞÀÏ Å¸ÀÔ 
+// ë©”ì¼ íƒ€ìž… 
 //-----------------------------------------------------------------------------------
 enum eMAIL_TYPE
 {
@@ -39,17 +39,17 @@ enum eMAIL_TYPE
 	eMAIL_TYPE_ITEM_ZENNY,		// ITEM + ZENNY
 	eMAIL_TYPE_ITEM_ZENNY_REQ,  // ITEM + ZENNY REQUEST
 	eMAIL_TYPE_ZENNY_REQ,		// ZENNY REQUEST
-	eMAIL_COUNT,				// GMTool¿¡¼­ eMAIL_TYPE¿¡ ´ëÇÑ ½ºÆ®¸µÀ» »ç¿ëÇÑ´Ù. ±×·¡¼­ Count°¡ ÇÊ¿äÇÔ[10/8/2007 SGpro]
+	eMAIL_COUNT,				// GMToolì—ì„œ eMAIL_TYPEì— ëŒ€í•œ ìŠ¤íŠ¸ë§ì„ ì‚¬ìš©í•œë‹¤. ê·¸ëž˜ì„œ Countê°€ í•„ìš”í•¨[10/8/2007 SGpro]
 };
 
 //-----------------------------------------------------------------------------------
-// sender Å¸ÀÔ 
+// sender íƒ€ìž… 
 //-----------------------------------------------------------------------------------
 enum eMAIL_SENDER_TYPE
 {
-	eMAIL_SENDER_TYPE_BASIC,		// ÀÏ¹ÝÀ¯Àú
-	eMAIL_SENDER_TYPE_REPLY,		// ´äÀå¸ÞÀÏ
-	eMAIL_SENDER_TYPE_RETURN,		// ¸®ÅÏ¸ÞÀÏ
+	eMAIL_SENDER_TYPE_BASIC,		// ì¼ë°˜ìœ ì €
+	eMAIL_SENDER_TYPE_REPLY,		// ë‹µìž¥ë©”ì¼
+	eMAIL_SENDER_TYPE_RETURN,		// ë¦¬í„´ë©”ì¼
 	eMAIL_SENDER_TYPE_SYSTEM,		// System
 	eMAIL_SENDER_TYPE_GM,			// GM
 	eMAIL_SENDER_TYPE_QUEST,
@@ -75,88 +75,88 @@ struct sMAIL_BRIEF
 
 struct sMAIL_DATA
 {
-	MAILID				mailID;			// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID				mailID;			// ë©”ì¼ ì•„ì´ë””
 	bool 				bIsRead;
 	bool 				bIsAccept;
 	bool 				bIsLock;
 	BYTE 				byMailType;		// eMAIL_TYPE
 	BYTE 				bySenderType;	// eMAIL_SENDER_TYPE
 	DWORD				dwZenny;		// Req or Give Zenny
-	BYTE				byExpired;		// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
-	sITEM_DATA			sItemData;		// ¾ÆÀÌÅÛ³»¿ë	
-	sDBO_TIME			tCreateTime;	// º¸³½³¯Â¥
-	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// º¸³½ Ä³¸¯ ÀÌ¸§
+	BYTE				byExpired;		// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
+	sITEM_DATA			sItemData;		// ì•„ì´í…œë‚´ìš©	
+	sDBO_TIME			tCreateTime;	// ë³´ë‚¸ë‚ ì§œ
+	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// ë³´ë‚¸ ìºë¦­ ì´ë¦„
 	BYTE				byTextSize;
-	WCHAR				wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ¸ÞÀÏ³»¿ë
+	WCHAR				wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ë©”ì¼ë‚´ìš©
 	DBOTIME				endTime;
 	DWORD				dwHandle;
 };
 
 struct sMAIL_GM_DATA
 {
-	MAILID				mailID;			// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID				mailID;			// ë©”ì¼ ì•„ì´ë””
 	bool 				bIsRead;
 	bool 				bIsAccept;
 	bool 				bIsLock;
 	BYTE 				byMailType;		// eMAIL_TYPE
 	BYTE 				bySenderType;	// eMAIL_SENDER_TYPE
 	DWORD				dwZenny;		// Req or Give Zenny
-	BYTE				byExpired;		// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
-	sITEM_DATA			sItemData;		// ¾ÆÀÌÅÛ³»¿ë	
-	sDBO_TIME			tCreateTime;	// º¸³½³¯Â¥
+	BYTE				byExpired;		// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
+	sITEM_DATA			sItemData;		// ì•„ì´í…œë‚´ìš©	
+	sDBO_TIME			tCreateTime;	// ë³´ë‚¸ë‚ ì§œ
 	CHARACTERID			FromCharID;
-	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// º¸³½ Ä³¸¯ ÀÌ¸§
+	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// ë³´ë‚¸ ìºë¦­ ì´ë¦„
 	BYTE				byTextSize;
-	WCHAR				wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ¸ÞÀÏ³»¿ë
+	WCHAR				wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ë©”ì¼ë‚´ìš©
 	bool				bIsTemp;	// tempMail ? True
 };
 
 struct sMAIL_PROFILE
 {
-	MAILID				mailID;			// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID				mailID;			// ë©”ì¼ ì•„ì´ë””
 	bool 				bIsRead;
 	bool 				bIsAccept;
 	bool 				bIsLock;
 	BYTE 				byMailType;		// eMAIL_TYPE
 	BYTE 				bySenderType;	// eMAIL_SENDER_TYPE
 	DWORD				dwZenny;		// Req or Give Zenny
-	BYTE				byExpired;		// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
-	sITEM_PROFILE		sItemProfile;	// ¾ÆÀÌÅÛ³»¿ë	
-	sDBO_TIME			tCreateTime;	// º¸³½³¯Â¥
-	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// º¸³½ Ä³¸¯ ÀÌ¸§
-	WCHAR				wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ¸ÞÀÏ³»¿ë
+	BYTE				byExpired;		// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
+	sITEM_PROFILE		sItemProfile;	// ì•„ì´í…œë‚´ìš©	
+	sDBO_TIME			tCreateTime;	// ë³´ë‚¸ë‚ ì§œ
+	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// ë³´ë‚¸ ìºë¦­ ì´ë¦„
+	WCHAR				wszText[NTL_MAX_LENGTH_OF_MAIL_MESSAGE + 1];	// ë©”ì¼ë‚´ìš©
 	DBOTIME				endTime;
 };
 struct sMAIL_NEW_PROFILE
 {
-	MAILID				mailID;			// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID				mailID;			// ë©”ì¼ ì•„ì´ë””
 	bool 				bIsRead;
 	bool 				bIsAccept;
 	bool 				bIsLock;
 	BYTE 				byMailType;		// eMAIL_TYPE
 	BYTE 				bySenderType;	// eMAIL_SENDER_TYPE
 	DWORD				dwZenny;		// Req or Give Zenny
-	BYTE				byExpired;		// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
-	sITEM_PROFILE		sItemProfile;	// ¾ÆÀÌÅÛ³»¿ë	
-	sDBO_TIME			tCreateTime;	// º¸³½³¯Â¥
-	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// º¸³½ Ä³¸¯ ÀÌ¸§
+	BYTE				byExpired;		// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
+	sITEM_PROFILE		sItemProfile;	// ì•„ì´í…œë‚´ìš©	
+	sDBO_TIME			tCreateTime;	// ë³´ë‚¸ë‚ ì§œ
+	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// ë³´ë‚¸ ìºë¦­ ì´ë¦„
 	DBOTIME				endTime;
 };
 
 struct sMAIL_NEW_GM_PROFILE
 {
-	MAILID				mailID;			// ¸ÞÀÏ ¾ÆÀÌµð
+	MAILID				mailID;			// ë©”ì¼ ì•„ì´ë””
 	bool 				bIsRead;
 	bool 				bIsAccept;
 	bool 				bIsLock;
 	BYTE 				byMailType;		// eMAIL_TYPE
 	BYTE 				bySenderType;	// eMAIL_SENDER_TYPE
 	DWORD				dwZenny;		// Req or Give Zenny
-	BYTE				byExpired;		// À¯È¿¸¸·á³¯Â¥ ÃÖ´ë 10ÀÏ
-	sITEM_PROFILE		sItemProfile;	// ¾ÆÀÌÅÛ³»¿ë	
-	sDBO_TIME			tCreateTime;	// º¸³½³¯Â¥
+	BYTE				byExpired;		// ìœ íš¨ë§Œë£Œë‚ ì§œ ìµœëŒ€ 10ì¼
+	sITEM_PROFILE		sItemProfile;	// ì•„ì´í…œë‚´ìš©	
+	sDBO_TIME			tCreateTime;	// ë³´ë‚¸ë‚ ì§œ
 	CHARACTERID			FromCharID;
-	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// º¸³½ Ä³¸¯ ÀÌ¸§
+	WCHAR				wszFromName[NTL_MAX_SIZE_CHAR_NAME + 1];		// ë³´ë‚¸ ìºë¦­ ì´ë¦„
 	bool				bIsTemp;	// tempMail ? True
 };
 

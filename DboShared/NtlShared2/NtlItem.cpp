@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-06-28
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -104,23 +104,23 @@ WORD Dbo_GetFinalDefence(WORD wBaseDefence, BYTE byGrade)
 
 BYTE Dbo_GetHoipoiStoneCount( const BYTE byStoneType, const BYTE byItemType, BYTE byGrade )
 {
-	// ÀÏ¹İ È£ÀÌÆ÷ÀÌ ½ºÅæ
+	// ì¼ë°˜ í˜¸ì´í¬ì´ ìŠ¤í†¤
 	const static BYTE byNeedCountBasicWeapon[NTL_ITEM_MAX_GRADE]	= {2,2,2,4,4,4,6,6,6,8,8,8,10,10,10};
 	const static BYTE byNeedCountBasicArmor[NTL_ITEM_MAX_GRADE]		= {1,1,1,2,2,2,3,3,3,4,4,4,5, 5, 5};
-	// Ç»¾î È£ÀÌÆ÷ÀÌ ½ºÅæ
+	// í“¨ì–´ í˜¸ì´í¬ì´ ìŠ¤í†¤
 	const static BYTE byNeedCountPureWeapon[NTL_ITEM_MAX_GRADE]		= {2,2,2,4,4,4,6,6,6,8,8,8,10,10,10};
 	const static BYTE byNeedCountPureArmor[NTL_ITEM_MAX_GRADE]		= {1,1,1,2,2,2,3,3,3,4,4,4,5, 5, 5};
-	// ºí·¢ È£ÀÌÆ÷ÀÌ ½ºÅæ
+	// ë¸”ë™ í˜¸ì´í¬ì´ ìŠ¤í†¤
 	const static BYTE byNeedCountBlackWeapon[NTL_ITEM_MAX_GRADE]	= {2,2,2,2,2,4,4,4,4,4,6,6,6, 6, 6};
 	const static BYTE byNeedCountBlackArmor[NTL_ITEM_MAX_GRADE]		= {1,1,1,1,1,2,2,2,2,2,3,3,3, 3, 3};
 
-	// ºí·¢ È£ÀÌÆ÷ÀÌ ½ºÅæ¿¡ ´ëÇÑ Ã³¸®
+	// ë¸”ë™ í˜¸ì´í¬ì´ ìŠ¤í†¤ì— ëŒ€í•œ ì²˜ë¦¬
 	if ( ITEM_TYPE_BLACK_STONE == byStoneType )
 	{
 		--byGrade;
 	}
 
-	// ±×·¹ÀÌµå°¡ Àß¸øµÈ °æ¿ì ÀÎ¹ë¸®µå.
+	// ê·¸ë ˆì´ë“œê°€ ì˜ëª»ëœ ê²½ìš° ì¸ë°¸ë¦¬ë“œ.
 	if ( byGrade < 0 || byGrade >= NTL_ITEM_MAX_GRADE )
 		return INVALID_BYTE;
 
@@ -137,7 +137,7 @@ BYTE Dbo_GetHoipoiStoneCount( const BYTE byStoneType, const BYTE byItemType, BYT
 		if ( ITEM_TYPE_BLACK_STONE == byStoneType ) return byNeedCountBlackArmor[byGrade];
 	}
 	
-	// ¿©±â±îÁö ¿Ô´Ù¸é ¾ÆÀÌÅÛ Å¸ÀÔÀÌ Àß¸øµÇ¾ú±â ¶§¹®ÀÓ.
+	// ì—¬ê¸°ê¹Œì§€ ì™”ë‹¤ë©´ ì•„ì´í…œ íƒ€ì…ì´ ì˜ëª»ë˜ì—ˆê¸° ë•Œë¬¸ì„.
 	return INVALID_BYTE;
 }
 
@@ -175,12 +175,12 @@ DWORD Dbo_GetHoipoiMixEXP(bool bIsSuccess, BYTE byMadeLevel, BYTE byNeedMixLevel
 }
 
 //-----------------------------------------------------------------------------------
-// ¾Æ·¡ ÇÔ¼ö¸¦ 
+// ì•„ë˜ í•¨ìˆ˜ë¥¼ 
 // bool Dbo_SetItemData( sITEM_DATA* const pItemData_Output, sITEM_DATA* const pItemData_Input )
-// ·Î ¾ÈÇÑ ÀÌÀ¯: 
-// sITEM_DATAÀÇ µ¥ÀÌÅ¸°¡ º¯°æµÇ°Å³ª Ãß°¡µÉ °æ¿ì, ÀÛ¾÷ÀÚ¿¡ ½Ç¼ö¸¦ ÄÄÆÄÀÏ ½ÃÁ¡¿¡¼­ Àâ±â À§ÇÔÀÌ´Ù. 
-// µğ¹ö±ë¶§ °í»ı¸»°í, ÄÚµù¶§ °í»ıÇÏÀÚ~
-// ±×·¡¼­, À§¿¡Ã³·³ Àı´ë ¼öÁ¤ÇÏÁö ¸»°Í.
+// ë¡œ ì•ˆí•œ ì´ìœ : 
+// sITEM_DATAì˜ ë°ì´íƒ€ê°€ ë³€ê²½ë˜ê±°ë‚˜ ì¶”ê°€ë  ê²½ìš°, ì‘ì—…ìì— ì‹¤ìˆ˜ë¥¼ ì»´íŒŒì¼ ì‹œì ì—ì„œ ì¡ê¸° ìœ„í•¨ì´ë‹¤. 
+// ë””ë²„ê¹…ë•Œ ê³ ìƒë§ê³ , ì½”ë”©ë•Œ ê³ ìƒí•˜ì~
+// ê·¸ë˜ì„œ, ìœ„ì—ì²˜ëŸ¼ ì ˆëŒ€ ìˆ˜ì •í•˜ì§€ ë§ê²ƒ.
 //-----------------------------------------------------------------------------------
 bool Dbo_SetItemData( sITEM_DATA* const pItemData
 					 , ITEMID itemId
@@ -247,12 +247,12 @@ bool Dbo_SetItemData( sITEM_DATA* const pItemData
 }
 
 //-----------------------------------------------------------------------------------
-// ¾Æ·¡ ÇÔ¼ö¸¦ 
+// ì•„ë˜ í•¨ìˆ˜ë¥¼ 
 // bool Dbo_SetItemData_NeedToIdentify( sITEM_DATA* const pItemData_Output, sITEM_DATA* const pItemData_Input )
-// ·Î ¾ÈÇÑ ÀÌÀ¯: 
-// sITEM_DATAÀÇ µ¥ÀÌÅ¸°¡ º¯°æµÇ°Å³ª Ãß°¡µÉ °æ¿ì, ÀÛ¾÷ÀÚ¿¡ ½Ç¼ö¸¦ ÄÄÆÄÀÏ ½ÃÁ¡¿¡¼­ Àâ±â À§ÇÔÀÌ´Ù. 
-// µğ¹ö±ë¶§ °í»ı¸»°í, ÄÚµù¶§ °í»ıÇÏÀÚ~
-// ±×·¡¼­, À§¿¡Ã³·³ Àı´ë ¼öÁ¤ÇÏÁö ¸»°Í.
+// ë¡œ ì•ˆí•œ ì´ìœ : 
+// sITEM_DATAì˜ ë°ì´íƒ€ê°€ ë³€ê²½ë˜ê±°ë‚˜ ì¶”ê°€ë  ê²½ìš°, ì‘ì—…ìì— ì‹¤ìˆ˜ë¥¼ ì»´íŒŒì¼ ì‹œì ì—ì„œ ì¡ê¸° ìœ„í•¨ì´ë‹¤. 
+// ë””ë²„ê¹…ë•Œ ê³ ìƒë§ê³ , ì½”ë”©ë•Œ ê³ ìƒí•˜ì~
+// ê·¸ë˜ì„œ, ìœ„ì—ì²˜ëŸ¼ ì ˆëŒ€ ìˆ˜ì •í•˜ì§€ ë§ê²ƒ.
 //-----------------------------------------------------------------------------------
 bool Dbo_SetItemData_CheckNeedToIdentify( sITEM_DATA* const pItemData
 					 , ITEMID itemId
@@ -286,11 +286,11 @@ bool Dbo_SetItemData_CheckNeedToIdentify( sITEM_DATA* const pItemData
 
 	if ( true == pItemData->bNeedToIdentify )
 	{
-		//¹ÌÈ®ÀÎ ¾ÆÀÌÅÛÀÏ °æ¿ì
+		//ë¯¸í™•ì¸ ì•„ì´í…œì¼ ê²½ìš°
 		return true;
 	}
 
-	//È®ÀÎ ¾ÆÀÌÅÛÀÏ °æ¿ì
+	//í™•ì¸ ì•„ì´í…œì¼ ê²½ìš°
 	pItemData->itemNo = itemNo; 
 	pItemData->byStackcount = byStackcount;
 	pItemData->byRank = byRank;
@@ -328,12 +328,12 @@ bool Dbo_SetItemData_CheckNeedToIdentify( sITEM_DATA* const pItemData
 
 
 //-----------------------------------------------------------------------------------
-// ¾Æ·¡ ÇÔ¼ö¸¦ 
+// ì•„ë˜ í•¨ìˆ˜ë¥¼ 
 // bool Dbo_SetItemProfile( sITEM_PROFILE* const pItemData_Output, sITEM_PROFILE* const pItemData_Input )
-// ·Î ¾ÈÇÑ ÀÌÀ¯: 
-// sITEM_PROFILEÀÇ µ¥ÀÌÅ¸°¡ º¯°æµÇ°Å³ª Ãß°¡µÉ °æ¿ì, ÀÛ¾÷ÀÚ¿¡ ½Ç¼ö¸¦ ÄÄÆÄÀÏ ½ÃÁ¡¿¡¼­ Àâ±â À§ÇÔÀÌ´Ù. 
-// µğ¹ö±ë¶§ °í»ı¸»°í, ÄÚµù¶§ °í»ıÇÏÀÚ~
-// ±×·¡¼­, À§¿¡Ã³·³ Àı´ë ¼öÁ¤ÇÏÁö ¸»°Í.
+// ë¡œ ì•ˆí•œ ì´ìœ : 
+// sITEM_PROFILEì˜ ë°ì´íƒ€ê°€ ë³€ê²½ë˜ê±°ë‚˜ ì¶”ê°€ë  ê²½ìš°, ì‘ì—…ìì— ì‹¤ìˆ˜ë¥¼ ì»´íŒŒì¼ ì‹œì ì—ì„œ ì¡ê¸° ìœ„í•¨ì´ë‹¤. 
+// ë””ë²„ê¹…ë•Œ ê³ ìƒë§ê³ , ì½”ë”©ë•Œ ê³ ìƒí•˜ì~
+// ê·¸ë˜ì„œ, ìœ„ì—ì²˜ëŸ¼ ì ˆëŒ€ ìˆ˜ì •í•˜ì§€ ë§ê²ƒ.
 //-----------------------------------------------------------------------------------
 bool Dbo_SetItemProfile( sITEM_PROFILE* const pItemProfile
 						, HOBJECT handle
@@ -366,11 +366,11 @@ bool Dbo_SetItemProfile( sITEM_PROFILE* const pItemProfile
 
 	if( true == bNeedToIdentify )
 	{
-		//¹ÌÈ®ÀÎ ¾ÆÀÌÅÛÀÏ °æ¿ì
+		//ë¯¸í™•ì¸ ì•„ì´í…œì¼ ê²½ìš°
 		return true;
 	}
 
-	//È®ÀÎ ¾ÆÀÌÅÛÀÏ °æ¿ì
+	//í™•ì¸ ì•„ì´í…œì¼ ê²½ìš°
 	pItemProfile->tblidx = tblidx;
 	pItemProfile->byStackcount = byStackcount;
 	pItemProfile->byRank = byRank;

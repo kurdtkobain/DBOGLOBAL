@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -30,6 +30,4 @@ using System.Runtime.InteropServices;
 //      수정 버전
 //
 [assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("2020.6.11.5")]
-
-[assembly: AssemblyInformationalVersion("1.0.0-rc-04")]
+[assembly: AssemblyFileVersion("1.0.0.0")]

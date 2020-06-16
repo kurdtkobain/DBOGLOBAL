@@ -25,7 +25,7 @@ protected:
 	eBROAD_MSG_OWNER_TYPE				m_eOwnerType;
 	unsigned int						m_uiOwnerTblIdx;
 	unsigned int						m_uiQTextTblIdx;
-	unsigned int						m_uiDisplayTime;		// ÃÊ
+	unsigned int						m_uiDisplayTime;		// ì´ˆ
 
 // Constructions
 public:
@@ -48,7 +48,7 @@ public:
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 };

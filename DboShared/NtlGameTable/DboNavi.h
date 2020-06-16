@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-07-27
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hong Ho Dong   ( battery@ntl-inc.com )
 //
@@ -65,7 +65,7 @@ public:
 	TBLIDX	GetTextAllIndex(const TBLIDX worldTblidx, const float x, const float z);
 	ZONEID	GetZoneIndex(TBLIDX worldTblidx, float x, float z);
 
-	// ¾ÆÁ÷ ±¸Çö ¾È µÇ¾úÀ½
+	// ì•„ì§ êµ¬í˜„ ì•ˆ ë˜ì—ˆìŒ
 	bool	CanSee(unsigned int uiWorldIndex, float curX, float curY, float curZ, float desX, float desY, float desZ);
 	
 

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2007-01-31
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	
 //
@@ -1952,7 +1952,7 @@ bool CTableContainer::SaveToFile(CNtlBitFlagManager& rTableFlag, CTableFileNameL
 	//--------------------------------------------------------------------------------
 	// GraphicData
 	//--------------------------------------------------------------------------------
-	// ±×·¡ÇÈ µ¥ÀÌÅ¸´Â TableContainer·Î exportÇÏÁö ¾Ê½À´Ï´Ù.
+	// ê·¸ë˜í”½ ë°ì´íƒ€ëŠ” TableContainerë¡œ exportí•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.
 	// Graphic data is not supposed to be exported via TableContainer.
 	// by YOSHIKI(2007-04-05)
 

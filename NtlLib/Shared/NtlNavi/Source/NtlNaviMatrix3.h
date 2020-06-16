@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////
 /**
-*	Matrix3 Å¬·¡½º
-*	¿Ş¼Õ ÁÂÇ¥°è, Çàº¤ÅÍ¸¦ ±âÁØÀ¸·Î ±¸ÇöµÈ 3 X 3 Çà·Ä.
+*	Matrix3 í´ë˜ìŠ¤
+*	ì™¼ì† ì¢Œí‘œê³„, í–‰ë²¡í„°ë¥¼ ê¸°ì¤€ìœ¼ë¡œ êµ¬í˜„ëœ 3 X 3 í–‰ë ¬.
 *
 *	\file		NtlNaviMatrix3.h
 *	\author		Jeong Ho, Rho
@@ -85,22 +85,22 @@ public:
 
 public:
 
-	// Çà·ÄÀÇ ¸ğµç ¿ä¼ÒµéÀ» ¹«È¿È­ÇÑ´Ù.
+	// í–‰ë ¬ì˜ ëª¨ë“  ìš”ì†Œë“¤ì„ ë¬´íš¨í™”í•œë‹¤.
 
 	inline			void					MakeInvalid( void );
 
 
-	// ¿µ Çà·Ä·Î ¸¸µç´Ù.
+	// ì˜ í–‰ë ¬ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeZero( void );
 
 
-	// ´ÜÀ§ Çà·Ä·Î ¸¸µç´Ù.
+	// ë‹¨ìœ„ í–‰ë ¬ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeIdentity( void );
 
 
-	// ´ë°¢ Çà·Ä·Î ¸¸µç´Ù.
+	// ëŒ€ê° í–‰ë ¬ë¡œ ë§Œë“ ë‹¤.
 
 	inline			void					MakeDiagonal( float fVal );
 
@@ -109,8 +109,8 @@ public:
 	inline			void					MakeDiagonal( const CNtlNaviVector3& v3Val );
 
 
-	// ¿ÀÀÏ·¯(Euler) È¸Àü.
-	// Á¤±ÔÁ÷±³(Orthonormal) Çà·ÄÀ» ´ë»óÀ¸·Î µ¿ÀÛÇÑ´Ù.
+	// ì˜¤ì¼ëŸ¬(Euler) íšŒì „.
+	// ì •ê·œì§êµ(Orthonormal) í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ ë™ì‘í•œë‹¤.
 
 	inline			void					GetEulerRotXYZ( float& fX, float& fY, float& fZ ) const;
 
@@ -144,20 +144,20 @@ public:
 	inline			void					MakeEulerRotZYX( float fX, float fY, float fZ );
 
 
-	// ÀÓÀÇÀÇ ´ÜÀ§ ¹éÅÍ¸¦ ±âÁØÀ¸·Î ÁÖ¾îÁø °¢ ¸¸Å­ È¸Àü.
-	// v3Axis´Â ´ÜÀ§ º¤ÅÍÀÌ´Ù.
+	// ì„ì˜ì˜ ë‹¨ìœ„ ë°±í„°ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì£¼ì–´ì§„ ê° ë§Œí¼ íšŒì „.
+	// v3AxisëŠ” ë‹¨ìœ„ ë²¡í„°ì´ë‹¤.
 
 	inline			void					GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fAngle ) const;
 
 	inline			void					MakeRotMatFromAxisAngle( const CNtlNaviVector3& v3Axis, float fAngle );
 
 
-	// Çà·Ä°ª.
+	// í–‰ë ¬ê°’.
 
 	inline			float					GetDet( void ) const;
 
 
-	// ¿ªÇà·Ä.
+	// ì—­í–‰ë ¬.
 
 	inline			bool					CanInverse( void ) const;
 
@@ -166,27 +166,27 @@ public:
 	inline			float					MakeInverse( void );
 
 
-	// ÀüÄ¡ Çà·Ä.
+	// ì „ì¹˜ í–‰ë ¬.
 
 	inline			CNtlNaviMatrix3			GetTranspose( void ) const;
 
 	inline			void					MakeTranspose( void );
 
 
-	// ´ë°¢ ¼ººĞ.
+	// ëŒ€ê° ì„±ë¶„.
 
 	inline			float					GetTrace( void ) const;
 
 
-// ¿¬»êÀÚ.
+// ì—°ì‚°ì.
 public:
 
-	// ÇÒ´ç ¿¬»êÀÚ.
+	// í• ë‹¹ ì—°ì‚°ì.
 
 	inline			CNtlNaviMatrix3&		operator = ( const CNtlNaviMatrix3& m3Val );
 
 
-	// ¸â¹ö Á¢±Ù ¿¬»êÀÚ.
+	// ë©¤ë²„ ì ‘ê·¼ ì—°ì‚°ì.
 
 	inline			float*					operator [] ( int nIdx );
 
@@ -198,14 +198,14 @@ public:
 	inline			const float&			operator () ( int nRow, int nCol ) const;
 
 
-	// ºñ±³ ¿¬»êÀÚ.
+	// ë¹„êµ ì—°ì‚°ì.
 
 	inline			bool					operator == ( const CNtlNaviMatrix3& m3Val ) const;
 
 	inline			bool					operator != ( const CNtlNaviMatrix3& m3Val ) const;
 
 
-	// »ê¼ú ¿¬»êÀÚ.
+	// ì‚°ìˆ  ì—°ì‚°ì.
 
 	inline			CNtlNaviMatrix3			operator - ( void ) const;
 
@@ -222,7 +222,7 @@ public:
 	inline			CNtlNaviMatrix3			operator * ( const CNtlNaviMatrix3& m3Val ) const;
 
 
-	// »ê¼ú ¹İ¿µ ¿¬»êÀÚ.
+	// ì‚°ìˆ  ë°˜ì˜ ì—°ì‚°ì.
 
 	inline			CNtlNaviMatrix3&		operator *= ( float fVal );
 
@@ -236,14 +236,14 @@ public:
 	inline			CNtlNaviMatrix3&		operator *= ( const CNtlNaviMatrix3& m3Val );
 
 
-	// Çüº¯È¯ ¿¬»êÀÚ.
+	// í˜•ë³€í™˜ ì—°ì‚°ì.
 
 	inline 									operator float* ( void );
 
 	inline									operator const float* ( void ) const;
 
 
-	// Friend Ã³¸® ¿¬»êÀÚ.
+	// Friend ì²˜ë¦¬ ì—°ì‚°ì.
 
 	inline friend	CNtlNaviMatrix3			operator * ( float fVal1, const CNtlNaviMatrix3& m3Val2 );
 
@@ -255,7 +255,7 @@ public:
 	inline friend	CNtlNaviVector3			operator * ( const CNtlNaviMatrix3& m3Val1, const CNtlNaviVector3& v3Val2 );
 
 
-// ³»ºÎ ±¸Çö.
+// ë‚´ë¶€ êµ¬í˜„.
 protected:
 
 	inline			int						CompareArrays( const CNtlNaviMatrix3& m3Val ) const;

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-19
 //
-//	Copyright	:	╗о NTL-Inc Co., Ltd
+//	Copyright	:	Б⌠▓ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -63,14 +63,14 @@ public:
 
 	enum eSTATUS					
 	{
-		STATUS_INIT = 0,			// цй╠Б╩Себ
-		STATUS_CREATE,				// ╩Щ╪╨╩Себ
-		STATUS_ACCEPT,				// Accept ╢К╠Б ╩Себ
-		STATUS_CONNECT,				// Connect ╢К╠Б ╩Себ ( AcceptEx, ConnectEx ©║╪╜ ╩Г©К )
-		STATUS_ACTIVE,				// х╟╣©╩Себ
-		STATUS_CLOSE,				// ╢щхЫ ╩Себ
-		STATUS_SHUTDOWN,			// а╬╥А ╩Себ
-		STATUS_DESTROY,				// ╪р╦Й ╩Себ
+		STATUS_INIT = 0,			// Л╢┬Й╦╟Л┐│М┐°
+		STATUS_CREATE,				// Л┐²Л└╠Л┐│М┐°
+		STATUS_ACCEPT,				// Accept К▄─Й╦╟ Л┐│М┐°
+		STATUS_CONNECT,				// Connect К▄─Й╦╟ Л┐│М┐° ( AcceptEx, ConnectEx Л≈░Л└° Л┌╛Л ╘ )
+		STATUS_ACTIVE,				// М≥°К▐≥Л┐│М┐°
+		STATUS_CLOSE,				// К▀╚М·▄ Л┐│М┐°
+		STATUS_SHUTDOWN,			// Л╒┘Кё▄ Л┐│М┐°
+		STATUS_DESTROY,				// Л├▄К╘╦ Л┐│М┐°
 		STATUS_CHANGE_PORT,
 
 		MAX_STATUS

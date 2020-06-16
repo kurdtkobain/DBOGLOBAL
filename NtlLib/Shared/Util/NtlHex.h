@@ -5,7 +5,7 @@
 //
 //	Begin		:	2006-03-24
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:
 //
@@ -20,12 +20,12 @@ bool				HexToWideChar(char* pszHex, DWORD dwBufferSize, WCHAR* pwszBuffer);
 // --------------------------------------------------------------------------------
 // StreamToHex
 //
-// °á°ú¿¡ terminating null('\0')À» ºÙÀÔ´Ï´Ù.
+// ê²°ê³¼ì— terminating null('\0')ì„ ë¶™ì…ë‹ˆë‹¤.
 // A terminating null character('\0') will be added to the result.
 // --------------------------------------------------------------------------------
 // HexToStream
 //
-// Stream¿¡´Â terminating nullÀÇ °³³äÀÌ ¾øÀ¸¹Ç·Î °á°ú¿¡ '\0'À» ºÙÀÌÁö ¾Ê½À´Ï´Ù.
+// Streamì—ëŠ” terminating nullì˜ ê°œë…ì´ ì—†ìœ¼ë¯€ë¡œ ê²°ê³¼ì— '\0'ì„ ë¶™ì´ì§€ ì•ŠìŠµë‹ˆë‹¤.
 // '\0' will NOT be added to the result since stream isn't supposed to have terminating null.
 // --------------------------------------------------------------------------------
 // by YOSHIKI(2007-02-28)

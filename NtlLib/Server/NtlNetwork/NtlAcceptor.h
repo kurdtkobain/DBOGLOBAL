@@ -4,11 +4,11 @@
 //
 //	Begin		:	2005-12-13
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
-//	Desc		:	Network Á¢¼ÓÀ» ¹Ş¾ÆµéÀÌ´Â Acceptor Å¬·¡½º
+//	Desc		:	Network ì ‘ì†ì„ ë°›ì•„ë“¤ì´ëŠ” Acceptor í´ë˜ìŠ¤
 //
 //***********************************************************************************
 
@@ -131,18 +131,18 @@ public:
 	CNtlBitFlagManager		m_BitFlagManager;
 	CNtlAcceptingSessionList*	m_pAcceptingSessionList;
 
-	int						m_nMaxAcceptCount;  // Acceptor¿¡¼­ µ¿½Ã¿¡ Accept ÇÒ ¼ö ÀÖ´Â ÃÖ´ë °³¼ö
+	int						m_nMaxAcceptCount;  // Acceptorì—ì„œ ë™ì‹œì— Accept í•  ìˆ˜ ìˆëŠ” ìµœëŒ€ ê°œìˆ˜
 
-	int						m_nMinAcceptCount; // ÀÌ °³¼ö º¸´Ù CurAcceptCount°¡ ÀûÀ¸¸é PostAcceptCount¸¸Å­ Accept½ÃÅ²´Ù
+	int						m_nMinAcceptCount; // ì´ ê°œìˆ˜ ë³´ë‹¤ CurAcceptCountê°€ ì ìœ¼ë©´ PostAcceptCountë§Œí¼ Acceptì‹œí‚¨ë‹¤
 
-	int						m_nPostAcceptCount; // Accept¸¦ ReserveÇÏ´Â °³¼ö
+	int						m_nPostAcceptCount; // Acceptë¥¼ Reserveí•˜ëŠ” ê°œìˆ˜
 
-	int						m_nCreateAcceptCount; // ÃÖÃÊ »ı¼º½Ã Accept¸¦ ReserveÇÏ´Â °³¼ö
+	int						m_nCreateAcceptCount; // ìµœì´ˆ ìƒì„±ì‹œ Acceptë¥¼ Reserveí•˜ëŠ” ê°œìˆ˜
 
 
-	int						m_nAcceptingCount; // ÇöÀç AcceptÇÏ°í ÀÖ´Â °³¼ö
+	int						m_nAcceptingCount; // í˜„ì¬ Acceptí•˜ê³  ìˆëŠ” ê°œìˆ˜
 
-	int						m_nAcceptedCount; // ÇöÀç AcceptµÈ °³¼ö
+	int						m_nAcceptedCount; // í˜„ì¬ Acceptëœ ê°œìˆ˜
 
 	DWORD					m_dwTotalAcceptCount; 
 

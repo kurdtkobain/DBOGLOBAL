@@ -16,7 +16,7 @@ class CNtlTSScrObject;
 
 
 /** 
-	Entity ¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ entity type class µé
+	Entity ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ entity type class ë“¤
 */
 
 

@@ -4,7 +4,7 @@
 //
 //	Begin		:	2005-12-15
 //
-//	Copyright	:	®œ NTL-Inc Co., Ltd
+//	Copyright	:	‚ìí NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -39,7 +39,7 @@ const ULONG_PTR THREAD_CLOSE = (ULONG_PTR)(-1);	// thread terminate value
 
 
 //---------------------------------------------------------------------------------------
-// Network Monitor Thread class ( Network ≈¨∑°Ω∫ ≥ª∫ŒøÎ )
+// Network Monitor Thread class ( Network ÌÅ¥ÎûòÏä§ ÎÇ¥Î∂ÄÏö© )
 //---------------------------------------------------------------------------------------
 class CNtlNetworkMonitor : public CNtlRunObject
 {

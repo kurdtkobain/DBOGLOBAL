@@ -79,15 +79,15 @@ bool CDboTSEMObject::AddBuildData( const std::string& strKey, const CNtlTSMain::
 	sOBJECT_PARAM sParam;
 	CDboTSEMObject_Recv clRecv;
 
-	// NPC tableÀ» ¼øÈ¸ÇÑ´Ù
+	// NPC tableì„ ìˆœíšŒí•œë‹¤
 	for ( ; itBegin != itEnd; ++itBegin )
 	{
 		defTIDList.clear();
 
 		sOBJECT_TBLDAT* pObjData = (sOBJECT_TBLDAT*)itBegin->second;
 
-		// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç Object id·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-		// trigger¸¦ Ã£´Â´Ù
+		// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ Object idë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+		// triggerë¥¼ ì°¾ëŠ”ë‹¤
 		CNtlTSTrigger* pTrig;
 		CNtlTSMain::mapdef_TLIST::const_iterator citTSBegin = TList.begin();
 		CNtlTSMain::mapdef_TLIST::const_iterator citTSEnd = TList.end();

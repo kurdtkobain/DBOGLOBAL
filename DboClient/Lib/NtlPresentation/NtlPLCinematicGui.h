@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 // File: NtlPLCinematicGui.h
-// Desc: NtlPLCinematicGui. DTEditor¿¡¼­ÀÇ »ç¿ëÀ» À§ÇØ Client¿¡¼­ ÀÌÁÖÇØ ¿È.
+// Desc: NtlPLCinematicGui. DTEditorì—ì„œì˜ ì‚¬ìš©ì„ ìœ„í•´ Clientì—ì„œ ì´ì£¼í•´ ì˜´.
 //
 // 2007.12.21 Peessi@hitel.net   
 //
@@ -35,8 +35,8 @@ private:
 	//gui::CSlot	m_slotMovieEnd;
 
 	RwBool	m_bUseTime;
-	RwReal	m_fLifeTime;				// m_bUseTime : TrueÀÏ¶§ À¯È¿
-	RwReal	m_fFlashMovieTime;			// m_bUseTime : FalseÀÏ¶§ À¯È¿
+	RwReal	m_fLifeTime;				// m_bUseTime : Trueì¼ë•Œ ìœ íš¨
+	RwReal	m_fFlashMovieTime;			// m_bUseTime : Falseì¼ë•Œ ìœ íš¨
 	
 	RwReal	m_fBeginAlphaTime;
 	RwReal  m_fPlayTime;				

@@ -196,7 +196,7 @@ static int pmain(lua_State* L)
  return EXIT_SUCCESS;
 }
 */
-// Lua ÄÄÆÄÀÏÀ» À§ÇØ Ãß°¡ÇÑ ÇÔ¼ö 
+// Lua ì»´íŒŒì¼ì„ ìœ„í•´ ì¶”ê°€í•œ í•¨ìˆ˜ 
 int ComplieLua(int argc, char* argv[]) 
 {
     lua_State* L;

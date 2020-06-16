@@ -45,7 +45,7 @@ CNtlPLDecal::CNtlPLDecal()
 	m_vSize = ZeroAxis;
 	m_fIntersectionRadius = 3.0f;
 	m_fScale = 1.0f;
-	m_fVisibleSquaredDist = 1600.f;	//Camera¿¡¼­ º¸ÀÌ´Â °Å¸®(40m)
+	m_fVisibleSquaredDist = 1600.f;	//Cameraì—ì„œ ë³´ì´ëŠ” ê±°ë¦¬(40m)
 	m_pTexture = NULL;
 	m_pCurrentTexture = NULL;
 	m_ppMultiTextures = NULL;
@@ -143,15 +143,15 @@ RwBool CNtlPLDecal::Create( const SPLEntityCreateParam * pParam /*= NULL*/ )
 		}
 	}
 
-    // ¹öÅØ½º ¹öÆÛ »ı¼º
+    // ë²„í…ìŠ¤ ë²„í¼ ìƒì„±
     m_pIm3DBuffer = (RwIm3DVertex*)CNtlEffectSystemFreeList::Alloc(CNtlResourceComponentSystem::RESOURCE_VERTEX_1024);
     m_nMaxVertexCnt = DECAL_VB_SMALL_SIZE;    
     m_uiMemoryUseSize += sizeof(RwIm3DVertex) * 1024;
 
-    // ½ÃÀÛ½Ã Fade »óÅÂ¸¦ Ã¼Å©ÇÑ´Ù.
+    // ì‹œì‘ì‹œ Fade ìƒíƒœë¥¼ ì²´í¬í•œë‹¤.
     if(m_eDecalType == DECAL_EFFECT)
     {
-        m_eFadeStatus = FADE_STATUS_IN;      // ÀÌÆåÆ® µ¥Ä®Àº ¹«Á¶°Ç Fade InºÎÅÍ ½ÃÀÛÇÑ´Ù.        
+        m_eFadeStatus = FADE_STATUS_IN;      // ì´í™íŠ¸ ë°ì¹¼ì€ ë¬´ì¡°ê±´ Fade Inë¶€í„° ì‹œì‘í•œë‹¤.        
     }
     else
     {
@@ -238,7 +238,7 @@ RwBool CNtlPLDecal::Update(RwReal fElapsed)
 	if(!IsVisble())
 		return TRUE;
 
-	// ½ºÄÉÀÏ ActionÀº Vertex¸¦ ¸¸µé±â Àü¿¡ Àû¿ëÇØ¾ß ÇÑ´Ù.
+	// ìŠ¤ì¼€ì¼ Actionì€ Vertexë¥¼ ë§Œë“¤ê¸° ì „ì— ì ìš©í•´ì•¼ í•œë‹¤.
 	if(m_nFlagEffect & rpPRTADVEMITTERDATAFLAGMULTISIZE)
 	{
 		UpdateMultiSize(m_fElapsedTime);
@@ -273,7 +273,7 @@ RwBool CNtlPLDecal::Update(RwReal fElapsed)
 	{
 		SetVertexColor(m_color);
 	}
-    else if(GetWeightAlpha() != 1.0f)           // Weight Alpha°¡ Àû¿ëµÇ¾úÀ»¶§
+    else if(GetWeightAlpha() != 1.0f)           // Weight Alphaê°€ ì ìš©ë˜ì—ˆì„ë•Œ
     {
         SetVertexColor(m_color);
     }
@@ -353,11 +353,11 @@ void CNtlPLDecal::SetPosition(const RwV3d *pPos)
 		}
 	}	
 	
-	// Effect DecalÀÌ°Å³ª, ÁöÇü DecalÀÌ¸é¼­ »ı¼ºµÈ VertexÀÇ ¹üÀ§¸¦ ¹ş¾î³ªÁö ¾ÊÀ¸¸é UV¸¸ ¾÷µ¥ÀÌÆ®ÇØÁØ´Ù.
+	// Effect Decalì´ê±°ë‚˜, ì§€í˜• Decalì´ë©´ì„œ ìƒì„±ëœ Vertexì˜ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ì§€ ì•Šìœ¼ë©´ UVë§Œ ì—…ë°ì´íŠ¸í•´ì¤€ë‹¤.
 	UpdateUV();
 }
 
-// NOTE : ¿ÜºÎ¿¡¼­ È£ÃâÇÒ¶§¸¸ »ç¿ëÇÏ°í Fade ½Ã¿¡´Â »ç¿ëÇÏ¸é ¾ÈµÈ´Ù. (Fade¿Í »ó°ü¾ø´Â ¿ø·¡ Alpha°ª)
+// NOTE : ì™¸ë¶€ì—ì„œ í˜¸ì¶œí• ë•Œë§Œ ì‚¬ìš©í•˜ê³  Fade ì‹œì—ëŠ” ì‚¬ìš©í•˜ë©´ ì•ˆëœë‹¤. (Fadeì™€ ìƒê´€ì—†ëŠ” ì›ë˜ Alphaê°’)
 void CNtlPLDecal::SetAlpha(RwUInt8 byAlpha)
 {
 	m_color.alpha = byAlpha;
@@ -365,7 +365,7 @@ void CNtlPLDecal::SetAlpha(RwUInt8 byAlpha)
 	SetVertexColor(m_color);
 }
 
-// NOTE : ¿ÜºÎ¿¡¼­ È£ÃâÇÒ¶§¸¸ »ç¿ëÇÏ°í Fade ½Ã¿¡´Â »ç¿ëÇÏ¸é ¾ÈµÈ´Ù. (Fade¿Í »ó°ü¾ø´Â ¿ø·¡ Alpha°ª)
+// NOTE : ì™¸ë¶€ì—ì„œ í˜¸ì¶œí• ë•Œë§Œ ì‚¬ìš©í•˜ê³  Fade ì‹œì—ëŠ” ì‚¬ìš©í•˜ë©´ ì•ˆëœë‹¤. (Fadeì™€ ìƒê´€ì—†ëŠ” ì›ë˜ Alphaê°’)
 void CNtlPLDecal::SetColor(RwUInt8 byRed, RwUInt8 byGreen, RwUInt8 byBlue)
 {
 	m_color.red = byRed;
@@ -406,16 +406,16 @@ RwBool CNtlPLDecal::UpdateVertices()
 
 	if(m_nFlagEffect & E_FLAG_DECAL_WATER)
 	{
-		GetWaterDecalVertex();		// ¹° À§¿¡ ±×·ÁÁö´Â DecalÀ» °è»êÇÑ´Ù.
+		GetWaterDecalVertex();		// ë¬¼ ìœ„ì— ê·¸ë ¤ì§€ëŠ” Decalì„ ê³„ì‚°í•œë‹¤.
 	}
 	else if(m_nFlagEffect & E_FLAG_DECAL_RENDER_WORLD)
 	{
-		// WorldÀÇ Decal °è»ê
+		// Worldì˜ Decal ê³„ì‚°
 		CNtlPLWorldEntity *pWorldEntity = reinterpret_cast<CNtlPLVisualManager*>( GetSceneManager() )->GetWorld();
 		if(!pWorldEntity)
 			return FALSE;
 
-		// Decal ³»¿ÜºÎ ÆÇÁ¤.
+		// Decal ë‚´ì™¸ë¶€ íŒì •.
 		if (!GetNtlWorldSpace(&m_vPos, NULL, NULL))
 		{
 			RwV3d vResutSize = m_vSize * m_fScale;
@@ -423,7 +423,7 @@ RwBool CNtlPLDecal::UpdateVertices()
 			RwBool bResult = pWorldEntity->GetWorldDecal(m_vPos, vResutSize, m_nMaxVertexCnt, m_nRenderVertexCnt, m_fRadiusWorldVertex, m_pIm3DBuffer, m_fYOffset);		
 			if(!bResult)
 			{
-				// ¹öÆÛ°¡ ÀÛ¾Æ¼­ ´Ù ¸ø´ãÀ» °æ¿ì¿¡´Â Å« ¹öÆÛ·Î º¯°æÇÑ´Ù.
+				// ë²„í¼ê°€ ì‘ì•„ì„œ ë‹¤ ëª»ë‹´ì„ ê²½ìš°ì—ëŠ” í° ë²„í¼ë¡œ ë³€ê²½í•œë‹¤.
 				if(m_nRenderVertexCnt >= m_nMaxVertexCnt && m_nMaxVertexCnt == DECAL_VB_SMALL_SIZE)
 				{
 					ChangeBigVB();
@@ -437,7 +437,7 @@ RwBool CNtlPLDecal::UpdateVertices()
 				}
 			}
 
-			// »ı¼ºµÈ VertexÀÇ ÁßÁ¡°ú ¹İÁö¸§ °è»ê
+			// ìƒì„±ëœ Vertexì˜ ì¤‘ì ê³¼ ë°˜ì§€ë¦„ ê³„ì‚°
 			m_vOriginPos = m_vPos;
 			m_vOriginPos.y = 0.0f;
 
@@ -447,7 +447,7 @@ RwBool CNtlPLDecal::UpdateVertices()
 
 	if(m_nFlagEffect & E_FLAG_DECAL_RENDER_OBJECT)
 	{
-		// ¿ÀºêÁ§Æ®µéÀÇ Decal °è»ê
+		// ì˜¤ë¸Œì íŠ¸ë“¤ì˜ Decal ê³„ì‚°
 		GetObjectDecalVertex();
 	}
 
@@ -460,7 +460,7 @@ RwBool CNtlPLDecal::UpdateVertices()
 RwBool CNtlPLDecal::GetWaterDecalVertex() 
 {
 	RwReal fWaterHeight = GetSceneManager()->GetWorldWaterHeight(m_vPos);
-	if(fWaterHeight < -998.0f)			// ¹°ÀÌ ¾Æ´Ï¸é -999.0f ¸¦ ¸®ÅÏÇÑ´Ù.
+	if(fWaterHeight < -998.0f)			// ë¬¼ì´ ì•„ë‹ˆë©´ -999.0f ë¥¼ ë¦¬í„´í•œë‹¤.
 		return FALSE;
 
 
@@ -495,7 +495,7 @@ void CNtlPLDecal::SetVertexColor(const RwRGBA& color)
 {
 	for(int i = 0; i < m_nRenderVertexCnt; ++i)
 	{
-		// Day and NightÀÇ ¿µÇâÀ» ¹Ş´Â ÇÃ·¡±×°¡ ÄÑÁ®ÀÖÀ¸¸é ¿µÇâÀ» ¹Ş´Â´Ù.
+		// Day and Nightì˜ ì˜í–¥ì„ ë°›ëŠ” í”Œë˜ê·¸ê°€ ì¼œì ¸ìˆìœ¼ë©´ ì˜í–¥ì„ ë°›ëŠ”ë‹¤.
 		if(m_nFlagEffect & E_FLAG_DECAL_DAYNIGHT)
 		{
 			RwRGBA colDayNight = color;
@@ -518,7 +518,7 @@ void CNtlPLDecal::UpdateUV()
 	if(m_nRenderVertexCnt <= 0)
 		return;
 
-	// Áß½ÉÁ¡°úÀÇ °Å¸®¸¦ °è»êÇØ¼­ UV¸¦ °è»êÇÑ´Ù.
+	// ì¤‘ì‹¬ì ê³¼ì˜ ê±°ë¦¬ë¥¼ ê³„ì‚°í•´ì„œ UVë¥¼ ê³„ì‚°í•œë‹¤.
 	RwReal fU, fV;
 	RwV3d v3dPos = m_vPos;
 	v3dPos.y = 0.0f;	
@@ -542,10 +542,10 @@ void CNtlPLDecal::UpdateUV()
 
 	RwMatrixSetIdentity(&m_matTexture);
 
-	// Rotate °ªÀ» Àû¿ëÇÑ´Ù. (Rotate Action¸»°í Matrix»óÀÇ Rotate)
+	// Rotate ê°’ì„ ì ìš©í•œë‹¤. (Rotate Actionë§ê³  Matrixìƒì˜ Rotate)
 	RwMatrixRotate(&m_matTexture, &ZAxis, m_fDegree, rwCOMBINEPOSTCONCAT);	
 
-	// »õ·Î ¼¼ÆÃµÈ UV ÃÊÄ¡°ª¿¡ Rotate ActionÀ» Àû¿ëÇÑ´Ù.
+	// ìƒˆë¡œ ì„¸íŒ…ëœ UV ì´ˆì¹˜ê°’ì— Rotate Actionì„ ì ìš©í•œë‹¤.
 	if(m_nFlagEffect & rpPRTSTDEMITTERDATAFLAGPRT2DROTATE)
 	{
 		UpdateRoate(m_fTotalElapsedTime);				
@@ -583,7 +583,7 @@ ShadowRenderAtomicObjectTriangleCB( RpIntersection * intersection __RWUNUSED__,
 
 	RwInt32 nBuffCnt = *(pDecalParam->pBufferCnt);  
 
-	// ÃÖ´ë °³¼ö¸¦ ³ÑÀ¸¸é Vertex¸¦ »ı¼ºÇÏÁö ¾Ê°í Äµ½½ÇÑ´Ù.
+	// ìµœëŒ€ ê°œìˆ˜ë¥¼ ë„˜ìœ¼ë©´ Vertexë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  ìº”ìŠ¬í•œë‹¤.
 	if(nBuffCnt + 2 >= pDecalParam->nMaxVertextCnt)			
 		return collTriangle;
 
@@ -610,7 +610,7 @@ ShadowRenderAtomicObjectTriangleCB( RpIntersection * intersection __RWUNUSED__,
 // 
 // 	RwInt32 nBuffCnt = *(pDecalParam->pBufferCnt);  
 // 	
-// 	// ÃÖ´ë °³¼ö¸¦ ³ÑÀ¸¸é Vertex¸¦ »ı¼ºÇÏÁö ¾Ê°í Äµ½½ÇÑ´Ù.
+// 	// ìµœëŒ€ ê°œìˆ˜ë¥¼ ë„˜ìœ¼ë©´ Vertexë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  ìº”ìŠ¬í•œë‹¤.
 // 	if(nBuffCnt + 2 >= pDecalParam->nMaxVertextCnt)			
 // 		return collTriangle;
 // 
@@ -679,11 +679,11 @@ void CNtlPLDecal::GetObjectDecalVertex()
     if(!CNtlPLGlobal::m_pRpWorld)
         return;
 
-	// decal ±¸ÇÏ±â		
+	// decal êµ¬í•˜ê¸°		
 
 	DecalCallbackParam param;		
 	param.vPos = m_vPos;
-	param.pBufferCnt = (RwInt32*)&m_nRenderVertexCnt; ///< ÇöÀç±îÁö »ı¼ºµÈ Vertex ¹öÆÛÀÇ ´ÙÀ½ºÎÅÍ ´ã´Â´Ù.
+	param.pBufferCnt = (RwInt32*)&m_nRenderVertexCnt; ///< í˜„ì¬ê¹Œì§€ ìƒì„±ëœ Vertex ë²„í¼ì˜ ë‹¤ìŒë¶€í„° ë‹´ëŠ”ë‹¤.
 	param.pVertices = m_pIm3DBuffer;			
 	param.fIntersectionRadius =  max(m_vSize.x, m_vSize.z) * m_fScale * 0.5f;
 	param.fScale = m_fScale;
@@ -699,7 +699,7 @@ void CNtlPLDecal::GetObjectDecalVertex()
 
 	RpWorldForAllAtomicIntersections(CNtlPLGlobal::m_pRpWorld, &InterZone, ShadowRenderAtomicCB, (void *) &param);
     
-    // ¹öÆÛ°¡ ÀÛ¾Æ¼­ ´Ù ´ãÁö ¸øÇÏ´Â °æ¿ì¿¡´Â Å« ¹öÆÛ·Î º¯°æÇÑ´Ù.
+    // ë²„í¼ê°€ ì‘ì•„ì„œ ë‹¤ ë‹´ì§€ ëª»í•˜ëŠ” ê²½ìš°ì—ëŠ” í° ë²„í¼ë¡œ ë³€ê²½í•œë‹¤.
     if(m_nMaxVertexCnt == DECAL_VB_SMALL_SIZE && m_nRenderVertexCnt > 1020)
     {
         ChangeBigVB();
@@ -797,10 +797,10 @@ void CNtlPLDecal::SetTextureMatrix(RwIm3DVertex* pVertices, RwInt32 nVertCnt, Rw
 	for(int i = 0; i < nVertCnt; ++i)
 	{
 		
-		// TextureÀÇ ¿øÁ¡(0,0)°ú ¿øÇÏ´Â ¿øÁ¡(0.5, 0.5)ÀÌ ¼­·Î ´Ù¸£±â ¶§¹®¿¡, uvÁÂÇ¥¿¡ 0.5¾¿À» ´õÇØÁØ´Ù.
-		// ÇÏÁö¸¸ °è»êÀº ¿ø·¡ ¿øÁ¡(0,0)À» ±âÁØÀ¸·Î ÇØ¾ß ÇÏ±â ¶§¹®¿¡, °è»êÀü¿¡´Â ´Ù½Ã 0.5¾¿À» »©ÁØ´Ù.		
-		// ÁÖÀÇ) ÀÌ·¯Áö ¾ÊÀ¸¸é ÅØ½ºÃÄ°¡ ¿øÁ¡±âÁØ(0, 0)À¸·Î È¸ÀüÇÑ´Ù. 
-		// Note: ¿ø·¡ °ªÀ» µû·Î º¸°üÇÏ°í °á°ú°ªÀ» »ç¿ëÇØµµ µÇÁö¸¸, ¸Ş¸ğ¸®¸¦ ¾Æ³¢±â À§ÇØ ±×³É °è»êÇÑ´Ù.
+		// Textureì˜ ì›ì (0,0)ê³¼ ì›í•˜ëŠ” ì›ì (0.5, 0.5)ì´ ì„œë¡œ ë‹¤ë¥´ê¸° ë•Œë¬¸ì—, uvì¢Œí‘œì— 0.5ì”©ì„ ë”í•´ì¤€ë‹¤.
+		// í•˜ì§€ë§Œ ê³„ì‚°ì€ ì›ë˜ ì›ì (0,0)ì„ ê¸°ì¤€ìœ¼ë¡œ í•´ì•¼ í•˜ê¸° ë•Œë¬¸ì—, ê³„ì‚°ì „ì—ëŠ” ë‹¤ì‹œ 0.5ì”©ì„ ë¹¼ì¤€ë‹¤.		
+		// ì£¼ì˜) ì´ëŸ¬ì§€ ì•Šìœ¼ë©´ í…ìŠ¤ì³ê°€ ì›ì ê¸°ì¤€(0, 0)ìœ¼ë¡œ íšŒì „í•œë‹¤. 
+		// Note: ì›ë˜ ê°’ì„ ë”°ë¡œ ë³´ê´€í•˜ê³  ê²°ê³¼ê°’ì„ ì‚¬ìš©í•´ë„ ë˜ì§€ë§Œ, ë©”ëª¨ë¦¬ë¥¼ ì•„ë¼ê¸° ìœ„í•´ ê·¸ëƒ¥ ê³„ì‚°í•œë‹¤.
 		pVertices[i].u -= 0.5f;
 		pVertices[i].v -= 0.5f;		
 
@@ -844,11 +844,11 @@ void CNtlPLDecal::UpdateColor(RwReal fElapsedTime)
 	RwInt32 odd = ((RwInt32)m_fTotalElapsedTime / (RwInt32)m_fColorActionTime) % 2;
 
 	RwRGBA color;
-	if(odd == 0) // ³ª´«¼ö°¡ Â¦¼öÀÌ¸é endÂÊÀ¸·Î º¸°£
+	if(odd == 0) // ë‚˜ëˆˆìˆ˜ê°€ ì§ìˆ˜ì´ë©´ endìª½ìœ¼ë¡œ ë³´ê°„
 	{
 		color = CNtlMath::Interpolation(m_colStart, m_colEnd, fDeltaTime);
 	}
-	else // ³ª¼ø¼ö°¡ È¦¼öÀÌ¸é start ÂÊÀ¸·Î º¸°£
+	else // ë‚˜ìˆœìˆ˜ê°€ í™€ìˆ˜ì´ë©´ start ìª½ìœ¼ë¡œ ë³´ê°„
 	{
 		color = CNtlMath::Interpolation(m_colEnd, m_colStart, fDeltaTime);
 	}
@@ -976,7 +976,7 @@ void CNtlPLDecal::UpdateMultiTexture(RwReal fElapsedTime)
 			{
 				m_nCurrentTexture = 0;
 			}
-			else	// ·çÇÁ°¡ ¾Æ´Ï¸é ¸¶Áö¸· ÅØ½ºÃÄ¸¦ °è¼Ó º¸¿©ÁØ´Ù.
+			else	// ë£¨í”„ê°€ ì•„ë‹ˆë©´ ë§ˆì§€ë§‰ í…ìŠ¤ì³ë¥¼ ê³„ì† ë³´ì—¬ì¤€ë‹¤.
 			{
 				--m_nCurrentTexture;
 			}			
@@ -1026,10 +1026,10 @@ void CNtlPLDecal::UpdateMultiSize( RwReal fElapsedTime )
 	if(m_EmitterPrtMultiSize.numSize <= 0)
 		return ;
 
-	// Multi SizeÀÇ TimeÀº °¢ ¾ÆÀÌÅÛ»çÀÌ°£ÀÇ Gap TimeÀ» ÀÇ¹ÌÇÑ´Ù. 
-	// ÁöÇü DecalÀº EndTimeÀÌ ¾ø¾î ÆÄÆ¼Å¬Ã³·³ ½Ã°£ÀÇ %·Î ÀÇ¹ÌÇÒ ¼ö°¡ ¾ø¾î¼­ GapÀ¸·Î »ç¿ëÇß´Ù.
-	// Áï, [1] 0.5ÃÊ [2] 0.3ÃÊ  ÀÌ·±½ÄÀ¸·Î 0.5ÃÊ¿¡ °ÉÃÄ 1¹øÂ° ¾ÆÀÌÅÛÀ¸·Î º¯°æÇÏ°í, ¶Ç 0.3¿¡ °ÉÃÄ
-	// µÎ¹øÂ° ¾ÆÀÌÅÛÀ¸·Î º¯°æÇÏ´Â ½ÄÀÌ´Ù. (by agebreak 2007.03.26)
+	// Multi Sizeì˜ Timeì€ ê° ì•„ì´í…œì‚¬ì´ê°„ì˜ Gap Timeì„ ì˜ë¯¸í•œë‹¤. 
+	// ì§€í˜• Decalì€ EndTimeì´ ì—†ì–´ íŒŒí‹°í´ì²˜ëŸ¼ ì‹œê°„ì˜ %ë¡œ ì˜ë¯¸í•  ìˆ˜ê°€ ì—†ì–´ì„œ Gapìœ¼ë¡œ ì‚¬ìš©í–ˆë‹¤.
+	// ì¦‰, [1] 0.5ì´ˆ [2] 0.3ì´ˆ  ì´ëŸ°ì‹ìœ¼ë¡œ 0.5ì´ˆì— ê±¸ì³ 1ë²ˆì§¸ ì•„ì´í…œìœ¼ë¡œ ë³€ê²½í•˜ê³ , ë˜ 0.3ì— ê±¸ì³
+	// ë‘ë²ˆì§¸ ì•„ì´í…œìœ¼ë¡œ ë³€ê²½í•˜ëŠ” ì‹ì´ë‹¤. (by agebreak 2007.03.26)
 
 	m_fMultiSizeDeltaTime += fElapsedTime;
 
@@ -1067,7 +1067,7 @@ void CNtlPLDecal::SetMatrix(RwMatrix& matWorld )
 {
 	m_matWorld = matWorld;
 
-	// NOTE: Rotate °ªÀº ÀÌÈÄ UpdateUV()ÇÒ¶§ Àû¿ëµÈ´Ù.
+	// NOTE: Rotate ê°’ì€ ì´í›„ UpdateUV()í• ë•Œ ì ìš©ëœë‹¤.
 
 	RwV3d* pPos = RwMatrixGetPos(&m_matWorld);		
 	SetPosition(pPos);
@@ -1085,11 +1085,11 @@ void CNtlPLDecal::UpdateUVAnim( RwReal fElapsedTime )
 		RwInt32 nOdd = (RwInt32)(m_fTotalElapsedTime / fOffsetTime);
 		RwReal fTime = fmod(m_fTotalElapsedTime, fOffsetTime);
 		
-		if(nOdd % 2 == 0)	// ÀüÁø
+		if(nOdd % 2 == 0)	// ì „ì§„
 		{
 			fVelocity = m_EmitterPrtUVAnim.fVelocity * fTime;
 		}
-		else				// ÈÄÁø
+		else				// í›„ì§„
 		{
 			fVelocity = m_EmitterPrtUVAnim.fVelocity * (fOffsetTime - fTime);
 		}		

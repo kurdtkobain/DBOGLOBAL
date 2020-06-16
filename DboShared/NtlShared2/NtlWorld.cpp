@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-11-15
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -40,7 +40,7 @@ const char * s_game_rule_string[ GAMERULE_TYPE_COUNT ] =
 
 
 //-----------------------------------------------------------------------------------
-// °ÔÀÓ·ê Å¸ÀÔ ÇÔ¼ö Á¤ÀÇ : 
+// ê²Œì„ë£° íƒ€ì… í•¨ìˆ˜ ì •ì˜ : 
 //-----------------------------------------------------------------------------------
 const char * NtlGetGameRuleTypeString(BYTE byRuleType)
 {
@@ -54,7 +54,7 @@ const char * NtlGetGameRuleTypeString(BYTE byRuleType)
 
 
 //-----------------------------------------------------------------------------------
-// Æ®¸®°Å ¿ÀºêÁ§Æ® ÇÚµé°ª »ı¼º ÇÔ¼ö
+// íŠ¸ë¦¬ê±° ì˜¤ë¸Œì íŠ¸ í•¸ë“¤ê°’ ìƒì„± í•¨ìˆ˜
 //-----------------------------------------------------------------------------------
 HOBJECT MakeTriggerObjectHandle(HOBJECT hWorldTriggerObjectOffset, DWORD dwTriggerObjectSequence)
 {

@@ -85,7 +85,7 @@ bool CMobTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		return false;
 	}
 
-	//  [9/27/2006 zeroera] : ÀÓ½Ã : ÀÏ´Ü X, ZÀÇ Æò±Õ°ªÀ» °è»êÇÏ¿© °áÁ¤ÇÑ´Ù. ( ¿øÇü or ¹Ú½º È®½ÇÈ÷ °áÁ¤ÇÏÀÚ )
+	//  [9/27/2006 zeroera] : ì„ì‹œ : ì¼ë‹¨ X, Zì˜ í‰ê· ê°’ì„ ê³„ì‚°í•˜ì—¬ ê²°ì •í•œë‹¤. ( ì›í˜• or ë°•ìŠ¤ í™•ì‹¤íˆ ê²°ì •í•˜ì )
 	pTbldat->fRadius = (float) ( ( pTbldat->fRadius_X + pTbldat->fRadius_Z  ) * 0.5 );
 
 
@@ -95,7 +95,7 @@ bool CMobTable::AddTable(void * pvTable, bool bReload, bool bUpdate)
 		if( pExistTbldat )
 		{
 			CopyMemory( pTbldat, pExistTbldat, pTbldat->GetDataSize() );
-			// µ¥ÀÌÅ¸ÀÇ ÇØÁ¦¸¦ À§ÇÑ false ¹İÈ¯
+			// ë°ì´íƒ€ì˜ í•´ì œë¥¼ ìœ„í•œ false ë°˜í™˜
 			return true; 
 		}
 	}

@@ -1439,7 +1439,7 @@ void NtlGetDestination_Mouse(float fCurrentHeadingVectorX, float fCurrentHeading
 	float fDeltaX = fDestinationX - fCurrentPositionX;
 	float fDeltaZ = fDestinationZ - fCurrentPositionZ;
 
-	//  [6/21/2006 zeroera] : ¼öÁ¤ : float ºñ±³ ¿ÀÂ÷ ¹üÀ§
+	//  [6/21/2006 zeroera] : ìˆ˜ì • : float ë¹„êµ ì˜¤ì°¨ ë²”ìœ„
 	if (fabs(fDeltaX) < 0.001f && fabs(fDeltaZ) < 0.001f)
 	{
 		pNewHeadingVector->x = fCurrentHeadingVectorX;
@@ -1490,7 +1490,7 @@ void NtlGetDestination_Follow(float fCurrentHeadingVectorX, float fCurrentHeadin
 	float fDeltaX = fDestinationX - fCurrentPositionX;
 	float fDeltaZ = fDestinationZ - fCurrentPositionZ;
 
-	//  [6/21/2006 zeroera] : ¼öÁ¤ : float ºñ±³ ¿ÀÂ÷ ¹üÀ§
+	//  [6/21/2006 zeroera] : ìˆ˜ì • : float ë¹„êµ ì˜¤ì°¨ ë²”ìœ„
 	if (fabs(fDeltaX) < 0.001f && fabs(fDeltaZ) < 0.001f)
 	{
 		pNewHeadingVector->x = fCurrentHeadingVectorX;
@@ -1588,7 +1588,7 @@ void NtlGetDestination_AirFollow(CNtlVector& svCurrentHeadingVector, float fSpee
 	float fDeltaY = fDestinationY - fCurrentPositionY;
 	float fDeltaZ = fDestinationZ - fCurrentPositionZ;
 
-	//  [6/21/2006 zeroera] : ¼öÁ¤ : float ºñ±³ ¿ÀÂ÷ ¹üÀ§
+	//  [6/21/2006 zeroera] : ìˆ˜ì • : float ë¹„êµ ì˜¤ì°¨ ë²”ìœ„
 	if (fabs(fDeltaX) < 0.001f && fabs(fDeltaZ) < 0.001f)
 	{
 		*pNewHeadingVector = svCurrentHeadingVector;

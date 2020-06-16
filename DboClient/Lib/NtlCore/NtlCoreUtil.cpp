@@ -79,7 +79,7 @@ RwBool DeleteFolder(const RwChar* pFolderName)
 
 RwChar g_chLogPath[MAX_PATH]	= "dbolog.txt";
 
-// ·Î±× ÆÄÀÏÀÇ ¿ë·®ÀÌ 10kb¸¦ ³Ñ¾î°¡¸é »èÁ¦ÇÑ´Ù.
+// ë¡œê·¸ íŒŒì¼ì˜ ìš©ëŸ‰ì´ 10kbë¥¼ ë„˜ì–´ê°€ë©´ ì‚­ì œí•œë‹¤.
 #define MAX_LOG_FILE_SIZE 10240
 void NtlLogFileSizeCheck()
 {
@@ -169,7 +169,7 @@ void NtlLogFilePrintArgs(RwChar *fmt, ... )
 	fclose(fp);
 }
 
-// Trace´Â ¸ÅÀÏ »õ·Î¿î ÆÄÀÏÀ» »ı¼ºÇÏ¿© ±â·ÏÇÑ´Ù
+// TraceëŠ” ë§¤ì¼ ìƒˆë¡œìš´ íŒŒì¼ì„ ìƒì„±í•˜ì—¬ ê¸°ë¡í•œë‹¤
 RwChar g_chTracePath[MAX_PATH]	= "";
 
 void NtlTraceEnable_inRelease(bool bEnable)

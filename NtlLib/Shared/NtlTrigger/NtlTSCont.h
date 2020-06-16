@@ -26,15 +26,15 @@ public:
 
 // Member variables
 protected:
-	NTL_TS_TC_ID						m_tcID;					// ÀÚ½ÅÀÇ °íÀ¯ ¾ÆÀÌµğ °ª
+	NTL_TS_TC_ID						m_tcID;					// ìì‹ ì˜ ê³ ìœ  ì•„ì´ë”” ê°’
 
-	// ÀÚ½ÅÀÌ ½ÇÇà ÇÒ ¼ö ÀÖ´Â ÀÚ½Ä Entity ¸®½ºÆ®
-	// CTSEvent, CTSCondition, CTSAction¿¡¼­ »ó¼Ó ¹ŞÀº °´Ã¼¸¸ÀÌ
-	// ContainerÀÇ ÀÚ½ÄÀÌ µÉ ¼ö ÀÖ´Ù
+	// ìì‹ ì´ ì‹¤í–‰ í•  ìˆ˜ ìˆëŠ” ìì‹ Entity ë¦¬ìŠ¤íŠ¸
+	// CTSEvent, CTSCondition, CTSActionì—ì„œ ìƒì† ë°›ì€ ê°ì²´ë§Œì´
+	// Containerì˜ ìì‹ì´ ë  ìˆ˜ ìˆë‹¤
 	vecdef_EntityList					m_defChildEntityList;
 	vecdef_EntityList::iterator			m_itChildEntityList;
 
-	listdef_ContList					m_defPrevLink;			// ÀÌÀü ¸µÅ©
+	listdef_ContList					m_defPrevLink;			// ì´ì „ ë§í¬
 	listdef_ContList::iterator			m_itLink;
 
 // Constructions and Destructions
@@ -65,19 +65,19 @@ public:
 	bool								AttachPrevLink( NTL_TS_TC_ID tcId );
 	void								DetachPrevLink( NTL_TS_TC_ID tcId );
 
-	// ÀÚ½Å ¹× ÀÚ½Ä Entityµé¿¡ ´ëÇÑ Å½»ö ¹× ½ÇÇà
+	// ìì‹  ë° ìì‹ Entityë“¤ì— ëŒ€í•œ íƒìƒ‰ ë° ì‹¤í–‰
 	virtual	NTL_TSRESULT				SearchAll( CNtlTSRecv* pTSRecv, void* pParam );
 	virtual	NTL_TSRESULT				RunAll( CNtlTSRecv* pTSRecv, void* pParam );
 
 // Implementations
 protected:
-	// ½ºÅ©¸³Æ®¿¡¼­ »ç¿ëµÇ´Â ÀÚ½Ä °ü·Ã ÇÔ¼öµé
+	// ìŠ¤í¬ë¦½íŠ¸ì—ì„œ ì‚¬ìš©ë˜ëŠ” ìì‹ ê´€ë ¨ í•¨ìˆ˜ë“¤
 	virtual	CNtlTSScrObject*			BeginChildForScript( void );
 	virtual	CNtlTSScrObject*			NextChildForScript( void );
 	virtual	void						AttachChildForScript( CNtlTSScrObject* pChild );
 
 public:
-	// ½ºÅ©¸³Æ®·Î ºÎÅÍ ÄÄÆ÷³ÍÆ® °´Ã¼ÀÇ µ¥ÀÌÅÍ¸¦ ·Îµù ¹× ÀÔ·Â ½ÃÅ°±â À§ÇÑ ÇÔ¼ö
+	// ìŠ¤í¬ë¦½íŠ¸ë¡œ ë¶€í„° ì»´í¬ë„ŒíŠ¸ ê°ì²´ì˜ ë°ì´í„°ë¥¼ ë¡œë”© ë° ì…ë ¥ ì‹œí‚¤ê¸° ìœ„í•œ í•¨ìˆ˜
 	virtual	void						ApplyScriptDataForScript( const CNtlTSScrProperty& clProperty );
 	virtual	void						TakeScriptDataForScript( CNtlTSScrProperty& clProperty );
 

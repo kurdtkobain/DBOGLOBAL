@@ -345,7 +345,7 @@ void API_PL_1BColorClamp(RwReal* pDst, RwReal Value)
 	*pDst = *pDst + Value;
 }
 
-void API_PL_RasterSaveImage(const RwRaster *pRaster, const RwChar *pszFileName, RwInt32 _Width, RwInt32 _Height)    ///< Raster¸¦ Image·Î ÀúÀå(.png, .bmp)
+void API_PL_RasterSaveImage(const RwRaster *pRaster, const RwChar *pszFileName, RwInt32 _Width, RwInt32 _Height)    ///< Rasterë¥¼ Imageë¡œ ì €ìž¥(.png, .bmp)
 {
 	RwImage *image;
 	RwImage *imageDst;
@@ -372,9 +372,9 @@ void API_PL_RasterSaveImage(const RwRaster *pRaster, const RwChar *pszFileName, 
 }
 
 /**
- * Raster¸¦ Image·Î ÀúÀåÀ» ÇÑ´Ù.
- * \param pRaster: Image·Î ÀúÀåÇÒ Raster
- * \param pszFileName: ÀúÀåÇÒ ÆÄÀÏ ÀÌ¸§ È®Àå¸í(.png, .bmp)¿¡ µû¶ó¼­ ÀúÀåÀÌ µÈ´Ù.
+ * Rasterë¥¼ Imageë¡œ ì €ìž¥ì„ í•œë‹¤.
+ * \param pRaster: Imageë¡œ ì €ìž¥í•  Raster
+ * \param pszFileName: ì €ìž¥í•  íŒŒì¼ ì´ë¦„ í™•ìž¥ëª…(.png, .bmp)ì— ë”°ë¼ì„œ ì €ìž¥ì´ ëœë‹¤.
  */
 void API_PL_RasterSaveImage(const RwRaster *pRaster, const RwChar *pszFileName)
 {
@@ -397,8 +397,8 @@ void API_PL_RasterSaveImage(const RwRaster *pRaster, const RwChar *pszFileName)
 }
 
 /**
- * CameraÀÇ TargetÀ» Look At ÇÒ ¼ö ÀÖµµ·Ï CameraÀÇ MatrixÀ» º¯°æÇÑ´Ù.
- * CameraÀÇ UpÀÌ y°¡ -1ÀÌ À§ÂÊÀÌ´Ù. Á¶½ÉÇØ¼­ »ç¿ë
+ * Cameraì˜ Targetì„ Look At í•  ìˆ˜ ìžˆë„ë¡ Cameraì˜ Matrixì„ ë³€ê²½í•œë‹¤.
+ * Cameraì˜ Upì´ yê°€ -1ì´ ìœ„ìª½ì´ë‹¤. ì¡°ì‹¬í•´ì„œ ì‚¬ìš©
  */
 void API_PL_CameraLookAt( RwCamera* pCamera, const RwV3d* pSetCameraPos, const RwV3d* pTarget, const RwV3d* pSentInUp, RwReal fAtAxisRot /* = 0.0f */ )
 {
@@ -467,12 +467,12 @@ void API_PL_CameraMatrixLookAt( RwMatrix *pMat, const RwV3d* pSetCameraPos, cons
 }
 
 /**
- * 3DÁÂÇ¥¸¦ 2DÁÂÇ¥·Î º¯È¯ÇÑ´Ù.
- * \param v3DPos º¯È¯ÇÒ 3DÁÂÇ¥
- * \param nWidth ViewÀÇ ³ÐÀÌ
- * \param nHeight ViewÀÇ ³ôÀÌ
- * \param bOutSideReturn ÀÌ °ªÀÌ TRUEÀÌ¸é Ä«¸Þ¶ó ¹Û¿¡ ÀÖ´Â ¸¶ÀÌ³Ê½º °ªµµ ¸®ÅÏÇØÁØ´Ù. (µðÆúÆ®´Â False). ´Ù¸¸ ÀÌ¶§ 3DÁÂÇ¥°¡ Ä«¸Þ¶ó µÚÆíÀÌ¸é (9999,9999)¸¦ ¹ÝÈ¯ÇÑ´Ù.
- * return º¯È¯µÈ 2DÁÂÇ¥. ((0,0)ÀÌ¸é Ä«¸Þ¶ó ¹Û¿¡ ÀÖ´Ù)
+ * 3Dì¢Œí‘œë¥¼ 2Dì¢Œí‘œë¡œ ë³€í™˜í•œë‹¤.
+ * \param v3DPos ë³€í™˜í•  3Dì¢Œí‘œ
+ * \param nWidth Viewì˜ ë„“ì´
+ * \param nHeight Viewì˜ ë†’ì´
+ * \param bOutSideReturn ì´ ê°’ì´ TRUEì´ë©´ ì¹´ë©”ë¼ ë°–ì— ìžˆëŠ” ë§ˆì´ë„ˆìŠ¤ ê°’ë„ ë¦¬í„´í•´ì¤€ë‹¤. (ë””í´íŠ¸ëŠ” False). ë‹¤ë§Œ ì´ë•Œ 3Dì¢Œí‘œê°€ ì¹´ë©”ë¼ ë’¤íŽ¸ì´ë©´ (9999,9999)ë¥¼ ë°˜í™˜í•œë‹¤.
+ * return ë³€í™˜ëœ 2Dì¢Œí‘œ. ((0,0)ì´ë©´ ì¹´ë©”ë¼ ë°–ì— ìžˆë‹¤)
  */
 RwV2d API_PL_Calc3DPosTo2D( RwV3d* v3DPos, RwInt32 nWidth, RwInt32 nHeight, RwBool bOutSideReturn)
 {
@@ -494,7 +494,7 @@ RwV2d API_PL_Calc3DPosTo2D( RwV3d* v3DPos, RwInt32 nWidth, RwInt32 nHeight, RwBo
     RwMatrix* pViewMatrix = RwCameraGetViewMatrix( CNtlPLGlobal::m_RwCamera );
     RwV3dTransformPoints( &v2dPoint, &sphere.center, 1, pViewMatrix );
 
-	if(v2dPoint.z <= 0.0f)	// z°¡ ¸¶ÀÌ³Ê½ºÀÌ¸é Ä«¸Þ¶ó µÚÆí¿¡ ÀÖ´Ù. ÀÌ¶§´Â (9999, 9999)¸¦ ¹ÝÈ¯ÇÑ´Ù.
+	if(v2dPoint.z <= 0.0f)	// zê°€ ë§ˆì´ë„ˆìŠ¤ì´ë©´ ì¹´ë©”ë¼ ë’¤íŽ¸ì— ìžˆë‹¤. ì´ë•ŒëŠ” (9999, 9999)ë¥¼ ë°˜í™˜í•œë‹¤.
 	{
 		v2dReturn.x = 9999.0f;
 		v2dReturn.y = 9999.0f;

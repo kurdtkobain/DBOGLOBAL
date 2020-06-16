@@ -2,7 +2,7 @@
  *
  * File			: DboDef.h
  * Author		: HyungSuk, Jang
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2005. 9. 28	
  * Abstract		: DBO standard definition.
  *****************************************************************************
@@ -23,8 +23,8 @@
 #define DEFAULT_SCREEN_WIDTH	1024	
 #define DEFAULT_SCREEN_HEIGHT	768
 
-#define EXTRA_SCREEN_WIDTH		1280		// cjÀÇ ¿äÃ»¿¡ ÀÇÇØ¼­.
-#define EXTRA_SCREEN_HEIGHT		1024		// cjÀÇ ¿äÃ»¿¡ ÀÇÇØ¼­.
+#define EXTRA_SCREEN_WIDTH		1280		// cjì˜ ìš”ì²­ì— ì˜í•´ì„œ.
+#define EXTRA_SCREEN_HEIGHT		1024		// cjì˜ ìš”ì²­ì— ì˜í•´ì„œ.
 
 #define DEFAULT_CAMERA_NEAR		0.5f
 #define DEFAULT_CAMERA_FAR		512.0f
@@ -61,11 +61,11 @@
 #define GAME_LOADING_STAGE_NAME		"GameLoading"
 
 //-----------------------------------------------------------------------------
-// client ÀÚÃ¼ buffer length
+// client ìì²´ buffer length
 
 #define MAX_VIRTUAL_SERVER_PACKET_SIZE		2048
 #define MAX_MSG_BOX_STRING_LEN				512
-#define CHAT_MSG_BUFFER_LEN					512		/** Å¬¶óÀÌ¾ğÆ® ÀÚÃ¼ »ç¿ë */
+#define CHAT_MSG_BUFFER_LEN					512		/** í´ë¼ì´ì–¸íŠ¸ ìì²´ ì‚¬ìš© */
 
 //-----------------------------------------------------------------------------
 // Message sender name
@@ -88,8 +88,8 @@
 
 //-----------------------------------------------------------------------------
 // Flash Notify Invalid index && file name
-#define dDELAY_BEFORE_VISIBLE_MESSAGEBOX		7.f		// ¸Ş¼¼Áö ¹Ú½º°¡ ¶ß±âÀü±îÁö ÁÖ´Â Áö¿¬½Ã°£
-#define dREMAIN_FOR_SERVER_REPLY				60.f	// ¼­¹ö ÀÀ´äÀ» ±â´Ù¸®´Â ÃÖ´ë ½Ã°£
+#define dDELAY_BEFORE_VISIBLE_MESSAGEBOX		7.f		// ë©”ì„¸ì§€ ë°•ìŠ¤ê°€ ëœ¨ê¸°ì „ê¹Œì§€ ì£¼ëŠ” ì§€ì—°ì‹œê°„
+#define dREMAIN_FOR_SERVER_REPLY				60.f	// ì„œë²„ ì‘ë‹µì„ ê¸°ë‹¤ë¦¬ëŠ” ìµœëŒ€ ì‹œê°„
 
 //-----------------------------------------------------------------------------
 // guild contribution zenny
@@ -113,9 +113,9 @@
 
 enum EMsgBoxResult
 {
-	MBR_OPENCANCELED	= -1,				/// ¸Ş½ÃÁö¹Ú½º ¿­¸²ÀÚÃ¼°¡ Ãë¼Ò. ¸Ş½ÃÁö ¹Ú½º°¡ Áßº¹ÀÎ °æ¿ì.
-	MBR_CANCEL			= 0,				/// Ãë¼Ò.
-	MBR_OK				= 1,				/// È®ÀÎ, ½ÂÀÎ,	
+	MBR_OPENCANCELED	= -1,				/// ë©”ì‹œì§€ë°•ìŠ¤ ì—´ë¦¼ìì²´ê°€ ì·¨ì†Œ. ë©”ì‹œì§€ ë°•ìŠ¤ê°€ ì¤‘ë³µì¸ ê²½ìš°.
+	MBR_CANCEL			= 0,				/// ì·¨ì†Œ.
+	MBR_OK				= 1,				/// í™•ì¸, ìŠ¹ì¸,	
 };
 
 struct sMsgBoxCustomBtn
@@ -139,59 +139,59 @@ struct sMsgBoxCustomBtn
 
 //-----------------------------------------------------------------------------
 
-///< avooo : Ç¥½ÃµÇ´Â ¿ì¼±¼øÀ§¿¡ µû¶ó Á¤¸®ÇÏ¿´´Ù.
-///< peessi : Display String Define¿¡ Á¤ÀÇµÈ ¹®ÀÚ¿­ÀÇ ¼ø¼­µµ ÀÏÄ¡ÇØ¾ßÇÔ.
+///< avooo : í‘œì‹œë˜ëŠ” ìš°ì„ ìˆœìœ„ì— ë”°ë¼ ì •ë¦¬í•˜ì˜€ë‹¤.
+///< peessi : Display String Defineì— ì •ì˜ëœ ë¬¸ìì—´ì˜ ìˆœì„œë„ ì¼ì¹˜í•´ì•¼í•¨.
 enum EIconPopupWork
 {
-	PMW_USE = 0,						    ///< »ç¿ëÇÏ±â
-	PMW_OPEN,								///< (°¡¹æ)¿­±â
-	PMW_EQUIP,								///< ÀåÂøÇÏ±â
-	PMW_CANCEL_EQUIP,						///< ÀåÂøÇØÁ¦
-	PMW_VIEW,								///< º¸±â
-	PMW_PICKUP,								///< Áı±â
-	PMW_STOP_USE,							///< »ç¿ëÁßÁö
-	PMW_PULLOUT,							///< µî·ÏÃë¼Ò
-	PMW_SELL,								///< ÆÈ±â
-	PMW_DIVIDE,								///< ³ª´©±â
-	PMW_CLEAR,								///< ºñ¿ì±â
-	PMW_DELETE,								///< ¹ö¸®±â
-	PMW_PARTY_CREATE,						///< ÆÄÆ¼ ¸¸µé±â
-	PMW_PARTY_INVITE,						///< ÆÄÆ¼ ÃÊ´ë
-	PMW_PARTY_LEADER_CHANGE,				///< ÆÄÆ¼Àå À§ÀÓ
-	PMW_PARTY_KICK_OUT,						///< ÆÄÆ¼ °­Åğ
-	PMW_PARTY_LEAVE,						///< ÆÄÆ¼ Å»Åğ
-	PMW_PVP_REQUEST_FIGHT,					///< ´ë·Ã ¿äÃ»
-	PMW_USER_TRADE,							///< À¯Àú Æ®·¹ÀÌµå
-	PMW_GUILD_INVITE,						///< ±æµå ÃÊ´ë
-	PMW_GUILD_CHANGE_MASTER,				///< ±æµåÀå ÀÌ¾ç
-	PMW_GUILD_APPOINT_SECOND_MASTER,		///< ºÎ±æµåÀå ÀÓ¸í
-	PMW_GUILD_DISAPPOINT_SECOND_MASTER,		///< ºÎ±æµåÀå ÀÓ¸í ÇØÁ¦
-	PMW_GUILD_KICK_OUT,						///< ±æµå Ãß¹æ
-	PMW_GUILD_POST,							///< ¿ìÆí º¸³»±â
-	PMW_FRIEND_ADD,							///< Ä£±¸ Ãß°¡
-	PMW_FOLLOW,								///< µû¶ó °¡±â
+	PMW_USE = 0,						    ///< ì‚¬ìš©í•˜ê¸°
+	PMW_OPEN,								///< (ê°€ë°©)ì—´ê¸°
+	PMW_EQUIP,								///< ì¥ì°©í•˜ê¸°
+	PMW_CANCEL_EQUIP,						///< ì¥ì°©í•´ì œ
+	PMW_VIEW,								///< ë³´ê¸°
+	PMW_PICKUP,								///< ì§‘ê¸°
+	PMW_STOP_USE,							///< ì‚¬ìš©ì¤‘ì§€
+	PMW_PULLOUT,							///< ë“±ë¡ì·¨ì†Œ
+	PMW_SELL,								///< íŒ”ê¸°
+	PMW_DIVIDE,								///< ë‚˜ëˆ„ê¸°
+	PMW_CLEAR,								///< ë¹„ìš°ê¸°
+	PMW_DELETE,								///< ë²„ë¦¬ê¸°
+	PMW_PARTY_CREATE,						///< íŒŒí‹° ë§Œë“¤ê¸°
+	PMW_PARTY_INVITE,						///< íŒŒí‹° ì´ˆëŒ€
+	PMW_PARTY_LEADER_CHANGE,				///< íŒŒí‹°ì¥ ìœ„ì„
+	PMW_PARTY_KICK_OUT,						///< íŒŒí‹° ê°•í‡´
+	PMW_PARTY_LEAVE,						///< íŒŒí‹° íƒˆí‡´
+	PMW_PVP_REQUEST_FIGHT,					///< ëŒ€ë ¨ ìš”ì²­
+	PMW_USER_TRADE,							///< ìœ ì € íŠ¸ë ˆì´ë“œ
+	PMW_GUILD_INVITE,						///< ê¸¸ë“œ ì´ˆëŒ€
+	PMW_GUILD_CHANGE_MASTER,				///< ê¸¸ë“œì¥ ì´ì–‘
+	PMW_GUILD_APPOINT_SECOND_MASTER,		///< ë¶€ê¸¸ë“œì¥ ì„ëª…
+	PMW_GUILD_DISAPPOINT_SECOND_MASTER,		///< ë¶€ê¸¸ë“œì¥ ì„ëª… í•´ì œ
+	PMW_GUILD_KICK_OUT,						///< ê¸¸ë“œ ì¶”ë°©
+	PMW_GUILD_POST,							///< ìš°í¸ ë³´ë‚´ê¸°
+	PMW_FRIEND_ADD,							///< ì¹œêµ¬ ì¶”ê°€
+	PMW_FOLLOW,								///< ë”°ë¼ ê°€ê¸°
 	PMW_SEND_WHISPER,
-	PMW_CANCEL,								///< Ãë¼Ò
-	PMW_SET_SHARETARGET_1,					// 1¹ø °øÀ¯Å¸°Ù ¼³Á¤
-	PMW_SET_SHARETARGET_2,					// 2¹ø °øÀ¯Å¸°Ù ¼³Á¤
-	PMW_SET_SHARETARGET_3,					// 3¹ø °øÀ¯Å¸°Ù ¼³Á¤
-	PMW_SET_SHARETARGET_4,					// 4¹ø °øÀ¯Å¸°Ù ¼³Á¤
-	PMW_SET_SHARETARGET_5,					// 5¹ø °øÀ¯Å¸°Ù ¼³Á¤
-	PMW_UNSET_SHARETARGET_1,				// 1¹ø °øÀ¯Å¸°Ù ÇØÁ¦
-	PMW_UNSET_SHARETARGET_2,				// 2¹ø °øÀ¯Å¸°Ù ÇØÁ¦
-	PMW_UNSET_SHARETARGET_3,				// 3¹ø °øÀ¯Å¸°Ù ÇØÁ¦
-	PMW_UNSET_SHARETARGET_4,				// 4¹ø °øÀ¯Å¸°Ù ÇØÁ¦
-	PMW_UNSET_SHARETARGET_5,				// 5¹ø °øÀ¯Å¸°Ù ÇØÁ¦
-	PMW_PARTY_MENU_SWITCH_MEMBER,			///< ÆÄÆ¼ ¸É¹öÃ¢ ½ºÀ§Ä¡
-	PMW_PARTY_MENU_SWITCH_MEMBER_BUFF,		///< ÆÄÆ¼ ¸É¹öÃ¢ ¹öÇÁ ½ºÀ§Ä¡
-	PMW_PARTY_DUNGEON_INIT,					///< ´øÀü ÃÊ±âÈ­
-	PMW_PARTY_DUNGEON_NORMAL,				///< ´øÀü ³­ÀÌµµ º¸Åë
-	PMW_PARTY_DUNGEON_HARD,					///< ´øÀü ³­ÀÌµµ ¾î·Á¿ò
+	PMW_CANCEL,								///< ì·¨ì†Œ
+	PMW_SET_SHARETARGET_1,					// 1ë²ˆ ê³µìœ íƒ€ê²Ÿ ì„¤ì •
+	PMW_SET_SHARETARGET_2,					// 2ë²ˆ ê³µìœ íƒ€ê²Ÿ ì„¤ì •
+	PMW_SET_SHARETARGET_3,					// 3ë²ˆ ê³µìœ íƒ€ê²Ÿ ì„¤ì •
+	PMW_SET_SHARETARGET_4,					// 4ë²ˆ ê³µìœ íƒ€ê²Ÿ ì„¤ì •
+	PMW_SET_SHARETARGET_5,					// 5ë²ˆ ê³µìœ íƒ€ê²Ÿ ì„¤ì •
+	PMW_UNSET_SHARETARGET_1,				// 1ë²ˆ ê³µìœ íƒ€ê²Ÿ í•´ì œ
+	PMW_UNSET_SHARETARGET_2,				// 2ë²ˆ ê³µìœ íƒ€ê²Ÿ í•´ì œ
+	PMW_UNSET_SHARETARGET_3,				// 3ë²ˆ ê³µìœ íƒ€ê²Ÿ í•´ì œ
+	PMW_UNSET_SHARETARGET_4,				// 4ë²ˆ ê³µìœ íƒ€ê²Ÿ í•´ì œ
+	PMW_UNSET_SHARETARGET_5,				// 5ë²ˆ ê³µìœ íƒ€ê²Ÿ í•´ì œ
+	PMW_PARTY_MENU_SWITCH_MEMBER,			///< íŒŒí‹° ë§´ë²„ì°½ ìŠ¤ìœ„ì¹˜
+	PMW_PARTY_MENU_SWITCH_MEMBER_BUFF,		///< íŒŒí‹° ë§´ë²„ì°½ ë²„í”„ ìŠ¤ìœ„ì¹˜
+	PMW_PARTY_DUNGEON_INIT,					///< ë˜ì „ ì´ˆê¸°í™”
+	PMW_PARTY_DUNGEON_NORMAL,				///< ë˜ì „ ë‚œì´ë„ ë³´í†µ
+	PMW_PARTY_DUNGEON_HARD,					///< ë˜ì „ ë‚œì´ë„ ì–´ë ¤ì›€
 	PMW_PARTY_DUNGEON_LEGENDARY,
-	PMW_PARTY_DIVIDE_PICKUP_PERSON,			///< Áİ´Â »ç¶÷ È¹µæ
-	PMW_PARTY_DIVIDE_EQUAL,					///< ¶È°°ÀÌ ³ª´©±â
-	PMW_PARTY_DIVIDE_ORDER,					///< ¼ø¼­µÇ·Î ºĞ¹è
-	PMW_PARTY_GRADE_ITEM,					///< µî±Şº° ¼ø¼­µÇ·Î ºĞ¹è
+	PMW_PARTY_DIVIDE_PICKUP_PERSON,			///< ì¤ëŠ” ì‚¬ëŒ íšë“
+	PMW_PARTY_DIVIDE_EQUAL,					///< ë˜‘ê°™ì´ ë‚˜ëˆ„ê¸°
+	PMW_PARTY_DIVIDE_ORDER,					///< ìˆœì„œë˜ë¡œ ë¶„ë°°
+	PMW_PARTY_GRADE_ITEM,					///< ë“±ê¸‰ë³„ ìˆœì„œë˜ë¡œ ë¶„ë°°
 	PMW_PARTY_LOOTING_BY_DICE,
 	PMW_PARTY_LOOTING_BY_DICE_BY_EQUIPPED,
 	PMW_PARTY_GRADE_NORMAL,
@@ -227,8 +227,8 @@ enum EPlace
 	PLACE_QUESTBAG,
 	PLACE_ITEMUPGRADE,
 	PLACE_WAREHOUSE,
-	PLACE_PRIVATESHOP,				///< °³ÀÎ»óÁ¡
-	PLACE_PRIVATESHOP_TRADEBOX,		///< °³ÀÎ»óÁ¡ ÈïÁ¤ (°¡°İ Á¶Á¤)
+	PLACE_PRIVATESHOP,				///< ê°œì¸ìƒì 
+	PLACE_PRIVATESHOP_TRADEBOX,		///< ê°œì¸ìƒì  í¥ì • (ê°€ê²© ì¡°ì •)
 	PLACE_GUILD_WAREHOUSE,
 	PLACE_DOJO_UPRAGE,
 	PLACE_DOGI,
@@ -294,7 +294,7 @@ enum ECharacterStageState
 
 	CHAR_STATE_BEGIN,
 	
-	CHAR_STATE_SERVER_INFORMAION,		// server information Á¤º¸ ¾ò¾î¿À´Â Áß.
+	CHAR_STATE_SERVER_INFORMAION,		// server information ì •ë³´ ì–»ì–´ì˜¤ëŠ” ì¤‘.
 	CHAR_STATE_SERVER_ENTER,
 	CHAR_STATE_SERVER_IDLE,
 	CHAR_STATE_SERVER_CHANGE,
@@ -305,8 +305,8 @@ enum ECharacterStageState
 	CHAR_STATE_MAKE_EXIT,
 	CHAR_STATE_MAKE_REQUEST,
 
-	CHAR_STATE_SELECT_INFOMATION,		// Channel Infomation Á¤º¸ ¾ò¾î¿À´Â Áß
-	CHAR_STATE_SELECT_INFOMATION_FROM_SERVER_LIST,		// ¼­¹ö ¸®½ºÆ® È­¸é¿¡¼­ Ã¤³Î Á¤º¸ ¿äÃ»Áß	// 13 on tw
+	CHAR_STATE_SELECT_INFOMATION,		// Channel Infomation ì •ë³´ ì–»ì–´ì˜¤ëŠ” ì¤‘
+	CHAR_STATE_SELECT_INFOMATION_FROM_SERVER_LIST,		// ì„œë²„ ë¦¬ìŠ¤íŠ¸ í™”ë©´ì—ì„œ ì±„ë„ ì •ë³´ ìš”ì²­ì¤‘	// 13 on tw
 	CHAR_STATE_SELECT_ENTER,	// 21 in tw
 	CHAR_STATE_SELECT_IDLE,		// on tw its 19
 	CHAR_STATE_SELECT_DEL_CHAR,
@@ -384,7 +384,7 @@ struct sMsgChangeItemBattleAttribute
 };
 
 /**
-* \brief UNION - »ç¿ë½Ã ÁÖÀÇ
+* \brief UNION - ì‚¬ìš©ì‹œ ì£¼ì˜
 */
 struct sMsgBoxData
 {
@@ -464,9 +464,9 @@ struct sDetailTime
 	RwUInt8				byMinute;
 	RwUInt8				bySecond;
 
-	std::wstring		strDay;			///< ¿äÀÏ
+	std::wstring		strDay;			///< ìš”ì¼
 
-	RwUInt8				byDay_of_Year;	///< ÇÑ ÇØÀÇ ¸î ¹øÂ° ³¯ÀÎ°¡
+	RwUInt8				byDay_of_Year;	///< í•œ í•´ì˜ ëª‡ ë²ˆì§¸ ë‚ ì¸ê°€
 };
 
 struct sWorldPickInfo_for_Cursor

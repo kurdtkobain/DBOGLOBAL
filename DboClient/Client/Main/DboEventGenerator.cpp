@@ -1006,7 +1006,7 @@ void CDboEventGenerator::RpBonusSetup( RwInt32 iXPos, RwInt32 iYPos, VOID* pData
 }
 
 /**
-* \brief RpBonus ¼±ÅÃ UI¸¦ ¿ÀÇÂÇÏ¶ó´Â ÀÌº¥Æ®
+* \brief RpBonus ì„ íƒ UIë¥¼ ì˜¤í”ˆí•˜ë¼ëŠ” ì´ë²¤íŠ¸
 * \param pData (CNtlSobSkillIcon*)
 */
 void CDboEventGenerator::RpBonusSelect( VOID* pData ) 
@@ -1105,12 +1105,12 @@ void CDboEventGenerator::ZennyLootingEffect( RwUInt32 uiZenny )
 }
 
 /**
-* \brief ¾ÆÀÌÅÛÀÌ »ı¼ºµÇ´Â ÀÌÆåÆ®
-* \param hSerial		(RwUInt32) ¾ÆÀÌÅÛÀÇ ÇÚµé
-* \param ucBagIdx		(RwUInt8) °¡¹æÀÇ ¹øÈ£
-* \param ucSlotIdx		(RwUInt8) °¡¹æ ¾ÈÀÇ À§Ä¡
-* \param bGambleUse		(RwBool) °×ºí È¿°ú
-* \remarks RwBool ÇüÀÎ bGambleUse¸¦ Ãß°¡ÇÏ¿© °×ºí ¾ÆÀÌÅÛ È¿°ú¸¦ Ãß°¡Çß½À´Ï´Ù.
+* \brief ì•„ì´í…œì´ ìƒì„±ë˜ëŠ” ì´í™íŠ¸
+* \param hSerial		(RwUInt32) ì•„ì´í…œì˜ í•¸ë“¤
+* \param ucBagIdx		(RwUInt8) ê°€ë°©ì˜ ë²ˆí˜¸
+* \param ucSlotIdx		(RwUInt8) ê°€ë°© ì•ˆì˜ ìœ„ì¹˜
+* \param bGambleUse		(RwBool) ê²œë¸” íš¨ê³¼
+* \remarks RwBool í˜•ì¸ bGambleUseë¥¼ ì¶”ê°€í•˜ì—¬ ê²œë¸” ì•„ì´í…œ íš¨ê³¼ë¥¼ ì¶”ê°€í–ˆìŠµë‹ˆë‹¤.
 */
 void CDboEventGenerator::ItemCreatedEffect( RwUInt32 hSerial, RwUInt8 ucBagIdx, RwUInt8 ucSlotIdx )
 {

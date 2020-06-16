@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 // File: QuestNarrationGui.h
 // Desc: QuestNarrationGui
-//		 Narration °ü·Ã
+//		 Narration ê´€ë ¨
 //
 // 2006.12.5 Peessi@hitel.net   
 //
@@ -82,19 +82,19 @@ private:
 	CNtlTCUnit*			m_pTCUnit;
 	sTS_KEY				m_TSKey;
 	
-	STATE				m_eUIState;					// UIÀÚÃ¼ÀÇ State
-	RwInt32				m_eTSState;					// TS·Î ºÎÅÍÀÇ State
-	RwInt32				m_eTextOutType;				// Text Ãâ·Â ¹æ½Ä
-	RwUInt32			m_uiMaxLifeTime;			// ÀÌ ½Ã°£ÀÌ Áö³ª¸é °­Á¦·Î true¸¦ ³Ñ°ÜÁØ´Ù.
+	STATE				m_eUIState;					// UIìì²´ì˜ State
+	RwInt32				m_eTSState;					// TSë¡œ ë¶€í„°ì˜ State
+	RwInt32				m_eTextOutType;				// Text ì¶œë ¥ ë°©ì‹
+	RwUInt32			m_uiMaxLifeTime;			// ì´ ì‹œê°„ì´ ì§€ë‚˜ë©´ ê°•ì œë¡œ trueë¥¼ ë„˜ê²¨ì¤€ë‹¤.
 	RwUInt32			m_uiCurrentTime;			//
-	RwUInt32			m_flagOwnerType;			// OWNERTYPE Flag, ÀÌÀü¿¡ ¾î¶² Å¸ÀÔÀÌ ½ÇÇàµÇ¾ú³ª. Begin ~ End
-	OWNERTYPE			m_eCurrentType;				// ÇöÀçÀÇ Å¸ÀÔ¸¸.
+	RwUInt32			m_flagOwnerType;			// OWNERTYPE Flag, ì´ì „ì— ì–´ë–¤ íƒ€ì…ì´ ì‹¤í–‰ë˜ì—ˆë‚˜. Begin ~ End
+	OWNERTYPE			m_eCurrentType;				// í˜„ì¬ì˜ íƒ€ì…ë§Œ.
 
 	RwUInt8				m_byPCSelectID[CINEMATIC_MAX_PC_SELECT];
 	
-	bool				m_bResult;					// °­Á¦ Á¾·áÀÎ°¡ Á¤»óÁ¾·á ÀÎ°¡.
+	bool				m_bResult;					// ê°•ì œ ì¢…ë£Œì¸ê°€ ì •ìƒì¢…ë£Œ ì¸ê°€.
 	RwUInt8				m_bySelectID;				// User Select Value;
-	//RwBool				m_bShowPCMessageOnPCSelect;	// PCSelect½Ã PCMessage¸¦ Ç¥½ÃÇÒÁö ¿©ºÎ. BeginÀ¸·Î µé¾î¿Ã¶§ Ing¿¡¼­ ÆÇº°ÇÏ±â À§ÇØ.
+	//RwBool				m_bShowPCMessageOnPCSelect;	// PCSelectì‹œ PCMessageë¥¼ í‘œì‹œí• ì§€ ì—¬ë¶€. Beginìœ¼ë¡œ ë“¤ì–´ì˜¬ë•Œ Ingì—ì„œ íŒë³„í•˜ê¸° ìœ„í•´.
 
 	CQuestGui*			m_pQuestGui;
 

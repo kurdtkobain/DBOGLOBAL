@@ -33,7 +33,7 @@ RwBool CDBOUIConfig::Load()
 		if( pData == NULL )
 			return FALSE;
 		
-		// ¹öÆÛ +1 »ý¼º
+		// ë²„í¼ +1 ìƒì„±
 		char* pBuffer = NTL_NEW char[nSize+1];
 		memcpy( pBuffer, pData, sizeof(char) * nSize );
 		pBuffer[nSize] = '\0';
@@ -76,7 +76,7 @@ RwBool CDBOUIConfig::Reflash()
 
 RwBool CDBOUIConfig::LoadTeleCast(TELECAST_TYPE eType)
 {
-    // Å¸ÀÔ ºñ±³´Â ÇÏÁö ¾Ê´Â´Ù. (¸®·Îµå)
+    // íƒ€ìž… ë¹„êµëŠ” í•˜ì§€ ì•ŠëŠ”ë‹¤. (ë¦¬ë¡œë“œ)
     m_TeleCast.m_eTelecastType = eType;
 
     std::string strHeader;
@@ -167,7 +167,7 @@ RwBool CDBOUIConfig::LoadTeleCast(TELECAST_TYPE eType)
     }
     pNodeSlide->Release();
 
-    // ¸»Ç³¼±     
+    // ë§í’ì„      
     IXMLDOMNodeList* pBalloonRes = SelectNodeList((char*)strBalloon.c_str());
     long lCount = 0;
     pBalloonRes->get_length(&lCount);    
@@ -198,7 +198,7 @@ RwBool CDBOUIConfig::LoadTeleCast(TELECAST_TYPE eType)
         m_TeleCast.mapBalloonRes[nIndex] = sTeleCastBalloon;
     }
 
-    // ¼­¹ö ¾Ë¸²Ã¢¿ë ¼³Á¤
+    // ì„œë²„ ì•Œë¦¼ì°½ìš© ì„¤ì •
     if(eType == TELECAST_TYPE_SERVER_NOTIFY)
     {
         std::string strNPCID    = strHeader + "NPC_TBLID";

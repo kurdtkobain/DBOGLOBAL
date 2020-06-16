@@ -16,7 +16,7 @@
 
 
 /** 
-	Container °ü·Ã °´Ã¼¸¦ Runtime ½Ã¿¡ »ı¼ºÇÏ±â À§ÇÑ container type class µé
+	Container ê´€ë ¨ ê°ì²´ë¥¼ Runtime ì‹œì— ìƒì„±í•˜ê¸° ìœ„í•œ container type class ë“¤
 */
 
 

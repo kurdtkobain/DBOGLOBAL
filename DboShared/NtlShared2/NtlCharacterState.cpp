@@ -4,7 +4,7 @@
 //
 //	Begin		:	2006-05-22
 //
-//	Copyright	:	¨Ï NTL-Inc Co., Ltd
+//	Copyright	:	â“’ NTL-Inc Co., Ltd
 //
 //	Author		:	Hyun Woo, Koo   ( zeroera@ntl-inc.com )
 //
@@ -115,7 +115,7 @@ const char * s_character_condition_string[ CHARCONDITION_COUNT ] =
 
 
 //-----------------------------------------------------------------------------------
-// »óÅÂ °ü·Ã ÇÔ¼ö Á¤ÀÇ : 
+// ìƒíƒœ ê´€ë ¨ í•¨ìˆ˜ ì •ì˜ : 
 //-----------------------------------------------------------------------------------
 const char * NtlGetCharStateString(BYTE byStateID)
 {
@@ -129,7 +129,7 @@ const char * NtlGetCharStateString(BYTE byStateID)
 
 
 //-----------------------------------------------------------------------------------
-// »óÅÂ °ü·Ã ÇÔ¼ö Á¤ÀÇ : 
+// ìƒíƒœ ê´€ë ¨ í•¨ìˆ˜ ì •ì˜ : 
 //-----------------------------------------------------------------------------------
 const char * NtlGetAspectStateString(BYTE byStateID)
 {
@@ -143,7 +143,7 @@ const char * NtlGetAspectStateString(BYTE byStateID)
 
 
 //-----------------------------------------------------------------------------------
-// »óÅÂ °ü·Ã ÇÔ¼ö Á¤ÀÇ : 
+// ìƒíƒœ ê´€ë ¨ í•¨ìˆ˜ ì •ì˜ : 
 //-----------------------------------------------------------------------------------
 const char * NtlGetConditionStateString(BYTE byStateID)
 {

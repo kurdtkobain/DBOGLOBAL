@@ -38,7 +38,7 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 			// This flag is not checked by eNTL_STRORAG_APPLY_ALL.
 			if( uiFlags & eNTL_STORAGE_APPLY_PRESENTATION_INITONCE )
 			{
-				// ÅØ½ºÅß ÇØ»óµµ Á¶Àý
+				// í…ìŠ¤í…¨ í•´ìƒë„ ì¡°ì ˆ
 
 				RwInt32 nTextureLevel = pUnit->GetIntData( dSTORAGE_GRAPHIC_TEXTURE_LEVEL );
 				RwUInt32 uiTextureQualityFactor = 0 /* Default value */ ;
@@ -65,7 +65,7 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 				else
 					CNtlPostEffectCamera::SetPostEffectFilters(POST_EFFECT_FILTER_NONE);
 
-				// ÁöÇü ½Ã¾ß°Å¸® ( 1lv : 200, 2lv : 300, 3lv : 400, 4lv : 512 )
+				// ì§€í˜• ì‹œì•¼ê±°ë¦¬ ( 1lv : 200, 2lv : 300, 3lv : 400, 4lv : 512 )
 				RwInt32 nTerrainRangeLevel = pUnit->GetIntData( dSTORAGE_GRAPHIC_TERRAIN_RANGE );
 				RwReal fTerranRange = 512.f;
 				switch( nTerrainRangeLevel )
@@ -79,7 +79,7 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 				if( GetNtlPLOptionManager()->GetTerrainFar() != fTerranRange )
 					GetNtlPLOptionManager()->SetTerrainFar( fTerranRange );
 
-				// »ç¹° ½Ã¾ß°Å¸® : 200, 300, 400, 512 )
+				// ì‚¬ë¬¼ ì‹œì•¼ê±°ë¦¬ : 200, 300, 400, 512 )
 				RwInt32 nObjectRangeLevel = pUnit->GetIntData( dSTORAGE_GRAPHIC_OBJECT_RANGE );
 				RwReal fObjectRange = 512.f;
 				switch( nObjectRangeLevel )
@@ -95,21 +95,21 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 					GetNtlPLOptionManager()->SetObjectFar( fObjectRange );
 
 
-				// ÁöÇü ±×¸²ÀÚ
+				// ì§€í˜• ê·¸ë¦¼ìž
 				RwBool bTerrainShadow = pUnit->GetBoolData( dSTORAGE_GRAPHIC_TERRAIN_SHADOW );
 				if( GetNtlPLOptionManager()->GetTerrainShadow() != bTerrainShadow )
 					GetNtlPLOptionManager()->SetTerrainShadow( bTerrainShadow );
 
-				// ¹° È¿°ú
+				// ë¬¼ íš¨ê³¼
 				RwBool bWaterEffect = pUnit->GetBoolData( dSTORAGE_GRAPHIC_WATER_EFFECT );
 				if( GetNtlPLOptionManager()->GetWaterSpecular() != bWaterEffect )
 					GetNtlPLOptionManager()->SetWaterSpecular( bWaterEffect );
 
-				// Ä³¸¯ÅÍ ¾÷±×·¹ÀÌµå È¿°ú
+				// ìºë¦­í„° ì—…ê·¸ë ˆì´ë“œ íš¨ê³¼
 				/*RwBool bCharacterUpgrade = pUnit->GetBoolData( dSTORAGE_GRAPHIC_CHARACTER_EFFECT );
 				CNtlPLCharacter::ToggleEMUVAni(bCharacterUpgrade);*/
 
-				// Ä³¸¯ÅÍ ¿Ü°û¼±
+				// ìºë¦­í„° ì™¸ê³½ì„ 
 				RwBool bCharacterEdge = pUnit->GetBoolData( dSTORAGE_GRAPHIC_CHARACTER_EDGE );
 				if( bCharacterEdge )
 					CNtlPLCharacter::SetSkipEdge( FALSE );
@@ -154,7 +154,7 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 
 			if( uiFlags & eNTL_STORAGE_APPLY_SIMULATION )
 			{
-				//// Ä³¸¯ÅÍ ½Ã¾ß°Å¸® ( 20, 60, 100, 150 )
+				//// ìºë¦­í„° ì‹œì•¼ê±°ë¦¬ ( 20, 60, 100, 150 )
 				//RwInt32 nCharacterRangeLevel = pUnit->GetIntData( dSTORAGE_GRAPHIC_CHARACTER_RANGE );
 				//RwReal fCharacterRange = 150.f;
 				//switch( nCharacterRangeLevel )
@@ -303,7 +303,7 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 				CNtlSLEventGenerator::GameChatOption(OPTION_CHAT_SHOUT, 2, pUnit->GetBoolData(dSTORAGE_CHAT_EXTEND2_SHOUT));
 				CNtlSLEventGenerator::GameChatOption(OPTION_CHAT_SYSTEM, 2, pUnit->GetBoolData(dSTORAGE_CHAT_EXTEND2_SYSTEM));
 
-				// Chat OptionÀ» ¸®ÇÁ·¹½¬ÇÏ¶ó.
+				// Chat Optionì„ ë¦¬í”„ë ˆì‰¬í•˜ë¼.
 				CNtlSLEventGenerator::GameChatOption( OPTION_CHAT_REFRESH, OPTION_CHAT_REFRESH );
 			}
 		}
@@ -312,7 +312,7 @@ bool Logic_ApplyNtlStorageUnit( CNtlStorageUnit* pUnit, unsigned int uiFlags )
 		{
 			if( uiFlags & eNTL_STORAGE_APPLY_CLIENT )
 			{
-				// Äü½½·Ô °ü·Ã ÀÌº¥Æ®
+				// í€µìŠ¬ë¡¯ ê´€ë ¨ ì´ë²¤íŠ¸
 				CNtlSLEventGenerator::QuickSlotGuiMode( pUnit->GetBoolData( dSTORAGE_ETC_EX_QUICKSLOT1 ), pUnit->GetBoolData( dSTORAGE_ETC_EX_QUICKSLOT2 ) );
 				CNtlSLEventGenerator::QuickSlotLockMode( pUnit->GetBoolData( dSTORAGE_ETC_QUICKSLOT_LOCK ) );
 			}

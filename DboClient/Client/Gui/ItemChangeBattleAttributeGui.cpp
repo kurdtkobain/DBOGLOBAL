@@ -403,7 +403,7 @@ RwInt32 CItemChangeBattleAttributeGui::GetChildSlotIdx( RwInt32 nX, RwInt32 nY )
 	return -1;
 }
 
-// Error Notify´Â ¿©±â¼­ Ã³¸®.
+// Error NotifyëŠ” ì—¬ê¸°ì„œ ì²˜ë¦¬.
 bool CItemChangeBattleAttributeGui::SetItemSlot( RwUInt32 hSerialID, RwUInt32 eSrcplace, RwUInt32 uiSrcSlotIdx, RwUInt32 uiDestSlotIdx, RwBool bNeedToIconMoveEnd )
 {
 	if( m_eState == STATE_UPGRADE_PROCESS ||
@@ -532,7 +532,7 @@ bool CItemChangeBattleAttributeGui::SetItemSlot( RwUInt32 hSerialID, RwUInt32 eS
 	// 
 	UpdateSlotIcon();
 
-	// ¾ÆÀÌÄÜ ¹«ºê ¿Ï·á
+	// ì•„ì´ì½˜ ë¬´ë¸Œ ì™„ë£Œ
 	if( bNeedToIconMoveEnd )
 		GetIconMoveManager()->IconMoveEnd();
 
@@ -541,13 +541,13 @@ bool CItemChangeBattleAttributeGui::SetItemSlot( RwUInt32 hSerialID, RwUInt32 eS
 
 VOID CItemChangeBattleAttributeGui::UpdateSlotIcon(VOID)
 {
-	// Info Wnd º¯°æ
+	// Info Wnd ë³€ê²½
 	if( m_nMouseOnIdx >= 0 && GetInfoWndManager()->GetRequestGui() == DIALOG_ITEM_CHANGE_BATTLE_ATTRIBUTE )
 	{
 		ShowInfoWnd( TRUE, m_nMouseOnIdx );					
 	}
 
-	// UpgradeReady»óÅÂ½Ã ½ºÄ«¿ìÅÍ ÆÄÃ÷ °ü·ÃÇØ¼­ ¹Ù²î¾úÀ¸¸é ´Ù½Ã ¼¼ÆÃ
+	// UpgradeReadyìƒíƒœì‹œ ìŠ¤ì¹´ìš°í„° íŒŒì¸  ê´€ë ¨í•´ì„œ ë°”ë€Œì—ˆìœ¼ë©´ ë‹¤ì‹œ ì„¸íŒ…
 	if( m_eState == STATE_UPGRADE_READY )
 	{
 		SetState( STATE_UPGRADE_READY );
@@ -576,7 +576,7 @@ VOID CItemChangeBattleAttributeGui::SetOfferItem( RwInt32 nSlotIdx, CNtlSobItem*
 		return;
 	}
 
-	// ¾ÆÀÌÅÛ ¾÷±×·¹ÀÌµå ³»ºÎ¿¡¼­ ¿òÁ÷ÀÏ¶§ ÀÌÀü ÀÌÆåÆ®¸¦ Áö¿î´Ù. DeleteHoipoiStoneÀº ¾÷±×·¹ÀÌµå Ã¢¿¡¼­ »ç¶óÁú¶§¸¸ È£ÃâµÈ´Ù. 
+	// ì•„ì´í…œ ì—…ê·¸ë ˆì´ë“œ ë‚´ë¶€ì—ì„œ ì›€ì§ì¼ë•Œ ì´ì „ ì´í™íŠ¸ë¥¼ ì§€ìš´ë‹¤. DeleteHoipoiStoneì€ ì—…ê·¸ë ˆì´ë“œ ì°½ì—ì„œ ì‚¬ë¼ì§ˆë•Œë§Œ í˜¸ì¶œëœë‹¤. 
 	if(m_pOfferItem)
 	{
 		m_surSlot[nSlotIdx].UnsetTexture();
@@ -644,7 +644,7 @@ VOID CItemChangeBattleAttributeGui::SetResult(WORD wResultcode, RwUInt8 byBattle
 {
 	NTL_ASSERT( m_pUpgradeItem, "CItemChangeBattleAttributeGui::HandleEvents : UpgradeItem Must be Present!" );
 
-	// execption.. --;; ¿¡·¯¸Ş½ÃÁö´Â ÆĞÅ¶ÇÚµé·¯¿¡¼­ Ã³¸®µÈ´Ù.
+	// execption.. --;; ì—ëŸ¬ë©”ì‹œì§€ëŠ” íŒ¨í‚·í•¸ë“¤ëŸ¬ì—ì„œ ì²˜ë¦¬ëœë‹¤.
 	if(wResultcode != GAME_SUCCESS )
 	{
 		SetState(STATE_UPGRADE_READY);
@@ -884,7 +884,7 @@ VOID CItemChangeBattleAttributeGui::ShowIconDestination( RwBool isPick )
 				return;
 			else
 			{
-				// Item Àº ÀåÂøµÈÈÄ¿¡´Â PickupÀÌ µÇÁö ¾Ê´Â´Ù.
+				// Item ì€ ì¥ì°©ëœí›„ì—ëŠ” Pickupì´ ë˜ì§€ ì•ŠëŠ”ë‹¤.
 				for( RwInt32 i = 0 ; i < NUM_SLOTEFFECT ; ++i )
 				{
 					m_anFocusEffect[i] = m_anFocusEffect[i] | SLOT_FOCUS_CAN_MOVE;
@@ -1264,7 +1264,7 @@ VOID CItemChangeBattleAttributeGui::OnMouseUp( const CKey& key )
 				else
 					DeleteOfferItem();
 
-				// Info Wnd º¯°æ
+				// Info Wnd ë³€ê²½
 				if( m_nMouseOnIdx >= 0 && GetInfoWndManager()->GetRequestGui() == DIALOG_ITEM_CHANGE_BATTLE_ATTRIBUTE )
 				{
 					ShowInfoWnd( TRUE, m_nMouseOnIdx );					

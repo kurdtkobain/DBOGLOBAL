@@ -2,7 +2,7 @@
 //	File		:	NtlPostEffectCamera.h
 //	Desc		:	
 //	Begin		:	2006. 2.13
-//	Copyright	:	¨Ï 2006 by agebreak CO., Ltd
+//	Copyright	:	â“’ 2006 by agebreak CO., Ltd
 //	Author		:	agebreak
 //	Update		:	
 //***********************************************************************************
@@ -28,8 +28,8 @@ class CNtlPLHeatHaze;
 #define POST_EFFECT_FILTER_NONE		0
 #define POST_EFFECT_FILTER_HDR		1
 #define dMONO_POWER_DEFAULT (2.4f)
-#define RES_MESH_CNT 20                                     ///< View È­¸éÀÇ Mesh °³¼ö (¾ÆÁ÷ »ç¿ë¾ÈÇÔ)
-#define RES_VERTEX_CNT (RES_MESH_CNT * RES_MESH_CNT * 6)    ///< View È­¸éÀÇ Vertex°³¼ö (¾ÆÁ÷ »ç¿ë¾ÈÇÔ)
+#define RES_MESH_CNT 20                                     ///< View í™”ë©´ì˜ Mesh ê°œìˆ˜ (ì•„ì§ ì‚¬ìš©ì•ˆí•¨)
+#define RES_VERTEX_CNT (RES_MESH_CNT * RES_MESH_CNT * 6)    ///< View í™”ë©´ì˜ Vertexê°œìˆ˜ (ì•„ì§ ì‚¬ìš©ì•ˆí•¨)
 
 class CNtlPostEffectCamera : public CNtlCamera
 {
@@ -88,13 +88,13 @@ public:
 
     RwV2d       GetScreenSize();
 
-    // Post Effect System °ü·Ã ¸Þ¼Òµå
+    // Post Effect System ê´€ë ¨ ë©”ì†Œë“œ
     void        AttachPostEffectSystem(CNtlInstancePostEffectSystem* pPostEffectSystem);
     void        DetachPostEffectSystem(CNtlInstancePostEffectSystem* pPostEffectSystem);
 
-	// LensFlare °ü·Ã ¸Þ¼Òµå
-	void		AttachLensFlare(CNtlPLLensFlare* pLensFlare);				///< LensFlare °´Ã¼¸¦ Ä«¸Þ¶ó¿¡ Ãß°¡ÇÑ´Ù.
-	void		DetachLensFlare(CNtlPLLensFlare* pLensFlare);				///< LensFlare °´Ã¼¸¦ Ä«¸Þ¶ó¿¡¼­ Á¦°ÅÇÑ´Ù.
+	// LensFlare ê´€ë ¨ ë©”ì†Œë“œ
+	void		AttachLensFlare(CNtlPLLensFlare* pLensFlare);				///< LensFlare ê°ì²´ë¥¼ ì¹´ë©”ë¼ì— ì¶”ê°€í•œë‹¤.
+	void		DetachLensFlare(CNtlPLLensFlare* pLensFlare);				///< LensFlare ê°ì²´ë¥¼ ì¹´ë©”ë¼ì—ì„œ ì œê±°í•œë‹¤.
 
 protected:
     RwBool		IsEnablePostEffect(void);
@@ -144,7 +144,7 @@ protected:
 	RwTexture*			m_pHeatHazeTexture;
 	CNtlPLHeatHaze*		m_pHeatHaze;
 
-    // Motion Blur¿¡ »ç¿ëµÉ Ä«¸Þ¶ó¿Í ÅØ½ºÃÄ 
+    // Motion Blurì— ì‚¬ìš©ë  ì¹´ë©”ë¼ì™€ í…ìŠ¤ì³ 
     RwCamera*			m_pMotionBlurCamera;
     RwTexture*			m_pMotionBlurTexture;
 
@@ -176,12 +176,12 @@ protected:
     RwIm2DVertex		m_PowerVertex[4];
     RwIm2DVertex		m_FinalVertex[4];
 
-    RwBool              m_bEnableBlur;                      ///< ¸ð¼Ç ºí·¯ Enable Flag
-    RwReal              m_fBlurAlpha;                       ///< ÇöÀçÀÇ Blur Alpha°ª
-    RwReal              m_fBlurFadeVelocity;                ///< Blur°¡ Àû¿ëµÇ´Â ¼Óµµ
+    RwBool              m_bEnableBlur;                      ///< ëª¨ì…˜ ë¸”ëŸ¬ Enable Flag
+    RwReal              m_fBlurAlpha;                       ///< í˜„ìž¬ì˜ Blur Alphaê°’
+    RwReal              m_fBlurFadeVelocity;                ///< Blurê°€ ì ìš©ë˜ëŠ” ì†ë„
 
-    std::list<CNtlInstancePostEffectSystem*> m_listPostEffectSystem; ///< Ä«¸Þ¶ó¿¡ Ç¥½ÃµÉ PostEffect SystemÀÇ ¸®½ºÆ®
-	std::list<CNtlPLLensFlare*> m_listLensFlare;			///< Ä«¸Þ¶ó¿¡ Ç¥½ÃµÉ Lens Flare °´Ã¼µéÀÇ ¸®½ºÆ®
+    std::list<CNtlInstancePostEffectSystem*> m_listPostEffectSystem; ///< ì¹´ë©”ë¼ì— í‘œì‹œë  PostEffect Systemì˜ ë¦¬ìŠ¤íŠ¸
+	std::list<CNtlPLLensFlare*> m_listLensFlare;			///< ì¹´ë©”ë¼ì— í‘œì‹œë  Lens Flare ê°ì²´ë“¤ì˜ ë¦¬ìŠ¤íŠ¸
 
 	// TEST
 public:

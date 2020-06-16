@@ -1012,7 +1012,7 @@ void CDboTSTCtrl::UpdateExceptionTimer( void )
 		nRemainTime = stTimer.uiRemainTime;
 		nRemainTime -= (stTimer.uiCurTime - uiOldTime);
 
-		// ½Ã°£ Á¦ÇÑÀº ÇÑ¹ø¸¸ È£ÃâµÇµµ·Ï ÇÑ´Ù
+		// ì‹œê°„ ì œí•œì€ í•œë²ˆë§Œ í˜¸ì¶œë˜ë„ë¡ í•œë‹¤
 		if ( stTimer.pActExceptTimer->GetTimerSort() == eEXCEPT_TIMER_SORT_LIMIT_TIMER )
 		{
 			if ( 0xffffffff == stTimer.uiRemainTime ) continue;
@@ -1031,7 +1031,7 @@ void CDboTSTCtrl::UpdateExceptionTimer( void )
 				stTimer.uiRemainTime -= (stTimer.uiCurTime - uiOldTime);
 			}
 		}
-		// ½Ã°£ Á¦ÇÑ Å¸ÀÌ¸Ó¸¦ Á¦¿ÜÇÑ Å¸ÀÌ¸Ó´Â ÁÖ±âÀûÀ¸·Î È£ÃâµÈ´Ù
+		// ì‹œê°„ ì œí•œ íƒ€ì´ë¨¸ë¥¼ ì œì™¸í•œ íƒ€ì´ë¨¸ëŠ” ì£¼ê¸°ì ìœ¼ë¡œ í˜¸ì¶œëœë‹¤
 		else
 		{
 			if ( nRemainTime <= 0 )
@@ -1228,7 +1228,7 @@ unsigned int CDboTSTCtrl::GetCurTime( void )
 
 void CDboTSTCtrl::AttachUpdateExceptionGroup( NTL_TS_TG_ID tgId )
 {
-	// ±âÁ¸¿¡ µî·ÏµÈ ±×·ìÀÌ Á¸ÀçÇÏ¸é ÇØ´ç ±×·ìÀÌ Á¾·áÇÒ ¶§ ±îÁö ±â´Ù·Á¾ß ÇÑ´Ù
+	// ê¸°ì¡´ì— ë“±ë¡ëœ ê·¸ë£¹ì´ ì¡´ì¬í•˜ë©´ í•´ë‹¹ ê·¸ë£¹ì´ ì¢…ë£Œí•  ë•Œ ê¹Œì§€ ê¸°ë‹¤ë ¤ì•¼ í•œë‹¤
 	if ( m_defGroupUpdateList.end() != m_defGroupUpdateList.find( tgId ) )
 	{
 		return;
@@ -1271,8 +1271,8 @@ void CDboTSTCtrl::UpdateExceptionGroup( void )
 	{
 		pUpdateInfo = &it->second;
 
-		// ÇöÀç ÁøÇàÁßÀÎ ÄÁÅ×ÀÌ³Ê°¡ Á¸ÀçÇÏÁö ¾Ê´Â °æ¿ì
-		// Update list ¿¡¼­ Á¦°ÅÇÑ´Ù
+		// í˜„ì¬ ì§„í–‰ì¤‘ì¸ ì»¨í…Œì´ë„ˆê°€ ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ê²½ìš°
+		// Update list ì—ì„œ ì œê±°í•œë‹¤
 		if ( NULL == pUpdateInfo->pCurCont )
 		{
 			AutoDetachedUpdateExceptionGroup( it->second.pCurGroup );
@@ -1282,8 +1282,8 @@ void CDboTSTCtrl::UpdateExceptionGroup( void )
 		}
 		else
 		{
-			// ÇöÀç Exception group¿¡ ´ëÇÑ ±âÁ¸ ActionÀÌ µ¿ÀÛÁßÀÎ °æ¿ì´Â
-			// ÀÀ´äÀÌ ¿Ã¶§±îÁö ´ë±â ÇÑ´Ù
+			// í˜„ì¬ Exception groupì— ëŒ€í•œ ê¸°ì¡´ Actionì´ ë™ì‘ì¤‘ì¸ ê²½ìš°ëŠ”
+			// ì‘ë‹µì´ ì˜¬ë•Œê¹Œì§€ ëŒ€ê¸° í•œë‹¤
 			if ( pUpdateInfo->nActionRef > 0 )
 			{
 				++it;
@@ -1421,10 +1421,10 @@ void CDboTSTCtrl::ReleaseUpdateExceptionGroupActRef( NTL_TS_TG_ID tgId )
 
 void CDboTSTCtrl::UpdateTimeWait( void )
 {
-	// Å¸ÀÓ ´ë±â ÁßÀÌ ¾Æ´Ô
+	// íƒ€ì„ ëŒ€ê¸° ì¤‘ì´ ì•„ë‹˜
 	if ( 0 == m_uiTWPeriod ) return;
 
-	// Å¸ÀÓ ´ë±â Á¾·á
+	// íƒ€ì„ ëŒ€ê¸° ì¢…ë£Œ
 	if ( GetCurTime() - m_uiTWStart > m_uiTWPeriod )
 	{
 		m_uiTWPeriod = 0;

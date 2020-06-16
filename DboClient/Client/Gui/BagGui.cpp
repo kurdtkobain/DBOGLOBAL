@@ -130,7 +130,7 @@ RwBool CBagBaseGui::Create(VOID)
 	m_pCoolTimeEffect = NTL_NEW gui::CRadarEffect[m_nNumSlot];
 
 	// Gamble Effect
-	m_ppGambleBoomEffect = NTL_NEW gui::CFlash*[m_nNumSlot];	///< °×ºí ºÕ È¿°ú
+	m_ppGambleBoomEffect = NTL_NEW gui::CFlash*[m_nNumSlot];	///< ê²œë¸” ë¶ íš¨ê³¼
 	m_pSlotBoomEffectEnd = NTL_NEW gui::CSlot[m_nNumSlot];
 	m_pbIsGambleEffect = NTL_NEW RwBool[m_nNumSlot];
 	for( RwInt32 i = 0; i < m_nNumSlot; ++i )
@@ -144,7 +144,7 @@ RwBool CBagBaseGui::Create(VOID)
 		// Link
 		m_pSlotBoomEffectEnd[i] = m_ppGambleBoomEffect[i]->SigMovieEnd().Connect( this, &CBagBaseGui::OnMovieEnd );
 
-		// ÇÃ·¹ÀÌ ¾ÈµÇ°í ÀÖ´Ù°í ÃÊ±âÈ­
+		// í”Œë ˆì´ ì•ˆë˜ê³  ìˆë‹¤ê³  ì´ˆê¸°í™”
 		m_pbIsGambleEffect[i] = FALSE;
 	}
 
@@ -180,7 +180,7 @@ RwBool CBagBaseGui::Create(VOID)
 	LinkMsg( g_EventItemIdentifyEffect, 0 );
 	LinkMsg( g_EventResize, 0 );
 
-	// Update ¿¬°á
+	// Update ì—°ê²°
 	GetNtlGuiManager()->AddUpdateFunc( this );
 	
 	NTL_RETURN( TRUE );
@@ -261,7 +261,7 @@ VOID CBagBaseGui::Update( RwReal fElapsed )
 			m_pCoolTimeEffect[i].Update( fCurrentTime );
 		}
 
-		// Flash°¡ ¿¬ÃâÁßÀÌ¶ó¸é Update¸¦ ½ÃÄÑÁØ´Ù.
+		// Flashê°€ ì—°ì¶œì¤‘ì´ë¼ë©´ Updateë¥¼ ì‹œì¼œì¤€ë‹¤.
 		if( m_ppGambleBoomEffect[i]->IsPlayMovie() )
 		{
 			m_ppGambleBoomEffect[i]->Update( fElapsed );
@@ -318,7 +318,7 @@ VOID CBagBaseGui::HandleEvents( RWS::CMsg& msg )
 		{
 			CNtlSobItem* pBag = reinterpret_cast<CNtlSobItem*>( GetNtlSobManager()->GetSobObject( m_hBagSerial ) );
 
-			// Handle Á¦¾î
+			// Handle ì œì–´
 			for( RwInt32 i = 0; i < m_nNumSlot; ++i )
 			{
 				if( pData->hItemHandle == pBag->GetChildSerial( i ) )
@@ -333,7 +333,7 @@ VOID CBagBaseGui::HandleEvents( RWS::CMsg& msg )
 		}
 		else
 		{
-			// Place and Pos Á¦¾î
+			// Place and Pos ì œì–´
 			RwUInt8 byBagIdx = Logic_ConvertContainerTypeToBagIdx( pData->byPlace );
 
 			CNtlInventory* pInventory = GetNtlSLGlobal()->GetSobAvatar()->GetInventory();
@@ -392,7 +392,7 @@ VOID CBagBaseGui::HandleEvents( RWS::CMsg& msg )
 	//	}
 	//	else if( pData->nWorkId == PMW_VIEW )
 	//	{
-	//		// ¹ÌÁ¤
+	//		// ë¯¸ì •
 
 	//	}
 	//	else if( pData->nWorkId == PMW_SELL )
@@ -457,7 +457,7 @@ VOID CBagBaseGui::HandleEvents( RWS::CMsg& msg )
 	}
 	else if( msg.Id == g_EventCapsuleLockItem )
 	{
-		// ÇöÀç °¡¹æÀÇ ÁöÁ¤µÈ Slot¿¡ Ä¸½¶ LockÀ» °É°í À¯È¿ÇÑ ¾ÆÀÌÅÛÀÇ Serial·Î °¡¹æÀÌ ¾Æ´Ñ °ø°£¿¡ ÀÖ´Â ¾ÆÀÌÄÜµéÀ» Á¦¾îÇÑ´Ù.
+		// í˜„ì¬ ê°€ë°©ì˜ ì§€ì •ëœ Slotì— ìº¡ìŠ Lockì„ ê±¸ê³  ìœ íš¨í•œ ì•„ì´í…œì˜ Serialë¡œ ê°€ë°©ì´ ì•„ë‹Œ ê³µê°„ì— ìˆëŠ” ì•„ì´ì½˜ë“¤ì„ ì œì–´í•œë‹¤.
 
 		SDboEventCapsuleLockItem* pData = reinterpret_cast<SDboEventCapsuleLockItem*>( msg.pData );
 
@@ -927,7 +927,7 @@ VOID CBagBaseGui::RightButtonProc( RwInt32 nSlotIdx )
 		}
 		else
 		{
-			// Ã¢°í°¡ °¡µæ Ã¡½À´Ï´Ù
+			// ì°½ê³ ê°€ ê°€ë“ ì°¼ìŠµë‹ˆë‹¤
 			GetAlarmManager()->AlarmMessage( "DST_WAREHOUSE_FULL" );
 		}
 	}
@@ -1076,9 +1076,9 @@ VOID CBagBaseGui::SetBagName(VOID)
 }
 
 /**
-* \brief °×ºí ¾ÆÀÌÅÛ ¿¬Ãâ ½ÃÀÛ
-* \param hOldSerial	(RwUint32) Ä¸½¶ ¾ÆÀÌÅÛÀÇ ÇÚµé
-* \param hSerial	(RwUInt32) Ä¸½¶¿¡¼­ ³ª¿Â ¾ÆÀÌÅÛÀÇ ÇÚµé
+* \brief ê²œë¸” ì•„ì´í…œ ì—°ì¶œ ì‹œì‘
+* \param hOldSerial	(RwUint32) ìº¡ìŠ ì•„ì´í…œì˜ í•¸ë“¤
+* \param hSerial	(RwUInt32) ìº¡ìŠì—ì„œ ë‚˜ì˜¨ ì•„ì´í…œì˜ í•¸ë“¤
 */
 VOID CBagBaseGui::BoomEffectProc( RwUInt32 hCreateSerial, RwChar* pcEffectFile )
 {
@@ -1110,7 +1110,7 @@ VOID CBagBaseGui::OnMovieEnd( gui::CComponent* pComponent )
 
 	for( RwInt32 i = 0; i < m_nNumSlot; ++i )
 	{
-		// ÀÏÄ¡ÇÑ´Ù.
+		// ì¼ì¹˜í•œë‹¤.
 		if( m_ppGambleBoomEffect[i]->GetScreenRect() == pFlash->GetScreenRect() )
 		{
 			// Item Create Effect
@@ -1126,7 +1126,7 @@ VOID CBagBaseGui::OnMovieEnd( gui::CComponent* pComponent )
 		}
 	}
 
-	// ¿©±â±îÁö ¾Ë°í¸®ÁòÀÌ ¿Â´Ù¸é Àß¸øµÈ Á¤º¸ÀÇ ÇÃ·¡½¬ °´Ã¼°¡ ÀÖ´Ù´Â ¶æ.
+	// ì—¬ê¸°ê¹Œì§€ ì•Œê³ ë¦¬ì¦˜ì´ ì˜¨ë‹¤ë©´ ì˜ëª»ëœ ì •ë³´ì˜ í”Œë˜ì‰¬ ê°ì²´ê°€ ìˆë‹¤ëŠ” ëœ».
 	NTL_ASSERTFAIL( "CBagBaseGui::OnMovieEnd - Invalid flash component" );
 }
 
@@ -1168,14 +1168,14 @@ VOID CBagBaseGui::MouseDown( const CKey& key )
 	}
 	else if( key.m_nID == UD_RIGHT_BUTTON )
 	{
-		// 1. ¾ÆÀÌÄÜ ÇÈ¾÷»óÅÂÀÎ°¡ ¾Æ´Ñ°¡
+		// 1. ì•„ì´ì½˜ í”½ì—…ìƒíƒœì¸ê°€ ì•„ë‹Œê°€
 		if( !GetIconMoveManager()->IsActive() )
 		{
 			if( !IsDisableSlot( nClickIdx ) )
 			{				
 				m_nRSelectedSlotIdx = nClickIdx;
 			}
-			//2. ¾ÆÀÌÅÛ À¯È¿¼º°Ë»ç.
+			//2. ì•„ì´í…œ ìœ íš¨ì„±ê²€ì‚¬.
 			//if( IsEnableBagChildPopup( nClickIdx ) )
 			//{
 			//	m_nRSelectedSlotIdx = nClickIdx;
@@ -1185,7 +1185,7 @@ VOID CBagBaseGui::MouseDown( const CKey& key )
 
 	m_pThis->CaptureMouse();
 
-	// µ¿½Ã¿¡ ´­¸±¶§ ¹«È¿Ã³¸®.
+	// ë™ì‹œì— ëˆŒë¦´ë•Œ ë¬´íš¨ì²˜ë¦¬.
 	if( m_nLSelectedSlotIdx >= 0 && m_nRSelectedSlotIdx >= 0 )
 	{
 		m_nLSelectedSlotIdx = -1;
@@ -1197,8 +1197,8 @@ VOID CBagBaseGui::MouseDown( const CKey& key )
 
 VOID CBagBaseGui::MouseUp( const CKey& key )
 {
-	// 1. Left¹öÆ°ÀÎ°¡ Right¹öÆ°ÀÎ°¡
-	// 2. Src¼±ÅÃÀÎ°¡ Dest¼±ÅÃÀÎ°¡.
+	// 1. Leftë²„íŠ¼ì¸ê°€ Rightë²„íŠ¼ì¸ê°€
+	// 2. Srcì„ íƒì¸ê°€ Destì„ íƒì¸ê°€.
 
 	RwInt32 nSlotIdx = GetChildSlotIdx( (RwInt32)key.m_fX, (RwInt32)key.m_fY );
 	ClickEffect( FALSE );
@@ -1212,7 +1212,7 @@ VOID CBagBaseGui::MouseUp( const CKey& key )
 		return;
 	}
 
-	// °×ºí È¿°ú°¡ »ç¿ëÁßÀÌ¶ó¸é ÀÔ·ÂÀ» ¸·´Â´Ù.
+	// ê²œë¸” íš¨ê³¼ê°€ ì‚¬ìš©ì¤‘ì´ë¼ë©´ ì…ë ¥ì„ ë§‰ëŠ”ë‹¤.
 	if( m_pbIsGambleEffect[nSlotIdx] )
 	{
 		m_nLSelectedSlotIdx = -1;
@@ -1375,7 +1375,7 @@ VOID CBagBaseGui::MouseMove( INT nKey, INT nXPos, INT nYPos )
 
 VOID CBagBaseGui::Paint(VOID)
 {
-	// Icon Ãâ·Â
+	// Icon ì¶œë ¥
 	for( RwInt32 i = 0 ; i < m_nNumSlot ; ++i )
 	{
 		m_psurIcons[i].Render();
@@ -1478,7 +1478,7 @@ RwBool CBasicBagGui::Create(VOID)
 	m_slotClickDiscardBtn = m_pbtnDiscard->SigClicked().Connect( this, &CBasicBagGui::OnClickDiscardBtn );
 	m_slotClickPopupMenuBtn = m_pbtnPopupMenu->SigClicked().Connect(this, &CBasicBagGui::OnClickPopupMenuBtn);
 
-	// Á¦´Ï ¾ÆÀÌÄÜ
+	// ì œë‹ˆ ì•„ì´ì½˜
 	m_pMoneyIconTexture = Logic_CreateTexture( MONEYICON_NAME );
 
 	// ToolTIp
@@ -1504,7 +1504,7 @@ VOID CBasicBagGui::Destroy(VOID)
 
 	UnLinkMsg( g_EventIconMoveClick );
 
-	// °¡¹æ¿¡¼­ ¸¸µé¾îÁø Á¦´Ï ¾ÆÀÌÄÜÀ» »èÁ¦ÇÑ´Ù
+	// ê°€ë°©ì—ì„œ ë§Œë“¤ì–´ì§„ ì œë‹ˆ ì•„ì´ì½˜ì„ ì‚­ì œí•œë‹¤
 	Logic_DeleteTexture(m_pMoneyIconTexture);
 	m_pMoneyIconTexture = NULL;
 	
@@ -2944,7 +2944,7 @@ VOID CBagSlotGui::HandleEvents( RWS::CMsg& msg )
 
 		CNtlInventory* pInventory = GetNtlSLGlobal()->GetSobAvatar()->GetInventory();
 
-		// °¡¹æ Ã¼Å©´Â ÆĞÅ¶ÇÚµé·¯¿¡¼­ ¹Ì¸® ÇÔ.
+		// ê°€ë°© ì²´í¬ëŠ” íŒ¨í‚·í•¸ë“¤ëŸ¬ì—ì„œ ë¯¸ë¦¬ í•¨.
 		CNtlSobItem* pGetItem = reinterpret_cast<CNtlSobItem*>( GetNtlSobManager()->GetSobObject( pData->hSerial ) );
 		if( pGetItem )
 		{
@@ -2964,7 +2964,7 @@ VOID CBagSlotGui::HandleEvents( RWS::CMsg& msg )
 
 		if( m_pBag[0] )
 		{
-			// µ·Àº ±âº» ½½·ÔÀ¸·Î¸¸ µé¾î°£´Ù.
+			// ëˆì€ ê¸°ë³¸ ìŠ¬ë¡¯ìœ¼ë¡œë§Œ ë“¤ì–´ê°„ë‹¤.
 			CRectangle* pRect = &m_rtIcon[0];
 			CRectangle rtScreen = m_pThis->GetScreenRect();
 			CBasicBagGui* pBasicBag = reinterpret_cast<CBasicBagGui*>( m_pBag[0] );
@@ -3066,9 +3066,9 @@ CRectangle CBagSlotGui::GetBagSlotRect( RwInt32 nSlotIdx )
 
 RwBool CBagSlotGui::IsEnableBagPickUp( RwInt32 nSlotIdx )
 {
-	// 0. BasicItemÀº ÀÌµ¿ºÒ°¡
-	// 1. °¡¹æÀÌ ½½·Ô¾È¿¡ Á¸ÀçÇÏ´Â°¡
-	// 3. ÀÌµ¿ÀÌ °¡´ÉÇÑ°¡
+	// 0. BasicItemì€ ì´ë™ë¶ˆê°€
+	// 1. ê°€ë°©ì´ ìŠ¬ë¡¯ì•ˆì— ì¡´ì¬í•˜ëŠ”ê°€
+	// 3. ì´ë™ì´ ê°€ëŠ¥í•œê°€
 	if( nSlotIdx < 0 || nSlotIdx >= VISIBLE_BAGSLOT_COUNT )
 		return FALSE;
 
@@ -3091,7 +3091,7 @@ RwBool CBagSlotGui::IsEnableBagPickUp( RwInt32 nSlotIdx )
 		return FALSE;
 	}
 
-	// 4. Disable»óÅÂ°¡ ¾Æ´Ï¾î¾ß
+	// 4. Disableìƒíƒœê°€ ì•„ë‹ˆì–´ì•¼
 	if( IsDisableSlot( nSlotIdx ) )
 		return FALSE;
 
@@ -3158,7 +3158,7 @@ RwBool CBagSlotGui::UpdateData(VOID)
 	{
 		SERIAL_HANDLE hSerial = pInventory->GetBagItem( i );
 		
-		// º¯°æµÈ °æ¿ì. »ı¼º »èÁ¦
+		// ë³€ê²½ëœ ê²½ìš°. ìƒì„± ì‚­ì œ
 		if( m_hBagSerial[i] != hSerial )
 		{
 			m_hBagSerial[i] = hSerial;
@@ -3223,7 +3223,7 @@ RwBool CBagSlotGui::UpdateData(VOID)
 
 		if( i < VISIBLE_BAGSLOT_COUNT )
 		{
-			// °¡¹æÀÇ »óÅÂ
+			// ê°€ë°©ì˜ ìƒíƒœ
 			if( hSerial == INVALID_SERIAL_ID )
 			{
 				DestroyStackNumber( i );
@@ -3488,8 +3488,8 @@ VOID CBagSlotGui::OnMouseDown( const CKey& key )
 
 VOID CBagSlotGui::OnMouseUp( const CKey& key )
 {
-	// 1. Left¹öÆ°ÀÎ°¡ Right¹öÆ°ÀÎ°¡
-	// 2. Src¼±ÅÃÀÎ°¡ Dest¼±ÅÃÀÎ°¡.
+	// 1. Leftë²„íŠ¼ì¸ê°€ Rightë²„íŠ¼ì¸ê°€
+	// 2. Srcì„ íƒì¸ê°€ Destì„ íƒì¸ê°€.
 
 	RwInt32 nSlotIdx = GetBagSlotIdx( (RwInt32)key.m_fX, (RwInt32)key.m_fY );
 	ClickEffect( FALSE );

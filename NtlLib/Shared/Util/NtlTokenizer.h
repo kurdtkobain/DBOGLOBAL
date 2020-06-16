@@ -2,7 +2,7 @@
  *
  * File			: NtlTokenizer.h
  * Author		: HyungSuk, Jang
- * Copyright	: (ÁÖ)NTL
+ * Copyright	: (ì£¼)NTL
  * Date			: 2005. 9. 22	
  * Abstract		: language/help string table base tokenizer
  *****************************************************************************
@@ -68,7 +68,7 @@ public:
 };
 
 /**
-* \brief Wide Character Çü(Unicode) Tokenizer
+* \brief Wide Character í˜•(Unicode) Tokenizer
 */
 class CNtlTokenizerW
 {

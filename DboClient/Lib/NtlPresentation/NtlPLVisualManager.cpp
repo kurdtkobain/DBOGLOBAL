@@ -331,9 +331,9 @@ void CNtlPLVisualManager::RemoveReservedUpdate(CNtlPLEntity *pEntity)
 	CNtlPLRenderGroup *pRenderGroup = FindUpdateGroup(uiClassType);
 	NTL_ASSERTE(pRenderGroup);
 
-	// AddReservedUpdate¿¡¼­´Â NTL_PLEFLAG_NOTUPDATE Flag¸¦ »«´Ù.
-	// ÇÑ¹øÀÌ¶óµµ AddReservedUpdate Update »óÅÂ°¡ À¯ÁöµÈ´Ù.
-	// ÃßÈÄ ¹®Á¦°¡ µÇÁö ¾ÊÀ»Áö ÆÄ¾ÇÇØµĞ´Ù. // Cz
+	// AddReservedUpdateì—ì„œëŠ” NTL_PLEFLAG_NOTUPDATE Flagë¥¼ ëº€ë‹¤.
+	// í•œë²ˆì´ë¼ë„ AddReservedUpdate Update ìƒíƒœê°€ ìœ ì§€ëœë‹¤.
+	// ì¶”í›„ ë¬¸ì œê°€ ë˜ì§€ ì•Šì„ì§€ íŒŒì•…í•´ë‘”ë‹¤. // Cz
 	pRenderGroup->RemoveEntity(pEntity); 
 }
 
@@ -355,7 +355,7 @@ void CNtlPLVisualManager::Update(RwReal fElapsed)
 		NTL_RPROFILE_VOID()
 	}
 
-	// distance filter Ã³¸®.
+	// distance filter ì²˜ë¦¬.
 	UpdateDistanceFilter(fElapsed);
 
 	// update sound
@@ -492,7 +492,7 @@ void CNtlPLVisualManager::Render(void)
 
 	m_CullScheduler.Update(g_GetElapsedTime());
 
-    // Entity ÄÃ¸µ Ã¼Å©
+    // Entity ì»¬ë§ ì²´í¬
 // 	static RwReal	g_fCullTimeCur	= 0.0f;
 // 	static RwReal	g_fCullTime		= 0.05f / 3.0f;
 // 	static RwInt32	g_iCullMode		= 0;
@@ -502,7 +502,7 @@ void CNtlPLVisualManager::Render(void)
 // 	{
 // 		CNtlPLRenderGroup* pNtlPLRenderGroup = NULL;
 // 
-// 		// Object Culling Test¸¦ Frustum Sector ±âÁØÀ¸·Î Visible¿¡ ¹®Á¦°¡ »ı±ä´Ù.
+// 		// Object Culling Testë¥¼ Frustum Sector ê¸°ì¤€ìœ¼ë¡œ Visibleì— ë¬¸ì œê°€ ìƒê¸´ë‹¤.
 // 		switch (g_iCullMode)
 // 		{
 // 		case 0:
@@ -564,7 +564,7 @@ void CNtlPLVisualManager::Render(void)
 				RwCameraForAllSectorsInFrustum(CNtlPLGlobal::m_RwCamera, NtlWorldSectorRenderCallback, NULL);
 				RwCameraForAllSectorsInFrustum(CNtlPLGlobal::m_RwCamera, NtlWorldSectorAtomicCallback, NULL);
 				break;
-				// ÀÎµµ¾î
+				// ì¸ë„ì–´
 			case AW_RWWORLD:
 				Render4RWWorld();
 				break;
@@ -760,7 +760,7 @@ RwBool CNtlPLVisualManager::AddPLEntity(CNtlPLEntity *pEntity)
     {
 		AddDistanceFilter(pEntity);
 
-        // Event Object¶ó¸é SL¿¡ Event¸¦ ³¯¸°´Ù.
+        // Event Objectë¼ë©´ SLì— Eventë¥¼ ë‚ ë¦°ë‹¤.
         CNtlPLObject* pObject = reinterpret_cast<CNtlPLObject*>(pEntity);
         if(pObject && pObject->GetProperty()->GetObjectType() == E_OBJECT_MILEPOST)
         {
@@ -847,7 +847,7 @@ void CNtlPLVisualManager::RemovePLEntity(CNtlPLEntity *pEntity)
 	if(pRenderGroup)
 		pRenderGroup->RemoveEntity(pEntity); 
 
-	// reserved ¿¡¼­ remove
+	// reserved ì—ì„œ remove
 	MapReservedUpdate::iterator it;
 	it = m_mapAddUpdate.find(pEntity);
 	if(it != m_mapAddUpdate.end())
@@ -857,7 +857,7 @@ void CNtlPLVisualManager::RemovePLEntity(CNtlPLEntity *pEntity)
 	if(it != m_mapRemoveUpdate.end())
 		m_mapRemoveUpdate.erase(it);
 
-	// distane filter group¿¡¼­ remove ÇÑ´Ù.
+	// distane filter groupì—ì„œ remove í•œë‹¤.
 	if(m_pDistFiterGroup)
 	{
 		RemoveDistanceFilter(pEntity);
@@ -899,7 +899,7 @@ void CNtlPLVisualManager::RemoveDistanceFilter(CNtlPLEntity *pEntity)
 EActiveWorldType CNtlPLVisualManager::GetActiveWorldType(void)
 {
 	/*
-	¿ìÅÃ
+	ìš°íƒ
 	if(m_pRWWorldEntity)
 		return AW_RWWORLD;
 	else if(m_pWorldEntity)
@@ -974,7 +974,7 @@ RwBool CNtlPLVisualManager::GetRWWorldHeight(const RwV3d *pWorldPos, RwReal& fHe
 		return FALSE;
 	}
 
-	// object line collision ³ôÀÌ ¾ò¾î¿À±â.
+	// object line collision ë†’ì´ ì–»ì–´ì˜¤ê¸°.
 	RwLine Line;
 	RwV3dAssign(&Line.start, pWorldPos);
 	RwV3dAssign(&Line.end, pWorldPos);
@@ -1003,7 +1003,7 @@ RwBool CNtlPLVisualManager::GetRWWorldHeight(const RwV3d *pWorldPos, RwReal& fHe
 		}
 	}
 
-	// height field ³ôÀÌ ¾ò¾î¿À±â
+	// height field ë†’ì´ ì–»ì–´ì˜¤ê¸°
 	static SWorldIntersect sHFInter;
 	static RwBool bHFColl = FALSE;
 	bHFColl = Collision_IndoorIntersectionLineTopDown(Line, sHFInter);
@@ -1082,7 +1082,7 @@ RwBool CNtlPLVisualManager::GetHeightFieldWorldHeight(const RwV3d *pWorldPos, Rw
 		return FALSE;
 	}
 
-	// object line collision ³ôÀÌ ¾ò¾î¿À±â.
+	// object line collision ë†’ì´ ì–»ì–´ì˜¤ê¸°.
 	RwLine Line;
 	RwV3dAssign(&Line.start, pWorldPos);
 	RwV3dAssign(&Line.end, pWorldPos);
@@ -1111,7 +1111,7 @@ RwBool CNtlPLVisualManager::GetHeightFieldWorldHeight(const RwV3d *pWorldPos, Rw
 		}
 	}
 
-	// height field ³ôÀÌ ¾ò¾î¿À±â
+	// height field ë†’ì´ ì–»ì–´ì˜¤ê¸°
 	static SWorldIntersect sHFInter;
 	static RwBool bHFColl = FALSE;
 	bHFColl = Collision_HeightFieldIntersectionLineTopDown(Line, sHFInter);
@@ -1153,8 +1153,8 @@ RwBool CNtlPLVisualManager::GetHeightFieldWorldHeight(const RwV3d *pWorldPos, Rw
 		}
 		else
 		{
-			// ¾Æ¹«°Íµµ Ãæµ¹ÀÌ ¾ÈµÇ¾úÀ» °æ¿ì.. start À§Ä¡¸¦ ¿Ã·Á¼­ ÇÑ¹ø´õ ÇÑ´Ù.
-			Line.start.y += fLineLen; // ±âÁ¸ 200.0f;
+			// ì•„ë¬´ê²ƒë„ ì¶©ëŒì´ ì•ˆë˜ì—ˆì„ ê²½ìš°.. start ìœ„ì¹˜ë¥¼ ì˜¬ë ¤ì„œ í•œë²ˆë” í•œë‹¤.
+			Line.start.y += fLineLen; // ê¸°ì¡´ 200.0f;
 			bHFColl = Collision_HeightFieldIntersectionLineTopDown(Line, sHFInter);
 			if(bHFColl)
 			{
@@ -1188,7 +1188,7 @@ RwBool CNtlPLVisualManager::GetRWTerrainHeight(const RwV3d *pWorldPos, RwReal& f
 		return FALSE;
 	}
 
-	// height field ³ôÀÌ ¾ò¾î¿À±â
+	// height field ë†’ì´ ì–»ì–´ì˜¤ê¸°
 	RwV3d vTmp;
 	CNtlMath::MathRwV3dAssign(&vTmp, pWorldPos->x, pWorldPos->y, pWorldPos->z);
 	fHeight = GetWorld()->GetWorldSectorHeight(vTmp);
@@ -1204,7 +1204,7 @@ RwBool CNtlPLVisualManager::GetHeightFieldTerrainHeight(const RwV3d *pWorldPos, 
 		return FALSE;
 	}
 
-	// height field ³ôÀÌ ¾ò¾î¿À±â
+	// height field ë†’ì´ ì–»ì–´ì˜¤ê¸°
 	RwV3d vTmp;
 	CNtlMath::MathRwV3dAssign(&vTmp, pWorldPos->x, pWorldPos->y, pWorldPos->z);
 	fHeight = GetWorld()->GetWorldSectorHeight(vTmp);
@@ -1214,7 +1214,7 @@ RwBool CNtlPLVisualManager::GetHeightFieldTerrainHeight(const RwV3d *pWorldPos, 
 
 RwBool CNtlPLVisualManager::IsWorldReady(void)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 
 	if(eWorldType == AW_NONE)
@@ -1244,9 +1244,9 @@ RwBool CNtlPLVisualManager::GetWorldHeight( const RwV3d *pWorldPos, RwReal& fHei
 }
 
 /**
-*  world position¿¡ ÇØ´çÇÏ´Â terrain ÁöÇü¸¸ ÇØ´çÇÏ´Â height¸¦ ±¸ÇÏ´Â interface ÇÔ¼ö.
-*  \return terrain height value¸¦ ¸®ÅÏÇÑ´Ù.
-*  \param pWorldPos world position¿¡ ÇØ´çÇÏ´Â RwV3d pointer
+*  world positionì— í•´ë‹¹í•˜ëŠ” terrain ì§€í˜•ë§Œ í•´ë‹¹í•˜ëŠ” heightë¥¼ êµ¬í•˜ëŠ” interface í•¨ìˆ˜.
+*  \return terrain height valueë¥¼ ë¦¬í„´í•œë‹¤.
+*  \param pWorldPos world positionì— í•´ë‹¹í•˜ëŠ” RwV3d pointer
 *
 */
 RwBool CNtlPLVisualManager::GetTerrainHeight(const RwV3d *pWorldPos, RwReal& fHeight)
@@ -1270,11 +1270,11 @@ RpWorld* CNtlPLVisualManager::GetWorldPtr(void)
 
 
 /**
-*  world¿¡ pickµÈ polygonÀ» Ã£´Â´Ù.
-* Ä³¸¯ÅÍ¸¦ ÇÇÅ·ÇÏ°í... ÇÇÅ·µÈ Ä³¸¯ÅÍ³¢¸® °Å¸® ±¸ÇØ¼­ °¡±î¿î ³ğ ¼±ÅÃÇÏ°í,
-* ÁöÇü°ú ´Ù½Ã °Å¸® ºñ±³¸¦ ÇØ¼­ ÁöÇüÀÌ °¡±î¿ì¸é sPickInfo.pPLEntity = GetTerrain() À» ³Ö¾îÁÖ°í,
-* Ä³¸¯ÅÍ°¡ °¡±î¿ì¸é sPickInfo.pPLEntity = CNtlPLCharacter¸¦ ³Ö¾îÁÖ¸é µÈ´Ù.
-*  \return Ãæµ¿µÈ polygonÀÇ ÁÂÇ¥.
+*  worldì— pickëœ polygonì„ ì°¾ëŠ”ë‹¤.
+* ìºë¦­í„°ë¥¼ í”¼í‚¹í•˜ê³ ... í”¼í‚¹ëœ ìºë¦­í„°ë¼ë¦¬ ê±°ë¦¬ êµ¬í•´ì„œ ê°€ê¹Œìš´ ë†ˆ ì„ íƒí•˜ê³ ,
+* ì§€í˜•ê³¼ ë‹¤ì‹œ ê±°ë¦¬ ë¹„êµë¥¼ í•´ì„œ ì§€í˜•ì´ ê°€ê¹Œìš°ë©´ sPickInfo.pPLEntity = GetTerrain() ì„ ë„£ì–´ì£¼ê³ ,
+* ìºë¦­í„°ê°€ ê°€ê¹Œìš°ë©´ sPickInfo.pPLEntity = CNtlPLCharacterë¥¼ ë„£ì–´ì£¼ë©´ ëœë‹¤.
+*  \return ì¶©ë™ëœ polygonì˜ ì¢Œí‘œ.
 *
 */
 
@@ -1328,7 +1328,7 @@ RwBool CNtlPLVisualManager::PickWorld_Old(RwInt32 iPosX, RwInt32 iPosY, SWorldPi
 aaaa
 	sPickInfo.pPLEntity = NULL;
 
-	// ÁöÇüÀ» Á¦¿ÜÇÏÁö ¾ÊÀ¸¸é.
+	// ì§€í˜•ì„ ì œì™¸í•˜ì§€ ì•Šìœ¼ë©´.
 	RwBool bPickTerrain = FALSE;
 	RwV3d vTerrain;
 	if(!sPickInfo.bTerrainExclusion)
@@ -1347,7 +1347,7 @@ aaaa
 		}
 	}
 
-	// object¸¦ picking ÇÑ´Ù.
+	// objectë¥¼ picking í•œë‹¤.
 	
 	sPickInfo.pPLEntity = NULL;
 
@@ -1359,7 +1359,7 @@ aaaa
 	RwCameraCalcPixelRay( CNtlPLGlobal::m_RwCamera, &CameraRay, &vScreenPos );
 	Pick_WorldIntersectionLine(CameraRay, sPickInfo, fPickObjLimit);
 
-	// object¿¡¼­ picking µÈ°ÍÀÌ Á¸ÀçÇÏ¸é.
+	// objectì—ì„œ picking ëœê²ƒì´ ì¡´ì¬í•˜ë©´.
 	if(sPickInfo.pPLEntity)
 	{
 		if(bPickTerrain)
@@ -1405,7 +1405,7 @@ RwBool CNtlPLVisualManager::PickWorld_New(RwInt32 iPosX, RwInt32 iPosY, SWorldPi
 
 	//////////////////////////////////////////////////////////////////////////
 	//
-	//	ÁöÇü Picking
+	//	ì§€í˜• Picking
 	//
 	//////////////////////////////////////////////////////////////////////////
 	RwBool bPickTerrain = FALSE;
@@ -1437,7 +1437,7 @@ RwBool CNtlPLVisualManager::PickWorld_New(RwInt32 iPosX, RwInt32 iPosY, SWorldPi
 
 	//////////////////////////////////////////////////////////////////////////
 	//
-	//	Ãæµ¹ ÆÇ´Ü
+	//	ì¶©ëŒ íŒë‹¨
 	//
 	//////////////////////////////////////////////////////////////////////////
 	RwLine CameraRay;
@@ -1534,8 +1534,8 @@ RwBool CNtlPLVisualManager::CTChar2Poly(sNPE_COLLISION_PARAM& sNPECollisionParam
 }
 */
 /**
- * Map Tool¿¡¼­ Object Fade È¿°ú À¯¹«¸¦ ¼³Á¤ÇÒ¶§ »ç¿ëÇÑ´Ù.
- * \param bEnable Fade È¿°ú À¯¹« 
+ * Map Toolì—ì„œ Object Fade íš¨ê³¼ ìœ ë¬´ë¥¼ ì„¤ì •í• ë•Œ ì‚¬ìš©í•œë‹¤.
+ * \param bEnable Fade íš¨ê³¼ ìœ ë¬´ 
  */
 void CNtlPLVisualManager::SetDistanceFilter(RwBool bEnable)
 {
@@ -1559,7 +1559,7 @@ void CNtlPLVisualManager::SetDistanceFilter(RwBool bEnable)
 
 DWORD CNtlPLVisualManager::GetWorldAttribute(RwV3d vPos)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 
 	if(eWorldType == AW_NONE)
@@ -1570,7 +1570,7 @@ DWORD CNtlPLVisualManager::GetWorldAttribute(RwV3d vPos)
 
 DWORD CNtlPLVisualManager::GetWorldNormalAttribute(RwV3d vPos)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 
 	if(eWorldType == AW_NONE)
@@ -1584,7 +1584,7 @@ DWORD CNtlPLVisualManager::GetWorldNormalAttribute(RwV3d vPos)
 
 DWORD CNtlPLVisualManager::GetWorldSpecialAttribute(RwV3d vPos)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 
 	if(eWorldType == AW_NONE)
@@ -1597,7 +1597,7 @@ DWORD CNtlPLVisualManager::GetWorldSpecialAttribute(RwV3d vPos)
 
 BYTE CNtlPLVisualManager::GetWorldMaterialAttribute(RwV3d vPos)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 	if(eWorldType == AW_NONE)
 		return 0;
@@ -1607,7 +1607,7 @@ BYTE CNtlPLVisualManager::GetWorldMaterialAttribute(RwV3d vPos)
 
 RwReal CNtlPLVisualManager::GetWorldWaterHeight(RwV3d vPos)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 	if(eWorldType == AW_NONE)
 		return -9999.0f;
@@ -1618,7 +1618,7 @@ RwReal CNtlPLVisualManager::GetWorldWaterHeight(RwV3d vPos)
 
 RwReal CNtlPLVisualManager::GetActiveBloomFactor(void) 
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 	if(eWorldType == AW_NONE)
 		return dMONO_POWER_DEFAULT;
@@ -1632,7 +1632,7 @@ RwReal CNtlPLVisualManager::GetActiveBloomFactor(void)
 
 RwBool CNtlPLVisualManager::GetAvailablePos(RwV3d& _CurPos)
 {
-	// ÀÎµµ¾î
+	// ì¸ë„ì–´
 	EActiveWorldType eWorldType = GetActiveWorldType();
 	if(eWorldType == AW_NONE)
 		return TRUE;
@@ -1663,7 +1663,7 @@ RwBool CNtlPLVisualManager::GetAvailablePos(RwV3d& _CurPos)
 
 VOID CNtlPLVisualManager::SetWorldPVSActivation(RwBool _Flag)
 {
-	// ÀÎµµ¾î ¿¡¼­´Â ´Ù¸¥ ÀÇ¹Ì·Î ¾²ÀÎ´Ù ¼öÁ¤¿ä±¸ ÀÌ´ë·Î´Â ÀÎµµ¾î¿¡¼­ ÀÇ¹Ì°¡ ¾ø´Ù
+	// ì¸ë„ì–´ ì—ì„œëŠ” ë‹¤ë¥¸ ì˜ë¯¸ë¡œ ì“°ì¸ë‹¤ ìˆ˜ì •ìš”êµ¬ ì´ëŒ€ë¡œëŠ” ì¸ë„ì–´ì—ì„œ ì˜ë¯¸ê°€ ì—†ë‹¤
 
 	CNtlPLGlobal::m_UseTerrainPVSMode = _Flag;
 }

@@ -265,8 +265,8 @@ bool CDboTSEMTeleport::AddBuildData( const std::string& strKey, const CNtlTSMain
 
 	vecdef_TID_LIST& defTIDList = m_defTeleportMapper[strKey];
 
-	// Trigger system scriptµéÀ» ¼øÈ¸ÇÏ¸é¼­ ÇØ´ç teleport ·Î ½ÃÀÛÇÒ ¼ö ÀÖ´Â
-	// trigger¸¦ Ã£´Â´Ù
+	// Trigger system scriptë“¤ì„ ìˆœíšŒí•˜ë©´ì„œ í•´ë‹¹ teleport ë¡œ ì‹œì‘í•  ìˆ˜ ìˆëŠ”
+	// triggerë¥¼ ì°¾ëŠ”ë‹¤
 
 	sTELEPORT_PARAM sParam;
 	CDboTSEMTeleport_Recv clRecv;

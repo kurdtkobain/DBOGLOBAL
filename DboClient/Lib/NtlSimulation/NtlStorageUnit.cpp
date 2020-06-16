@@ -33,7 +33,7 @@ CNtlStorageUnit::~CNtlStorageUnit()
 }
 
 /**
-* \brief Storage UnitÀ» »ı¼ºÇÑ´Ù. Type°ú Serializer¸¦ ¹Ş¾Æ¼­ ¾Ë¸Â°Ô »ı¼ºÇÑ´Ù.
+* \brief Storage Unitì„ ìƒì„±í•œë‹¤. Typeê³¼ Serializerë¥¼ ë°›ì•„ì„œ ì•Œë§ê²Œ ìƒì„±í•œë‹¤.
 */
 bool CNtlStorageUnit::Create( eNTL_STORAGE_TYPE eType )
 {
@@ -160,7 +160,7 @@ bool CNtlStorageUnit::GetData( unsigned int uiKey, std::string& strOut )
 	DATAMAP::iterator it = m_mapStorageData.find( uiKey );
 	if( it == m_mapStorageData.end() )
 	{
-		// Key¸¦ Ã£Áö ¸øÇß´Ù.
+		// Keyë¥¼ ì°¾ì§€ ëª»í–ˆë‹¤.
 		return false;
 	}
 
@@ -173,20 +173,20 @@ bool CNtlStorageUnit::SetData( unsigned int uiKey, std::string strData )
 	DATAMAP::iterator it = m_mapStorageData.find( uiKey );
 	if( it == m_mapStorageData.end() )
 	{
-		// Key¸¦ Ã£Áö ¸øÇß´Ù¸é ¸ÅÇÎ Å×ÀÌºí ÄÁÅ×ÀÌ³Ê¿¡ Key°¡ Á¸ÀçÇÏ´ÂÁö È®ÀÎ
+		// Keyë¥¼ ì°¾ì§€ ëª»í–ˆë‹¤ë©´ ë§¤í•‘ í…Œì´ë¸” ì»¨í…Œì´ë„ˆì— Keyê°€ ì¡´ì¬í•˜ëŠ”ì§€ í™•ì¸
 		eNTL_STORAGE_TYPE eType = GetNtlStorageMTContainer()->GetStorageType( uiKey );
 		if( eType == eNTL_STORAGE_INVALID )
 		{
 			return false;
 		}
 
-		// ÇöÀç UnitÀÇ TypeÀÌ key°¡ °¡Áö°í ÀÖ´Â Type°¡ ÀÏÄ¡ÇÏ´ÂÁö È®ÀÎÇÑ´Ù.
+		// í˜„ì¬ Unitì˜ Typeì´ keyê°€ ê°€ì§€ê³  ìˆëŠ” Typeê°€ ì¼ì¹˜í•˜ëŠ”ì§€ í™•ì¸í•œë‹¤.
 		if( eType != m_eStorageType )
 		{
 			return false;
 		}
 
-		// ÀÏÄ¡ ÇÑ´Ù¸é Key°ª¿¡ ¾Ë¸ÂÀº µ¥ÀÌÅ¸¸¦ ¸¸µé¾î¼­ ³Ö¾îÁØ´Ù.
+		// ì¼ì¹˜ í•œë‹¤ë©´ Keyê°’ì— ì•Œë§ì€ ë°ì´íƒ€ë¥¼ ë§Œë“¤ì–´ì„œ ë„£ì–´ì¤€ë‹¤.
 		m_mapStorageData[uiKey] = strData;
 		return true;
 	}
@@ -240,7 +240,7 @@ bool CNtlStorageUnit::GetBoolData( unsigned int uiKey )
 	DATAMAP::iterator it = m_mapStorageData.find( uiKey );
 	if( it == m_mapStorageData.end() )
 	{
-		// Key¸¦ Ã£Áö ¸øÇß´Ù.
+		// Keyë¥¼ ì°¾ì§€ ëª»í–ˆë‹¤.
 		return false;
 	}
 
@@ -255,7 +255,7 @@ int CNtlStorageUnit::GetIntData( unsigned int uiKey )
 	DATAMAP::iterator it = m_mapStorageData.find( uiKey );
 	if( it == m_mapStorageData.end() )
 	{
-		// Key¸¦ Ã£Áö ¸øÇß´Ù.
+		// Keyë¥¼ ì°¾ì§€ ëª»í–ˆë‹¤.
 		return 0;
 	}
 
@@ -267,7 +267,7 @@ float CNtlStorageUnit::GetFloatData( unsigned int uiKey )
 	DATAMAP::iterator it = m_mapStorageData.find( uiKey );
 	if( it == m_mapStorageData.end() )
 	{
-		// Key¸¦ Ã£Áö ¸øÇß´Ù.
+		// Keyë¥¼ ì°¾ì§€ ëª»í–ˆë‹¤.
 		return 0.0f;
 	}
 
@@ -279,7 +279,7 @@ std::string CNtlStorageUnit::GetStringData( unsigned int uiKey )
 	DATAMAP::iterator it = m_mapStorageData.find( uiKey );
 	if( it == m_mapStorageData.end() )
 	{
-		// Key¸¦ Ã£Áö ¸øÇß´Ù.
+		// Keyë¥¼ ì°¾ì§€ ëª»í–ˆë‹¤.
 		return std::string("");
 	}
 
