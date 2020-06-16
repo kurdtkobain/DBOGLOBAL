@@ -153,6 +153,7 @@
       <ProgramDataBaseFileName>$(OutDir)$(ProjectName).pdb</ProgramDataBaseFileName>
       <XMLDocumentationFileName>$(OutDir)</XMLDocumentationFileName>
       <BrowseInformationFile>$(OutDir)</BrowseInformationFile>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <BuildLog>
       <Path>$(OutDir)$(MSBuildProjectName).log</Path>

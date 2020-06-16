@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////////////
 /**
- *	Matrix3 Å¬·¡½º
- *	¿Þ¼Õ ÁÂÇ¥°è, Çàº¤ÅÍ¸¦ ±âÁØÀ¸·Î ±¸ÇöµÈ 3 X 3 Çà·Ä.
+ *	Matrix3 í´ëž˜ìŠ¤
+ *	ì™¼ì† ì¢Œí‘œê³„, í–‰ë²¡í„°ë¥¼ ê¸°ì¤€ìœ¼ë¡œ êµ¬í˜„ëœ 3 X 3 í–‰ë ¬.
  *
  *	\file		NtlNaviMatrix3.h
  *	\author		Jeong Ho, Rho
@@ -200,7 +200,7 @@ void CNtlNaviMatrix3::GetEulerRotXYZ( float& fX, float& fY, float& fZ ) const
 		if ( m_fDAElem[0][2] > -1.f )
 		{
 			//	-1 < Sy < 1 <=> 0 < y < NAVI_PI / 2 || NAVI_PI / 2 < y < NAVI_PI <=> Cy != 0
-			//	µû¶ó¼­, Cy·Î ³ª´©±â°¡ °¡´ÉÇÏ´Ù
+			//	ë”°ë¼ì„œ, Cyë¡œ ë‚˜ëˆ„ê¸°ê°€ ê°€ëŠ¥í•˜ë‹¤
 
 			//	(Cy * Sx) / (Cy * Cx)
 			fX = atan2f( m_fDAElem[1][2], m_fDAElem[2][2] );
@@ -211,41 +211,41 @@ void CNtlNaviMatrix3::GetEulerRotXYZ( float& fX, float& fY, float& fZ ) const
 			//	(Cy * Sz) / (Cy * Cz)
 			fZ = atan2f( m_fDAElem[0][1], m_fDAElem[0][0] );
 		}
-		//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ -Sy ´Â -1 º¸´Ù ÀÛÀ» ¼ö ¾ø´Ù
-		//	¿©±â¼­´Â -Sy°¡ -1º¸´Ù ÀÛÀº °æ¿ì -1·Î Ã³¸®ÇÑ´Ù
+		//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— -Sy ëŠ” -1 ë³´ë‹¤ ìž‘ì„ ìˆ˜ ì—†ë‹¤
+		//	ì—¬ê¸°ì„œëŠ” -Syê°€ -1ë³´ë‹¤ ìž‘ì€ ê²½ìš° -1ë¡œ ì²˜ë¦¬í•œë‹¤
 		else
 		{
 			fY = NAVI_PI / 2.f;
 
-			//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+			//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 			//
 			//	|	0					0			-1	|
 			//	|	S(x-z)				C(x-z)		0	|
 			//	|	C(x-z)				-S(x-z)		0	|
 			//
-			//	¿©±â¼­, x, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-			//	µû¶ó¼­, X -> Y -> ZÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-			//	ÆíÀÇ»ó x = 0 À¸·Î ³õ°í zÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+			//	ì—¬ê¸°ì„œ, x, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+			//	ë”°ë¼ì„œ, X -> Y -> Zì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+			//	íŽ¸ì˜ìƒ x = 0 ìœ¼ë¡œ ë†“ê³  zì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 			fX = 0.f;
 			fZ = -atan2f( m_fDAElem[1][0], m_fDAElem[2][0] );
 		}
 	}
-	//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ -Sy ´Â 1 º¸´Ù Å¬ ¼ö ¾ø´Ù
-	//	¿©±â¼­´Â -Sy°¡ 1º¸´Ù Å« °æ¿ì 1·Î Ã³¸®ÇÑ´Ù
+	//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— -Sy ëŠ” 1 ë³´ë‹¤ í´ ìˆ˜ ì—†ë‹¤
+	//	ì—¬ê¸°ì„œëŠ” -Syê°€ 1ë³´ë‹¤ í° ê²½ìš° 1ë¡œ ì²˜ë¦¬í•œë‹¤
 	else
 	{
 		fY = -NAVI_PI / 2.f;
 
-		//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+		//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 		//
 		//	|	0					0			1	|
 		//	|	-S(x+z)				C(x+z)		0	|
 		//	|	-C(x+z)				-S(x+z)		0	|
 		//
-		//	¿©±â¼­, x, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-		//	µû¶ó¼­, X -> Y -> ZÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-		//	ÆíÀÇ»ó x = 0 À¸·Î ³õ°í zÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+		//	ì—¬ê¸°ì„œ, x, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+		//	ë”°ë¼ì„œ, X -> Y -> Zì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+		//	íŽ¸ì˜ìƒ x = 0 ìœ¼ë¡œ ë†“ê³  zì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 		fX = 0.f;
 		fZ = atan2f( m_fDAElem[1][0], m_fDAElem[2][0] );
@@ -256,7 +256,7 @@ void CNtlNaviMatrix3::GetEulerRotXYZ( float& fX, float& fY, float& fZ ) const
 void CNtlNaviMatrix3::GetEulerRotXZY( float& fX, float& fY, float& fZ ) const
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMX(fX) -> RMZ(fZ) -> RMY(fY)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMX(fX) -> RMZ(fZ) -> RMY(fY)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMX(fX) * RMZ(fZ) * RMY(fY)
 	//
@@ -270,7 +270,7 @@ void CNtlNaviMatrix3::GetEulerRotXZY( float& fX, float& fY, float& fZ ) const
 		if ( m_fDAElem[0][1] > -1.f )
 		{
 			//	-1 < Sz < 1 <=> 0 < z < NAVI_PI / 2 || NAVI_PI / 2 < z < NAVI_PI <=> Cz != 0
-			//	µû¶ó¼­, Cz·Î ³ª´©±â°¡ °¡´ÉÇÏ´Ù
+			//	ë”°ë¼ì„œ, Czë¡œ ë‚˜ëˆ„ê¸°ê°€ ê°€ëŠ¥í•˜ë‹¤
 
 			//	(-Cz * Sx) / (Cz * Cx)
 			fX = -atan2f( m_fDAElem[2][1], m_fDAElem[1][1] );
@@ -281,28 +281,28 @@ void CNtlNaviMatrix3::GetEulerRotXZY( float& fX, float& fY, float& fZ ) const
 			//	sinf(z) = R[0][1]
 			fZ = asinf( m_fDAElem[0][1] );
 		}
-		//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ Sz ´Â -1 º¸´Ù ÀÛÀ» ¼ö ¾ø´Ù
-		//	¿©±â¼­´Â Sz°¡ -1º¸´Ù ÀÛÀº °æ¿ì -1·Î Ã³¸®ÇÑ´Ù
+		//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— Sz ëŠ” -1 ë³´ë‹¤ ìž‘ì„ ìˆ˜ ì—†ë‹¤
+		//	ì—¬ê¸°ì„œëŠ” Szê°€ -1ë³´ë‹¤ ìž‘ì€ ê²½ìš° -1ë¡œ ì²˜ë¦¬í•œë‹¤
 		else
 		{
 			fZ = -NAVI_PI / 2.f;
 
-			//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+			//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 			//
 			//	|	0			-1		0		|
 			//	|	C(x-y)		0		S(x-y)	|
 			//	|	-S(x-y)		0		C(x-y)	|
 			//
-			//	¿©±â¼­, x, y´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-			//	µû¶ó¼­, X -> Z -> YÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-			//	ÆíÀÇ»ó x = 0 À¸·Î ³õ°í yÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+			//	ì—¬ê¸°ì„œ, x, yëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+			//	ë”°ë¼ì„œ, X -> Z -> Yì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+			//	íŽ¸ì˜ìƒ x = 0 ìœ¼ë¡œ ë†“ê³  yì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 			fX = 0.f;
 			fY = -atan2f( m_fDAElem[1][2], m_fDAElem[2][2] );
 		}
 	}
-	//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ Sz ´Â 1 º¸´Ù Å¬ ¼ö ¾ø´Ù
-	//	¿©±â¼­´Â Sz°¡ 1º¸´Ù Å« °æ¿ì 1·Î Ã³¸®ÇÑ´Ù
+	//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— Sz ëŠ” 1 ë³´ë‹¤ í´ ìˆ˜ ì—†ë‹¤
+	//	ì—¬ê¸°ì„œëŠ” Szê°€ 1ë³´ë‹¤ í° ê²½ìš° 1ë¡œ ì²˜ë¦¬í•œë‹¤
 	else
 	{
 		fZ = NAVI_PI / 2.f;
@@ -311,15 +311,15 @@ void CNtlNaviMatrix3::GetEulerRotXZY( float& fX, float& fY, float& fZ ) const
 		//	|	Sx * Sy - Cx * Cy * Sz		Cz * Cx		Cy * Sx + Cx * Sy * Sz	|
 		//	|	Cx * Sy + Cy * Sx * Sz		-Cz * Sx	Cx * Cy - Sx * Sy * Sz	|
 
-		//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+		//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 		//
 		//	|	0			1		0		|
 		//	|	-C(x+y)		0		S(x+y)	|
 		//	|	S(x+y)		0		C(x+y)	|
 		//
-		//	¿©±â¼­, x, y´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-		//	µû¶ó¼­, X -> Z -> YÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-		//	ÆíÀÇ»ó x = 0 À¸·Î ³õ°í yÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+		//	ì—¬ê¸°ì„œ, x, yëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+		//	ë”°ë¼ì„œ, X -> Z -> Yì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+		//	íŽ¸ì˜ìƒ x = 0 ìœ¼ë¡œ ë†“ê³  yì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 		fX = 0.f;
 		fY = atan2f( m_fDAElem[1][2], m_fDAElem[2][2] );
@@ -330,7 +330,7 @@ void CNtlNaviMatrix3::GetEulerRotXZY( float& fX, float& fY, float& fZ ) const
 void CNtlNaviMatrix3::GetEulerRotYXZ( float& fX, float& fY, float& fZ ) const
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMY(fY) -> RMX(fX) -> RMZ(fZ)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMY(fY) -> RMX(fX) -> RMZ(fZ)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMY(fY) * RMX(fX) * RMZ(fZ)
 	//
@@ -344,7 +344,7 @@ void CNtlNaviMatrix3::GetEulerRotYXZ( float& fX, float& fY, float& fZ ) const
 		if ( m_fDAElem[1][2] > -1.f )
 		{
 			//	-1 < Sx < 1 <=> 0 < x < NAVI_PI / 2 || NAVI_PI / 2 < x < NAVI_PI <=> Cx != 0
-			//	µû¶ó¼­, Cx·Î ³ª´©±â°¡ °¡´ÉÇÏ´Ù
+			//	ë”°ë¼ì„œ, Cxë¡œ ë‚˜ëˆ„ê¸°ê°€ ê°€ëŠ¥í•˜ë‹¤
 
 			fX = asinf( m_fDAElem[1][2] );
 
@@ -354,41 +354,41 @@ void CNtlNaviMatrix3::GetEulerRotYXZ( float& fX, float& fY, float& fZ ) const
 			//	(-Cx * Sz) / (Cx * Cz) = -Tan(z) = (m_fDAElem[1][0]/m_fDAElem[1][1])
 			fZ = -atan2f( m_fDAElem[1][0], m_fDAElem[1][1] );
 		}
-		//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ Sx ´Â -1 º¸´Ù ÀÛÀ» ¼ö ¾ø´Ù
-		//	¿©±â¼­´Â Sx°¡ -1º¸´Ù ÀÛÀº °æ¿ì -1·Î Ã³¸®ÇÑ´Ù
+		//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— Sx ëŠ” -1 ë³´ë‹¤ ìž‘ì„ ìˆ˜ ì—†ë‹¤
+		//	ì—¬ê¸°ì„œëŠ” Sxê°€ -1ë³´ë‹¤ ìž‘ì€ ê²½ìš° -1ë¡œ ì²˜ë¦¬í•œë‹¤
 		else
 		{
 			fX = -NAVI_PI / 2.f;
 
-			//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+			//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 			//
 			//	|	C(y-z)		-S(y-z)		0	|
 			//	|	0			0			-1	|
 			//	|	S(y-z)		C(y-z)		0	|
 			//
-			//	¿©±â¼­, y, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-			//	µû¶ó¼­, Y -> X -> ZÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-			//	ÆíÀÇ»ó y = 0 À¸·Î ³õ°í zÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+			//	ì—¬ê¸°ì„œ, y, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+			//	ë”°ë¼ì„œ, Y -> X -> Zì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+			//	íŽ¸ì˜ìƒ y = 0 ìœ¼ë¡œ ë†“ê³  zì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 			fY = 0.f;
 			fZ = -atan2f( m_fDAElem[2][0], m_fDAElem[0][0] );
 		}
 	}
-	//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ Sx ´Â 1 º¸´Ù Å¬ ¼ö ¾ø´Ù
-	//	¿©±â¼­´Â Sx°¡ 1º¸´Ù Å« °æ¿ì 1·Î Ã³¸®ÇÑ´Ù
+	//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— Sx ëŠ” 1 ë³´ë‹¤ í´ ìˆ˜ ì—†ë‹¤
+	//	ì—¬ê¸°ì„œëŠ” Sxê°€ 1ë³´ë‹¤ í° ê²½ìš° 1ë¡œ ì²˜ë¦¬í•œë‹¤
 	else
 	{
 		fX = NAVI_PI / 2.f;
 
-		//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+		//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 		//
 		//	|	C(y+z)		S(y+z)		0	|
 		//	|	0			0			1	|
 		//	|	S(y+z)		-C(y+z)		0	|
 		//
-		//	¿©±â¼­, y, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-		//	µû¶ó¼­, Y -> X -> ZÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-		//	ÆíÀÇ»ó y = 0 À¸·Î ³õ°í zÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+		//	ì—¬ê¸°ì„œ, y, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+		//	ë”°ë¼ì„œ, Y -> X -> Zì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+		//	íŽ¸ì˜ìƒ y = 0 ìœ¼ë¡œ ë†“ê³  zì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 		fY = 0.f;
 		fZ = atan2f( m_fDAElem[2][0], m_fDAElem[0][0] );
@@ -399,7 +399,7 @@ void CNtlNaviMatrix3::GetEulerRotYXZ( float& fX, float& fY, float& fZ ) const
 void CNtlNaviMatrix3::GetEulerRotYZX( float& fX, float& fY, float& fZ ) const
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMY(fY) -> RMZ(fZ) -> RMX(fX)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMY(fY) -> RMZ(fZ) -> RMX(fX)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMY(fY) * RMZ(fZ) * RMX(fX)
 	//
@@ -413,7 +413,7 @@ void CNtlNaviMatrix3::GetEulerRotYZX( float& fX, float& fY, float& fZ ) const
 		if ( m_fDAElem[1][0] > -1.f )
 		{
 			//	-1 < -Sz < 1 <=> 0 < z < NAVI_PI / 2 || NAVI_PI / 2 < z < NAVI_PI <=> Cz != 0
-			//	µû¶ó¼­, Cz·Î ³ª´©±â°¡ °¡´ÉÇÏ´Ù
+			//	ë”°ë¼ì„œ, Czë¡œ ë‚˜ëˆ„ê¸°ê°€ ê°€ëŠ¥í•˜ë‹¤
 
 			//	(Cz * Sx) / (Cz * Cx)
 			fX = -atan2f( m_fDAElem[1][2], m_fDAElem[1][1] );
@@ -424,41 +424,41 @@ void CNtlNaviMatrix3::GetEulerRotYZX( float& fX, float& fY, float& fZ ) const
 			//	-sinf(z) = m_fDAElem[1][0]
 			fZ = -asinf( m_fDAElem[1][0] );
 		}
-		//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ -Sz ´Â -1 º¸´Ù ÀÛÀ» ¼ö ¾ø´Ù
-		//	¿©±â¼­´Â -Sz°¡ -1º¸´Ù ÀÛÀº °æ¿ì -1·Î Ã³¸®ÇÑ´Ù
+		//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— -Sz ëŠ” -1 ë³´ë‹¤ ìž‘ì„ ìˆ˜ ì—†ë‹¤
+		//	ì—¬ê¸°ì„œëŠ” -Szê°€ -1ë³´ë‹¤ ìž‘ì€ ê²½ìš° -1ë¡œ ì²˜ë¦¬í•œë‹¤
 		else
 		{
 			fZ = NAVI_PI / 2.f;
 
-			//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+			//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 			//
 			//	|	0		C(x-y)		S(x-y)	|
 			//	|	-1		0			0		|
 			//	|	0		-S(x-y)		C(x-y)	|
 			//
-			//	¿©±â¼­, x, y´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-			//	µû¶ó¼­, Y -> Z -> XÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-			//	ÆíÀÇ»ó y = 0 À¸·Î ³õ°í xÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+			//	ì—¬ê¸°ì„œ, x, yëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+			//	ë”°ë¼ì„œ, Y -> Z -> Xì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+			//	íŽ¸ì˜ìƒ y = 0 ìœ¼ë¡œ ë†“ê³  xì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 			fY = 0.f;
 			fX = atan2f( m_fDAElem[0][2], m_fDAElem[2][2] );
 		}
 	}
-	//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ -Sz ´Â 1 º¸´Ù Å¬ ¼ö ¾ø´Ù
-	//	¿©±â¼­´Â -Sz°¡ 1º¸´Ù Å« °æ¿ì 1·Î Ã³¸®ÇÑ´Ù
+	//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— -Sz ëŠ” 1 ë³´ë‹¤ í´ ìˆ˜ ì—†ë‹¤
+	//	ì—¬ê¸°ì„œëŠ” -Szê°€ 1ë³´ë‹¤ í° ê²½ìš° 1ë¡œ ì²˜ë¦¬í•œë‹¤
 	else
 	{
 		fZ = -NAVI_PI / 2.f;
 
-		//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+		//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 		//
 		//	|	0		-C(x+y)		-S(x+y)	|
 		//	|	1		0			0		|
 		//	|	0		-S(x+y)		C(x+y)	|
 		//
-		//	¿©±â¼­, x, y´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-		//	µû¶ó¼­, Y -> Z -> XÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-		//	ÆíÀÇ»ó y = 0 À¸·Î ³õ°í xÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+		//	ì—¬ê¸°ì„œ, x, yëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+		//	ë”°ë¼ì„œ, Y -> Z -> Xì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+		//	íŽ¸ì˜ìƒ y = 0 ìœ¼ë¡œ ë†“ê³  xì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 		fY = 0.f;
 		fX = atan2f( m_fDAElem[2][1], m_fDAElem[0][1] );
@@ -469,7 +469,7 @@ void CNtlNaviMatrix3::GetEulerRotYZX( float& fX, float& fY, float& fZ ) const
 void CNtlNaviMatrix3::GetEulerRotZXY( float& fX, float& fY, float& fZ ) const
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMZ(fZ) -> RMX(fX) -> RMY(fY)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMZ(fZ) -> RMX(fX) -> RMY(fY)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMZ(fZ) * RMX(fX) * RMY(fY)
 	//
@@ -483,7 +483,7 @@ void CNtlNaviMatrix3::GetEulerRotZXY( float& fX, float& fY, float& fZ ) const
 		if ( m_fDAElem[2][1] > -1.f )
 		{
 			//	-1 < -Sx < 1 <=> 0 < x < NAVI_PI / 2 || NAVI_PI / 2 < x < NAVI_PI <=> Cx != 0
-			//	µû¶ó¼­, Cx·Î ³ª´©±â°¡ °¡´ÉÇÏ´Ù
+			//	ë”°ë¼ì„œ, Cxë¡œ ë‚˜ëˆ„ê¸°ê°€ ê°€ëŠ¥í•˜ë‹¤
 
 			//	-sinf(x) = m_fDAElem[2][1]
 			fX = -asinf( m_fDAElem[2][1] );
@@ -494,41 +494,41 @@ void CNtlNaviMatrix3::GetEulerRotZXY( float& fX, float& fY, float& fZ ) const
 			//	(Cx * Sz) / (Cx * Cz)
 			fZ = atan2f( m_fDAElem[0][1], m_fDAElem[1][1] );
 		}
-		//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ -Sx ´Â -1 º¸´Ù ÀÛÀ» ¼ö ¾ø´Ù
-		//	¿©±â¼­´Â -Sx°¡ -1º¸´Ù ÀÛÀº °æ¿ì -1·Î Ã³¸®ÇÑ´Ù
+		//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— -Sx ëŠ” -1 ë³´ë‹¤ ìž‘ì„ ìˆ˜ ì—†ë‹¤
+		//	ì—¬ê¸°ì„œëŠ” -Sxê°€ -1ë³´ë‹¤ ìž‘ì€ ê²½ìš° -1ë¡œ ì²˜ë¦¬í•œë‹¤
 		else
 		{
 			fX = NAVI_PI / 2.f;
 
-			//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+			//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 			//
 			//	|	C(y-z)		0		-S(y-z)	|
 			//	|	S(y-z)		0		C(y-z)	|
 			//	|	0			-1		0		|
 			//
-			//	¿©±â¼­, y, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-			//	µû¶ó¼­, Z -> X -> YÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-			//	ÆíÀÇ»ó z = 0 À¸·Î ³õ°í yÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+			//	ì—¬ê¸°ì„œ, y, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+			//	ë”°ë¼ì„œ, Z -> X -> Yì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+			//	íŽ¸ì˜ìƒ z = 0 ìœ¼ë¡œ ë†“ê³  yì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 			fZ = 0.f;
 			fY = atan2f( m_fDAElem[1][0], m_fDAElem[0][0] );
 		}
 	}
-	//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ -Sx ´Â 1 º¸´Ù Å¬ ¼ö ¾ø´Ù
-	//	¿©±â¼­´Â -Sx°¡ 1º¸´Ù Å« °æ¿ì 1·Î Ã³¸®ÇÑ´Ù
+	//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— -Sx ëŠ” 1 ë³´ë‹¤ í´ ìˆ˜ ì—†ë‹¤
+	//	ì—¬ê¸°ì„œëŠ” -Sxê°€ 1ë³´ë‹¤ í° ê²½ìš° 1ë¡œ ì²˜ë¦¬í•œë‹¤
 	else
 	{
 		fX = -NAVI_PI / 2.f;
 
-		//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+		//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 		//
 		//	|	C(y+z)		0		-S(y+z)	|
 		//	|	-S(y+z)		0		-C(y+z)	|
 		//	|	0			1		0		|
 		//
-		//	¿©±â¼­, y, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-		//	µû¶ó¼­, Z -> X -> YÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-		//	ÆíÀÇ»ó z = 0 À¸·Î ³õ°í yÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+		//	ì—¬ê¸°ì„œ, y, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+		//	ë”°ë¼ì„œ, Z -> X -> Yì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+		//	íŽ¸ì˜ìƒ z = 0 ìœ¼ë¡œ ë†“ê³  yì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 		fZ = 0.f;
 		fY = atan2f( m_fDAElem[0][2], m_fDAElem[1][2] );
@@ -539,7 +539,7 @@ void CNtlNaviMatrix3::GetEulerRotZXY( float& fX, float& fY, float& fZ ) const
 void CNtlNaviMatrix3::GetEulerRotZYX( float& fX, float& fY, float& fZ ) const
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMZ(fZ) -> RMY(fY) -> RMX(fX)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMZ(fZ) -> RMY(fY) -> RMX(fX)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMZ(fZ) * RMY(fY) * RMX(fX)
 	//
@@ -553,7 +553,7 @@ void CNtlNaviMatrix3::GetEulerRotZYX( float& fX, float& fY, float& fZ ) const
 		if ( m_fDAElem[2][0] > -1.f )
 		{
 			//	-1 < Sy < 1 <=> 0 < y < NAVI_PI / 2 || NAVI_PI / 2 < y < NAVI_PI <=> Cy != 0
-			//	µû¶ó¼­, Cy·Î ³ª´©±â°¡ °¡´ÉÇÏ´Ù
+			//	ë”°ë¼ì„œ, Cyë¡œ ë‚˜ëˆ„ê¸°ê°€ ê°€ëŠ¥í•˜ë‹¤
 
 			//	(-Cy * Sx) / (Cy * Cx) = -Tan(x) = (m_fDAElem[2][1]/m_fDAElem[2][2])
 			fX = -atan2f( m_fDAElem[2][1], m_fDAElem[2][2] );
@@ -563,41 +563,41 @@ void CNtlNaviMatrix3::GetEulerRotZYX( float& fX, float& fY, float& fZ ) const
 			//	(-Cy * Sz) / (Cy * Cz) = -Tan(z) = (m_fDAElem[1][0]/m_fDAElem[0][0])
 			fZ = atan2f( m_fDAElem[1][0], m_fDAElem[0][0] );
 		}
-		//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ Sy ´Â -1 º¸´Ù ÀÛÀ» ¼ö ¾ø´Ù
-		//	¿©±â¼­´Â Sy°¡ -1º¸´Ù ÀÛÀº °æ¿ì -1·Î Ã³¸®ÇÑ´Ù
+		//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— Sy ëŠ” -1 ë³´ë‹¤ ìž‘ì„ ìˆ˜ ì—†ë‹¤
+		//	ì—¬ê¸°ì„œëŠ” Syê°€ -1ë³´ë‹¤ ìž‘ì€ ê²½ìš° -1ë¡œ ì²˜ë¦¬í•œë‹¤
 		else
 		{
 			fY = -NAVI_PI / 2.f;
 
-			//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+			//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 			//
 			//	|	0		S(z-x)		C(z-x)	|
 			//	|	0		C(z-x)		-S(z-x)	|
 			//	|	-1		0			0		|
 			//
-			//	¿©±â¼­, x, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-			//	µû¶ó¼­, Z -> Y -> XÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-			//	ÆíÀÇ»ó z = 0 À¸·Î ³õ°í xÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+			//	ì—¬ê¸°ì„œ, x, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+			//	ë”°ë¼ì„œ, Z -> Y -> Xì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+			//	íŽ¸ì˜ìƒ z = 0 ìœ¼ë¡œ ë†“ê³  xì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 			fZ = 0.f;
 			fX = -atan2f( m_fDAElem[0][1], m_fDAElem[1][1] );
 		}
 	}
-	//	Á¤±ÔÁ÷±³ Çà·ÄÀ» ´ë»óÀ¸·Î ÇÏ±â ¶§¹®¿¡ Sy ´Â 1 º¸´Ù Å¬ ¼ö ¾ø´Ù
-	//	¿©±â¼­´Â Sy°¡ 1º¸´Ù Å« °æ¿ì 1·Î Ã³¸®ÇÑ´Ù
+	//	ì •ê·œì§êµ í–‰ë ¬ì„ ëŒ€ìƒìœ¼ë¡œ í•˜ê¸° ë•Œë¬¸ì— Sy ëŠ” 1 ë³´ë‹¤ í´ ìˆ˜ ì—†ë‹¤
+	//	ì—¬ê¸°ì„œëŠ” Syê°€ 1ë³´ë‹¤ í° ê²½ìš° 1ë¡œ ì²˜ë¦¬í•œë‹¤
 	else
 	{
 		fY = NAVI_PI / 2.f;
 
-		//	È¸Àü Çà·Ä¿¡ ´ëÇÑ °ø½ÄÀ» Á¤¸®ÇÏ¸é ¾Æ·¡¿Í °°´Ù.
+		//	íšŒì „ í–‰ë ¬ì— ëŒ€í•œ ê³µì‹ì„ ì •ë¦¬í•˜ë©´ ì•„ëž˜ì™€ ê°™ë‹¤.
 		//
 		//	|	0		S(z+x)		-C(z+x)	|
 		//	|	0		C(z+x)		S(z+x)	|
 		//	|	-1		0			0		|
 		//
-		//	¿©±â¼­, x, z´Â ¹«¼öÈ÷ ¸¹Àº ÇØ¸¦ °¡Áø´Ù.
-		//	µû¶ó¼­, Z -> Y -> XÀÇ ¼ø¼­·Î È¸Àü Çà·ÄÀÌ ±¸¼ºµÇ¹Ç·Î
-		//	ÆíÀÇ»ó z = 0 À¸·Î ³õ°í xÀÇ È¸Àü°ªÀ» °áÁ¤ÇÑ´Ù
+		//	ì—¬ê¸°ì„œ, x, zëŠ” ë¬´ìˆ˜ížˆ ë§Žì€ í•´ë¥¼ ê°€ì§„ë‹¤.
+		//	ë”°ë¼ì„œ, Z -> Y -> Xì˜ ìˆœì„œë¡œ íšŒì „ í–‰ë ¬ì´ êµ¬ì„±ë˜ë¯€ë¡œ
+		//	íŽ¸ì˜ìƒ z = 0 ìœ¼ë¡œ ë†“ê³  xì˜ íšŒì „ê°’ì„ ê²°ì •í•œë‹¤
 
 		fZ = 0.f;
 		fX = atan2f( m_fDAElem[0][1], m_fDAElem[1][1] );
@@ -611,7 +611,7 @@ void CNtlNaviMatrix3::MakeEulerRotX( float fVal )
 	//	C = cosf
 	//	S = sinf
 	//
-	//	XÃàÀ» ±âÁØÀ¸·Î ÁÖ¾îÁø °¢(fVal) ¸¸Å­ È¸ÀüÇÏ´Â Çà·Ä
+	//	Xì¶•ì„ ê¸°ì¤€ìœ¼ë¡œ ì£¼ì–´ì§„ ê°(fVal) ë§Œí¼ íšŒì „í•˜ëŠ” í–‰ë ¬
 	//
 	//	|	1	0	0	|
 	//	|	0	C	S	|
@@ -633,7 +633,7 @@ void CNtlNaviMatrix3::MakeEulerRotY( float fVal )
 	//	C = cosf
 	//	S = sinf
 	//
-	//	YÃàÀ» ±âÁØÀ¸·Î ÁÖ¾îÁø °¢(fVal) ¸¸Å­ È¸ÀüÇÏ´Â Çà·Ä
+	//	Yì¶•ì„ ê¸°ì¤€ìœ¼ë¡œ ì£¼ì–´ì§„ ê°(fVal) ë§Œí¼ íšŒì „í•˜ëŠ” í–‰ë ¬
 	//
 	//	|	C	0	-S	|
 	//	|	0	1	0	|
@@ -655,7 +655,7 @@ void CNtlNaviMatrix3::MakeEulerRotZ( float fVal )
 	//	C = cosf
 	//	S = sinf
 	//
-	//	ZÃàÀ» ±âÁØÀ¸·Î ÁÖ¾îÁø °¢(fVal) ¸¸Å­ È¸ÀüÇÏ´Â Çà·Ä
+	//	Zì¶•ì„ ê¸°ì¤€ìœ¼ë¡œ ì£¼ì–´ì§„ ê°(fVal) ë§Œí¼ íšŒì „í•˜ëŠ” í–‰ë ¬
 	//
 	//	|	C	S	0	|
 	//	|	-S	C	0	|
@@ -674,7 +674,7 @@ void CNtlNaviMatrix3::MakeEulerRotZ( float fVal )
 void CNtlNaviMatrix3::MakeEulerRotXYZ( float fX, float fY, float fZ )
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMX(fX) -> RMY(fY) -> RMZ(fZ)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMX(fX) -> RMY(fY) -> RMZ(fZ)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMX(fX) * RMY(fY) * RMZ(fZ)
 	//
@@ -707,7 +707,7 @@ void CNtlNaviMatrix3::MakeEulerRotXYZ( float fX, float fY, float fZ )
 void CNtlNaviMatrix3::MakeEulerRotXZY( float fX, float fY, float fZ )
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMX(fX) -> RMZ(fZ) -> RMY(fY)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMX(fX) -> RMZ(fZ) -> RMY(fY)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMX(fX) * RMZ(fZ) * RMY(fY)
 	//
@@ -740,7 +740,7 @@ void CNtlNaviMatrix3::MakeEulerRotXZY( float fX, float fY, float fZ )
 void CNtlNaviMatrix3::MakeEulerRotYXZ( float fX, float fY, float fZ )
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMY(fY) -> RMX(fX) -> RMZ(fZ)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMY(fY) -> RMX(fX) -> RMZ(fZ)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMY(fY) * RMX(fX) * RMZ(fZ)
 	//
@@ -773,7 +773,7 @@ void CNtlNaviMatrix3::MakeEulerRotYXZ( float fX, float fY, float fZ )
 void CNtlNaviMatrix3::MakeEulerRotYZX( float fX, float fY, float fZ )
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMY(fY) -> RMZ(fZ) -> RMX(fX)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMY(fY) -> RMZ(fZ) -> RMX(fX)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMY(fY) * RMZ(fZ) * RMX(fX)
 	//
@@ -806,7 +806,7 @@ void CNtlNaviMatrix3::MakeEulerRotYZX( float fX, float fY, float fZ )
 void CNtlNaviMatrix3::MakeEulerRotZXY( float fX, float fY, float fZ )
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMZ(fZ) -> RMX(fX) -> RMY(fY)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMZ(fZ) -> RMX(fX) -> RMY(fY)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMZ(fZ) * RMX(fX) * RMY(fY)
 	//
@@ -839,7 +839,7 @@ void CNtlNaviMatrix3::MakeEulerRotZXY( float fX, float fY, float fZ )
 void CNtlNaviMatrix3::MakeEulerRotZYX( float fX, float fY, float fZ )
 {
 	//
-	//	ÀÓÀÇÀÇ Á¡ P¸¦ RMZ(fZ) -> RMY(fY) -> RMX(fX)À» µû¶ó È¸Àü ½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì  Pë¥¼ RMZ(fZ) -> RMY(fY) -> RMX(fX)ì„ ë”°ë¼ íšŒì „ ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	P' = P * RMZ(fZ) * RMY(fY) * RMX(fX)
 	//
@@ -871,26 +871,26 @@ void CNtlNaviMatrix3::MakeEulerRotZYX( float fX, float fY, float fZ )
 void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fAngle ) const
 {
 	//
-	//	ÀÓÀÇÀÇ È¸ÀüÃà A ( Ax, Ay, Az ),
-	//	´ÜÀ§ Çà·Ä E,
-	//	CR = |	0		Az		-Ay	|	ÀÌ¶ó ÇßÀ»¶§ 
+	//	ìž„ì˜ì˜ íšŒì „ì¶• A ( Ax, Ay, Az ),
+	//	ë‹¨ìœ„ í–‰ë ¬ E,
+	//	CR = |	0		Az		-Ay	|	ì´ë¼ í–ˆì„ë•Œ 
 	//		 |	-Az		0		Ax	|
 	//		 |	Ay		-Ax		0	|
-	//	ÀÓÀÇÀÇ Ãà A(v3Axis) ¸¦ ±âÁØÀ¸·Î ÁÖ¾îÁø °¢(fAngle) ¸¸Å­ È¸Àü½ÃÅ°´Â Çà·Ä RÀº
-	//	¾Æ·¡¿Í °°Àº °ø½ÄÀ¸·Î Á¤¸®ÇÒ ¼ö ÀÖ´Ù
+	//	ìž„ì˜ì˜ ì¶• A(v3Axis) ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì£¼ì–´ì§„ ê°(fAngle) ë§Œí¼ íšŒì „ì‹œí‚¤ëŠ” í–‰ë ¬ Rì€
+	//	ì•„ëž˜ì™€ ê°™ì€ ê³µì‹ìœ¼ë¡œ ì •ë¦¬í•  ìˆ˜ ìžˆë‹¤
 	//
-	//	R = E + sinf(t) * CR	+ (1 - cosf(t)) * CR^2	-- (¤¡)
+	//	R = E + sinf(t) * CR	+ (1 - cosf(t)) * CR^2	-- (ã„±)
 	//
 	//	  = |	C + Ax * Ax * ( 1 - C )			Ax * Ay * ( 1 - C ) + Az * S		Ax * Az * ( 1 - C ) - Ay * S	|
 	//		|	Ax * Ay * ( 1 - C ) - Az * S	C + Ay * Ay * ( 1 - C )				Ay * Az * ( 1 - C ) + Ax * S	|
 	//		|	Ax * Az * ( 1 - C ) + Ay * S	Ay * Az * ( 1 - C ) - Ax * S		C + Az * Az * ( 1 - C )			|
 	//
-	//	¿©±â¼­,
-	//	(1) cosf(t) = (trace(R) - 1) / 2 À» ÀÌ¿ëÇÏ¿© È¸Àü°¢À» °è»êÇÑ´Ù
-	//	(2) R - R^T = 2 * sinf(t) * CR À» ÀÌ¿ëÇÏ¿© È¸ÀüÃàÀ» °è»êÇÏ¸é µÇ³ª
-	//		t = 0, NAVI_PI ÀÎ °æ¿ì sinf(t)·Î ¾çº¯À» ³ª´­ ¼ö°¡ ¾øÀ¸¹Ç·Î ´Ù¸¥ °ø½ÄÀ» ÀÌ¿ëÇØ¾ß ÇÑ´Ù
-	//		¿©±â¼­, t = 0 ÀÌ¸é È¸ÀüÀÌ ¾øÀ¸´Ï ÀÓÀÇÀÇ ÃàÀ» È¸Àü ÃàÀ¸·Î Á¤ÇÏ¸é µÇ°í
-	//		t = NAVI_PI ÀÎ °æ¿ì (¤¡)½ÄÀ» ÀÌ¿ëÇÏ¿© È¸ÀüÃàÀ» °è»êÇÑ´Ù
+	//	ì—¬ê¸°ì„œ,
+	//	(1) cosf(t) = (trace(R) - 1) / 2 ì„ ì´ìš©í•˜ì—¬ íšŒì „ê°ì„ ê³„ì‚°í•œë‹¤
+	//	(2) R - R^T = 2 * sinf(t) * CR ì„ ì´ìš©í•˜ì—¬ íšŒì „ì¶•ì„ ê³„ì‚°í•˜ë©´ ë˜ë‚˜
+	//		t = 0, NAVI_PI ì¸ ê²½ìš° sinf(t)ë¡œ ì–‘ë³€ì„ ë‚˜ëˆŒ ìˆ˜ê°€ ì—†ìœ¼ë¯€ë¡œ ë‹¤ë¥¸ ê³µì‹ì„ ì´ìš©í•´ì•¼ í•œë‹¤
+	//		ì—¬ê¸°ì„œ, t = 0 ì´ë©´ íšŒì „ì´ ì—†ìœ¼ë‹ˆ ìž„ì˜ì˜ ì¶•ì„ íšŒì „ ì¶•ìœ¼ë¡œ ì •í•˜ë©´ ë˜ê³ 
+	//		t = NAVI_PI ì¸ ê²½ìš° (ã„±)ì‹ì„ ì´ìš©í•˜ì—¬ íšŒì „ì¶•ì„ ê³„ì‚°í•œë‹¤
 	//
 
 	float fTrace = m_fDAElem[0][0] + m_fDAElem[1][1] + m_fDAElem[2][2];
@@ -900,7 +900,7 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 	{
 		if ( fAngle < NAVI_PI )
 		{
-			//	(2) ½ÄÀ» ÀÌ¿ëÇÏ¿© È¸ÀüÃàÀ» °è»êÇÑ´Ù
+			//	(2) ì‹ì„ ì´ìš©í•˜ì—¬ íšŒì „ì¶•ì„ ê³„ì‚°í•œë‹¤
 			v3Axis.SetElem( m_fDAElem[1][2] - m_fDAElem[2][1],
 							m_fDAElem[2][0] - m_fDAElem[0][2],
 							m_fDAElem[0][1] - m_fDAElem[1][0] );
@@ -908,7 +908,7 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 		}
 		else
 		{
-			//	(¤¡) ½ÄÀ» Ç®¾î ´ë°¢ ¼ººÐÀÇ °¡°¨½ÄÀ» ÀÌ¿ëÇÏ¿© È¸ÀüÃàÀ» °è»êÇÑ´Ù
+			//	(ã„±) ì‹ì„ í’€ì–´ ëŒ€ê° ì„±ë¶„ì˜ ê°€ê°ì‹ì„ ì´ìš©í•˜ì—¬ íšŒì „ì¶•ì„ ê³„ì‚°í•œë‹¤
 			//	R = |	1 - 2 ( Ay^2 + Az^2 )	2 * Ax * Ay				2 * Ax * Az				|
 			//		|	2 * Ax * Ay				1 - 2 ( Ax^2 + Az^2 )	2 * Ay * Az				|
 			//		|	2 * Ax * Az				2 * Ay * Az				1 - 2 ( Ax^2 + Ay^2 )	|
@@ -917,7 +917,7 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 			{
 				if ( m_fDAElem[0][0] >= m_fDAElem[2][2] )
 				{
-					//	m_fDAElem[0][0] °¡ ´ë°¢ ¼ººÐÁß ÃÖ´ë°ªÀ» °®´Â´Ù
+					//	m_fDAElem[0][0] ê°€ ëŒ€ê° ì„±ë¶„ì¤‘ ìµœëŒ€ê°’ì„ ê°–ëŠ”ë‹¤
 					float fAx = 0.5f * sqrtf( m_fDAElem[0][0] - m_fDAElem[1][1] - m_fDAElem[2][2] + 1.f );
 
 					if ( fAx <= NAVI_ZERO_THRESHOLD )
@@ -935,7 +935,7 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 				}
 				else
 				{
-					//	m_fDAElem[2][2] °¡ ´ë°¢ ¼ººÐÁß ÃÖ´ë°ªÀ» °®´Â´Ù
+					//	m_fDAElem[2][2] ê°€ ëŒ€ê° ì„±ë¶„ì¤‘ ìµœëŒ€ê°’ì„ ê°–ëŠ”ë‹¤
 					float fAz = 0.5f * sqrtf( m_fDAElem[2][2] - m_fDAElem[0][0] - m_fDAElem[1][1] + 1.f );
 
 					if ( fAz <= NAVI_ZERO_THRESHOLD )
@@ -956,7 +956,7 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 			{
 				if ( m_fDAElem[1][1] >= m_fDAElem[2][2] )
 				{
-					//	m_fDAElem[1][1] °¡ ´ë°¢ ¼ººÐÁß ÃÖ´ë°ªÀ» °®´Â´Ù
+					//	m_fDAElem[1][1] ê°€ ëŒ€ê° ì„±ë¶„ì¤‘ ìµœëŒ€ê°’ì„ ê°–ëŠ”ë‹¤
 					float fAy = 0.5f * sqrtf( m_fDAElem[1][1] - m_fDAElem[0][0] - m_fDAElem[2][2] + 1.f );
 
 					if ( fAy <= NAVI_ZERO_THRESHOLD )
@@ -974,7 +974,7 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 				}
 				else
 				{
-					//	m_fDAElem[2][2] °¡ ´ë°¢ ¼ººÐÁß ÃÖ´ë°ªÀ» °®´Â´Ù
+					//	m_fDAElem[2][2] ê°€ ëŒ€ê° ì„±ë¶„ì¤‘ ìµœëŒ€ê°’ì„ ê°–ëŠ”ë‹¤
 					float fAz = 0.5f * sqrtf( m_fDAElem[2][2] - m_fDAElem[0][0] - m_fDAElem[1][1] + 1.f );
 
 					if ( fAz <= NAVI_ZERO_THRESHOLD )
@@ -995,8 +995,8 @@ void CNtlNaviMatrix3::GetAxisAngleFromRotMat( CNtlNaviVector3& v3Axis, float& fA
 	}
 	else
 	{
-		//	È¸ÀüÀÌ ¾ø´Â °æ¿ì
-		//	È¸ÀüÃàÀ» ÀÓÀÇ·Î XÃàÀ¸·Î Á¤ÇÑ´Ù
+		//	íšŒì „ì´ ì—†ëŠ” ê²½ìš°
+		//	íšŒì „ì¶•ì„ ìž„ì˜ë¡œ Xì¶•ìœ¼ë¡œ ì •í•œë‹¤
 		v3Axis.SetElem( 1.f, 0.f, 0.f );
 	}
 }
@@ -1007,9 +1007,9 @@ void CNtlNaviMatrix3::MakeRotMatFromAxisAngle( const CNtlNaviVector3& v3Axis, fl
 	//
 	//	C = cosf
 	//	S = sinf
-	//	ÀÓÀÇÀÇ È¸ÀüÃà = A ( Ax, Ay, Az )
+	//	ìž„ì˜ì˜ íšŒì „ì¶• = A ( Ax, Ay, Az )
 	//
-	//	ÀÓÀÇÀÇ Ãà A(v3Axis) ¸¦ ±âÁØÀ¸·Î ÁÖ¾îÁø °¢(fAngle) ¸¸Å­ È¸Àü½ÃÅ°´Â Çà·Ä
+	//	ìž„ì˜ì˜ ì¶• A(v3Axis) ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì£¼ì–´ì§„ ê°(fAngle) ë§Œí¼ íšŒì „ì‹œí‚¤ëŠ” í–‰ë ¬
 	//
 	//	|	C + Ax * Ax * ( 1 - C )			Ax * Ay * ( 1 - C ) + Az * S		Ax * Az * ( 1 - C ) - Ay * S	|
 	//  |	Ax * Ay * ( 1 - C ) - Az * S	C + Ay * Ay * ( 1 - C )				Ay * Az * ( 1 - C ) + Ax * S	|
