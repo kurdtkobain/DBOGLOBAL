@@ -38,7 +38,7 @@ void CStringLocalConverter_Korean::LocalStringCovert(WCHAR* pwcOutput, const WCH
 			++iCount;
 			continue;
 		}
-		else if( wcscmp( L"?, &(pwcText[iCount]) ) == 0 )
+		else if( wcscmp( L"읋", &(pwcText[iCount]) ) == 0 )
 		{
 			int iThirdSound = GetKoreanThirdSound( &(pwcText[iCount - 1]) );
 
@@ -50,7 +50,7 @@ void CStringLocalConverter_Korean::LocalStringCovert(WCHAR* pwcOutput, const WCH
 			++iCount;
 			continue;
 		}
-		else if( wcscmp( L"?, &(pwcText[iCount]) ) == 0 )
+		else if( wcscmp( L"읂", &(pwcText[iCount]) ) == 0 )
 		{
 			int iThirdSound = GetKoreanThirdSound( &(pwcText[iCount - 1]) );
 
@@ -62,7 +62,7 @@ void CStringLocalConverter_Korean::LocalStringCovert(WCHAR* pwcOutput, const WCH
 			++iCount;
 			continue;
 		}
-		else if( wcscmp( L"?, &(pwcText[iCount]) ) == 0 )
+		else if( wcscmp( L"왆", &(pwcText[iCount]) ) == 0 )
 		{
 			int iThirdSound = GetKoreanThirdSound( &(pwcText[iCount - 1]) );
 
@@ -74,7 +74,7 @@ void CStringLocalConverter_Korean::LocalStringCovert(WCHAR* pwcOutput, const WCH
 			++iCount;
 			continue;
 		}
-		else if( wcscmp( L"?, &(pwcText[iCount]) ) == 0 )
+		else if( wcscmp( L"롫", &(pwcText[iCount]) ) == 0 )
 		{
 			int iThirdSound = GetKoreanThirdSound( &(pwcText[iCount - 1]) );
 

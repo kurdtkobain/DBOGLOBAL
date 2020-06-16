@@ -136,7 +136,8 @@ protected:
 	gui::CScrollBar*		m_pScrollBar;
 	CSurfaceGui				m_sufItem;				///< 아이템의 Icon을 표시할 Surface
 
-	CButtonList<CDBCRewardGUI, SRewardItem*>	m_ButtonList;	///< 항목 버튼 리?
+	CButtonList<CDBCRewardGUI, SRewardItem*>	m_ButtonList;	///< 항목 버튼 리슽
+
 	// slot
 	gui::CSlot				m_slotClickExitBtn;
 	gui::CSlot				m_slotClickBackBtn;

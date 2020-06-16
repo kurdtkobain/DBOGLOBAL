@@ -1132,7 +1132,8 @@ VOID CWarehouseBarGui::HandleEvents( RWS::CMsg &msg )
 	}	
 	else if( msg.Id == g_EventCharObjDelete )
 	{
-		// 갑자기 캐릭터가 사라병?		SERIAL_HANDLE* pDeleteSerial = reinterpret_cast<SERIAL_HANDLE*>( msg.pData );
+		// 갑자기 캐릭터가 사라졋다
+		SERIAL_HANDLE* pDeleteSerial = reinterpret_cast<SERIAL_HANDLE*>( msg.pData );
 
 		if( m_hNPCSerial == *pDeleteSerial )
 		{

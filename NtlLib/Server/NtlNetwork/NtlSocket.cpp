@@ -437,7 +437,8 @@ int CNtlSocket::SetKeepAlive(DWORD dwKeepAliveTime, DWORD dwKeepAliveInterval)
 //  [1/5/2007 zeroera] : 설명 : Accept가 실제로 일어나지 않으면 클라이언트에 ACK + SYN가 가지 않게되어
 // BackLog로 인한 선행 Connect가 일어나지 않는다.
 // 일정 시간이내에 Accept가 호출되지 않으면 클라이언트는 TIMEOUT 된다
-// performance decrease 가 있었음 : 현재는 윈도우 패치로 수정 ?//-----------------------------------------------------------------------------------
+// performance decrease 가 있었음 : 현재는 윈도우 패치로 수정 됌
+//-----------------------------------------------------------------------------------
 int CNtlSocket::SetConditionalAccept(BOOL bActive)
 {
 	int result = setsockopt( m_socket, SOL_SOCKET, SO_CONDITIONAL_ACCEPT, (char*)&bActive, sizeof(bActive) );

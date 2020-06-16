@@ -181,7 +181,8 @@ protected:
 
 /**
 * \ingroup client
-* COptionBase 를 상속 받아서 옵션 윈도우의 탭 중의 하나인 채팅창 관련 탭을 갇?* CGuiLineTree를 사용하여 채팅창과 관련된 각종 옵션을 설정할 수 있게 하는 클래스
+* COptionBase 를 상속 받아서 옵션 윈도우의 탭 중의 하나인 채팅창 관련 탭을 궛ㅇ
+* CGuiLineTree를 사용하여 채팅창과 관련된 각종 옵션을 설정할 수 있게 하는 클래스
 */
 class COptionChatting : public COptionBase
 {

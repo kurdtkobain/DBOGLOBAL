@@ -452,7 +452,8 @@ const RwV3d operator+(const RwV3d& lhs, const RwV3d& rhs)
     return v3Return;
 }
 
-/// 3D 벡터간의 兮?const RwV3d operator-(const RwV3d& lhs, const RwV3d& rhs)
+/// 3D 벡터간의 뺴기
+const RwV3d operator-(const RwV3d& lhs, const RwV3d& rhs)
 {
     RwV3d v3Return;
     v3Return.x = lhs.x - rhs.x;
